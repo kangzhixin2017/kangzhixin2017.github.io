@@ -97,11 +97,6 @@
 		<script src="js/jquery.mockjax.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			var canGetCookie = 0; //是否支持存储Cookie 0 不支持 1 支持
-			var ajaxmockjax = 1; //是否启用虚拟Ajax的请求响 0 不启用  1 启用
-			//默认账号密码
-
-			var truelogin = "kbcxy";
-			var truepwd = "123";
 
 			var CodeVal = 0;
 			Code();
@@ -235,8 +230,11 @@
 										$('.login').removeClass('test');
 										if(data.Status == 'ok') {
 											//登录成功
+											alert(data)
 											window.location.href = "index1.html";
+											
 										} else {
+											alert(data)
 											AjaxErro(data);
 										}
 									}, 2400);
@@ -273,7 +271,11 @@
 											//登录成功
 											window.location.href = "index1.html";
 										} else {
-											AjaxErro(data);
+									var adata=		{
+						"Status": "Erro",
+						"Erro": "账号名或密码或验证码有误aaaaaa"
+					}
+											AjaxErro(adata);
 										}
 									}, 2400);
 								})
@@ -284,45 +286,7 @@
 			})
 			var fullscreen = function() {
 				elem = document.body;
-
 			}
-			if(ajaxmockjax == 1) {
-				$.mockjax({
-					url: 'Ajax/Login',
-					status: 200,
-					responseTime: 50,
-					responseText: {
-						"Status": "ok",
-						"Text": "登陆成功<br /><br />欢迎回来"
-					}
-				});
-				$.mockjax({
-					url: 'Ajax/LoginFalse',
-					status: 200,
-					responseTime: 50,
-					responseText: {
-						"Status": "Erro",
-						"Erro": "账号名或密码或验证码有误"
-					}
-				});
-			}
-		</script>
-
-		<script type="text/javascript">
-			function adminlogin() {
-				var username = $('#inputUsername').val();
-				var password = $('#inputPassword').val();
-				AV.User.logIn(username, password).then(function(loginedUser) {
-					alert("success");
-				}, function(error) {
-					alert("undefined");
-				});
-			};
-
-			$(".form-signin").on('submit', function(e) {
-				e.preventDefault();
-				login();
-			});
 		</script>
 	</body>
 
