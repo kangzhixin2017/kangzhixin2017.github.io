@@ -112,73 +112,72 @@
 				lineColor: '#133b88'
 			});
 			$("#loginad").click(function() {
-				layui.use('layer', function() {
-					var login = $('input[name="login"]').val();
-					var pwd = $('input[name="pwd"]').val();
-					var code = $('input[name="code"]').val();
-					if(login == '') {
-						alert('请输入您的账号');
-					} else if(pwd == '') {
-						alert('请输入密码');
-					} else {
-						$('.login').addClass('test'); //倾斜特效
+				var login = $('input[name="login"]').val();
+				var pwd = $('input[name="pwd"]').val();
+				var code = $('input[name="code"]').val();
+				if(login == '') {
+					alert('请输入您的账号');
+				} else if(pwd == '') {
+					alert('请输入密码');
+				} else {
+					$('.login').addClass('test'); //倾斜特效
+					setTimeout(function() {
+						$('.login').addClass('testtwo'); //平移特效
+					}, 300);
+					setTimeout(function() {
+						$('.authent').show().animate({
+							right: -320
+						}, {
+							easing: 'easeOutQuint',
+							duration: 600,
+							queue: false
+						});
+						$('.authent').animate({
+							opacity: 1
+						}, {
+							duration: 200,
+							queue: false
+						}).addClass('visible');
+					}, 500);
+					//登陆
+					var JsonData = {
+						login: login,
+						pwd: pwd,
+						code: code
+					};
+					AV.User.logIn(JsonData.login, JsonData.pwd).then(function(loginedUser) {
 						setTimeout(function() {
-							$('.login').addClass('testtwo'); //平移特效
-						}, 300);
+							sessionStorage["username"] = JsonData.login;
+							sessionStorage["password"] = JsonData.pwd;
+							window.location.href = "index1.html"
+						}, 2400);
+
+					}, function(error) {
 						setTimeout(function() {
 							$('.authent').show().animate({
-								right: -320
+								right: 90
 							}, {
 								easing: 'easeOutQuint',
 								duration: 600,
 								queue: false
 							});
 							$('.authent').animate({
-								opacity: 1
+								opacity: 0
 							}, {
 								duration: 200,
 								queue: false
 							}).addClass('visible');
-						}, 500);
-						//登陆
-						var JsonData = {
-							login: login,
-							pwd: pwd,
-							code: code
-						};
-						AV.User.logIn(JsonData.login, JsonData.pwd).then(function(loginedUser) {
-							setTimeout(function() {
-								sessionStorage["username"]=JsonData.login;
-								sessionStorage["password"]=JsonData.pwd;
-								window.location.href = "index1.html"
-							}, 2400);
+							$('.login').removeClass('testtwo'); //平移特效
+						}, 2000);
+						setTimeout(function() {
+							$('.authent').hide();
+							$('.login').removeClass('test');
+							alert("xxx错误");
 
-						}, function(error) {
-							setTimeout(function() {
-								$('.authent').show().animate({
-									right: 90
-								}, {
-									easing: 'easeOutQuint',
-									duration: 600,
-									queue: false
-								});
-								$('.authent').animate({
-									opacity: 0
-								}, {
-									duration: 200,
-									queue: false
-								}).addClass('visible');
-								$('.login').removeClass('testtwo'); //平移特效
-							}, 2000);
-							setTimeout(function() {
-								$('.authent').hide();
-								$('.login').removeClass('test');
-								alert(adata);
-								
-							}, 2400);
-						});
-					}
-				})
+						}, 2400);
+					});
+				}
+
 			})
 		</script>
 	</body>
