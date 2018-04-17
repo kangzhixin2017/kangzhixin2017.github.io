@@ -1,3 +1,3 @@
-$(".aa").click(function(){
-	window.location.href = "index1.html"
+$(".fb-btn").click(function(){
+	window.location.href = "adminLogin.html"
 })
