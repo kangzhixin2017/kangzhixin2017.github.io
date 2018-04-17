@@ -20,10 +20,10 @@
 				appKey: APP_KEY
 			});
 			AV.User.logIn(sessionStorage["username"], sessionStorage["password"]).then(function(loginedUser) {
-				alert("k")
+
 				$("#body").show()
 			}, function(error) {
-				alert("kaaa")
+				window.location.href = "adminLogin.html"
 			})
 		</script>
 	</head>
