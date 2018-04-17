@@ -67,7 +67,7 @@
 					</div>
 				</div>
 				<div class='login_fields__submit'>
-					<input type='button' value='登录'>
+					<input id="loginad" type='button' value='登录'>
 				</div>
 			</div>
 			<div class='success'>
@@ -158,10 +158,10 @@
 					}, 200);
 				}
 			});
-			var open = 0;
-			layui.use('layer', function() {
-				//非空验证
-				$('input[type="button"]').click(function() {
+			//			var open = 0;
+			$("#loginad").click(function() {
+				layui.use('layer', function() {
+					//					alert("kangß");
 					var login = $('input[name="login"]').val();
 					var pwd = $('input[name="pwd"]').val();
 					var code = $('input[name="code"]').val();
@@ -170,8 +170,6 @@
 					} else if(pwd == '') {
 						ErroAlert('请输入密码');
 					} else {
-						//认证中..
-						fullscreen();
 						$('.login').addClass('test'); //倾斜特效
 						setTimeout(function() {
 							$('.login').addClass('testtwo'); //平移特效
@@ -191,102 +189,50 @@
 								queue: false
 							}).addClass('visible');
 						}, 500);
-
 						//登陆
 						var JsonData = {
 							login: login,
 							pwd: pwd,
 							code: code
 						};
-						//此处做为ajax内部判断
-						var url = "";
 						AV.User.logIn(JsonData.login, JsonData.pwd).then(function(loginedUser) {
-							url = "Ajax/Login";
-							AjaxPost(url, JsonData,
-								function() {
-									//ajax加载中
-								},
-								function(data) {
-									//ajax返回 
-									//认证完成
-									setTimeout(function() {
-										$('.authent').show().animate({
-											right: 90
-										}, {
-											easing: 'easeOutQuint',
-											duration: 600,
-											queue: false
-										});
-										$('.authent').animate({
-											opacity: 0
-										}, {
-											duration: 200,
-											queue: false
-										}).addClass('visible');
-										$('.login').removeClass('testtwo'); //平移特效
-									}, 2000);
-									setTimeout(function() {
-										$('.authent').hide();
-										$('.login').removeClass('test');
-										if(data.Status == 'ok') {
-											//登录成功
-											alert(data)
-											window.location.href = "index1.html";
-											
-										} else {
-											alert(data)
-											AjaxErro(data);
-										}
-									}, 2400);
-								})
-						}, function(error) {
-							url = "Ajax/LoginFalse";
-							AjaxPost(url, JsonData,
-								function() {
-									//ajax加载中
-								},
-								function(data) {
-									//ajax返回 
-									//认证完成
-									setTimeout(function() {
-										$('.authent').show().animate({
-											right: 90
-										}, {
-											easing: 'easeOutQuint',
-											duration: 600,
-											queue: false
-										});
-										$('.authent').animate({
-											opacity: 0
-										}, {
-											duration: 200,
-											queue: false
-										}).addClass('visible');
-										$('.login').removeClass('testtwo'); //平移特效
-									}, 2000);
-									setTimeout(function() {
-										$('.authent').hide();
-										$('.login').removeClass('test');
-										if(data.Status == 'ok') {
-											//登录成功
-											window.location.href = "index1.html";
-										} else {
-									var adata=		{
-						"Status": "Erro",
-						"Erro": "账号名或密码或验证码有误aaaaaa"
-					}
-											AjaxErro(adata);
-										}
-									}, 2400);
-								})
-						});
+							setTimeout(function() {
+								sessionStorage["username"]=JsonData.login;
+								sessionStorage["password"]=JsonData.pwd;
+								window.location.href = "index1.html"
+							}, 2400);
 
+						}, function(error) {
+							setTimeout(function() {
+								$('.authent').show().animate({
+									right: 90
+								}, {
+									easing: 'easeOutQuint',
+									duration: 600,
+									queue: false
+								});
+								$('.authent').animate({
+									opacity: 0
+								}, {
+									duration: 200,
+									queue: false
+								}).addClass('visible');
+								$('.login').removeClass('testtwo'); //平移特效
+							}, 2000);
+							setTimeout(function() {
+								$('.authent').hide();
+								$('.login').removeClass('test');
+							var adata = {
+									"Status": "Erro",
+									"Erro": "账号名或密码或验证码有误"
+								}
+								AjaxErro(adata);
+								
+							}, 2400);
+						});
 					}
 				})
 			})
-			var fullscreen = function() {
-				elem = document.body;
-			}
 		</script>
 	</body>
 
