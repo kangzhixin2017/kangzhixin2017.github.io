@@ -1,53 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>kangsir web</title>
 		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<!-- 存储服务 -->
-<script src="//cdn1.lncld.net/static/js/3.6.5/av-min.js"></script>
-<!-- 实时消息服务 -->
-<script type="text/javascript">
-	if(sessionStorage["name"]!=123){
-		window.location.href = "http://www.kangzhixin.cn"
-	}
-	var APP_ID = 'gd6yXEXG9rF06B9ljsdDyIfG-gzGzoHsz';
-var APP_KEY = 'QLl9CVxF9aE4l7gv5pHvH0KP';
-var { Query, User } = AV;
-AV.init({
-  appId: APP_ID,
-  appKey: APP_KEY
-});
-</script>
-
+		<script src="//cdn1.lncld.net/static/js/3.6.5/av-min.js"></script>
+		<!-- 实时消息服务 -->
+		<script type="text/javascript">
+			var APP_ID = 'gd6yXEXG9rF06B9ljsdDyIfG-gzGzoHsz';
+			var APP_KEY = 'QLl9CVxF9aE4l7gv5pHvH0KP';
+			var {
+				Query,
+				User
+			} = AV;
+			AV.init({
+				appId: APP_ID,
+				appKey: APP_KEY
+			});
+			AV.User.logIn("aa", sessionStorage["password"]).then(function(loginedUser) {
+			}, function(error) {
+				window.location.href = "http://www.kangzhixin.cn/adminLogin.html";
+			});
+		</script>
 
 	</head>
+
 	<body>
 		<h1 style="width: 100%;text-align: center;">Wellcome to KangSir Web</h1>
 		<p style="width: 100%;text-align: right;color: dodgerblue" title="QQ：315206916">from:康志鑫</p>
-		      <form class="form-signin">
-        <h2 class="form-signin-heading">登录</h2>
-        <label for="inputUsername" class="sr-only">username</label>
-        <input type="username" id="inputUsername" class="form-control" placeholder="username" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
-      </form>
-      <script type="text/javascript">
-function login() {
-  var username = $('#inputUsername').val();
-  var password = $('#inputPassword').val();
-  AV.User.logIn(username, password).then(function (loginedUser) {
-alert("success");
-  }, function (error) {
-    alert("undefined");
-  });
-};
+		<form class="form-signin">
+			<h2 class="form-signin-heading">登录</h2>
+			<label for="inputUsername" class="sr-only">username</label>
+			<input type="username" id="inputUsername" class="form-control" placeholder="username" required autofocus>
+			<label for="inputPassword" class="sr-only">Password</label>
+			<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+		</form>
 
-  $(".form-signin").on('submit', function(e) {
-    e.preventDefault();
-    login();
-  });
-      </script>
 	</body>
+
 </html>
