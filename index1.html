@@ -23,6 +23,7 @@
 			alert(sessionStorage["password"])
 			alert(sessionStorage.getItem("aaa"))
 			alert(localStorage.getItem("bbb"))
+			alert(document.cookie)
 			
 			AV.User.logIn(sessionStorage["username"], sessionStorage["password"]).then(function(loginedUser) {
 
