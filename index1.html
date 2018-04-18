@@ -20,13 +20,16 @@
 				appKey: APP_KEY
 			});
 			var username = sessionStorage["username"];
-			alert(username)
-			AV.User.logIn(sessionStorage["username"], sessionStorage["password"]).then(function(loginedUser) {
-
-				$("#body").show()
-			}, function(error) {
+			var username = sessionStorage["password"];
+			if(typeof(username) == "undefined") {
 				window.location.href = "adminLogin.html"
-			})
+			} else {
+				AV.User.logIn(sessionStorage["username"], sessionStorage["password"]).then(function(loginedUser) {
+					$("#body").show()
+				}, function(error) {
+					window.location.href = "adminLogin.html"
+				})
+			}
 		</script>
 	</head>
 
