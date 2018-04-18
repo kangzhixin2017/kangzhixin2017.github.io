@@ -19,11 +19,6 @@
 				appId: APP_ID,
 				appKey: APP_KEY
 			});
-			alert(sessionStorage["username"])
-			alert(sessionStorage["password"])
-			alert(sessionStorage.getItem("aaa"))
-			alert(localStorage.getItem("bbb"))
-			alert(document.cookie)
 			var username = sessionStorage["username"];
 			alert(username)
 			AV.User.logIn(sessionStorage["username"], sessionStorage["password"]).then(function(loginedUser) {
