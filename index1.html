@@ -24,7 +24,8 @@
 			alert(sessionStorage.getItem("aaa"))
 			alert(localStorage.getItem("bbb"))
 			alert(document.cookie)
-			
+			var username = sessionStorage["username"];
+			alert(username)
 			AV.User.logIn(sessionStorage["username"], sessionStorage["password"]).then(function(loginedUser) {
 
 				$("#body").show()
