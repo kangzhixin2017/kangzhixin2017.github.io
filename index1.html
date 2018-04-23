@@ -31,20 +31,85 @@
 				})
 			}
 		</script>
+		<script>
+			$(document).ready(function() {
+				//				var s = window.screen;
+				//				var s = $("body").clientWidth;
+				window.onresize = function() {
+					var width = q.width = document.body.clientWidth;
+					var height = q.height = document.body.clientHeight;
+
+				}
+				var width = q.width = document.body.clientWidth;
+				var height = q.height = document.body.clientHeight;
+				//				alert("wid"+width+"h"+height);
+
+				var yPositions = Array(300).join(0).split('');
+				var ctx = q.getContext('2d');
+				var draw = function() {
+					colorStr = "";
+					//字符串的每一字符的范围  
+					var randomArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+					//产生一个六位的字符串  
+					for(var i = 0; i < 6; i++) {
+						//15是范围上限，0是范围下限，两个函数保证产生出来的随机数是整数  
+						colorStr += randomArr[Math.ceil(Math.random() * (15 - 0) + 0)];
+					}
+					ctx.fillStyle = 'rgba(0,0,0,.05)';
+					ctx.fillRect(0, 0, width, height);
+					ctx.fillStyle = "#" + colorStr;
+					ctx.font = '10pt Georgia';
+					yPositions.map(function(y, index) {
+						text = String.fromCharCode(1e2 + Math.random() * 33);
+						x = (index * 10) + 10;
+						q.getContext('2d').fillText(text, x, y);
+						if(y > Math.random() * 1e4) {
+							yPositions[index] = 0;
+						} else {
+							yPositions[index] = y + 10;
+						}
+					});
+				};
+				RunMatrix();
+
+				function RunMatrix() {
+					Game_Interval = setInterval(draw, 50);
+				}
+			});
+		</script>
 	</head>
 
-	<body style="display: none;" id="body">
-		<h1 style="width: 100%;text-align: center;">Wellcome to KangSir Web</h1>
-		<p style="width: 100%;text-align: right;color: dodgerblue" title="QQ：315206916">from:康志鑫</p>
-		<form class="form-signin">
-			<h2 class="form-signin-heading">登录</h2>
-			<label for="inputUsername" class="sr-only">username</label>
-			<input type="username" id="inputUsername" class="form-control" placeholder="username" required autofocus>
-			<label for="inputPassword" class="sr-only">Password</label>
-			<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
-		</form>
+	<body style="width: 100vw;height: 100vh;background-color: black; padding: 0;margin: 0;">
+		<canvas id="q" style="display: block;"></canvas>
+		<div class="footer" style="display: flex;justify-content: center;align-items: center; position: fixed;bottom: 0;left: 0;width: 100%;height: 100px;">
+			<textarea placeholder="请输入您遇到什么问题" class=" querstion " style="padding: 5px 20px 5px 20px; resize: none;outline: none;margin: 0;border: 3px black solid; width: 40%;height: 100%;font-size: 18px;"></textarea>
+
+			<div style="width: 20%;height: 50px;display: flex;justify-content: center;align-items: center;">
+				<button class="btn-submit" style="outline: none;width: 80%;height: 45px;background-color: red;border: none;border-radius: 7px;color: white;font-size: 20px;">提交</button>
+			</div>
+
+			<textarea placeholder="请输入您是怎么解决问题的" class=" answer " style="resize: none; outline: none; padding: 5px 20px 5px 20px;margin: 0;border: 3px black solid; width: 40%;height: 100%;font-size: 18px;"></textarea>
+		</div>
 
 	</body>
+	<script type="text/javascript">
+		$(".btn-submit").click(function() {
+			var questions = $(".querstion").val()
+			var answers = $(".answer").val()
+			var Question = AV.Object.extend('Question');
+			// 新建一个 Todo 对象
+			var question = new Question();
+			question.set('question', questions);
+			question.set('answer', answers);
+			question.save().then(function(todo) {
+				// 成功保存之后，执行其他逻辑.
+				alert('New object created with objectId: ' + todo.id);
+			}, function(error) {
+				// 异常处理
+				alert('Failed to create new object, with error message: ' + error.message);
+			});
+
+		})
+	</script>
 
 </html>

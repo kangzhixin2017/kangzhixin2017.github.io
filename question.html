@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,target-densitydpi=device-dpi,user-scalable=no,minimum-scale=1.0,maximum-scanle=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="//cdn1.lncld.net/static/js/3.6.5/av-min.js"></script>
+		<title>问题</title>
+		<style type="text/css">
+			.content {
+				width: 90%;
+				margin: 0 auto;
+				background-color: red;
+			}
+			
+			.content ul {
+				list-style: none;
+				padding: 0;
+			}
+		</style>
+		<script type="text/javascript">
+			var APP_ID = 'gd6yXEXG9rF06B9ljsdDyIfG-gzGzoHsz';
+			var APP_KEY = 'QLl9CVxF9aE4l7gv5pHvH0KP';
+			var {
+				Query,
+				User
+			} = AV;
+			AV.init({
+				appId: APP_ID,
+				appKey: APP_KEY
+			});
+
+			var query = new AV.Query('Question');
+			//query.get('5add903c9f545471fec5ea13').then(function (todo) {
+			//  // 成功获得实例
+			//  // todo 就是 id 为 57328ca079bc44005c2472d0 的 Todo 对象实例
+			//  alert(todo.get("question"))
+			//}, function (error) {
+			//  // 异常处理
+			//});
+			query.find().then(function(data) {
+				////查询的结果数据 data
+				////将data转成json格式
+				var json = JSON.parse(JSON.stringify(data));
+				console.log("云端数据为:");
+				console.log(json);
+				//				alert(json.length)
+				//				alert(json[0].question)
+				for(var i=0; i < json.length; i++) {
+//					$(".question").html(json[0].question)
+$('.ulll').append("<li>"+json[i].question+"</li>");
+				}
+
+			}, function(err) {
+				//错误信息 err
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="content">
+			<ul class="ulll">
+			</ul>
+		</div>
+	</body>
+
+</html>
