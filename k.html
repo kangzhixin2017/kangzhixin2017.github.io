@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CSS3垂直手风琴Accdion特效</title>
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+		<script src="//cdn1.lncld.net/static/js/3.6.5/av-min.js"></script>
+		<style type="text/css">
+			/*背景*/
+			
+			.demo {
+				padding: 2em 0;
+				background: #fff;
+			}
+			
+			a:hover,
+			a:focus {
+				text-decoration: none;
+				outline: none;
+			}
+			/*线*/
+			
+			#accordion:before {
+				content: "";
+				width: 1px;
+				height: 88%;
+				background: #550527;
+				position: absolute;
+				top: 20px;
+				left: 24px;
+				bottom: 5px;
+			}
+			
+			#accordion .panel {
+				border: none;
+				border-radius: 0;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+				margin: 0 0 12px 50px;
+				position: relative;
+			}
+			
+			#accordion .panel:before {
+				content: "";
+				width: 2px;
+				height: 100%;
+				background: linear-gradient(to bottom, #688e26 0%, #ff816a 100%);
+				position: absolute;
+				top: 0;
+				left: -2px;
+			}
+			
+			#accordion .panel-heading {
+				padding: 0;
+				background: #fff;
+				position: relative;
+			}
+			/*前面圆点*/
+			
+			#accordion .panel-heading:before {
+				content: "";
+				width: 15px;
+				height: 15px;
+				border-radius: 50px;
+				background: white;
+				border: 1px solid #550527;
+				position: absolute;
+				top: 50%;
+				left: -48px;
+				transform: translateY(-50%);
+			}
+			
+			#accordion .panel-title a {
+				display: block;
+				padding: 15px 55px 15px 30px;
+				font-size: 20px;
+				font-weight: 600;
+				color: #550527;
+				border: none;
+				margin: 0;
+				position: relative;
+			}
+			/*后面加减按钮*/
+			
+			#accordion .panel-title a:before,
+			#accordion .panel-title a.collapsed:before {
+				content: "\f068";
+				font-family: fontawesome;
+				width: 25px;
+				height: 25px;
+				line-height: 25px;
+				border-radius: 50%;
+				font-size: 15px;
+				font-weight: normal;
+				color: #688e26;
+				text-align: center;
+				border: 1px solid #688e26;
+				position: absolute;
+				top: 50%;
+				right: 25px;
+				transform: translateY(-50%);
+				transition: all 0.5s ease 0s;
+			}
+			
+			#accordion .panel-title a.collapsed:before {
+				content: "\f067";
+			}
+			
+			#accordion .panel-body {
+				padding: 0 30px 15px;
+				border: none;
+				font-size: 14px;
+				color: #305275;
+				line-height: 28px;
+			}
+		</style>
+		<script type="text/javascript">
+			var APP_ID = 'gd6yXEXG9rF06B9ljsdDyIfG-gzGzoHsz';
+			var APP_KEY = 'QLl9CVxF9aE4l7gv5pHvH0KP';
+			var {
+				Query,
+				User
+			} = AV;
+			AV.init({
+				appId: APP_ID,
+				appKey: APP_KEY
+			});
+			//访问数据
+			var query = new AV.Query('Question');
+			//			设置默认返回的条数
+			query.limit(10);
+			//			总页数
+			var sum = 0;
+			//			数据量
+			var counts = 0;
+			//			访问返回数据量
+			query.count().then(function(count) {
+				sum = Math.ceil(count / 10);
+				counts = count;
+				for(var j = sum; j > 0; j--) {
+					$('.footerli').after("<li onclick='jump(" + j + ")' class='btn-" + j + "'><a href='#'>" + j + "</a></li>");
+				}
+			}, function(error) {});
+			//分页逻辑实现
+			function jump(j) {
+				var page = (j - 1) * 10;
+				if(j == sum) {
+					$(".panel-default").hide()
+					query.skip(page);
+					query.limit(6);
+					query.find().then(function(data) {
+						////查询的结果数据 data
+						////将data转成json格式
+						var json = JSON.parse(JSON.stringify(data));
+//						console.log("云端数据为:");
+//						console.log(json);
+						for(var i = 0; i < counts - page; i++) {
+							$('.panel-group').append("<div class='panel panel-default'><div class='panel-heading' role='tab' id=''><h4 class='panel-title'><a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion' href='#collapse" + i + "' aria-expanded='true' aria-controls='collapseOne'>" + json[i].question + "</a></h4></div><div id='collapse" + i + "' class='panel-collapse collapse' role='tabpanel' aria-labelledby=''><div class='panel-body'><p>" + json[i].answer + "</p></div></div></div>");
+						}
+
+					}, function(err) {
+						//错误信息 err
+					});
+
+				} else {
+					var page = (j - 1) * 10;
+					$(".panel-default").hide()
+					query.skip(page);
+					query.limit(10);
+					query.find().then(function(data) {
+						////查询的结果数据 data
+						////将data转成json格式
+						var json = JSON.parse(JSON.stringify(data));
+//						console.log("云端数据为:");
+//						console.log(json);
+						for(var i = 0; i < 10; i++) {
+							$('.panel-group').append("<div class='panel panel-default'><div class='panel-heading' role='tab' id=''><h4 class='panel-title'><a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion' href='#collapse" + i + "' aria-expanded='true' aria-controls='collapseOne'>" + json[i].question + "</a></h4></div><div id='collapse" + i + "' class='panel-collapse collapse' role='tabpanel' aria-labelledby=''><div class='panel-body'><p>" + json[i].answer + "</p></div></div></div>");
+						}
+
+					}, function(err) {
+						//错误信息 err
+					});
+				}
+			}
+			//			起始数据加载
+			query.find().then(function(data) {
+				////查询的结果数据 data
+				////将data转成json格式
+				var json = JSON.parse(JSON.stringify(data));
+//				console.log("云端数据为:");
+//				console.log(json);
+				for(var i = 0; i < 10; i++) {
+					$('.panel-group').append("<div class='panel panel-default'><div class='panel-heading' role='tab' id=''><h4 class='panel-title'><a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion' href='#collapse" + i + "' aria-expanded='true' aria-controls='collapseOne'>" + json[i].question + "</a></h4></div><div id='collapse" + i + "' class='panel-collapse collapse' role='tabpanel' aria-labelledby=''><div class='panel-body'><p>" + json[i].answer + "</p></div></div></div>");
+
+				}
+
+			}, function(err) {
+				//错误信息 err
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="jq22-container">
+			<div class="demo">
+				<div class="container">
+					<div class="row">
+						<div class=" col-md-12">
+							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div style="display: flex;justify-content: center;align-items: center;width: 100%;">
+			<nav aria-label="Page navigation">
+				<ul class="pagination pagination pagination-lg">
+					<li class="footerli">
+						<a href="#" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>
+
+					<li>
+						<a href="#" aria-label="Next" onclick="jump()">
+							<span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+		<script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+	</body>
+
+</html>

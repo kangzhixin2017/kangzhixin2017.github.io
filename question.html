@@ -12,12 +12,18 @@
 			.content {
 				width: 90%;
 				margin: 0 auto;
-				background-color: red;
+				/*background-color: red;*/
 			}
 			
 			.content ul {
 				list-style: none;
 				padding: 0;
+			}
+			.con-ul li:nth-of-type(2n+1){
+				background-color: white;
+			}
+			.con-ul li:nth-of-type(2n+0){
+				background-color: #7ad328;
 			}
 		</style>
 		<script type="text/javascript">
@@ -50,20 +56,29 @@
 				//				alert(json[0].question)
 				for(var i=0; i < json.length; i++) {
 //					$(".question").html(json[0].question)
-$('.ulll').append("<li>"+json[i].question+"</li>");
+                    $('.con-ul').append("<li>"+json[i].question+"</li>"+"<li class='ans"+i+" an'>"+json[i].answer+"</li>");
+                   
 				}
+				$(".an").hide()
 
 			}, function(err) {
 				//错误信息 err
 			});
+			
 		</script>
 	</head>
 
 	<body>
 		<div class="content">
-			<ul class="ulll">
+			<ul class="con-ul">
 			</ul>
 		</div>
+		<button class="lk">a</button>
 	</body>
-
+<script type="text/javascript">
+	 $(".lk").click(function(){
+                    $(".ans1").show()
+                   });
+	 
+</script>
 </html>
