@@ -151,7 +151,7 @@
 			function jump(j) {
 				var page = (j - 1) * 10;
 				if(j == sum) {
-					$(".panel-default").hide()
+					$(".panel-default").children().remove()
 					query.skip(page);
 					query.limit(counts-page);
 					query.find().then(function(data) {
@@ -170,7 +170,7 @@
 
 				} else {
 					var page = (j - 1) * 10;
-					$(".panel-default").hide()
+					$(".panel-default").children().remove()
 					query.skip(page);
 					query.limit(10);
 					query.find().then(function(data) {
