@@ -161,7 +161,7 @@
 //						console.log("云端数据为:");
 //						console.log(json);
 						for(var i = 0; i < counts - page; i++) {
-							$('.panel-group').append("<div class='panel panel-default'><div class='panel-heading' role='tab' id=''><h4 class='panel-title'><a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion' href='#collapse" + i + "' aria-expanded='true' aria-controls='collapseOne'>" + json[i].question + "</a></h4></div><div id='collapse" + i + "' class='panel-collapse collapse' role='tabpanel' aria-labelledby=''><div class='panel-body'><p>" + json[i].answer + "</p></div></div></div>");
+							$('.panel-group').append("<div class='panel panel-default'><div class='panel-heading' role='tab' id=''><h4 class='panel-title'><a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion' href='#collapse"+j + i + "' aria-expanded='true' aria-controls='collapseOne'>" + json[i].question + "</a></h4></div><div id='collapse"+j + i + "' class='panel-collapse collapse' role='tabpanel' aria-labelledby=''><div class='panel-body'><p>" + json[i].answer + "</p></div></div></div>");
 						}
 
 					}, function(err) {
@@ -180,7 +180,7 @@
 //						console.log("云端数据为:");
 //						console.log(json);
 						for(var i = 0; i < 10; i++) {
-							$('.panel-group').append("<div class='panel panel-default'><div class='panel-heading' role='tab' id=''><h4 class='panel-title'><a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion' href='#collapse" + i + "' aria-expanded='true' aria-controls='collapseOne'>" + json[i].question + "</a></h4></div><div id='collapse" + i + "' class='panel-collapse collapse' role='tabpanel' aria-labelledby=''><div class='panel-body'><p>" + json[i].answer + "</p></div></div></div>");
+							$('.panel-group').append("<div class='panel panel-default'><div class='panel-heading' role='tab' id=''><h4 class='panel-title'><a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion' href='#collapse" +j+ i + "' aria-expanded='true' aria-controls='collapseOne'>" + json[i].question + "</a></h4></div><div id='collapse" +j+ i + "' class='panel-collapse collapse' role='tabpanel' aria-labelledby=''><div class='panel-body'><p>" + json[i].answer + "</p></div></div></div>");
 						}
 
 					}, function(err) {
