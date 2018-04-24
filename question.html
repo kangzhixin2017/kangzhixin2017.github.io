@@ -153,7 +153,7 @@
 				if(j == sum) {
 					$(".panel-default").hide()
 					query.skip(page);
-					query.limit(6);
+					query.limit(counts-page);
 					query.find().then(function(data) {
 						////查询的结果数据 data
 						////将data转成json格式

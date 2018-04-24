@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery弹性展开收缩菜单插件gooey.js - 非凡图库</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
+<link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+<link rel="stylesheet" href="css/gooey.min.css">
+<link rel="stylesheet" href="css/livedemo.css">
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="js/gooey.min.js"></script>
+<style>
+.prettyprint ol.linenums > li {
+	list-style-type: decimal;
+}
+</style>
+</head>
+<body>
+<script>
+	$(function($) {
+
+$("#gooey-round").gooeymenu({
+			bgColor: "#68d099",
+			contentColor: "white",
+			style: "circle",
+			horizontal: {
+				menuItemPosition: "spaced"
+			},
+			vertical: {
+				menuItemPosition: "spaced",
+				direction: "up"
+			},
+			circle: {
+				radius: 85
+			},
+			margin: "small",
+			size: 80,
+			bounce: true,
+			bounceLength: "small",
+			transitionStep: 100,
+			hover: "#5dbb89"
+		});
+})
+</script>
+
+<div class="container">
+
+
+	<div class="section-cont" id="round">
+		
+<div class="row">
+	<div class="col-md-5 col-xs-12 col-sm-6 round-example">
+
+		<nav id="gooey-round">
+<input type="checkbox" class="menu-open" name="menu-open3" id="menu-open3"/>
+<label class="open-button" for="menu-open3">
+<span class="burger burger-1"></span>
+<span class="burger burger-2"></span>
+<span class="burger burger-3"></span>
+</label>
+
+<a href="#" class="gooey-menu-item"><i class="fa fa-train"></i>sad</a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-bicycle"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-rocket"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-automobile"></i> </a>
+<a href="#" class="gooey-menu-item"> <i class="fa fa-plane"></i> </a>
+</nav>
+	</div>
+	<div class="col-md-7 col-xs-12 code-example">
+		 
+</div>
+	
+	
+</div>
+
+
+</body>
+</html>
