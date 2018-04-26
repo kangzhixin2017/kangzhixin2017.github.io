@@ -18,19 +18,8 @@
 				display: block;
 				margin-top: -20px;
 			}
-			.title{
-				font-size: 20px;
-				font-weight: 600;
-				font-family: "微软雅黑";
-			}
-			.information{
-				font-size: 16px;
-				padding-left: 20px;
-				display: flex;
-				align-content: center;
-			}
-			.information:before{
-				content: "●";
+			li{
+				list-style: none;
 			}
 		</style>
 	</head>
@@ -96,10 +85,11 @@ body{
 .contentEidtor{
 	position: fixed;
 	border: 1px solid white;
-	width: 95vw;
+	width: 94vw;
 	height: 45vh;
 	background-color: white;
 	top:50vh;
+	left:3vw;
 }
 /*
  * 
@@ -109,29 +99,26 @@ body{
 		</p>
 		<p class="pp" style="display: none;">
 #个人信息（Personal Info）
-$姓名（Name）：康志鑫
-$年龄（Age）:23岁
-$籍贯（Place Of Birth）:福建厦门
-
+!姓名（Name）：康志鑫~
+!年龄（Age）:23岁~
+!籍贯（Place Of Birth）:福建厦门~
 
 #基础技能（Basic Skill）
-%!熟练掌握办公工具Photoshop、Word、Excel、PPt等~
+!熟练掌握办公工具Photoshop、Word、Excel、PPt等~
 !熟悉视频制作工具Pr ~^
 
-
 #专业技能（Professional Skill）
-%!熟悉Java开发语言和底层开发语言C、C++~
+!熟悉Java开发语言和底层开发语言C、C++~
 !熟悉HTML5的CSS和JavaScript以及Jquery等插件~
 !熟悉Golang语言、angularjs和ionic跨平台开发框架~
 !熟悉IOS开发的语言Object-c和swift~
 !熟悉SQLServer的增删改查~
 !了解OSI七层模型.TCP/IP协议体系.路由.交换.无线技术~
 !对于网络安全中的arp攻击、中间攻击和泛洪攻击有清晰的了解~
-!有处理计算机故障的解决能力~^
-
+!有处理计算机故障的解决能力~
 
 #在校经历（Experience In School）
-%!2018.03 ~ 至 今		在厦门运七软件科技有限公司实习~
+!2018.03 ~ 至 今		在厦门运七软件科技有限公司实习~
 !2017.07~2017.09  	厦门云推软件科技有限公司实习~
 !2016.07~2016.08  	参加国科CCNA课程培训，考核通过~
 !2016.01~2016.02  	集美万达影院兼职（影务）~
@@ -140,39 +127,32 @@ $籍贯（Place Of Birth）:福建厦门
 !2015.09~2016.06  	担任诚毅学院网络技术协会企划部副部长~
 !2015.07~2015.08  	参加网盒培训（Android软件开发），考核通过~
 !2014 ~2015学 年  	获集美大学运动会学生排球比赛第一名~
-!2014.09~2015.06  	加入诚毅学院院学生会学习部~^
-
+!2014.09~2015.06  	加入诚毅学院院学生会学习部~
 
 #项目经历（Project Experience）
-%!2018.03~至今      	参与厦门运七软件科技有限公司的项目开发，广州优维科技的基于golang模板的微信公众号营销平台开发，主要负责前端开发以及数据的对接~
-!2017.03~2017.05  	参与厦门云推软件科技有限公司项目开发（巢享共享洗车app）~^
-
+!2018.03~至今      	参与厦门运七软件科技有限公司的项目开发，广州优维科技的基于golang模板的微信公众号营销平台开发，主要负责前端开发以及数据的对接~
+!2017.03~2017.05  	参与厦门云推软件科技有限公司项目开发（巢享共享洗车app）~
 
 #教育背景（Education）
-$学校（College）:集美大学诚毅学院
-$专业（Major）：计算机科学与技术
-$学历（Degree）：本科
-$多次获得学院的二等奖学金和三等奖学金
-
+!学校（College）:集美大学诚毅学院~
+!专业（Major）：计算机科学与技术~
+!学历（Degree）：本科~
+!多次获得学院的二等奖学金和三等奖学金~
 
 #培训经历（Training Experience）
-$公司（Company）：厦门祥讯
-$培训课程（Training Course）：IOS
-
+!公司（Company）：厦门祥讯~
+!培训课程（Training Course）：IOS~
 
 #兴趣爱好（Hobby）
-$每周坚持跑步，打排球，健身
-$喜欢动手实践和课外阅读
-
+!每周坚持跑步，打排球，健身~
+!喜欢动手实践和课外阅读~
 
 #联系方式
-$手机（Cellphone）：13063065657
-$扣扣（Q Q）：315206916
-$邮箱（E mail）：315206916@qq.com
-$微信（WeChat）：13063065657
-$个人网站（Web）：http://kangzhixin.cn
-
-
+!手机（Cellphone）：13063065657~
+!扣扣（Q Q）：315206916~
+!邮箱（E mail）：315206916@qq.com~
+!微信（WeChat）：13063065657~
+!个人网站（Web）：http://kangzhixin.cn~
 		</p>
 		<p class="p" style="display: none;">
 /*
@@ -180,7 +160,27 @@ $个人网站（Web）：http://kangzhixin.cn
  * 没事我来给加点样式吧
  * 上代码。。。
  * */
-
+/*设置一下标题*/
+.title{
+	font-size: 20px;
+	font-family: "微软雅黑";
+}
+/*加粗一下*/
+.title{
+	font-weight: 700;
+}
+/*有点贴边框*/
+.title{
+	padding-left: 10px;
+}
+/*内容加下样式吧*/
+li{
+	padding-left: 30px;
+}
+/*加个圆点是不是会好看点*/
+li{
+	list-style: disc;
+}
 		</p>
 		<div class="body-1">
 			<pre class="eidtor" id="string" style="overflow-y: scroll;">
@@ -200,6 +200,7 @@ $个人网站（Web）：http://kangzhixin.cn
 			var k = 0;
 			var index = 0;
 			var name = "";
+			var m = 0;
 
 			var str = $(".ppp").html();
 			console.log(str)
@@ -220,7 +221,7 @@ $个人网站（Web）：http://kangzhixin.cn
 					if(k == 0) {
 						str = $(".pp").html();
 						k++;
-						a = setInterval(resume, 3);
+						a = setInterval(resume, 30);
 					}
 
 				}
@@ -262,7 +263,7 @@ $个人网站（Web）：http://kangzhixin.cn
 				}
 				index++;
 			}
-			a = setInterval(type, 3);
+			a = setInterval(type, 30);
 
 			function resume() {
 				if(index >= str.length) {
@@ -273,12 +274,13 @@ $个人网站（Web）：http://kangzhixin.cn
 					clearInterval(a);
 					str = $(".p").html();
 					$("#string").append("<span class='kang " + name + " kang" + fla + "'>");
-					a = setInterval(type, 3);
+					a = setInterval(type, 30);
 				}
 				if(str.substring(index, index + 1) == '#') {
 					fla++;
 					name = "title";
 					$("#string2").append("</span>");
+					m++;
 					$("#string2").append("<span class='kang " + name + " kang2" + fla + "'>");
 					index++;
 				}else if(str.substring(index, index + 1) == '$'){
@@ -296,14 +298,15 @@ $个人网站（Web）：http://kangzhixin.cn
 				}else if(str.substring(index, index + 1) == '!'){
 					fla++;
 					name = "point";
-					$("#string2").append("<ul>");
-					$("#string2").append("<li class='kang " + name + " kang2" + fla + "'>");
+
+					$("#string2").append("<li class='kang " + name + " kang2" + fla + " ka" + m +"'>");
 					index++;
 				}else if(str.substring(index, index + 1) == '^'){
 					$("#string2").append("</ul>");
 					index++;
 				}else if(str.substring(index, index + 1) == '%'){
 					$("#string2").append("</span>");
+					$("#string2").append("<ul>");
 					index++;
 				}else if(str.substring(index, index + 1) == '~'){
 					$("#string2").append("</li>");
