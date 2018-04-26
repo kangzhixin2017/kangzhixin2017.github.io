@@ -16,6 +16,7 @@
 .kang0{
 	display: block;
 	margin-top: -20px;
+	
 }
 
 
@@ -47,7 +48,7 @@ body{
 /*好像有点高了*/
 .eidtor{
 	width: 90vw;
-	height: 45vh;
+	height: 40vh;
 	display:block;
 	margin: 0 auto;
 }
@@ -62,12 +63,11 @@ body{
 .classname{
 	color: yellow;
 }
-
-.colon{
-	color: orange;
-}
 .property{
 	color: #0cf;
+}
+.colon{
+	color: orange;
 }
 .cdata{
 	color: white;
@@ -77,7 +77,15 @@ body{
 	perspective: 200px;
 }
 .eidtor{
-	transform: rotateX(-1deg) ;
+	transform: rotateX(-3deg) ;
+}
+/*下面我为自己准备一个编辑器来写简历*/
+.contentEidtor{
+	position: fixed;
+	background-color: white;
+	width: 95vw;
+	height: 45vh;
+	top:50vh;
 }
 	</p>
 	<div class="body-1">
@@ -86,7 +94,7 @@ body{
 	</div>
 		
 	<div class="body-2">
-		
+		<pre class="contentEidtor" id="string2" style="overflow-y: scroll;"></pre>
 	</div>
 
 	 <script>
@@ -96,8 +104,7 @@ body{
 //      每行的一个类标记
         var fla =0;
         var index = 0;
-        //代表是代码还是注释部分：注释为：zhushi
-        var name = "daima";
+        var name = "";
 
         var str =$(".ppp").html();
         console.log(str)
@@ -118,22 +125,16 @@ body{
             		fla++;
             		name = "prolog";
             		$("#string").append("</span>");
-
-//              $("#string").append(str.substring(index, index+1));
                 $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
-//              $(".stylecon").append(str.substring(index, index+1));
-                
             }else if((str.substring(index, index+1)=='.')&&(str.substring(index+1, index+3)!='cn')|| ((str.substring(index, index+1)=='*')&&(str.substring(index+1, index+2)=='{'))||(str.substring(index, index+4)=='body')){
             		fla++;
             		name = "classname";
             		$("#string").append("</span>");
-                
                 $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
             }else if((str.substring(index, index+1)=='{')|| (str.substring(index, index+1)=='}')){
             		fla++;
             		name = "brackets";
             		$("#string").append("</span>");
-                
                 $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
             }else if((str.substring(index, index+1)==':')||(str.substring(index, index+1)==';')){
             		fla++;
@@ -144,7 +145,6 @@ body{
             		fla++;
             		name = "property"; 
             		$("#string").append("</span>");
-                
                 $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
             }else if(str.substring(index-1, index)==':'){
             		fla++;
@@ -152,34 +152,14 @@ body{
             		$("#string").append("</span>");
                 $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
             }
-
                 $(".kang"+fla).append(str.substring(index, index+1));
                 $(".stylecon").append(str.substring(index, index+1));
             if(str.substring(index-1, index)=='\n'){
                 $("#string").scrollTop($("#string")[0].scrollHeight);
-            	
             }
-           
             index++;
-//          if ((str.substring(index, ++index) == '\n')) {
-//          		if((str.substring(index+1, index+2) == '*')&&(str.substring(index+2, index+3) != '{')||(str.substring(index, index+1) == '/')){
-//          			name ="zhushi";
-//          		}else if((str.substring(index+1, index+2) == '.')){
-//          			alert("a");
-//          			name ="maohao";
-//          		}
-//              fla++;
-//              $("#string").append("</span>");
-//              $("#string").append(str.substring(index-1, index));
-//              $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
-//          } else {
-//              $("#string").scrollTop($("#string")[0].scrollHeight);
-//              $(".kang"+fla).append(str.substring(index-1, index));
-//              $(".stylecon").append(str.substring(index-1, index));
-//          }
-
        }
-            a = setInterval(type, 50);
+            a = setInterval(type, 5);
        
     </script>
 </body>
