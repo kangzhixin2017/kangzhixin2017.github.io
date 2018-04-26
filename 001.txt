@@ -1,0 +1,70 @@
+/*
+ * 我是康志鑫
+ * 个人网站 ：http://kangzhixin.cn
+ * 
+ * 前几天看到一份简历
+ * 很牛*的样子
+ * 我也动手做了一下
+ * 废话少说，上代码 */
+/*首先给所有元素加上过渡*/
+*{
+	transition: all .3s;
+}
+/*我们换点背景*/
+body{
+	background-color: rgb(0,33,51);
+	color: rgb(222,222,222);
+}
+/*加个边框*/
+.eidtor{
+	border: 1px solid;
+}
+/*好像有点高了*/
+.eidtor{
+	width: 90vw;
+	height: 40vh;
+	display:block;
+	margin: 0 auto;
+}
+/*文字太挤边框了*/
+.eidtor{
+	padding: 10px;
+}
+/*设置下代码高亮*/
+.prolog,.brackets{
+	color: #aaa;
+}
+.classname{
+	color: yellow;
+}
+.property{
+	color: #0cf;
+}
+.colon{
+	color: orange;
+}
+.cdata{
+	color: white;
+}
+/*增加点立体感吧*/
+body{
+	perspective: 200px;
+}
+.eidtor{
+	transform: rotateX(-3deg) ;
+}
+/*下面我为自己准备一个编辑器来写简历*/
+.contentEidtor{
+	position: fixed;
+	border: 1px solid white;
+	width: 94vw;
+	height: 45vh;
+	background-color: white;
+	top:50vh;
+	left:3vw;
+}
+/*
+ * 
+ * 好的,上面铺垫了这么多,接下来我要开始写简历了
+ * 
+ * */
