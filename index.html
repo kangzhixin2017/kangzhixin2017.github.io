@@ -18,18 +18,17 @@
 
 	<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 	<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
-		// 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器  
-var useragent = navigator.userAgent;
-if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
+	
+		<!--// 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器  
+//var useragent = navigator.userAgent;
+//if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
     // 这里警告框会阻塞当前页面继续加载  
-   alert('已禁止本次访问：您必须使用微信内置浏览器访问本页面！');
+// alert('已禁止本次访问：您必须使用微信内置浏览器访问本页面！');
     // 以下代码是用javascript强行关闭当前页面  
 //  var opened = window.open('about:blank', '_self');
 //  opened.opener = null;
 //  opened.close();
-}
-	</script>
+//}-->
 </head>
 
 <body>
@@ -69,8 +68,10 @@ if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
 			  <div class="col-md-9">
 				  <h2>Kang Zhixin</h2>
 				  <p>Welcome to my <em>personal website</em>！ I will show personal information here. <em>Please contact us</em> if you have any questions.<em> thanks</em></p>
-				  <div class="main-btn"><a>Read More</a></div>
-				  <div class="fb-btn"><a target="_blank">MY Page</a></div>
+				  <div class="main-btn readmore"><a>Read More</a></div>
+				  <div class="main-btn resume"><a>Resume</a></div>
+				  <div class="fb-btn admin"><a target="_blank">Admin</a></div>
+				  
 			  </div>
 		  </div>
 		</div>

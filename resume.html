@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,target-densitydpi=device-dpi,user-scalable=no,minimum-scale=1.0,maximum-scanle=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	
+	<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>-->
+	
+<!--<link rel="stylesheet" type="text/css" href="snippet20160304/prism.css"/>-->
+<!--<script src="snippet20160304/prism.js" type="text/javascript" charset="utf-8"></script>-->
+	<!--<script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>-->
+	<title>000</title>
+	<style type="text/css" class="stylecon">
+.kang0{
+	display: block;
+	margin-top: -20px;
+}
+
+	</style>
+</head>
+<body style="padding: 0;margin: 0;">
+<p class="ppp" style="display: none;padding: 0;margin: 0;">
+/*
+ * 我是康志鑫
+ * 个人网站 ：http://kangzhixin.cn
+ * 
+ * 前几天看到一份简历
+ * 很牛*的样子
+ * 我也动手做了一下
+ * 废话少说，上代码 */
+/*首先给所有元素加上过渡*/
+*{
+	transition: all 1s;
+}
+/*加个边框*/
+.cssstyle{
+	border: 1px solid black;
+}
+/*加个背景*/
+.cssstyle{
+	background-color: yellow;
+}
+/*好像有点大*/
+.cssstyle{
+	width: 80%;
+	height: 80px;
+}
+/*增加点立体感吧*/
+.cssstyle{
+	/*transform: rotate(-4deg);*/
+	transform: rotateZ(-2deg);
+}
+	</p>
+	<div class="body-1">
+		<pre class="cssstyle" id="string" style="overflow-y: scroll;">
+		</pre>
+	</div>
+		
+	<div class="body-2">
+		
+	</div>
+
+	 <script>
+//	 	定时器
+        var a;
+//      每行的一个类标记
+        var fla =0;
+        var index = 0;
+        //代表是代码还是注释部分：注释为：zhushi
+        var name = "daima";
+
+        var str =$(".ppp").html();
+        console.log(str)
+        $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
+        
+//      var str = "/nspireby http://strml.net/\n* 大家好，我是南方。\n* 我来写一份简历！\n*//* 首先给所有元素加上过渡效果\n*{\n	margin:0\n}\n";
+        function type() {
+        	
+            if (index >= str.length) {
+                index = 0;
+                clearInterval(a);
+            }
+            
+            if(str.substring(index, index+1)=='/'){
+            		fla++;
+            		name = "zhushi";
+            		$("#string").append("</span>");
+
+//              $("#string").append(str.substring(index, index+1));
+                $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
+//              $(".stylecon").append(str.substring(index, index+1));
+                
+            }else if((str.substring(index, index+1)=='.')|| (str.substring(index, index+1)=='*'&&str.substring(index+1, index+2)=='{')){
+            		fla++;
+            		name = "leiming";
+            		$("#string").append("</span>");
+                
+                $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
+            }else if((str.substring(index, index+1)=='{')|| (str.substring(index, index+1)=='}')){
+            		fla++;
+            		name = "huakuohao";
+            		$("#string").append("</span>");
+                
+                $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
+            }else if(str.substring(index, index+1)==':'){
+            		fla++;
+            		name = "maohao";
+            		$("#string").append("</span>");
+                $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
+            }else if(str.substring(index, index+1)==';'){
+            		fla++;
+            		name = "fenhao";
+            		$("#string").append("</span>");
+                
+                $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
+            }else if(str.substring(index, index+1)=='\t'){
+            		fla++;
+            		name = "shuxingming"; 
+            		$("#string").append("</span>");
+                
+                $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
+            }
+
+                $(".kang"+fla).append(str.substring(index, index+1));
+                $(".stylecon").append(str.substring(index, index+1));
+            if(str.substring(index-1, index)=='\n'){
+                $("#string").scrollTop($("#string")[0].scrollHeight);
+            	
+            }
+            index++;
+//          if ((str.substring(index, ++index) == '\n')) {
+//          		if((str.substring(index+1, index+2) == '*')&&(str.substring(index+2, index+3) != '{')||(str.substring(index, index+1) == '/')){
+//          			name ="zhushi";
+//          		}else if((str.substring(index+1, index+2) == '.')){
+//          			alert("a");
+//          			name ="maohao";
+//          		}
+//              fla++;
+//              $("#string").append("</span>");
+//              $("#string").append(str.substring(index-1, index));
+//              $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
+//          } else {
+//              $("#string").scrollTop($("#string")[0].scrollHeight);
+//              $(".kang"+fla).append(str.substring(index-1, index));
+//              $(".stylecon").append(str.substring(index-1, index));
+//          }
+
+       }
+            a = setInterval(type, 100);
+       
+    </script>
+</body>
+</html>
+
