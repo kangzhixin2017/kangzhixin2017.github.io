@@ -38,9 +38,6 @@
 /*我们换点背景*/
 html,body{
 	background-color: rgb(0,33,51);
-}
-/*哎哟文字看不见了*/
-html,body{
 	color: rgb(222,222,222);
 }
 /*加个边框*/
@@ -76,6 +73,7 @@ body{
 	</div>
 
 	 <script>
+	 	var is = true;
 //	 	定时器
         var a;
 //      每行的一个类标记
@@ -90,7 +88,10 @@ body{
         
 //      var str = "/nspireby http://strml.net/\n* 大家好，我是南方。\n* 我来写一份简历！\n*//* 首先给所有元素加上过渡效果\n*{\n	margin:0\n}\n";
         function type() {
-        	
+        	 if( is && ($("body").css("background-color")=="rgb(0, 33, 51)")){
+            	    $("body").css("color","rgb(222,222,222)")
+            	    is = false;
+            }
             if (index >= str.length) {
                 index = 0;
                 clearInterval(a);
@@ -142,6 +143,7 @@ body{
                 $("#string").scrollTop($("#string")[0].scrollHeight);
             	
             }
+           
             index++;
 //          if ((str.substring(index, ++index) == '\n')) {
 //          		if((str.substring(index+1, index+2) == '*')&&(str.substring(index+2, index+3) != '{')||(str.substring(index, index+1) == '/')){
