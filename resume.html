@@ -18,10 +18,11 @@
 	margin-top: -20px;
 }
 
+
 	</style>
 </head>
-<body style="padding: 0;margin: 0;">
-<p class="ppp" style="display: none;padding: 0;margin: 0;">
+<body>
+<p class="ppp" style="display: none;">
 /*
  * 我是康志鑫
  * 个人网站 ：http://kangzhixin.cn
@@ -32,25 +33,37 @@
  * 废话少说，上代码 */
 /*首先给所有元素加上过渡*/
 *{
-	transition: all 1s;
+	transition: all .1s;
+}
+/*我们换点背景*/
+html,body{
+	background-color: rgb(0,33,51);
+}
+/*哎哟文字看不见了*/
+html,body{
+	color: rgb(222,222,222);
 }
 /*加个边框*/
 .cssstyle{
-	border: 1px solid black;
+	border: 1px solid;
 }
-/*加个背景*/
+/*文字好像太挤了*/
 .cssstyle{
-	background-color: yellow;
+	padding: 10px;
 }
-/*好像有点大*/
+/*好像有点高了*/
 .cssstyle{
-	width: 80%;
-	height: 80px;
+	width: 90vw;
+	height: 45vh;
+	display:block;
+	margin: 0 auto;
 }
 /*增加点立体感吧*/
+body{
+	perspective: 200px;
+}
 .cssstyle{
-	/*transform: rotate(-4deg);*/
-	transform: rotateZ(-2deg);
+	transform: rotateX(-1deg) ;
 }
 	</p>
 	<div class="body-1">
@@ -148,7 +161,7 @@
 //          }
 
        }
-            a = setInterval(type, 100);
+            a = setInterval(type, 5);
        
     </script>
 </body>
