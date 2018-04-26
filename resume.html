@@ -221,7 +221,7 @@ li{
 					if(k == 0) {
 						str = $(".pp").html();
 						k++;
-						a = setInterval(resume, 30);
+						a = setInterval(resume, 50);
 					}
 
 				}
@@ -266,7 +266,7 @@ li{
 				}
 				index++;
 			}
-			a = setInterval(type, 30);
+			a = setInterval(type, 50);
 
 			function resume() {
 				if(index >= str.length) {
@@ -277,7 +277,7 @@ li{
 					clearInterval(a);
 					str = $(".p").html();
 					$("#string").append("<span class='kang " + name + " kang" + fla + "'>");
-					a = setInterval(type, 30);
+					a = setInterval(type, 50);
 				}
 				if(str.substring(index, index + 1) == '#') {
 					fla++;
