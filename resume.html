@@ -36,17 +36,29 @@
 	transition: all .1s;
 }
 /*我们换点背景*/
-html,body{
+body{
 	background-color: rgb(0,33,51);
 	color: rgb(222,222,222);
+}
+/*设置下代码高亮*/
+.leiming{
+	color: yellow;
+}
+.huakuohao{
+	color: #aaa;
+}
+.maohao{
+	color: orange;
+}
+.shuxingming{
+	color: #0cf;
+}
+.neirong{
+	color: white;
 }
 /*加个边框*/
 .cssstyle{
 	border: 1px solid;
-}
-/*文字好像太挤了*/
-.cssstyle{
-	padding: 10px;
 }
 /*好像有点高了*/
 .cssstyle{
@@ -54,6 +66,10 @@ html,body{
 	height: 45vh;
 	display:block;
 	margin: 0 auto;
+}
+/*文字好像太挤了*/
+.cssstyle{
+	padding: 10px;
 }
 /*增加点立体感吧*/
 body{
@@ -106,7 +122,7 @@ body{
                 $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
 //              $(".stylecon").append(str.substring(index, index+1));
                 
-            }else if((str.substring(index, index+1)=='.')|| (str.substring(index, index+1)=='*'&&str.substring(index+1, index+2)=='{')){
+            }else if((str.substring(index, index+1)=='.')&&(str.substring(index+1, index+3)!='cn')|| ((str.substring(index, index+1)=='*')&&(str.substring(index+1, index+2)=='{'))||(str.substring(index, index+4)=='body')){
             		fla++;
             		name = "leiming";
             		$("#string").append("</span>");
@@ -118,22 +134,21 @@ body{
             		$("#string").append("</span>");
                 
                 $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
-            }else if(str.substring(index, index+1)==':'){
+            }else if((str.substring(index, index+1)==':')||(str.substring(index, index+1)==';')){
             		fla++;
             		name = "maohao";
             		$("#string").append("</span>");
-                $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
-            }else if(str.substring(index, index+1)==';'){
-            		fla++;
-            		name = "fenhao";
-            		$("#string").append("</span>");
-                
                 $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
             }else if(str.substring(index, index+1)=='\t'){
             		fla++;
             		name = "shuxingming"; 
             		$("#string").append("</span>");
                 
+                $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
+            }else if(str.substring(index-1, index)==':'){
+            		fla++;
+            		name = "neirong";
+            		$("#string").append("</span>");
                 $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
             }
 
