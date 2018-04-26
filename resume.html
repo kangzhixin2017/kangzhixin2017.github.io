@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	
 	<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
-	<!--<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>-->
+	<!--<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>-->
 	
 <!--<link rel="stylesheet" type="text/css" href="snippet20160304/prism.css"/>-->
 <!--<script src="snippet20160304/prism.js" type="text/javascript" charset="utf-8"></script>-->
@@ -16,10 +16,7 @@
 .kang0{
 	display: block;
 	margin-top: -20px;
-	
 }
-
-
 	</style>
 </head>
 <body>
@@ -52,7 +49,7 @@ body{
 	display:block;
 	margin: 0 auto;
 }
-/*文字好像太挤了*/
+/*文字太挤边框了*/
 .eidtor{
 	padding: 10px;
 }
@@ -87,6 +84,18 @@ body{
 	height: 45vh;
 	top:50vh;
 }
+/*
+ * 
+ * 好的,上面铺垫了这么多,接下来我要开始写简历了
+ * 
+ * */
+	</p>
+	<p class="pp" style="display: none;">
+lskd;lf
+askdlj
+垃圾水电费
+空间哦ier
+辽阔的积分
 	</p>
 	<div class="body-1">
 		<pre class="eidtor" id="string" style="overflow-y: scroll;">
@@ -118,7 +127,11 @@ body{
             }
             if (index >= str.length) {
                 index = 0;
+                fla =0;
+        			index = 0;
+        			name = "";
                 clearInterval(a);
+                a = setInterval(resume, 50);
             }
             
             if(str.substring(index, index+1)=='/'){
@@ -159,8 +172,12 @@ body{
             }
             index++;
        }
-            a = setInterval(type, 50);
-       
+            a = setInterval(type, 5);
+            function resume(){
+            		str =$(".pp").html();
+            		$(".contentEidtor").append(str.substring(index, index+1));
+            		index++;
+			}
     </script>
 </body>
 </html>
