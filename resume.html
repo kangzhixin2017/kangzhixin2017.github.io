@@ -40,47 +40,48 @@ body{
 	background-color: rgb(0,33,51);
 	color: rgb(222,222,222);
 }
-/*设置下代码高亮*/
-.leiming{
-	color: yellow;
-}
-.huakuohao{
-	color: #aaa;
-}
-.maohao{
-	color: orange;
-}
-.shuxingming{
-	color: #0cf;
-}
-.neirong{
-	color: white;
-}
 /*加个边框*/
-.cssstyle{
+.eidtor{
 	border: 1px solid;
 }
 /*好像有点高了*/
-.cssstyle{
+.eidtor{
 	width: 90vw;
 	height: 45vh;
 	display:block;
 	margin: 0 auto;
 }
 /*文字好像太挤了*/
-.cssstyle{
+.eidtor{
 	padding: 10px;
+}
+/*设置下代码高亮*/
+.prolog,.brackets{
+	color: #aaa;
+}
+.classname{
+	color: yellow;
+}
+
+.colon{
+	color: orange;
+}
+.property{
+	color: #0cf;
+}
+.cdata{
+	color: white;
 }
 /*增加点立体感吧*/
 body{
 	perspective: 200px;
 }
-.cssstyle{
+.eidtor{
 	transform: rotateX(-1deg) ;
 }
 	</p>
 	<div class="body-1">
-		<pre class="cssstyle" id="string" style="overflow-y: scroll;">
+		<pre class="eidtor" id="string" style="overflow-y: scroll;">
 		</pre>
 	</div>
 		
@@ -115,7 +116,7 @@ body{
             
             if(str.substring(index, index+1)=='/'){
             		fla++;
-            		name = "zhushi";
+            		name = "prolog";
             		$("#string").append("</span>");
 
 //              $("#string").append(str.substring(index, index+1));
@@ -124,30 +125,30 @@ body{
                 
             }else if((str.substring(index, index+1)=='.')&&(str.substring(index+1, index+3)!='cn')|| ((str.substring(index, index+1)=='*')&&(str.substring(index+1, index+2)=='{'))||(str.substring(index, index+4)=='body')){
             		fla++;
-            		name = "leiming";
+            		name = "classname";
             		$("#string").append("</span>");
                 
                 $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
             }else if((str.substring(index, index+1)=='{')|| (str.substring(index, index+1)=='}')){
             		fla++;
-            		name = "huakuohao";
+            		name = "brackets";
             		$("#string").append("</span>");
                 
                 $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
             }else if((str.substring(index, index+1)==':')||(str.substring(index, index+1)==';')){
             		fla++;
-            		name = "maohao";
+            		name = "colon";
             		$("#string").append("</span>");
                 $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
             }else if(str.substring(index, index+1)=='\t'){
             		fla++;
-            		name = "shuxingming"; 
+            		name = "property"; 
             		$("#string").append("</span>");
                 
                 $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
             }else if(str.substring(index-1, index)==':'){
             		fla++;
-            		name = "neirong";
+            		name = "cdata";
             		$("#string").append("</span>");
                 $("#string").append("<span class='kang "+name+" kang"+fla+"'>");
             }
