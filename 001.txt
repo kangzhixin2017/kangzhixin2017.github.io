@@ -56,12 +56,13 @@ body{
 /*下面我为自己准备一个编辑器来写简历*/
 .contentEidtor{
 	position: fixed;
+	z-index: 111;
 	border: 1px solid white;
 	width: 94vw;
-	height: 45vh;
+	height: 46vh;
 	background-color: white;
 	top:50vh;
-	left:3vw;
+	right:3vw;
 }
 /*
  * 

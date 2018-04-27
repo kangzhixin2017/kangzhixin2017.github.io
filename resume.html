@@ -5,10 +5,30 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,target-densitydpi=device-dpi,user-scalable=no,minimum-scale=1.0,maximum-scanle=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="stylesheet" type="text/css" href="css/kang0101010101010101010101.css"/>
+		<link rel="stylesheet" type="text/css" href="css/kang0101010101010101010101.css" />
 		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<!--<link rel="stylesheet" type="text/css" href="snippet20160304/prism.css"/>-->
 		<!--<script src="snippet20160304/prism.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="//cdn1.lncld.net/static/js/3.6.5/av-min.js"></script>
+		<script type="text/javascript">
+			var {
+				Query,
+				User
+			} = AV;
+			AV.init({
+				appId: APP_ID,
+				appKey: APP_KEY
+			});
+			var Question = AV.Object.extend('Num');
+			// 新建一个 Todo 对象
+			var question = new Question();
+			question.set('sum', "6");
+			question.save().then(function(todo) {
+
+			}, function(error) {
+
+			})
+		</script>
 		<title>个人简历</title>
 		<style type="text/css" class="stylecon">
 
@@ -16,6 +36,7 @@
 	</head>
 
 	<body>
+		<img class="imga" src="img/jianli.png" style="display: none;"/>
 		<div class="body-1">
 			<pre class="eidtor" id="string" style="overflow-y: scroll;">
 		</pre>

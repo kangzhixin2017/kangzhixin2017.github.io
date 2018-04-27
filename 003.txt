@@ -25,6 +25,15 @@ li{
 li{
 	list-style: disc;
 }
+/*好像还缺少一张个人头像*/
+.imga{
+	position: fixed;
+	z-index: 1111;
+	display: block!important;
+	height: 75px;
+	right: 3vw;
+	top: 52vh;
+}
 /*
  * 简历算是写完了。。。
  * 希望大神勿喷！
@@ -32,8 +41,7 @@ li{
  * 现在就读于集美大学诚毅学院
  * 未毕业
  * 在厦门运七软件有限公司实习
- * 其实我对所有语言都有涉及。。。。。
  * 简历中的技能并不是都精通啦
- * 这份简历会放在我的个人网站上。。。
- *					————BY KangSir
+ * 突然发现我毕业论文还没写，溜了溜了。
+ *				————BY KangSir
  * ^_^ !!!*/
