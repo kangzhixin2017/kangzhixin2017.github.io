@@ -62,7 +62,7 @@ body{
 	height: 46vh;
 	background-color: white;
 	top:50vh;
-	right:3vw;
+	right:2vw;
 }
 /*
  * 

@@ -31,7 +31,7 @@ li{
 	z-index: 1111;
 	display: block!important;
 	height: 65px;
-	right: 3vw;
+	right: 2vw;
 	top: 52vh;
 }
 /*
@@ -43,5 +43,5 @@ li{
  * 在厦门运七软件有限公司实习
  * 简历中的技能并不是都精通啦
  * 突然发现我毕业论文还没写，溜了溜了。
- *				————BY KangSir
+ *			————BY KangSir
  * ^_^ !!!*/

@@ -13,6 +13,7 @@
 !熟悉HTML5的CSS和JavaScript以及Jquery、Bootstrap等插件^
 !熟悉Golang语言、angularjs和ionic跨平台开发框架^
 !熟悉IOS开发的语言Object-c和swift^
+!熟悉微信公众号、微信小程序开发和微信JS-SDK^
 !熟悉SQLServer的增删改查^
 !了解OSI七层模型.TCP/IP协议体系.路由.交换.无线技术^
 !对于网络安全中的arp攻击、中间攻击和泛洪攻击有清晰的了解^
