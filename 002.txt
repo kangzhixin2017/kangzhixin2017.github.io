@@ -9,8 +9,8 @@
 !熟悉视频制作工具Pr ^
 
 #专业技能（Professional Skill）
-!熟悉Java开发语言和底层开发语言C、C++^
-!熟悉HTML5的CSS和JavaScript以及Jquery等插件^
+!熟悉Java、Php开发语言和底层开发语言C、C++^
+!熟悉HTML5的CSS和JavaScript以及Jquery、Bootstrap等插件^
 !熟悉Golang语言、angularjs和ionic跨平台开发框架^
 !熟悉IOS开发的语言Object-c和swift^
 !熟悉SQLServer的增删改查^

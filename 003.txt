@@ -30,7 +30,7 @@ li{
 	position: fixed;
 	z-index: 1111;
 	display: block!important;
-	height: 75px;
+	height: 65px;
 	right: 3vw;
 	top: 52vh;
 }
