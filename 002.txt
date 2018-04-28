@@ -41,17 +41,6 @@
 !学历（Degree）：本科^
 !奖学金（Scholarship）：多次获得学院的二等奖学金和三等奖学金^
 
-#培训经历（Training Experience）
-!公司（Company）：厦门祥讯^
-!培训课程（Training Course）：IOS^
-
-#兴趣爱好（Hobby）
-!每周坚持跑步，打排球，健身^
-!喜欢动手实践和课外阅读^
-
 #联系方式
-!手机（Cellphone）：13063065657^
-!扣扣（Q Q）：315206916^
-!邮箱（E-mail）：315206916@qq.com^
 !微信（WeChat）：13063065657^
 !个人网站（Web）：http://kangzhixin.cn^
