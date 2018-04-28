@@ -5,12 +5,11 @@
 !籍贯（Place Of Birth）:福建厦门^
 
 #基础技能（Basic Skill）
-!熟练掌握办公工具Photoshop、Word、Excel、PPt等^
-!熟悉视频制作工具Pr ^
+!熟练掌握工具Axure、Photoshop、Premiere、Bridge、Word、Excel、PPt等^
 
 #专业技能（Professional Skill）
-!熟悉Java、Php开发语言和底层开发语言C、C++^
-!熟悉HTML5的CSS和JavaScript以及Jquery、Bootstrap等插件^
+!熟悉Java、Php、C、C++^
+!熟悉HTML5的CSS、JavaScript以及Jquery、Bootstrap等插件^
 !熟悉Golang语言、angularjs和ionic跨平台开发框架^
 !熟悉IOS开发的语言Object-c和swift^
 !熟悉微信公众号、微信小程序开发和微信JS-SDK^
