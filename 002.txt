@@ -1,7 +1,6 @@
 
 #个人信息（Personal Info）
 !姓名（Name）：康志鑫^
-!年龄（Age）:23岁^
 !籍贯（Place Of Birth）:福建厦门^
 
 #基础技能（Basic Skill）
