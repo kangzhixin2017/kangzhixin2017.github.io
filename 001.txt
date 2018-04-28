@@ -57,9 +57,9 @@ body{
 	border: 1px solid white;
 	width: 94vw;
 	height: 46vh;
-	background-color: white;
 	top:50vh;
 	right:2vw;
+	background-color: white;
 }
 /*
  * 
