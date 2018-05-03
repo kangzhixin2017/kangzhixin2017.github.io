@@ -19,10 +19,12 @@
 				appId: APP_ID,
 				appKey: APP_KEY
 			});
+			var u = navigator.userAgent, app = navigator.appVersion;
 			var Question = AV.Object.extend('Num');
 			// 新建一个 Todo 对象
 			var question = new Question();
-			question.set('sum', "6");
+			question.set('userAgent', u);
+			question.set('appVersion', app);
 			question.save().then(function(todo) {
 
 			}, function(error) {
