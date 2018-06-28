@@ -18,7 +18,25 @@
 
 	<script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 	<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
-	
+			<script src="//cdn1.lncld.net/static/js/3.6.5/av-min.js"></script>
+		<script type="text/javascript">
+			var {
+				Query,
+				User
+			} = AV;
+			AV.init({
+				appId: APP_ID,
+				appKey: APP_KEY
+			});
+			var Question = AV.Object.extend('Home');
+			// 新建一个 Todo 对象
+			var question = new Question();
+			question.save().then(function(todo) {
+
+			}, function(error) {
+
+			})
+		</script>
 		<!--// 对浏览器的UserAgent进行正则匹配，不含有微信独有标识的则为其他浏览器  
 //var useragent = navigator.userAgent;
 //if (useragent.match(/MicroMessenger/i) != 'MicroMessenger') {
