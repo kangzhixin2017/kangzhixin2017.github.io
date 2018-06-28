@@ -8,3 +8,6 @@ $(".readmore").click(function(){
 $(".resume").click(function(){
 	window.location.href = "resume.html"
 })
+$("#zg").click(function(){
+	window.location.href = "video.js/index.html"
+})
