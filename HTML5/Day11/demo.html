@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>Bootstrap 使用</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+		<style type="text/css">
+			body {
+				padding: 20px;
+				font-size: 1.7rem;
+			}
+			.aaa{
+				padding: 0;
+				/*margin-left: -20px;*/
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div>
+
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active">
+					<a href="#home" aria-controls="home" role="tab" data-toggle="tab">首页</a>
+				</li>
+				<li role="presentation">
+					<a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">娱乐</a>
+				</li>
+				<li role="presentation">
+					<a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">新闻</a>
+				</li>
+				<li role="presentation">
+					<a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">服务</a>
+				</li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="home">
+					<ul>
+						<li>我是第1个元素</li>
+						<li>我是第2个元素</li>
+						<li>我是第3个元素</li>
+						<li>我是第4个元素</li>
+						<li>我是第5个元素</li>
+						<li>我是第6个元素</li>
+					</ul>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="profile">
+					<ol>
+						<li>我现在在厦门</li>
+						<li>这是我家</li>
+						<li>我很有钱</li>
+						<li>是土豪</li>
+					</ol>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="messages">
+					<ul>
+						<li>我是第1个元素</li>
+						<li>我是第2个元素</li>
+						<li>我是第3个元素</li>
+						<li>我是第4个元素</li>
+						<li>我是第5个元素</li>
+						<li>我是第6个元素</li>
+					</ul>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="settings">
+					<ol>
+						<li>我现在在厦门</li>
+						<li>这是我家</li>
+						<li>我很有钱</li>
+						<li>是土豪</li>
+					</ol>
+				</div>
+			</div>
+
+		</div>
+		</div>
+
+
+
+
+
+<div class="container">
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          我的小学同学
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+      	<ul class="list-group">
+  <li class="list-group-item">傻逼明珠</li>
+  <li class="list-group-item">吴亦凡</li>
+  <li class="list-group-item">鹿晗</li>
+  <li class="list-group-item">刘德华</li>
+  <li class="list-group-item">张学友</li>
+</ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          我的大学同学
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+      	<ul class="list-group">
+  <li class="list-group-item">
+    <span class="badge">14</span>
+    郭敬明
+  </li>
+   <li class="list-group-item">
+    <span class="badge">9</span>
+    于正
+  </li>
+   <li class="list-group-item">
+    <span class="badge">666</span>
+    胡歌
+  </li>
+   <li class="list-group-item">
+    <span class="badge">1</span>
+    袁弘
+  </li>
+</ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          我的女朋友们
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+      	<div class="list-group">
+  <a href="#" class="list-group-item active">
+    张雪迎
+  </a>
+  <a href="#" class="list-group-item">欧阳娜娜</a>
+  <a href="#" class="list-group-item">迪丽热巴</a>
+  <a href="#" class="list-group-item">安吉拉贝贝</a>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="aaa">
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="../Day10/image/1.jpg" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    <div class="item">
+      <img src="../Day1/images/13.jpg" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    <div class="item">
+      <img src="../Day10/image/3.jpg" alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    ...
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+		<script src="bootstrap/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

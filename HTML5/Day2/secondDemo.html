@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8" />
+	<title>简易日历</title>
+	<!--/*主要用于定义网页的样式*/-->
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		/*清除默认样式*/
+		html,body{
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		#box{
+			width: 680px;
+			height: 680px;
+			background-color: silver;
+			border: solid 1px silver;
+			margin: 50px auto;
+			border-radius: 10px;
+		}
+		ul{
+			width: 100%;
+			height: 450px;
+			/*background-color: red;*/
+		}
+		ul li{
+			list-style: none;
+			width: 140px;
+			height: 140px;
+			background-color: black;
+			border-radius:5px;
+			color: white;
+			line-height: 35px;
+			text-align: center;
+			/*浮动*/
+			float: left;
+			margin: 5px;
+			font-size: 20px;
+		}
+		
+		#day{
+			width: 80%;
+			height: 180px;
+			background-color: white;
+			margin: 0 auto;
+			border-radius: 10px;
+			font-size: 25px;
+			text-align: center;
+		}
+		#day div{
+			padding: 35px;
+			line-height: 55px;
+			/*隐藏元素*/
+			display: none;
+		}
+	</style>
+</head>
+	<!--只要用于布局网页 的结构-->
+<body>
+	<div id="box">
+		<ul>
+			<li>
+				<h3>1</h3>
+				JAN
+			</li>
+			<li>
+				<h3>2</h3>
+				FEB
+			</li>
+			<li>
+				<h3>3</h3>
+				MAR
+			</li>
+			<li>
+				<h3>4</h3>
+				APR
+			</li>
+			<li>
+				<h3>5</h3>
+				NAY
+			</li>
+			<li>
+				<h3>6</h3>
+				JUN
+			</li>
+			<li>
+				<h3>7</h3>
+				JUL
+			</li>
+			<li>
+				<h3>8</h3>
+				AUG
+			</li>
+			<li>
+				<h3>9</h3>
+				SEP
+			</li>
+			<li>
+				<h3>10</h3>
+				OCT
+			</li>
+			<li>
+				<h3>11</h3>
+				NOV
+			</li>
+			<li>
+				<h3>12</h3>
+				DEC
+			</li>
+			
+		</ul>
+		<section id="day">
+			<div>一月节日<br>元旦节：我们一起跨年！</div>
+			<div>二月节日<br>情人节：你们吃狗粮挑剔吗？</div>
+			<div>三月节日<br>妇女节：送给妈妈一个礼物！</div>
+			<div>四月节日<br>愚人节：假装不单身的样子！</div>
+			<div>五月节日<br>劳动节：热爱劳动最光荣!</div>
+			<div>六月节日<br>儿童节：这个节日你们要过吗？</div>
+			<div>七月节日<br>没节日：我们还当情人节过吧！</div>
+			<div>八月节日<br>建军节：那就为国家做点贡献吧！</div>
+			<div>九月节日<br>教师节：你们不需要买礼物！</div>
+			<div>十月节日<br>国庆节：一起去旅游吧！</div>
+			<div>十一月节日<br>双十一：马云是最帅的男人！</div>
+			<div>十二月节日<br>圣诞节：我收到了好多礼物！</div>
+		</section>
+	</div>
+	<!--javascript简称js，是一种弱类型的脚本语言-->
+	<script>
+		//获取元素,表示获取到所有的li
+		var li = document.querySelectorAll('li');
+//		console.log(li);
+		var box = document.querySelectorAll('section div');
+		for(var i = 0;i < li.length;i++){
+			//记录下标
+			li[i].index = i;
+			//表示时间的监听
+			//1 事件的类型
+			//2 事件监听的回调方法
+			li[i].addEventListener('mouseover',function(){
+				li[this.index].style.backgroundColor = "white";
+				li[this.index].style.color = "red";
+				box[this.index].style.display = 'block';
+			})
+			li[i].addEventListener('mouseout',function(){
+				li[this.index].style.backgroundColor = "black";
+				li[this.index].style.color = "white";
+				box[this.index].style.display = 'none';
+			})
+		}
+	</script>
+</body>
+</html>

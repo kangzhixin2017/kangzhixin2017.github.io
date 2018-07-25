@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>地球自转公转</title>
+		<style type="text/css">
+			#earth{
+				position:absolute ;
+				left: 470px;
+				top:10px;
+				animation-name: round;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+				/*设置旋转点*/
+				transform-origin:50px 250px;
+			}
+			#qing{
+				position: relative;
+				left: 450px;
+				top: 200px;
+			}
+			@keyframes round{
+				0%{
+					transform: rotate(0);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<img src="imgEarth/earth.png" alt="地球" id="earth"/>
+		<img src="imgEarth/qing.png" alt="太阳" id="qing"/>
+	</body>
+</html>

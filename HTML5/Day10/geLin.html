@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>格林斯特</title>
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+			}
+			
+			body {
+				padding: 0;
+				margin: 0;
+				border: 0;
+			}
+			
+			nav {
+				/*background-color: red;*/
+				/*display: inline-block;*/
+			}
+			nav div{
+				width: 960px;
+				margin: 0 auto;
+				/*display: inline-block;*/
+				position: relative;
+			}
+			nav div span{
+				float: right;
+				padding-top: 45px;
+			}
+			
+			nav div input{
+				position: absolute;
+				border-radius: 25px;
+				right: 40px;
+				outline: none;
+				top: 15px;
+				z-index: 110;
+				font-size: 11px;
+				color: darkgray;
+				height: 25px;
+				border: 1px solid #cbcbcb;
+				
+			}
+			nav div button{
+				position: absolute;
+				border-radius: 25px;
+				background-color: green;
+				border: solid 1px green;
+				outline: none;
+				top: 15px;
+				right: 5px;
+				width: 60px;
+				height: 25px;
+				text-align: right;
+				z-index: 0;
+			}
+			nav div img{
+				margin: 5px 0 0 3px;
+			}
+			nav span a{
+				text-decoration: none;
+				margin-right: 8px;
+				color: black;
+			}
+			nav span a:hover{
+				color: red;
+			}
+			.img{
+				width: 100%;
+			}
+			.img img{
+				width: 100%;
+			}
+			.body{
+				width: 960px;
+				/*background-color: red;*/
+				margin: 0 auto;
+			}
+			.body ul{
+				position: relative;
+				list-style: none;
+				width: 30%;
+				height: 130px;
+				/*background-color: blue;*/
+				float: left;
+				margin-right: 32px;
+			}
+			.body ul li:nth-child(1){
+				margin-left: -40px;
+			}
+			.body ul li:nth-child(2) img{
+				margin-left: -40px;
+				margin-top: 15px;
+			}
+			.body ul li h1{
+				/*margin-left: 44px;*/
+				display: inline-block;
+				margin-top: 10px;
+				margin-right: 65px;
+				float: right;
+				font-size: 22px;
+				color: #333333;
+			}
+			.body ul li p{
+				position: absolute;
+				width: 180px;
+				font-size: 14px;
+				color: #9A9A9A;
+				top: 45px;
+				left: 110px;
+			}
+			.body ul:nth-child(2) li:nth-child(1){
+				border-bottom: solid 2px #9D9D9D;
+			}
+			.body ul:nth-child(2) li:nth-child(2) img:nth-child(1){
+				margin-left: -35px;
+			}
+			.body ul:nth-child(2) li:nth-child(2) img{
+				margin-left: 2px;
+			}
+			.body ul:nth-child(3) li:nth-child(2) img:nth-child(2){
+				margin-left: 12px;
+			}
+			footer{
+				background-color: #f9f9f9;
+			}
+			footer div{
+				padding: 15px;
+				width: 960px;
+				margin: 0 auto;
+				color: #cbcbcb;
+			}
+			footer div span{
+				float: right;
+			}
+			footer div span a{
+				text-decoration: none;
+				color: #cbcbcb;
+			}
+			.cl{
+				clear: both;
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav>
+			<div class="">
+				<img src="img/1.png" />
+				<input type="text" value="请输入关键词"/>
+				<button >G O</button>
+				<span>
+					<a href="#">网站首页</a>
+					<a href="#">关于我们</a>
+					<a href="#">公司动态</a>
+					<a href="#">主营业务</a>
+					<a href="#">投资合作</a>
+					<a href="#">企业文化</a>
+					<a href="#">人力资源</a>
+					<a href="#">社会责任</a>
+				</span>
+			</div>
+		</nav>
+		<div class="img">
+			<img src="img/2.png"/>
+		</div>
+		<main>
+			<div class="body">
+				<ul>
+					<li>公司简介</li>
+					<li>
+						<img src="img/3.png"/>
+						<h1>kangzhixin</h1>
+						<p>
+							康志鑫厦门市翔安区新店镇
+							哈哈哈哈哈哈哈哈
+							哈哈哈哈哈哈哈哈哈
+						</p>
+					</li>
+				</ul>
+				
+				<ul>
+					<li>七彩格林</li>
+					<li>
+						<img src="img/5.png"/>
+						<img src="img/6.png"/>
+						<img src="img/0.png"/>
+						<img src="img/7.png"/>
+						<img src="img/4.png"/>
+					</li>
+				</ul>
+				
+				<ul>
+					<li>格林视频</li>
+					<li>
+						<img src="img/8.png"/>
+						<img src="img/9.png"/>
+					</li>
+				</ul>
+				<div class="cl">
+					
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div>
+				<i>格林斯特集团有限公司版权所有 京ICP备 ：110110号</i>
+				<span >
+					<a href="#">法律声明</a> |
+					<a href="#">联系我们</a>
+				</span>
+			</div>
+		</footer>
+	</body>
+
+</html>

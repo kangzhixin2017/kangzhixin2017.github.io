@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>钢琴</title>
+		<style type="text/css">
+			*{
+				box-sizing: border-box;
+				
+			}
+			html,body{
+				height: 100%;
+				
+			}
+			body{
+				margin: 0;
+				background: radial-gradient(#666,#000);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				overflow: hidden;
+			}
+			main{
+				background-image: url(view/keys.png);
+				width: 100%;
+				height: 100%;
+				max-width: 800px;
+				max-height: 400px;
+				border: solid 18px black;
+				border-top-width: 40px;
+				border-bottom-width: 15px;
+				border-radius: 10px;
+				background-size: 100% 100%;
+				display: flex;
+				overflow: hidden;
+				box-shadow: 0 0 20px #999;
+			}
+			div{
+				height: 100%;
+				flex-grow: 1;
+				cursor: pointer;
+				/*background-color: red;*/
+			}
+			div:active{
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<!--autio定义音频的标签-->
+		<audio src="view/notes/1.oga"></audio>
+		<audio src="view/notes/2.oga"></audio>
+		<audio src="view/notes/3.oga"></audio>
+		<audio src="view/notes/4.oga"></audio>
+		<audio src="view/notes/5.oga"></audio>
+		<audio src="view/notes/6.oga"></audio>
+		<audio src="view/notes/7.oga"></audio>
+		<audio src="view/notes/8.oga"></audio>
+		<audio src="view/notes/9.oga"></audio>
+		<main>
+			<div onmousedown="play(0)"></div>
+			<div onmousedown="play(1)"></div>
+			<div onmousedown="play(2)"></div>
+			<div onmousedown="play(3)"></div>
+			<div onmousedown="play(4)"></div>
+			<div onmousedown="play(5)"></div>
+			<div onmousedown="play(6)"></div>
+			<div onmousedown="play(7)"></div>
+			<div onmousedown="play(8)"></div>
+		</main>
+		<script type="text/javascript">
+		//获取audio\n
+		var audios = document.querySelectorAll("audio");
+		var divs = document.querySelectorAll("div");
+		var code = 0;
+		
+		function play(index){
+			var audio = audios[index];
+			//加载
+			audio.load();
+			//播放
+			audio.play();
+		}
+		window.onkeydown = function(ev){
+			console.log(ev.keyCode);
+			if(code!=ev.keyCode){
+				code = ev.keyCode;
+				if(code>=49&&code<=57){
+					divs[code-49].classList.add("active");
+					play(code-49);
+				}
+				
+			}
+		}
+		window.onkeyup = function(){
+			code=0;
+			for(vari = 0;i<divs.length;i++){
+				divs[i].classList.remove("action");
+			}
+		}
+		</script>
+	</body>
+</html>

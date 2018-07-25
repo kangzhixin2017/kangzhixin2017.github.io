@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的名片</title>
+		<style type="text/css">
+			*{
+				user-select: none;
+			}
+			.front{
+				width: 400px;
+				height: 250px;
+				left: 420px;
+				top: 10px;
+				border: solid 3px black;
+				/*background-color: orange;*/
+				background-image: url(logo/front.png);
+				margin: 80px auto;
+				transform: rotate(14deg);
+				position: absolute;
+			}
+			.back{
+				width: 400px;
+				height: 250px;
+				left: 420px;
+				top: 330px;
+				border: solid 3px black;
+				background-color: orange;
+				transform: rotate(-3deg);
+				position: absolute;
+				background-image: url(logo/back.png);
+			}
+			/*.icon{
+				width: 140px;
+				height: 146px;
+				top: 3px;
+				right: 3px;
+				background-image: url(logo/touxiang.png);
+				position: absolute;
+				border: solid 2px black;
+			}*/
+			.name{
+				left: 30px;
+				color: white;
+				font-size: 40px;
+				position: absolute;
+			}
+			.desc{
+				top: 60px;
+				left: 30px;
+				color: white;
+				font-size: 20px;
+				position: absolute;
+				
+			}
+			.where{
+				position: absolute;
+				left: 30px;
+				top: 120px;
+				color: white;
+				font-size: 18px;
+				line-height: 22px;
+			}
+			.phone{
+				position: absolute;
+				left: 30px;
+				top: 150px;
+				color: white;
+				font-size: 18px;
+				line-height: 22px;
+			}
+			.qq{
+				position: absolute;
+				left: 30px;
+				top: 180px;
+				color: white;
+				font-size: 18px;
+				line-height: 22px;
+			}
+			.email{
+				position: absolute;
+				left: 30px;
+				top: 210px;
+				color: white;
+				font-size: 18px;
+				line-height: 22px;
+			}
+			.saying{
+				position: absolute;
+				left: 200px;
+				top: 70px;
+				color: black;
+				font-size: 23px;
+				line-height: 22px;
+				font-weight: bold;
+			}
+			.icon_b{
+				width: 120px;
+				height: 120px;
+				left: 40px;
+				top: 70px;
+				border-radius: 60px;
+				background-image: url(logo/aidisheng.png);
+				background-repeat: no-repeat;
+				position: absolute;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="back">
+			<section class="icon_b"></section>
+			<p class="saying">天才是1%的灵感<br>加上99%的汗水 !<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——爱迪生</p>
+		</div>
+		<div class="front">
+			<section class="icon"></section>
+			<div class="name">康志鑫</div>
+			<div class="desc">HTML5学生</div>
+			<div class="where">地址：厦门市翔安区新店镇</div>
+			<div class="phone">手机：13063065657</div>
+			<div class="qq">Q Q：315206916</div>
+			<div class="email">邮箱：315206916@qq.com</div>
+		</div>
+		
+	</body>
+</html>

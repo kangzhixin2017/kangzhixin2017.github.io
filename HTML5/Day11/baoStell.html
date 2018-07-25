@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title> 宝钢</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+			}
+			
+			body {
+				padding: 0;
+				margin: 0;
+				border: 0;
+				background-color: #EFEFEF;
+			}
+			
+			nav {
+				height: 60px;
+				background-color: red;
+				/*display: inline-block;*/
+				background-image: url(image/nav-bg.png);
+			}
+			
+			nav>div {
+				width: 960px;
+				margin: -80px auto;
+				/*display: inline-block;*/
+				position: relative;
+			}
+			
+			#span {
+				position: absolute;
+				float: right;
+				right: 450px;
+				top: 18px;
+				/*margin-left: 40px;
+				margin-top: -20px;*/
+				font-size: 12px;
+			}
+			
+			nav div input {
+				position: absolute;
+				border-top-left-radius: 10px;
+				border-bottom-left-radius: 10px;
+				right: 40px;
+				outline: none;
+				top: 17px;
+				z-index: 110;
+				font-size: 11px;
+				color: darkgray;
+				height: 20px;
+				border: 1px solid #cbcbcb;
+			}
+			
+			#butt {
+				position: absolute;
+				border-radius: 25px;
+				/*background-color: green;*/
+				/*border: solid 1px green;*/
+				outline: none;
+				top: 17px;
+				right: 5px;
+				width: 60px;
+				height: 20px;
+				text-align: right;
+				z-index: 0;
+			}
+			
+			nav>img {
+				width: 100%;
+				height: 80px;
+			}
+			
+			#span a {
+				text-decoration: none;
+				margin-right: 8px;
+				color: black;
+			}
+			
+			#span a:hover {
+				color: red;
+			}
+			
+			.cl {
+				clear: both;
+			}
+			.main ul{
+				float: left;
+				width: 30%;
+				margin-top: -41px;
+				margin-right: 20px;
+			}
+			.li1{
+				color: white;
+				background-color: #2229c3;
+			}
+			.li1 a{
+				text-decoration: none;
+				color: white;
+				float: right;
+			}
+			.main ul li:nth-child(2) i{
+				position: absolute;
+				float: right;
+				right: 55px;
+				font-size: 14px;
+				/*font-family: "宋体";*/
+				color: black;
+			}
+			.main ul li:nth-child(2) i:nth-of-type(2){
+				position: absolute;
+				width: 190px;
+				top: 30px;
+				right: 5px;
+				/*float: right;*/
+				font-size: 12px;
+				color: grey;
+			}
+			.main ul li:nth-child(2) a{
+				float: right;
+			}
+			.main ul li:nth-child(3) a{
+				float: right;
+			}
+			.li{
+				height: 120px;
+			}
+			.main ul li:nth-of-type(3) a{
+				line-height: 30px;
+			}
+			.li2{
+				height: 120px;
+			}
+			.li2 h5{
+				margin-top: 0;
+			}
+			.li2 p{
+				margin-top: -6px;
+				font-size: 12px;
+				color: grey;
+			}
+			.aa{
+				height: 120px;
+			}
+			.bb{
+				height: 240px;
+			}
+			.bb img{
+				margin-left: -8px;
+			}
+			.bb button{
+				display: inline-block;
+				margin-top: 15px;
+				height: 30px;
+				width: 140px;
+				margin-right: 10px;
+			}
+			.bb button:nth-child(4){
+			}
+			#footer{
+				background-color: #fbfbfb;
+			}
+			#footer div{
+				position: relative;
+				margin: 0 auto;
+				width: 1150px;
+			}
+			#footer div i{
+				display: block;
+				height: 50px;
+				color: grey;
+				line-height: 50px;
+			}
+			#footer div span {
+				position: absolute;
+				right: 100px;
+				float: right;
+				/*top: 0px;*/
+				top: 17px;
+			}
+			#footer div span a{
+				margin-left: 30px;
+				text-decoration: none;
+				color: gray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav>
+			<img src="image/nav-bg.png" />
+			<div class="">
+				<img src="image/logo.png" />
+				<input type="text" value="Search here.." />
+				<button id="butt" class="glyphicon glyphicon-search btn-primary"></button>
+			</div>
+			<span id="span">
+					<a href="#">网站首页</a>
+					<a href="#">关于我们</a>
+					<a href="#">公司动态</a>
+					<a href="#">主营业务</a>
+					<a href="#">投资合作</a>
+					<a href="#">企业文化</a>
+					<a href="#">人力资源</a>
+					<a href="#">社会责任</a>
+				</span>
+			</div>
+		</nav>
+		<div class="img">
+			<img src="image/banner.png" />
+		</div>
+
+		<div class="container main">
+			<ul class="list-group">
+				<li class="list-group-item li1">
+					公司动态
+					<a href="#">+MORE</a>
+				</li>
+				<li class="list-group-item li aa">
+					<img src="image/1.png"/>
+					<i>政府部门参观研发中心</i><br />
+					<i>&nbsp;&nbsp;&nbsp;&nbsp;5月16日，康志鑫开发点击拉开我哦UI空间的反馈会计师费立刻减肥上来就是垃圾分类即可拉伸</i>
+					<a href="#">READ MORE>></a>
+				</li>
+				<li class="list-group-item aa">
+					<a href="#">兰新高铁什么什么鬼几十吨什么鬼？ <i> 2012-12-30</i></a><br />
+					<a href="#">兰新高铁什么什么鬼几十吨什么鬼？ <i> 2012-12-30</i></a><br />
+					<a href="#">兰新高铁什么什么鬼几十吨什么鬼？ <i> 2012-12-30</i></a><br />
+				</li>
+			</ul>
+			<ul class="list-group">
+				<li class="list-group-item li1">
+					公司动态
+					<a href="#">+MORE</a>
+				</li>
+				<li class="list-group-item li2 aa">
+					<h5>鲲鹏财富：地方政府经济发展金融服务商</h5>
+					<p>案件离开静安寺垃圾哦IQ吴荣一卡时间发了
+					立刻解释道路附近拉市解放路拉市解放路
+					埃里克涉及到法律会萨释道路附近拉市解放路拉市
+					释道路附近拉市</p>
+					<a href="#">READ MORE>></a>
+				</li>
+				<li class="list-group-item li2 aa">
+					<h5>鲲鹏财富：地方政府经济发展金融服务商</h5>
+					<p>案件离开静安寺垃圾哦IQ吴荣一卡时间发了
+					立刻解释道路附近拉市解放路拉市解放路
+					埃里克涉及到法律会萨释道路附近拉市解放路拉市
+					释道路附近拉市</p>
+					<a href="#">READ MORE>></a>
+				</li>
+			</ul>
+			<ul class="list-group">
+				<li class="list-group-item li1">
+					公司动态
+					<a href="#">+MORE</a>
+				</li>
+				<li class="list-group-item bb">
+					<img src="image/2.png"/>
+					<button>>碳钢系列</button>
+					<button>>特钢系列</button>
+					<button>>不锈钢系列</button>
+					<button>>碳钢系列</button>
+				</li>
+			</ul>
+		</div>
+		
+		<div id="footer">
+			<div >
+				<i>lkjalsjfkl  sjlfkjl sjlfjls ajlfjlsjf</i>
+				<span>
+					<a href="#">网站地图</a>
+					
+					<a href="#">关于创建</a>
+					
+					<a href="#">工作机会</a>
+					
+					<a href="#">法律声明</a>
+					
+					<a href="#">友情链接</a>
+				</span>
+			</div>
+		</div>
+
+
+
+		<script src="bootstrap/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

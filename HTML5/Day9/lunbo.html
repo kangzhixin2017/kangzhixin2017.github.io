@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" href="swiper-4.1.6/dist/css/swiper.min.css">
+	<title>Document</title>
+</head>
+<body>
+	
+	<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><div style="width: 100%;height: 80vh;background-image: url(images/banner.png);background-size: 100% 100%;background-color: transparent;">
+        	<p style="margin-top: 20px;display: inline-block;">sdfkj</p>
+        	<!--<img src="images/2.png"/>-->
+        </div></div>
+        <div class="swiper-slide"><div style="width: 100%;height: 80vh;background-color: blue;"></div></div>
+        <div class="swiper-slide"><div style="width: 100%;height: 80vh;background-color: green;"></div></div>
+        <div class="swiper-slide"><div style="width: 100%;height: 80vh;background-color: hotpink;"></div></div>
+        <div class="swiper-slide"><div style="width: 100%;height: 80vh;background-color: lemonchiffon;"></div></div>
+    </div>
+
+</div>
+	
+	<script src="swiper-4.1.6/dist/js/swiper.min.js"></script>
+	<script language="javascript"> 
+var mySwiper = new Swiper('.swiper-container',{
+  effect : 'coverflow',
+  slidesPerView: 1.2,
+  centeredSlides: true,
+  coverflowEffect: {
+    rotate: 10,
+    stretch: 10,
+    depth: 160,
+    modifier: 3,
+    slideShadows : true,
+  },
+})
+mySwiper.slideTo(3,0,false);
+</script>
+</body>
+</html>

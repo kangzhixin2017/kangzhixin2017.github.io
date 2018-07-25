@@ -1,0 +1,120 @@
+html,body{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: #1c1c1c;
+}
+a{
+	text-decoration: none;
+}
+article{
+	display: flex;
+	justify-content: center;
+	
+}
+.bimg{
+	background-image: url(images/作业素材/header.jpg);
+	width: 110%;
+	height: 270px;
+	background-size: 100%;
+	background-position: 0 -160px;
+	margin: 6% 0 0 -5px;
+	transform: rotate(-4deg);
+	transition: 2s;
+}
+.bimg:hover{
+	background-position: 0 -500px;
+}
+.img-content{
+	width: 250px;
+	height: 480px;
+	background-color: #fff;
+	overflow: hidden;
+	transform: rotate(-4deg);
+	margin: 0 50px;
+	position: relative;
+}
+.img-content:nth-child(1){
+	margin-top: 100px;
+	
+}
+.img-content:nth-child(2){
+	margin-top: 65px;
+	
+}
+.img-content:nth-child(3){
+	margin-top: 35px;
+}
+.nei img{
+	width: 110%;
+	height: 200px;
+	transform: rotate(4deg);
+	margin: -30px 30px 0 -20px;
+}
+.text{
+	transform: rotate(5deg);
+	margin: 10px 30px 0px 30px ;
+}
+.text h3{
+	margin: 0;
+	
+}
+
+.text h3 a{
+	color: #000000;
+}
+
+.text p a{
+	font-size: 12px;
+	color: #8e8e8e;
+}
+.zheng{
+	color: #505470;
+}
+.footer{
+	width: 115%;
+	height: 70px;
+	background-color: #23b6b6;
+	margin: 30px 0 0 -20px;
+	color: #fff;
+}
+.footer p{
+	padding: 15px 0 0 40px;
+}
+.aa{
+	width: 110%;
+	height: 0;
+	transform: rotate(4deg);
+	margin: -30px 0 0 -20px;
+	background-color: #34b6b6;
+	opacity: 0.6;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+}
+.aa div{
+	opacity: 0.6;
+}
+.aa div:nth-child(1){
+	width: 5px;
+	height: 5px;
+	border: solid 5px red;
+	border-radius: 2px;
+}
+.aa div:nth-child(2){
+	width: 8px;
+	border: solid 3px red;
+}
+.aa div:nth-child(3){
+	width: 5px;
+	height: 5px;
+	border: solid 5px red;
+	border-radius: 2px;
+}
+.nei:hover .aa{
+	height: 200px;
+	transition: all 1s;
+}

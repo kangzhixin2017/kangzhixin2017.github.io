@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>随机抽奖</title>
+		<style type="text/css">
+			*{
+				user-select: none;
+			}
+			main{
+				width: 500px;
+				height: 500px;
+				border: solid 5px black;
+				border-radius: 50%;
+				margin: 30px auto;
+			}
+			#char{
+				font-size: 350px;
+				text-align: center;
+				line-height: 500px;
+			}
+			footer{
+				font-size: 20px;
+				font-weight: bold;
+				text-align: center;
+			}
+			.error{
+				color: red;
+			}
+			#choujiang{
+				font-size: 70px;
+				font-weight: bold;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body onkeyup="key(event)">
+		<main>
+			<section id="char"></section>
+		</main>
+	
+		<div id="choujiang">抽奖</div>
+		<footer id="result"></footer>
+		<script type="text/javascript">
+			//定义一个函数
+			var array = new Array();
+			var divs = document.getElementById('choujiang')
+			function showChar(){
+				var code = Math.random()*9 + 1;
+				//取整
+				var codes = Math.floor(code);
+				
+				document.getElementById('char').innerHTML = codes;
+			}
+   			var timer;
+   			var result = "result: ";
+			var i = 0;
+			
+			
+			divs.onmousedown = function ks(){
+				if(i % 2 ==0){
+					timer = setInterval(showChar,50);
+				}else{
+					clearInterval(timer);
+					var s = document.getElementById('char').innerHTML;
+					if(array.indexOf(s) == -1){
+						array.push(s);
+					}
+//					result = result + s +", ";
+					document.getElementById('result').innerHTML = result+array;
+				}
+				i++;
+			}	
+			
+
+
+		</script>
+	</body>
+</html>

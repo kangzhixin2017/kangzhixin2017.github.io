@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>抽奖活动</title>
+		<style type="text/css">
+			*{
+				box-sizing: border-box;
+			}
+			body{
+				margin-top: 20px;
+				text-align: center;
+			}
+			#dd{
+				margin-top: 30px;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<!--label input 配合使用 主要用于定于表单-->
+		<label>随机抽奖：</label>
+		<input type="text" id="aa"></input>
+		<button id="b1">开始</button>
+		<button id="b2">停止</button>
+		<!--主要防止抽奖的内容-->
+		<div id="dd"></div>
+		
+		
+		<script type="text/javascript">
+			//获取元素
+			var aa = document.getElementById('aa');
+			var b1 = document.getElementById('b1');
+			var b2 = document.getElementById('b2');
+			var dd = document.getElementById('dd');
+			console.log(b1);
+			//设置奖品的内容
+			var cj = "电视机,电冰箱,手机,水杯,笔记本,麦克风,小音箱,傻逼明珠,大老腐,小西几";
+			//把每个名字用逗号隔开
+			var fg = cj.split(',');
+			//定义个变量 后期使用
+			var timer;
+			//创建一个函数获取一个随机数
+			function sj(min,max){
+				//返回一个max-min+1之间的随机数
+				//将随机数转化为整数
+				return parseInt(Math.random() * (max-min+1));
+			}
+			
+			function zz(){	
+			    var num = fg.length -1;
+			    //调用随机数
+				var i = sj(0,num);
+				aa.value = fg[i];
+			}
+		
+			b1.onclick = function(){
+				timer = setInterval(zz, 50);
+				console.log(timer);
+				b1.disabled = true;
+			}
+			b2.onclick = function(){
+				clearInterval(timer)
+				b1.disabled = false;
+				dd.innerHTML = '恭喜您获得《'+aa.value + '》请继续抽奖';
+			}
+		</script>
+	</body>
+</html>

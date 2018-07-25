@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人主页</title>
+		<style type="text/css">
+			*{
+				box-sizing: border-box;
+			}
+			html,body{
+				margin: 0;
+				padding: 0;
+				border: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.a{
+				float: right;
+				width: 120px;
+				height: 50px;
+			}
+			#logo{
+				position: relative;
+				margin-left: 20px;
+			}
+			.a{
+				position: relative;
+				top: 30px;
+				text-decoration: none;
+				color: black;
+			}
+			#logo{
+				top: 10px;
+				width: 250px;
+				height: 60px;
+			}
+			#daohang{
+				/*background-color: red;*/
+				height: 90px;
+				width: 100%;
+				position: fixed;
+				z-index: 100;
+				background-color: white;
+			}
+			#img1{
+				position: absolute;
+				top: 90px;
+				width: 100%;
+				height: 90px;
+				background-image: url(img/header.jpg);
+				background-position:0px 700px;
+				background-size: 100%;
+				/*background-color: black;*/
+				/*overflow: hidden;*/
+			}
+			#bb{
+				top: 200px;
+				position: absolute;
+				width: 100%;
+				height: 90px;
+				font-size: 20px;
+				line-height: 50px;
+			}
+			#bb:before{
+				content: " “";
+				margin-left: 40px;
+			}
+			#html1{
+				position: absolute;
+				top: 280px;
+				color: coral;
+				font-size: 35px;
+			}
+			#html1:before{
+				content: "▉";
+				margin-left: 30px;
+			}
+			#html2{
+				position: absolute;
+				width: 97%;
+				height: 700px;
+				top: 400px;
+				left: 20px;
+				right: 20px;
+			}
+			#student{
+				position: absolute;
+				top: 1100px;
+				color: coral;
+				font-size: 35px;
+			}
+			#student1:before{
+				content: "▉";
+				margin-left: 30px;
+			}
+			#student2{
+				position: absolute;
+				width: 1400px;
+				height: 700px;
+				top: 120px;
+				left: 20px;
+			}
+			#myhome{
+				position: absolute;
+				top: 1900px;
+				color: coral;
+				font-size: 35px;
+				
+			}
+			#myhome1:before{
+				content: "▉";
+				margin-left: 30px;
+			}
+			#myhome2{
+				position: relative;
+				width: 1400px;
+				height: 700px;
+				top: 0;
+				left: 20px;
+			}
+			
+			
+			#school{
+				position: absolute;
+				top: 2700px;
+				color: coral;
+				font-size: 35px;
+				
+			}
+			#school1:before{
+				content: "▉";
+				margin-left: 30px;
+			}
+			#school2{
+				position: relative;
+				width: 1400px;
+				height: 700px;
+				top: 0;
+				left: 20px;
+			}
+			
+			#footer{
+				width: 100%;
+				position: relative;
+				height: 350px;
+				top: 3600px;
+			}
+			#address{
+				position: absolute;
+				font-size: 24px;
+				color: orange;
+				bottom: 50px;
+			}
+			#address:before{
+				margin-left: 60px;
+				content: "地址：";
+			}
+			#cc{
+				font-size: 25px;
+				font-family: "微软雅黑";
+				margin-left: 30px;
+				margin-right: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<header id="daohang">
+			<img src="img/logo.png" id="logo"/>
+			<a href="#footer" class="a">关于我</a>
+			<a href="#school" class="a">我的学校</a>
+			<a href="#myhome" class="a">我的家乡</a>
+			<a href="#student" class="a">我的同学</a>
+			<a href="#html" class="a">HTML5</a>
+			<a href="#img1" class="a" id="home">首页</a>
+		</header>
+		
+		<div id="img1">
+			<!--<img src="img/header.jpg"/ id="img1">-->
+		</div>
+		<div id="bb">
+			土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食，
+			而是真理。如果只能滋生瞑想和幻想的话，即使再大的才能也只是砂
+			地或盐池，那上面连小草也长不出来的。   —— 别林斯基
+		</div>
+		<span id="html" name="html">
+			<h3 id="html1">HTML5</h3>
+			<img src="img/html5.jpg" id="html2"/>
+		</div>
+		</span>
+		<span id="student" name="student">
+			<h3 id="student1">我的同学</h3>
+			<img src="img/classmates.jpg" id="student2"/>
+		</div>
+		</span>
+		<span id="myhome" name="myhome">
+			<h3 id="myhome1">我的家乡</h3>
+			<img src="img/HomePage.jpg" id="myhome2"/>
+		</div>
+		</span>
+		<span id="school" name="school">
+			<h3 id="school1">我的学校</h3>
+			<img src="img/hometown.JPG" id="school2"/>
+		</div>
+		</span>
+		<!--<span id="me" name="me">
+			<h3 id="html1">关于我</h3>
+			<img src="img/html5.jpg" id="two"/>
+		</div>
+		</span>-->
+		<!--<hr />-->
+		<footer id="footer" name="footer">
+			<div id="cc">			
+				集美大学（JiMei University），是福建省重
+				点建设高校，交通运输部与福建省、国家海洋局与福建省、福建省与厦门市共建高校，博士学位授予单位，硕士研究生推免单位。[1] 
+				学校办学始于著名爱国华侨领袖陈嘉庚先生1918年创办的集美学校师范部和1920年创办的集美学校水产科、商科，1994年，集美师范高等专科学校、集美航海学院、集美财经高等专科学校、厦门水产学院、福建体育学院合并组建集美大学。
+				截至2017年2月，该校占地面积2300多亩，校舍面积近100万平方米，新校区入选新中国成立60周年“百项经典暨精品工程”，是全国高校唯一入选的项目；设有21个学院，69个本科专业；有专任教师1500多人，在校生27000余人，其中全日制本科生26000余人、各类研究生1200余人[2]  。
+
+			</div>
+			<hr />
+			<div id="address">
+				福建省 厦门市 翔安区 康氏公馆
+			</div>
+		</footer>
+	</body>
+</html>

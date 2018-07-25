@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>宣传单</title>
+		<style type="text/css">
+			*{
+				box-sizing: border-box;
+			}
+			html,body{
+				margin: 0;
+				padding: 0;
+				border: 0;
+			}
+			main{
+				width: 960px;
+				margin: 50px auto;
+				position: relative;
+				box-shadow: 0 0 10px 5px black;
+			}
+			.nav{
+				width: 100%;
+				background-color: white;
+				border: 2px solid black;
+			}
+			.left{
+				width: 50%;
+				color: rgb(129,74,27);
+				text-align: center;
+				font-weight: bold;
+				font-size: 40px;
+				font-style: italic;
+				line-height: 80px;
+				margin-top: 120px;
+				/*margin-bottom: 80px;*/
+				font-family: arial;
+			}
+			.left span{
+				font-size: 90px;
+			}
+			.bottom{
+				width: 100%;
+				color: rgb(202,102,58);
+				text-align: center;
+				font-weight: bold;
+				font-size: 20px;
+				line-height: 40px;
+				font-family: arial;
+				padding: 120px;
+			}
+			.bottom span{
+				font-size: 35px;
+			}
+			.right{
+				width: 50%;
+				height: 500px;
+				position: absolute;
+				left: 50%;
+				top: 0;
+			}
+			.circular{
+				border-radius: 50%;
+				position: absolute;
+			}
+			.macbook,.imac,.ipad,.iphone{
+				transition: transform 0.5s ease-in-out;
+				position: absolute;
+			}
+			.circular:nth-child(1){
+				width: 70px;
+				height: 70px;
+				left: 60px;
+				top: 60px;
+				border: 2px dashed deepskyblue;
+			}
+			.circular:nth-child(2){
+				width: 90px;
+				height: 90px;
+				left: 30px;
+				top: 90px;
+				border: 2px dashed orangered;
+			}
+			.circular:nth-child(3){
+				width: 80px;
+				height: 80px;
+				left: 50px;
+				top: 160px;
+				border: 2px dashed forestgreen;
+			}
+			.circular:nth-child(4){
+				width: 70px;
+				height: 70px;
+				left: 280px;
+				top: 70px;
+				border: 2px dashed orangered;
+			}
+			.circular:nth-child(5){
+				width: 80px;
+				height: 80px;
+				left: 360px;
+				top: 50px;
+				border: 2px dashed deepskyblue;
+			}
+			.circular:nth-child(6){
+				width: 90px;
+				height: 90px;
+				left: 340px;
+				top: 150px;
+				border: 2px dashed forestgreen;
+			}
+			
+			.test1{
+				border-radius: 50%;
+				position: absolute;
+				color: white;
+				text-align: center;
+				width: 70px;
+				height: 70px;
+				left: 30px;
+				top: 50px;
+				font-weight: bold;
+				font-size: 16px;
+				line-height: 70px;
+				background-color: deepskyblue;
+				z-index: 2;
+				transition: transform 0.5s ease-in-out;
+			}
+			.test2{
+				border-radius: 50%;
+				position: absolute;
+				color: white;
+				text-align: center;
+				width: 90px;
+				height: 90px;
+				left: 90px;
+				top: 60px;
+				font-weight: bold;
+				font-size: 20px;
+				line-height: 90px;
+				background-color: orangered;
+				z-index: 1;
+				transition: transform 0.5s ease-in-out;
+			}
+			.test3{
+				border-radius: 50%;
+				position: absolute;
+				color: white;
+				text-align: center;
+				width: 100px;
+				height: 100px;
+				left: 15px;
+				top: 130px;
+				font-weight: bold;
+				font-size: 35px;
+				line-height: 100px;
+				background-color: rgb(253,152,39);
+				z-index: 0;
+				transition: transform 0.5s ease-in-out;
+			}
+			.test4{
+				border-radius: 50%;
+				position: absolute;
+				color: white;
+				text-align: center;
+				width: 30px;
+				height: 30px;
+				left: 150px;
+				top: 135px;
+				background-color: forestgreen;
+				z-index: 0;
+			}
+			.test5{
+				border-radius: 50%;
+				position: absolute;
+				color: white;
+				text-align: center;
+				width: 60px;
+				height: 60px;
+				left: 300px;
+				top: 45px;
+				font-weight: bold;
+				font-size: 25px;
+				line-height: 60px;
+				background-color: orangered;
+				z-index: 10;
+				transition: transform 0.5s ease-in-out;
+			}
+			.test6{
+				border-radius: 50%;
+				position: absolute;
+				color: white;
+				text-align: center;
+				width: 80px;
+				height: 80px;
+				left: 330px;
+				top: 80px;
+				font-weight: bold;
+				font-size: 25px;
+				line-height: 80px;
+				background-color: rgb(253,152,39);
+				z-index: 8;
+				transition: transform 0.5s ease-in-out;
+			}
+			.test7{
+				border-radius: 50%;
+				position: absolute;
+				color: white;
+				text-align: center;
+				width: 70px;
+				height: 70px;
+				left: 390px;
+				top: 50px;
+				font-weight: bold;
+				font-size: 16px;
+				line-height: 70px;
+				background-color: deepskyblue;
+				z-index: 10;
+				transition: transform 0.5s ease-in-out;
+			}
+			.test8{
+				border-radius: 50%;
+				position: absolute;
+				color: white;
+				text-align: center;
+				width: 100px;
+				height: 100px;
+				left: 360px;
+				top: 140px;
+				font-weight: bold;
+				font-size: 35px;
+				line-height: 100px;
+				background-color: forestgreen;
+				z-index: 10;
+				transition: transform 0.5s ease-in-out;
+			}
+			.test9{
+				border-radius: 50%;
+				position: absolute;
+				color: white;
+				text-align: center;
+				width: 30px;
+				height: 30px;
+				left: 430px;
+				top: 130px;
+				background-color: orangered;
+				z-index: 0;
+			}
+			
+			.imac{
+				width: 280px;
+				left: 100px;
+				top: 170px;
+				z-index: 5;
+			}
+			.macbook{
+				width: 180px;
+				top: 310px;
+			}
+			.ipad{
+				width: 90px;
+				top: 270px;
+				left: 320px;
+				z-index: 10;
+			}
+			.iphone{
+				width: 40px;
+				top: 340px;
+				left: 380px;
+				z-index: 11;
+			}
+			
+			.footer{
+				width: 100%;
+				background-color: rgb(202,102,58);
+				color: white;
+				margin-top: -120px;
+			}
+			.top{
+				width: 100%;
+				text-align: center;
+				font-size: 22px;
+			}
+			.text{
+				font-weight: bold;
+				font-size: 30px;
+			}
+			.text span{
+				font-size: 45px;
+			}
+			.mid{
+				width: 100%;
+				height: 600px;
+				position: relative;
+			}
+			.icon{
+				position: absolute;
+				color: white;
+				text-align: center;
+				font-weight: bold;
+			}
+			.icon img{
+				width: 50px;
+				height: 50px;
+			}
+			
+			.icon p{
+				font-size: 20px;
+				line-height: 10px;
+			}
+			.html5{
+				position: absolute;
+				left: 400px;
+				top: 130px;
+			}
+			.icon1{
+				left: 150px;
+				top: 100px;
+			}
+			.icon1 .circular{
+				margin-left: -30px;
+				margin-top: -70px;
+				border: 2px solid white;
+			}
+			.icon1 .circular div{
+				width: 200px;
+				height: 80px;
+				border-top: 2px dashed white;
+				border-right: 2px dashed white;
+				position: absolute;
+				left: 100%;
+				top: 50%;
+			}
+			.icon2{
+				left: 80px;
+				top: 300px;
+			}
+			.icon2 .circular{
+				margin-left: -15px;
+				margin-top: -70px;
+				border: 2px solid white;
+			}
+			.icon2 .circular div{
+				width: 220px;
+				border-top: 2px dashed white;
+				position: absolute;
+				left: 100%;
+				top: 50%;
+			}
+			.icon3{
+				left: 600px;
+				top: 50px;
+			}
+			.icon3 .circular div{
+				width: 110px;
+				height: 130px;
+				border-top: 2px dashed white;
+				border-left: 2px dashed white;
+				position: absolute;
+				left: -110px;
+				top: 50%;
+			}
+			.icon3 .circular{
+				margin-left: -10px;
+				margin-top: -70px;
+				border: 2px solid white;
+			}
+			.icon4{
+				left: 800px;
+				top: 210px;
+			}
+			.icon4 .circular div{
+				width: 260px;
+				border-top: 2px dashed white;
+				position: absolute;
+				left: -260px;
+				top: 50%;
+			}
+			.icon4 .circular{
+				margin-left: -30px;
+				margin-top: -70px;
+				border: 2px solid white;
+			}
+			.icon5{
+				left: 650px;
+				top: 400px;
+			}
+			.icon5 .circular div{
+				width: 180px;
+				height: 75px;
+				border-bottom: 2px dashed white;
+				border-left: 2px dashed white;
+				position: absolute;
+				left: -180px;
+				top: -50%;
+			}
+			.icon5 .circular{
+				margin-left: 0px;
+				margin-top: -70px;
+				border: 2px solid white;
+			}
+			.good{
+				position: absolute;
+				margin-left: 50px;
+				margin-top: -120px;
+				text-align: center;
+				font-weight: bold;
+				font-size: 45px;
+				font-style: italic;
+			}
+			li{
+				margin-left: 30px;
+				line-height: 30px;
+				font-weight: bold;
+			}
+			.macbook:hover{
+				transform: scale(1.5,1.5);
+				transition: transform 0.5s ease-in-out;
+				z-index: 100;
+			}
+			.imac:hover{
+				transform: scale(1.5,1.5);
+				transition: transform 0.5s ease-in-out;
+				z-index: 100;
+			}
+			.ipad:hover{
+				transform: scale(1.5,1.5);
+				transition: transform 0.5s ease-in-out;
+				z-index: 100;
+			}
+			.iphone:hover{
+				transform: scale(1.5,1.5);
+				transition: transform 0.5s ease-in-out;
+				z-index: 100;
+			}
+			.test1:hover{
+				transform: scale(1.5,1.5);
+				transition: transform 0.5s ease-in-out;
+				z-index: 100;
+			}
+			.test2:hover{
+				transform: scale(1.5,1.5);
+				transition: transform 0.5s ease-in-out;
+				z-index: 100;
+			}
+			.test3:hover{
+				transform: scale(1.5,1.5);
+				transition: transform 0.5s ease-in-out;
+				z-index: 100;
+			}
+			.test8:hover{
+				transform: scale(1.5,1.5);
+				transition: transform 0.5s ease-in-out;
+				z-index: 100;
+			}
+			.test5:hover{
+				transform: scale(1.5,1.5);
+				transition: transform 0.5s ease-in-out;
+				z-index: 100;
+			}
+			.test6:hover{
+				transform: scale(1.5,1.5);
+				transition: transform 0.5s ease-in-out;
+				z-index: 100;
+			}
+			.test7:hover{
+				transform: scale(1.5,1.5);
+				transition: transform 0.5s ease-in-out;
+				z-index: 100;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="nav">
+				<div class="left">
+					<span>HTML5</span>来袭<br />
+					别错过入行的最佳时机
+				</div>
+				<div class="right">
+					<div class="circular"></div>
+					<div class="circular"></div>
+					<div class="circular"></div>
+					<div class="circular"></div>
+					<div class="circular"></div>
+					<div class="circular"></div>
+					<div class="test1">WWW</div>
+					<div class="test2">HTML5</div>
+					<div class="test3">CSS3</div>
+					<div class="test4"></div>
+					<div class="test5">JS</div>
+					<div class="test6">JSON</div>
+					<div class="test7">JQuery</div>
+					<div class="test8">PHP</div>
+					<div class="test9"></div>
+					<img src="img/iMac.png" class="imac"/>
+					<img src="img/iPad.png" class="ipad"/>
+					<img src="img/iphone.png" class="iphone"/>
+					<img src="img/MacBook.png" class="macbook"/>
+				</div>
+				<div class="bottom">
+					<span>智游HTML5</span>重磅开课，真正的HTML5移动开发<br />
+					行业内<span>最全面，最具良心</span>HTML5课程，真刀真枪，<span>绝不忽悠</span>
+				</div>
+			</div>
+			<div class="footer">
+				<div class="top">
+					<br />
+					<div class="text"><span>HTML5</span>将成为移动<span>互联网</span>领域的<span>主宰者</span></div>
+					不论是桌面应用还是移动应用，HTML5都是创新的主旋律
+				</div>
+				<div class="mid">
+					<img src="img/html5.png" class="html5"/>
+					<div class="icon icon1">
+						<div class="circular"><div></div>
+						</div>
+						<img src="img/六角形.png"/>
+						<p>需求广泛</p>
+						80%的APP已嵌入<br />HTML5
+					</div>
+					<div class="icon icon2">
+						<div class="circular"><div></div>
+						</div>
+						<img src="img/路标.png"/>
+						<p>新的机遇</p>
+						微信即将推出应用号，<br />HTML5井喷式爆发
+					</div>
+					<div class="icon icon3">
+						<div class="circular"><div></div>
+						</div>
+						<img src="img/跨平台.png"/>
+						<p>完美跨平台</p>
+						HTML5通吃所有主流平<br />台
+					</div>
+					<div class="icon icon4">
+						<div class="circular"><div></div>
+						</div>
+						<img src="img/循环线.png"/>
+						<p>流量入口</p>
+						无需下载，想用就<br />用，快速用户
+					</div>
+					<div class="icon icon5">
+						<div class="circular"><div></div>
+						</div>
+						<img src="img/循环模式.png"/>
+						<p>快速迭代</p>
+						快速迭代，产品迅速成型并<br />占领市场
+					</div>
+					
+				</div>
+				<div class="good">
+					智游HTML5<br>优&#x3000;势
+				</div>
+				<ul>
+					<li>以前端编程和移动Web APP开发为主，不做网页切图工人</li>
+					<li>采用一流公司真实项目及产品研发、项目开发方法、赢在起跑线上</li>
+					<li>融合产品设计、版本管理、质量控制、项目管理等技术技能、拒绝做码农</li>
+					<li>讲师全部为全栈式技术高手、企业技术高管、能够深入技术精髓、技术视野广阔</li><br /><br />
+				</ul>
+			</div>
+		</main>
+	</body>
+</html>

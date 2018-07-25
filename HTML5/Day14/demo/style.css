@@ -1,0 +1,180 @@
+*{
+	box-sizing: border-box;
+}
+html,body{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+.mid{
+	width: 960px;
+	margin: 0 auto;
+}
+ul{
+	list-style-type: none;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+.cf{
+	clear: both;
+}
+header{
+	width: 100%;
+}
+#tel{
+	float: right;
+	margin: 25px 0;
+}
+nav{
+	background-color: red;
+}
+nav ul li{
+	float: left;
+}
+nav ul li a{
+	display: inline-block;
+	width: 90px;
+	height: 50px;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: -5px;
+	border-radius: 5px;
+	color: white;
+	line-height: 40px;
+}
+nav ul li a:hover{
+	background-color: white;
+	color: red;
+}
+#head{
+	width: 100%;
+}
+main{
+	width: 100%;
+	background-color: rgb(246,246,246);
+}
+.top{
+	width: 100%;
+	padding: 0;
+	margin: -5px 0;
+}
+.left,.right{
+	float: left;
+}
+.left{
+	width: 25%;
+	overflow: hidden;
+}
+.left_img{
+	width: 100%;
+}
+.left-top a{
+	color: dimgray;
+	font-size: 13px;
+	float: right;
+}
+.txt li{
+	width: 70%;
+	line-height:30px;
+}
+.lm_bg{
+	width: 100%;
+	/*background-image: url(images/lm_bg.jpg);*/
+	background-size: 100% 100%;
+	position: relative;
+}
+.lm_bg p{
+	font-size: 20px;
+	margin-left: 50px;
+	position: relative;
+	line-height: 40px;
+}
+.lm_bg img{
+	position: absolute;
+	top: 0;
+}
+.call{
+	padding: 10px;
+	line-height: 25px;
+	font-size: 13px;
+}
+.right{
+	width: 75%;
+}
+.right .container{
+	width: 100%;
+	margin-left: 30px;
+}
+.right .product{
+	float: left;
+	margin-top: 20px;
+	margin: 10px;
+	text-align: center;
+	background-color: white;
+	border-radius: 5px;
+}
+.product a{
+	color: black;
+}
+.product a img{
+	width: 90%;
+	margin-top: 10px;
+}
+.bottom{
+	width: 100%;
+}
+.botton-left{
+	width: 63%;
+	overflow: hidden;
+}
+.huanrao{
+	width: 150px;
+	padding: 15px;
+}
+.botton-left,.botton-right{
+	float: left;
+}
+.botton-right{
+	margin-left: 2%;
+	width: 35%;
+	overflow: hidden;
+}
+.botton-right ul{
+	margin: 0 10px;
+}
+.botton-right ul li{
+	font-size: 16px;
+	line-height: 30px;
+}
+.botton-right a{
+	color: black;
+}
+.botton-right span{
+	float: right;
+	color: gray;
+}
+.foot .mid{
+	border: 1px solid lightgray;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 5px;
+}
+.text{
+	font-size: 16px;
+}
+.text:before{
+	content: "友情链接：";
+	font-size: 18px;
+	margin-left: 20px;
+}
+footer{
+	width: 100%;
+	background-color: red;
+	text-align: center;
+}
+footer span{
+	color: white;
+	font-size: 13px;
+}

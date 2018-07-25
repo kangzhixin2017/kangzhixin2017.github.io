@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>美女图</title>
+		<style type="text/css">
+			*{
+				box-sizing: border-box;
+			}
+			html,body{
+				margin: 0;
+				padding: 0;
+				border: 0;
+			}
+			table{
+				border: 10px solid red;
+				margin: 0 auto;
+			}
+			td{
+				height: 100px;
+				width: 100px;
+				border: 5px solid black; 
+				background-size: 100% 100%;
+			}
+			#box{
+				width: 500px;
+				height: 500px;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td rowspan="3" colspan="3">
+					<img src="img/big_1.jpg" id="box"/>
+				</td>
+				<td>
+					<img src="img/big_1.jpg" class="small"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="img/big_2.jpg" class="small"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="img/big_3.jpg" class="small"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="img/big_4.jpg" class="small"/>
+				</td>
+				<td>
+					<img src="img/big_5.jpg" class="small"/>
+				</td>
+				<td>
+					<img src="img/big_6.jpg" class="small"/>
+				</td>
+				<td>
+					<img src="img/big_7.jpg" class="small"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="img/big_8.jpg" class="small"/>
+				</td>
+				<td>
+					<img src="img/big_9.jpg" class="small"/>
+				</td>
+				<td>
+					<img src="img/big_10.jpg" class="small"/>
+				</td>
+				<td>
+					<img src="img/big_11.jpg" class="small"/>
+				</td>
+			</tr>
+		</table>
+		
+		<script type="text/javascript">
+			var td = document.querySelectorAll("tr td");
+			var box = document.getElementById("box");
+			var small = document.getElementsByClassName("small");
+//			console.log(td);
+//			console.log(box);
+//			console.log(small);
+			
+			for (var i = 0 ; i < small.length ; i++) {
+				small[i].index = i;
+				
+				small[i].addEventListener("mousemove",function(){
+					box.setAttribute('src','img/big_'+(this.index+1)+'.jpg');
+				})
+			}
+		</script>
+	</body>
+</html>

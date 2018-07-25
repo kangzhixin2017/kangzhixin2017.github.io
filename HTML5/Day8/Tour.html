@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>飘城旅行社</title>
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+			}
+			
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				border: 0;
+			}
+			
+			#nav {
+				width: 100%;
+				background-color: #333333;
+				/*box-shadow: 0 1px 1px #999;*/
+				position: fixed;
+				top: 0;
+				z-index: 1000;
+			}
+			
+			#nav div {
+				height: 58px;
+				width: 960px;
+				margin: 0 auto;
+				/*border: solid 2px red;*/
+				padding: 0 0 0 0;
+			}
+			
+			#nav img {
+				width: auto;
+				height: 58px;
+			}
+			
+			#nav a {
+				text-align: center;
+				width: 100px;
+				height: 58px;
+				text-decoration: none;
+				/*color: black;*/
+				font-size: 16px;
+			}
+			
+			#nav span {
+				float: right;
+				line-height: 60px;
+			}
+			
+			#nav span a {
+				display: inline-block;
+				color: white;
+			}
+			
+			#nav a:hover {
+				background-color: black;
+				/*color: red;*/
+			}
+			
+			#header {
+				width: 100%;
+				background-image: url(img/headline.jpg);
+				height: 300px;
+				top: 59px;
+				position: relative;
+			}
+			
+			#header div {
+				position: relative;
+				/*float: left;*/
+				height: 58px;
+				width: 20%;
+				top: 50%;
+				left: 40%;
+				/*border: solid 2px red;*/
+				/*padding: 10px 10px 10px 10px;*/
+				/*background-color: red;*/
+				z-index: 9999999;
+			}
+			
+			#aa {
+				height: 30px;
+				border-radius: 8px;
+				width: 200px;
+				box-shadow: 4px 4px 4px black;
+			}
+			
+			#sousuo {
+				/*color: red;*/
+				/*font-size: 11px;*/
+				border-radius: 14%;
+				box-shadow: 4px 4px 4px black;
+			}
+			
+			#middle {
+				width: 100%;
+				/*background-color: red;*/
+				margin-top: 80px;
+			}
+			
+			#middle div {
+				width: 960px;
+				margin: 0 auto;
+				clear: both;
+				text-align: center;
+				/*background-color: red;*/
+			}
+			
+			#middle p {
+				font-size: 16px;
+				color: #6A6A6A;
+				/*margin: 10px auto;*/
+				/*top: 0;*/
+				margin-top: -20px;
+			}
+			
+			#body {
+				width: 100%;
+				/*background-color: red;*/
+				/*height: 100px;*/
+			}
+			
+			#body>div {
+				width: 960px;
+				margin: 0 auto;
+				background-color: black;
+				/*height: 30px;*/
+			}
+			
+			#body a {
+				width: 33.333333333333%;
+			}
+			
+			#body a div {
+				display: block;
+				padding: 10px;
+			}
+			
+			#body div a {
+				/*background-color: red;*/
+				float: left;
+			}
+			
+			#body a div {
+				position: relative;
+				margin: 10px;
+				height: 220px;
+				background-color: white;
+				border: 1px solid #EDEDED;
+			}
+			
+			#body a img {
+				position: absolute;
+				width: 299px;
+				height: 150px;
+				left: 0;
+				top: 0;
+			}
+			
+			#body a .one {
+				position: absolute;
+				color: white;
+				background-color: green;
+				top: -16px;
+				left: 0;
+			}
+			
+			#body a .miaosu {
+				position: absolute;
+				color: #333333;
+				/*background-color: green;*/
+				/*font-size: 8px;*/
+				top: 135px;
+				left: 0;
+				font-size: 16px;
+			}
+			
+			#body a .money {
+				position: absolute;
+				color: white;
+				color: orange;
+				bottom: -15px;
+				left: 3px;
+			}
+			
+			#body a .manyi {
+				position: absolute;
+				color: white;
+				color: orange;
+				bottom: -15px;
+				right: 0;
+				color: #6A6A6A;
+				font-size: 14px;
+			}
+			
+			.cl {
+				clear: both;
+			}
+			
+			#footer {
+				width: 100%;
+				background-color: #333333;
+				/*height: 100px;*/
+				margin: 40px 0 auto;
+			}
+			#footer div{
+				width: 960px;
+				margin: 0 auto;
+			}
+			#footer ul {
+				padding: 15px;
+				list-style: none;
+				float: left;
+				width: 33.3333333%;
+				color: white;
+			}
+			#dd{
+				background-color: black;
+				color: white;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="nav">
+			<div id="">
+				<img src="img/logo.png" />
+				<span id="">
+					<a href="#">首页</a>
+					<a href="#">旅游资讯</a>
+					<a href="#">机票订购</a>
+					<a href="#">风景欣赏</a>
+					<a href="#">公司简介</a>
+				</span>
+			</div>
+		</div>
+
+		<div id="header">
+			<div id="">
+				<span id="">
+					<input type="text" id="aa"/>
+					<button id="sousuo" style="width: 70px;height: 30px;">搜索</button>
+				</span>
+			</div>
+		</div>
+
+		<div id="middle">
+			<div id="">
+				<h1>热门旅游</h1>
+				<!--<p></p>-->
+				<p>国内旅游、国外旅游、自助旅游、自驾旅游、邮轮签证、主题旅游等各种最新热门旅游推荐</p>
+			</div>
+		</div>
+
+		<div id="body">
+			<div id="">
+				<a href="#">
+					<div id="">
+						<img src="img/tour1.jpg" />
+						<p class="one">国内长线</p>
+						<p class="money">¥2864起</p>
+						<p class="manyi">满意度 77%</p>
+						<p class="miaosu">《曼谷-芭提雅6日游》时间了付款就为OK老妇女，民族女郎会计法</p>
+					</div>
+				</a>
+				<a href="#">
+					<div id="">
+						<img src="img/tour2.jpg" />
+						<p class="one">国内长线</p>
+						<p class="money">¥2864起</p>
+						<p class="manyi">满意度 77%</p>
+						<p class="miaosu">《曼谷-芭提雅6日游》时间了付款就为OK老妇女，民族女郎会计法</p>
+					</div>
+				</a>
+				<a href="#">
+					<div id="">
+						<img src="img/tour3.jpg" />
+						<p class="one">国内长线</p>
+						<p class="money">¥2864起</p>
+						<p class="manyi">满意度 77%</p>
+						<p class="miaosu">《曼谷-芭提雅6日游》时间了付款就为OK老妇女，民族女郎会计法</p>
+					</div>
+				</a>
+				<a href="#">
+					<div id="">
+						<img src="img/tour4.jpg" />
+						<p class="one">国内长线</p>
+						<p class="money">¥2864起</p>
+						<p class="manyi">满意度 77%</p>
+						<p class="miaosu">《曼谷-芭提雅6日游》时间了付款就为OK老妇女，民族女郎会计法</p>
+					</div>
+				</a>
+				<a href="#">
+					<div id="">
+						<img src="img/tour5.jpg" />
+						<p class="one">国内长线</p>
+						<p class="money">¥2864起</p>
+						<p class="manyi">满意度 77%</p>
+						<p class="miaosu">《曼谷-芭提雅6日游》时间了付款就为OK老妇女，民族女郎会计法</p>
+					</div>
+				</a>
+				<a href="#">
+					<div id="">
+						<img src="img/tour6.jpg" />
+						<p class="one">国内长线</p>
+						<p class="money">¥2864起</p>
+						<p class="manyi">满意度 77%</p>
+						<p class="miaosu">《曼谷-芭提雅6日游》时间了付款就为OK老妇女，民族女郎会计法</p>
+					</div>
+				</a>
+				<a href="#">
+					<div id="">
+						<img src="img/tour7.jpg" />
+						<p class="one">国内长线</p>
+						<p class="money">¥2864起</p>
+						<p class="manyi">满意度 77%</p>
+						<p class="miaosu">《曼谷-芭提雅6日游》时间了付款就为OK老妇女，民族女郎会计法</p>
+					</div>
+				</a>
+				<a href="#">
+					<div id="">
+						<img src="img/tour8.jpg" />
+						<p class="one">国内长线</p>
+						<p class="money">¥2864起</p>
+						<p class="manyi">满意度 77%</p>
+						<p class="miaosu">《曼谷-芭提雅6日游》时间了付款就为OK老妇女，民族女郎会计法</p>
+					</div>
+				</a>
+				<a href="#">
+					<div id="">
+						<img src="img/tour9.jpg" />
+						<p class="one">国内长线</p>
+						<p class="money">¥2864起</p>
+						<p class="manyi">满意度 77%</p>
+						<p class="miaosu">《曼谷-芭提雅6日游》时间了付款就为OK老妇女，民族女郎会计法</p>
+					</div>
+				</a>
+			</div>
+			<div class="cl"></div>
+		</div>
+
+		<div id="footer">
+			<div id="">
+				<ul>
+					<h3>合作伙伴</h3>
+					<li>途牛旅游网</li>
+					<li>驴妈妈旅游网</li>
+					<li>携程旅游</li>
+					<li>中国青年旅行社</li>
+					
+				</ul>
+				<ul>
+					<h3>旅游FAQ</h3>
+					<li>旅游合同签订方式</li>
+					<li>儿童价是基于什么制定的</li>
+					<li>旅游的线路品质怎么界定的？</li>
+					<li>单房差是什么？</li>
+					<li>旅游保险有哪些种类？</li>
+					
+				</ul>
+				<ul>
+					<h3>联系方式</h3>
+					<li>微博：kangzhixin.qq.com</li>
+					<li>邮箱：315206916@qq.com</li>
+					<li>地址：厦门市翔安区</li>
+				</ul>
+			</div>
+			<div class="cl"></div>
+		</div>
+		<div id="dd">By Kang | 闽ICP备112330119 | 康氏公馆许可证：L-YC-BK12345</div>
+	</body>
+
+</html>

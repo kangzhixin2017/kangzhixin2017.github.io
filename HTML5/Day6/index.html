@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人主页</title>
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+			}
+			html,body {
+				margin: 0;
+				padding: 0;
+				border: 0;
+			}
+			#nav {
+				width: 100%;
+				background-color: white;
+				box-shadow: 0 1px 1px #999;
+				position: fixed;
+				top: 0;
+				z-index: 1000;
+			}
+			#nav div {
+				width: 96%;
+				margin: 0 auto;
+				/*border: solid 2px red;*/
+				padding: 10px 0;
+			}
+			#nav img {
+				width: auto;
+				height: 40px;
+			}
+			#nav a {
+				text-decoration: none;
+				color: black;
+				font-size: 16px;
+			}
+			#nav span{
+				float: right;
+				line-height: 40px;
+			}
+			#nav a:hover {
+				color: red;
+			}
+			#header img {
+				margin-top: 60px;
+				width: 100%;
+			}
+			p {
+				width: 96%;
+				margin: 20px auto 40px auto;
+				font-size: 16px;
+				color: #666666;
+				line-height: 150%;
+				text-align: left;
+			}
+			p:before {
+				content: "“";
+				font-size: 32px;
+				font-family: "宋体";
+				position: relative;
+				top: 10px;
+			}
+			p:after {
+				content: "”";
+				font-size: 32px;
+				font-family: "宋体";
+				position: relative;
+				top: 10px;
+			}
+			h1{
+				font-size: 25px;
+				color: orange;
+				width: 96%;
+				margin: 18px auto;
+			}
+			h1:before {
+				content: "▉";
+			}
+			.section{
+				text-align: center;
+			}
+			.section img {
+				margin: 0 auto;
+				width: 96%;
+			}
+			#classmates {
+				background-image: url(img/classmates.jpg);
+				width: 96%;
+				height: 520px;
+				margin: 0 auto;
+				position: relative;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			#classmates img{
+				border: solid 5px white;
+				border-radius: 50%;
+			}
+			#classmates img:nth-child(1){
+				width: 250px;
+				height: 250px;
+				top: 20px;
+				left: 150px;
+				position: absolute;
+			}
+			#classmates img:nth-child(2){
+				width: 350px;
+				height: 350px;
+				top: 120px;
+				left: 500px;
+				position: absolute;
+			}
+			#classmates img:nth-child(3){
+				position: absolute;
+				width: 150px;
+				height: 150px;
+				top: 50px;
+				left: 1030px;
+			}
+			hr {
+				width: 98%;
+				color: #999999;
+				margin: 20px auto;
+			}
+			#footer div{
+				color: #999999;
+				width: 96%;
+				margin: 30px auto 30px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="nav">
+			<div id="">
+				<img src="img/logo.png"/>
+				<span id="">
+					<a href="#">首页</a>&#x3000;&#x3000;
+					<a href="#html5">HTML5</a>&#x3000;&#x3000;
+					<a href="#">我的家乡</a>&#x3000;&#x3000;
+					<a href="#">我的学校</a>&#x3000;&#x3000;
+					<a href="#">我的同学</a>&#x3000;&#x3000;
+					<a href="#">关于我</a>&#x3000;&#x3000;
+				</span>
+			</div>
+		</div>
+		
+		<div id="header">
+			<img src="img/header.jpg"/>
+			<p>傻逼明珠 傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼
+			傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼
+			傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼
+			傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼</p>
+		</div>
+		<h1 id="html5">HTML5</h1>
+		<div class="section">
+			<img src="img/html5.jpg" />
+			<p>傻逼明珠 傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼
+			傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼
+			傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼
+			傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼傻逼</p>
+		</div>
+		
+		<h1 id="classmate">我的同学</h1>
+		<div>
+			<div id="classmates">
+				<img src="img/ldh.jpg"/>
+				<img src="img/lry.jpg"/>
+				<img src="img/wf.png"/>
+		    	</div>
+		</div>
+		<div id="footer">
+			<hr />
+			<div >
+				&copy;2018智游教育 版权所有&#x3000;&#x3000;0592-110110
+				&#x3000;&#x3000;厦门市翔安区新店镇公馆1号110楼
+			</div>
+		</div>
+	</body>
+</html>

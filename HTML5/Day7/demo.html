@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>楼盘详情</title>
+		<style type="text/css">
+			*{
+				box-sizing: border-box;
+			}
+			body{
+				margin: 0;
+				background-color: #ededed;
+			}
+			body > img{
+				width: 100%;
+				display: block;
+			}
+			#toolbar{
+				margin: 12px 10px 0px 10px;
+				/*background-color: red;*/
+			}
+			#toolbar a{
+				border: solid 1px #33cc66;
+				width: 136px;
+				height: 40px;
+				/*行元素不能设置宽高 所以换成行块元素*/
+				display: inline-block;
+				border-radius: 5px;
+				text-align: center;
+				text-decoration: none;
+				color: #33CC66;
+				padding-top: 7px;
+			}
+			#toolbar a img{
+				width: 22px;
+				height: 22px;
+				vertical-align: middle;
+			}
+			#toolbar a:nth-child(2){
+				background-color: #33CC66;
+				color: white;
+				float: right;
+			}
+			.infos{
+				margin: 15px 10px 0px 10px;
+				background-color: white;
+			}
+			.infos h2 img{
+				width: 25px;
+				height: 25px;
+				position: relative;
+				top: 5px;
+			}
+			.infos h2{
+				font-size: 16px;
+				font-weight: normal;
+				color: #333333;
+				margin: 0;
+				padding: 7px 12px 12px 12px;
+				border-bottom: 1px solid #EDEDED;	
+			}
+			.infos span{
+				color: #33CC66;
+				float: right;
+				position: relative;
+				top: 7px;
+			}
+			.infos dl{
+				margin: 0;
+				padding: 14px;
+				font-size: 14px;
+				line-height: 160%;
+				color: #6a6a6a;
+			}
+			.infos dt{
+				float: left;
+			}
+			.infos dd{
+				margin: 0 0 0 5px;
+				float: left;
+			}
+			.cl{
+				clear: both;
+			}
+			#map{
+				width: 100%;
+				display: block;
+			}
+			.infos p{
+				margin: 0;
+				padding: 15px;
+				color: #6a6a6a;
+			}
+			#address img{
+				width: 12px;
+				height: 16px;
+				vertical-align: middle;
+			}
+			#address{
+				text-decoration: none;
+				color: #6A6A6A;
+				font-size: 14px;
+				display: block;
+				padding-top: 8px;
+			}
+			.infos footer{
+				border-top: solid 1px #EDEDED;
+				text-align: center;
+				padding: 8px;
+			}
+			footer img{
+				width: 22px;
+			}
+			footer{
+				text-align: center;
+				color: #9a9a9a;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<img src="image/tc-7.jpg"/>
+		<section id="toolbar">
+			<a href="#">
+				<img src="image/tel.png"/>
+				电话咨询
+			</a>
+			<a href="#">
+				<img src="image/c12.png"/>
+				预约看房
+			</a>
+		</section>
+		<section class="infos">
+			<h2>
+				<img src="image/icon06.png"/>
+				&nbsp;基本信息
+				<span>在售</span>
+			</h2>
+			<dl>
+				<dt>楼盘名称：</dt>
+				<dd>康桥林溪湾</dd>
+				<div class="cl"></div>
+				<dt>楼盘价格：</dt>
+				<dd>一房一价</dd>
+				<div class="cl"></div>
+				<dt>主推户型：</dt>
+				<dd>傻逼明珠 买一送一 不要1888 也不要880 只要88还包邮</dd>
+				<div class="cl"></div>
+			</dl>
+		</section>
+		<section class="infos">
+			<h2>
+				<img src="image/icon01.png"/>
+				&nbsp;楼盘地址
+			</h2>
+			<p>
+				<img src="image/map.png" id="map"/>
+				<a href="#" id="address">
+					<img src="image/icon_map.png"/>
+					&nbsp;郑州·龙湖·双湖大道·双龙家园小区
+				</a>
+			</p>
+		</section>
+		<section class="infos">
+			<h2>
+				<img src="image/icon04.png"/>
+				&nbsp;楼盘介绍
+			</h2>
+			<p>
+				看见啦啦看见爱上了放假时间佛IQ我我偶尔开始
+				的减肥杀戮空间的分类空间相册，满脑子拉丝机放了进去哦i
+				空间的浪费空间链接撒空间十分看咯IQ无饿哦就
+				发动机两款机器离开时间发路口IQuwreoiuwe 
+				看见爱上对方了解啦第三发
+				立卡见识到了分开交流空间撒六块腹肌卢卡斯解放路开讲啦设计费立刻就算了会计法律框架斯洛伐克地脚螺栓卡刷卡机
+				卢卡斯江东父老科技四路看见对方垃圾死了开发交流空间撒冷风机拉斯
+				来看是否建立交上来房间拉丝机法律框架离开时间发了
+				奥斯卡江东父老讲述了看风景离开时间发了集市
+				埃里克森江东父老看见爱上了分开进来撒发链接爱上了饭局
+			</p>
+			<footer>
+				<img src="image/up.png"/>
+			</footer>
+		</section>
+		<footer>By KangSir</footer>
+	</body>
+</html>

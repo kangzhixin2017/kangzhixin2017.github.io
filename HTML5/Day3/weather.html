@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>天气效果</title>
+		<style type="text/css">
+			html,body{
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				/*设置渐变色*/
+				background-image: linear-gradient(rgb(13,105,199),rgb(144,175,224));
+				background-color: rgb(114,173,224);
+				/*禁止图片重复*/
+				background-repeat: no-repeat;
+				overflow: hidden;
+			}
+			header{
+				text-align: center;
+				font-size: 25px;
+				color: white;
+				font-weight: bold;
+				line-height: 50px;
+				background-color: chocolate;
+			}
+			main .icon{
+				background-image: url(img/days/xue.png);
+				height: 128px;
+				margin: 40px;
+				background-repeat: no-repeat;
+				/*两个参数 x、y轴*/
+				background-position: center center;
+			}
+			main .tempers{
+				text-align: center;
+				font-size: 30px;
+				color: white;
+				/*字体*/
+				font-family: arial;
+				
+			}
+			main .weather{
+				text-align: center;
+				font-size: 20px;
+				color: white;
+			}
+			main .wind{
+				text-align: center;
+				font-size: 14px;
+				color: white;
+				line-height: 200%;
+			}
+			main .current{
+				text-align: center;
+				font-size: 14px;
+				color: white;
+			}
+			footer{
+				width: 90%;
+				text-align: center;
+				margin: 60px auto;
+				font-size: 14px;
+				color: white;
+			}
+			section{
+				/*让它浮动  横向 向左*/
+				float: left;
+				width: 33.3333333333%;
+				/*避免挤压*/
+				box-sizing: border-box;
+				border-right: solid 1px springgreen;
+			}
+			section:nth-child(3){
+				/*去掉边框*/
+				border: none;
+			}
+			section .icon{
+				background-image: url(img/days/qing.png);
+				height: 60px;
+				background-repeat: no-repeat;
+				background-size: 60px;
+				background-position: center center;
+				margin: 15px auto;
+				/*透明度 0~1之间*/
+				opacity: 0.8;
+			}
+		</style>
+	</head>
+	<body>
+		<header>厦门市</header>
+		<main>
+			<div class="icon"></div>
+			<div class="tempers">17℃ ~ 5℃</div>
+			<div class="weather">小雪</div>
+			<div class="wind">微风</div>
+			<div class="current">实时温度：13℃，空气指数135 轻度污染</div>
+		</main>
+		
+		<footer>
+			<section>
+				<div class="week">周二</div>
+				<div class="icon"></div>
+				<div class="tempers">13℃ ~ 25℃</div>
+				<div class="weather">晴</div>
+				<div class="wind">微风</div>
+			</section>
+			<section>
+				<div class="week">周三</div>
+				<div class="icon"></div>
+				<div class="tempers">13℃ ~ 25℃</div>
+				<div class="weather">小雨</div>
+				<div class="wind">龙卷风</div>
+			</section>
+			<section>
+				<div class="week">周四</div>
+				<div class="icon"></div>
+				<div class="tempers">13℃ ~ 25℃</div>
+				<div class="weather">大雨</div>
+				<div class="wind">台风</div>
+			</section>
+		</footer>
+		
+		<script type="text/javascript">
+			function Flake(){
+				//创建一个img标签
+				var f = document.createElement('img');
+				//获取浏览器的可视区域高度
+				var h = document.documentElement.clientHeight;
+				//获取浏览器可视区域的宽度
+				var w = document.documentElement.clientWidth;
+				
+				var top = h * Math.random();
+				var left = w * Math.random();
+				//添加图片
+				f.src = 'img/flake.png';
+				//绝对定位
+				f.style.position = 'absolute';
+				f.style.top = top +'px';
+				f.style.left = left +'px';
+				f.style.transform = 'scale(' + Math.random() / 2 + ')';
+				//把图片插入到body
+				document.body.appendChild(f);
+				
+				function down(){
+					top += Math.random() * 10;
+					left += Math.random() * 5;
+					if(top > h) top = -100;
+					if(left > w) left = -100;
+					f.style.top = top + 'px';
+					f.style.left = left + 'px';
+				}
+//				setInterval(down,50);
+				
+			}
+			for(var i = 0;i<50;i++){
+					new Flake();
+			}
+		</script>
+	</body>
+</html>

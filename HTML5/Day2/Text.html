@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>旋转立方体动画</title>
+		<style type="text/css">
+			*{
+				-moz-user-select: none;
+			}
+			html{
+				height: 100%;
+			}
+			body{
+				height: 100%;
+				margin: 0;
+				background-color: lightgray;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				perspective: 1500px;
+			}
+			#small{
+				height: 100px;
+				width: 100px;
+				left: 450px;
+				top: 200px;
+				position: absolute;
+				transform-style: preserve-3d;
+				animation: 10s infinite spin linear;
+			}
+			#small div{
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				border: 1px solid green;
+				background-size: 100%;
+			}
+			#font_s{
+				background-image: url(Cube/1.JPG);
+				transform: translateZ(50px);
+			}
+			#back_s{
+				background-image: url(Cube/2.JPG);
+				transform: translateZ(-50px);
+			}
+			#left_s{
+				background-image: url(Cube/3.JPG);
+				transform: rotateY(-90deg) translateZ(50px);
+			}
+			#right_s{
+				background-image: url(Cube/4.JPG);
+				transform: rotateY(90deg) translateZ(50px);
+			}
+			#top_s{
+				background-image: url(Cube/5.JPG);
+				transform: rotateX(-90deg) translateZ(50px);
+			}
+			#bottom_s{
+				background-image: url(Cube/6.JPG);
+				transform: rotateX(90deg) translateZ(50px);
+			}
+			
+			
+			#big{
+				height: 200px;
+				width: 200px;
+				left: 400px;
+				top: 150px;
+				position: absolute;
+				transform-style: preserve-3d;
+				animation: 10s infinite spin linear;
+			}
+			#big div{
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				border: 1px solid black;
+				background-size: 100%;
+				opacity: 0.5;
+				transition: transform 0.5s ease-in-out;
+			}
+			#big:hover #font{
+				transform: translateZ(200px);
+				transition: transform 0.5s ease-in-out;
+			}
+			#font{
+				background-image: url(Cube/1.JPG);
+				transform: translateZ(100px);
+			}
+			#big:hover #back{
+				transform: translateZ(-200px);
+				transition: transform 0.5s ease-in-out;
+			}
+			#back{
+				background-image: url(Cube/2.JPG);
+				transform: translateZ(-100px);
+				user-select: none;
+				-moz-user-select: none;
+			}
+			#big:hover #left{
+				transform: rotateY(-90deg) translateZ(200px);
+				transition: transform 0.5s ease-in-out;
+			}
+			#left{
+				background-image: url(Cube/3.JPG);
+				transform: rotateY(-90deg) translateZ(100px);
+			}
+			#big:hover #right{
+				transform: rotateY(90deg) translateZ(200px);
+				transition: transform 0.5s ease-in-out;
+			}
+			#right{
+				background-image: url(Cube/4.JPG);
+				transform: rotateY(90deg) translateZ(100px);
+			}
+			#big:hover #top{
+				transform: rotateX(-90deg) translateZ(200px);
+				transition: transform 0.5s ease-in-out;
+			}
+			#top{
+				background-image: url(Cube/5.JPG);
+				transform: rotateX(-90deg) translateZ(100px);
+			}
+			#big:hover #bottom{
+				transform: rotateX(90deg) translateZ(200px);
+				transition: transform 0.5s ease-in-out;
+			}
+			#bottom{
+				background-image: url(Cube/6.JPG);
+				transform: rotateX(90deg) translateZ(100px);
+			}
+			
+			@keyframes spin{
+				0%{
+					transform: rotateX(0deg) rotateY(0deg);
+				}
+				100%{
+					transform: rotateX(360deg) rotateY(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="background">
+			
+		</div>
+		<section id="small">
+			<div id="font_s"></div>
+			<div id="back_s"></div>
+			<div id="left_s"></div>
+			<div id="right_s"></div>
+			<div id="top_s"></div>
+			<div id="bottom_s"></div>
+		</section>
+		<section id="big">
+			<div id="font"></div>
+			<div id="back"></div>
+			<div id="left"></div>
+			<div id="right"></div>
+			<div id="top"></div>
+			<div id="bottom"></div>
+		</section>
+	</body>
+</html>

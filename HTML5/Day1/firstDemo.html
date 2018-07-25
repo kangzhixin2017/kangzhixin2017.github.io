@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>大风车</title>
+		<style type="text/css">
+			body{
+				background-color: rgba(188, 92, 255, 0.5);
+			}
+			header{
+				width: 1000px;
+				height: 500px;
+				background-image: url(images/caodi.png);
+				background-size: contain;
+				margin:  0 auto;
+				/*相对定位*/
+				position: relative;
+			}
+			/*选中第一个section元素*/
+			section:nth-child(1){
+				background-image: url(images/fengche.png);
+				/*设置图片尺寸*/
+				background-size: contain;
+				width: 350px;
+				height: 350px;
+				/*绝对定位*/
+				position: absolute;
+				left: 115px;
+				top: 40px;
+				/*添加动画的名字*/
+				animation-name:round ;
+				/*设置动画完成时间*/
+				animation-duration: 1s;
+				/*设置动画的运动模式*/
+				/*infintea表示无限运动*/
+				animation-iteration-count:infinite ;
+				/*设置匀速运动，速率*/
+				animation-timing-function: linear;
+			}
+			/*设置动画的关键帧*/
+			/*round是上面设置的动画的名字*/
+			@keyframes round{
+				0%{
+					transform: rotate(0);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+			section:nth-child(2){
+				background-image: url(images/fengche.png);
+				/*设置图片尺寸*/
+				background-size: contain;
+				width: 200px;
+				height: 200px;
+				/*绝对定位*/
+				position: absolute;
+				left: 416px;
+				top: 260px;
+				/*添加动画的名字*/
+				animation-name:rounda ;
+				/*设置动画完成时间*/
+				animation-duration: 1s;
+				/*设置动画的运动模式*/
+				/*infintea表示无限运动*/
+				animation-iteration-count:infinite ;
+				/*设置匀速运动，速率*/
+				animation-timing-function: linear;
+			}
+			@keyframes rounda{
+				0%{
+					transform: rotate(0);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+			section:nth-child(3){
+				background-image: url(images/fengche.png);
+				/*设置图片尺寸*/
+				background-size: contain;
+				width: 300px;
+				height: 300px;
+				/*绝对定位*/
+				position: absolute;
+				left: 555px;
+				top: 150px;
+				/*添加动画的名字*/
+				animation-name:roundb ;
+				/*设置动画完成时间*/
+				animation-duration: 1s;
+				/*设置动画的运动模式*/
+				/*infintea表示无限运动*/
+				animation-iteration-count:infinite ;
+				/*设置匀速运动，速率*/
+				animation-timing-function: linear;
+			}
+			@keyframes roundb{
+				0%{
+					transform: rotate(0);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!--header和section都是html5的新标签-->
+		<!--类似div标签 都是把网页分成一个块或者一个区域-->
+		<header>
+			<section></section>
+			<section></section>
+			<section></section>
+		</header>
+	</body>
+</html>

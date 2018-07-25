@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>康桥图册</title>
+		<style type="text/css">
+			*{
+				box-sizing: border-box;
+				html{
+					height: 100%;
+				}
+			}
+			body{
+				height: 100%;
+				margin: 0;
+				background-color: #f6f6f6;
+			}
+			header{
+				color: #33CC66;
+				border-bottom: solid 1px #33CC66;
+				text-align: center;
+				font-size: 16px;
+				background-color: white;
+				line-height: 240%;
+			}
+			body > img{
+				width: 100%;
+				display: block;
+			}
+			main {
+				background-image: url(image/line.png);
+				background-repeat: repeat-y;
+				background-position: center;
+				background-size: 6px;
+			}
+			ul{
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				width: 50%;
+				float: left;
+			}
+			li{
+				margin: 0;
+				padding: 12px;
+			}
+			li a{
+				border: solid 1px #efefef;
+				background-color: white;
+				padding: 5px;
+				display: inline-block;
+				line-height: 0px;
+				position: relative;
+				width: 100%;
+			}
+			li a img{
+				width: 100%;
+			}
+			li a i{
+				display: block;
+				background-image: url(image/right_bg.png);
+				background-size: 100%;
+				width: 6px;
+				height: 11px;
+				position: absolute;
+				right: -5px;
+				top: 10px;
+			}
+			li a span{
+				display: block;
+				background-image: url(image/camera.png);
+				background-size: 100%;
+				width: 14px;
+				height: 22px;
+				position: absolute;
+				right: -20px;
+				top: 5px;
+			}
+			ul:nth-of-type(2){
+				margin-top: 40px;
+			}
+			ul:nth-of-type(2) i{
+				left: -5px;
+				top: 46px;
+				transform: rotate(180deg);
+			}
+			ul:nth-of-type(2) span{
+				left: -20px;
+				top: 40px;
+			}
+			.cf{
+				clear: both;
+			}
+			footer{
+				text-align: center;
+				color: #9c9c9c;
+				font-size: 14px;
+				padding: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>康桥林溪湾实景展示</header>
+		<img src="image/tc.jpg"/>
+		
+		<main>
+			<ul>
+				<li>
+					<a href="#">
+						<img src="image/tc-1.jpg"/>
+						<i></i>
+						<span></span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="image/tc-2.jpg"/>
+						<i></i>
+						<span></span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="image/tc-3.jpg"/>
+						<i></i>
+						<span></span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="image/tc-4.jpg"/>
+						<i></i>
+						<span></span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="image/tc-5.jpg"/>
+						<i></i>
+						<span></span>
+					</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="#">
+						<img src="image/tc-6.jpg"/>
+						<i></i>
+						<span></span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="image/tc-7.jpg"/>
+						<i></i>
+						<span></span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="image/tc-8.jpg"/>
+						<i></i>
+						<span></span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="image/tc-9.jpg"/>
+						<i></i>
+						<span></span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="image/tc-10.jpg"/>
+						<i></i>
+						<span></span>
+					</a>
+				</li>
+			</ul>
+			<div class="cf">	</div>
+		</main>
+		<footer>By KangSir</footer>
+	</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>简易相册</title>
+		<style type="text/css">
+			html{
+				height: 100%;
+			}
+			body{
+				height: 100%;
+				background-color: gold;
+				background-image: url(images/11.jpg);
+				/*禁止图片重复*/
+				background-repeat: no-repeat;
+				/*设置尺寸*/
+				/*1 x轴 2 y轴*/
+				background-size: cover;
+				/*background-size: 100% 100%;*/
+			}
+			a{
+				/*去掉默认的文本样式*/
+				text-decoration: none;
+				color: red;
+				font-size: 30px;
+				/*字体加粗*/
+				font-weight: bold;
+			}
+			div{
+				width: 100px;
+				height: 100px;
+				border: 5px solid white;
+				border-radius: 10px;
+				transition: transform 0.5s ease-in-out;
+			}
+			div:nth-child(1){
+				position: absolute;
+				background-image: url(images/thumbs/1.jpg);
+				left: 100px;
+				top: 50px;
+				transform: rotate(-5deg);
+
+			}
+			div:nth-child(2){
+				position: absolute;
+				background-image: url(images/thumbs/2.jpg);
+				left: 250px;
+				top: 50px;
+				transform: rotate(5deg);
+
+			}
+			div:nth-child(3){
+				position: absolute;
+				background-image: url(images/thumbs/3.jpg);
+				left: 100px;
+				top: 250px;
+				transform: rotate(5deg);
+
+			}
+			div:nth-child(4){
+				position: absolute;
+				background-image: url(images/thumbs/4.jpg);
+				left: 250px;
+				top: 250px;
+				transform: rotate(-5deg);
+
+			}
+			div:nth-child(5){
+				position: absolute;
+				background-image: url(images/thumbs/5.jpg);
+				left: 100px;
+				top: 450px;
+				transform: rotate(5deg);
+
+			}
+			div:nth-child(6){
+				position: absolute;
+				background-image: url(images/thumbs/6.jpg);
+				left: 250px;
+				top: 450px;
+				transform: rotate(-5deg);
+
+			}
+			/*当鼠标移入的时候出现的效果*/
+			div:nth-child(n):hover{
+				/*添加动画的属性，rotate表示旋转的角度 scale表示缩放比例*/
+				transform:scale(1.5,1.5);
+				/*设计动画的过渡 参数
+				 * 1 过渡的属性 
+				 * 2过渡时间 
+				 * 3运行的速率*/
+				/*transition: transform 0.5s ease-in-out;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<a href="#">图片1</a>
+		</div>
+		<div>
+			<a href="#">图片2</a>
+		</div>
+		<div>
+			<a href="#">图片3</a>
+		</div>
+		<div>
+			<a href="#">图片4</a>
+		</div>
+		<div>
+			<a href="#">图片5</a>
+		</div>
+		<div>
+			<a href="#">图片6</a>
+		</div>
+	</body>
+</html>

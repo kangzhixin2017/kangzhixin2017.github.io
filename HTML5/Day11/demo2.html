@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html,body{
+				box-sizing: border-box;
+			}
+			.right{
+				position: relative;
+				margin: 30px auto;
+				/*border: solid 1px red;*/
+				width: 300px;
+				height: 300px;
+			}
+			.right div{
+				width: 300px;
+				height: 300px;
+				position: absolute;
+				border: solid 18px green;
+				border-radius: 50%;
+				left: 0;
+				top: 0;
+			}
+			.right .cover-left{
+				animation-name: tans-ring-left;
+				animation-duration: 2s;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
+				border-color: yellow;
+			}
+			@keyframes tans-ring-left{
+				0%{
+					clip:rect(0px,300px,0px,150px)
+				}
+				100%{
+					
+					clip:rect(0px,300px,300px,150px)
+				}
+			}
+			section{
+				width: 300px;
+				height: 300px;
+				background-color: red;
+				position: absolute;
+				/*margin: 0 auto;*/
+				border-radius: 50%;
+				/*1顶部切的范围（从上到下） 
+				 * 2右边保留（从左到右）
+				 * 3底部保留（从上到下）
+				 * 4左边切（从左到右）*/
+				clip: rect(0px,300px,300px,0px);
+			}
+		</style>
+	</head>
+	<body>
+		<!--<div class="right">
+			<div class="base">
+				
+			</div>
+			<div class="cover-left">
+				
+			</div>
+			
+		</div>-->
+		<section></section>
+	</body>
+</html>

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+			}
+			
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				border: 0;
+			}
+			
+			#nav {
+				width: 100%;
+				background-color: #333333;
+				/*box-shadow: 0 1px 1px #999;*/
+				/*position: fixed;*/
+				/*top: 0;*/
+				/*z-index: 1000;*/
+				/*position: relative;*/
+			}
+			
+			#nav div {
+				width: 960px;
+				/*border: solid 2px red;*/
+				margin: 0 auto;
+				padding: 1px;
+				color: white;
+				font-size: 13px;
+				/*background-color: black;*/
+			}
+			
+			#nav span:nth-of-type(2) {
+				float: right;
+				color: white;
+			}
+			
+			#nav span a {
+				color: white;
+				text-decoration: none;
+				border-right: solid 2px white;
+				padding-right: 5px;
+			}
+			
+			#nav span a:nth-of-type(4) {
+				border: none;
+			}
+			
+			#nav span a:hover {
+				color: red;
+			}
+			
+			#header_img {
+				width: 100%;
+				/*background-color: red;*/
+			}
+			
+			#header_img div {
+				width: 1000px;
+				margin: 0 auto;
+				padding: 30px;
+				/*background-color: black;*/
+			}
+			
+			#header_img div img {
+				width: 950px;
+			}
+			
+			#nav1 {
+				width: 100%;
+				background-color: blue;
+			}
+			
+			#nav1 div {
+				width: 960px;
+				margin: 0 auto;
+				/*padding: 5px;*/
+				/*background-color: green;*/
+			}
+			
+			#nav1 div span {
+				height: 100%;
+			}
+			
+			#nav1 span a {
+				display: inline-block;
+				text-decoration: none;
+				/*background-color: black;*/
+				font-size: 16px;
+				color: white;
+				width: 133px;
+				height: 40px;
+				text-align: center;
+				padding: 8px;
+			}
+			
+			#nav1 a:hover {
+				background-color: red;
+				/*color: red;*/
+			}
+			
+			#img {
+				width: 100%;
+			}
+			
+			#img img {
+				width: 100%;
+			}
+			
+			#body {
+				width: 960px;
+				margin: 0 auto;
+				/*background-color: aquamarine;*/
+			}
+			
+			#left {
+				/*height: 100px;*/
+				width: 600px;
+				/*background-color: red;*/
+				float: left;
+			}
+			
+			#right {
+				/*height: 100px;*/
+				width: 360px;
+				/*background-color: blue;*/
+				float: right;
+			}
+		
+			
+			#left_1 {
+				float: left;
+				width: 50%;
+				height: 360px;
+				padding: 10px;
+				/*background-color: gold;*/
+			}
+			
+			#left_2 {
+				width: 50%;
+				height: 360px;
+				float: right;
+				padding: 10px;
+				/*background-color: goldenrod;*/
+			}
+			#left_1 .a{
+				/*margin: 10px;*/
+				position: relative;
+				/*background-color: blue;*/
+				
+			}
+			#left_2 .a{
+				/*padding: 10px;*/
+				position: relative;
+				/*background-color: blue;*/
+			}
+			.a p{
+				/*float: left;*/
+				position: absolute;
+				/*top: -0px;*/
+				top: -10px;
+				font-size: 16px;
+			}
+			.a a{
+				text-decoration: none;
+				color: #D3D3D3;
+				/*float: right;*/
+				position: absolute;
+				top: 10px;
+				right: 10px;
+			}
+			.a img:nth-of-type(1){
+				position: absolute;
+				top: 35px;
+				display: block;
+				width: 100%;
+				height: 2px;
+			}
+			.a img:nth-of-type(2){
+				position: absolute;
+				top: 50px;
+			}
+			.a i:nth-of-type(1){
+				position: absolute;
+				top: 190px;
+			}
+			.a i:nth-of-type(2){
+				position: absolute;
+				top: 220px;
+			}
+			.a i:nth-of-type(3){
+				position: absolute;
+				top: 250px;
+			}
+			.a i:nth-of-type(4){
+				position: absolute;
+				top: 280px;
+			}
+			.a i:nth-of-type(5){
+				position: absolute;
+				top: 310px;
+			}
+			.a i:before{
+				content: "▶ ";
+				color: blue;
+			}
+			.cl {
+				clear: both;
+			}
+			#di div{
+				width: 100%;
+				display: inline-block;
+				position: relative;
+			}
+			#di p:nth-of-type(1){
+				position: absolute;
+				font-size: 16px;
+				top: 10px;
+				left: 20px;
+			}
+			#di a{
+				position: absolute;
+				right: 12px;
+				text-decoration: none;
+				color: #D3D3D3;
+				top: 30px;
+			}
+			#aa{
+				position: absolute;
+				top: 55px;
+				width: 100%;
+			}
+			#bb{
+				position: absolute;
+				top: 60px;
+				font-size: 14px;
+				line-height: 30px;
+			}
+			#right a img{
+				margin-top: 10px;
+				display: inline-block;
+				width: 49%;
+			}
+			#right > div{
+				width: 100%;
+				height: 400px;
+			}
+			#right div div{
+				position: relative;
+				margin-top: 0px;
+				border-radius: 10px;
+				/*background-color: red;*/
+				border: 1px solid #C0C0C0;
+				width: 100%;
+				height: 300px;
+			}
+			#i{
+				position: absolute;
+				top: 20px;
+				left: 20px;
+			}
+			#in{
+				position: absolute;
+				top: 60px;
+				border-radius: 10px;
+				width: 85%;
+				left: 25px;
+				height: 170px;
+			}
+			#right div div img{
+				position: absolute;
+				top: 250px;
+				left: 125px;
+			}
+			#ddiv{
+				position: relative;
+				width: 100%;
+				height: 400px;
+			}
+			#ddiv > i{
+				position: absolute;
+				font-size: 16px;
+				left: 15px;
+				top: 40px;
+			}
+			#ddiv a:nth-of-type(1){
+				position: absolute;
+				top: 40px;
+				right: 20px;
+				/*color: black;*/
+				color: #D3D3D3;
+				text-decoration: none;
+			}
+			#ddiv > img{
+				position: absolute;
+				top: 70px;
+				width: 95%;
+				left: 5px;
+			}
+			#ddiv a{
+				position: absolute;
+				top: 75px;
+			}
+			#ddiv a img{
+				position: absolute;
+				width: 120px;
+				height: 70px;
+				left: 10px;
+			}
+			#ddiv a i:nth-of-type(1){
+				position: absolute;
+				top: 10px;
+				left: 140px;
+				color: #6A6A6A;
+			}
+			#ddiv a i:nth-of-type(2){
+				position: absolute;
+				width: 200px;
+				top: 30px;
+				left: 140px;
+				color: #D3D3D3;
+			}
+			#ddiv a:nth-of-type(3){
+				top: 150px;
+				color: #D3D3D3;
+			}
+			#ddiv a:nth-of-type(4){
+				top: 225px;
+				color: #D3D3D3;
+			}
+			#ddiv a:nth-of-type(5){
+				top: 300px;
+				color: #D3D3D3;
+			}
+			#footer{
+				width: 100%;
+				
+				/*background-color: red;*/
+				/*color: #999999;*/
+			}
+			#footer div:nth-of-type(1){
+				width: 960px;
+				margin: 0 auto;
+				padding: 1px;
+				color: white;
+				font-size: 13px;
+				border-top: 2px solid blue;
+				border-bottom: 1px solid #A9A9A9;
+			}
+			#footer span a {
+				color: #6A6A6A;
+				text-decoration: none;
+				border-right: solid 2px #999999;
+				padding-right: 5px;
+				width: 133px;
+				display: inline-block;
+				text-align: center;
+				/*height: 40px;*/
+				/*line-height: 40px;*/
+				margin: 20px 0 20px 0;
+			}
+			
+			#footer span a:nth-of-type(7) {
+				border: none;
+			}
+			
+			#footer span a:hover {
+				color: red;
+			}
+			#maxfooter div{
+				position: relative;
+				width: 960px;
+				margin: 0 auto;
+			}
+			#maxfooter div p{
+				margin-left: 80px;
+				line-height: 15px;
+				font-size: 12px;
+			}
+			#maxfooter div img{
+				position: absolute;
+				top: 5px;
+				right: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="nav">
+			<div id="">
+				<span>您好，欢迎光迎霍普国际官方网站！</span>
+				<span id="">
+					<a href="#">中文版</a>
+					<a href="#">英文版</a>
+					<a href="#">日文版</a>
+					<a href="#">韩文版</a>
+				</span>
+			</div>
+			<div class="cl"></div>
+		</div>
+
+		<div id="header_img">
+			<div id="">
+				<img src="images/logo.png" />
+			</div>
+		</div>
+
+		<div id="nav1">
+			<div id="">
+				<span id="">
+					<a href="#">首页</a>
+					<a href="#">关于霍普</a>
+					<a href="#">我们的服务</a>
+					<a href="#">客户服务</a>
+					<a href="#">新闻与媒体</a>
+					<a href="#">我们的办事处</a>
+					<a href="#">资源中心</a>
+				</span>
+			</div>
+			<div class="cl"></div>
+		</div>
+
+		<div id="img">
+			<img src="images/banner.png" />
+		</div>
+
+		<div id="body">
+			<div id="left">
+				<div id="left_1">
+					<div class="a">
+						<p>新闻公告</p>
+						<a href="#">MO N E +</a>
+						<div class="cl"></div>
+						<img src="images/title-split.png"/>
+						<img src="images/2.png"/>
+						<i>卡洛斯纠纷解决拉风</i>
+						<i>空气王老吉卡分离机看了就暗示法</i>
+						<i>流口水的风景？</i>
+						<i>考虑到附近</i>
+						<i>绿卡见附件为if老发</i>
+					</div>
+				</div>
+
+				<div id="left_2">
+					<div class="a">
+						<p>新闻公告</p>
+						<a href="#">MO N E +</a>
+						<div class="cl"></div>
+						<img src="images/title-split.png"/>
+						<img src="images/2.png"/>
+						<i>卡洛斯纠纷解决拉风</i>
+						<i>空气王老吉卡分离机看了就暗示法</i>
+						<i>流口水的风景？</i>
+						<i>考虑到附近</i>
+						<i>绿卡见附件为if老发</i>
+					</div>
+				</div>
+				
+				<div id="di">
+					<div>
+						<p>公司简介</p>
+						<a href="#">MO N E +</a>
+						<img id="aa" src="images/title-split.png"/>
+						<p id="bb">
+							<img src="images/3.png" align="left" hspace="10" vspace="10"/>
+							离开家蝶恋蜂狂吉林省空间发的链接埃里克森放假了群殴我一温柔就是放假了
+							卡坚实的法律科技离开时间离开房间哦围殴我若无而离开家代理费
+							离开家蝶恋蜂狂吉林省空间发的链接埃里克森放假了群殴我一温柔就是放假了
+							卡坚实的法律科技离开时间离开房间哦围殴我若无而离开家代理费
+							离开家蝶恋蜂狂吉林省空间发的链接埃里克森放假了群殴我一温柔就是放假了
+							卡坚实的法律科技离开时间离开房间哦围殴我若无而离开家代理费
+							离开家蝶恋蜂狂吉林省空间发的链接埃里克森放假了群殴我一温柔就是放假了
+							卡坚实的法律科技离开时间离开房间哦围殴我若无而离开家代理费
+							离开家蝶恋蜂狂吉林省空间发的链接埃里克森放假了群殴我一温柔就是放假了
+							卡坚实的法律科技离开时间离开房间哦围殴我若无而离开家代理费
+							
+						</p>
+					</div>
+				</div>
+				
+			</div>
+			
+			
+			
+			<div id="right">
+				<div id="">
+					<a href="#">
+						<img src="images/btn-hy.png"/>
+					</a>
+					<a href="#">
+						<img src="images/btn-hc.png"/>
+					</a>
+					<div id="">
+						<i id="i">运单号码:</i>
+						<input type="text" id="in" value="请输入你要查询的订单号码，多个单号用英文逗号隔开。" />
+						<img src="images/btn-search.png"/>
+					</div>
+				</div>
+				
+				<div id="ddiv">
+					<i>资源中心</i>
+					<a href="#">MO R E +</a>
+					<img src="images/title-split.png"/>
+					<a href="#">
+						<img src="images/1.png"/>
+						<i>kangzhixin</i>
+						<i>昆仑决东方丽景阿斯利康打飞机离开时间发</i>
+					</a>
+					<a href="#">
+						<img src="images/1.png"/>
+						<i>kangzhixin</i>
+						<i>昆仑决东方丽景阿斯利康打飞机离开时间发</i>
+					</a>
+					<a href="#">
+						<img src="images/1.png"/>
+						<i>kangzhixin</i>
+						<i>昆仑决东方丽景阿斯利康打飞机离开时间发</i>
+					</a>
+					<a href="#">
+						<img src="images/1.png"/>
+						<i>kangzhixin</i>
+						<i>昆仑决东方丽景阿斯利康打飞机离开时间发</i>
+					</a>
+				</div>
+
+			</div>
+
+			<div class="cl">
+
+			</div>
+		</div>
+		
+		
+		<div id="footer">
+			<div id="">
+				<span id="">
+					<a href="#">首页</a>
+					<a href="#">关于霍普</a>
+					<a href="#">我们的服务</a>
+					<a href="#">客户服务</a>
+					<a href="#">新闻与媒体</a>
+					<a href="#">我们的办事处</a>
+					<a href="#">资源中心</a>
+				</span>
+			</div>
+			<div class="cl"></div>
+		</div>
+		
+		
+		<div id="maxfooter">
+			<div id="">
+			<p>Copy 2018 kangzhixin</p>
+			<p>电话：123456</i>
+			<p>网址：kjafdkjiwe@qq.com</p>
+			<p>地址：可接受的风口浪尖</p>
+			<p>技术支持：康志鑫</p>
+			<img src="images/4.png"/>
+			</div>
+		</div>
+
+	</body>
+
+</html>

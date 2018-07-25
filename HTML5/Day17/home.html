@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+			}
+			
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				background-color: #F9F9F9;
+			}
+			
+			.main {
+				position: relative;
+				margin: 0 auto;
+				width: 375px;
+				/*height: px;*/
+				background-color: red;
+				z-index: 100;
+			}
+			
+			.nav {
+				height: 64px;
+				width: 375px;
+				margin: 0 auto;
+				background-color: white;
+				position: relative;
+				position: fixed;
+				z-index: 100;
+				box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+			}
+			
+			.footer {
+				width: 375px;
+				height: 49px;
+				position: fixed;
+				top: 618px;
+				background-color: white;
+			}
+			
+			.nav p {
+				width: 45px;
+				font-size: 22px;
+				padding-top: 30px;
+				color: red;
+				margin: 0 auto;
+				-webkit-user-select: none;
+				/*background-color: black;*/
+			}
+			
+			.nav a {
+				text-decoration: none;
+				color: red;
+			}
+			
+			.nav a:hover {
+				color: black;
+			}
+			
+			.nav i {
+				font-style: normal;
+				position: absolute;
+				right: 10px;
+				bottom: 5px;
+				color: red;
+			}
+			
+			.bodymain {
+				position: absolute;
+				margin-top: 64px;
+				/*height: 1554px;*/
+				width: 375px;
+				background-color: white;
+				z-index: 0;
+			}
+			
+			.aaa {
+				background-color: gold;
+				width: 375px;
+				height: 300px;
+				position: fixed;
+				top: 667px;
+				margin: 0 auto;
+				background-color: #F9F9F9;
+				z-index: 1;
+			}
+			
+			.footer {
+				border-top: solid 1px rgba(0, 0, 0, 0.1);
+			}
+			
+			.footer span a {
+				width: 32px;
+				/*height: 32px;*/
+				color: gray;
+				display: block;
+				text-align: center;
+				/*background-color: red;*/
+				font-size: 13px;
+				float: left;
+			}
+			
+			.footer span a:nth-child(1) {
+				margin-left: 30px;
+				color: red;
+				text-decoration: none;
+			}
+			
+			.footer span a:nth-child(2) {
+				margin-left: 60px;
+				text-decoration: none;
+			}
+			
+			.footer span a:nth-child(3) {
+				margin-left: 60px;
+				text-decoration: none;
+			}
+			
+			.footer span a:nth-child(4) {
+				margin-left: 60px;
+				text-decoration: none;
+			}
+			
+			.lun {
+				overflow: hidden;
+				width: 360px;
+				height: 200px;
+				margin: 5px auto;
+				border-radius: 10px;
+				border-top-left-radius: 11px;
+				box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+				/*-moz-user-select: all;*/
+			}
+			
+			.bodymaina {
+				/*background-color: red;*/
+				/*margin-top: 10px;*/
+				width: 360px;
+				margin: 10px auto;
+				border-radius: 10px;
+				box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+			}
+			
+			.bodymaina ul {
+				/*padding: 0;*/
+				padding: 10px;
+				/*float: left;*/
+			}
+			
+			.bodymaina ul li {
+				float: left;
+				margin-left: 10px;
+			}
+			
+			.bodymaina ul li {
+				display: block;
+				width: 78px;
+				/*background-color: red;*/
+			}
+			.bodymaina ul li:nth-child(2) {
+				float: left;
+				margin-left: 45px;
+			}
+			.bodymaina ul li:nth-child(3) {
+				float: left;
+				margin-left: 40px;
+			}
+			.bodymaina ul li a {
+				text-decoration: none;
+				color: black;
+			}
+			
+			.bodymaina ul li a:hover {
+				color: red;
+			}
+			
+			.bodymaina ul li i {
+				width: 78px;
+				/*margin: 0 auto;*/
+				font-style: normal;
+				font-size: 13px;
+				display: block;
+				text-align: center;
+				margin-top: 8px;
+				/*background-color: black;*/
+			}
+			
+			.bodymaina ul li img {
+				display: block;
+				width: 60px;
+				height: 60px;
+				margin: 0 auto;
+			}
+			
+			.item img {
+				margin-top: 4px;
+			}
+			.bodymainb{
+				width: 100%;
+				/*background-color: red;*/
+				border-top: solid 1px rgba(0, 0, 0, 0.1);
+				border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+				box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+			}
+			.bodymainb span{
+				display: block;
+				width: 240px;
+				margin: 0 auto;
+				/*background-color: black;*/
+			}
+			.bodymainb span i:nth-child(1){
+				float: left;
+				/*background-color: black;*/
+				height: 35px;
+				font-size: 16px;
+				font-style: normal;
+				line-height: 32px;
+				color: red;
+				border-bottom: 2px solid red;
+			}
+			.bodymainb span i:nth-child(2){
+				float: right;
+				height: 35px;
+				font-size: 16px;
+				font-style: normal;
+				line-height: 32px;
+			}
+			.bodymainb span i:nth-child(2):hover{
+				border-bottom: 2px solid red;
+				color: red;
+				
+			}
+			.bodymainc{
+				width: 360px;
+				height: 100px;
+				margin: 10px auto;
+				box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+				border-radius: 10px;
+				position: relative;
+			}
+			.bodymainc img{
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				width: 70px;
+				height: 70px;
+				background-color: red;
+			}
+			.bodymainc h3{
+				position: absolute;
+				font-size: 17px;
+				left: 100px;
+			}
+			.bodymainc p{
+				position: absolute;
+				font-size: 12px;
+				color: gray;
+				left: 100px;
+				top: 67px;
+				font-family: "微软雅黑";
+			}
+			.bodymainc i{
+				position: absolute;
+				font-size: 12px;
+				color: gray;
+				right: 15px;
+				top: 67px;
+				font-family: "微软雅黑";
+			}
+			.cl {
+				clear: both;
+			}
+			.buju{
+				height: 180px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="nav">
+				<p>首页</p>
+				<i><a href="LogIn.html">问题</a></i>
+			</div>
+
+			<div class="bodymain" id="aa">
+				<div id="carousel-example-generic" class="carousel slide lun" data-ride="carousel">
+					<!-- Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					</ol>
+
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<img src="icons/lunbo/1.png" alt="...">
+						</div>
+						<div class="item">
+							<img src="icons/lunbo/2.png" alt="...">
+						</div>
+						<div class="item">
+							<img src="icons/lunbo/3.png" alt="...">
+						</div>
+					</div>
+
+				</div>
+				<div class="bodymaina">
+					<ul>
+						<li>
+							<a href="#"><img src="ios/home_iocn_wushuzhuanqu_nor.png@2x.png" /><i>武术专区</i></a>
+						</li>
+
+						<li>
+							<a href="#"><img src="ios/home_icon_taiquandaozhuanqu_nor.png@2x.png" /><i>跆拳道专区</i></a>
+						</li>
+
+						<li>
+							<a href="#"><img src="ios/home_icon_rongyuzhanshi_nor.png@2x.png" /><i>荣誉展示</i></a>
+						</li>
+						<div class="cl">
+
+						</div>
+					</ul>
+					<ul>
+						<li>
+							<a href="#"><img src="ios/home_icon_shizililiang_nor.png@2x.png" /><i>师资力量</i></a>
+						</li>
+
+						<li>
+							<a href="#"><img src="ios/home_icon_kechengshipin_nor.png@2x.png" /><i>课程视频</i></a>
+						</li>
+
+						<li>
+							<a href="#"><img src="ios/home_icon_chengjichaxun_nor.png@2x.png" /><i>成绩查询</i></a>
+						</li>
+						<div class="cl">
+
+						</div>
+					</ul>
+
+				</div>
+				
+				<div class="bodymainb">
+					<span>
+						<i>热门活动</i>
+						<i>精彩资讯</i>
+						<div class="cl">
+							
+						</div>
+					</span>
+				</div>
+				<div class="bodymainc">
+					<img src="icons/lunbo/4.png"/>
+					<h3>首届 “鑫子龙杯” 跆拳道大赛落下帷幕</h3>
+					<p>来源： 鑫子龙武馆</p>
+					<i>2017.01.01</i>
+				</div>
+				<div class="buju">
+				</div>
+
+			</div>
+
+			<div class="footer">
+				<span>
+					<a href="home.html" id="a1"><img  id="a1_img" src="icons/首页的副本.png"/>首页</a>
+					<a href="books.html" id="a2"><img  id="a2_img" src="icons/相机.png"/>图库</a>
+					<a href="question.html" id="a3"><img  id="a3_img" src="icons/office.png"/>问题</a>
+					<a href="profile.html" id="a4"><img  id="a4_img" src="icons/我的.png"/>我的</a>
+				</span>
+			</div>
+			<div class="aaa">
+
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+//			var a = document.getElementsByClassName('bodymain');
+			var a = document.getElementById('aa')
+//			console.log(a.style.height);
+//			a.style.backgroundColor = 'red';
+			var num = Number(window.innerHeight)+40;
+//alert(num);
+            a.style.height=num +'px';
+		</script>
+
+
+		<!--<script type="text/javascript">
+			var a1 = document.getElementById('a1');
+			var a1img = document.getElementById('a1_img');
+			var a2 = document.getElementById('a2');
+			var a2img = document.getElementById('a2_img');
+			var a3 = document.getElementById('a3');
+			var a3img = document.getElementById('a3_img');
+			var a4 = document.getElementById('a4');
+			var a4img = document.getElementById('a4_img');
+			a1.onclick = function() {
+				a1.style.color = 'red';
+				a1img.src = "icons/首页的副本.png";
+			}
+			a2.onclick = function() {
+				a2.style.color = 'red';
+				a2img.src = "icons/相机的副本.png";
+			}
+			a3.onclick = function() {
+				a3.style.color = 'red';
+				a3img.src = "icons/office (1).png";
+			}
+			a4.onclick = function() {
+				a4.style.color = 'red';
+				a4img.src = "icons/我的 (1).png";
+			}
+		</script>-->
+
+		<script src="bootstrap/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

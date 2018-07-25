@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title> 托才</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+			}
+			
+			html,
+			body {
+				background-color: #F9F9F9;
+			}
+			
+			.nav-white {
+				background-color: white;
+			}
+			
+			.nav-width {
+				width: 960px;
+			}
+			
+			.icon-bar {
+				background-color: black;
+			}
+			
+			.nav-black {
+				color: black;
+			}
+			
+			.nav-black:hover {
+				color: #fe641d;
+			}
+			
+			.shousuo {
+				margin: 0 auto;
+				width: 960px;
+				position: relative;
+				/*background-color: red;*/
+			}
+			
+			.search-width {
+				width: 520px;
+				height: 32px;
+				/*display: inline-block;*/
+				border: solid 2px orange;
+				/*border: none;*/
+				outline: none;
+				/*z-index: 111;*/
+			}
+			
+			.nav-shou {
+				width: 100%;
+				/*position: relative;*/
+			}
+			
+			#butt {
+				outline: none;
+			}
+			
+			.xiangguan i {
+				color: gray;
+			}
+			
+			.xiangguan a {
+				margin-left: 30px;
+				text-decoration: none;
+				color: gray;
+			}
+			
+			.xiangguan a:hover {
+				background-color: orange;
+				color: white;
+			}
+			
+			.city {
+				margin: 0 auto;
+				width: 960px;
+				background-color: white;
+			}
+			
+			.city ul>li {
+				line-height: 40px;
+				float: left;
+				display: inline-block;
+				margin-left: 20px;
+			}
+			
+			#ct {
+				margin-left: 48px;
+			}
+			
+			#huanhang {
+				margin-left: 158px;
+			}
+			
+			.city ul li:nth-child(n+3) a {
+				text-decoration: none;
+				color: gray;
+			}
+			
+			.city ul li:nth-child(n+3) a:hover {
+				color: white;
+				background-color: orange;
+			}
+			
+			.city ul li a {
+				text-decoration: none;
+			}
+			
+			.quanbu,
+			.buxian {
+				background-color: orange;
+				color: white;
+			}
+			
+			.main {
+				margin-top: 20px;
+				width: 100%;
+			}
+			
+			.main .num {
+				width: 960px;
+				margin: 0 auto;
+			}
+			
+			.main2 {
+				margin-top: 20px;
+				width: 100%;
+			}
+			
+			.main2 .num2 {
+				width: 960px;
+				margin: 0 auto;
+				background-color: white;
+			}
+			
+			.main .num i:nth-child(2n-1) {
+				color: gray;
+				margin-left: 10px;
+			}
+			
+			.main .num i:nth-child(2) {
+				color: orange;
+				margin-left: 10px;
+			}
+			
+			.main2 .num2 ul {
+				padding-left: 25px;
+				padding-right: 25px;
+			}
+			
+			.main2 .num2 ul li {
+				border-bottom: dashed 1px #8DA6B8;
+				list-style: none;
+				position: relative;
+				height: 130px;
+			}
+			
+			.main2 .num2 ul li i {
+				font-family: "宋体";
+				/*font-size: 10px;*/
+				font-style: normal;
+			}
+			
+			.liimg {
+				position: absolute;
+				top: 30px;
+			}
+			
+			.liname {
+				position: absolute;
+				top: 30px;
+				left: 110px;
+				font-size: 16px;
+			}
+			
+			.liruanjian {
+				position: absolute;
+				top: 33px;
+				left: 180px;
+				font-size: 13px;
+				color: gray;
+			}
+			
+			.lisui {
+				position: absolute;
+				top: 60px;
+				left: 110px;
+				font-size: 13px;
+				color: #A9A9A9;
+			}
+			
+			.lisheji {
+				position: absolute;
+				top: 85px;
+				left: 110px;
+				font-size: 13px;
+				color: #A9A9A9;
+			}
+			
+			.litime {
+				position: absolute;
+				right: 0px;
+				top: 35px;
+				color: #A9A9A9;
+			}
+			
+			.zaixian {
+				position: absolute;
+				right: 100px;
+				top: 75px;
+				border: 1.5px solid orange;
+				color: orange;
+			}
+			.zaixian:hover{
+				color: white;
+				background-color: orange;
+				border: none;
+			}
+			.dianhua {
+				position: absolute;
+				right: 0px;
+				top: 75px;
+			}
+			
+			.page-width {
+				width: 700px;
+				margin: 0 auto;
+			}
+			
+			.main2 .num2 ul li:last-child {
+				/*border-bottom: dashed 1px #8DA6B8;*/
+				list-style: none;
+				/*position: relative;*/
+				border: none;
+				height: 80px;
+			}
+			
+			.dibu li a {
+				margin-left: 20px;
+				/*border: none;*/
+				color: gray;
+			}
+			
+			.dibu li a:hover {
+				/*margin-left: 20px;*/
+				/*border: none;*/
+				color: white;
+				background-color: orange;
+			}
+			
+			.dibu li:first-child a,
+			.dibu li:last-child a {
+				/*margin-left: 20px;*/
+				border: none;
+			}
+			.footer{
+				width: 100%;
+				background-color: white;
+			}
+			.footer1{
+				padding-top: 10px;
+				width: 600px;
+				margin:0 auto;
+				text-align: center;
+				font-size: 11px;
+				color: #A9A9A9;
+			}
+			.footer2{
+				padding-top: 10px;
+				padding-bottom: 10px;
+				text-align: center;
+				width: 400px;
+				margin: 0 auto;
+				font-size: 11px;
+				color: #A9A9A9;
+			}
+			.cl {
+				clear: both;
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav class="navbar nav-white">
+			<div class="container-fluid nav-width">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+					<img src="image/logo.png" />
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#" class="nav-black">首页</a>
+						</li>
+						<li>
+							<a href="#" class="nav-black">人才搜索</a>
+						</li>
+						<li>
+							<a href="#" class="nav-black">职位管理</a>
+						</li>
+						<li>
+							<a href="#" class="nav-black">简历管理</a>
+						</li>
+						<li>
+							<a href="#" class="nav-black">账户管理</a>
+						</li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><img src="image/logo2.png" /></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle nav-black" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">厦门智游网安科技有限公司<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">公司信息</a>
+								</li>
+								<li>
+									<a href="#">账号信息</a>
+								</li>
+								<li>
+									<a href="#">账号设置</a>
+								</li>
+								<li>
+									<a href="#">去个人版</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li>
+									<a href="#">退出</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+		<!--搜索-->
+		<div class="nav-shou">
+			<div class="shousuo">
+
+				<nav class="navbar navbar-default nav-white">
+					<div class="container-fluid">
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle anzhiwei" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">按职位 <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="#">Web工程师</a>
+										</li>
+										<li>
+											<a href="#">IOS开发工程师</a>
+										</li>
+										<li>
+											<a href="#">游戏开发</a>
+										</li>
+										<li>
+											<a href="#">测试工程师</a>
+										</li>
+										<li>
+											<a href="#">Java开发工程师</a>
+										</li>
+										<li>
+											<a href="#">Linux</a>
+										</li>
+										
+									</ul>
+								</li>
+							</ul>
+							<form class="navbar-form navbar-left">
+								<div class="form-group">
+									<input type="text" class="search-width" placeholder="输入职位关键字进行搜索">
+								</div>
+								<button id="butt" type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-search"></span> 搜索</button>
+							</form><br /><br /><br />
+							<div class="xiangguan">
+								<i>相关搜索：</i>
+								<a href="#"> ios </a>
+								<a href="#"> Android实习 </a>
+								<a href="#"> java </a>
+								<a href="#"> HTML5 </a>
+								<a href="#"> 全栈 </a>
+								<a href="#"> node.js </a>
+								<a href="#"> ionic </a>
+							</div>
+
+						</div>
+						<!-- /.navbar-collapse -->
+					</div>
+					<!-- /.container-fluid -->
+				</nav>
+			</div>
+		</div>
+
+		<div class="body">
+			<div class="city">
+				<ul>
+					<li id="ct">城市：</li>
+					<li>
+						<a href="#" class="quanbu">全部</a>
+					</li>
+					<li>
+						<a href="#">北京</a>
+					</li>
+					<li>
+						<a href="#">上海</a>
+					</li>
+					<li>
+						<a href="#">广州</a>
+					</li>
+					<li>
+						<a href="#">深圳</a>
+					</li>
+					<li>
+						<a href="#">厦门</a>
+					</li>
+					<li>
+						<a href="#">杭州</a>
+					</li>
+					<li>
+						<a href="#">苏州</a>
+					</li>
+					<li>
+						<a href="#">昆明</a>
+					</li>
+					<li>
+						<a href="#">北京</a>
+					</li>
+					<li>
+						<a href="#">上海</a>
+					</li>
+					<li>
+						<a href="#">北京</a>
+					</li>
+					<li>
+						<a href="#">上海</a>
+					</li>
+					<li>
+						<a href="#">广州</a>
+					</li>
+					<li>
+						<a href="#">深圳</a>
+					</li>
+					<li>
+						<a href="#">厦门</a>
+					</li>
+					<li>
+						<a href="#">杭州</a>
+					</li>
+					<li id="huanhang">
+						<a href="#">苏州</a>
+					</li>
+					<li>
+						<a href="#">昆明</a>
+					</li>
+					<li>
+						<a href="#">北京</a>
+					</li>
+					<li>
+						<a href="#">上海</a>
+					</li>
+					<li>
+						<a href="#">北京</a>
+					</li>
+					<li>
+						<a href="#">上海</a>
+					</li>
+					<li>
+						<a href="#">广州</a>
+					</li>
+					<li>
+						<a href="#">深圳</a>
+					</li>
+					<li>
+						<a href="#">厦门</a>
+					</li>
+					<li>
+						<a href="#">杭州</a>
+					</li>
+					<li>
+						<a href="#">苏州</a>
+					</li>
+					<li>
+						<a href="#">昆明</a>
+					</li>
+					<li>
+						<a href="#">北京</a>
+					</li>
+					<li>
+						<a href="#">上海</a>
+					</li>
+
+				</ul>
+				<div class="cl">
+
+				</div>
+				<ul>
+					<li>学历要求：</li>
+					<li>
+						<a href="#" class="buxian">不限</a>
+					</li>
+					<li>
+						<a href="#">专科以下</a>
+					</li>
+					<li>
+						<a href="#">专科</a>
+					</li>
+					<li>
+						<a href="#">本科</a>
+					</li>
+					<li>
+						<a href="#">硕士</a>
+					</li>
+					<li>
+						<a href="#">博士</a>
+					</li>
+				</ul>
+				<div class="cl">
+
+				</div>
+				<ul>
+					<li>工作经验：</li>
+					<li>
+						<a href="#" class="buxian">不限</a>
+					</li>
+					<li>
+						<a href="#">应届生</a>
+					</li>
+					<li>
+						<a href="#">1年</a>
+					</li>
+					<li>
+						<a href="#">2年</a>
+					</li>
+					<li>
+						<a href="#">3年</a>
+					</li>
+					<li>
+						<a href="#">5年</a>
+					</li>
+					<li>
+						<a href="#">8年以上</a>
+					</li>
+
+				</ul>
+				<div class="cl">
+
+				</div>
+				<ul>
+					<li>期望薪资：</li>
+					<li>
+						<a href="#" class="buxian">不限</a>
+					</li>
+					<li>
+						<a href="#">北京</a>
+					</li>
+					<li>
+						<a href="#">上海</a>
+					</li>
+					<li>
+						<a href="#">广州</a>
+					</li>
+					<li>
+						<a href="#">深圳</a>
+					</li>
+					<li>
+						<a href="#">厦门</a>
+					</li>
+					<li>
+						<a href="#">杭州</a>
+					</li>
+					<li>
+						<a href="#">苏州</a>
+					</li>
+					<li>
+						<a href="#">昆明</a>
+					</li>
+					<li>
+						<a href="#">北京</a>
+					</li>
+					<li>
+						<a href="#">上海</a>
+					</li>
+					<li>
+						<a href="#">广州</a>
+					</li>
+					<li>
+						<a href="#">深圳</a>
+					</li>
+
+				</ul>
+				<div class="cl">
+
+				</div>
+				<ul>
+					<li>求职性质：</li>
+					<li>
+						<a href="#" class="buxian">不限</a>
+					</li>
+					<li>
+						<a href="#">北京</a>
+					</li>
+					<li>
+						<a href="#">上海</a>
+					</li>
+					<li>
+						<a href="#">广州</a>
+					</li>
+					<li>
+						<a href="#">深圳</a>
+					</li>
+					<li>
+						<a href="#">厦门</a>
+					</li>
+					<li>
+						<a href="#">杭州</a>
+					</li>
+					<li>
+						<a href="#">苏州</a>
+					</li>
+					<li>
+						<a href="#">昆明</a>
+					</li>
+					<li>
+						<a href="#">北京</a>
+					</li>
+					<li>
+						<a href="#">上海</a>
+					</li>
+					<li>
+						<a href="#">广州</a>
+					</li>
+					<li>
+						<a href="#">深圳</a>
+					</li>
+
+				</ul>
+				<div class="cl">
+
+				</div>
+			</div>
+		</div>
+		<div class="main">
+			<div class="num">
+				<i>已为您搜索到 </i>
+				<i>300+</i>
+				<i>与关键字相匹配的人才</i>
+			</div>
+		</div>
+
+		<div class="main2">
+			<div class="num2">
+				<ul>
+					<li>
+						<img src="image/tou.png" class="liimg" />
+						<i class="liname">戴诺仙</i>
+						<i class="liruanjian">软件UI设计师 / 工程师</i>
+						<i class="lisui"><span class="glyphicon glyphicon-user"></span>&#x3000;24岁&#x3000;·&#x3000;大专&#x3000;·&#x3000;4年工作经验&#x3000;·&#x3000;厦门</i>
+						<i class="lisheji"><span class="glyphicon glyphicon-briefcase"></span>&#x3000;设计师&#x3000;·&#x3000;智游网安&#x3000;·&#x3000;2015.07-至今</i>
+						<i class="litime">更新时间：2017-10-19</i>
+						<button type="button" class="btn btn-default zaixian">在线聊天</button>
+						<button type="button" class="btn btn-warning dianhua">电话联系</button>
+					</li>
+					<li>
+						<img src="image/tou.png" class="liimg" />
+						<i class="liname">戴诺仙</i>
+						<i class="liruanjian">软件UI设计师 / 工程师</i>
+						<i class="lisui"><span class="glyphicon glyphicon-user"></span>&#x3000;24岁&#x3000;·&#x3000;大专&#x3000;·&#x3000;4年工作经验&#x3000;·&#x3000;厦门</i>
+						<i class="lisheji"><span class="glyphicon glyphicon-briefcase"></span>&#x3000;设计师&#x3000;·&#x3000;智游网安&#x3000;·&#x3000;2015.07-至今</i>
+						<i class="litime">更新时间：2017-10-19</i>
+						<button type="button" class="btn btn-default zaixian">在线聊天</button>
+						<button type="button" class="btn btn-warning dianhua">电话联系</button>
+					</li>
+					<li>
+						<img src="image/tou.png" class="liimg" />
+						<i class="liname">戴诺仙</i>
+						<i class="liruanjian">软件UI设计师 / 工程师</i>
+						<i class="lisui"><span class="glyphicon glyphicon-user"></span>&#x3000;24岁&#x3000;·&#x3000;大专&#x3000;·&#x3000;4年工作经验&#x3000;·&#x3000;厦门</i>
+						<i class="lisheji"><span class="glyphicon glyphicon-briefcase"></span>&#x3000;设计师&#x3000;·&#x3000;智游网安&#x3000;·&#x3000;2015.07-至今</i>
+						<i class="litime">更新时间：2017-10-19</i>
+						<button type="button" class="btn btn-default zaixian">在线聊天</button>
+						<button type="button" class="btn btn-warning dianhua">电话联系</button>
+					</li>
+					<li>
+						<img src="image/tou.png" class="liimg" />
+						<i class="liname">戴诺仙</i>
+						<i class="liruanjian">软件UI设计师 / 工程师</i>
+						<i class="lisui"><span class="glyphicon glyphicon-user"></span>&#x3000;24岁&#x3000;·&#x3000;大专&#x3000;·&#x3000;4年工作经验&#x3000;·&#x3000;厦门</i>
+						<i class="lisheji"><span class="glyphicon glyphicon-briefcase"></span>&#x3000;设计师&#x3000;·&#x3000;智游网安&#x3000;·&#x3000;2015.07-至今</i>
+						<i class="litime">更新时间：2017-10-19</i>
+						<button type="button" class="btn btn-default zaixian">在线聊天</button>
+						<button type="button" class="btn btn-warning dianhua">电话联系</button>
+					</li>
+					<li>
+						<img src="image/tou.png" class="liimg" />
+						<i class="liname">戴诺仙</i>
+						<i class="liruanjian">软件UI设计师 / 工程师</i>
+						<i class="lisui"><span class="glyphicon glyphicon-user"></span>&#x3000;24岁&#x3000;·&#x3000;大专&#x3000;·&#x3000;4年工作经验&#x3000;·&#x3000;厦门</i>
+						<i class="lisheji"><span class="glyphicon glyphicon-briefcase"></span>&#x3000;设计师&#x3000;·&#x3000;智游网安&#x3000;·&#x3000;2015.07-至今</i>
+						<i class="litime">更新时间：2017-10-19</i>
+						<button type="button" class="btn btn-default zaixian">在线聊天</button>
+						<button type="button" class="btn btn-warning dianhua">电话联系</button>
+					</li>
+					<li>
+						<div class="page-width">
+
+							<nav aria-label="Page navigation">
+								<ul class="pagination dibu">
+									<li>
+										<a href="#" aria-label="Previous">
+											<span aria-hidden="true">上一页</span>
+										</a>
+									</li>
+									<li>
+										<a href="#">1</a>
+									</li>
+									<li>
+										<a href="#">2</a>
+									</li>
+									<li>
+										<a href="#">3</a>
+									</li>
+									<li>
+										<a href="#">4</a>
+									</li>
+									<li>
+										<a href="#">5</a>
+									</li>
+									<li>
+										<a href="#">6</a>
+									</li>
+									<li>
+										<a href="#">7</a>
+									</li>
+									<li>
+										<a href="#">8</a>
+									</li>
+									<li>
+										<a href="#">9</a>
+									</li>
+									<li>
+										<a href="#" aria-label="Next">
+											<span aria-hidden="true">下一页</span>
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+<div class="footer">
+	<div class="footer1">
+		Copyright&#x3000;2017-2020&#x3000;http://www.tuocai.com/&#x3000;厦门智游网安科技有限公司&#x3000;版权所有
+	</div>
+	<div class="footer2">
+		人力资源服务许可证&#x3000;闽B2-20040400&#x3000;闽ICP备&#x3000;12345678910号
+	</div>
+</div>
+
+		<script src="bootstrap/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>卡哇伊的时钟</title>
+		<style type="text/css">
+			*{
+				box-sizing: border-box;
+			}
+			html,body{
+				margin: 0;
+				padding: 0;
+				border: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.t2 {
+				width: 100%;
+				height: 100%;
+				background-image: radial-gradient(farthest-side ellipse at 50% 70%,
+				hsla(210,1%,78%,0.73) 100px,rgba(150,150,150,0.7) 400px,
+				hsla(225,4%,18%,0.8) 100%);
+				position: relative;
+				z-index: -3;
+			}
+			.t3 {
+				width: 350px;
+				height: 350px;
+				background-color: #FFF;
+				position: absolute;
+				left: 50%;
+				margin-left: -175px;
+				top: 50%;
+				margin-top: -175px;
+				border-radius: 60px;
+				background-image: radial-gradient(#ffffff 40px,#ddecf2 210px,#d3e3e9);
+			}
+			.t3:before {
+				content: "";
+				border-radius: 60px;
+				position: absolute;
+				box-shadow: 0 -4px #b8bdca inset;
+				width: 100%;
+				height: 100%;
+				opacity: 0.6;
+				filter: blur(1px);
+				z-index: 2;
+			}
+			.t3:after{
+				content: "";
+				width: 300px;
+				height: 18px;
+				background-color: #2a2a2b;
+				position: absolute;
+				top: 97%;
+				margin-left: 25px;
+				z-index: -1;
+				/*//模糊程度*/
+				filter: blur(7px);
+			}
+			.t4{
+				width: 210px;
+				height: 210px;
+				background-image: radial-gradient(#f9fdff,#d9eaf8);
+				border-radius: 50%;
+				position: relative;
+				margin: 70px;
+				box-shadow: 0 0 28px -8px #eaf7fb;
+				color: #8da6b8;
+				font-size: 24px;
+				font-family: "微软雅黑";
+				font-weight:bold ;
+			}
+			.t4:before {
+				content: "";
+				position: absolute;
+				width: 210px;
+				height: 210px;
+				box-shadow: 0px 15px 24px -5px #7a8fae;
+				border-radius: 50%;
+				z-index: 10;
+			}
+			.t4:after{
+				content: "";
+				position: absolute;
+				width: 210px;
+				height: 210px;
+				box-shadow: 0px 0px 4px -4px #7a8fae;
+				border-radius: 50%;
+				z-index: 9;
+			}
+			.hour{
+				position: absolute;
+			}
+			.hour3 {
+				right: 10px;
+				top: 50%;
+				margin-top: -12px;
+			}
+			.hour12 {
+				top: 10px;
+				right: 50%;
+				margin-right: -10px;
+			}
+			.hour9{
+				left: 10px;
+				top: 50%;
+				margin-top: -12px;
+			}
+			.hour6 {
+				bottom: 10px;
+				right: 50%;
+				margin-right: -3px;
+			}
+			#miao{
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 90px;
+				height: 1.5px;
+				background-color: red;
+				/*animation-name: round;*/
+				/*animation-duration: 60s;*/
+				/*animation-iteration-count: infinite;*/
+				/*animation-timing-function: linear;*/
+				/*设置旋转点*/
+				transform-origin:0 0;
+				z-index: 12;
+			}
+			/*@keyframes round{
+				0%{
+					transform: rotate(0);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}*/
+			#fen{
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 70px;
+				height: 1.5px;
+				background-color: dodgerblue;
+				animation-name: round;
+				/*animation-duration: 3600s;*/
+				/*animation-iteration-count: infinite;
+				animation-timing-function: linear;*/
+				/*设置旋转点*/
+				transform-origin:0 0;
+				z-index: 11;
+			}
+		
+			#shi{
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 50px;
+				height: 1.5px;
+				background-color: black;
+				/*animation-name: round;*/
+				/*animation-duration: 43200s;*/
+				/*animation-iteration-count: infinite;
+				animation-timing-function: linear;*/
+				/*设置旋转点*/
+				transform-origin:0 0;
+				z-index: 10;
+			}
+			#poin {
+				width: 20px;
+				height: 20px;
+				background-image: radial-gradient(#ffffff,#000000);
+				border-radius: 50%;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -10px;
+				margin-top: -10px;
+				box-shadow: 0 0 28px -8px #eaf7fb;
+				color: #8da6b8;
+				
+				z-index: 16;
+			}
+			#poin:before {
+				content: "";
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				box-shadow: 0px 15px 24px -5px #7a8fae;
+				border-radius: 50%;
+				z-index: 17;
+			}
+			#poin:after{
+				content: "";
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				box-shadow: 0px 0px 4px -4px #7a8fae;
+				border-radius: 50%;
+				z-index: 15;
+			}
+			
+			#time {
+				width: 300px;
+				height: 80px;
+				position: absolute;
+				top: 80%;
+				left: 50%;
+				margin-left: -150px;
+				text-align: center;
+				font-size: 24px;
+				font-family: "微软雅黑";
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="t2">
+			<div class="t3">
+				<div class="t4">
+					<!--Class 类 可以有多个-->
+					<i class="hour hour3">3</i>
+					<i class="hour hour6">6</i>
+					<i class="hour hour9">9</i>
+					<i class="hour hour12">12</i>
+					<!--id 名字是唯一的 不可以相同-->
+					<div id="miao"></div>
+					<div id="fen"></div>
+					<div id="shi"></div>
+					<div id="poin"></div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="time">
+		</div>
+
+
+		<script type="text/javascript">
+			
+			var d = new Date();
+			var m = d.getSeconds() * 6 -90;
+			var f = d.getMinutes() * 6 -90;
+			var s = (d.getHours()-12) * 30 -90 + (d.getMinutes()*0.5);
+			function mia(){
+				var mi = document.getElementById('miao');
+				mi.style.transform = "rotate("+m+"deg)";
+				m++;
+			}
+			
+			function fen(){
+				var fe = document.getElementById('fen');
+				fe.style.transform = "rotate("+f+"deg)";
+				f++;
+			}
+			function shi(){
+				var sh = document.getElementById('shi');
+				sh.style.transform = "rotate("+s+"deg)";
+				s++;
+			}
+			mia();
+			fen();
+			shi();
+			setInterval(fen,10000);
+			setInterval(mia,166.666666666666666666);
+			setInterval(shi,120000);
+			function timers(){
+				var d = new Date();
+				var h = d.getHours();
+				var f = d.getMinutes();
+				var m = d.getSeconds();
+				if(h >= 0 && h <= 9){
+					h = "0"+h;
+				}
+				if(f >= 0 && f <= 9){
+					f = "0"+f;
+				}
+				if(m >= 0 && m <= 9){
+					m = "0"+m;
+				}
+				document.getElementById('time').innerHTML = 
+				"北京时间："+h+":"+f+":"+m;
+			}
+			setInterval(timers,1000);
+		</script>
+	</body>
+</html>

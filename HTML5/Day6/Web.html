@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>康氏公馆</title>
+		<style type="text/css">
+			*{
+				box-sizing: border-box;
+			}
+			html,body{
+				margin:0;
+				padding: 0;
+				border:0;
+				width:100%;
+				height:100%
+			}
+			#nav{
+	            width:100%;
+	            background-color: white;
+	            box-shadow: 0 1px 3px #999;
+	            margin:0;
+	            top:0;
+	            z-index: 1000;
+	            position: fixed;
+			}
+			#nav div{
+				width:90%;
+				margin:0 auto;
+				padding:10px 0;
+				/*background-color: white;*/
+			}
+			#nav img{
+				width:auto;
+				height: 60px;
+				left:20px;
+			}
+			#nav .n1{
+				float:right;
+				right:20px;
+				margin-top:30px;
+				position: relative;
+			}
+			#nav .n2{
+				float:right;
+				right:80px;
+				position: absolute;
+				
+			}
+			#nav .n1 a{
+				font-size:16px;
+				font-weight: 100;
+				color:black;
+				text-decoration: none;
+			}
+			#nav .n2 a{
+				font-size:10px;
+				font-weight: 100;
+				color:darkgray;
+				text-decoration: none;
+			}
+			#nav .n1 a:hover{
+				color: darkgray
+			}
+			#nav .n2 a:hover{
+				color: black;
+			}
+			/**/
+			/**/
+			#header{
+				margin:10px 0;
+				width:100%;	
+				height:530px;		
+			}
+			#header img{
+			   margin-top:10px;
+			   width:100%;
+			   height:530px;
+			   background-size:100%;
+			   z-index: 10;
+			}
+			/**/
+			/**/
+			#tb{
+				width:100%;
+				height:100px;
+				/*background-color: red;*/
+				margin:0;
+				position: relative;
+				
+			}
+			#tb	.t1{
+				width:80%;
+				height:50px;
+				margin:10px 120px;
+				/*background-color: white;*/
+				position: absolute;
+			}
+			#tb img{
+				width:50px;
+				height: 50px;
+				margin:0  85px;
+			}
+			#tb .t2{
+				width:80%;
+				height:30px;
+				margin:60px 120px;
+				/*background-color: yellow;*/
+				position: absolute;
+			}
+			/**/
+			/**/
+			#dt {
+				width:90%;
+				height:1500px;
+				margin:0 auto;
+				position: relative;
+				background-color:black;
+				z-index: -100;
+				
+			}
+			#dt .d1{
+				width:510px;
+				height:400px;
+				position: absolute;
+				margin:10px 20px;
+				border:solid 5px white;
+				border-radius: 10px;
+				color: yellow;
+			}
+			#dt .d1 img{
+				border-radius: 50%;
+				transform:rotate(8deg);
+			}
+			#dt .d2{
+				width:550px;
+				height:375px;
+				position: absolute;
+				margin:150px 0;
+				right:20px;
+				border:solid 5px white;
+				border-radius: 10px;
+				color: yellow;
+				transform: rotate(-5deg);
+			}
+			#dt .d2 img{
+				width:100%;
+				border-radius: 120px;
+				transform:rotate(-10deg);
+			}
+			#dt .d3{
+				width:700px;
+				height:500px;
+				position: absolute;
+				margin:450px 0;
+				right:200px;
+				border:solid 5px white;
+				border-radius: 10px;
+				color: yellow;
+				transform: rotate(-5deg);
+				background-color: black;
+			}
+			#dt .d3 img{
+				width:100%;	
+			}
+			#dt p{
+				font-size: 20px;
+				margin:1100px 0;
+				color:white;
+				position: absolute;
+			}
+			/**/
+			/**/
+			#end{
+				width:100%;
+				height: 80px;;
+				background-color: grey;
+				position: relative;
+			}
+			#end div{
+				width:50%;
+				height:50px;
+				/*background-color: red;*/
+				position: absolute;
+				margin:10px 70px;
+				}
+			#end .p1{
+				width:100px;
+				height:50px;
+				position: absolute;
+				margin:0 30px;
+				border-radius: 20px;
+			}
+			#end .p2{
+				width:50px;
+				height: 50px;
+				position: absolute;
+				left:150px;
+				border-radius: 20px;
+				
+			}
+			#end .p3{
+				width:60px;
+				height:50px;
+				left:220px;
+				position: absolute;
+				border-radius: 30px;
+			}
+			#end .p4{
+				width:60px;
+				height:50px;
+				left:300px;
+				position: absolute;
+				border-radius: 20px;
+			}
+		</style>
+	     
+	</head>
+	<body>
+	    <div id="nav">
+	    	<div>
+	    		<img src="newWebImage/logo.png.png"/>
+	    		<span class="n1">
+	    		  <a href="#">首页</a>&#x3000;&#x3000;
+				  <a href="#">康氏简介</a>&#x3000;&#x3000;
+				  <a href="#">排球中心</a>&#x3000;&#x3000;
+				  <a href="#">合作伙伴</a>&#x3000;&#x3000;
+				  <a href="#">咨询中心</a>
+	    		</span>
+	    		<span class="n2">
+	    		  <a href="#">登录/注册</a>&#x3000;
+				  <a href="#">链接</a>&#x3000;
+				  <a href="#">其他</a>
+	    		</span>
+	    	</div>
+	    </div>
+	    <!---->
+	    <!---->
+	    <div id="header">
+	      <img src="newWebImage/IMG_9146.JPG"/> 
+	    </div>
+	    <!---->
+	    <!---->
+	     <div id="tb">
+	     	<div class="t1">
+	     		<a href="#"><img src="newWebImage/首页.png"/></a>
+				<a href="#"><img src="newWebImage/二维码.png"/></a>
+				<a href="#"><img src="newWebImage/另存为.png"/></a>
+				<a href="#"><img src="newWebImage/消息中心.png"/></a>
+	     	</div>
+	     	<div  class="t2">
+	     		<section>
+	     	     &#x3000;&#x3000;&nbsp;&nbsp;返回首页
+	     	     &#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&nbsp;&nbsp;二维码
+	     	     &#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&nbsp;&nbsp;分享
+	     	     &#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&#x3000;&nbsp;消息
+	     	     </section>
+	     	</div>
+	     </div>
+	     <hr />
+	     <!---->
+	     <!---->
+	     <div id="dt">
+	     	<section class="d1">
+	     		运动环境
+	     		<img src="newWebImage/运动环境.jpeg"/>
+	     	</section>
+	     	
+	     	<section class="d2">
+	     		&nbsp;&nbsp;教练员
+	     		<img src="newWebImage/IMG_9006.JPG"/>
+	     	</section>
+	     	
+	     	<section class="d3">
+	     		休息区
+	     		<img src="newWebImage/IMG_9164.JPG"/>
+	     	</section>
+	     	<p>
+	     	&#x3000;&#x3000;排球虽然比篮球软些，但其中一些动作是特别痛快的：发球前，队员狠劲地向地上拍打排球“
+	     	砰砰作响”，手掌拍击时，手指和手掌的神经末梢将剧烈的刺激迅速传感到大脑，大脑立即兴奋起来，释放荷尔蒙，将脊椎和手臂、手腕的
+	     	酸胀感释放出去，连续重击20次，一般中度的压力（头皮发紧状）就释放开了。
+	     	<br />
+	     	&#x3000;&#x3000;打排球基本动作下蹲抬头象豹子一样时刻准备着，接球、跑动、扣球、防守动作舒展，基本囊括五禽戏
+	     	里的动作，有力于脊椎的发育，而对中年人容易脊椎变形的情况，经常打排球可以自我修复脊椎，减轻对
+	     	心脏和肺部肌肉的压迫，提高心肺功能。
+	     	</p>
+	      </div>
+	     <br />
+	     <br />
+	     <br />
+	     <br />
+	     <!---->
+	     <!---->
+	     <hr />
+	     <div id="end">
+	     	<div>
+	     		<a href="#"><img class="p1" src="newWebImage/baidu.jpg"/></a>
+	     		<a href="#"><img class="p2" src="newWebImage/淘宝网.jpg"/></a>
+	     		<a href="#"><img class="p3" src="newWebImage/keep.jpg"/></a>
+	     		<a href="#"><img class="p4" src="newWebImage/网易.jpg"/></a>
+	     	</div>
+	     </div>
+	</body>
+</html>

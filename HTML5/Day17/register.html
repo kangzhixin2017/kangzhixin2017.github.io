@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>注册</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+			}
+			
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				background-color: #F9F9F9;
+			}
+			
+			.main {
+				position: relative;
+				margin: 0 auto;
+				width: 375px;
+				/*height: px;*/
+				background-color: red;
+				z-index: 100;
+			}
+			
+			.nav {
+				height: 64px;
+				width: 375px;
+				margin: 0 auto;
+				background-color: white;
+				position: relative;
+				position: fixed;
+				z-index: 100;
+				box-shadow: 0px 4px 7px rgba(100, 100, 100, 0.1);
+			}
+			
+			.footer {
+				width: 375px;
+				height: 49px;
+				position: fixed;
+				top: 618px;
+				background-color: white;
+			}
+			
+			.nav p {
+				width: 45px;
+				font-size: 22px;
+				padding-top: 30px;
+				color: red;
+				margin: 0 auto;
+				-webkit-user-select: none;
+				/*background-color: black;*/
+			}
+			
+			.nav a {
+				text-decoration: none;
+				color: red;
+			}
+			
+			.nav a:hover {
+				color: black;
+			}
+			
+			.nav a i {
+				font-style: normal;
+				position: absolute;
+				top: 34px;
+				left: 10px;
+				font-size: 22px;
+				bottom: 5px;
+				color: #9A9A9A;
+			}
+			
+			.bodymain {
+				position: absolute;
+				margin-top: 64px;
+				height: 603px;
+				width: 375px;
+				background-color: white;
+				z-index: 0;
+			}
+			
+			.aaa {
+				background-color: gold;
+				width: 375px;
+				height: 300px;
+				position: fixed;
+				top: 667px;
+				margin: 0 auto;
+				background-color: #F9F9F9;
+				z-index: 1;
+			}
+			
+			.footer {
+				border-top: solid 1px rgba(0, 0, 0, 0.1);
+			}
+			
+			.footer span a {
+				width: 32px;
+				/*height: 32px;*/
+				color: gray;
+				display: block;
+				text-align: center;
+				/*background-color: red;*/
+				font-size: 13px;
+				float: left;
+			}
+			
+			.footer span a:nth-child(1) {
+				margin-left: 30px;
+				color: red;
+				text-decoration: none;
+			}
+			
+			.footer span a:nth-child(2) {
+				margin-left: 60px;
+				text-decoration: none;
+			}
+			
+			.footer span a:nth-child(3) {
+				margin-left: 60px;
+				text-decoration: none;
+			}
+			
+			.footer span a:nth-child(4) {
+				margin-left: 60px;
+				text-decoration: none;
+			}
+			
+			.lun {
+				overflow: hidden;
+				width: 360px;
+				height: 200px;
+				margin: 5px auto;
+				border-radius: 10px;
+				border-top-left-radius: 11px;
+				box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+				/*-moz-user-select: all;*/
+			}
+			
+			.bodymaina {
+				/*background-color: red;*/
+				/*margin-top: 10px;*/
+				width: 360px;
+				margin: 10px auto;
+				border-radius: 10px;
+				box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+			}
+			
+			.bodymaina ul {
+				/*padding: 0;*/
+				padding: 10px;
+				/*float: left;*/
+			}
+			
+			.bodymaina ul li {
+				float: left;
+				margin-left: 10px;
+			}
+			
+			.bodymaina ul li {
+				display: block;
+				width: 78px;
+				/*background-color: red;*/
+			}
+			.bodymaina ul li:nth-child(2) {
+				float: left;
+				margin-left: 45px;
+			}
+			.bodymaina ul li:nth-child(3) {
+				float: left;
+				margin-left: 40px;
+			}
+			.bodymaina ul li a {
+				text-decoration: none;
+				color: black;
+			}
+			
+			.bodymaina ul li a:hover {
+				color: red;
+			}
+			
+			.bodymaina ul li i {
+				width: 78px;
+				/*margin: 0 auto;*/
+				font-style: normal;
+				font-size: 13px;
+				display: block;
+				text-align: center;
+				margin-top: 8px;
+				/*background-color: black;*/
+			}
+			
+			.bodymaina ul li img {
+				display: block;
+				width: 60px;
+				height: 60px;
+				margin: 0 auto;
+			}
+			
+			.item img {
+				margin-top: 4px;
+			}
+			.bodymainb{
+				width: 100%;
+				/*background-color: red;*/
+				border-top: solid 1px rgba(0, 0, 0, 0.1);
+				border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+				box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+			}
+			.bodymainb span{
+				display: block;
+				width: 240px;
+				margin: 0 auto;
+				/*background-color: black;*/
+			}
+			.bodymainb span i:nth-child(1){
+				float: left;
+				/*background-color: black;*/
+				height: 35px;
+				font-size: 16px;
+				font-style: normal;
+				line-height: 32px;
+				color: red;
+				border-bottom: 2px solid red;
+			}
+			.bodymainb span i:nth-child(2){
+				float: right;
+				height: 35px;
+				font-size: 16px;
+				font-style: normal;
+				line-height: 32px;
+			}
+			.bodymainb span i:nth-child(2):hover{
+				border-bottom: 2px solid red;
+				color: red;
+				
+			}
+			.bodymainc{
+				width: 360px;
+				height: 100px;
+				margin: 10px auto;
+				box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+				border-radius: 10px;
+				position: relative;
+			}
+			.bodymainc img{
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				width: 70px;
+				height: 70px;
+				background-color: red;
+			}
+			.bodymainc h3{
+				position: absolute;
+				font-size: 17px;
+				left: 100px;
+			}
+			.bodymainc p{
+				position: absolute;
+				font-size: 12px;
+				color: gray;
+				left: 100px;
+				top: 67px;
+				font-family: "微软雅黑";
+			}
+			.bodymainc i{
+				position: absolute;
+				font-size: 12px;
+				color: gray;
+				right: 15px;
+				top: 67px;
+				font-family: "微软雅黑";
+			}
+			.cl {
+				clear: both;
+			}
+			.buju{
+				height: 180px;
+			}
+			.bodymain1 ul{
+				margin: 60px auto;
+				list-style: none;
+				padding: 0;
+				box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+				width: 300px;
+				border-radius: 10px;
+				/*height: 140px;*/
+			}
+			.bodymain1 ul li{
+				height: 60px;
+				border: solid 1px rgba(100,100,100,0.1);
+			}
+			.bodymain1 ul li span{
+				margin-top: 21px;
+				color: #9A9A9A;
+				font-size: 17px;
+				margin-left: 10px;
+			}
+			.bodymain1 ul li input{
+				margin-left: 7px;
+				border: none;
+				width: 120px;
+				outline: none;
+				font-size: 15px;
+				font-weight: 300;
+			}
+			.bodymain1 ul li button{
+				/*width: 40px;*/
+				float: right;
+				margin-top: 15px;
+				text-align: center;
+			}
+			.bodymain1 ul li:nth-child(1){
+				border-top-left-radius: 10px;
+				
+				border-top-right-radius: 10px;
+			}
+			.bodymain1 ul li:nth-child(4){
+				border-bottom-left-radius: 10px;
+				
+				border-bottom-right-radius: 10px;
+			}
+			.bodymain1 ul li:nth-child(2) button{
+				color: red;
+				border: none;
+				outline: none;
+			}
+			.bodymain2{
+				margin-top: 40px;
+				width: 375px;
+				/*background-color: red;*/
+			}
+			.bodymain2 button{
+				display: block;
+				width: 300px;
+				height: 50px;
+				margin: 0px auto;
+				border-radius: 25px;
+				font-size: 20px;
+				font-weight: 300;
+				border: none;
+			}
+			#but{
+				outline: none;
+			}
+			#button{
+				outline: none;
+			}
+			.bodymain3{
+				width: 375px;
+				/*background-color: red;*/
+			}
+			.bodymain3 a{
+				display: block;
+				width: 150px;
+				margin: 10px auto;
+				/*background-color: red;*/
+				font-size: 15px;
+				color: #9A9A9A;
+				text-align: center;
+			}
+
+
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="nav">
+				<p>注册</p>
+				<a href="LogIn.html"><i class="glyphicon glyphicon-menu-left"></i></a>
+			</div>
+
+			<div class="bodymain" id="aa">
+				<div class="bodymain1">
+					<ul>
+						<li>
+							<span class="glyphicon glyphicon-phone-alt"></span>
+							<input type="text" placeholder="请输入手机号" />
+						</li>
+						<li>
+							<span class="glyphicon glyphicon-envelope"></span>
+							<input type="text" placeholder="请输入验证码" />
+							<button type="button" class="btn btn-default" id="button">发送验证码</button>
+						</li>
+						<li>
+							<span class="glyphicon glyphicon-briefcase"></span>
+							<input type="text" placeholder="请输入密码" />
+						</li>
+						<li>
+							<span class="glyphicon glyphicon-briefcase"></span>
+							<input type="text" placeholder="请确认密码" />
+						</li>
+					</ul>
+				</div>
+				<div class="bodymain2">
+					<button type="button" class="btn btn-danger" id="but">确定</button>
+				</div>
+				<div class="bodymain3">
+					<a href="#">注册即同意服务协议</a>
+				</div>
+				<div class="buju">
+				</div>
+
+			</div>
+
+		
+			<div class="aaa">
+
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var i = 6;
+			var time;
+			var a = document.getElementById('button');
+			a.onclick = function(){
+				a.disabled= 'true';
+				 time=setInterval(fun,1000);
+			}
+			function fun(){
+				a.innerHTML=i;
+//       a.innerHTML = 'dd';
+				
+				if(i==0){
+					clearInterval(time);
+					a.disabled=false;
+					a.innerHTML='发送验证码';
+					i=6;
+				}
+				i=i-1;
+			}
+
+//			var a = document.getElementsByClassName('bodymain');
+//			var a = document.getElementById('aa')
+//			console.log(a.style.height);
+//			a.style.backgroundColor = 'red';
+//			var num = Number(window.innerHeight)+40;
+//alert(num);
+//          a.style.height=num +'px';
+
+		</script>
+
+
+		<script src="bootstrap/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

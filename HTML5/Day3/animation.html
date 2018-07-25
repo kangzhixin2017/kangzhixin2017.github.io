@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>打字练习</title>
+		<link rel="stylesheet" type="text/css" href="animate.css"/>
+		<style type="text/css">
+			main{
+				width: 500px;
+				height: 500px;
+				border: solid 5px black;
+				border-radius: 50%;
+				margin: 30px auto;
+			}
+			#char{
+				font-size: 350px;
+				text-align: center;
+				line-height: 500px;
+			}
+			footer{
+				font-size: 20px;
+				font-weight: bold;
+				text-align: center;
+			}
+			.error{
+				color: red;
+			}
+		</style>
+	</head>
+	<body onkeyup="key(event)">
+		<main>
+			<section id="char"></section>
+		</main>
+		<footer id="result"></footer>
+		<script type="text/javascript">
+			//定义变量 英文字母 错误的字母 正确的字母
+			var char;
+			var okCount = 0;
+			var errorCount = 0;
+			//定义一个函数
+			function showChar(){
+				var code = Math.random()*26;
+				//取整
+				var codes = Math.floor(code);
+				char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.charAt(codes);
+				document.getElementById('char').innerHTML = char;
+			}
+			showChar();
+			//整合正确率和错误率
+			function showResult(){
+				var r = 0;
+				if(okCount > 0 ){
+					    r = 100.0;
+				    if(errorCount > 0){
+						r = 100.0 * okCount / (okCount+errorCount);
+					}
+				}
+				//字符串拼接 获取我们需要的元素
+				document.getElementById('result').innerHTML = "正确："+okCount+"个，错误："+errorCount+"个，正确率："+r.toFixed(2)+"%";
+				
+			}
+			//处理键盘事件
+			//当鼠标按下的时候触发事件
+			function key(event){
+				//event.key获取当前按下的字母
+				//toUpperCase()转化成大写
+				var key = event.key.toUpperCase();
+				console.log(key);
+				//获取section块
+				var charBox = document.getElementById('char');
+				//我们要使用动画 先清除一下之前的效果
+				function clearAnimated(){
+					charBox.className = 'animated';
+				}
+				
+				if(key == char){
+					okCount++;
+					showChar();
+					//添加动画插件类
+					charBox.className = 'animated zoomIn';
+					//清除一下动画 避免下次效果受到影响
+					setTimeout(clearAnimated,500);
+				}else{
+					errorCount++;
+					//error设置一个错误的class名字
+					charBox.className = 'animated shake error';
+					setTimeout(clearAnimated,500);
+				}
+				showResult();
+				
+			}
+			
+		</script>
+	</body>
+</html>

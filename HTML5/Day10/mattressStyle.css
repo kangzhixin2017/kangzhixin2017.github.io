@@ -1,0 +1,205 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+.nav_img{
+	width: 100%;
+	position: relative;
+}
+.nav_img div{
+	width: 100%;
+	display: inline-block;
+	background-color: white;
+	position: absolute;
+	top: 30px;
+}
+.nav_img div img{
+	height: 60px;
+	margin: 0 20px;
+}
+.nav_img div span{
+	float: right;
+	line-height: 60px;
+}
+.nav_img div span a{
+	margin: 0 10px;
+	text-decoration: none;
+	color: black;
+}
+.nav_img div span a:hover{
+	color: red;
+}
+.nav_img .a {
+	position: absolute;
+	top: 5px;
+	right: 20px;
+	font-size: 11px;
+}
+.nav_img .a a{
+	text-decoration: none;
+	color: white;
+}
+.nav_img .a a:hover{
+	color: black;
+}
+#dian1{
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: 90%;
+	left: 47%;
+	background-color: white;
+}
+#dian2{
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: 90%;
+	left: 49%;
+	background-color: red;
+}
+#dian3{
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	top: 90%;
+	left: 51%;
+	background-color: red;
+}
+main{
+	width: 100%;
+}
+main ul{
+	width: 25%;
+	height: 250px;
+	font-size: 13px;
+	border: 1px solid darkgray;
+	padding: 0;
+	margin: 10px 10px;
+	border-top: 2px solid red;
+}
+main section ul{
+	float: left;
+}
+main li{
+	height: 30px;
+	line-height: 25px;
+	padding: 5px;
+	color: gray;
+}
+main ul li:nth-child(1){
+	background-color: lightgray;
+	color: black;
+	font-weight: bold;
+	font-size: 16px;
+	border-bottom: 1px solid darkgray;
+}
+main ul li:nth-child(1) span{
+	font-weight: normal;
+	font-size: 13px;
+	float: right;
+}
+.first li span{
+	float: right;
+}
+.first li{
+	border-bottom: 1px dotted darkgray;	
+}
+#bo div{
+	float: left;
+	display: inline-block;
+}
+.san li:nth-of-type(2):before{
+	content: "全国免费服务热线：";
+	font-size: 16px;
+	color: black;
+}
+.san li:nth-of-type(4):before{
+	content: "香港地址：";
+	font-size: 16px;
+	color: black;
+}
+.san li:nth-of-type(5):before{
+	content: "电话：";
+	font-size: 16px;
+	color: black;
+}
+.san li:nth-of-type(6):before{
+	content: "河南地址：";
+	font-size: 16px;
+	color: black;
+}
+.san li:nth-of-type(7):before{
+	content: "电话：";
+	font-size: 16px;
+	color: black;
+}
+.san li:nth-of-type(8):before{
+	content: "国际互联网：";
+	font-size: 16px;
+	color: black;
+}
+main .si{
+	width: 98%;
+}
+ul{
+	list-style: none;
+}
+.er{
+	width: 45%;
+}
+ul a{
+	text-decoration: none;
+	color: gray;
+}
+
+footer div{
+	/*background-color: red;*/
+	width: 98%;
+	margin: 0 auto;
+	border: solid 1px #ADADAD;
+	border-left: solid 2px red;
+}
+footer div a:nth-child(1){
+	background-color: #D3D3D3;
+}
+footer div a{
+	text-decoration: none;
+	color: black;
+}
+.cl{
+	clear: both;
+}
+footer div:nth-child(2){
+	margin-top: 20px;
+	background-image: linear-gradient(#e10000,#c30000);
+}
+footer div ul{
+	float: right;
+}
+footer div ul li{
+	
+	text-align: right;
+	line-height: 40px;
+	color: white;
+}
+.si{
+	height: 290px;
+}
+#bo div{
+	position: relative;
+	width: 277px;
+}
+#bo div img{
+	width: 100%;
+	height: 200px;
+}
+#bo div i{
+	position: absolute;
+	left: 40%;
+	/*background-color: red;*/
+}

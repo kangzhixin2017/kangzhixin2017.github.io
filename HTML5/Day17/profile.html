@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>我的</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" />
+		<style type="text/css">
+			*{
+				box-sizing: border-box;
+			}
+			html,body{
+				margin: 0;
+				padding: 0;
+				border: 0;
+				background-color: #F9F9F9;
+			}
+			.main{
+				position: relative;
+				margin: 0 auto;
+				width: 375px;
+				/*height: px;*/
+				background-color: red;
+				z-index: 100;
+			}
+		
+			.footer{
+				width: 375px;
+				height: 49px;
+				position: fixed;
+				top: 618px;
+				background-color: white;
+			}
+			.footer {
+				border-top: solid 1px rgba(0, 0, 0, 0.1);
+			}
+
+
+			.bodymain{
+				position: absolute;
+				margin-top: 0px;
+				height: 618px;
+				width: 375px;
+				background-color: white;
+				overflow: hidden;
+				z-index: 0;
+			}
+			
+			.aaa{
+				background-color: gold;
+				width: 375px;
+				height: 300px;
+				position: fixed;
+				top: 667px;
+				margin: 0 auto;
+				background-color: #F9F9F9;
+				z-index: 1;
+			}
+			.footer span a{
+				width: 32px;
+				/*height: 32px;*/
+				color: gray;
+				display: block;
+				text-align: center;
+				/*background-color: red;*/
+				font-size: 13px;
+				float: left;
+			}
+			.footer span a:nth-child(1){
+				margin-left: 30px;
+				text-decoration: none;
+				
+			}
+			.footer span a:nth-child(2){
+				margin-left: 60px;
+				/*color: red;*/
+				text-decoration: none;
+			}
+			.footer span a:nth-child(3){
+				margin-left: 60px;
+				text-decoration: none;
+				
+			}
+			.footer span a:nth-child(4){
+				margin-left: 60px;
+				color: red;
+				text-decoration: none;
+			}
+			.cl{
+				clear: both;
+			}
+			.bodymain1{
+				box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
+			}
+			.bodymain1 span{
+				margin-top: -40px;
+				display: block;
+				width: 375px;
+				height: 150px;
+				border-bottom-left-radius: 45%;
+				border-bottom-right-radius: 45%;
+				background-color: #ed2f5e;
+			}
+			.bodymain1 img{
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				margin-left: 147.5px;
+				margin-top: -40px;
+			}
+			.bodymain1 i{
+				display: block;
+				margin-top: 10px;
+				width: 375px;
+				text-align: center;
+				font-style: normal;
+				font-size: 16px;
+				padding-bottom: 15px;
+			}
+			.bodymain2{
+				width: 360px;
+				margin: 10px auto;
+				box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.1);
+			}
+		.bodymain2 ul{
+			list-style: none;
+			padding: 0;
+			width: 360px;
+			margin: 0 auto;
+		}
+		.bodymain2 ul li{
+			height: 60px;
+			/*background-color: red;*/
+			border: solid 1px rgba(100,100,100,0.1);
+			
+			/*border-left: solid 1px rgba(100,100,100,0.1);*/
+		}
+		.bodymain2 ul li:nth-child(1) span{
+			color: orange;
+			margin-left: 10px;
+			margin-top: 15px;
+			font-size: 22px;
+		}
+		.bodymain2 ul li:nth-child(2) span{
+			color: green;
+			margin-left: 10px;
+			margin-top: 15px;
+			font-size: 22px;
+		}
+		.bodymain2 ul li:nth-child(3) span{
+			color: red;
+			margin-left: 10px;
+			margin-top: 15px;
+			font-size: 22px;
+		}
+		.bodymain2 ul li:nth-child(4) span{
+			color: purple;
+			margin-left: 10px;
+			margin-top: 15px;
+			font-size: 22px;
+		}
+		.bodymain2 ul li:nth-child(5) span{
+			color: blue;
+			margin-left: 10px;
+			margin-top: 15px;
+			font-size: 22px;
+		}
+		.bodymain2 ul li i:nth-child(2){
+			font-size: 20px;
+			color: black;
+			font-style: normal;
+		}
+		.bodymain2 ul li i:nth-child(3){
+			color: grey;
+			/*margin-top: -50px;*/
+			/*margin-left: 330px;*/
+			float: right;
+			top: 18px;
+			font-size: 24px;
+			right: 13px;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			
+			
+			<div class="bodymain" id="aa">
+				
+				<div class="bodymain1">
+					<span></span>
+					<img src="icons/lunbo/1.png"/>
+					<i>李青</i>
+				</div>
+				
+				<div class="bodymain2">
+				<ul>
+					<li><span class="glyphicon glyphicon-user"></span>&#x3000;<i>个人信息</i><i class="glyphicon glyphicon-menu-right"></i></li>
+					<li><span class="glyphicon glyphicon-envelope"></span>&#x3000;<i>我的留言</i><i class="glyphicon glyphicon-menu-right"></i></li>
+					<li><span class="glyphicon glyphicon-star"></span>&#x3000;<i>我的收藏</i><i class="glyphicon glyphicon-menu-right"></i></li>
+					<li><span class="glyphicon glyphicon-folder-open"></span>&#x3000;<i>我的消息</i><i class="glyphicon glyphicon-menu-right"></i></li>
+					<li><span class="glyphicon glyphicon-cog"></span>&#x3000;<i>设置</i><i class="glyphicon glyphicon-menu-right"></i></li>
+					
+				</ul>
+			</div>
+			</div>
+			
+			
+			<div class="footer">
+				<span>
+					<a href="home.html" id="a1"><img  id="a1_img" src="icons/首页.png"/>首页</a>
+					<a href="books.html" id="a2"><img  id="a2_img" src="icons/相机.png"/>图库</a>
+					<a href="question.html" id="a3"><img  id="a3_img" src="icons/office.png"/>问题</a>
+					<a href="profile.html" id="a4"><img  id="a4_img" src="icons/我的 (1).png"/>我的</a>
+				</span>
+			</div>
+			<div class="aaa">
+			
+			</div>
+		</div>
+				<script type="text/javascript">
+//			var a = document.getElementsByClassName('bodymain');
+			var a = document.getElementById('aa')
+			var num = Number(window.innerHeight);
+//alert(num);
+            a.style.height=num +'px';
+//			a.style.backgroundColor = 'red';
+//          a.style.height=window.innerHeight+'px';
+		</script>
+<!--		
+		<script type="text/javascript">
+			var a1 = document.getElementById('a1');
+			var a1img = document.getElementById('a1_img');
+			var a2 = document.getElementById('a2');
+			var a2img = document.getElementById('a2_img');
+			var a3 = document.getElementById('a3');
+			var a3img = document.getElementById('a3_img');
+			var a4 = document.getElementById('a4');
+			var a4img = document.getElementById('a4_img');
+			a1.onclick=function(){
+				a1.style.color='red';
+				a1img.src = "icons/首页的副本.png";
+			}
+			a2.onclick=function(){
+				a2.style.color='red';
+				a2img.src = "icons/相机的副本.png";
+			}
+			a3.onclick=function(){
+				a3.style.color='red';
+				a3img.src = "icons/office (1).png";
+			}
+			a4.onclick=function(){
+				a4.style.color='red';
+				a4img.src = "icons/我的 (1).png";
+			}
+		</script>-->
+		
+		
+		
+		<script src="bootstrap/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
