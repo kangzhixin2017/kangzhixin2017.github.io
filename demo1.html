@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,target-densitydpi=device-dpi,user-scalable=no,minimum-scale=1.0,maximum-scanle=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" type="text/css" href="swiper/dist/css/swiper.min.css" />
+		<title> 康康</title>
+	</head>
+
+	<body>
+		<div class="swiper-container" style="width: 100vw;height: 80vh;">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" style="background-color: blue;"></div>
+				<div class="swiper-slide" style="background-color: red;"></div>
+				<div class="swiper-slide" style="background-color: yellow;"></div>
+			</div>
+		</div>
+		<script src="swiper/dist/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var mySwiper = new Swiper('.swiper-container', {
+				loop: true,
+				effect: 'cube',
+				cubeEffect: {
+					slideShadows: true,
+					shadow: true,
+					shadowOffset: 100,
+					shadowScale: 0.6
+				},
+				autoplay: {
+					delay: 1000, //1秒切换一次
+				},
+			})
+		</script>
+	</body>
+
+</html>
