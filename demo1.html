@@ -8,7 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="swiper/dist/css/swiper.min.css" />
 		<title>康康</title>
 		<style type="text/css">
-			*{
+			* {
 				padding: 0;
 				margin: 0;
 			}
@@ -20,53 +20,62 @@
 			<div class="swiper-wrapper">
 				<div class="swiper-slide" style="background-color: ;">
 					<div style="text-align: center; opacity: 0.5; background-color: white;width: 50%;height: 50%;margin-top: 25%;margin-left: 25%;">
-						<p style="padding-top: 20%;font-size: 25px;color: black">slkjfd</p>
+						<p style="padding-top: 50%;font-size: 25px;color: black">一程序员去面试</p>
 					</div>
 				</div>
 				<div class="swiper-slide" style="background-color: ;">
 					<div style="text-align: center; opacity: 0.5; background-color: white;width: 50%;height: 50%;margin-top: 25%;margin-left: 25%;">
-						<p style="padding-top: 20%;font-size: 25px;color: black">slkjfd</p>
+						<p style="padding-top: 50%;font-size: 25px;color: black">面试官问</p>
 					</div>
 				</div>
 				<div class="swiper-slide" style="background-color: ;">
 					<div style="text-align: center; opacity: 0.5; background-color: white;width: 50%;height: 50%;margin-top: 25%;margin-left: 25%;">
-						<p style="padding-top: 20%;font-size: 25px;color: black">slkjfd</p>
+						<p style="padding-top: 50%;font-size: 25px;color: black">你毕业才两年</p>
 					</div>
 				</div>
 				<div class="swiper-slide" style="background-color: ;">
 					<div style="text-align: center; opacity: 0.5; background-color: white;width: 50%;height: 50%;margin-top: 25%;margin-left: 25%;">
-						<p style="padding-top: 20%;font-size: 25px;color: black">slkjfd</p>
+						<p style="padding-top: 50%;font-size: 25px;color: black">这三年工作经验是怎么来的？</p>
 					</div>
 				</div>
 				<div class="swiper-slide" style="background-color: ;">
 					<div style="text-align: center; opacity: 0.5; background-color: white;width: 50%;height: 50%;margin-top: 25%;margin-left: 25%;">
-						<p style="padding-top: 20%;font-size: 25px;color: black">slkjfd</p>
+						<p style="padding-top: 50%;font-size: 25px;color: black">程序员答</p>
+					</div>
+				</div>
+				<div class="swiper-slide" style="background-color: ;">
+					<div style="text-align: center; opacity: 0.5; background-color: white;width: 50%;height: 50%;margin-top: 25%;margin-left: 25%;">
+						<p style="padding-top: 50%;font-size: 25px;color: black">加班。</p>
 					</div>
 				</div>
 			</div>
 		</div>
-	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-	<script type="text/javascript" src="Fireworks/js/jquery.fireworks.js"></script>
-	<script type="text/javascript">
-		$('.swiper-container').fireworks({ 
-		  sound: false, // sound effect
-		  opacity: 1, 
-		  width: '50vw', 
-		  height: '50vh' 
-		});
-	</script>
+		<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="Fireworks/js/jquery.fireworks.js"></script>
+		<script type="text/javascript">
+			$('.swiper-container').fireworks({
+				sound: false, // sound effect
+				opacity: 1,
+				width: '50vw',
+				height: '50vh'
+			});
+		</script>
 		<script src="swiper/dist/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
 		<!--<script src="Fireworks/js/jquery.fireworks.js" type="text/javascript" charset="utf-8"></script>-->
 		<!--<script src="http://www.jq22.com/jquery/jquery-1.10.2.js" type="text/javascript" charset="utf-8"></script>-->
 		<script type="text/javascript">
 			var mySwiper = new Swiper('.swiper-container', {
-				loop: true,
+				//				loop: true,
 				effect: 'cube',
 				cubeEffect: {
 					slideShadows: true,
 					shadow: true,
 					shadowOffset: 100,
 					shadowScale: 0.6
+				},
+				autoplay: {
+					delay: 2000, //1秒切换一次
+					stopOnLastSlide: true,
 				},
 			})
 		</script>

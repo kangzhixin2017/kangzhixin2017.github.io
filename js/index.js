@@ -2,7 +2,7 @@ $(".admin").click(function(){
 	window.location.href = "adminLogin.html"
 })
 $(".readmore").click(function(){
-	window.location.href = "demo1.html"
+	window.location.href = "animations/index.html"
 })
 
 $(".resume").click(function(){
