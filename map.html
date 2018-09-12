@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,target-densitydpi=device-dpi,user-scalable=no,minimum-scale=1.0,maximum-scanle=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>地图</title>
+		<style type="text/css">
+			#container {
+				width: 100vw;
+				height: 100vh;
+				background-color: red;
+			}
+			
+			.button-group {
+				position: fixed;
+				bottom: 0;
+			}
+		</style>
+		<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=2bce385b87a0b72093e53eda43134e9d&plugin=AMap.PolyEditor,AMap.CircleEditor"></script>
+		<script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+	</head>
+
+	<body>
+		<div id="container"></div>
+		<div class="button-group">
+
+			<input type="button" class="button" value="开始编辑圆" onClick="editor.startEditCircle()" />
+			<input type="button" class="button" value="结束编辑圆" onClick="editor.closeEditCircle()" />
+		</div>
+		<script type="text/javascript">
+			var editorTool, map = new AMap.Map("container", {
+				resizeEnable: true,
+				center: [116.403322, 39.900255], //地图中心点
+				zoom: 13 //地图显示的缩放级别
+			});
+			var editor = {};
+			editor._circle = (function() {
+				var circle = new AMap.Circle({
+					center: [116.433322, 39.900255], // 圆心位置
+					radius: 1000, //半径
+					strokeColor: "#F33", //线颜色
+					strokeOpacity: 1, //线透明度
+					strokeWeight: 3, //线粗细度
+					fillColor: "#ee2200", //填充颜色
+					fillOpacity: 0.35 //填充透明度
+				});
+				circle.setMap(map);
+				return circle;
+			})();
+			map.setFitView();
+			editor._circleEditor = new AMap.CircleEditor(map, editor._circle);
+			editor.startEditCircle = function() {
+				editor._circleEditor.open();
+			}
+			editor.closeEditCircle = function() {
+				editor._circleEditor.close();
+			}
+			editor._circleEditor.on('move', function(data) {
+				//地图级别放大
+				console.log(data.lnglat)
+			})
+			editor._circleEditor.on('adjust', function(data) {
+				//地图级别放大
+				console.log(data.radius)
+			})
+		</script>
+	</body>
+
+</html>

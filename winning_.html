@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,target-densitydpi=device-dpi,user-scalable=no,minimum-scale=1.0,maximum-scanle=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<script src="../js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<title>实物</title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			}
+			
+			body {
+				width: 100vw;
+				height: 100vh;
+				background-color: white;
+				position: relative;
+			}
+			
+			.bgimg {
+				width: 100vw;
+			}
+			
+			.integral {
+				width: 100vw;
+				position: absolute;
+				top: 0;
+				display: flex;
+				justify-content: center;
+			}
+			
+			.integral img {
+				height: 40px;
+			}
+			
+			.integral strong {
+				color: red;
+				font-weight: bold;
+				line-height: 45px;
+			}
+			
+			.btn {
+				position: absolute;
+				top: 0;
+				width: 50vw;
+				left: 25vw;
+				height: 15vw;
+			}
+			
+			.win {
+				position: absolute;
+				top: 0;
+				left: 35vw;
+				width: 30vw;
+				height: 30vw;
+			}
+		</style>
+	</head>
+
+	<body onload="setting()">
+		<img class="bgimg" src="images/中奖0828/55.png" />
+		<img class="win" src="{{.data.PrizeImg}}" />
+		<div class="btn"></div>
+		{{if ne .data.PrizeIntegral 0}}
+		<div class="integral"><img src="images/中奖0828/实物/扫码加积分.png" /> <strong> +{{.data.PrizeIntegral}}</strong></div>
+		{{end}}
+		<script type="text/javascript">
+			function setting() {
+				var imgheight = $(".bgimg").height() / 1000;
+				var hei1 = imgheight * 265;
+				var hei2 = imgheight * 780;
+				var hei3 = imgheight * 890;
+				$(".win").css("top", hei1 + "px")
+				$(".btn").css("top", hei2 + "px")
+				$(".integral").css("top", hei3 + "px")
+			}
+			$(".btn").click(function() {
+				window.location.href = "../view2/writereceive"
+			})
+		</script>
+	</body>
+
+</html>
