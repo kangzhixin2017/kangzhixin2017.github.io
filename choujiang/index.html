@@ -47,7 +47,7 @@
 
 		<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
 		<script>
-			var arr = [0,1,2,1,1,2,3,1];
+			var arr = [0, 1, 2, 1, 1, 2, 3, 1];
 			var isclick = true;
 			$.extend({
 				luckGame: function(options) {
@@ -137,24 +137,23 @@
 
 					function start() {
 						$(".game-btn").click(function() {
-							if(!arr.length){
+							if(!arr.length) {
 								alert('经没有奖品啦');
 								return;
 							}
-							if(!isclick){
-								alert('请等抽奖结束再继续抽奖');
+							if(!isclick) {
+								setTimeout(function() {
+									isclick = true;
+								}, 6000);
 								return;
 							}
 							isclick = !isclick;
-							setTimeout(function(){
-								isclick = true;
-							},6000);
-							
+
 							var num = parseInt(Math.random() * arr.length);
 							var win = arr[num];
 							console.log(win);
 							console.log(num)
-							arr.splice(num,1);
+							arr.splice(num, 1);
 							console.log(arr)
 							settings.zj_arr.number = win;
 							//如果中奖
