@@ -141,13 +141,15 @@
 								alert('经没有奖品啦');
 								return;
 							}
+							console.log(isclick);
 							if(!isclick) {
-								setTimeout(function() {
-									isclick = true;
-								}, 6000);
 								return;
 							}
 							isclick = false;
+							setTimeout(function(){
+								isclick = true;
+							},6000)
+							
 
 							var num = parseInt(Math.random() * arr.length);
 							var win = arr[num];
