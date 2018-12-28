@@ -1,0 +1,1 @@
+document.write('2018年12月');
