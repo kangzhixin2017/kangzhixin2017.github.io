@@ -1,0 +1,769 @@
+
+<style type="text/css">
+	.menu-tip {
+		width: auto !important;
+	}
+
+	.tip-input {
+		position: absolute;
+		left: 175px;
+		top: 0;
+		width: 300px;
+	}
+
+	.tip-input {
+		display: none;
+	}
+
+	.width50 {
+		width: 50px !important;
+	}
+
+	.layui-body {
+		left: 10px;
+	}
+
+	.spec input {
+		height: 20px;
+		width: 100px;
+	}
+
+	.shopuser {
+		z-index: 9999;
+	}
+
+	#up_img {
+		cursor: pointer;
+	}
+
+	.wangeditor-menu-img-upload {
+		font-size: 80px;
+	}
+
+	.imgtip {
+		font-size: 12px;
+		color: orangered !important;
+	}
+	.layui-form-label{
+		width: 100px;
+	}
+	.myunit {
+		position: absolute;
+		left: 298px;
+		top: 11px;
+		display: none;
+	}
+</style>
+   <link rel="stylesheet" href="../src/style/wangEditor.css" media="all"/>
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="">首页</a>
+    <a><cite>新增活动</cite></a>
+  </div>
+</div>
+<div class="shop-manage-content" style="padding: 10px;">
+
+	<div class="content-body" id="" style="background-color:#fff; ">
+		<br/>
+		<form class="layui-form layui-form-pane1" action="">
+			<div class="form-input clearl">
+				<label class="layui-form-label">
+					<span class="star">*</span>所属商户</label>
+				<a href="" onclick="return false;" class="layui-btn layui-btn-normal" id="selectshop">选择商户</a>
+				<input type="hidden" id="sid" name="sid" value="">
+				<span class="hrefto shoptitile"></span>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label"><span class="star">*</span>抽奖样式</label>
+				<div class="layui-input-inline">
+					<select name="recharge" id="template" lay-filter="template">
+						<option value="0">转盘</option>
+						<option value="1">九宫格</option>
+						<!-- <option value="2">刮奖</option> -->
+						<option value="2">翻牌子</option>
+					</select>
+				</div>
+				<span class="tixi" style="color:#999;position: relative;top: 3px;">（温馨提示：一旦选择不能修改）</span>
+			</div>
+			<!--上传图片-->
+			<div class="form-input clearl">
+                <label class="layui-form-label">
+                    <span class="star">*</span>活动图片:</label>
+                <div class="imgup">
+                    <img  height="70" src="" width="70" id="logo"/>
+                    <span class="tixi">(上传375*270px )</span>
+
+                </div>
+            </div>
+            <!--上传图片-->
+			<div class="form-input clearl">
+                <label class="layui-form-label">
+                    <span class="star">*</span>海报图:</label>
+                <div class="imgup">
+                    <img  height="70" src="" width="70" id="posterImg"/>
+                    <span class="tixi">(上传750*1334px )左下角须留好二维码位置</span>
+
+                </div>
+            </div>
+
+			<div class="layui-form-item ">
+				<label class="layui-form-label">
+					<span class="star">*</span>活动标题:</label>
+				<div class="layui-inline" style="width: 400px;">
+					<input id="bargainname" type="text" name="bargainname" lay-verify="required|title" required placeholder="请输入活动标题" autocomplete="off"
+					    class="layui-input">
+				</div>
+			</div>
+
+
+			<div class="form-input clearl">
+				<label class="layui-form-label">
+					<span class="star">*</span>开始时间:</label>
+				<div class="layui-inline">
+					<input class="layui-input" placeholder="请选择时间日期" name="start" id="start" value="">
+				</div>
+
+			</div>
+
+			<div class="form-input clearl">
+				<label class="layui-form-label">
+					<span class="star">*</span>结束时间:</label>
+				<div class="layui-inline">
+					<input class="layui-input" placeholder="请选择时间日期" name="end" id="end" value="">
+				</div>
+
+			</div>
+			<div class="form-input clearl overtime">
+				<label class="layui-form-label">
+					<span class="star">*</span>消费截止:</label>
+				<div class="layui-inline">
+					<input class="layui-input" placeholder="请选择时间日期" name="overTime" id="overTime" value="">
+				</div>
+			</div>
+			<div class="form-input clearl">
+				<label class="layui-form-label">
+					<span class="star">*</span>市场价:</label>
+				<input type="number" id="price" name="price" class="layui-input  floatleft" style="width: 100px;" onkeyup="checkNum(this)"
+				    placeholder="输入数字">
+				<span style="line-height: 38px;">元</span>
+			</div>
+			<div class="form-input clearl">
+				<label class="layui-form-label">
+					<span class="star">*</span>每人帮扫次数:</label>
+				<input type="number" id="helpNum" name="helpNum" value="-1" class="layui-input  floatleft" style="width: 150px;" onkeyup="checkNum(this)"
+				    placeholder="输入-1为不限次数">
+				<span style="line-height: 38px;color: red">次（输入-1为不限次数）</span>
+			</div>
+			
+			<div class="layui-form-item yuyueswitch" style="position: relative;">
+				<label class="layui-form-label">虚假剩余数:</label>
+				<div class="layui-input-block">
+					<input type="checkbox" checked name="switch" id="surplusOpen" lay-filter="vipprice-switch" lay-skin="switch" lay-text="开启|关闭"
+					    value="1">
+					<span class="tixi" style="color:#999;position: relative;top: 3px;">（温馨提示：会默认5-20份之间）</span>
+				</div>
+			</div>
+			<div class="layui-form-item yuyueswitch" style="position: relative;">
+				<label class="layui-form-label">留言开关:</label>
+				<div class="layui-input-block">
+					<input type="checkbox" name="switch" id="messageOpen" lay-filter="messageOpen" lay-skin="switch" lay-text="开启|关闭"
+					    value="1">
+				</div>
+			</div>
+			<div class="job-disc" style="margin:10px 0 20px ; padding-left: 40px;">
+				活动介绍:
+				<span style="color:#999;">(温馨提示：用图片代替文字可以给用户更好的视觉体验，图片格式请选择png或jpg)</span>
+			</div>
+			<div class="eidtor-wrap" style="padding-left: 42px;margin-bottom: 10px;">
+				<div id="editor-trigger"></div>
+			</div>
+
+		</form>
+
+		<div class="shopuser" style="display: none;">
+			<div class="layui-form-item">
+				<input type="search" id="seach" name="seach" placeholder="输入关键词" autocomplete="off" class="layui-input width250 floatleft">
+				<button class="layui-btn layui-btn-normal floatleft seachshop">搜索</button>
+			</div>
+			<div class="shoplist">
+				<div class="lists">
+					<!--<p value="109965">鱼你在一起</p>-->
+				</div>
+			</div>
+		</div>
+
+		<button class="layui-btn layui-btn-normal admin-submit-btn" lay-submit lay-filter="*" style="margin-left: 30px;">立即提交</button>
+	</div>
+
+</div>
+  <script src="layui/plupload.full.min.js"></script>
+  <script src="layui/upload.js"></script>
+<script type="text/javascript">
+		upload('logo');
+	upload('posterImg');
+	layui.use(['form',  'laydate' ,'layer'], function () {
+		var form = layui.form;
+		var laydate = layui.laydate;
+		var layer = layui.layer;
+		var type = 1; //抢购类型
+		var router = layui.router()
+//		isLogin();
+		form.render();
+		
+
+		var myid = router.search.id//location.search.split('=')[1];
+		//console.log(myid)
+		// post() //加载分类列表
+		//编辑时传来id后
+		if (myid != undefined) {
+			function formatDate(now) {
+				var year = now.getFullYear();
+				var month = now.getMonth() + 1;
+				var date = now.getDate();
+				var hour = now.getHours();
+				var minute = now.getMinutes();
+				var second = now.getSeconds();
+
+				month = month < 10 ? "0" + month : month
+				date = date < 10 ? "0" + date : date
+
+				if (parseInt(hour) < 10) {
+					hour = '0' + hour
+				}
+
+				if (minute < 10) {
+					minute = '0' + minute
+				}
+
+				if (second < 10) {
+					second = '0' + second
+				}
+
+				return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" +
+					second;
+			}
+
+			//加载渲染数据
+			var senddata = JSON.stringify({
+				id: myid,
+				channelNo: my_c_channel_no
+			})
+			$.ajax({
+				type: "post",
+				url: link + "/admin/lottery/get.do",
+				async: true,
+				data: {
+					data: senddata,
+					ts: ts,
+					sign: sign,
+					token: mytoken
+				},
+				dataType: 'json',
+				success: function (res) {
+					checkToken(res.code)
+
+					var mydata = res.data;
+
+					var endtime = formatDate(new Date(parseInt(mydata.endTime)));
+					var starttime = formatDate(new Date(parseInt(mydata.startTime)));
+					var closetime = formatDate(new Date(parseInt(mydata.closeTime)));
+					$('#start').val(starttime);
+					$('#end').val(endtime);
+					$('#overTime').val(closetime);
+					$("#price").val(mydata.price)
+					$("#helpNum").val(mydata.helpNum)
+					$('#template option[value="' + mydata.template + '"]').prop('selected', true);
+					$("#template").prop("disabled",true)
+					  if(mydata.messageOpen==1){
+                     	$("#messageOpen").prop("checked",true);
+					 } 
+					 //console.log(mydata.surplusOpen,9999);
+                     if(mydata.surplusOpen==0){
+						 $("#surplusOpen").prop("checked",false);
+						 form.render();
+                     }
+					$('#bargainname').val(mydata.title);
+
+										//回渲图片
+					 $("#logo").attr("src",imglink+mydata.img);
+					 $("#posterImg").attr("src",imglink+mydata.posterImg);
+					//var mysid = mydata.sid ? mydata.sid : mydata.id;
+
+
+					$('.shoptitile').text(mydata.merchant.name);
+					$("#sid").val(mydata.merchant.id);
+					//编辑时不能修改商户
+					$('#selectshop').unbind().css({
+						'background': '#E4E4E4',
+						'cursor': 'default'
+
+					}).attr('title', "不能修改商户")
+
+
+					//详情
+					editor.$txt.html(mydata.details);
+
+
+					form.render();
+
+				},
+				error: function () {
+					layer.msg('请求服务器失败！！')
+				}
+			});
+
+		}else{
+            	$("#logo").attr("src","http://chitan.oss-cn-hangzhou.aliyuncs.com/xcx/4HNzTaATDtJB7FM2miXnxB.png");
+            	$("#posterImg").attr("src","http://chitan.oss-cn-hangzhou.aliyuncs.com/xcx/4HNzTaATDtJB7FM2miXnxB.png");
+        }
+
+		//提交表单
+		$('.admin-submit-btn').on('click', function () {
+			toSubmit()
+		})
+
+		function toSubmit() {
+			var sid = $('#sid').val();
+
+			var title = $('#bargainname').val();
+
+			var startTval = $('#start').val();
+			var endtTval = $('#end').val();
+			var closetTval = $('#overTime').val();
+			var helpNum = $('#helpNum').val();
+			var start_time = $.myTime.DateToUnix(startTval); //转成时间戳了
+			var end_time = $.myTime.DateToUnix(endtTval);
+			var close_time = $.myTime.DateToUnix(closetTval);
+			var surplusOpen= $("#surplusOpen").is(":checked")?1:0;
+			var messageOpen= $("#messageOpen").is(":checked")?1:0;
+			var template=  $('#template option:selected').val();
+			var price=$('#price').val();
+			if (price == '') {
+				layer.msg('市场价不能为空');
+				return false;
+			}
+
+			if (parseFloat(price) < 0) {
+				layer.msg('市场价不能小于0');
+				return false;
+			}
+
+			if (start_time > end_time) {
+				layer.msg('结束时间不能早于开始时间');
+				$('#end').focus();
+				return false;
+			}
+			if (close_time <= end_time) {
+				layer.msg('截止时间要晚于结束时间');
+				$('#overTime').focus();
+				return false;
+			} else if (closetTval == '') {
+				layer.msg('截止时间不能为空');
+				return false;
+			}
+
+			var details = editor.$txt.html(); //商品详细
+
+			var imgArrStr = document.getElementById('logo').src.replace(imglink,'');
+			var posterImg = document.getElementById('posterImg').src.replace(imglink,'');
+			if (sid == '') {
+				layer.msg('请选择所属商户');
+				return false;
+			} else if (title == '') {
+				layer.msg('活动标题不能为空');
+				return false;
+			} else if (startTval == '') {
+				layer.msg('开始时间不能为空');
+				return false;
+			} else if (endtTval == '') {
+				layer.msg('结束时间不能为空');
+				return false;
+			} else if (!imgArrStr) {
+				layer.msg('活动图片不能为空');
+				return false;
+			} else if (!posterImg) {
+				layer.msg('海报图片不能为空');
+				return false;
+			} else if (details == '') {
+				layer.msg('活动介绍不能为空');
+				return false;
+			} else {
+				var obj = {
+					merchantId: sid, //商户id
+					channelNo: my_c_channel_no,
+					img: imgArrStr,
+					title: title,
+					posterImg:posterImg,
+					price: price, //市场价
+					surplusOpen: surplusOpen, //虚拟数 0关闭1开启
+					messageOpen: messageOpen, //虚拟数 0关闭1开启
+					startTime: startTval,
+					endTime: endtTval,
+					closeTime: closetTval,
+					details: details, //详情
+					helpNum: helpNum, 
+					template:template
+				}
+
+				if (myid != undefined) {
+					obj.id = myid;
+				}
+
+				var mydata = JSON.stringify(obj)
+
+				var loadicon = layer.load(4); //加载动画
+				$('.admin-submit-btn').attr('disabled',true)
+				$.ajax({
+					url: link + '/admin/lottery/save.do',
+					type: 'post',
+					dataType: 'json',
+					data: {
+						ts: ts,
+						sign: sign,
+						data: mydata,
+						token: mytoken
+					},
+					success: function (res) {
+						$('.admin-submit-btn').attr('disabled',false)
+						checkToken(res.code)
+						layer.close(loadicon);
+
+						if (!res.code) {
+							layer.msg('上传成功，请刷新列表查看', {
+								icon: 1,
+								time: 1000 //1秒关闭（如果不配置，默认是3秒）
+							}, function () {
+
+								location.hash = '/activity/actilist'
+
+							});
+
+						} else {
+
+							layer.msg("提交失败：" + res.info, {
+								icon: 2,
+								time: 2000
+							});
+						}
+
+					},
+					error: function (jqXHR, textStatus, errorThrown) {
+						/*错误信息处理*/
+						$('.admin-submit-btn').attr('disabled',false)
+						layer.close(loadicon);
+						layer.msg('请求失败，原因：' + errorThrown + ',状态码：' + jqXHR.status);
+
+
+					}
+
+				});
+
+			}
+
+		}
+
+		//日期时间范围选择
+		laydate.render({
+			elem: '#start',
+			type: 'datetime',
+			format: 'yyyy-MM-dd HH:mm:ss',
+			// value: new Date(Number(new Date()))
+		})
+		laydate.render({
+			elem: '#end',
+			type: 'datetime',
+			format: 'yyyy-MM-dd HH:mm:ss',
+			// value: new Date((Number(new Date()) + 7 * 24 * 3600 * 1000))
+		})
+		laydate.render({
+			elem: '#overTime',
+			type: 'datetime',
+			format: 'yyyy-MM-dd HH:mm:ss',
+			// value: new Date((Number(new Date()) + 14 * 24 * 3600 * 1000))
+		})
+
+		//选择商户
+		$('#selectshop').on('click', function () {
+			var mydata = JSON.stringify({
+
+				channelNo: my_c_channel_no
+			})
+			var loading = layer.load(4)
+			$.ajax({
+				type: "post",
+				url: link + '/admin/merchant/findAllName.do',
+				async: true,
+				dataType: 'json',
+				data: {
+					ts: ts,
+					sign: sign,
+					data: mydata,
+					token: mytoken
+				},
+				success: function (res) {
+					layer.close(loading)
+					checkToken(res.code)
+
+					var userList = '';
+					var dataArr = res.data;
+					if (dataArr.length) {
+						for (var i = 0; i < dataArr.length; i++) {
+							userList += '<p value="' + dataArr[i].id + '">' + dataArr[i]
+								.name + '</p>'
+						}
+					} else {
+						userList = '暂无数据'
+					}
+					$('.lists').html(userList);
+
+					$('.lists p').on('click', function () {
+						var shopname = $(this).text();
+						$('.shoptitile').text(shopname);
+						$('.shopuser').hide();
+						$('#sid').val($(this).attr('value'));
+					})
+				},
+				error: function () {
+					layer.close(loading)
+					layer.msg('请求服务器失败！！')
+				}
+			})
+			$('.shopuser').show();
+
+		})
+
+		//搜索商户
+
+		$('.seachshop').on('click', function () {
+			var seachText = $('#seach').val();
+			if (seachText == '') {
+				layer.msg('请输入关键字')
+				return false;
+			} else {
+				var mydata = JSON.stringify({
+
+					channelNo: my_c_channel_no,
+					name: seachText
+				})
+				var loading = layer.load(4)
+				$.ajax({
+					type: "post",
+					url: link + '/admin/merchant/findAllName.do',
+					async: true,
+					dataType: 'json',
+					data: {
+						data: mydata,
+						ts: ts,
+						sign: sign,
+						token: mytoken
+					},
+					success: function (res) {
+						layer.close(loading)
+						checkToken(res.code)
+						var userList = '';
+						var dataArr = res.data;
+						for (var i = 0; i < dataArr.length; i++) {
+							userList += '<p value="' + dataArr[i].id + '">' + dataArr[i]
+								.name + '</p>'
+						}
+						$('.lists').html(userList);
+						$('.lists p').on('click', function () {
+							var shopname = $(this).text();
+							$('.shoptitile').text(shopname);
+							$('#sid').val($(this).attr('value'))
+							$('.shopuser').hide();
+						})
+
+					},
+					error: function () {
+						layer.close(loading)
+						layer.msg('请求服务器失败！！')
+					}
+				})
+			}
+		})
+
+	})
+</script>
+<script>
+	function checkDiscount(obj) {
+
+		//检查是否是非数字值
+		if (isNaN(obj.value)) {
+			obj.value = "";
+		}
+		var $parent = $(obj).parent();
+		if (obj != null) {
+			//检查小数点后是否对于两位
+			if (obj.value.toString().split(".").length > 1 && obj.value.toString().split(".")[1].length > 2) {
+				var errorMsg = '小数点后不能超过两位';
+				$parent.append('<p class="formtips onError">' + errorMsg + '</p>');
+				obj.value = "";
+				$('.onError').fadeOut(3000);
+				return false;
+			} else if (obj.value > 10) {
+				var errorMsg = '折扣不能大于10';
+				$parent.append('<p class="formtips onError">' + errorMsg + '</p>');
+				obj.value = "";
+				$('.onError').fadeOut(3000);
+			} else if (obj.value < 0) {
+				var errorMsg = '折扣必须大于0';
+				$parent.append('<p class="formtips onError">' + errorMsg + '</p>');
+				obj.value = "";
+				$('.onError').fadeOut(3000);
+			} else if (obj.value.toString().split(".")[1] == 0) {
+				var errorMsg = '折扣必须大于0';
+				$parent.append('<p class="formtips onError">' + errorMsg + '</p>');
+				obj.value = "";
+				$('.onError').fadeOut(3000);
+			}
+		}
+
+	};
+</script>
+<script>
+	//富文本
+	// 阻止输出log
+	// wangEditor.config.printLog = false;
+	var editor = new wangEditor('editor-trigger');
+	// 上传图片
+	editor.config.customUpload = true;
+	editor.config.customUploadInit = uploadInit;
+
+	editor.config.menus = $.map(wangEditor.config.menus, function (item, key) {
+		if (item === 'insertcode') {
+			return null;
+		}
+		if (item === 'fullscreen') {
+			return null;
+		}
+		if (item === 'video') {
+			return null;
+		}
+		if (item === 'link') {
+			return null;
+		}
+		if (item === 'unlink') {
+			return null;
+		}
+		return item;
+	});
+
+	editor.create();
+	// 封装//console.log
+	function printLog(title, info) {
+		window.console && console.log(title, info);
+	}
+	// ------- 配置上传的初始化事件 -------
+
+	function uploadInit() {
+		var uploader = new plupload.Uploader({
+			browse_button: this.customUploadBtnId,
+			url: 'http://oss.aliyuncs.com',
+			filters: {
+				mime_types: [ //只允许上传图片和zip文件
+					{
+						title: "Image files",
+						extensions: "jpg,gif,png,jpeg"
+					}
+
+				],
+				max_file_size: '2000kb', //最大只能上传400kb的文件
+				prevent_duplicates: false //不允许选取重复文件
+			},
+		});
+		uploader.init();
+		//绑定各种事件，并在事件监听函数中做你想做的事
+		uploader.bind('FilesAdded', function (up, files) {
+			//		    	 $('.progress-bar').show();
+			//				 $('.sub').attr({"disabled":"disabled"});
+			//				  $('.sub').css("background-color","#ccc");
+			plupload.each(files, function (file) {
+				set_upload_param(uploader, '', false);
+				return false;
+			});
+		});
+		uploader.bind('UploadProgress', function (up, file) {
+			//           $('.progress-bar').css('width',file.percent+'%');
+			//           $('.progress-bar').html(file.percent+'%');
+
+		});
+		uploader.bind('BeforeUpload', function (up, file) {
+			set_upload_param(up, file.name, true);
+		});
+
+		uploader.bind('FileUploaded', function (up, file, info) {
+			if (info.status == 200) {
+				editor.command(null, 'insertHtml', '<img src="' + 'http://chitan.oss-cn-hangzhou.aliyuncs.com/' +
+					get_uploaded_object_name() + '" style="max-width:100%;"/>');
+
+			} else {
+
+			}
+		});
+		uploader.bind('Error', function (up, err) {
+			if (err.code == -600) {
+				alert('图片不能大于2M');
+			} else {
+				alert(err.message);
+			}
+		});
+	}
+</script>
+
+<script type="text/javascript">
+	//日期转时间戳
+	(function ($) {
+		$.extend({
+			myTime: {
+				/**
+				 * 当前时间戳
+				 * @return <int>    unix时间戳(秒) 
+				 */
+				CurTime: function () {
+					return Date.parse(new Date()) / 1000;
+				},
+				/**       
+				 * 日期 转换为 Unix时间戳
+				 * @param <string> 2014-01-01 20:20:20 日期格式       
+				 * @return <int>    unix时间戳(秒)       
+				 */
+				DateToUnix: function (string) {
+					var f = string.split(' ', 2);
+					var d = (f[0] ? f[0] : '').split('-', 3);
+					var t = (f[1] ? f[1] : '').split(':', 3);
+					return (new Date(
+						parseInt(d[0], 10) || null,
+						(parseInt(d[1], 10) || 1) - 1,
+						parseInt(d[2], 10) || null,
+						parseInt(t[0], 10) || null,
+						parseInt(t[1], 10) || null,
+						parseInt(t[2], 10) || null
+					)).getTime() / 1000;
+				},
+				/**       
+				 * 时间戳转换日期       
+				 * @param <int> unixTime  待时间戳(秒)       
+				 * @param <bool> isFull  返回完整时间(Y-m-d 或者 Y-m-d H:i:s)       
+				 * @param <int> timeZone  时区       
+				 */
+				UnixToDate: function (unixTime, isFull, timeZone) {
+					if (typeof (timeZone) == 'number') {
+						unixTime = parseInt(unixTime) + parseInt(timeZone) * 60 * 60;
+					}
+					var time = new Date(unixTime * 1000);
+					var ymdhis = "";
+					ymdhis += time.getUTCFullYear() + "-";
+					ymdhis += (time.getUTCMonth() + 1) + "-";
+					ymdhis += time.getUTCDate();
+					if (isFull === true) {
+						ymdhis += " " + time.getUTCHours() + ":";
+						ymdhis += time.getUTCMinutes() + ":";
+						ymdhis += time.getUTCSeconds();
+					}
+					return ymdhis;
+				}
+			}
+		});
+	})(jQuery);
+</script>

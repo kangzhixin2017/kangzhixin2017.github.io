@@ -1,0 +1,112 @@
+
+
+<title>邮件服务</title>
+
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="">主页</a>
+    <a><cite>设置</cite></a>
+    <a><cite>授权公众号</cite></a>
+  </div>
+</div>
+
+<div class="layui-fluid">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-col-md12">
+      <div class="layui-card">
+        <div class="layui-card-header">授权公众号（服务号）</div>
+        <div class="layui-card-body">
+          
+          <blockquote class="layui-elem-quote layui-text">
+            <!-- <spen class="layui-btn txt-col bdmsg">当前绑定小程序信息</spen> -->
+            <button class="layui-btn layui-btn-normal sq-btn">点击授权</button>
+            <!-- <button style="" class="layui-btn layui-btn-normal rsq-btn" style="display: none;" onclick="sq()">重新授权</button> -->
+            <!-- <spen class="txt-col warnimgmsg">温馨提示:更换小程序，与用户相关数据会丢失，如：用户订单等，无法恢复！请三思！！！</spen> -->
+          </blockquote>
+          <br/>
+          <div class="layui-form" wid100 lay-filter="">
+              <div class="layui-form-item">
+                  <label class="layui-form-label">商家编号：</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="smtp_server" id="channe" readonly value="" placeholder="" class="layui-input">
+                  </div>
+                </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">appId：</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="smtp_server" id="appid" readonly value="" placeholder="" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                  <label class="layui-form-label">名称：</label>
+                  <div class="layui-input-inline">
+                    <input type="text" name="smtp_server" id="name" readonly value="" placeholder="" class="layui-input">
+                  </div>
+                </div>
+              <div class="form-input clearl">
+                  <label class="layui-form-label">头像:</label>
+                  <div class="imgup">
+                      <img  height="70" src="" width="70" id="posterImg"/>
+                  </div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// layui.use('set', layui.factory('set'));
+layui.use(['layer'], function () {
+  var layer = layui.layer;
+  var $ = layui.jquery;
+  $(".sq-btn").click(function(){
+     $.ajax({
+        url: link+'/ticket/authored.do',
+        type: 'post',
+        dataType: 'json',
+        data: {channelNo:my_c_channel_no},
+        success: function (res) {
+          if (res.code == 0) {
+            //console.log(res.data)
+          window.location.href = res.data
+
+          } else {
+            layer.msg('提交失败：' + res.info)
+          }
+        },
+        error: function () {
+          layer.msg('请求服务器失败！！')
+        }
+      })
+  })
+  getinfo();
+     function getinfo(){
+					var parem={
+						channelNo:my_c_channel_no
+					}
+					$.ajax({
+						url: link+'/admin/config/getInfo2.do',
+						type: 'POST',
+						dataType: 'json',
+						data:parem,
+						success: function(res) {
+							if(res.code==0){
+								$('#channe').val(res.data.channelNo);
+								$('#appid').val(res.data.appid);
+								$('#name').val(res.data.nickName);
+								$('#posterImg').attr('src',res.data.headImg);
+								form.render();
+							}
+						},
+						error: function () {
+							layer.msg('请求服务器失败！！')
+						}
+					});
+     }
+})
+
+function sqs(){
+     
+  }
+</script>

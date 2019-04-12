@@ -1,0 +1,150 @@
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="">首页</a>
+    <a><cite>新增管理员</cite></a>
+  </div>
+</div>
+<div class="shop-manage-content" style="padding: 10px;">
+
+	<div class="content-body" style="padding: 10px;background: #fff">
+
+		<form class="layui-form layui-form-pane1" action="">
+
+
+			<div class="layui-form-item ">
+				<label class="layui-form-label">
+					<span class="star">*</span>用户ID:</label>
+				<div class="layui-input-inline">
+					<input id="title" type="text" name="title" lay-verify="required|title" required placeholder="输入用户ID" autocomplete="off" class="layui-input jing">
+				</div>
+			</div>
+			<div class="layui-form-item ">
+				<label class="layui-form-label">
+					<span class="star">*</span>角色名称:</label>
+				<div class="layui-input-inline">
+					<input id="title2" type="text" name="title2" lay-verify="required|title" required placeholder="输入角色名称" autocomplete="off"
+					    class="layui-input jing">
+				</div>
+			</div>
+			<div id="djq-limit">
+				<div class="layui-form-item">
+					<label class="layui-form-label">
+						<span class="star">*</span>所属角色:</label>
+					<div class="layui-input-block">
+						<input type="radio" name="shop" checked lay-filter="nolimit" id="shopkeeper" value="" title="店长">
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label class="layui-form-label"></label>
+					<div class="layui-input-block">
+						<input type="radio" name="shop" lay-filter="djq-moneylimit" id="shoper" value="" title="店员">
+					</div>
+				</div>
+
+			</div>
+		</form>
+
+		<button class="layui-btn layui-btn-normal addshopSubmit" lay-submit lay-filter="*">立即提交</button>
+	</div>
+
+</div>
+<script type="text/javascript">
+	layui.use(['laydate', 'layer', 'laypage', 'form'], function () {
+		var form = layui.form
+		var router = layui.router()
+		form.render()
+		// var myid = location.search.split('=')[1];
+		var myid = router.search.id;
+		//console.log(myid);
+		//点提交按钮登录
+		$(document).on("click", ".addshopSubmit", function () {
+
+			toSubmit();
+
+		});
+
+		function toSubmit() {
+			var uid = $('#title').val();
+			var roleCode = 1; //1店长0店员
+
+			if ($("#shopkeeper").prop('checked')) {
+				//选店长
+				roleCode = 1
+			} else {
+				roleCode = 0
+			}
+			var roleName = $('#title2').val();
+
+			if (uid == '') {
+				layer.msg('用户ID不能为空')
+				$('#title').focus()
+				return false;
+			} else if (roleName == '') {
+				layer.msg('角色名称不能为空')
+				$('#title2').focus()
+				return false;
+			} else {
+				var dataObj = {
+					merchantId: myid || '',
+					userId: uid,
+					roleCode: roleCode,
+					roleName: roleName,
+					channelNo: my_c_channel_no
+				}
+
+				var mydata = JSON.stringify(dataObj)
+				var loadicon = layer.load(4); //加载动画
+
+				$.ajax({
+					url: link + '/admin/merchantUser/addAdmin.do',
+					type: 'post',
+					dataType: 'json',
+					data: {
+						data: mydata,
+						ts: ts,
+						sign: sign,
+						token: mytoken
+					},
+
+					success: function (res) {
+						checkToken(res.code)
+						layer.close(loadicon)
+						if (!res.code) {
+							layer.msg('提交成功', {
+								icon: 1,
+								time: 1000 //1秒关闭（如果不配置，默认是3秒）
+							}, function () {
+
+								// 获得frame索引
+								// var index = parent.layer.getFrameIndex(window.name);
+								// //关闭当前frame
+								// parent.layer.close(index);
+								// window.parent.location.reload();
+
+								location.hash = '/shop/shopadmin/id='+myid
+							});
+
+						} else {
+							layer.msg(res.info, {
+								icon: 2,
+								time: 2000
+							});
+						}
+
+					},
+					error: function (jqXHR, textStatus, errorThrown) {
+						/*错误信息处理*/
+						layer.close(loadicon);
+						layer.msg('请求失败，原因：' + errorThrown + ',状态码：' + jqXHR.status);
+
+
+					}
+
+				});
+			}
+
+
+		}
+	})
+</script>

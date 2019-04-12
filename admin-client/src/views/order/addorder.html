@@ -1,0 +1,182 @@
+<div class="layui-card layadmin-header">
+    <div class="layui-breadcrumb" lay-filter="breadcrumb">
+        <a lay-href="/">订单管理</a>
+        <a>
+            <cite>订单详情</cite>
+        </a>
+    </div>
+</div>
+<div class="shop-manage-content" style="padding: 10px;">
+
+    <div class="content-body" style="padding: 10px;background: #fff">
+
+        <form class="layui-form layui-form-pane1" action="">
+
+
+            <div class="layui-form-item ">
+                <label class="layui-form-label">
+                    <span class="star">*</span>订单号:</label>
+                <div class="layui-input-inline">
+                    <div id="name" style="padding: 9px 5px;line-height: 20px;"></div>
+                </div>
+            </div>
+            <div class="layui-form-item ">
+                <label class="layui-form-label">
+                    <span class="star">*</span>取货时间:</label>
+                <div class="layui-input-inline jing">
+                    <div id="sort" style="padding: 9px 5px;line-height: 20px;"></div>
+                </div>
+            </div>
+            <div class="layui-form-item ">
+                <label class="layui-form-label">
+                    <span class="star">*</span>商品详情:</label>
+                <div class="layui-input-inline jing" style="width: 600px;">
+                    <div id="detail" style="padding: 9px 5px;line-height: 20px;"></div>
+                </div>
+            </div>
+            
+            <div class="layui-form-item ">
+                <label class="layui-form-label">
+                    <span class="star">*</span>商品总额:</label>
+                <div class="layui-input-inline jing">
+                    <div id="price" style="padding: 9px 5px;line-height: 20px;color:red"></div>
+                </div>
+            </div>
+        </form>
+
+        <button class="layui-btn layui-btn-normal submit" id="submit" lay-submit lay-filter="*">确认收货</button>
+        <button class="layui-btn layui-btn-normal loading" id="loading" lay-submit lay-filter="*">配货中</button>
+        <button class="layui-btn layui-btn-normal confirm" id="confirm" lay-submit lay-filter="*">已配货</button>
+        <button class="layui-btn layui-btn-normal qh" style="background-color: red;" id="qh" lay-submit lay-filter="*">缺货</button>
+        <button class="layui-btn layui-btn-normal cancel" style="background-color: red;" id="cancel" lay-submit lay-filter="*">取消订单</button>
+    </div>
+
+</div>
+<script type="text/javascript" src="crypto1/crypto/crypto.js"></script>
+<script type="text/javascript" src="crypto1/hmac/hmac.js"></script>
+<script type="text/javascript" src="crypto1/sha1/sha1.js"></script>
+<script src="layui/plupload.full.min.js"></script>
+<script src="layui/base64.js"></script>
+<script src="layui/upload.js"></script>
+<script type="text/javascript">
+    //  upload('logo');
+    layui.use(['form', 'laydate', 'layer'], function () {
+        var form = layui.form;
+        var laydate = layui.laydate;
+        var layer = layui.layer;
+        var router = layui.router()
+        form.render();
+
+        var myid = router.search.id//location.search.split('=')[1];
+
+        if (myid) {
+            var dataObj = {
+                order_id: myid,
+            }
+
+            var mydata = JSON.stringify(dataObj)
+            $.ajax({
+                url: link + '/order/search',
+                type: 'post',
+                dataType: 'json',
+                data: mydata,
+                success: function (res) {
+                    // //console.log('search:', res)
+                    if (res.err_code == 0) {
+                        $('#name').html(res.order.OrderId);
+                        $('#sort').html(res.order.TradingTime);
+                        $('#price').html('¥ '+res.order.Price);
+                        if(res.order.OrderType == 0 || res.order.OrderType == 5){
+                            $('#submit').hide()
+                            $('#loading').hide()
+                            $('#confirm').hide()
+                            $('#qh').hide()
+                            $('#cancel').hide()
+                        }
+                        var orderDetail = ''
+                        // //console.log(res.order)
+                        if (res.order.OrderDetail) {
+                            for (let item of res.order.OrderDetail) {
+                                orderDetail += '<div style="width: 500px;display: flex;position: relative;margin-bottom: 10px;">' +
+                                    '<img src="' + item.ImageUrl + '" style="width: 100px;height:100px;"alt="">' +
+                                    '<div style="width: 450px;margin-left: 20px;">' +
+                                    '<div>' + item.ProductName + '<span style="float: right;color:red;">¥ ' + item.Price + '</span></div>' +
+                                    '<div style="margin-top: 50px;">' + item.Color + ',' + item.Size + '<span style="float: right">x' + item.Num + '</span></div>' +
+                                    '</div>' +
+                                    '</div>'
+                            }
+                            $('#detail').html(orderDetail);
+                        }
+
+                    }
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    /*错误信息处理*/
+                    layer.close(loadicon);
+                    layer.msg('请求失败，原因：' + errorThrown + ',状态码：' + jqXHR.status);
+
+
+                }
+
+            });
+        } else {
+            $("#add").attr("src", addlink);
+        }
+
+
+        $('#submit').click(function(){
+            toSubmit('5');
+        })
+        $('#loading').click(function(){
+            toSubmit('2');
+        })
+        $('#confirm').click(function(){
+            toSubmit('3');
+        })
+        $('#qh').click(function(){
+            toSubmit('4');
+        })
+        $('#cancel').click(function(){
+            toSubmit('0');
+        })
+
+
+        function toSubmit(tag) {
+            var name = $('#name')[0].innerHTML;
+            
+            var dataObj = {
+                order_id: name,
+                order_type: tag
+            }
+
+            var mydata = JSON.stringify(dataObj)
+            //console.log(mydata)
+
+            var loadicon = layer.load(4); //加载动画
+
+            $.ajax({
+                url: link + '/order/switch',
+                type: 'post',
+                dataType: 'json',
+                data: mydata,
+                success: function (res) {
+                    //console.log(res)
+                    if (res.err_code == 0) {
+                        location.hash = '/'
+                    }
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    /*错误信息处理*/
+                    layer.close(loadicon);
+                    layer.msg('请求失败，原因：' + errorThrown + ',状态码：' + jqXHR.status);
+
+
+                }
+
+            });
+
+        }
+    })
+</script>

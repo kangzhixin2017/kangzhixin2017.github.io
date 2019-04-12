@@ -1,0 +1,267 @@
+<style>
+	.addBtn {
+		background: #fff;
+		padding: 10px;
+		display: flex;
+		height: 72px;
+		box-sizing: border-box
+	}
+
+	.imgitem img {
+		width: 50px;
+		height: 50px;
+
+	}
+
+	.x-body {
+		margin-top: 10px;
+	}
+</style>
+<div class="layui-card layadmin-header">
+	<div class="layui-breadcrumb" lay-filter="breadcrumb">
+		<a lay-href="">门店管理</a>
+
+	</div>
+</div>
+<div class="x-body">
+	<div class="layui-row">
+	</div>
+	<div class="addBtn">
+		<button class="layui-btn layui-btn-normal addShopAdmin" style="margin-top: 6px">导出Excel</button>
+	</div>
+	<table class="layui-table indrstry-table" lay-skin='line'>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>价格</th>
+				<th>状态</th>
+				<th>取货时间</th>
+				<th>联系电话</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody class="tr-content">
+
+		</tbody>
+	</table>
+</div>
+<script>
+	layui.use(['laydate', 'layer', 'laypage'], function () {
+
+		var laydate = layui.laydate;
+		var layer = layui.layer;
+		var laypage = layui.laypage;
+		var router = layui.router();
+
+		var myid = router.search.id /// location.search.split('=')[1];
+
+		$('.addShopAdmin').on('click', function () {
+			$.ajax({
+				url: link + '/order/download',
+				type: 'post',
+				dataType: 'json',
+				data: {
+
+				},
+				success: res => {
+					if (res.err_code == 0) {
+						window.open(res.file_path)
+					} else {
+						alert(res.err_msg)
+					}
+				}
+			})
+		})
+
+		doAjax()
+
+
+		function doAjax() {
+			//渲染列表
+			var mydata = JSON.stringify({
+				"channelNo": my_c_channel_no,
+				merchantId: myid
+
+			})
+			var loading = layer.load(4)
+			$.ajax({
+				url: link + '/order',
+				type: 'post',
+				dataType: 'json',
+				data: {
+					sign: sign,
+					ts: ts,
+					data: mydata,
+					token: mytoken
+				},
+				success: function (res) {
+					//console.log(res)
+					layer.close(loading)
+
+					var dataarr = res.orders;
+
+					var html = '';
+
+					var roleCode = ''
+					if (dataarr.length == 0) {
+						//	$('.indrstry-table').hide();
+						html = '<p>暂无数据</p>'
+						$('.tr-content').html(html).find("p").css({ "text-align": "center", "padding": "20px" });
+
+					} else {
+
+						for (var i = 0; i < dataarr.length; i++) {
+							if (dataarr[i].OrderType == 0) var status = "已取消"
+							else if (dataarr[i].OrderType == 1) var status = "待配货"
+							else if (dataarr[i].OrderType == 2) var status = "配货中"
+							else if (dataarr[i].OrderType == 3) var status = "已配货"
+							else if (dataarr[i].OrderType == 4) var status = "缺货"
+							else if (dataarr[i].OrderType == 5) var status = "已完成"
+
+							html += '<tr>' +
+								'<td>' + dataarr[i].OrderId + '</td>' +
+								'<td>' + dataarr[i].Price + '</td>' +
+								'<td>' + status + '</td>' +
+								'<td>' + dataarr[i].TradingTime + '</td>' +
+								'<td>' + dataarr[i].Phone + '</td>' +
+								'<td>' +
+								'<a href="javascript:;" class="layui-btn layui-btn-normal layui-btn-sm" lay-href="/order/addorder/id=' +
+								dataarr[i].OrderId + '" > 查看</a>' +
+								// '<a class="layui-btn layui-btn-danger layui-btn-sm delshopadmin-btn" data-id="' + dataarr[i].OrderId +
+								// '" lay-event="del">删除</a>' +
+								'</td>' +
+
+								'</tr>'
+
+						}
+
+						$('.tr-content').html(html);
+
+						// //编辑
+						// $('.industryedit').on('click', function () {
+						// 	var _this = $(this);
+						// 	var _id = _this.attr('data-id');
+
+						// 	x_admin_show('编辑分类', 'addshopindustry.html?pid=' + _id, 400, 400)
+
+						// })
+
+						//上下架
+						$('.onoff-btn').off('click').on('click', function () {
+
+							var _id = $(this).attr('data-id');
+							var bool = $(this).attr('data-bool');
+							//console.log("bool", bool)
+							if (bool == 'true') {
+								var txt1 = '是否要下架?'
+								var txt2 = '下架成功'
+								var txt3 = '下架失败:'
+								var change = false
+							} else {
+								var txt1 = '是否要上架?'
+								var txt2 = '上架成功'
+								var txt3 = '上架失败:'
+								var change = true
+							}
+
+							var delconfirm = layer.confirm(txt1, {
+								icon: 3,
+								title: '提示'
+							}, function (index) {
+								//do something
+								var mydata = JSON.stringify({
+									id: _id,
+									is_enable: change
+								})
+								var loading = layer.load(4);
+								$.ajax({
+									url: link + '/banner/switch',
+									type: 'post',
+									dataType: 'json',
+									data: mydata,
+									success: function (res) {
+										layer.close(loading)
+										//										checkToken(res.code)
+										//console.log(res);
+										if (res.err_code == 0) {
+											layer.close(delconfirm);
+											layer.msg(txt2, {
+												icon: 1,
+												time: 1000 //1秒关闭（如果不配置，默认是3秒）
+											}, function () {
+												//window.location.href = location.href;
+												doAjax()
+											});
+
+										} else {
+											//console.log(txt3 + res.info)
+											layer.closeAll();
+										}
+									},
+									error: function () {
+										layer.msg('请求服务器失败！！')
+									}
+								})
+
+							});
+
+						})
+
+
+						//删除
+						$('.delshopadmin-btn').off('click').on('click', function () {
+
+							var _id = $(this).attr('data-id');
+
+							var delconfirm = layer.confirm('是否要删除?', {
+								icon: 3,
+								title: '提示'
+							}, function (index) {
+								//do something
+								var mydata = JSON.stringify({
+									id: _id,
+								})
+								var loading = layer.load(4);
+								$.ajax({
+									url: link + '/banner/delete',
+									type: 'post',
+									dataType: 'json',
+									data: mydata,
+									success: function (res) {
+										layer.close(loading)
+										//										checkToken(res.code)
+										//console.log(res);
+										if (res.err_code == 0) {
+											layer.close(delconfirm);
+											layer.msg('删除成功', {
+												icon: 1,
+												time: 1000 //1秒关闭（如果不配置，默认是3秒）
+											}, function () {
+												//window.location.href = location.href;
+												doAjax()
+											});
+
+										} else {
+											//console.log("删除失败：" + res.info)
+											layer.closeAll();
+										}
+									},
+									error: function () {
+										layer.msg('请求服务器失败！！')
+									}
+								})
+
+							});
+
+						})
+
+					}
+				},
+				error: function () {
+					layer.msg('请求服务器失败！！')
+				}
+			})
+		}
+
+	});
+</script>

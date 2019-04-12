@@ -1,0 +1,296 @@
+<div class="layui-card layadmin-header">
+    <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    		<a lay-href="classify/classify">分类列表</a>
+        <!--<a lay-href="">轮播图</a>-->
+        <a>
+            <cite>新增二级界面</cite>
+        </a>
+    </div>
+</div>
+<div class="shop-manage-content" style="padding: 10px;">
+
+    <div class="content-body" style="padding: 10px;background: #fff">
+
+        <form class="layui-form layui-form-pane1" action="">
+
+
+            <div class="layui-form-item ">
+                <label class="layui-form-label">
+                    <span class="star">*</span>名称:</label>
+                <div class="layui-input-inline">
+                    <input id="name" type="text" name="name" lay-verify="required|name" required placeholder="输入分类标题" autocomplete="off" class="layui-input jing">
+                </div>
+            </div>
+            <div class="layui-form-item ">
+                <label class="layui-form-label">
+                    <span class="star">*</span>显示顺序:</label>
+                <div class="layui-input-inline">
+                    <input id="sort" type="text" name="sort" lay-verify="required|name" required placeholder="数字越大越靠前" autocomplete="off" class="layui-input jing">
+                </div>
+            </div>
+            <!--上传图片-->
+            <div class="form-input clearl">
+                <label class="layui-form-label">
+                    <span class="star">*</span>活动图片:</label>
+                <div class="imgup">
+                    <img height="70" src="" width="70" id="logo" />
+                    <!-- <span class="tixi">(上传375*270px )</span> -->
+
+                </div>
+            </div>
+            <!--<div class="layui-form-item ">
+                <label class="layui-form-label">
+                    <span class="star">*</span>链接地址:</label>
+                <div class="layui-input-inline">
+                    <input id="linkUrl" type="text" style="width: 450px;" name="linkUrl" lay-verify="required|name" required placeholder="输入http://"
+                        autocomplete="off" class="layui-input jing">
+                </div>
+            </div>-->
+            
+			<div class="job-disc" style="margin:10px 0 20px ; padding-left: 40px;">
+				活动介绍:
+				<span style="color:#999;">(温馨提示：用图片代替文字可以给用户更好的视觉体验，图片格式请选择png或jpg)</span>
+			</div>
+			<div class="eidtor-wrap" style="padding-left: 42px;margin-bottom: 10px;">
+				<div id="editor-trigger"></div>
+			</div>
+        </form>
+
+        <button class="layui-btn layui-btn-normal addshopSubmit" lay-submit lay-filter="*">立即提交</button>
+    </div>
+
+</div>
+<script src="layui/plupload.full.min.js"></script>
+<script src="layui/upload.js"></script>
+<script type="text/javascript">
+    upload('logo');
+    layui.use(['form', 'laydate', 'layer'], function () {
+        var form = layui.form;
+        var laydate = layui.laydate;
+        var layer = layui.layer;
+        var router = layui.router()
+        form.render();
+
+
+        var myid = router.search.id//location.search.split('=')[1];
+        
+
+		myid = myid.split('&&')[0]
+        //console.log("myid:",myid)
+        
+
+        var href = router.href
+        var tag = href.split('=')[2]
+        //console.log(tag)
+        var parentId
+        
+		if (tag) {
+            getinfo();
+            function getinfo() {
+                var parem = {
+                    id: myid
+                }
+                $.ajax({
+                    url: link + '/admin/merchantIndustry/get.do',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: parem,
+                    success: function (res) {
+                    		//console.log(res)
+                        if (res.code == 0) {
+                            $('#name').val(res.data.name);
+                            $('#sort').val(res.data.sort);
+//                          $('#linkUrl').val(res.data.linkUrl);
+                            $("#logo").attr("src",imglink+res.data.logo);
+                            form.render();
+							editor.$txt.html(res.data.content);
+                            parentId = res.data.parentId
+                        }
+                    },
+                    error: function () {
+                        layer.msg('请求服务器失败！！')
+                    }
+                });
+            }
+        } else {
+            $("#logo").attr("src", addlink);
+        }
+
+	//富文本
+	// 阻止输出log
+	// wangEditor.config.printLog = false;
+	var editor = new wangEditor('editor-trigger');
+	// 上传图片
+	editor.config.customUpload = true;
+	editor.config.customUploadInit = uploadInit;
+
+	editor.config.menus = $.map(wangEditor.config.menus, function (item, key) {
+		if (item === 'insertcode') {
+			return null;
+		}
+		if (item === 'fullscreen') {
+			return null;
+		}
+		if (item === 'video') {
+			return null;
+		}
+		if (item === 'link') {
+			return null;
+		}
+		if (item === 'unlink') {
+			return null;
+		}
+		return item;
+	});
+
+	editor.create();
+	// 封装//console.log
+	function printLog(title, info) {
+		window.console && console.log(title, info);
+	}
+	// ------- 配置上传的初始化事件 -------
+
+	function uploadInit() {
+		var uploader = new plupload.Uploader({
+			browse_button: this.customUploadBtnId,
+			url: 'http://oss.aliyuncs.com',
+			filters: {
+				mime_types: [ //只允许上传图片和zip文件
+					{
+						title: "Image files",
+						extensions: "jpg,gif,png,jpeg"
+					}
+
+				],
+				max_file_size: '2000kb', //最大只能上传400kb的文件
+				prevent_duplicates: false //不允许选取重复文件
+			},
+		});
+		uploader.init();
+		//绑定各种事件，并在事件监听函数中做你想做的事
+		uploader.bind('FilesAdded', function (up, files) {
+			//		    	 $('.progress-bar').show();
+			//				 $('.sub').attr({"disabled":"disabled"});
+			//				  $('.sub').css("background-color","#ccc");
+			plupload.each(files, function (file) {
+				set_upload_param(uploader, '', false);
+				return false;
+			});
+		});
+		uploader.bind('UploadProgress', function (up, file) {
+			//           $('.progress-bar').css('width',file.percent+'%');
+			//           $('.progress-bar').html(file.percent+'%');
+
+		});
+		uploader.bind('BeforeUpload', function (up, file) {
+			set_upload_param(up, file.name, true);
+		});
+
+		uploader.bind('FileUploaded', function (up, file, info) {
+			if (info.status == 200) {
+				editor.command(null, 'insertHtml', '<img src="' + 'http://mayijl.oss-cn-beijing.aliyuncs.com/' +
+					get_uploaded_object_name() + '" style="max-width:100%;"/>');
+
+			} else {
+
+			}
+		});
+		uploader.bind('Error', function (up, err) {
+			if (err.code == -600) {
+				alert('图片不能大于2M');
+			} else {
+				alert(err.message);
+			}
+		});
+	}
+
+
+        $(document).off("click").on("click", ".addshopSubmit", function () {
+            toSubmit();
+
+        });
+
+        function toSubmit() {
+            var name = $('#name').val();
+            var sort = $('#sort').val();
+            var img = document.getElementById('logo').src.replace(imglink, '');
+			var details = editor.$txt.html(); //商品详细
+//          var linkUrl = $('#linkUrl').val();
+            var dataObj = {
+                id: '',
+                name: name,
+                sort: sort,
+                parentId: myid,
+                logo: img,
+                content: details,
+//              linkUrl: linkUrl,
+//              channelNo: my_c_channel_no
+            }
+            if(tag){
+            		dataObj.id = myid
+            		dataObj.parentId = parentId
+            }
+
+            var mydata = JSON.stringify(dataObj)
+            //console.log(mydata)
+            
+            var loadicon = layer.load(4); //加载动画
+
+            $.ajax({
+                url: link + '/admin/merchantIndustry/save.do',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    data: mydata,
+                    ts: ts,
+                    sign: sign,
+                    token: mytoken
+                },
+
+                success: function (res) {
+                		//console.log(res)
+                    checkToken(res.code)
+                    layer.close(loadicon)
+                    if (!res.code) {
+                        layer.msg('提交成功', {
+                            icon: 1,
+                            time: 1000 //1秒关闭（如果不配置，默认是3秒）
+                        }, function () {
+
+                            // 获得frame索引
+                            // var index = parent.layer.getFrameIndex(window.name);
+                            // //关闭当前frame
+                            // parent.layer.close(index);
+                            // window.parent.location.reload();
+                            
+                            if(tag){
+                            		location.hash = '/classify/classifySecond/id=' + parentId
+                            }else{
+                            		location.hash = '/classify/classifySecond/id=' + myid
+                            }
+
+
+                        });
+
+                    } else {
+                        layer.msg(res.info, {
+                            icon: 2,
+                            time: 2000
+                        });
+                    }
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    /*错误信息处理*/
+                    layer.close(loadicon);
+                    layer.msg('请求失败，原因：' + errorThrown + ',状态码：' + jqXHR.status);
+
+
+                }
+
+            });
+
+
+        }
+    })
+</script>

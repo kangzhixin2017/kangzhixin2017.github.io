@@ -1,0 +1,137 @@
+
+
+<title>邮件服务</title>
+
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="">主页</a>
+    <a><cite>设置</cite></a>
+    <a><cite>站点设置</cite></a>
+  </div>
+</div>
+
+<div class="layui-fluid">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-col-md12">
+      <div class="layui-card">
+        <div class="layui-card-header">站点设置</div>
+        <div class="layui-card-body">
+          
+          <div class="layui-form" wid100 lay-filter="">
+            <div class="layui-form-item">
+              <label class="layui-form-label">站点名称</label>
+              <div class="layui-input-inline">
+                <input type="text" disabled="disabled" id="siteName" name="smtp_server" value="" placeholder="请输入站点名称" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label">商务合作电话</label>
+              <div class="layui-input-inline">
+                <input type="text" name="cache" id="businessTel"  value="" placeholder="请输入商务合作电话" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label">商务合作微信</label>
+              <div class="layui-input-inline">
+                <input type="text" name="cache" id="wxName" value="" placeholder="请输入商务合作微信" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item yuyueswitch" style="position: relative;">
+              <label class="layui-form-label">强制关注:</label>
+              <div class="layui-input-block">
+                <input type="checkbox" name="switch" id="forcedAttention" lay-filter="messageOpen" lay-skin="switch" lay-text="开启|关闭"
+                    value="1">
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-input-block">
+                <button class="layui-btn" id="sub" lay-submit lay-filter="set_system_email">保存</button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// layui.use('set', layui.factory('set'));
+layui.use(['form', 'laydate', 'layer'], function () {
+		var form = layui.form;
+		var laydate = layui.laydate;
+     var $ = layui.$;
+     form.render();
+     getinfo();
+     function getinfo(){
+					var parem={
+						channelNo:my_c_channel_no
+					}
+					$.ajax({
+						url: link+'/admin/config/getSiteInfo.do',
+						type: 'POST',
+						dataType: 'json',
+						data:parem,
+						success: function(res) {
+							if(res.code==0){
+								$('#siteName').val(res.data.siteName);
+								$('#wxName').val(res.data.wxName);
+                $('#businessTel').val(res.data.businessTel);
+                $('#forcedAttention').val(res.data.forcedAttention);
+                if(res.data.forcedAttention==1){
+                  $("#forcedAttention").prop("checked",true);
+                } 
+								form.render();
+							}
+						},
+						error: function () {
+							layer.msg('请求服务器失败！！')
+						}
+					});
+     }
+     $("#sub").click(function(){
+					var that=this;
+          var data={};
+          data.channelNo=my_c_channel_no;
+          data.wxName=$('#wxName').val();
+          data.businessTel=$('#businessTel').val();
+					data.forcedAttention=$("#forcedAttention").is(":checked")?1:0;;
+					var parem = JSON.stringify(data)
+					var data={
+						data:parem
+					}
+					$.ajax({
+						url: link+'/admin/config/siteSetting.do',
+						type: 'POST',
+						dataType: 'json',
+						data:data,
+						success: function(res) {
+							if (res.code==0) {
+								layer.msg('保存成功', {
+									icon: 1,
+									time: 1000 //1秒关闭（如果不配置，默认是3秒）
+								});
+
+							} else {
+								layer.msg("提交失败：" + res.info, {
+									icon: 2,
+									time: 2000
+								});
+							}
+
+								
+						},
+						error: function (jqXHR, textStatus, errorThrown) {
+						/*错误信息处理*/
+							layer.close(loadicon);
+							layer.msg('请求失败，原因：' + errorThrown + ',状态码：' + jqXHR.status);
+
+
+						}
+
+					});
+				})
+     
+})
+</script>

@@ -1,0 +1,202 @@
+<style>
+	.addBtn {
+		background: #fff;
+		padding: 10px;
+		display: flex;
+		height: 72px;
+		box-sizing: border-box
+	}
+	.imgitem img{
+		width: 50px;
+		height: 50px;
+
+	}
+	.x-body{
+		margin-top: 10px;
+	}
+</style>
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="classify/classify">分类列表</a>
+    <a><cite>二级界面</cite></a>
+  </div>
+</div>
+<div class="x-body">
+	<div class="layui-row">
+	</div>
+	<div class="addBtn">
+		<button class="layui-btn layui-btn-normal addShopAdmin"  lay-href="/classify/addclassify"  style="margin-top: 6px;">新增二级分类</button>
+	</div>
+	<table class="layui-table indrstry-table" lay-skin='line'>
+		<thead>
+			<tr>
+				<th>ID</th> 
+				<th>标题</th>
+				<th>排序</th>
+				<th>LOGO</th>
+				<!--<th>链接地址</th>-->
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody class="tr-content">
+
+		</tbody>
+	</table>
+</div>
+<script>
+	layui.use(['laydate', 'layer', 'laypage'], function () {
+		var laydate = layui.laydate;
+		var layer = layui.layer;
+		var laypage = layui.laypage;
+		var router = layui.router();
+
+		var myid = router.search.id /// location.search.split('=')[1];
+		//console.log(myid)
+
+		// $('.addShopAdmin').on('click', function () {
+		// 	// x_admin_show('新增商户管理员', './addshopadmin.html?myid=' + myid, 600, 400)
+		// 	location.hash = '/banner/addbanner/id=' + myid
+		// })
+
+		doAjax()
+
+
+		function doAjax() {
+
+			//渲染列表
+			var mydata = JSON.stringify({
+				"channelNo": my_c_channel_no,
+				parentId: myid
+
+			})
+			var loading = layer.load(4)
+			
+			//console.log(mydata)
+			
+			
+		btn = '<button class="layui-btn layui-btn-normal addShopAdmin"  lay-href="/classify/addclassifySecond/id='+myid+'"  style="margin-top: 6px;">新增二级分类</button>'
+
+		$('.addBtn').html(btn);
+		
+			$.ajax({
+				url: link + '/admin/merchantIndustry/list.do',
+				type: 'post',
+				dataType: 'json',
+				data: {
+					sign: sign,
+					ts: ts,
+					data: mydata,
+					token: mytoken
+				},
+				success: function (res) {
+					layer.close(loading)
+					// checkToken(res.code)
+					var dataarr = res.data.list;
+					//console.log("dataarr:",dataarr)
+					var html = '';
+
+					var roleCode = ''
+					if (dataarr.length == 0) {
+						//	$('.indrstry-table').hide();
+						html = '<p>暂无数据</p>'
+						$('.tr-content').html(html).find("p").css({"text-align":"center","padding":"20px"});
+
+					} else {
+
+						for (var i = 0; i < dataarr.length; i++) {
+							html += '<tr>' +
+
+								'<td>' + dataarr[i].id + '</td>' +
+								'<td>' + dataarr[i].name + '</td>' +
+								'<td>' + dataarr[i].sort + '</td>' +
+								'<td class="imgitem">' +
+								'<img src="' + imglink+dataarr[i].logo + '">'+
+								'</td>' +
+//								'<td>' + dataarr[i].linkUrl + '</td>' +
+								'<td>' +
+                                    '<a href="javascript:;" class="layui-btn layui-btn-normal layui-btn-sm" lay-href="/classify/addclassifySecond/id=' +
+                                    dataarr[i].id + '&&tag=1" > 编辑</a>' +
+								'<a class="layui-btn layui-btn-danger layui-btn-sm delshopadmin-btn" data-id="' + dataarr[i].id +
+								'" lay-event="del">删除</a>' +
+								'</td>' +
+
+								'</tr>'
+
+						}
+
+						$('.tr-content').html(html);
+
+						// //编辑
+						// $('.industryedit').on('click', function () {
+						// 	var _this = $(this);
+						// 	var _id = _this.attr('data-id');
+
+						// 	x_admin_show('编辑分类', 'addshopindustry.html?pid=' + _id, 400, 400)
+
+						// })
+
+
+
+						//删除
+						$('.delshopadmin-btn').off('click').on('click', function () {
+
+							var _id = $(this).attr('data-id');
+
+							var delconfirm = layer.confirm('是否要删除?', {
+								icon: 3,
+								title: '提示'
+							}, function (index) {
+								//do something
+								var mydata = JSON.stringify({
+									id: _id,
+									channelNo: my_c_channel_no
+								})
+								var loading = layer.load(4);
+								$.ajax({
+									url: link + '/admin/merchantIndustry/delete.do',
+									type: 'post',
+									dataType: 'json',
+									data: {
+										ts: ts,
+										sign: sign,
+										id: _id,
+										token: mytoken
+									},
+									success: function (res) {
+										layer.close(loading)
+										checkToken(res.code)
+										//console.log(res);
+										if (res.code == 0) {
+											layer.close(delconfirm);
+											layer.msg('删除成功', {
+												icon: 1,
+												time: 1000 //1秒关闭（如果不配置，默认是3秒）
+											}, function () {
+												//window.location.href = location.href;
+												doAjax()
+											});
+
+										} else {
+											//console.log("删除失败：" + res.info)
+											layer.closeAll();
+										}
+									},
+									error: function () {
+										layer.msg('请求服务器失败！！')
+									}
+								})
+
+							});
+
+						})
+
+					}
+				},
+				error: function () {
+					layer.msg('请求服务器失败！！')
+				}
+			})
+		}
+
+	});
+</script>

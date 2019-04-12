@@ -1,0 +1,346 @@
+<style type="text/css">
+    .menu-tip {
+        width: auto !important;
+    }
+
+    .wangeditor-menu-img-upload {
+        font-size: 80px;
+    }
+
+    .position_btn {
+        position: absolute;
+        right: -64px;
+        top: 0;
+        display: block;
+        width: 50px;
+        height: 38px;
+        background: #1E9FFF;
+        color: #fff;
+        cursor: pointer;
+        line-height: 38px;
+        text-align: center;
+    }
+
+    .ismap {
+        display: block;
+        width: 500px;
+        height: 400px;
+        display: none;
+        padding-left: 42px;
+    }
+
+    .maps {
+        width: 500px;
+        height: 390px;
+    }
+</style>
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="">首页</a>
+    <a><cite>新增/编辑	</cite></a>
+  </div>
+</div>
+<div class="shop-manage-content" style="padding: 15px;background: #fff;margin: 10px;" id="wrap">
+    <!-- 商户信息 -->
+    <div class="content-body" id="">
+        <div class="layui-form layui-form-pane1">
+            <div class="form-input clearl">
+                <label class="layui-form-label">
+                    <span class="star">*</span>商户logo:</label>
+                <div class="imgup">
+                    <img  height="70" src="" width="70" id="logo"/>
+                    <span class="tixi">(上传200*200px )</span>
+
+                </div>
+            </div>
+
+            <div class="layui-form-item ">
+                <label class="layui-form-label">
+                    <span class="star">*</span>商户名称:</label>
+                <div class="layui-input-block" style="margin-left: 110px;width: 300px;">
+                    <input id="shopname" type="text"  name="shopname" lay-verify="required|title" required placeholder="请输入店铺名称" autocomplete="off"
+                        class="layui-input">
+
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <span class="star">*</span>商户电话:</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="phone" id="phone"  placeholder="座机需要输入区号" id="phone" lay-verify="number" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item ">
+                <label class="layui-form-label"> <span class="star">*</span>商户地址:</label>
+                <div class="layui-input-block position_class" style="margin-left: 110px;width: 400px;">
+                    <input id="address" type="text" name="address"  placeholder="点击定位进行选取地址" class="layui-input">
+                    <span class="position_btn">定位</span>
+                </div>
+            </div>
+
+            <div class="layui-form-item ">
+                <label class="layui-form-label">
+                    <span class="star">*</span>店铺经度:</label>
+                <div class="layui-input-inline">
+                    <input readonly="readonly" id="longitude" type="text" name="longitude" lay-verify="required|longitude" required placeholder="点击定位后自动获取"
+                        autocomplete="off" class="layui-input jing">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <span class="star">*</span>店铺纬度:</label>
+                <div class="layui-input-inline">
+                    <input readonly="readonly" id="latitude" type="text"  name="latitude" lay-verify="required|latitude" required placeholder="点击定位后自动获取"
+                        autocomplete="off" class="layui-input wei">
+                </div>
+            </div>
+
+            <!--地图组件-->
+            <div class="ismap">
+                <div class="maps" id="dituContent"></div>
+            </div>
+            <div class="form-input clearl">
+                <label class="layui-form-label">
+                    <span class="star">*</span>服务:
+                </label>
+                <span>
+                    <input type="checkbox" id="parking"  name="parking" title="停车位">
+                    <input type="checkbox" id="wifi"   name="wifi" title="WIFI">
+                </span>
+            </div>
+			
+            <div class="layui-form-item ">
+                <label class="layui-form-label"><span class="star">*</span>核销密码:</label>
+                <div class="layui-input-inline">
+                    <input id="password" type="text"  name="password" lay-verify="required|password" required placeholder="核销密码" autocomplete="off" class="layui-input jing">
+                </div>
+            </div>
+            <div class="layui-form-item ">
+                <label class="layui-form-label"><span class="star">*</span>联系人:</label>
+                <div class="layui-input-inline">
+                    <input  type="text" name="contacts" id="contacts"  lay-verify="required|contacts" required placeholder="输入联系人" autocomplete="off" class="layui-input jing">
+                </div>
+            </div>
+            <div class="layui-form-item ">
+                <label class="layui-form-label"><span class="star">*</span>联系人手机:</label>
+                <div class="layui-input-inline">
+                    <input  type="number" name="contactsTel" id="contactsTel" lay-verify="required|contactsTel" required placeholder="输入联系人手机号" autocomplete="off" class="layui-input jing">
+                </div>
+            </div>
+            <div class="gray" id="gray"></div>
+					<div class="map" id="map" style="position: fixed;top: 54px;bottom: 0;height: 100%;display:none;width: 100%;max-width: 640px;z-index: 5;">
+			            <iframe id="mapPage" width="100%" height="100%" frameborder=0 src="https://apis.map.qq.com/tools/locpicker?search=1&type=1&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77&referer=myapp">
+						</iframe>
+			        </div>
+        </div>
+		<br/>
+        <button class="layui-btn layui-btn-normal saveShopSubmit" style="margin-left:80px;">立即提交</button>
+    </div>
+</div>
+  <script src="layui/plupload.full.min.js"></script>
+  <script src="layui/upload.js"></script>
+<script type="text/javascript">
+	
+			
+	layui.use(['form', 'laydate', 'layer'], function () {
+		var form = layui.form;
+		var laydate = layui.laydate;
+		 var $ = layui.$;
+		var router = layui.router()
+		var myid = router.search.id;
+		form.render()
+		//console.log(555555)
+		//console.log(myid,9999);
+		getinfo();
+		function getinfo() {
+            //一级分类
+            if(myid){
+            	var mydata = JSON.stringify({
+                    "id": myid
+                })
+                $.ajax({
+                    type: "post",
+                    url: link + '/admin/merchant/get.do',
+                    async: true,
+                    dataType: 'json',
+                    data: {
+                        data: mydata,
+                        sign: sign,
+                        ts: ts,
+                        token: mytoken
+                    },
+                    success: function (res) {
+                    checkToken(res.code);
+                    var infodata=res.data;
+                    $("#logo").attr("src",imglink+infodata.logo);
+                     $("#shopname").val(infodata.name);
+                     $("#phone").val(infodata.tel);
+                     $("#address").val(infodata.address);
+                     $("#longitude").val(infodata.longitude);
+                     $("#latitude").val(infodata.latitude);
+                    if(infodata.service){
+                    	 var service=JSON.parse(infodata.service);
+                     if(service.parking==1){
+                     	$("#parking").prop("checked",true);
+                     } if(service.wifi==1){
+                    	 $("#wifi").prop("checked",true);
+                     }
+                    }
+                     $("#password").val(infodata.password);
+                     $("#contacts").val(infodata.contacts);
+                     $("#contactsTel").val(infodata.contactsTel);
+                    form.render()
+
+
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    /*错误信息处理*/
+                    //console.log('请求失败，原因：' + errorThrown + ',状态码：' + jqXHR.status);
+                }
+            });
+            }else{
+            	$("#logo").attr("src","http://chitan.oss-cn-hangzhou.aliyuncs.com/xcx/4HNzTaATDtJB7FM2miXnxB.png");
+            }
+
+        }
+		$(".position_btn").click(function(){
+				document.getElementById('map').style.display="block";
+				document.getElementById('gray').style.display="block";
+				document.getElementById('map').style.zIndex=1001;
+				document.getElementById('gray').style.zIndex=1000;
+				window.addEventListener('message', function(event) {
+					//console.log(event.data.latlng.lat);
+					var loc = event.data;
+					if (loc && loc.module == 'locationPicker') {
+						document.getElementById('address').value=loc.poiaddress;
+						document.getElementById('longitude').value=loc.latlng.lng.toFixed(7);
+						document.getElementById('latitude').value=loc.latlng.lat.toFixed(7);
+						document.getElementById('map').style.display="none";
+						document.getElementById('gray').style.display="none";
+					}
+				}, false);
+			})
+
+		$("#gray").click(function(){
+			document.getElementById('map').style.display="none";
+			document.getElementById('gray').style.display="none";
+		})
+		$(".saveShopSubmit").click(function(){
+			sub()
+		})
+		function sub(){
+			var data={};
+			if(myid){
+				data.id=myid
+			}
+			data.logo=document.getElementById('logo').src.replace(imglink,'');
+			data.name=$("#shopname").val();
+             data.tel=$("#phone").val();
+			data.address=document.getElementById('address').value;
+			data.latitude=document.getElementById('latitude').value;
+			data.longitude=document.getElementById('longitude').value;
+			var service={};
+			service.parking=$("#parking").is(":checked")?1:0;
+			service.wifi=$("#wifi").is(":checked")?1:0;
+			data.service=service;
+			data.channelNo= my_c_channel_no;
+			data.password=$("#password").val();
+            data.contacts= $("#contacts").val();
+            data.contactsTel= $("#contactsTel").val();
+			//console.log(data.address,6666);
+			//console.log(data,999);
+			if(!data.logo){
+				layer.msg('请上传商家logo');
+				return false;
+			}
+			else if(!data.name){
+				layer.msg('请输入商家名称');
+				return false;
+			}
+			else if(!data.tel){
+				layer.msg('请输入商户电话');
+				return false;
+			}
+			else if(!data.password){
+				layer.msg('请输入核销密码');
+				return false;
+			}
+			else if(!data.contacts){
+				layer.msg('请输入联系人');
+				return false;
+			}
+			else if(!data.contactsTel){
+				layer.msg('请输入联系电话');
+				return false;
+			}
+			else if(!data.address){
+				layer.msg('请点击定位');
+				return false;
+			}
+			var loadicon = layer.load(4); //加载动画
+			var mydata = JSON.stringify(data)
+			$.ajax({
+				url: link + '/admin/merchant/save.do',
+				type: 'post',
+				dataType: 'json',
+				data: {
+					data: mydata,
+					sign: sign,
+					ts: ts,
+					token: mytoken
+				},
+				success: function (res) {
+					layer.close(loadicon);
+                    // checkToken(res.code)
+                    if (!res.code) {
+                    	layer.msg('上传成功,请刷新商户列表查看', {
+                    		icon: 1,
+                            time: 2000 //1秒关闭（如果不配置，默认是3秒）
+                        }, function () {
+                            /*if(myid) {
+                            	window.close();
+                            	self.opener.location.reload();
+                            } else {}*/
+
+                            // 获得frame索引
+                            // var index = parent.layer.getFrameIndex(window.name);
+                            // //关闭当前frame
+                            // parent.layer.close(index);
+                            // if (!myid) {
+                            //     window.parent.location.reload();
+                            // }
+
+                            location.hash = '/shop/shoplist'
+
+                        });
+
+                    } else {
+                    	layer.msg("提交失败：" + res.info, {
+                    		icon: 2,
+                    		time: 2000
+                    	});
+
+                    }
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                	/*错误信息处理*/
+                	layer.close(loadicon);
+                	$(".saveShopSubmit").attr('disabled',false)
+                	layer.msg('请求失败，原因：' + errorThrown + ',状态码：' + jqXHR.status);
+
+                }
+
+            })
+		}
+	})
+
+			
+	        
+upload('logo');
+
+</script>                            
+	
+</html>

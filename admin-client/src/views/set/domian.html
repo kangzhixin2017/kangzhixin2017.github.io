@@ -1,0 +1,149 @@
+
+
+<title>域名设置</title>
+
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="">主页</a>
+    <a><cite>设置</cite></a>
+    <a><cite>域名设置</cite></a>
+  </div>
+</div>
+
+<div class="layui-fluid">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-col-md12">
+      <div class="layui-card">
+        <div class="layui-card-header">域名设置<span style="color: rgb(255, 51, 51);">（提示：因域名需解析，更换域名请联系客服处理，尽量使用二级域名）</span></div>
+        <div class="layui-card-body">
+          <div class="layui-form" wid100 lay-filter="">
+            <div class="layui-form-item">
+              <label class="layui-form-label">主域名</label>
+              <div class="layui-input-inline">
+                <input type="text" name="smtp_server" id="name" value="" placeholder="请输入主域名" class="layui-input">
+              </div>
+              <div class="layui-form-mid layui-word-aux">用于总站点页面(例：abc.weixin.com)</div>
+            </div>
+            <div class="layui-form-item">
+              <label class="layui-form-label">业务域名</label>
+              <div class="layui-input-inline">
+                <input type="text" name="cache" id="name1" value="" placeholder="请输入业务域名" class="layui-input">
+              </div>
+              <div class="layui-form-mid layui-word-aux">用于风险页面(例：we.weixin.com)</div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-input-block">
+                <button class="layui-btn" id="sub" lay-submit lay-filter="set_system_email">保存</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="layui-fluid">
+		<div class="layui-row layui-col-space15">
+			<div class="layui-col-md12">
+				<div class="layui-card">
+					<div class="layui-card-header">页面配置<span style="color: rgb(255, 51, 51);">（提示：请先配置主域名）</span></div>
+					<div class="layui-card-body">
+						<div class="layui-form" wid100 lay-filter="">
+							<div class="layui-form-item">
+								<label class="layui-form-label">首页列表</label>
+								<div class="layui-input-inline" style="width: 500px">
+										<p style="padding: 8px 0">http://<span class="oneurl"></span>/chitansite/list.html?channelNo=<span class="channe"></span></p>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">优惠券列表</label>
+								<div class="layui-input-inline" style="width: 500px">
+										<p style="padding: 8px 0">http://<span class="oneurl"></span>/chitansite/couponlist.html?channelNo=<span class="channe"></span></p>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">个人中心</label>
+								<div class="layui-input-inline" style="width: 500px">
+										<p style="padding: 8px 0">http://<span class="oneurl"></span>/chitansite/mypage.html?channelNo=<span class="channe"></span></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+layui.use(['form', 'laydate', 'layer'], function () {
+		var form = layui.form;
+		var laydate = layui.laydate;
+     var $ = layui.$;
+     getinfo();
+     function getinfo(){
+					var parem={
+						channelNo:my_c_channel_no
+					}
+					$.ajax({
+						url: link+'/admin/domain/getInfo.do',
+						type: 'POST',
+						dataType: 'json',
+						data:parem,
+						success: function(res) {
+							if(res.code==0){
+								$('#name').val(res.data.name);
+								$('.oneurl').html(res.data.name);
+								$('.channe').html(my_c_channel_no);
+								$('#name1').val(res.data.name1);
+								form.render();
+							}
+						},
+						error: function () {
+							layer.msg('请求服务器失败！！')
+						}
+					});
+     }
+     $("#sub").click(function(){
+					var that=this;
+          var data={};
+          data.channelNo=my_c_channel_no;
+          data.name=$('#name').val();
+          data.name1=$('#name1').val();
+					var parem = JSON.stringify(data)
+					var data={
+						data:parem
+					}
+					$.ajax({
+						url: link+'/admin/domain/save.do',
+						type: 'POST',
+						dataType: 'json',
+						data:data,
+						success: function(res) {
+							if (res.code==0) {
+								layer.msg('保存成功', {
+									icon: 1,
+									time: 1000 //1秒关闭（如果不配置，默认是3秒）
+								});
+
+							} else {
+								layer.msg("提交失败：" + res.info, {
+									icon: 2,
+									time: 2000
+								});
+							}
+
+								
+						},
+						error: function (jqXHR, textStatus, errorThrown) {
+						/*错误信息处理*/
+							layer.close(loadicon);
+							layer.msg('请求失败，原因：' + errorThrown + ',状态码：' + jqXHR.status);
+
+
+						}
+
+					});
+				})
+     
+})
+</script>

@@ -1,0 +1,209 @@
+<style>
+	.addBtn {
+		background: #fff;
+		padding: 10px;
+		display: flex;
+		height: 72px;
+		box-sizing: border-box
+	}
+	.imgitem img{
+		width: 50px;
+		height: 50px;
+
+	}
+	.x-body{
+		margin-top: 10px;
+	}
+</style>
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="menber/menber">成员管理</a>
+    <a><cite>成员权限</cite></a>
+  </div>
+</div>
+<div class="x-body">
+	<div class="layui-row">
+	</div>
+	<div class="addBtn">
+		<button class="layui-btn layui-btn-normal addShopAdmin"  style="margin-top: 6px;">立即提交</button>
+	</div>
+	<table class="layui-table indrstry-table" lay-skin='line'>
+		<thead>
+			<tr>
+				<!--<th><input name="selectAll" type="checkbox" id="selectAll"/></th>--> 
+				<th></th>
+				<th>监控名称</th>
+				<th>所属校区</th>
+				<th>路径</th>
+			</tr>
+		</thead>
+		<tbody class="tr-content">
+
+		</tbody>
+	</table>
+
+	
+</div>
+<script>
+	layui.use(['laydate', 'layer', 'laypage'], function () {
+		var laydate = layui.laydate;
+		var layer = layui.layer;
+		var laypage = layui.laypage;
+		var router = layui.router();
+
+		var myid = router.search.id /// location.search.split('=')[1];
+		//console.log(myid)
+
+		// $('.addShopAdmin').on('click', function () {
+		// 	// x_admin_show('新增商户管理员', './addshopadmin.html?myid=' + myid, 600, 400)
+		// 	location.hash = '/banner/addbanner/id=' + myid
+		// })
+
+		doAjax()
+        //全选  
+        $('#selectAll').on('click', function () {
+        		var all = document.getElementsByName("selectAll");
+            var names = document.getElementsByName("monitor");                             
+            if(all.checked){
+	            for(var i=0;i<names.length;i++){  
+	                    names[i].checked=true;  
+	             }     
+            }else{
+            		all.checked = true
+            		for(var i=0;i<names.length;i++){  
+	                    names[i].checked=false;  
+	             } 
+            }
+            //console.log(all.checked)
+            //console.log(names)
+        })
+   
+
+		function doAjax() {
+
+			//渲染列表
+			var mydata = JSON.stringify({
+				"channelNo": my_c_channel_no,
+				parentId: myid
+
+			})
+			var loading = layer.load(4)
+			
+			//console.log(mydata)
+			
+                
+		
+			$.ajax({
+				url: link + '/admin/monitorConfig/list.do',
+				type: 'post',
+				dataType: 'json',
+				data: {
+					sign: sign,
+					ts: ts,
+					data: mydata,
+					token: mytoken
+				},
+				success: function (res) {
+					layer.close(loading)
+					// checkToken(res.code)
+					var dataarr = res.data.list;
+					//console.log("dataarr:",dataarr)
+					var html = '';
+
+					var roleCode = ''
+					if (dataarr.length == 0) {
+						//	$('.indrstry-table').hide();
+						html = '<p>暂无数据</p>'
+						$('.tr-content').html(html).find("p").css({"text-align":"center","padding":"20px"});
+
+					} else {
+						var parem = {
+		                    id: myid
+		                }
+		                $.ajax({
+		                    url: link + '/admin/member/get.do',
+		                    type: 'POST',
+		                    dataType: 'json',
+		                    data: parem,
+		                    success: function (res) {
+		                    		//console.log(res)
+		                        if (res.code == 0) {
+		                        		if(res.data.status == 0){
+		                        			for (var i = 0; i < dataarr.length; i++) {
+											html += '<tr>' +
+											'<td><input name="monitor" type="checkbox" value="' + dataarr[i].id + '" /></td>' +
+											'<td>' + dataarr[i].title + '</td>' +
+											'<td>' + dataarr[i].school + '</td>' +
+											'<td>' + dataarr[i].url + '</td>'
+										}
+		                        		}else{
+										for (var i = 0; i < dataarr.length; i++) {
+											if(isInArray(res.data.monitorList,dataarr[i].id)){
+													html += '<tr>' +
+												'<td><input name="monitor" type="checkbox" checked="true" value="' + dataarr[i].id + '" /></td>' +
+												'<td>' + dataarr[i].title + '</td>' +
+												'<td>' + dataarr[i].school + '</td>' +
+												'<td>' + dataarr[i].url + '</td>'
+											}else{
+												html += '<tr>' +
+												'<td><input name="monitor" type="checkbox" value="' + dataarr[i].id + '" /></td>' +
+												'<td>' + dataarr[i].title + '</td>' +
+												'<td>' + dataarr[i].school + '</td>' +
+												'<td>' + dataarr[i].url + '</td>'
+											}
+										}
+		                        		}
+									$('.tr-content').html(html);
+		                        }
+		                    },
+		                    error: function () {
+		                        layer.msg('请求服务器失败！！')
+		                    }
+		                });
+
+						  function isInArray(arr, value) {
+						    for(var i = 0; i<arr.length; i++) {
+						      if (value === arr[i]) {
+						        return true;
+						      }
+						    }
+						    return false;
+						  }
+
+						 $('.addShopAdmin').on('click', function () {
+						 	var monitors = document.getElementsByName("monitor");
+						 	var arr = []
+						 	for(let item of monitors){
+						 		if(item.checked){
+						 			arr.push(item.value)
+						 		}
+						 	}
+						 	var monitorIds = JSON.stringify(arr)
+						 	$.ajax({
+									url: link + '/admin/member/audit.do',
+									type: 'post',
+									dataType: 'json',
+									data: {
+										id: myid,
+										status: 1,
+										monitorIds: monitorIds
+									},
+									success: function (res) {
+										//console.log(res)
+                            				location.hash = '/menber/menber'
+									},
+									error: function () {
+										layer.msg('请求服务器失败！！')
+									}
+								})
+						 })
+					}
+				},
+				error: function () {
+					layer.msg('请求服务器失败！！')
+				}
+			})
+		}
+
+	});
+</script>

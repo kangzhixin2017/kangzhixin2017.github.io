@@ -1,0 +1,271 @@
+<style>
+	.addBtn {
+		background: #fff;
+		padding: 10px;
+		display: flex;
+		height: 72px;
+		box-sizing: border-box
+	}
+	
+	.imgitem img {
+		width: 50px;
+		height: 50px;
+	}
+	
+	.x-body {
+		margin-top: 10px;
+	}
+</style>
+<div class="layui-card layadmin-header">
+	<div class="layui-breadcrumb" lay-filter="breadcrumb">
+		<a><cite>系列管理</cite></a>
+	</div>
+</div>
+<div class="x-body">
+	<div class="layui-row">
+	</div>
+	<div class="addBtn">
+		<button class="layui-btn layui-btn-normal addShopAdmin" lay-href="/brand/addbrand" style="margin-top: 6px;">新增系列</button>
+	</div>
+	<table class="layui-table indrstry-table" lay-skin='line'>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>系列名称</th>
+				<th>系列图标</th>
+				<th>排序</th>
+				<th>状态</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody class="tr-content">
+
+		</tbody>
+	</table>
+</div>
+<script>
+	layui.use(['laydate', 'layer', 'laypage'], function() {
+		var laydate = layui.laydate;
+		var layer = layui.layer;
+		var laypage = layui.laypage;
+		var router = layui.router();
+
+		var myid = router.search.id /// location.search.split('=')[1];
+		//console.log(myid)
+
+		doAjax()
+
+		function doAjax() {
+
+			//渲染列表
+			var mydata = JSON.stringify({
+				"channelNo": my_c_channel_no,
+				parentId: myid
+
+			})
+			var loading = layer.load(4)
+
+			//console.log(mydata)
+			var account = sessionStorage.getItem("account");
+			var token = sessionStorage.getItem("token");
+			$.ajax({
+				url: link + '/series',
+				type: 'get',
+				headers: {
+					"account": account,
+					"token": token
+				},
+				dataType: 'json',
+				//				data: {
+				//					sign: sign,
+				//					ts: ts,
+				//					data: mydata,
+				//					token: mytoken
+				//				},
+				success: function(res) {
+					console.log(res)
+					if(res.err_code == 10001) {
+						location.hash = '/user/login';
+					}
+					layer.close(loading)
+					// checkToken(res.code)
+					//console.log(res)
+					var dataarr = res.data.brands;
+					var html = '';
+					sessionStorage.setItem("brands", JSON.stringify(dataarr))
+					var roleCode = ''
+					if(dataarr.length == 0) {
+						//	$('.indrstry-table').hide();
+						html = '<p>暂无数据</p>'
+						$('.tr-content').html(html).find("p").css({
+							"text-align": "center",
+							"padding": "20px"
+						});
+
+					} else {
+
+						for(var i = 0; i < dataarr.length; i++) {
+							if(dataarr[i].IsEnable) {
+								var ouhtml = '<a class="layui-btn layui-btn-danger layui-btn-sm onoff-btn" data-id="' + dataarr[i].Id +
+									'" data-bool="true">下架</a>'
+								var status = '使用中'
+							} else {
+								var ouhtml = '<a class="layui-btn layui-btn-normal layui-btn-sm onoff-btn" data-id="' + dataarr[i].Id +
+									'" data-bool="false">上架</a>'
+								var status = '未使用'
+							}
+
+							html += '<tr>' +
+
+								'<td>' + dataarr[i].Id + '</td>' +
+								'<td>' + dataarr[i].Name + '</td>' +
+								'<td class="imgitem"><img src="' + dataarr[i].Icon + '"/></td>' +
+								'<td>' + dataarr[i].Index + '</td>' +
+								'<td>' + status + '</td>' +
+								'<td>' + ouhtml +
+								'<a href="javascript:;" class="layui-btn layui-btn-normal layui-btn-sm" lay-href="/brand/addbrand/id=' +
+								dataarr[i].Id + '" > 编辑</a>' +
+								'<a class="layui-btn layui-btn-danger layui-btn-sm delshopadmin-btn" data-id="' + dataarr[i].Id +
+								'" lay-event="del">删除</a>' + '</td>' +
+								'</tr>'
+
+						}
+
+						$('.tr-content').html(html);
+
+						// //编辑
+						// $('.industryedit').on('click', function () {
+						// 	var _this = $(this);
+						// 	var _id = _this.attr('data-id');
+
+						// 	x_admin_show('编辑分类', 'addshopindustry.html?pid=' + _id, 400, 400)
+
+						// })
+
+						//删除
+						$('.delshopadmin-btn').off('click').on('click', function() {
+
+							var _id = $(this).attr('data-id');
+
+							var delconfirm = layer.confirm('是否要删除?', {
+								icon: 3,
+								title: '提示'
+							}, function(index) {
+								//do something
+								var mydata = JSON.stringify({
+									id:parseInt(_id) ,
+								})
+								var loading = layer.load(4);
+								var account = sessionStorage.getItem("account");
+var token = sessionStorage.getItem("token");
+								$.ajax({
+									url: link + '/series/delete',
+									type: 'post',
+									dataType: 'json',
+									headers:{"account":account,"token":token},
+									data: mydata,
+									success: function(res) {
+										layer.close(loading)
+										//										checkToken(res.code)
+										//console.log(res);
+										if(res.err_code == 0) {
+											layer.close(delconfirm);
+											layer.msg('删除成功', {
+												icon: 1,
+												time: 1000 //1秒关闭（如果不配置，默认是3秒）
+											}, function() {
+												//window.location.href = location.href;
+												doAjax()
+											});
+
+										} else {
+											location.hash = '/user/login';
+											layer.closeAll();
+										}
+									},
+									error: function() {
+										layer.msg('请求服务器失败！！')
+									}
+								})
+
+							});
+
+						})
+
+						//上下架
+						$('.onoff-btn').off('click').on('click', function() {
+
+							var _id = $(this).attr('data-id');
+							var bool = $(this).attr('data-bool');
+							//console.log("bool",bool)
+							if(bool == 'true') {
+								var txt1 = '是否要下架?'
+								var txt2 = '下架成功'
+								var txt3 = '下架失败:'
+								var change = false
+							} else {
+								var txt1 = '是否要上架?'
+								var txt2 = '上架成功'
+								var txt3 = '上架失败:'
+								var change = true
+							}
+
+							var delconfirm = layer.confirm(txt1, {
+								icon: 3,
+								title: '提示'
+							}, function(index) {
+								//do something
+								var mydata = JSON.stringify({
+									Id: parseInt(_id),
+									IsEnable: change
+								})
+								var loading = layer.load(4);
+								var account = sessionStorage.getItem("account");
+								var token = sessionStorage.getItem("token");
+								$.ajax({
+									url: link + '/series/update',
+									type: 'post',
+									dataType: 'json',
+									headers: {
+										"account": account,
+										"token": token
+									},
+									data: mydata,
+									success: function(res) {
+										layer.close(loading)
+										//										checkToken(res.code)
+										//console.log(res);
+										if(res.err_code == 0) {
+											layer.close(delconfirm);
+											layer.msg(txt2, {
+												icon: 1,
+												time: 1000 //1秒关闭（如果不配置，默认是3秒）
+											}, function() {
+												//window.location.href = location.href;
+												doAjax()
+											});
+
+										} else {
+											location.hash = '/user/login';
+											layer.closeAll();
+										}
+									},
+									error: function() {
+										layer.msg('请求服务器失败！！')
+									}
+								})
+
+							});
+
+						})
+
+					}
+				},
+				error: function() {
+					layer.msg('请求服务器失败！！')
+				}
+			})
+		}
+
+	});
+</script>

@@ -1,0 +1,426 @@
+ <title>留言列表</title>
+
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="">首页</a>
+    <a><cite>留言列表</cite></a>
+  </div>
+</div>
+ <div class="layui-tab-content"  id="wrap">
+        <div class="layui-tab-item shopmanageItem layui-show">
+        	 <div class="addBtn">
+                <button class="layui-btn layui-btn-normal " @click="remmon" style="margin-top: 6px;">新增留言</button>
+            </div>
+            <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief" >
+                <div class="layui-tab-content buylist-tabcontent">
+
+                    <div class="layui-tab-item layui-show">
+
+                        <table class="layui-table" lay-skin="line">
+                            <thead>
+                                <tr>
+                                    <th>留言时间</th>
+                                    <th>用户</th>
+                                    <th>留言内容</th>
+                                    <th>状态</th>
+                                    <th style="text-align: center;">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tr-content" id="tab0-shop">
+                                <tr v-for="(item,index) in list">
+                                    <td>{{item.createTime}}</td>
+                                    <td>{{item.nickName}}</td>
+                                    <td><p>{{item.content}}</p></td>
+                                    <td>{{item.choiceness==0?"未精选":"精选"}}</td>
+                                    <td style="text-align: center;">
+                                    	<a href="javascript:;" class="layui-btn layui-btn-normal layui-btn-sm" v-if="!item.reply" @click="reply(item.id)">回复</a>
+                                    	<a href="javascript:;" class="layui-btn layui-btn-normal layui-btn-sm" @click="topinfo(item.id,item.top)">{{item.top==0?'置顶':'取消置顶'}}</a>
+                                    	<a href="javascript:;" class="layui-btn layui-btn-sm" v-if="item.choiceness==0" @click="edit(item.id,1)">精选</a>
+                                    	<a href="javascript:;" class="layui-btn layui-btn-sm" v-if="item.choiceness==1" @click="edit(item.id,0)">取消精选</a>
+                                        <a href="javascript:;" class="layui-btn layui-btn-sm layui-btn-danger del-btn" @click="del(item.id)">删除</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="page" id="shoppage0">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="page" id="page">
+            </div> -->
+
+        </div>
+    </div>
+
+<script type="text/javascript">
+      layui.use(['laydate', 'layer', 'laypage', 'element', 'form', 'admin'], function () {
+        var laydate = layui.laydate;
+        var layer = layui.layer;
+        var laypage = layui.laypage;
+        var element = layui.element;
+        var form = layui.form;
+        var admin = layui.admin
+        var $ = layui.$;
+        var view = layui.view;
+  		var router = layui.router()
+        form.render();
+
+        var myid = router.search.id//location.search.split('=')[1];
+        //console.log(myid)
+    new Vue({
+    el:'#wrap',
+    data:{
+        list:[],
+        length:20,
+        info:{},
+        index:0,
+        imglink:imglink,
+        token:'',
+        channelNo:''
+    },
+    mounted:function(){
+        this.token=localStorage.getItem("token");
+        this.channelNo=localStorage.getItem("channelNo")
+        this.getlist();
+    },
+    methods:{
+        getlist:function(){
+            var that=this;
+           var mydata = JSON.stringify({
+                channelNo: this.channelNo,
+                page:1,
+                length:10,
+                lotteryId:myid
+            })
+            var loading = layer.load(4)
+
+           $.ajax({
+                url: link + '/admin/lotteryMessage/list.do',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    data: mydata,
+                    ts: ts,
+                    sign: sign,
+                    token: that.token
+                },
+                success: function (res) {
+                    layer.close(loading)
+                    checkToken(res.code)
+                    laypage.render({
+                        elem: "shoppage0",
+                        count: res.data.pageInfo.totalRecord, //totalNums
+                        layout: ['count', 'prev', 'page', 'next'],
+                        limit: 10,
+                        groups: 5,
+                        curr: 1,
+                        jump: function (obj) {
+                            localStorage.setItem("cashCurrPage", obj.curr)
+
+                            var html = "";
+                            var dataobj2 = {
+                                channelNo: that.channelNo,
+                                page: obj.curr, //当前页码
+                                length: 10, //当前页显示条数
+                                 lotteryId:myid
+                            }
+                            var mydata = JSON.stringify(dataobj2)
+                            $.ajax({
+                                url: link + '/admin/lotteryMessage/list.do',
+                                type: 'post',
+                                dataType: 'json',
+                                data: {
+                                    data: mydata,
+                                    ts: ts,
+                                    sign: sign,
+                                    token: that.token
+                                },
+                                success: function (res) {
+                                    if (res.code == 0) {
+                                        //console.log(res.data.list)
+                                        for (var i = 0; i < res.data.list.length; i++) {
+                                            if(!res.data.list[i].nickName){
+                                                res.data.list[i].nickName='/'
+                                            }else{
+                                                res.data.list[i].nickName=res.data.list[i].nickName
+                                            }
+                                            res.data.list[i].createTime=formatDate(new Date(parseInt(res.data.list[i].createTime)));
+                                        }
+                                        that.list = res.data.list;
+                                    }
+                                }
+                            })
+                        }
+                    })
+                },
+                error: function () {
+                    layer.close(loading)
+                    layer.msg('请求服务器失败！！')
+                }
+            });
+        },
+        edit:function(id,type){
+            var that=this;
+            var mydata = JSON.stringify({
+                "id": id,
+                "choiceness":type
+            })
+            var tis="是否标记精选？";
+            if(type==0){
+            	tis="是否取消精选？"
+            }
+            layer.confirm(tis, {
+                icon: 3,
+                title: '提示'
+            }, function (index) {
+                //do something
+                $.ajax({
+                    url: link + '/admin/lotteryMessage/choiceness.do',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        data: mydata,
+                        sign: sign,
+                        ts: ts,
+                        token: that.token
+                    },
+                    success: function (res) {
+                        checkToken(res.code)
+                        layer.close(index)
+                        if (res.code == 0) {
+                            layer.msg('标记成功', {
+                                icon: 1,
+                                time: 1000 //1秒关闭（如果不配置，默认是3秒）
+                            }, function () {
+                                //window.location.href = location.href;
+                                // var status = $('.shop-status li.layui-this').attr('data-on')
+                                that.getlist();
+                            });
+
+                        } else {
+                            //console.log("删除失败：" + res.info)
+                            layer.closeAll();
+                        }
+                    },
+                    error: function () {
+                        layer.msg('请求服务器失败！！')
+                    }
+                })
+
+            });
+        },
+        del:function(id){
+            var that=this;
+            var mydata = JSON.stringify({
+                "id": id
+            })
+            layer.confirm('是否要删除?', {
+                icon: 3,
+                title: '提示'
+            }, function (index) {
+                //do something
+                $.ajax({
+                    url: link + '/admin/lotteryMessage/delete.do',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        data: mydata,
+                        sign: sign,
+                        ts: ts,
+                        token: that.token
+                    },
+                    success: function (res) {
+                        checkToken(res.code)
+                        layer.close(index)
+                        if (res.code == 0) {
+                            layer.msg('删除成功', {
+                                icon: 1,
+                                time: 1000 //1秒关闭（如果不配置，默认是3秒）
+                            }, function () {
+                                //window.location.href = location.href;
+                                // var status = $('.shop-status li.layui-this').attr('data-on')
+                                that.getlist();
+                            });
+
+                        } else {
+                            //console.log("删除失败：" + res.info)
+                            layer.closeAll();
+                        }
+                    },
+                    error: function () {
+                        layer.msg('请求服务器失败！！')
+                    }
+                })
+
+            });
+        },
+        topinfo:function(id,top){
+            var that=this;
+            var tops='';
+            if(top==0){
+                tops=1
+            }else{
+                tops=0
+            }
+            var mydata = JSON.stringify({
+                "id": id,
+                top:tops
+            })
+            var title='置顶'
+            if(top==1){
+                title='取消置顶'
+            }
+            layer.confirm('是否要'+title+'?', {
+                icon: 3,
+                title: '提示'
+            }, function (index) {
+                //do something
+                $.ajax({
+                    url: link + '/admin/lotteryMessage/top.do',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        data: mydata,
+                        sign: sign,
+                        ts: ts,
+                        token: that.token
+                    },
+                    success: function (res) {
+                        checkToken(res.code)
+                        layer.close(index)
+                        if (res.code == 0) {
+                            layer.msg('操作成功', {
+                                icon: 1,
+                                time: 1000 //1秒关闭（如果不配置，默认是3秒）
+                            }, function () {
+                                //window.location.href = location.href;
+                                // var status = $('.shop-status li.layui-this').attr('data-on')
+                                that.getlist();
+                            });
+
+                        } else {
+                            //console.log("删除失败：" + res.info)
+                            layer.closeAll();
+                        }
+                    },
+                    error: function () {
+                        layer.msg('请求服务器失败！！')
+                    }
+                })
+
+            });
+        },
+        reply:function(id){
+        	//console.log(66666)
+        	var that=this
+            //console.log()
+
+            layer.prompt({
+                formType: 2,
+                value: '',
+                title: '新增留言内容',
+                area: ['300px', '150px'] //自定义文本域宽高
+            }, function (value, index, elem) {
+                layer.close(index);
+                var mydata = JSON.stringify({
+                    messageId: id,
+                    reply: value,
+                    channelNo: my_c_channel_no
+                })
+                $.ajax({
+                    url: link + '/admin/lotteryMessage/reply.do',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        data: mydata,
+                        sign: sign,
+                        ts: ts,
+                        token: mytoken
+
+                    },
+                    success: function (res) {
+                        checkToken(res.code)
+                        layer.close(index)
+                        if (res.code == 0) {
+                            layer.msg('留言成功', {
+                                icon: 1,
+                                time: 1000 //1秒关闭（如果不配置，默认是3秒）
+                            }, function () {
+                                //window.location.href = location.href;
+      							that.getlist();
+                            });
+
+                        } else {
+                            layer.msg("操作失败：" + res.info)
+
+                        }
+                    },
+                    error: function () {
+                        layer.msg('请求服务器失败！！')
+                    }
+                })
+
+            });
+
+        },
+        remmon:function(){
+        	//console.log(66666)
+        	var that=this
+            var _id = $(this).attr('data-id');
+            var _remark = $(this).attr('data-remark');
+            //console.log()
+
+            layer.prompt({
+                formType: 2,
+                value: _remark,
+                title: '新增留言内容',
+                area: ['300px', '150px'] //自定义文本域宽高
+            }, function (value, index, elem) {
+                layer.close(index);
+                var mydata = JSON.stringify({
+                    lotteryId: myid,
+                    content: value,
+                    channelNo: my_c_channel_no
+                })
+                $.ajax({
+                    url: link + '/admin/lotteryMessage/save.do',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        data: mydata,
+                        sign: sign,
+                        ts: ts,
+                        token: mytoken
+
+                    },
+                    success: function (res) {
+                        checkToken(res.code)
+                        layer.close(index)
+                        if (res.code == 0) {
+                            layer.msg('留言成功', {
+                                icon: 1,
+                                time: 1000 //1秒关闭（如果不配置，默认是3秒）
+                            }, function () {
+                                //window.location.href = location.href;
+      							that.getlist();
+                            });
+
+                        } else {
+                            layer.msg("操作失败：" + res.info)
+
+                        }
+                    },
+                    error: function () {
+                        layer.msg('请求服务器失败！！')
+                    }
+                })
+
+            });
+
+        }
+    }
+});
+  })
+</script>

@@ -1,0 +1,1091 @@
+<style type="text/css">
+    .addBtn {
+        background: #fff;
+        padding: 10px;
+        display: flex;
+        height: 72px;
+        box-sizing: border-box
+    }
+
+    .search-wrap {
+        display: flex;
+        margin-bottom: 10px;
+        margin-top: 40px;
+    }
+
+    .search-wrap input {
+        width: 280px !important;
+    }
+
+    .buydetails,
+    .refunddetails,
+    .usedetails,
+    .pingjiadetails {
+
+        cursor: pointer;
+        color: #1E9FFF;
+
+        font-size: 14px;
+    }
+
+    .layui-table td,
+    .layui-table th {
+        min-width: 60px;
+    }
+
+    .priceTd {
+        position: relative;
+        min-width: 75px !important;
+    }
+
+    .showPrice {
+        position: absolute;
+        left: -150px;
+        top: -30px;
+        display: none;
+        padding: 10px;
+        background: #5fb878;
+        z-index: 9999;
+        color: #fff;
+    }
+
+    .moreBox {
+        cursor: pointer;
+    }
+
+    .priceThead,
+    .priceTbody {
+        display: flex;
+    }
+
+    .priceThead p,
+    .priceTbody p {
+        padding: 8px 20px;
+        min-width: 50px;
+        max-width: 60px;
+        border: 1px solid #F1F1F1;
+        text-align: center;
+    }
+
+    .priceTbody p:first-child,
+    .priceThead p:first-child {
+        min-width: 80px;
+        max-width: 200px;
+
+    }
+
+    .moreSpecT {
+        color: #1E99FF;
+    }
+
+    .imgwrap {
+        width: 60px;
+        height: 60px;
+        overflow: hidden;
+    }
+
+    .unit {
+        position: absolute;
+        right: -12px;
+        top: 13px;
+    }
+
+    .width120 {
+        width: 120px
+    }
+
+    .baritem {
+        padding: 0 10px;
+        cursor: pointer;
+    }
+
+    .countsBar {
+        display: flex;
+        padding-left: 10px;
+    }
+
+    .countNum {
+        color: #1E99FF;
+        text-align: center;
+        padding-top: 10px;
+
+    }
+
+
+
+    .idTd {
+        white-space: nowrap;
+    }
+
+    .blueTxt {
+        color: #1E99FF;
+        cursor: pointer;
+    }
+
+    .page {
+        background: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .layui-laypage {
+        margin: 0;
+    }
+</style>
+<div class="layui-card layadmin-header">
+  <div class="layui-breadcrumb" lay-filter="breadcrumb">
+    <a lay-href="">首页</a>
+    <a><cite>活动列表</cite></a>
+  </div>
+</div>
+<div class="layui-tab layui-tab-brief">
+
+    <div class="layui-tab-content" id="couponContent">
+        <div class="layui-tab-item couponItem layui-show">
+
+            <div class="addBtn">
+                <button class="layui-btn layui-btn-normal " lay-href="/activity/addacti" style="margin-top: 6px;">发布活动</button>
+            </div>
+            <div style="background: #fff;margin: 10px 0" class="layui-form layui-card-header layuiadmin-card-header-auto" lay-filter="layadmin-useradmin-formlist">
+
+                <div class="layui-form-item">
+                        <!-- <div class="layui-inline">
+                            <div class="layui-input-block" style="margin-left: 0">
+                                <select id="classifySel" name="role" lay-filter="classifySel">
+                                    <option value="-1">全部</option>
+                                    <option value="0">特等奖</option>
+                                    <option value="1">一等奖</option>
+                                    <option value="2">二等奖</option>
+                                    <option value="3">三等奖</option>
+                                    <option value="4">四等奖</option>
+                                </select>
+                            </div>
+                        </div> -->
+
+                    <div class="layui-inline">
+                        <label class="layui-form-label">搜索</label>
+                        <div class="layui-input-block">
+                            <input type="text" id="searchTxt" name="telphone" placeholder="输入商户/商户ID/名称" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <button id="searchBtn" class="layui-btn layui-btn-normal" lay-submit="" lay-filter="LAY-user-back-search">
+                            筛选
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                <ul class="layui-tab-title shoplist-tab buying-status">
+                    <li data-on='0' class="layui-this">全部</li>
+                    <!-- <li data-on="1">未开始</li> -->
+                    <li data-on='2'>进行中</li>
+                    <li data-on='3'>已结束</li>
+
+
+                </ul>
+                <div class="layui-tab-content buylist-tabcontent">
+
+                    <div class="layui-tab-item layui-show">
+
+                        <table class="layui-table" lay-skin="line">
+                            <thead>
+                                <tr>
+                                    <th>图片</th>
+                                    <th>
+                                        <p>活动标题/</p>
+                                    </th>
+                                    <th>所属商户</th>
+                                    <th>时间</th>
+                                    <th>
+                                    	<p>领取/核销</p>
+                                    </th>
+                                    <th>数据</th>
+                                    <th>虚拟数</th>
+                                    <th>留言数</th>
+                                    <th>奖项</th>
+                                    <th>排序</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tr-content" id="tab0-content">
+
+                            </tbody>
+                        </table>
+                        <div class="page" id="page0">
+
+                        </div>
+                    </div>
+                    <div class="layui-tab-item ">
+
+                        <table class="layui-table" lay-skin="line">
+                            <thead>
+                               <tr>
+                                    <th>图片</th>
+                                    <th>
+                                        <p>活动标题/</p>
+                                    </th>
+                                    <th>所属商户</th>
+                                     <th>时间</th>
+                                    <th>
+                                    	<p>领取/核销</p>
+                                    </th>
+                                    <th>数据</th>
+                                    <th>虚拟数</th>
+                                    <th>留言数</th>
+                                    <th>奖项</th>
+                                    <th>排序</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tr-content" id="tab1-content">
+
+                            </tbody>
+                        </table>
+                        <div class="page" id="page1">
+
+                        </div>
+                    </div>
+                    <div class="layui-tab-item ">
+
+                        <table class="layui-table" lay-skin="line">
+                            <thead>
+                              <tr>
+                                    <th>图片</th>
+                                    <th>
+                                        <p>活动标题/</p>
+                                    </th>
+                                    <th>所属商户</th>
+                                     <th>时间</th>
+                                    <th>
+                                    	<p>领取/核销</p>
+                                    </th>
+                                    <th>数据</th>
+                                    <th>虚拟数</th>
+                                    <th>留言数</th>
+                                    <th>奖项</th>
+                                    <th>排序</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tr-content" id="tab2-content">
+
+                            </tbody>
+                        </table>
+                        <div class="page" id="page2">
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+    layui.use(['laydate', 'layer',"form", 'laypage'], function () {
+        var laydate = layui.laydate;
+        var form = layui.form;
+		var layer = layui.layer;
+		var laypage = layui.laypage;
+        var router = layui.router();
+        form.render()
+        var buytype = 0;
+//      isLogin()
+
+        //var isclick = location.search.split('=')[1];
+
+
+        var pageSession = sessionStorage.getItem('newcutCurrPage')
+        var listPage = pageSession ? pageSession : 1;
+        // $('#buytypeselect').on('change', function () {
+        // 	//筛选到店，物流
+        // 	
+        // 	var thisbuytype = parseInt($(this).find('option:selected').attr('value'));
+        // 	buytype = thisbuytype
+        // 	$('.shoplist-tab li:first').addClass('layui-this').siblings().removeClass('layui-this');
+        // 	$('.buylist-tabcontent .layui-tab-item:first').addClass('layui-show').siblings().removeClass('layui-show')
+        // 	tabAjax(0, '', buytype)
+
+        // })
+
+        $("#searchBtn").on('click', function () {
+
+            var myact = $(".shoplist-tab li.layui-this").index();
+            tabAjax(myact, 1)
+        })
+
+        //日期时间范围选择
+        laydate.render({
+            elem: '#newcutstart',
+            type: 'datetime',
+            format: 'yyyy-MM-dd HH:mm:ss'
+        })
+        laydate.render({
+            elem: '#newcutend',
+            type: 'datetime',
+            format: 'yyyy-MM-dd HH:mm:ss'
+        })
+
+
+
+        tabAjax(0, listPage)
+
+        $('.shoplist-tab li').on('click', function () {
+            //
+
+            var myact = $(this).index();
+            tabAjax(myact, 1)
+        })
+
+        function tabAjax(myact, mypage) {
+
+            var pageSize = 5;
+
+            var html = "";
+
+            var searchText = $("#searchTxt").val();
+
+            var dataobj1 = {
+                type: myact,
+                page: mypage, //首次加载的页码
+                length: pageSize, //当前页显示条数
+                channelNo: my_c_channel_no,
+                search: searchText
+            }
+
+
+
+            doAjax()
+
+            function copyId(ele,tip){
+                            //复制ID
+                            var clipboard = new ClipboardJS(ele)
+                            clipboard.on('success', function(e) {
+                                var tipTXT = tip?tip:'ID'
+                                layer.msg(tipTXT+'复制成功', {
+                                    icon: 1,
+                                    time: 1000,
+                                    success:function(){
+                                        //console.log(e,'eeee')
+                                    }			
+                                });
+                                
+                                e.clearSelection();
+                            });
+                            
+                        }
+
+            function doAjax() {
+                var mydata = JSON.stringify(dataobj1)
+                var loading = layer.load(4)
+
+                $.ajax({
+                    url: link + '/admin/lottery/list.do',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        data: mydata,
+                        ts: ts,
+                        sign: sign,
+                        token: mytoken
+                    },
+                    success: function (res) {
+                        layer.close(loading)
+//                      checkToken(res.code)
+
+                        if (res.code == -1) {
+                            layer.msg('加载失败：' + res.info)
+                            return false;
+                        }
+
+
+                        var listdata = res.data.list;
+                        var html = "";
+                        var starttime = '';
+                        var endtime = '';
+                        var closetime = '';
+                        var upDisplay = 'none';
+                        var downDisplay = 'inline-block';
+                        var rec_stime = '';
+                        var rec_etime = '';
+                        var showTime = 'block'; //初始状态
+
+                        var rstime = '';
+                        var retime = '';
+                        var now = Number(new Date() / 1000);
+
+
+                        var type = '';
+
+                        var imgArr = [];
+                        var usenum = ''
+                        var goodsNum = 0
+                        var isRecom = '未推荐'; //有推荐
+                        var type1 = 'inline-block'
+                        var type2 = 'none'
+
+                        var viewNum = 0
+                        var joinNum = 0
+                        var shareNum = 0
+                        var overtimeShow = 'inline-block'
+                        var openPartner = localStorage.getItem('openCopartner'); //1开启分销0关闭
+                        var fxrateBtn = 'none'
+
+                        var showVipPrice = 'none'
+
+                        var timeStatus = ''
+                        var nowT = ''
+                        var template='details'
+                        if (listdata.length) {
+
+                            for (var i = 0; i < listdata.length; i++) {
+                                viewNum = listdata[i].virtualPageview
+                                shareNum = listdata[i].virtualRelay
+                                joinNum = listdata[i].virtualApply
+                                if (openPartner == 1) {
+                                    fxrateBtn = 'inline-block'
+                                } else {
+                                    fxrateBtn = 'none'
+                                }
+                                if (listdata[i].online == 1) {
+                                    //上架
+                                    upDisplay = 'none'
+                                    downDisplay = 'inline-block'
+                                } else {
+
+
+                                    upDisplay = 'inline-block'
+                                    downDisplay = 'none'
+                                }
+
+                                if (listdata[i].goodsSet) {
+                                    goodsNum = listdata[i].goodsSet.length
+                                } else {
+                                    goodsNum = 0
+                                }
+
+                                if(listdata[i].template==1){
+                                    template="details1"
+                                }else if(listdata[i].template==2){
+                                    template="details2"
+                                }
+
+
+                                starttime = formatDate(new Date(parseInt(listdata[i].startTime)));
+                                endtime = formatDate(new Date(parseInt(listdata[i].endTime)));
+                                closetime = formatDate(new Date(parseInt(listdata[i].closeTime)));
+                                nowT = Number(new Date())
+                                html += '<tr>' +
+
+                                    '<td>' +
+                                    '<div class="imgwrap">' +
+
+                                    '<img src="' + imglink + listdata[i].img + '">'+
+                                    '</div>'+
+                                    '</td>' +
+
+                                    '<td>' +
+                                    '<p>' + listdata[i].title  + '</p>' +
+
+                                    '</td>' +
+                                    '<td>' + listdata[i].merchant.name + '</td>' +
+
+                                    '<td>' +
+                                    '<p>' +'开始时间：' + '<span>' + starttime +'</span></p>' +
+                                    '<p>' + '结束时间：' +'<span>' + endtime +'</span></p>' +
+                                    '<p>' + '消费截止：' +'<span>'+closetime + '</span></p>' + 
+                                    '</td>' +
+
+                                    '<td>' +
+                                    '<p>' +
+                                    '领取：' + '<span title="" data-type="0" data-id="' + listdata[i].id + '" class="blueTxt applydetails">' + listdata[i].receive +
+                                    '</span>'+
+                                    ' </p>' +
+                                    '<p>' + '核销：' +
+                                    '<span title="" data-type="1"  data-id="' + listdata[i].id + '" class="blueTxt applydetails">' + listdata[i].useNum +
+                                    '</span>'+
+                                    '</p>' +
+                                    '</td>' +
+
+                                    '<td>' +
+                                    '<p>关注数：' + '<span title=""  data-id="' + listdata[i].id +'" >' + listdata[i].attention +'</span>'+
+                                    ' </p>' +
+                                    '<p>参与数：<span title=""  data-id="' + listdata[i].id +'" >' + listdata[i].join +
+                                    '</span>'+
+                                    '</p>' +
+                                    '<p style="display:' + type1 + '">' + '点赞数：' +'<span title="" data-id="' +listdata[i].id +'" class="">' + listdata[i].like +'</span>' +
+                                    '</p>' + 
+                                    '</td>' +
+
+                                    '<td>' +
+                                    '<p>关注：' + '<span title="" data-type="0" data-id="' + listdata[i].id + '" class="blueTxt virtual expsendlist">' + listdata[i].virtualAttention +
+                                    '</span>' +
+                                    ' </p>' +
+                                    '<p>' + '参与：' +
+                                    '<span title="" data-type="1"  data-id="' + listdata[i].id + '" class="blueTxt virtual expsendlist">' + listdata[i].virtualReceive +
+                                    '</span>'+
+                                    '</p>' +
+                                    '<p>' + '点赞：' +
+                                    '<span title="" data-type="2" data-id="' + listdata[i].id + '"  class=" blueTxt virtual expsendlist">' +
+                                    listdata[i].virtualLike + '</span>' +
+                                    '</p>' + 
+                                    '</td>' +
+
+                                    '<td>' +
+                                    '<p>' +
+                                    '<span title=""  data-id="' + listdata[i].id + '" class="blueTxt managelist">' +
+                                    listdata[i].message + '</span>' +
+                                    ' </p>' + 
+                                    '</td>' +
+
+                                     '<td>' +
+                                    '<p>' +
+                                    '<a lay-href="/activity/lottery/id=' +
+                                    listdata[i].id + '" title="" data-id="' + listdata[i].id + '" class="blueTxt">查看奖项</a>' +
+                                    ' </p>' + 
+                                    '</td>' +
+                                    // '<td>' +
+                                    // '<p>' + starttime + '</p>' +
+                                    // '<p>' + endtime + '</p>' +
+                                    // '<p style="display:' + overtimeShow + '">' + closetime + '</p>' +
+
+                                    // '</td>' +
+                                    // '<td class="blueTxt recommend-btn" data-id="' +listdata[i].id + '">' + isRecom + '</td>' +
+                                    '<td>' +
+                                    '<p>' +
+                                    '<span title="" data-type="' + listdata[i].type +
+                                    '" data-id="' + listdata[i].id + '" class="layui-btn layui-btn-primary layui-btn-sm sort">' +
+                                    listdata[i].sort + '</span>'
+
+                                    +
+                                    ' </p>'+
+                                    '</td>' +
+
+                                    '<td  class = "td-manage">' +
+                                        '<a href="javascript:;" data-clipboard-text="http://cctt.chitan.co/chitansite/'+template+'.html?channelNo='+listdata[i].channelNo+'&id=' + listdata[i].id + '" class="idTd layui-btn layui-btn-normal layui-btn-sm" >复制链接</a>' +
+                                    '<a href="javascript:;" class="layui-btn layui-btn-normal layui-btn-sm" lay-href="/activity/addacti/id=' +
+                                    listdata[i].id + '" > 编辑</a>' +
+
+                                    // '<a href="javascript:;" style="display:' + fxrateBtn + '" data-levelone="' + listdata[i].rateOne + '" data-leveltwo="' + listdata[i].rateTwo + '" class="layui-btn layui-btn-sm fxset-btn" data-id="' + listdata[i].id + '"> 分销比例</a>' +
+                                    '<a href="javascript:;" style="display:' + upDisplay +
+                                    '"  class="layui-btn layui-btn-sm up-btn layui-btn-normal" data-id="' +
+                                    listdata[i].id + '" data-endtime="' + closetime + '"> 上架</a>' +
+                                    '<a href="javascript:;" style="display:' + downDisplay +
+                                    '" class="layui-btn layui-btn-sm down-btn" data-id="' +
+                                    listdata[i].id + '" data-endtime="' + closetime + '"> 下架</a>' +
+                                    '<a href="javascript:;" class="layui-btn layui-btn-sm layui-btn-danger del-btn" data-id="' +
+                                    listdata[i].id + '"> 删除</a>' +
+                                    '</td>' +
+                                    '</tr>'
+                            }
+
+                        } else {
+                            html = "暂无数据";
+                        }
+
+                        $("#tab" + myact + "-content").html(html);
+                       //复制ID  http://wx.fangkem.cn      http://cctt.chitan.co
+                       copyId('.idTd','链接')
+                        //查看奖项列表
+                        $('.looklottery').on("click", function () {
+                            var _id = $(this).data('id');
+                            location.hash = '/activity/lottery/id=' + _id
+                        })
+                        $('.managelist').on("click", function () {
+                            var _id = $(this).data('id');
+                            location.hash = '/activity/lotterymessage/id=' + _id
+
+                        })
+
+
+
+                        //虚拟数
+                        $('.virtual').off('click').on('click', function () {
+
+                            var thisapplynum = $(this).text();
+                            var type = $(this).attr('data-type');
+                            var thisid = $(this).attr('data-id');
+
+                            var title="虚拟关注数"
+                            if(type==1){
+                            	title="虚拟领取数"
+                            }else if(type==2){
+                            	title="虚拟点赞数"
+                            }
+                            setApplyNum(thisid, thisapplynum)
+
+                            function setApplyNum(id, applynum) {
+                                var prompt = layer.prompt({
+                                    title: title,
+                                    value: applynum,
+                                    formType: 0 //prompt风格，支持0-2
+                                }, function (applynum) {
+                                    var postData = JSON.stringify({
+                                        id: id,
+                                        channelNo: my_c_channel_no,
+                                        num: applynum,
+                                        type: type //1报名2转发3访问
+                                    })
+                                    var loading = layer.load(4);
+                                    $.post(link +
+                                        "/admin/lottery/updateVirtualNum.do", {
+                                            data: postData,
+                                            ts: ts,
+                                            sign: sign,
+                                            token: mytoken
+
+                                        },
+                                        function (res) {
+                                            layer.close(loading)
+                                            layer.close(prompt)
+
+                                            //console.log(res)
+                                            //var data = res
+
+                                            var data = JSON.parse(res)
+                                            //console.log(res.code)
+                                            if (data.code == 0) {
+
+                                                layer.msg('修改成功', {
+                                                    icon: 1,
+                                                    time: 1000
+                                                }, function () {
+                                                    var myact = $(
+                                                        ".shoplist-tab li.layui-this"
+                                                    ).index();
+                                                    var pageSession =
+                                                        sessionStorage.getItem(
+                                                            'newcutCurrPage'
+                                                        )
+                                                    tabAjax(myact,
+                                                        pageSession
+                                                    )
+                                                });
+
+                                            } else {
+                                                layer.msg(data.info, {
+                                                    icon: 2,
+                                                    time: 1000
+                                                });
+                                            }
+                                        });
+                                });
+                            }
+
+                        })
+                      
+
+
+                        //报名列表
+
+                        $('.applydetails').on("click", function () {
+                            var _id = $(this).data('id');
+                            var _type = $(this).attr('data-type');
+                            // x_admin_show('报名列表', 'applydetails.html?myid=' + _id)
+                            location.hash = '/activity/clecklist/id=' + _id+'/type='+_type
+
+
+                        })
+
+
+
+                        //编辑
+                        $('.edit-btn').on('click', function () {
+                            var _id = $(this).attr('data-id');
+                            /*$('#edit_buy').show()
+                            $('#edit_iframe').attr('src','addbuying.html?myid=' + _id)*/
+                            x_admin_show('编辑砍价活动', 'bargainadd.html?myid=' + _id)
+                            //window.location.href = 'addbuying.html?myid=' + _id;
+                            //window.open('addbuying.html?myid=' + _id)
+                        })
+
+                        //删除
+
+                        $('.del-btn').on('click', function () {
+
+                        	//console.log(66666)
+                            var _id = $(this).attr('data-id');
+
+                            var confirm = layer.confirm('是否要删除?', {
+                                icon: 3,
+                                title: '提示'
+                            }, function (index) {
+                                //do something
+                                var mydata = JSON.stringify({
+                                    id: _id,
+                                    channelNo: my_c_channel_no
+                                })
+                                $.ajax({
+                                    url: link +'/admin/lottery/delete.do',
+                                    type: 'post',
+                                    dataType: 'json',
+                                    data: {
+                                        ts: ts,
+                                        sign: sign,
+                                        data: mydata,
+                                        token: mytoken
+                                    },
+                                    success: function (res) {
+//                                      checkToken(res.code)
+                                        layer.close(confirm)
+
+                                        if (res.code == 0) {
+                                            //layer.closeAll();
+
+                                            layer.msg('删除成功', {
+                                                icon: 1,
+                                                time: 1000 //1秒关闭（如果不配置，默认是3秒）
+                                            }, function () {
+                                                var myact = $(
+                                                    ".shoplist-tab li.layui-this"
+                                                ).index();
+                                                var pageSession =
+                                                    sessionStorage
+                                                        .getItem(
+                                                            'newcutCurrPage'
+                                                        )
+                                                tabAjax(myact,
+                                                    pageSession
+                                                )
+                                            });
+
+                                        } else {
+                                            //console.log("删除失败：" + res.info)
+                                            layer.closeAll();
+                                        }
+                                    },
+                                    error: function () {
+                                        layer.msg('请求服务器失败！！')
+                                    }
+                                })
+
+                            });
+
+                        })
+
+                        //浏览量
+                        $('.sort').off('click').on('click', function () {
+
+                            var thisreadnum = $(this).text();
+                            var thisid = $(this).attr('data-id');
+
+                            editReadnum(thisid, thisreadnum)
+
+                            function editReadnum(id, readnum) {
+                                var prompt = layer.prompt({
+                                    title: '关注量',
+                                    value: readnum,
+                                    formType: 0 //prompt风格，支持0-2
+                                }, function (readnum) {
+
+                                    var mydata = JSON.stringify({
+                                        channelNo: my_c_channel_no,
+                                        sort: parseInt(readnum),
+                                        id: id
+
+                                    })
+                                    $.post(link + "/admin/lottery/sort.do", {
+                                        data: mydata,
+                                        ts: ts,
+                                        sign: sign,
+                                        token: mytoken
+
+                                    }, function (res) {
+                                        layer.close(prompt);
+
+                                        var data = JSON.parse(res)
+                                        if (data.code == 0) {
+                                            layer.msg('修改成功', {
+                                                icon: 1,
+                                                time: 1000
+                                            }, function () {
+                                                var myact = $(
+                                                    ".shoplist-tab li.layui-this"
+                                                ).index();
+                                                var pageSession =
+                                                    sessionStorage.getItem(
+                                                        'newcutCurrPage'
+                                                    )
+                                                tabAjax(myact,
+                                                    pageSession
+                                                )
+                                            });
+
+                                            //location.replace(location.href);
+
+                                        } else {
+                                            layer.msg(data.info, {
+                                                icon: 2,
+                                                time: 1000
+                                            });
+                                        }
+                                    });
+                                });
+                            }
+
+                        })
+                        
+                        //上架
+                        $('.up-btn').on('click', function () {
+                            var _id = $(this).attr('data-id');
+                            var mydata = JSON.stringify({
+                                id: _id,
+                                online: 1, //0下架1上架
+                                channelNo: my_c_channel_no
+                            })
+                            $.ajax({
+                                url: link + '/admin/lottery/online.do',
+                                type: 'post',
+                                dataType: 'json',
+                                data: {
+                                    ts: ts,
+                                    sign: sign,
+                                    data: mydata,
+                                    token: mytoken
+                                },
+                                success: function (res) {
+//                                  checkToken(res.code)
+
+                                    if (res.code == 0) {
+                                        layer.msg('上架成功', {
+                                            icon: 1,
+                                            time: 1000 //1秒关闭（如果不配置，默认是3秒）
+                                        }, function () {
+                                            var myact = $(
+                                                ".shoplist-tab li.layui-this"
+                                            ).index();
+                                            var pageSession =
+                                                sessionStorage.getItem(
+                                                    'newcutCurrPage')
+                                            tabAjax(myact, pageSession)
+                                        });
+
+                                    } else {
+                                        layer.msg("上架失败，原因：" + res.info)
+                                        //console.log("上架失败，原因：" + res.info)
+                                        layer.close(confirm)
+                                    }
+                                },
+                                error: function () {
+                                    layer.msg('请求服务器失败！！')
+                                }
+                            })
+                        })
+
+                        //下架
+                        $('.down-btn').on('click', function () {
+
+                            var _id = $(this).attr('data-id');
+                            var thisendT = Number($.myTime.DateToUnix($(this).attr(
+                                'data-endtime')));
+                            var now = Number(new Date()) / 1000;
+
+                            if (thisendT >= now) {
+                                layer.msg("活动进行中，不能下架");
+                                return false;
+                            }
+
+                            var confirm = layer.confirm('是否要下架?', {
+                                icon: 3,
+                                title: '提示'
+                            }, function (index) {
+                                //do something
+
+                                var mydata = JSON.stringify({
+                                    id: _id,
+                                    online: 0, //0下架1上架
+                                    channelNo: my_c_channel_no
+                                })
+                                $.ajax({
+                                    url: link + '/admin/lottery/online.do',
+                                    type: 'post',
+                                    dataType: 'json',
+                                    data: {
+                                        ts: ts,
+                                        sign: sign,
+                                        data: mydata,
+                                        token: mytoken
+                                    },
+                                    success: function (res) {
+//                                      checkToken(res.code)
+                                        layer.close(confirm)
+
+
+                                        if (res.code == 0) {
+                                            layer.msg('下架成功', {
+                                                icon: 1,
+                                                time: 1000 //1秒关闭（如果不配置，默认是3秒）
+                                            }, function () {
+                                                var myact = $(
+                                                    ".shoplist-tab li.layui-this"
+                                                ).index();
+                                                var pageSession =
+                                                    sessionStorage
+                                                        .getItem(
+                                                            'newcutCurrPage'
+                                                        )
+                                                tabAjax(myact,
+                                                    pageSession
+                                                )
+                                            });
+
+                                        } else {
+                                            layer.msg("下架失败，原因：" + res.info)
+                                            //console.log("下架失败，原因：" +
+                                                // res.info)
+                                            layer.close(confirm)
+                                        }
+                                    },
+                                    error: function () {
+                                        layer.msg('请求服务器失败！！')
+                                    }
+                                })
+
+                            });
+
+                        })
+                         
+                        
+                        laypage.render({
+                            elem: "page" + myact,
+                            count: res.data.pageInfo.totalRecord, //totalNums
+                            layout: ['count', 'prev', 'page', 'next'],
+                            limit: pageSize,
+                            groups: 5, //连续显示分页数
+                            curr: mypage,
+                            jump: function (obj, first) {
+
+                                sessionStorage.setItem('newcutCurrPage', obj.curr)
+
+                                if (!first) {
+                                    var curr = obj.curr
+                                    var myact = $(".shoplist-tab li.layui-this").index();
+                                    var pageSession = sessionStorage.getItem(
+                                        'newcutCurrPage')
+                                    tabAjax(myact, pageSession)
+
+                                }
+
+                            }
+                        })
+                    },
+                    error: function () {
+                        layer.close(loading)
+                        layer.msg('请求服务器失败！！')
+                    }
+                })
+            }
+
+        }
+
+    });
+</script>
+
+
+
+<script type="text/javascript">
+    //日期转时间戳
+    (function ($) {
+        $.extend({
+            myTime: {
+                /**
+                 * 当前时间戳
+                 * @return <int>    unix时间戳(秒) 
+                 */
+                CurTime: function () {
+                    return Date.parse(new Date()) / 1000;
+                },
+                /**       
+                 * 日期 转换为 Unix时间戳
+                 * @param <string> 2014-01-01 20:20:20 日期格式       
+                 * @return <int>    unix时间戳(秒)       
+                 */
+                DateToUnix: function (string) {
+                    var f = string.split(' ', 2);
+                    var d = (f[0] ? f[0] : '').split('-', 3);
+                    var t = (f[1] ? f[1] : '').split(':', 3);
+                    return (new Date(
+                        parseInt(d[0], 10) || null,
+                        (parseInt(d[1], 10) || 1) - 1,
+                        parseInt(d[2], 10) || null,
+                        parseInt(t[0], 10) || null,
+                        parseInt(t[1], 10) || null,
+                        parseInt(t[2], 10) || null
+                    )).getTime() / 1000;
+                },
+                /**       
+                 * 时间戳转换日期       
+                 * @param <int> unixTime  待时间戳(秒)       
+                 * @param <bool> isFull  返回完整时间(Y-m-d 或者 Y-m-d H:i:s)       
+                 * @param <int> timeZone  时区       
+                 */
+                UnixToDate: function (unixTime, isFull, timeZone) {
+                    if (typeof (timeZone) == 'number') {
+                        unixTime = parseInt(unixTime) + parseInt(timeZone) * 60 * 60;
+                    }
+                    var time = new Date(unixTime * 1000);
+                    var ymdhis = "";
+                    ymdhis += time.getUTCFullYear() + "-";
+                    ymdhis += (time.getUTCMonth() + 1) + "-";
+                    ymdhis += time.getUTCDate();
+                    if (isFull === true) {
+                        ymdhis += " " + time.getUTCHours() + ":";
+                        ymdhis += time.getUTCMinutes() + ":";
+                        ymdhis += time.getUTCSeconds();
+                    }
+                    return ymdhis;
+                }
+            }
+        });
+    })(jQuery);
+</script>
+
+<script>
+    function copyToClipboard(txt) {
+        if (window.clipboardData) {
+
+            window.clipboardData.clearData();
+            clipboardData.setData("Text", txt);
+            alert("复制成功！");
+
+        } else if (navigator.userAgent.indexOf("Opera") != -1) {
+
+            window.location = txt;
+
+        } else if (window.netscape) {
+
+            try {
+                netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+            } catch (e) {
+                alert(
+                    "被浏览器拒绝！\n请在浏览器地址栏输入'about:config'并回车\n然后将 'signed.applets.codebase_principal_support'设置为'true'"
+                );
+            }
+            var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
+            if (!clip)
+                return;
+            var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces
+                .nsITransferable);
+            if (!trans)
+                return;
+            trans.addDataFlavor("text/unicode");
+            var str = new Object();
+            var len = new Object();
+            var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
+            var copytext = txt;
+            str.data = copytext;
+            trans.setTransferData("text/unicode", str, copytext.length * 2);
+            var clipid = Components.interfaces.nsIClipboard;
+            if (!clip)
+                return false;
+            clip.setData(trans, null, clipid.kGlobalClipboard);
+            alert("复制成功！");
+        }
+    }
+</script>
