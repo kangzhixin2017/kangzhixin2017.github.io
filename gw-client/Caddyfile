@@ -1,0 +1,4 @@
+wx.yinxiangbaby.cn:8080 {
+tls off
+root /root/gw-client/
+}
