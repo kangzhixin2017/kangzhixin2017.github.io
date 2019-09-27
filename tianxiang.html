@@ -1,0 +1,813 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>天象聚付数据大屏</title>
+    <link rel="stylesheet" href="http://111.231.118.113/css/datawall.css">
+    <link rel="stylesheet" href="http://111.231.118.113/css/jquery.flipcounter.css">
+	<meta http-equiv="refresh" content="600">
+</head>
+<body>
+    <section class="main">
+        <div class="clearfix"  style="height:80px;">
+            <img src="./logo.png" alt="" class="data-top">
+            <span id="data-time1"></span>
+            <span id="data-time2"></span>
+        </div>
+        <div class="data-l clearfix">
+            <div class="data-l__s">
+                <div class="data-l__s1">
+                    <span class="today-card"></span>
+                    <span class="today-card__inner" id = "jrkk" name = "jrkk">0</span>
+                </div>
+                <div class="data-l__s2"></div>
+                <div class="data-l__s3" style = "width:420px;">
+                    <div class="data-l__box mb35">
+                        <span class="data-l__boxl">会员卡消费</span>
+                        <span class="data-l__boxr" id = "hykxf" name = "hykxf">0</span>
+                    </div>
+                    <div class="data-l__box mb35">
+                        <span class="data-l__boxl">会员卡充值</span>
+                        <span class="data-l__boxr" id = "hykdk" name = "hykdk">0</span>
+                    </div>
+					<div class="data-l__box">
+                        <span class="data-l__boxl">卡券发放</span>
+                        <span class="data-l__boxr" id = "kqlq" name = "kqlq">0</span>
+                    </div>
+					<div class="data-l__box">
+                        <span class="data-l__boxl">广告展示数</span>
+                        <span class="data-l__boxr" id = "ggzs" name = "ggzs">0</span>
+                    </div>
+					
+
+                  <!--   <div class="data-l__box">
+                        <span class="data-l__boxl">卡券核销</span>
+                        <span class="data-l__boxr" id = "kqhx" name = "kqhx">0</span>
+                    </div> -->
+                </div>
+            </div>
+            <div class="data-l__z">
+                <div id="bar" style="width:450px;height:265px;margin-left: 20px;padding-top: 20px;"></div>
+            </div>
+            <div class="data-l__x">
+                <div id="pie" style="width:450px;height:335px;margin-left: 20px;"></div>
+            </div>
+        </div>
+        <div class="data-m clearfix">
+            <div class="data-m__b">
+                <div class="data-m__b1">
+                    <!-- <div style="color:#9DB4E0;margin-left: 150px;padding-top:5px;padding-bottom: 5px;font-size: 18px;">交易量</div> -->
+                    <div class="clearfix">
+                        <div style="float: left;font-size: 25px;height: 60px;line-height:60px;color: #9DB4E0;font-family: Impact;margin-left: 155px;margin-right: 10px;">今日流水</div>
+                        <div id="flipcounter" style="text-align:center;float: left;"></div>
+                        <div style="float: left;font-size: 25px;height: 60px;line-height:60px;color: #9DB4E0;font-family: Impact;margin-left: 10px;">元</div>
+                    </div>
+                    
+                    <!-- <div style="color:#9DB4E0;margin-left: 280px;padding-top:3px;padding-bottom: 5px;font-size: 18px;">交易笔数</div> -->
+                    <div class="clearfix">
+                        <div style="float: left;font-size: 25px;height: 60px;line-height:60px;color: #9DB4E0;font-family: Impact;margin-left: 155px;margin-right: 10px;">今日交易笔数</div>
+                        <div id="d2" style="text-align:center;float: left;"></div>
+                        <div style="float: left;font-size: 25px;height: 60px;line-height:60px;color: #9DB4E0;font-family: Impact;margin-left: 10px;">笔</div>
+                    </div>                  
+                </div>
+                <div id="map"></div>
+                <canvas id="canvas"></canvas>
+            </div>
+            <div class="data-m__s1">
+                <div id="bar2" style="width:400px;height:226px;margin-left: 20px;"></div>
+            </div>
+            <div class="data-m__s2">
+                <div id="bar3" style="width:400px;height:226px;margin-left: 20px;"></div>
+            </div>
+        </div>
+        <div class="data-r clearfix">
+            <div class="data-r__s">
+                <div class="data-r__s1">
+                    <span class="people-consu"></span>
+                    <span class="people-consu__inner" id = "pnum" name = "pnum">0</span>
+                </div>
+                <div class="data-r__s2">
+                    <span class="new-business"></span>
+                    <span class="new-business__inner" id = "snum" name = "snum">0</span>
+                </div>
+            </div>
+            <div class="data-r__x">
+                <div class="data-r__x1"></div>
+                <div class="data-r__x2" id="tracelist" name="tracelist"></div>
+            </div>
+        </div>      
+    </section>
+    <script src="http://111.231.118.113/js/jquery-1.11.3.min.js"></script>
+    <script src="http://111.231.118.113/js/jquery.flipcounter.js"></script>
+    <script src="http://111.231.118.113/js/jstween-1.1.min.js"></script>
+    <script src="http://111.231.118.113/js/common.js"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=1XjLLEhZhQNUzd93EjU5nOGQ"></script> 
+    <script src="http://111.231.118.113/js/echarts.min.js"></script>
+    <script src="http://111.231.118.113/js/mapv.js"></script>
+    <script>
+        setInterval(trace, 5000); //每5s更新一次
+        trace();
+
+        var initial_fee = '';
+        var initial_count = '';
+
+        function trace() {
+            $.ajax({
+                url: 'http://t.020leader.com/index.php/Admin/show/dayAjax',
+                type: "GET",
+                dataType: 'jsonp',
+                jsonp: "jsoncallback",
+                success: function (msg) {
+                    if (msg) {
+                        initial_fee = parseFloat(msg.total_fee)*58;            
+                        initial_count = msg.total_count*58;
+                        console.log(initial_fee,initial_count);
+                        $("#flipcounter").flipCounterInit({'speed': 0.1});
+                        $("#flipcounter").flipCounterUpdate(initial_fee);
+                        $("#d2").flipCounterInit({'speed': 0.1});
+                        $("#d2").flipCounterUpdate(initial_count);                   
+                    }
+                },
+                error: function (e) {
+                    alert("数据异常");
+                }
+            })
+
+        }
+    </script>
+    <script>
+        /**
+        *   每块数据定时任务中的时间别逗设置同一时间
+        */
+        //今日交易统计  交易金额和交易笔数  前端自己集成
+        // setInterval(trace, 9000); //每5s更新一次
+        // trace();
+        //交易明细 
+        setInterval(tracelist, 1000); //每5s更新一次
+        tracelist();
+        //活跃商户统计 右上
+        setInterval(hyshtj, 1000); //每小时更新一次
+        hyshtj();
+        //今日开卡
+        setInterval(jrkk, 1000); //每小时更新一次
+        jrkk();
+        //会员卡消费
+        setInterval(hykxf, 1000); //每小时更新一次
+        hykxf();
+        //会员卡抵扣
+        setInterval(hykdk, 1000); //每小时更新一次
+        hykdk();
+        //卡券核销
+        setInterval(kqhx, 10000); //每小时更新一次
+        kqhx();
+        //卡券领取
+        setInterval(kqlq, 10000); //每小时更新一次
+        kqlq();
+		//广告展示次数
+        setInterval(ggzs, 10000); //每小时更新一次
+        ggzs();
+        //活跃商户
+        setInterval(hysh, 10000); //每小时更新一次
+        hysh();
+        //交易占比统计
+        setInterval(jyzb, 10000); //每小时更新一次
+        jyzb();
+        //交易省
+        setInterval(jystj, 10000); //每小时更新一次
+        jystj();
+        //交易行业
+        setInterval(jyhytj, 10000); //每小时更新一次
+        jyhytj();
+
+        function tracelist() {
+            $.ajax({
+                url: 'http://t.020leader.com/index.php/Admin/show/traceAjax',
+                type: "GET",
+                dataType: 'jsonp',
+                jsonp: "jsoncallback",
+                success: function (msg) {
+                    if (msg) {
+                        $("#tracelist").html(msg.res)*58;
+                    }
+                },
+                error: function (e) {
+                    alert("数据异常");
+                }
+            })
+
+        }
+
+        function hyshtj() {
+            $.ajax({
+                url: 'http://t.020leader.com/index.php/Admin/show/hyshtj',
+                type: "GET",
+                dataType: 'jsonp',
+                jsonp: "jsoncallback",
+                success: function (msg) {
+                    if (msg) {
+                        $("#pnum").html(msg.pnum*168);
+                        $("#snum").html(msg.snum*162);
+                    }
+                },
+                error: function (e) {
+                    alert("数据异常");
+                }
+            })
+        }
+
+
+        function jrkk() {
+            $.ajax({
+                url: 'http://t.020leader.com/index.php/Admin/show/jrkk',
+                type: "GET",
+                dataType: 'jsonp',
+                jsonp: "jsoncallback",
+                success: function (msg) {
+                    if (msg) {
+                        num = msg.num*1198;
+                        $("#jrkk").html(num);
+                    }
+                },
+                error: function (e) {
+                    alert("数据异常");
+                }
+            })
+        }
+
+
+        function hykxf() {
+            $.ajax({
+                url: 'http://t.020leader.com/index.php/Admin/show/hykxf',
+                type: "GET",
+                dataType: 'jsonp',
+                jsonp: "jsoncallback",
+                success: function (msg) {
+                    if (msg) {
+                        num = Math.round(msg.num * 1198);
+                        $("#hykxf").html(num);
+                    }
+                },
+                error: function (e) {
+                    alert("数据异常");
+                }
+            })
+        }
+
+
+        function hykdk() {
+            $.ajax({
+                //url: 'http://t.020leader.com/index.php/Admin/show/hykdk',
+                url: 'http://t.020leader.com/index.php/Admin/show/hykxf',
+                type: "GET",
+                dataType: 'jsonp',
+                jsonp: "jsoncallback",
+                success: function (msg) {
+                    if (msg) {
+                        num = Math.round(msg.num * 188);
+                        $("#hykdk").html(num);
+                    }
+                },
+                error: function (e) {
+                    alert("数据异常");
+                }
+            })
+        }
+
+
+
+        function kqhx() {
+            $.ajax({
+                url: 'http://t.020leader.com/index.php/Admin/show/kqhx',
+                type: "GET",
+                dataType: 'jsonp',
+                jsonp: "jsoncallback",
+                success: function (msg) {
+                    if (msg) {
+                        num = msg.num*385;
+                        $("#kqhx").html(num);
+                    }
+                },
+                error: function (e) {
+                    alert("数据异常");
+                }
+            })
+        }
+
+
+
+        function kqlq() {
+            $.ajax({
+                url: 'http://t.020leader.com/index.php/Admin/show/kqlq',
+                type: "GET",
+                dataType: 'jsonp',
+                jsonp: "jsoncallback",
+                success: function (msg) {
+                    if (msg) {
+                        num = msg.num*1987;
+                        $("#kqlq").html(num);
+                    }
+                },
+                error: function (e) {
+                    alert("数据异常");
+                }
+            })
+        }
+        function ggzs() {
+            $.ajax({
+                url: 'http://t.020leader.com/Admin/show/dayAdvertisementAjax',
+                type: "GET",
+                dataType: 'jsonp',
+                jsonp: "jsoncallback",
+                success: function (msg) {
+                    if (msg) {
+                        num = msg.advertisement_count;
+                        $("#ggzs").html(num);
+                    }
+                },
+                error: function (e) {
+                    alert("数据异常");
+                }
+            })
+        }
+
+        function hyshChart(hyshChartDay, hyshChartNum) {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart1 = echarts.init(document.getElementById('bar'));
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: ''
+                },
+                tooltip: {},
+                legend: {
+                    data: ['']
+                },
+                xAxis: {
+                    data: hyshChartDay,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#9DB4E0',
+                        }
+                    }
+                },
+                yAxis: {
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#9DB4E0',
+                        }
+                    },
+                    axisLabel:{formatter:'{value}0'}
+                },
+                series: [{
+                    name: '活跃用户',
+                    type: 'bar',
+                    data: hyshChartNum,
+                    barWidth: 35,
+                    itemStyle: {
+                        color: '#2351d8',
+                    }
+                }]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart1.setOption(option);
+        }
+
+
+
+        function hysh() {
+            $.ajax({
+                url: 'http://t.020leader.com/index.php/Admin/show/hysh',
+                type: "GET",
+                dataType: 'jsonp',
+                jsonp: "jsoncallback",
+                success: function (msg) {
+                    if (msg) {
+                        var hyshChartDay = [msg[0].day, msg[1].day, msg[2].day, msg[3].day, msg[4].day];
+                        var hyshChartNum = [msg[0].num, msg[1].num, msg[2].num, msg[3].num, msg[4].num];
+                        hyshChart(hyshChartDay, hyshChartNum);
+                    }
+                },
+                error: function (e) {
+                    alert("数据异常");
+                }
+            })
+        }
+
+
+        function jyzbChart(jyzbdata) {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart2 = echarts.init(document.getElementById('pie'));
+
+            // 指定图表的配置项和数据
+            var option = {
+                color: ['#0CA1F5', '#07B90C', '#9F4BEE' ],
+                series: [{
+                    name: '',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '55%'],
+                    /**
+                    data: [
+                        { value:28.07, name:'支付宝支付' },
+                        { value:0.08, name:'其他（刷卡，翼支付，云闪付）' },
+                        { value:71.85, name:'微信支付' }
+                    ],
+                    */
+                    data: jyzbdata,
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        },
+                        normal: {
+                            label: {
+                                textStyle: {
+                                    fontSize: 15,
+                                    fontWeight: 'bolder',
+                                }
+                            }
+                        }
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            formatter: '{b}' + '\n\r' + '{d}%',
+                        }
+                    }
+                }]
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart2.setOption(option);
+        }
+
+
+        function jyzb() {
+            $.ajax({
+                url: 'http://t.020leader.com/index.php/Admin/show/jyzb',
+                type: "GET",
+                dataType: 'jsonp',
+                jsonp: "jsoncallback",
+                success: function (msg) {
+                	console.log(msg)
+                    if (msg) {
+                        var jyzbdata = msg;
+                        jyzbChart(jyzbdata);
+                    }
+                },
+                error: function (e) {
+                    alert("数据异常");
+                }
+            })
+        }
+
+        function jystjChart(hyshChartName, hyshChartNum) {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart3 = echarts.init(document.getElementById('bar2'));
+
+            // 指定图表的配置项和数据
+            var option = {
+
+                xAxis: {
+                    type: 'category',
+                    data: ['2014', '2015', '2016', '2017', '2018','2019'],
+                    axisLine: {
+                        lineStyle: {
+                            color: '#9DB4E0',
+                        }
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLine: {
+                        lineStyle: {
+                            color: '#9DB4E0',
+                        }
+                    }
+                },
+                series: [{
+                    data: [1.3, 10, 25, 100, 150,229],
+                    type: 'bar',
+                    smooth: true,
+                    show: true,
+                    barWidth: 20,
+                    itemStyle: {
+                        normal: {
+
+                            color: function (params) {
+                                var colorList = [
+                                    '#FFEB12', '#3E74EF', '#A950FA', '#20A8FC', '#68CCC1',
+                                    '#FF9600', '#25BFF2', '#E050FA'
+                                ];
+                                return colorList[params.dataIndex]
+                            }
+                        },
+                    }
+                }]
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart3.setOption(option);
+        }
+
+
+        function jystj() {
+            $.ajax({
+                url: 'http://t.020leader.com/index.php/Admin/show/jystj',
+                type: "GET",
+                dataType: 'jsonp',
+                jsonp: "jsoncallback",
+                success: function (msg) {
+                    if (msg) {
+                        var hyshChartName = [msg[0].name, msg[1].name, '浙江省', msg[3].name, '湖北省'];
+                        var hyshChartNum = [msg[0].num, msg[1].num*5, msg[2].num*15, msg[3].num*12, msg[4].num*12];
+                        jystjChart(hyshChartName, hyshChartNum);
+                    }
+                },
+                error: function (e) {
+                    alert("数据异常");
+                }
+            })
+        }
+
+        function jyhytjChart(hyshChartName, hyshChartNum) {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart4 = echarts.init(document.getElementById('bar3'));
+            // 指定图表的配置项和数据
+            var option = {
+                grid: {
+                    x: 60,
+                },
+                title: {
+                    text: ''
+                },
+                tooltip: {},
+                legend: {
+                    data: ['']
+                },
+                xAxis: {
+                    data: hyshChartName,
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#9DB4E0',
+                        }
+                    }
+                },
+                yAxis: {
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#9DB4E0',
+                        }
+                    }
+                },
+                series: [{
+                    name: '活跃用户',
+                    type: 'bar',
+                    data: hyshChartNum,
+                    barWidth: 20,
+                    itemStyle: {
+                        normal: {
+                            color: function (params) {
+                                var colorList = [
+                                    '#FFEB12', '#3E74EF', '#A950FA', '#20A8FC', '#68CCC1',
+                                    '#FF9600', '#25BFF2', '#E050FA'
+                                ];
+                                return colorList[params.dataIndex]
+                            }
+                        },
+                    }
+                }]
+            };
+            // 使用刚指定的配置项和数据显示图表。
+            myChart4.setOption(option);
+        }
+
+
+        function jyhytj() {
+            $.ajax({
+                url: 'http://t.020leader.com/index.php/Admin/show/jyhytj',
+                type: "GET",
+                dataType: 'jsonp',
+                jsonp: "jsoncallback",
+                success: function (msg) {
+                    if (msg) {
+                        var hyshChartName = ['商超', '零售', '餐饮', '百货', '科技'];
+                        //var hyshChartName = ['商超', ‘百货’, ‘零售’, ‘餐饮’, ‘科技’];
+                        var hyshChartNum = [msg[0].num, msg[1].num*6, msg[2].num*8, msg[3].num*8, msg[4].num*8];
+                        jyhytjChart(hyshChartName, hyshChartNum);
+                    }
+                },
+                error: function (e) {
+                    alert("数据异常");
+                }
+            })
+        }
+        
+        // 百度地图API功能
+        var map = new BMap.Map("map", {
+            enableMapClick: false
+        });    // 创建Map实例
+        map.centerAndZoom(new BMap.Point(105.403119, 38.028658), 5);  // 初始化地图,设置中心点坐标和地图级别
+        map.enableScrollWheelZoom(true); // 开启鼠标滚轮缩放
+
+        // 地图自定义样式
+        map.setMapStyle({
+            styleJson: [{
+                "featureType": "water",
+                "elementType": "all",
+                "stylers": {
+                    "color": "#044161"
+                }
+            }, {
+                "featureType": "land",
+                "elementType": "all",
+                "stylers": {
+                    "color": "#091934"
+                }
+            }, {
+                "featureType": "boundary",
+                "elementType": "geometry",
+                "stylers": {
+                    "color": "#064f85"
+                }
+            }, {
+                "featureType": "railway",
+                "elementType": "all",
+                "stylers": {
+                    "visibility": "off"
+                }
+            }, {
+                "featureType": "highway",
+                "elementType": "geometry",
+                "stylers": {
+                    "color": "#004981"
+                }
+            }, {
+                "featureType": "highway",
+                "elementType": "geometry.fill",
+                "stylers": {
+                    "color": "#005b96",
+                    "lightness": 1
+                }
+            }, {
+                "featureType": "highway",
+                "elementType": "labels",
+                "stylers": {
+                    "visibility": "on"
+                }
+            }, {
+                "featureType": "arterial",
+                "elementType": "geometry",
+                "stylers": {
+                    "color": "#004981",
+                    "lightness": -39
+                }
+            }, {
+                "featureType": "arterial",
+                "elementType": "geometry.fill",
+                "stylers": {
+                    "color": "#00508b"
+                }
+            }, {
+                "featureType": "poi",
+                "elementType": "all",
+                "stylers": {
+                    "visibility": "off"
+                }
+            }, {
+                "featureType": "green",
+                "elementType": "all",
+                "stylers": {
+                    "color": "#056197",
+                    "visibility": "off"
+                }
+            }, {
+                "featureType": "subway",
+                "elementType": "all",
+                "stylers": {
+                    "visibility": "off"
+                }
+            }, {
+                "featureType": "manmade",
+                "elementType": "all",
+                "stylers": {
+                    "visibility": "off"
+                }
+            }, {
+                "featureType": "local",
+                "elementType": "all",
+                "stylers": {
+                    "visibility": "off"
+                }
+            }, {
+                "featureType": "arterial",
+                "elementType": "labels",
+                "stylers": {
+                    "visibility": "off"
+                }
+            }, {
+                "featureType": "boundary",
+                "elementType": "geometry.fill",
+                "stylers": {
+                    "color": "#029fd4"
+                }
+            }, {
+                "featureType": "building",
+                "elementType": "all",
+                "stylers": {
+                    "color": "#1a5787"
+                }
+            }, {
+                "featureType": "label",
+                "elementType": "all",
+                "stylers": {
+                    "visibility": "off"
+                }
+            }, {
+                "featureType": "poi",
+                "elementType": "labels.text.fill",
+                "stylers": {
+                    "color": "#ffffff"
+                }
+            }, {
+                "featureType": "poi",
+                "elementType": "labels.text.stroke",
+                "stylers": {
+                    "color": "#1e1c1c"
+                }
+            }, {
+                "featureType": "administrative",
+                "elementType": "labels",
+                "stylers": {
+                    "visibility": "on"
+                }
+            }, {
+                "featureType": "road",
+                "elementType": "labels",
+                "stylers": {
+                    "visibility": "off"
+                }
+            }]
+        });
+
+
+        $.get('weibo.json', function (rs) {
+            var data1 = [];
+            for (var i = 0; i < rs[0].length; i++) {
+                var geoCoord = rs[0][i].geoCoord;
+                data1.push({
+                    geometry: {
+                        type: 'Point',
+                        coordinates: geoCoord
+                    },
+                    time: Math.random() * 2000
+                });
+            }
+
+            var dataSet = new mapv.DataSet(data1);
+            var options = {
+                fillStyle: 'rgba(255, 250, 0, 0.8)',
+                bigData: 'Point',
+                size: 0.7,
+                draw: 'simple',
+            }
+            var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
+
+            
+
+            var dataSet = new mapv.DataSet(data1);
+            var options = {
+                fillStyle: '#fe3434',
+                size: 2,
+                draw: 'simple',
+                bigData: 'Point',
+                animation: {
+                    stepsRange: {
+                        start: 0,
+                        end: 10
+                    },
+                    trails: 1,
+                    duration: 6,
+                }
+            }
+            var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
+        });
+    </script>
+</body>
+</html>
