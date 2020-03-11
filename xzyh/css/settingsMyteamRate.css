@@ -1,0 +1,131 @@
+body {
+  background: #f6f6f6;
+  margin: 0;
+  padding: 0;
+}
+
+.settings-page {
+  max-width: 414px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #f4f4f4;
+}
+
+
+.settings-page header .page-title {
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  color: #262B2F;
+}
+
+.settings-page header .page-title .back-button {
+  position: absolute;
+  left: 0;
+  height: 46px;
+  width: 54px;
+}
+
+.settings-page header .page-title .back-button img {
+  margin: 13px 0 0 0;
+}
+
+.content .infos {
+  padding: 15px;
+  background-color: #fff;
+  font-size: 15px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.content .infos .row {
+  margin-bottom: 16px;
+}
+
+.content .infos .row:last-child {
+  margin-bottom: 0;
+}
+
+.content .rates {
+  background-color: #fff;
+  padding: 10px 15px;
+  margin-top: 8px;
+  min-height: calc(100vh - 200px);
+}
+
+.content .rates .row {
+  height: 32px;
+  color: #262B2F;
+  margin-bottom: 15px;
+}
+
+.content .rates .row .label {
+  min-width: 70px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-right: 13px;
+}
+
+.content .rates .row .value {
+  width: 130px;
+  height: 32px;
+  background: rgba(245, 245, 245, 1);
+  border-radius: 5px;
+  padding-left: 8px;
+  position: relative;
+  padding-right: 20px;
+}
+
+.content .rates .row .value input {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: rgba(245, 245, 245, 1);
+  font-size: 14px;
+  margin-top: 7px;
+  width: 120px;
+}
+
+.content .rates .row .value>span {
+  min-width: 20px;
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.content .rates .row .extra {
+  margin-left: 26px;
+}
+
+footer {
+  padding: 0 15px;
+  margin-top: 86px;
+  text-align: center;
+}
+
+button {
+  height: 40px;
+  background: #4795EF;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  width: 100%;
+}
+
+footer>span {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(156, 156, 156, 1);
+  margin-top: 8px;
+
+}

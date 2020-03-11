@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>提现明细</title>
+    <link rel="stylesheet" href="../css/settingsWithdrawDetails.css" />
+    <link rel="stylesheet" href="../css/toast.css" />
+  </head>
+  <body>
+    <div class="settings-page">
+      <header>
+        <div class="page-title">
+          <div class="back-button" onclick="history.back();">
+            <img src="../images/back.png" width="20" height="20" />
+          </div>
+          <span>提现明细</span>
+        </div>
+      </header>
+      <div class="team-table">
+        <div class="team-table-head">
+          <div class="team-table-col col-3">订单号</div>
+          <div class="team-table-col col-2">订单金额</div>
+          <div class="team-table-col col-2">手续费</div>
+          <div class="team-table-col col-2">详情</div>
+        </div>
+        <div class="team-table-body">
+          <div class="team-table-row">
+            <div class="team-table-col col-3">48762736271</div>
+            <div class="team-table-col col-2">2323.21</div>
+            <div class="team-table-col col-2">2323.21</div>
+            <div class="team-table-col col-2">
+              <button onclick="handleClick();">查看</button>
+            </div>
+          </div>
+          <div class="team-table-row">
+            <div class="team-table-col col-3">48762736271</div>
+            <div class="team-table-col col-2">2323.21</div>
+            <div class="team-table-col col-2">2323.21</div>
+            <div class="team-table-col col-2">
+              <button onclick="handleClick();">查看</button>
+            </div>
+          </div>
+          <div class="team-table-row">
+            <div class="team-table-col col-3">48762736271</div>
+            <div class="team-table-col col-2">2323.21</div>
+            <div class="team-table-col col-2">2323.21</div>
+            <div class="team-table-col col-2">
+              <button onclick="handleClick();">查看</button>
+            </div>
+          </div>
+          <div class="team-table-row">
+            <div class="team-table-col col-3">48762736271</div>
+            <div class="team-table-col col-2">2323.21</div>
+            <div class="team-table-col col-2">2323.21</div>
+            <div class="team-table-col col-2">
+              <button onclick="handleClick();">查看</button>
+            </div>
+          </div>
+        </div>
+        <div class="team-table-footer">
+          <span>没有更多了</span>
+        </div>
+      </div>
+    </div>
+    <script src="../js/toast.js"></script>
+    <script>
+      function handleClick() {
+        toast.list(
+          [
+            { label: "资金类型", value: "手续费" },
+            { label: "订单号", value: "48762736271" },
+            { label: "手续费", value: "233434" },
+            { label: "实际到账金额", value: "233434" },
+            { label: "订单金额", value: "233434" },
+            { label: "创建时间", value: "2020-1-23 23:45" }
+          ],
+          function(val) {
+            console.log(val);
+          }
+        );
+      }
+    </script>
+  </body>
+</html>
