@@ -278,8 +278,8 @@
 		<script>
 			function handleReceive() {
 				$('.s').css('display','block')
-				$('.s').bind('touchmove', function() {
-					alert('kang')
+				$('.s').bind('touchmove', function(e) {
+					e.preventDefault();
 				})
 				//				toast.passwordConfirm(
 				//					"确认收到：xxx",
