@@ -1,10 +1,10 @@
 .toast-mask {
   position: fixed;
   background: rgba(0, 0, 0, 0.5);
-  height: 100vh;
+  height: 200vh;
   width: 100vw;
   left: 0;
-  top: 0;
+  top: -200px;
 }
 
 .toast-mask .toast {
