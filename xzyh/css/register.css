@@ -87,11 +87,11 @@ body {
   text-align: center;
   text-align-last: center;
   border: none;
-  background-color: #F5F5F5;
+  background-color: red;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
-  /* padding-right: 10px; */
+   padding-right: 10px; 
   background: url('../images/down.png') no-repeat right;
   background-size: 11px 6px;
 }
