@@ -2,11 +2,9 @@
   position: fixed;
   background: rgba(0, 0, 0, 0.5);
   height: 100vh;
-  overflow: hidden;
+  width: 100vw;
   left: 0;
   top: 0;
-  right: 0;
-  bottom: 0;
 }
 
 .toast-mask .toast {
