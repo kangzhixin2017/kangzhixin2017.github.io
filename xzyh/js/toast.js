@@ -7,9 +7,9 @@ function createMask(callback) {
       document.body.removeChild(mask);
       callback("cancel");
     });
-//  mask.addEventListener("touchmove", function(event) {
-//  	event.preventDefault();
-//  });
+    mask.addEventListener("touchmove", function(event) {
+    	event.preventDefault();
+    });
   }
   // 点击遮罩关闭
   return mask;
