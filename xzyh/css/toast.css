@@ -1,7 +1,6 @@
 .toast-mask {
   position: fixed;
   background: rgba(0, 0, 0, 0.5);
-  overflow: hidden;
   left: 0;
   top: 0;
   right: 0;
