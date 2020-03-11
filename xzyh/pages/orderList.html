@@ -276,8 +276,22 @@
 		<script src="../js/date-select.js"></script>
 		<script src="../js/toast.js"></script>
 		<script>
+			var t = 0;
 			function handleReceive() {
-				$('.s').css('display','block')
+				$('.s').css('display', 'block')
+				if(t == 0) { //禁止滚动
+					document.body.addEventListener('touchmove', function(e) {
+						e.preventDefault();
+					}, {
+						passive: false
+					}); //passive 参数不能省略，用来兼容ios和android
+				} else if(t == 1) { //允许滚动
+					document.body.addEventListener('touchmove', function(e) {
+						e.returnValue = true;
+					}, {
+						passive: false
+					});
+				}
 				$('.s').bind('touchmove', function(e) {
 					e.preventDefault();
 				})
