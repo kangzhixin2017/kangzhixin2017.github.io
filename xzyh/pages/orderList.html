@@ -12,16 +12,16 @@
 		<link rel="stylesheet" href="../css/toast.css">
 		<script src="../js/jquery-3.4.1.min.js"></script>
 		<script type="text/javascript" src="../js/iosSelect.js"></script>
-		<!--<script type="text/javascript">
+		<script type="text/javascript">
 			var hrt = document.documentElement.clientHeight; //获取当前可视区域的高度存到hrt变量
 			window.onload = function() { //在页面整体加载完毕时
 				document.getElementById('app').style.height = hrt + 'px' //把获取到的高度赋值给根div
 			}
-		</script>-->
+		</script>
 	</head>
 
 	<body>
-		<div class="order-list-page">
+		<div id="app" class="order-list-page">
 			<header>
 				<div class="page-title">订单列表</div>
 				<div class="search-container">
