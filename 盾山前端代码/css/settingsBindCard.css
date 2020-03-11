@@ -1,0 +1,90 @@
+body {
+  background: #f6f6f6;
+  margin: 0;
+  padding: 0;
+}
+
+.settings-page {
+  max-width: 414px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.settings-page header {
+  margin-bottom: 15px;
+}
+
+.settings-page header .page-title {
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  color: #262B2F;
+}
+
+.settings-page header .page-title .back-button {
+  position: absolute;
+  left: 0;
+  height: 46px;
+  width: 54px;
+}
+
+.settings-page header .page-title .back-button img {
+  margin: 13px 0 0 0;
+}
+
+.cards {
+  padding: 0 12px;
+}
+
+.cards .card {
+  max-width: 352px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  height: 98px;
+  color: #fff;
+}
+
+.cards .card .card-type {
+  font-size: 15px;
+  font-weight: 400;
+  padding-top: 11px;
+  margin-left: 42px;
+}
+
+.cards .card .card-code {
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 13px;
+  margin-top: 25px;
+}
+
+.cards .card.purple {
+  background: url(../images/bg-card-purple.png) no-repeat center / 100%;
+}
+
+.cards .card.blue {
+  background: url(../images/bg-card-blue.png) no-repeat center / 100%;
+}
+
+.cards .card.green {
+  background: url(../images/bg-card-green.png) no-repeat center / 100%;
+}
+
+.cards .card.red {
+  background: url(../images/bg-card-red.png) no-repeat center / 100%;
+}
+
+.more {
+  font-size: 15px;
+  color: #000;
+  font-weight: 400;
+  text-align: center;
+}
+
+.reverse {
+  transform: rotate(180deg);
+}

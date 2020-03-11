@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>我要充值</title>
+    <link rel="stylesheet" href="../css/settingsCharge.css" />
+    <link rel="stylesheet" href="../css/toast.css">
+  </head>
+  <body>
+    <div class="settings-page">
+      <header>
+        <div class="page-title">
+          <div class="back-button" onclick="history.back();">
+            <img src="../images/back.png" width="20" height="20" />
+          </div>
+          <span>我要充值</span>
+        </div>
+      </header>
+      <div class="infos">
+        <div class="row">
+          <div class="label">会员账号</div>
+          <div class="value">15938312817</div>
+        </div>
+        <div class="row">
+          <div class="label">银行卡名字</div>
+          <div class="value">
+            <input type="text" placeholder="请填写银行卡姓名" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="label">充值金额</div>
+          <div class="value">
+            <input type="text" placeholder="请输入充值金额" />
+          </div>
+        </div>
+      </div>
+      <div class="choose-card">
+        <div class="title">充值平台收款账号</div>
+        <div class="content">
+          <form>
+            <label for="c2c">c2c在线交易充值</label>
+            <input class="radio_type" type="radio" name="charge" value='c2c在线交易充值' id='c2c'></input>
+          </form>
+        </div>
+        <footer>
+          <button onclick="handleClick();">点击充值</button>
+          <span>充值记录</span>
+          <div class="tips">
+            <div class="tips-title">温馨提示：</div>
+            <div class="tips-content">
+              <p>充值提示</p>
+              <p>1:码商单笔最小充值金额¥10000</p>
+              <p>2:码商单笔最大充值金额¥50000</p>
+              <p>3:码商第一次充值会冻结2000金额，剩余转入可用余额</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="../js/toast.js"></script>
+    <script>
+      function handleClick() {
+        toast.confirm(
+          "充值失败",
+          "最小充值金额未满10000",
+          [{ text: "确定", color: "#4795EF" }],
+          function (val) {
+            console.log(val);
+          }
+        );
+      }
+    </script>
+  </body>
+</html>
