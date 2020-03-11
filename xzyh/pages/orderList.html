@@ -244,7 +244,7 @@
 				</div>
 				<div class="more">加载更多</div>
 			</div>
-			<!--<footer class="tabs">
+			<footer class="tabs">
 				<div class="tab tab-order-list active">
 					<div class="tab-tag">3</div>
 					<div class="tab-icon icon-order-list"></div>
@@ -266,50 +266,34 @@
 					<div class="tab-icon icon-me"></div>
 					<div class="tab-label">我的</div>
 				</div>
-			</footer>-->
-			<div class="s" style="width: 100vw;height: 100vh;background-color: rgba(0,0,0,0.5);position: fixed;top: 0;left: 0;display: none;">
+			</footer>
+			<!--<div class="s" style="width: 100vw;height: 100vh;background-color: rgba(0,0,0,0.5);position: fixed;top: 0;left: 0;display: none;">
 				<div style="width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;">
 					<input type="" name="" id="" value="" />
 				</div>
-			</div>
+			</div>-->
 		</div>
 		<script src="../js/date-select.js"></script>
 		<script src="../js/toast.js"></script>
 		<script>
-			var t = 0;
+			//				$('.tabs').css('position', 'static')
 			function handleReceive() {
 				$('.s').css('display', 'block')
-				if(t == 0) { //禁止滚动
-					document.body.addEventListener('touchmove', function(e) {
-						e.preventDefault();
-					}, {
-						passive: false
-					}); //passive 参数不能省略，用来兼容ios和android
-				} else if(t == 1) { //允许滚动
-					document.body.addEventListener('touchmove', function(e) {
-						e.returnValue = true;
-					}, {
-						passive: false
-					});
-				}
-				$('.s').bind('touchmove', function(e) {
-					e.preventDefault();
-				})
-				//				toast.passwordConfirm(
-				//					"确认收到：xxx",
-				//					"请输入二级密码", [{
-				//							text: "取消",
-				//							color: "#000"
-				//						},
-				//						{
-				//							text: "发送",
-				//							color: "#4795EF"
-				//						}
-				//					],
-				//					function(type, val) {
-				//						console.log(type, val);
-				//					}
-				//				);
+				toast.passwordConfirm(
+					"确认收到：xxx",
+					"请输入二级密码", [{
+							text: "取消",
+							color: "#000"
+						},
+						{
+							text: "发送",
+							color: "#4795EF"
+						}
+					],
+					function(type, val) {
+						console.log(type, val);
+					}
+				);
 			}
 		</script>
 	</body>
