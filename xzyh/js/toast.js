@@ -128,7 +128,7 @@ var toast = {
     var input = createInput();
     input.addEventListener('focus',function(){
             $('.toast').css('margin-top', '10%')
-            $('.toast-mask').css('top', '0')
+            $('.toast-mask').css('top', '-50px')
     })
     // 添加内容
     appendTitle(toast, title);
