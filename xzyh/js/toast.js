@@ -7,7 +7,7 @@ function createMask(callback) {
 			document.body.removeChild(mask);
 			callback("cancel");
 		});
-			$('body').css('overflow','hidden')
+		$('body').css('overflow','hidden')
 		document.body.addEventListener("touchmove", function(event) {
 			event.preventDefault();
 		});
