@@ -1,16 +1,16 @@
 .toast-mask {
-	height: 100vh;
+	height: 200vh;
 	width: 100vw;
 	position: fixed;
 	background: rgba(0, 0, 0, 0.5);
 	left: 0;
-	top: 0;
+	top: -100vh;
 }
 
 .toast-mask .toast {
 	background: #fff;
 	max-width: 290px;
-	margin: 50% auto;
+	margin: 160% auto;
 	min-height: 52px;
 	border-radius: 5px;
 	padding-top: 30px;
