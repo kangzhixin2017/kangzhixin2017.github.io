@@ -129,10 +129,9 @@ var toast = {
 		var u = navigator.userAgent;
 		if((u.indexOf('iPhone') > -1) && (u.indexOf('UCBrowser') > -1)) {
 			window.scrollTo(0, 0)
-				$('.toast-mask').css('position', 'absolute')
+			$('.toast-mask').css('position', 'absolute')
 			input.addEventListener('focus', function() {
 				$('.toast').css('margin-top', '25%')
-
 			})
 		}
 		// 添加内容
