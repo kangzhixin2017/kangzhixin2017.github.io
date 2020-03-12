@@ -131,6 +131,8 @@ var toast = {
 			window.scrollTo(0, 0)
 			input.addEventListener('focus', function() {
 				$('.toast').css('margin-top', '25%')
+				$('.toast-mask').css('position', 'absolute')
+				
 //				setTimeout(function() {
 //					alert('d');
 //					$('.toast-mask').css('top', '-100px')
