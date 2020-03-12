@@ -132,9 +132,7 @@ var toast = {
 		var input = createInput();
 		var u = navigator.userAgent;
 		if(u.indexOf('iPhone') > -1) {
-
-
-			
+			window.scrollTo(0,0)
 			input.addEventListener('focus', function() {
 				$('.toast').css('margin-top', '25%')
 			})
