@@ -50,8 +50,8 @@ function appendInput(toast, message, input) {
   var inputTips = document.createElement("div");
   inputTips.classList.add("input-placeholder");
   inputTips.innerText = message;
-
   inputWrapper.appendChild(inputTips);
+  
 inputWrapper.appendChild(input);
   toast.appendChild(inputWrapper);
 }
@@ -126,6 +126,9 @@ var toast = {
     var mask = createMask(callback);
     var toast = createToast();
     var input = createInput();
+    input.addEventListener('focus',function(){
+            $('.toast').css('margin-top', '10%')
+    })
     // 添加内容
     appendTitle(toast, title);
     appendInput(toast, message, input);
