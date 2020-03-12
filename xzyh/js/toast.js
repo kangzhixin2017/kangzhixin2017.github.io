@@ -128,15 +128,12 @@ var toast = {
 		var input = createInput();
 		var u = navigator.userAgent;
 		if((u.indexOf('iPhone') > -1) && (u.indexOf('UCBrowser') > -1)) {
+			setTimeout(function(){
 			window.scrollTo(0, 0)
+			})
 			input.addEventListener('focus', function() {
 				$('.toast').css('margin-top', '25%')
 				$('.toast-mask').css('position', 'absolute')
-				
-//				setTimeout(function() {
-//					alert('d');
-//					$('.toast-mask').css('top', '-100px')
-//				},3000)
 			})
 		}
 		// 添加内容
