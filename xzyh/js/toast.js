@@ -10,6 +10,9 @@ function createMask(callback) {
     mask.addEventListener("touchmove", function(event) {
     	event.preventDefault();
     });
+    document.body.addEventListener('touchmove',function(e){
+    	e.preventDefault()
+    })
   }
   // 点击遮罩关闭
   return mask;
