@@ -127,13 +127,12 @@ var toast = {
 		var toast = createToast();
 		var input = createInput();
 		var u = navigator.userAgent;
-		if((u.indexOf('iPhone') > -1) && (u.indexOf('UCBrowser')>-1)) {
-			window.scrollTo(0,0)
+		if((u.indexOf('iPhone') > -1) && (u.indexOf('UCBrowser') > -1)) {
+			window.scrollTo(0, 0)
 			input.addEventListener('focus', function() {
 				$('.toast').css('margin-top', '25%')
-				setTimeout(function(){
-				$('.toast-mask').css('top', '-100px')
-
+				setTimeout(function() {
+					$('.toast-mask').css('top', '-100px')
 				},3000)
 			})
 		}
