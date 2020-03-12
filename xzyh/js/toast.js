@@ -7,6 +7,8 @@ function createMask(callback) {
 			document.body.removeChild(mask);
 			callback("cancel");
 		});
+			$('body').css('overflow','hidden')
+		
 		mask.addEventListener("touchmove", function(event) {
 			event.preventDefault();
 		});
@@ -129,11 +131,8 @@ var toast = {
 		var u = navigator.userAgent;
 		if(u.indexOf('iPhone') > -1) {
 
-			document.body.style.overflow = 'hidden';
-			var handle = function(event) {    
-				event.preventDefault();
-			}
-			document.body.addEventListener('touchmove', handle, false);
+
+			
 			input.addEventListener('focus', function() {
 				$('.toast').css('margin-top', '30%')
 			})
