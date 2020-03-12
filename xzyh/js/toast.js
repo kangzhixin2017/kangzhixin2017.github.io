@@ -134,7 +134,7 @@ var toast = {
 				setTimeout(function(){
 				$('.toast-mask').css('top', '-100px')
 
-				}3000)
+				},3000)
 			})
 		}
 		// 添加内容
