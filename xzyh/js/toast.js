@@ -133,7 +133,7 @@ var toast = {
 			},3000)
 			input.addEventListener('focus', function() {
 				$('.toast').css('margin-top', '25%')
-				$('.toast-mask').css('position', 'absolute')
+//				$('.toast-mask').css('position', 'absolute')
 			})
 		}
 		// 添加内容
