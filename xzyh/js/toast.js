@@ -126,6 +126,7 @@ var toast = {
     var mask = createMask(callback);
     var toast = createToast();
     var input = createInput();
+    var u = navigator.userAgent;
     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
     if(isiOS){
     		input.addEventListener('focus',function(){
