@@ -276,8 +276,8 @@
 		<script src="../js/date-select.js"></script>
 		<script src="../js/toast.js"></script>
 		<script>
-			$('.page-title').on('touchmove',function(){
-				alert('s')
+			$('.page-title').on('touchmove',function(e){
+				e.preventDefault();
 			})
 			function handleReceive() {
 				toast.passwordConfirm(
