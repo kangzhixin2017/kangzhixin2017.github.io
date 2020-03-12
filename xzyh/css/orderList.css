@@ -64,7 +64,10 @@ body {
   flex: auto;
   outline: none;
   text-align: center;
+  text-align: -moz-center;
+  text-align: -webkit-center;
   text-align-last: center;
+
   border: none;
   background-color: #F5F5F5;
   appearance: none;
