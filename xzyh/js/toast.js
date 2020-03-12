@@ -128,6 +128,7 @@ var toast = {
     var input = createInput();
     var u = navigator.userAgent;
     if(u.indexOf('iPhone')  >  -1){
+    	document.body.style.overflow='hidden';
     	document.body.addEventListener('touchmove',function(e){
     		e.preventDefault()
     	})
