@@ -13,7 +13,7 @@ body {
 }
 
 /* 头部 & 搜索模块 */
-.order-list-page .header .page-title {
+.order-list-page header .page-title {
   height: 46px;
   line-height: 46px;
   text-align: center;
@@ -24,7 +24,7 @@ body {
   color: #262B2F;
 }
 
-.order-list-page .header .search-container {
+.order-list-page header .search-container {
   background-color: #fff;
   padding: 15px 15px 0;
 }
@@ -100,8 +100,6 @@ body {
   outline: none;
   box-shadow: none;
   margin-left: 8px;
-  /*background-color: red;*/
-  line-height: 16px;
 }
 
 .button-container {
@@ -227,7 +225,6 @@ body {
   height: 50px;
   background: #fff;
   position: fixed;
-  max-width: 414px;
   width: 100%;
   bottom: 0;
   box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2);
