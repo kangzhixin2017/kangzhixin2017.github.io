@@ -52,7 +52,7 @@ function appendInput(toast, message, input) {
   inputTips.innerText = message;
 
   inputWrapper.appendChild(inputTips);
-  inputWrapper.appendChild(input);
+inputWrapper.appendChild(input);
   toast.appendChild(inputWrapper);
 }
 

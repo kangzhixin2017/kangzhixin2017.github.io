@@ -276,9 +276,19 @@
 		<script src="../js/date-select.js"></script>
 		<script src="../js/toast.js"></script>
 		<script>
-			//				$('.tabs').css('position', 'static')
+setTimeout(function(){
+							
+	
+},2000)
+
+			 document.body.addEventListener('focus', () => {
+            //软键盘弹出的事件处理
+            alert('d')
+            $('.toast').css('margin-top', '10%')
+        })
 			function handleReceive() {
-				$('.s').css('display', 'block')
+//				$('.s').css('display', 'block')
+				$('').css('background-color', 'rgba(0,0,0,0.5)')
 				toast.passwordConfirm(
 					"确认收到：xxx",
 					"请输入二级密码", [{
