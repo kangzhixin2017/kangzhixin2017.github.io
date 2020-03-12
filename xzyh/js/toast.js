@@ -127,8 +127,7 @@ var toast = {
     var toast = createToast();
     var input = createInput();
     var u = navigator.userAgent;
-    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-    if(isiOS){
+    if(u.indexOf('iPhone')  >  -1){
     		input.addEventListener('focus',function(){
          	$('.toast').css('margin-top', '30%')
     		})
