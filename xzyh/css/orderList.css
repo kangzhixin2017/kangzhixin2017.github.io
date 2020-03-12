@@ -13,7 +13,7 @@ body {
 }
 
 /* 头部 & 搜索模块 */
-.order-list-page header .page-title {
+.order-list-page .header .page-title {
   height: 46px;
   line-height: 46px;
   text-align: center;
@@ -24,7 +24,7 @@ body {
   color: #262B2F;
 }
 
-.order-list-page header .search-container {
+.order-list-page .header .search-container {
   background-color: #fff;
   padding: 15px 15px 0;
 }
