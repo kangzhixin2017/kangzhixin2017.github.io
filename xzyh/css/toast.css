@@ -5,6 +5,7 @@
 	background: rgba(0, 0, 0, 0.5);
 	left: 0;
 	top: 0;
+	z-index: 9999999;
 }
 
 .toast-mask .toast {
