@@ -126,9 +126,12 @@ var toast = {
     var mask = createMask(callback);
     var toast = createToast();
     var input = createInput();
-    input.addEventListener('focus',function(){
-         $('.toast').css('margin-top', '30%')
-    })
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+    if(isiOS){
+    		input.addEventListener('focus',function(){
+         	$('.toast').css('margin-top', '30%')
+    		})
+    }
     // 添加内容
     appendTitle(toast, title);
     appendInput(toast, message, input);
