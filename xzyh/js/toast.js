@@ -131,9 +131,9 @@ var toast = {
 			window.scrollTo(0, 0)
 			input.addEventListener('focus', function() {
 				$('.toast').css('margin-top', '25%')
-				setTimeout(function() {
-					$('.toast-mask').css('top', '-100px')
-				},3000)
+//				setTimeout(function() {
+//					$('.toast-mask').css('top', '-100px')
+//				},3000)
 			})
 		}
 		// 添加内容
