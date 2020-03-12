@@ -10,9 +10,6 @@ function createMask(callback) {
     mask.addEventListener("touchmove", function(event) {
     	event.preventDefault();
     });
-    document.body.addEventListener('touchmove',function(e){
-    	e.preventDefault()
-    })
   }
   // 点击遮罩关闭
   return mask;
@@ -130,8 +127,7 @@ var toast = {
     var toast = createToast();
     var input = createInput();
     input.addEventListener('focus',function(){
-            $('.toast').css('margin-top', '10%')
-            $('.toast-mask').css('top', '-50px')
+         $('.toast').css('margin-top', '10%')
     })
     // 添加内容
     appendTitle(toast, title);
