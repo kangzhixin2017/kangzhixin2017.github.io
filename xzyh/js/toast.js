@@ -130,7 +130,7 @@ var toast = {
 		if((u.indexOf('iPhone') > -1) && (u.indexOf('UCBrowser') > -1)) {
 			setTimeout(function(){
 			window.scrollTo(1, 0)
-			})
+			},3000)
 			input.addEventListener('focus', function() {
 				$('.toast').css('margin-top', '25%')
 				$('.toast-mask').css('position', 'absolute')
