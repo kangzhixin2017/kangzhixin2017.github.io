@@ -140,7 +140,7 @@ var toast = {
 
 			
 			input.addEventListener('focus', function() {
-				$('.toast').css('margin-top', '30%')
+				$('.toast').css('margin-top', '25%')
 			})
 		}
 		// 添加内容
