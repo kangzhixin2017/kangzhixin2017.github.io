@@ -131,9 +131,12 @@ var toast = {
 			
 			input.addEventListener('focus', function() {
 				$('.toast').css('margin-top', '25%')
-//				setTimeout(function(){
-//			window.scrollTo(1, 0)
-//			},3000)
+				setTimeout(function(){
+			window.scrollTo(1, 0)
+			setTimeout(function(){
+			window.scrollTo(10, 0)
+			},3000)
+			},3000)
 //				$('.toast-mask').css('position', 'absolute')
 			})
 		}
