@@ -3,15 +3,19 @@ function createMask(callback) {
 	mask.classList.add("toast-mask");
 	if(callback) {
 		mask.addEventListener("click", function(event) {
+			$('body').css('overflow','auto')
+			
 			event.stopPropagation();
 			document.body.removeChild(mask);
 			callback("cancel");
+
+			
 		});
 			$('body').css('overflow','hidden')
 		
-		mask.addEventListener("touchmove", function(event) {
-			event.preventDefault();
-		});
+//		mask.addEventListener("touchmove", function(event) {
+//			event.preventDefault();
+//		});
 	}
 	// 点击遮罩关闭
 	return mask;
@@ -87,6 +91,8 @@ function appendButtons(toast, buttons, callback, mask, input) {
 			buttonEle.style.color = button.color;
 			buttonGroup.appendChild(buttonEle);
 			buttonEle.addEventListener("click", function(e) {
+			$('body').css('overflow','auto')
+				
 				e.stopPropagation();
 				var password = input && input.value;
 				document.body.removeChild(mask);
