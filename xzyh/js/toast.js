@@ -132,7 +132,7 @@ var toast = {
 			input.addEventListener('focus', function() {
 				$('.toast').css('margin-top', '25%')
 				setTimeout(function() {
-					alert('d');
+//					alert('d');
 					$('.toast-mask').css('top', '-100px')
 				},3000)
 			})
