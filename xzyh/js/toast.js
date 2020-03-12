@@ -131,10 +131,10 @@ var toast = {
 			window.scrollTo(0, 0)
 			input.addEventListener('focus', function() {
 				$('.toast').css('margin-top', '25%')
-				setTimeout(function() {
+//				setTimeout(function() {
 //					alert('d');
-					$('.toast-mask').css('top', '-100px')
-				},3000)
+//					$('.toast-mask').css('top', '-100px')
+//				},3000)
 			})
 		}
 		// 添加内容
