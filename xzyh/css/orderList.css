@@ -60,6 +60,7 @@ body {
 }
 
 .select-row select {
+	/*width: 100px;*/
   padding-left: 40px;
   flex: auto;
   outline: none;
