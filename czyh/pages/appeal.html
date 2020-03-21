@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+		<meta name="viewport" content="width=375, maximum-scale=1.0, user-scalable=no" />
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>申诉</title>
+    <link rel="stylesheet" href="../css/appeal.css" />
+    <link rel="stylesheet" href="../css/toast.css" />
+    <script src="../js/jquery-3.4.1.min.js"></script>
+  </head>
+  <body>
+    <div class="order-detail-page">
+      <header>
+        <div class="page-title">
+          <div class="back-button" onclick="history.back();">
+            <img src="../images/back.png" width="20" height="20" />
+          </div>
+          <span>申诉</span>
+        </div>
+      </header>
+      <div class="order-detail">
+        <div class="order-detail-header">
+          <div class="info">
+            <span>申诉原因：</span>
+          </div>
+        </div>
+        <div class="order-detail-content">
+          <div class="info infomsg">
+            <span>金额不符</span>
+            <img onclick="change('.change1')" class="change change1" src="../images/yuan.png"/>
+          </div>
+          <div class="info infomsg">
+            <span>未收到款</span>
+            <img onclick="change('.change2')" class="change change2" src="../images/yuan.png"/>
+          </div>
+          <div class="info infomsg">
+            <span>其他</span>
+            <img onclick="change('.change3')" class="change change3" src="../images/yuan.png"/>
+          </div>
+          <div class="info infomsg">
+            <span>申诉凭证：</span>
+            <div id="fileUpload" class="file-container">
+              <img src="../images/file_upload.png" class="faker" width="100" height="100" />
+              <input type="file" id="file" />
+            </div>
+          </div>
+        </div>
+        <div class="addition">
+          <textarea id="addition" rows="5" placeholder="备注（选填）"></textarea>
+          <span class="addition-count">0/200</span>
+        </div>
+        <div class="order-detail-footer" onclick="handleClickRemit();">
+          <button>提交申诉</button>
+        </div>
+      </div>
+    </div>
+    <script src="../js/toast.js"></script>
+    <script src="../js/orderDetail.js"></script>
+    <script type="text/javascript">
+    	function change(e){
+		$('.change1').attr("src", '../images/yuan.png');
+		$('.change2').attr("src", '../images/yuan.png');
+		$('.change3').attr("src", '../images/yuan.png');
+		$(e).attr("src", '../images/gou.png');
+    	}
+    </script>
+  </body>
+</html>

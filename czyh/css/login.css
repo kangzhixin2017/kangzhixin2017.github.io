@@ -1,0 +1,147 @@
+body {
+  background: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  max-width: 414px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #fff;
+}
+
+header {
+  height: 20px;
+  padding: 10px 15px;
+}
+
+.content {
+  text-align: center;
+  padding: 0 14px;
+}
+
+.content>img {
+  padding: 50px 0;
+}
+
+.login-container {
+  margin-top: 22px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  height: 52px;
+}
+
+.row.select-row {
+  height: 32px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  position: relative;
+  padding: 0 13px;
+  /*background-color: red;*/
+}
+
+.select-row .label {
+	line-height: 20px;
+	height: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #262B2F;
+  padding: 0 8px 0 13px;
+  border-right: 1px solid #D1D1D1;
+  position: absolute;
+  left: 0;
+  /*background-color: red;*/
+}
+
+.select-row select {
+  padding-left: 40px;
+  color: rgba(37, 43, 47, 0.5);
+  flex: auto;
+  /*width: 200px;*/
+  outline: none;
+  text-align: center;
+  font-size: 15px;
+  text-align-last: center;
+  border: none;
+  background-color: #F5F5F5;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+   padding-right: 10px; 
+  background: url('../images/icon/down.png') no-repeat right;
+  background-size: 11px 6px;
+}
+
+.input-row {
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.input-row input {
+	padding-left: 14px;
+  height: 21px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #000;
+  line-height: 21px;
+  border: none;
+  width: 100%;
+  outline: none;
+}
+
+.input-row .code-button {
+  height: 38px;
+  color: #01C6F3;
+  line-height: 38px;
+  padding: 0 20px;
+  /*background: rgba(71, 149, 239, 1);*/
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 400;
+  /*color: #fff;*/
+}
+
+::-webkit-input-placeholder {
+  color: rgba(175, 175, 175, 1);
+  font-size: 15px;
+}
+
+button {
+  margin: 0 auto;
+  width: 315px;
+  height: 40px;
+  background: #01C6F3;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  box-shadow: none;
+}
+
+.tip-row {
+	width: 315px;
+  height: 18px;
+  font-size: 13px;
+  color: rgba(37, 43, 47, 0.5);
+  font-weight: 400;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  font-size: 14px;
+  color: #262B2F;
+  font-weight: 400;
+  margin-top: 54px;
+  cursor: pointer;
+  text-align: center;
+}

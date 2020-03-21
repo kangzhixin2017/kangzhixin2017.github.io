@@ -1,0 +1,102 @@
+body {
+  background: #f6f6f6;
+  margin: 0;
+  padding: 0;
+}
+
+.settings-page {
+  max-width: 414px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #fff;
+}
+
+
+.settings-page header .page-title {
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  color: #262B2F;
+  position: relative;
+}
+
+.settings-page header .page-title .back-button {
+  position: absolute;
+  left: 0;
+  height: 46px;
+  width: 54px;
+}
+
+.settings-page header .page-title .back-button img {
+  margin: 13px 0 0 0;
+}
+
+
+/* 团队表格 */
+.team-table {
+  padding: 15px 10px;
+  background: #ffffff;
+  min-height: calc(100vh - 161px);
+}
+
+.team-table .team-table-head {
+  font-size: 15px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  color: #262B2F;
+}
+
+.team-table .team-table-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 15px;
+}
+
+.team-table .team-table-row .team-table-col {
+  font-size: 12px;
+  color: #262B2F;
+  font-weight: 400;
+  text-align: center;
+}
+
+.col-1 {
+  flex: 1;
+}
+
+.col-2 {
+  flex: 2;
+}
+
+.col-3 {
+  flex: 3;
+}
+
+.team-table button {
+  height: 26px;
+  width: 65px;
+  line-height: 21px;
+  padding: 0;
+  background: #4795EF;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.team-table-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

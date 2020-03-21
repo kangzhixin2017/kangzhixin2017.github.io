@@ -1,0 +1,154 @@
+body {
+  background: #f6f6f6;
+  margin: 0;
+  padding: 0;
+}
+
+.income-detail-page {
+  max-width: 414px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.income-detail-page header {
+  margin-bottom: 15px;
+}
+
+.income-detail-page header .page-title {
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  color: #262B2F;
+}
+
+.income-detail-page header .page-title .save-button {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  width: 40px;
+  height: 25px;
+}
+
+/* 输入框 */
+.settings-container {
+  padding: 0 30px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  min-height: 50px;
+  color: #262B2F;
+}
+
+.row .label {
+  min-width: 50px;
+  font-size: 15px;
+  font-weight: 400;
+  margin-right: 15px;
+}
+
+.row .value {
+  font-size: 15px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: auto;
+}
+
+.row .value .copy {
+  font-size: 13px;
+  color: #D0021B;
+  margin-left: 15px;
+}
+
+.warning {
+  background-color: #EC555A;
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.warning>p {
+  font-size: 19px;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.tips {
+  text-align: center;
+  height: 95px;
+  padding-top: 17px;
+}
+
+.tips .copy-value {
+  font-size: 21px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 14px;
+}
+
+.tips .copy {
+  font-size: 23px;
+  font-weight: 500;
+  color: #EE535A;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(175, 175, 175, 1);
+  font-size: 15px;
+}
+
+footer {
+  margin-top: 50px;
+}
+
+button {
+  height: 25px;
+  background: #4795EF;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  width: 100%;
+}
+
+.count-down-wrapper {
+  text-align: center;
+  margin-top: 17px;
+}
+
+.count-down-wrapper .count-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.count-down-wrapper>p {
+  margin: 20px 0 0 0;
+  font-size: 15px;
+}
+
+.count-down-wrapper .count-down .count-down-value {
+  width: 45px;
+  height: 45px;
+  background: rgba(3, 114, 195, 1);
+  border-radius: 8px;
+  color: white;
+  line-height: 45px;
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.toast-mask {
+  background: rgba(0, 0, 0, 0.95)
+}

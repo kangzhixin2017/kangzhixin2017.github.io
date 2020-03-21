@@ -1,5 +1,5 @@
 body {
-  background: #f6f6f6;
+  background: #FFFFFF;
   margin: 0;
   padding: 0;
 }
@@ -38,10 +38,11 @@ header {
 
 .row.select-row {
   height: 32px;
-  background-color: #F5F5F5;
+  background-color: #ffffff;
   border-radius: 5px;
   position: relative;
   padding: 0 13px;
+  /*background-color: red;*/
 }
 
 .select-row .label {
