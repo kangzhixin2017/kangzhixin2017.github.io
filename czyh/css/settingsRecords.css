@@ -81,6 +81,7 @@ body {
   text-align: center;
   border: none;
   outline: none;
+  border-radius: 0;
   box-shadow: none;
   margin-left: 8px;
   font-size: 15px;
