@@ -38,7 +38,7 @@ header {
 
 .row.select-row {
   height: 32px;
-  background-color: #ffffff;
+  background-color: #fafafa;
   border-radius: 5px;
   position: relative;
   padding: 0 13px;
@@ -58,9 +58,9 @@ header {
   /*background-color: red;*/
 }
 
-.select-row select {
+.select-row .select {
   padding-left: 40px;
-  color: rgba(37, 43, 47, 0.5);
+  color: #262B2F;
   flex: auto;
   /*width: 200px;*/
   outline: none;
@@ -68,13 +68,17 @@ header {
   font-size: 15px;
   text-align-last: center;
   border: none;
-  background-color: #F5F5F5;
+  background-color: #fafafa;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
-   padding-right: 10px; 
-  background: url('../images/icon/down.png') no-repeat right;
-  background-size: 11px 6px;
+   /*padding-right: 10px;*/ 
+   /*padding-left: 10px;*/ 
+   
+   /*height: 40px;*/
+   /*line-height: 40px;*/
+  /*background: url('../images/icon/down.png') no-repeat right;*/
+  /*background-size: 11px 6px;*/
 }
 
 .input-row {

@@ -42,7 +42,7 @@ tipsbody {
   /*border-radius: 50%;*/
   margin: 0 auto;
   padding-top: 1px;
-  background-image:url('../images/back.png') ;
+  background-image:url('../images/icon/rob.png') ;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   /*background: linear-gradient(145deg, rgba(130, 183, 243, 1) 0%, rgba(54, 136, 231, 1) 100%);*/
@@ -77,7 +77,7 @@ tipsbody {
 	width: 65px;
 	height: 1px;
 	display: block;
-	background-image: linear-gradient(to right, #fff , #4795EF);
+	background-image: linear-gradient(to right, #fff , #01C6F3);
 	margin-right: 15px;
 }
 .rob-center-page .content .tips span:nth-of-type(2){
@@ -85,7 +85,7 @@ tipsbody {
 	height: 1px;
 	display: block;
 	margin-left: 15px;
-	background-image: linear-gradient(to left, #fff , #4795EF);
+	background-image: linear-gradient(to left, #fff , #01C6F3);
 }
 /* 表格 */
 .data-grid {
@@ -122,7 +122,7 @@ tipsbody {
 .data-grid .data-grid-row .data-grid-col .number {
   font-size: 18px;
   font-weight: 400;
-  margin-left: 12px;
+  margin-left: 20px;
   margin-top: 6px;
   height: 28px;
   line-height: 28px;

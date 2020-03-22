@@ -8,7 +8,7 @@ body {
   max-width: 414px;
   margin: 0 auto;
   min-height: 100vh;
-  background: #fff;
+  background: #fafafa;
   padding-bottom: 40px;
 }
 
@@ -27,12 +27,12 @@ body {
   color: #262B2F;
 }
 .buy-center-page header img{
-	width: 20px;
-	height: 20px;
+	width: 9px;
+	height: 15px;
 	display: block;
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 13px;
+	left: 10px;
 }
 .buy-center-page header .search-container {
   background-color: #fff;
@@ -124,7 +124,7 @@ body {
 .button-container button {
   height: 40px;
   width: 65px;
-  background: #4795EF;
+  background: #01C6F3;
   border-radius: 5px;
   color: white;
   font-size: 15px;
@@ -237,7 +237,7 @@ body {
 	
   height: 26px;
   width: 65px;
-  background: #4795EF;
+  background: #01C6F3;
   border-radius: 5px;
   color: white;
   font-size: 15px;

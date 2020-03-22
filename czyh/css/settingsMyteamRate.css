@@ -20,6 +20,7 @@ body {
   font-size: 15px;
   font-weight: 500;
   color: #262B2F;
+  position: relative;
 }
 
 .settings-page header .page-title .back-button {

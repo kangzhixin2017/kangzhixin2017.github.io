@@ -135,7 +135,7 @@ body {
 }
 
 .cards .card-select {
-  background: url(../images/bg-balance.png) no-repeat center / 100%;
+  background: url(../images/icon/meyuan.png) no-repeat center / 100%;
   width: 16px;
   height: 16px;
   /*position: absolute;*/
@@ -144,7 +144,7 @@ body {
 }
 
 .cards .select .card-select {
-  background-image: url(../images/back.png);
+  background-image: url(../images/icon/megou.png);
 }
 
 
@@ -180,7 +180,7 @@ footer .tips .tips-content {
 
 button {
   height: 40px;
-  background: #4795EF;
+  background: #01C6F3;
   border-radius: 8px;
   color: white;
   font-size: 15px;

@@ -6,7 +6,7 @@
 		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />-->
 		<!--<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />-->
 		<!--<meta name="viewport" content="width=375, maximum-scale=1.0, user-scalable=no" />-->
-		<meta name="viewport" content="width=375, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+		<meta name="viewport" content="width=375, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<!--<title>订单列表</title>-->
 		<link rel="stylesheet" href="../css/orderList.css" />
@@ -52,8 +52,8 @@
 								<input id="search" type="text" placeholder="输入订单号/会员账号"></input>
 
 							</div>
-								<label for="search" style="width: 100%;height: 28px;display: block;"> </label>
-							
+							<label for="search" style="width: 100%;height: 28px;display: block;"> </label>
+
 						</div>
 						<div class="button-container">
 							<button>查询</button>
@@ -80,7 +80,7 @@
 						</div>
 					</div>
 					<div style="border-bottom: 0.5px solid #e0e0e0;padding: 10px 0 15px 0;" class="order-header">
-						<div class="status"><img style="margin-right: 10px;" src="../images/icon/yijie.png" width="12" height="12"/>已接单</div>
+						<div class="status"><img style="margin-right: 10px;" src="../images/icon/yijie.png" width="12" height="12" />已接单</div>
 					</div>
 					<div class="order-body">
 						<div class="info">
@@ -114,7 +114,7 @@
 						<div class="infomsg" style="border-bottom: 0.5px solid rgba(224, 224, 224, 1);padding-bottom: 20px;">
 							<span class="label"><img style="margin-right: 10px;" src="../images/icon/center.png" width="12" height="12"/>支付凭证：</span>
 							<span class="value">
-                <img src="" width="104" height="104" />
+                <img src="../images/icon/upload.png" width="104" height="104" />
               </span>
 						</div>
 						<div style="margin-bottom: 15px;margin-top: 10px;display: flex;justify-content: space-between;font-size: 15px;color: rgba(38, 43, 47, 0.5);">
@@ -136,7 +136,7 @@
 						<button style="margin-left: 15px;" onclick="handleReceive();">确认收款</button>
 					</div>
 				</div>
-				
+
 				<div class="more">加载更多</div>
 			</div>
 			<footer class="tabs">
@@ -171,9 +171,10 @@
 		<script src="../js/date-select.js"></script>
 		<script src="../js/toast.js"></script>
 		<script>
-			$('.page-title').on('touchmove',function(e){
+			$('.page-title').on('touchmove', function(e) {
 				e.preventDefault();
 			})
+
 			function handleReceive() {
 				toast.passwordConfirm(
 					"确认收到：xxx",
