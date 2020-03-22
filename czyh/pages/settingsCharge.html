@@ -25,22 +25,22 @@
 			<div class="infos">
 				<div class="row">
 					<div class="label">
-        	<img style="margin-right: 10px;" src="../images/icon/me11.png" width="12" height="9"/>
-						会员账号</div>
+						<img style="margin-right: 10px;" src="../images/icon/me11.png" width="12" height="9" /> 会员账号
+					</div>
 					<div class="value">15938312817</div>
 				</div>
 				<div class="row">
 					<div class="label">
-        	<img style="margin-right: 10px;" src="../images/icon/me12.png" width="12" height="9"/>
-						银行卡名字</div>
+						<img style="margin-right: 10px;" src="../images/icon/me12.png" width="12" height="9" /> 银行卡名字
+					</div>
 					<div class="value">
 						<input type="text" placeholder="请填写银行卡姓名" />
 					</div>
 				</div>
 				<div class="row">
 					<div class="label">
-        	<img style="margin-right: 10px;" src="../images/icon/me13.png" width="12" height="9"/>
-						充值金额</div>
+						<img style="margin-right: 10px;" src="../images/icon/me13.png" width="12" height="9" /> 充值金额
+					</div>
 					<div class="value">
 						<input type="text" placeholder="请输入充值金额" />
 					</div>
@@ -51,7 +51,8 @@
 				<div class="content">
 					<form>
 						<label style="font-size: 15px;color: #262B2F;" for="c2c">c2c在线交易充值</label>
-						<input class="radio_type" type="radio" name="charge" value='c2c在线交易充值' id='c2c'></input>
+						<div onclick="handleSelect(this)" class="card"></div>
+						<!--<input class="radio_type" type="radio" name="charge" value='c2c在线交易充值' id='c2c'></input>-->
 					</form>
 				</div>
 				<footer>
@@ -75,6 +76,22 @@
 		</div>
 		<script src="../js/toast.js"></script>
 		<script>
+			function clearSelect() {
+				var cardList = document.getElementsByClassName("card");
+				for(var i = 0; i < cardList.length; i++) {
+					if(cardList[i]) {
+						cardList[i].classList.remove("select");
+					}
+				}
+			}
+
+			function handleSelect(cardElement) {
+				if(cardElement) {
+					clearSelect();
+					cardElement.classList.toggle("select");
+				}
+			}
+
 			function handleClick() {
 				toast.confirm(
 					"充值失败",

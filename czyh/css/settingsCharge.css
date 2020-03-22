@@ -197,3 +197,15 @@ input {
 	align-items: center;
 	justify-content: center;
 }
+.choose-card .card {
+  background: url(../images/icon/meyuan.png) no-repeat center / 100%;
+  width: 16px;
+  height: 16px;
+  /*position: absolute;*/
+  right: 20px;
+  top: 41px;
+}
+
+.choose-card .select{
+  background-image: url(../images/icon/megou.png);
+}

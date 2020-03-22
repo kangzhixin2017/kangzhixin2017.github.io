@@ -348,3 +348,16 @@ body {
   color: rgba(175, 175, 175, 1);
   font-size: 13px;
 }
+
+
+.info .card {
+  background: url(../images/icon/guan.png) no-repeat center / 100%;
+  width: 35px;
+  height: 20px;
+  /*position: absolute;*/
+  /*right: 20px;*/
+  /*top: 41px;*/
+}
+.select .card {
+  background-image: url(../images/icon/kai.png);
+}
