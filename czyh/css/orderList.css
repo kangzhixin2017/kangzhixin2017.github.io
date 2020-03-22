@@ -39,7 +39,7 @@ body {
 .row.select-row,
 .select-row {
   height: 40px;
-  background-color: #FAFAFA;
+  background-color: yellow;
   border-radius: 5px;
   position: relative;
   padding: 0 13px;
@@ -111,7 +111,7 @@ body {
   height: 38px;
   line-height: 40px;
   padding-top: 2px;
-  width: 130px;
+  /*width: 130px;*/
   background-color: red;
 }
 
