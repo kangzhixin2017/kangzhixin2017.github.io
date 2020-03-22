@@ -17,7 +17,7 @@ body {
   line-height: 46px;
   text-align: center;
   background-color: #fff;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   color: #262B2F;
   position: relative;
@@ -111,11 +111,13 @@ body {
 
 .content .rates .row .extra {
   margin-left: 26px;
+  /*background-color: red;*/
+  width: 70px;
   color: rgba(38, 43, 47, 0.5);
 }
 
 footer {
-  padding: 0 15px;
+  /*padding: 0 15px;*/
   margin-top: 86px;
   text-align: center;
 }

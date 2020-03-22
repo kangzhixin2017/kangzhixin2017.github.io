@@ -16,7 +16,7 @@ tipsbody {
   line-height: 46px;
   text-align: center;
   background-color: #fff;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   color: #262B2F;
 }
@@ -90,7 +90,7 @@ tipsbody {
 /* 表格 */
 .data-grid {
   margin-top: 10px;
-  padding: 0 15px;
+  padding: 0 0px;
 }
 
 .data-grid .data-grid-row {
