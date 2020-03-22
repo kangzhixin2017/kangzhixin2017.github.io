@@ -53,11 +53,12 @@ body {
   font-weight: 400;
   line-height: 20px;
   color: #262B2F;
-  padding: 0 8px 0 13px;
+  padding: 0 8px 0 5px;
   border-right: 1px solid #D1D1D1;
   height: 20px;
   position: absolute;
   left: 0;
+  /*background-color: red;*/
 }
 
 .select-row select {
@@ -92,8 +93,10 @@ body {
 }
 
 .select-row .select-container select {
-  width: 100%;
-  padding-left: 0;
+  width: 75px;
+  padding-left: 0px;
+  /*background-color: red;*/
+  /*text-align: left;*/
 }
 
 .select-row .input-container {

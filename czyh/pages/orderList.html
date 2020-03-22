@@ -8,7 +8,7 @@
 		<!--<meta name="viewport" content="width=375, maximum-scale=1.0, user-scalable=no" />-->
 		<!--<meta name="viewport" content="width=375, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		
+
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<!--<title>订单列表</title>-->
 		<link rel="stylesheet" href="../css/orderList.css" />
@@ -36,10 +36,33 @@
 							<option value="recharge">已申诉</option>
 						</select>
 					</div>
-					<div class="row" style="margin-top: 15px; height: 32px;">
+					<div style="margin-top: 15px; height: 32px;display: flex;">
+						<div style="display: flex;align-items: center;flex: auto;background-color: #fafafa;border-radius: 5px;">
+							<div style="padding-right: 5px;padding-left: 5px;">
+								<select style="background-color: #fafafa;width: 75px;font-size: 15px;color: #262B2F;border: none;outline: none;appearance: none;-moz-appearance: none;-webkit-appearance: none; background-image: url('../images/icon/down.png');background-repeat: no-repeat;background-position: right;background-size: 11px 6px;">
+									<option value="已提交">选择状态</option>
+									<option value="已提交">已提交</option>
+									<option value="已接单">已接单</option>
+									<option value="超时补单">超时补单</option>
+									<option value="交易成功">交易成功</option>
+									<option value="订单失败">订单失败</option>
+									<option value="待支付">待支付</option>
+								</select>
+							</div>
+							<div style="border-left: 1px solid #d1d1d1;display: flex;align-items: center;width: 100%;">
+								<img style="padding-left: 5px;" src="../images/icon_search.png" width="15" height="15" />
+								<input style="padding-left: 5px;line-height: 17px;background-color: #fafafa;width: 100%;" id="search" type="text" placeholder="输入订单号/会员账号"></input>
+							</div>
+							<!--<label for="search" style="width: 100%;height: 28px;display: block;"> </label>-->
+						</div>
+						<div>
+							<button style="margin-left: 10px;width: 65px;height: 32px;background-color: #01C6F3;font-size: 15px;color: white;border: none;border-radius: 8px;">查询</button>
+						</div>
+					</div>
+					<!--<div class="row" style="margin-top: 15px; height: 32px;">
 						<div class='select-row'>
 							<div class="select-container">
-								<select>
+								<select style="text-align: left;">
 									<option value="已提交">选择状态</option>
 									<option value="已提交">已提交</option>
 									<option value="已接单">已接单</option>
@@ -60,7 +83,7 @@
 						<div class="button-container">
 							<button>查询</button>
 						</div>
-					</div>
+					</div>-->
 					<div style="margin-top: 10px;" class="row time-row" id='beginTime'>
 						<div class="label">开始时间</div>
 						<div class="value" id='beginTimeValue'>2020-12-12</div>

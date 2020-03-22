@@ -128,7 +128,7 @@ header>img {
 
 button {
   margin: 0 auto;
-  width: 315px;
+  width: 100%;
   height: 40px;
   background: #01C6F3;
   border-radius: 5px;
