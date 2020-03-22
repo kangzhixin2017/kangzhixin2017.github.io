@@ -88,6 +88,7 @@ body {
   position: absolute;
   left: 0;
   border-right: 1px solid #D1D1D1;
+  /*background-color: red;*/
 }
 
 .select-row .select-container select {
@@ -110,7 +111,8 @@ body {
   height: 38px;
   line-height: 40px;
   padding-top: 2px;
-  /*background-color: red;*/
+  width: 130px;
+  background-color: red;
 }
 
 .button-container {
