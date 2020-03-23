@@ -94,7 +94,7 @@
 
 .toast-mask .toast .password {
 	height: 32px;
-	background: rgba(244, 244, 244, 1);
+	background: #f5f5f5;
 	border-radius: 4px;
 	margin-top: 13px;
 	padding: 0 12px;
