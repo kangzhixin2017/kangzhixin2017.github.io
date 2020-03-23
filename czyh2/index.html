@@ -82,15 +82,20 @@
 		</div>
 		<script>
 			var mySlideImage2 = new SlideImageVerify('#slideImageWrap2', {
-				initText: '请滑动拼图完成验证',
+				initText: '滑动解锁二维码',
 				slideImage: 'image/a2.png',
 				slideAreaNum: 20,
 				refreshSlide: true,
 				getSuccessState: function(res) {
 					alert('成功')
-					mySlideImage2.resetSlide();
+					a();
+//					mySlideImage2.resetSlide();
 				}
 			})
+			function a(){
+			mySlideImage2.resetSlide();
+				
+			}
 			mySlideImage2.resetSlide();
 
 			function copy(msg) {
