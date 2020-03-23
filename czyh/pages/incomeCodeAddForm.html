@@ -16,7 +16,7 @@
       <header>
         <div class="page-title">
           <div class="back-button" onclick="history.back();">
-            <img src="../images/back.png" width="20" height="20" />
+            <img src="../images/back.png" width="9" height="15" />
           </div>
           <span>银行卡转账</span>
         </div>
@@ -27,39 +27,41 @@
           <span style="margin-left: 20px;">15938312817</span>
         </div>
         <div class="row input-row">
-          <div class="label">最大收款：</div>
+          <div class="label">最大收款</div>
           <input type="text" placeholder="请填写最大收款金额" />
         </div>
         <div class="row input-row">
-          <div class="label">最小收款：</div>
+          <div class="label">最小收款</div>
           <input type="text" placeholder="请填写最小收款金额" />
         </div>
         <div class="row input-row" id="area">
           <div class="label">收款地址</div>
           <div class="value" id="areaValue">福建-厦门</div>
-          <img class="reverse" src="../images/back.png" width="13" height="13" />
+          <img class="reverse" src="../images/back.png" width="9" height="15" />
         </div>
         <div class="row input-row">
           <div class="label">收款卡号</div>
           <input type="text" placeholder="请填写收款银行卡号" />
         </div>
-        <div class="row fileupload-row">
+        <!--<div class="row fileupload-row">
           <div class="label">收款码：</div>
           <div id="fileUpload" class="file-container">
             <img src="../images/file_upload.png" class="faker" width="70" height="70" />
             <input type="file" id="file" />
           </div>
-        </div>
-        <div class="row">
-          <div class="label">状态：</div>
-          <div class="value">
-            <form>
-              <input class="radio_type" type="radio" name="status" value='open' id='radioOpen'></input>
-              <label for="radioOpen">开启</label>
-              <input class="radio_type" type="radio" name="status" value='close' id='radioClose'></input>
-              <label for="radioClose">关闭</label>
-            </form>
-          </div>
+        </div>-->
+        <div style="display: flex;justify-content: space-between;line-height: 30px;margin-top: 10px;">
+        	<div>状态</div>
+        	<div>
+        		<div class="status" onclick="handleSelect(this)">
+        			<div style="margin-right: 15px;font-size: 15px;color: rgba(38, 43, 47, 0.5);">开启</div>
+        			<div class="select"></div>
+        		</div>
+        		<div class="status" onclick="handleSelect(this)">
+        			<div style="margin-right: 15px;font-size: 15px;color: rgba(38, 43, 47, 0.5);">关闭</div>
+        			<div class="select"></div>
+        		</div>
+        	</div>
         </div>
       </div>
       <footer>
@@ -70,5 +72,22 @@
     <script src="../js/toast.js"></script>
     <script src="../js/areaDatas.js"></script>
     <script src="../js/incomeCodeAddForm.js"></script>
+    <script type="text/javascript">
+    	function clearSelect() {
+        var cardList = document.getElementsByClassName("status");
+        for (var i = 0; i < cardList.length; i++) {
+          if (cardList[i]) {
+            cardList[i].classList.remove("select1");
+          }
+        }
+      }
+
+      function handleSelect(cardElement) {
+        if (cardElement) {
+          clearSelect();
+          cardElement.classList.toggle("select1");
+        }
+      }
+    </script>
   </body>
 </html>

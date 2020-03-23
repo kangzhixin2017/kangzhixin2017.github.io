@@ -212,7 +212,9 @@ body {
   color: rgba(38, 43, 47, 0.5);
 }
 .order-list .order-list--item .order-footer {
-  /*height: 58px;*/
+  height: 40px;
+  margin-top: 20px;
+  padding-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: flex-end;

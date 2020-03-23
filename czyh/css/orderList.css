@@ -225,7 +225,8 @@ body {
   color: #262B2F;
 }
 .order-list .order-list--item .order-footer {
-  height: 58px;
+  height: 40px;
+  padding-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
