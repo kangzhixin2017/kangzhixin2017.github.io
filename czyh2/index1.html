@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-	</body>
-</html><!DOCTYPE html>
 <html lang="en">
 
 	<head>
@@ -17,32 +9,95 @@
 
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title></title>
+		<!--<script src="./js/jquery-3.4.1.min.js"></script>-->
+		<!--<link rel="stylesheet" href="css/jigsaw.css">-->
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/jq_slideImage.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.demo1 {
+				width: 100%;
+				height: 300px;
+			}
+			
+			.demo2 {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.container {
+				width: 30px;
+				margin: 20px auto;
+			}
+			
+			#msg {
+				width: 100%;
+				line-height: 40px;
+				font-size: 14px;
+				text-align: center;
+			}
+			
+			a:link,
+			a:visited,
+			a:hover,
+			a:active {
+				margin-left: 100px;
+				color: #0366D6;
+			}
+		</style>
 	</head>
 
-	<body style="margin: 0;padding: 0;text-align: center;width: 100%;">
-		<div>订单号：234234242342123</div>
-		<div>请勿重复付款</div>
-		<div>请按订单金额付款</div>
-		<div>否则造成损失无法追回</div>
-		<div>
-			<div>请先将图片保存到相册</div>
-			<div>打开支付宝‘扫一扫’选择相册中的次二维码</div>
-		</div>
-		<div>本次订单金额</div>
-		<div>
-			<div style="display: flex;justify-content: center;">
-				<div>5000元</div>
-				<button>复制</button>
+	<body style="margin: 0;padding: 0;text-align: center;width: 100%;background-color: #f5f5f5;">
+		<div style="max-width: 414px; margin: 0 auto;min-height: 100vh;background: #fff;padding-bottom: 30px;">
+			<div style="font-size: 18px;color: #262B2F;line-height: 45px;">收款码信息</div>
+
+			<div style="display: flex;align-items: center;justify-content: center;">
+				<span style="width: 65px;height: 1px;background-image: linear-gradient(to right, #fff , #01C6F3);"></span>
+				<span style="color: #E94634;margin: 16px 15px;font-size: 18px;">请认真阅读以下文字</span>
+				<span style="width: 65px;height: 1px;background-image: linear-gradient(to left, #fff , #01C6F3);"></span>
 			</div>
+			<div style="font-size: 15px;color: #E94634;line-height: 30px;">请勿重复付款</div>
+			<div style="font-size: 15px;color: #E94634;line-height: 30px;">请按订单金额付款</div>
+			<div style="font-size: 15px;color: #E94634;line-height: 30px;">否则造成损失无法追回</div>
+			<div style="display: flex;align-items: center;justify-content: center;">
+				<span style="width: 65px;height: 1px;background-image: linear-gradient(to right, #fff , #01C6F3);"></span>
+				<span style="color: #262B2F;margin: 16px 5px;font-size: 18px;word-break: break-all;">订单号:928749827983479</span>
+				<span style="width: 65px;height: 1px;background-image: linear-gradient(to left, #fff , #01C6F3);"></span>
+			</div>
+			<div style="color: #262B2F;font-size: 15px;">本次订单金额</div>
+			<div style="margin-top: 10px;">
+				<div style="display: flex;justify-content: center;">
+					<div style="background-color: #F5F5F5;width: 118px;height: 40px;line-height: 40px;color: #262B2F;">5000元</div>
+					<button style="border: none;background-color: #01C6F3;width: 58px;height: 40px;border-radius: 5px;margin-left: 8px;" onclick="copy('werwer')">复制</button>
+				</div>
+			</div>
+			<div style="margin-top: 10px;position: relative;display: flex;justify-content: center;">
+				<img style="width: 281px;height: 386px;display: block;margin: 0 auto;" src="image/ali.png" />
+				<img style="width: 200px;height: 200px;position: absolute;bottom: 49px;" src="image/a3.png" />
+			</div>
+			<div style="font-size: 15px;margin-top: 20px;color: #262B2F;">请先将图片保存到相册</div>
+			<div style="font-size: 15px;margin-top: 5px;color: #262B2F;">打开支付宝“扫一扫”选择相册中的此二维码</div>
+			<div style="color: #E94634;font-size: 15px;margin-top: 33px;">如转账后未充值成功</div>
+			<div style="font-size: 15px;margin-top: 5px;color: #262B2F;">在下方填写您支付宝账号订单的后六位</div>
+			<div style="display: flex;justify-content: center;width: 95%;margin: 20px auto; accelerator: 0px;">
+				<div style="background-color: #FAFAFA;display: flex;height: 40px;align-items: center;border-radius: 5px;width: 310px;flex: auto;">
+					<img style="width: 20px;height: 20px;margin-left: 10px;" src="image/search.png" />
+					<input style="border-left: 1px solid #E0E0E0;background-color: #FAFAFA;width: 100%;margin-left: 10px;line-height: 22px;text-align: center;font-size: 15px;" type="" name="" id="" value="" placeholder="支付订单后六位" />
+				</div>
+				<button style="background-color: #01C6F3;height: 40px;width: 65px;border: none;border-radius: 8px;color: white;font-size: 15px;margin-left: 8px;">确定</button>
+			</div>
+			<img style="width: 100%;" src="image/bg.png" />
 		</div>
-		<img src="" alt="啊"/>
-		<div>如转账后未充值成功</div>
-		<div>在下方填写您的支付宝转账订单的后六位</div>
-		<div style="display: flex;justify-content: center;">
-			<img src="" alt="s"/>
-			<input type="" name="" id="" value="" />
-			<button>确定</button>
-		</div>
+		<script>
+			function copy(msg) {
+				var _input = document.createElement("input"); // 直接构建input
+				_input.value = msg; // 设置内容
+				document.body.appendChild(_input); // 添加临时实例
+				_input.select(); // 选择实例内容
+				document.execCommand("Copy"); // 执行复制
+				document.body.removeChild(_input); // 删除临时实例
+				alert(msg);
+			}
+		</script>
 	</body>
 
 </html>
