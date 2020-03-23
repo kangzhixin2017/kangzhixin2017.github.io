@@ -33,7 +33,7 @@ body {
   display: flex;
   align-items: center;
   margin: 0 auto;
-  height: 50px;
+  height: 45px;
 }
 
 .row.select-row,
