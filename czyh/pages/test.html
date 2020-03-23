@@ -6,8 +6,10 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<meta charset="UTF-8">
 		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/toast.css"/>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
-	<body style="display: flex;flex-direction: column;line-height: 35px;justify-content: center;width: 100%;align-items: center;">
+	<body style="display: flex;flex-direction: column;line-height: 35px;justify-content: center;width: 100%;align-items: center;padding: 0;margin: 0;">
 		<a href="appeal.html">appeal：申诉</a>
 		<a href="buyCenter.html">buyCenter：买分中心</a>
 		<a href="buyOrder.html">buyOrder：买分列表</a>
@@ -40,6 +42,104 @@
 		<a href="settingsSecondPassword.html">settingsSecondPassword：修改二级密码</a>
 		<a href="settingsWithdraw.html">settingsWithdraw：我要提现</a>
 		<a href="settingsWithdrawDetails.html">settingsWithdrawDetails：提现明细</a>
+		<a href="#" onclick="list()">列表弹框</a>
+		<a href="#" onclick="passwordConfirm()">输入密码信息弹框</a>
+		<a href="#" onclick="confirm()">信息弹框</a>
+		<a href="#" onclick="confirm1()">信息弹框1</a>
+		<a href="#" onclick="confirm2()">信息弹框2</a>
+		<a href="#" onclick="confirm3()">信息弹框3</a>
+		
+		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function list(){
+				toast.list(
+				  [
+				    { label: '会员账号', value: '手续费'},
+				    { label: '订单号', value: '48762736271'},
+				    { label: '订单金额', value: '233434'},
+				    { label: '支付方式', value: '233434'},
+				    { label: '对应会员账号', value: '233434'},
+				    { label: '原有金额', value: '2020-1-23 23:45' },
+				    { label: '现有金额', value: '2020-1-23 23:45' },
+				    { label: '备注', value: '2020-1-23 23:45' },
+				    { label: '下单时间', value: '2020-1-23 23:45' },
+				    { label: '更新时间', value: '2020-1-23 23:45' },
+				  ],
+				     [
+				     { text: "关闭", color: "#01C6F3" }
+				   ],
+				  function (val) {
+				    console.log(val);
+				  }
+				);
+			}
+			function passwordConfirm() {
+				toast.passwordConfirm(
+					"确认收到：xxx",
+					"请输入二级密码", [{
+							text: "取消",
+							color: "#000"
+						},
+						{
+							text: "发送",
+							color: "#01C6F3"
+						}
+					],
+					function(type, val) {
+						console.log(type, val);
+					}
+				);
+			}
+			function confirm(){
+				 toast.confirm(
+				   "提现失败",
+				   "当前提现金额大于当前可用余额",
+				   [
+				     { text: "取消", color: "#000" },
+				     { text: "确定", color: "#01C6F3" }
+				   ],
+				   function(val) {
+				     console.log(val);
+				   }
+				 );
+			}
+			function confirm1(){
+				 toast.confirm(
+				   "提现失败",
+				   "当前提现金额大于当前可用余额",
+				   [
+				     { text: "确定", color: "#01C6F3" }
+				   ],
+				   function(val) {
+				     console.log(val);
+				   }
+				 );
+			}
+			function confirm2(){
+				 toast.confirm(
+				   "提现失败",
+				   "",
+				   [
+				     { text: "确定", color: "#01C6F3" }
+				   ],
+				   function(val) {
+				     console.log(val);
+				   }
+				 );
+			}
+			function confirm3(){
+				 toast.confirm(
+				   "",
+				   "消息体",
+				   [
+				     { text: "确定", color: "#01C6F3" }
+				   ],
+				   function(val) {
+				     console.log(val);
+				   }
+				 );
+			}
+		</script>
 	</body>
 	
 </html>
