@@ -8,7 +8,7 @@ body {
   max-width: 414px;
   margin: 0 auto;
   min-height: 100vh;
-  background: #f4f4f4;
+  background: #fff;
 }
 
 .settings-page header {
@@ -20,9 +20,10 @@ body {
   line-height: 46px;
   text-align: center;
   background-color: #fff;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   color: #262B2F;
+  position: relative;
 }
 
 .settings-page header .page-title .back-button {
@@ -50,6 +51,7 @@ body {
   border-bottom: 1px solid #e0e0e0;
   font-size: 14px;
   font-weight: 400;
+  color: #262B2F;
 }
 
 .reverse {
