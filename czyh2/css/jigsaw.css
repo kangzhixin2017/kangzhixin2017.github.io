@@ -19,7 +19,7 @@
 .sliderContainer_active .slider {
   height: 38px;
   top: -1px;
-  border: 1px solid #1991FA;
+  border: 1px solid #01C6F3;
 }
 
 .sliderContainer_active .sliderMask {
@@ -69,7 +69,7 @@
   left: 0;
   top: 0;
   height: 40px;
-  border: 0 solid #1991FA;
+  border: 0 solid #01C6F3;
   background: #D1E9FE;
 }
 
@@ -86,7 +86,7 @@
 }
 
 .slider:hover {
-  background: #1991FA;
+  background: #01C6F3;
 }
 
 .slider:hover .sliderIcon {

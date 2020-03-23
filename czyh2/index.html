@@ -14,7 +14,7 @@
 		<style>
 			.container {
 				width: 310px;
-				margin: 10px auto;
+				margin: 20px auto;
 			}
 			
 			#msg {
@@ -34,34 +34,42 @@
 		</style>
 	</head>
 
-	<body style="margin: 0;padding: 0;text-align: center;width: 100%;">
-		<div>ksjdfl</div>
-		<img src="" alt="sdf" />
-		<div>ksjdfl</div>
-		<div>ksjdfl</div>
-		<div>ksjdfl</div>
-		<div>ksjdfl</div>
-		<div>
-			<div style="display: flex;justify-content: center;">
-				<div>5000元</div>
-				<button onclick="copy('werwer')">复制</button>
+	<body style="margin: 0;padding: 0;text-align: center;width: 100%;background-color: #f5f5f5;">
+		<div style="max-width: 414px; margin: 0 auto;min-height: 100vh;background: #fff;padding-bottom: 40px;">
+			<div style="font-size: 18px;color: #262B2F;line-height: 45px;">收款码信息</div>
+			<div style="position: relative;width: 123px;height: 123px;margin: 20px auto;">
+				<img src="img/yuan.png" alt="" width="123" height="123" />
+				<div style="position: absolute;line-height: 30px;top:calc(50% - 15px);width: 100%;text-align: center;color: #262B2F;font-size: 18px;">00:58</div>
+			</div>
+			<div style="color: #262B2F;font-size: 18px;">倒计时</div>
+			<div style="display: flex;align-items: center;justify-content: center;">
+				<span style="width: 65px;height: 1px;background-image: linear-gradient(to right, #fff , #01C6F3);"></span>
+				<span style="color: #E94634;margin: 16px 15px;font-size: 18px;">请认真阅读以下文字</span>
+				<span style="width: 65px;height: 1px;background-image: linear-gradient(to left, #fff , #01C6F3);"></span>
+			</div>
+			<div style="font-size: 15px;color: #262B2F;line-height: 30px;">请勿重复付款</div>
+			<div style="font-size: 15px;color: #262B2F;line-height: 30px;">请按订单金额付款</div>
+			<div style="font-size: 15px;color: #262B2F;line-height: 30px;">否则造成损失无法追回</div>
+				<div style="display: flex;align-items: center;justify-content: center;">
+				<span style="width: 65px;height: 1px;background-image: linear-gradient(to right, #fff , #01C6F3);"></span>
+				<span style="color: #262B2F;margin: 16px 15px;font-size: 18px;">订单号：92813749827983479</span>
+				<span style="width: 65px;height: 1px;background-image: linear-gradient(to left, #fff , #01C6F3);"></span>
+			</div>
+			<div style="color: #262B2F;font-size: 15px;">本次订单金额</div>
+			<div style="margin-top: 10px;">
+				<div style="display: flex;justify-content: center;">
+					<div style="background-color: #F5F5F5;width: 118px;height: 40px;line-height: 40px;color: #262B2F;">5000元</div>
+					<button style="border: none;background-color: #01C6F3;width: 58px;height: 40px;border-radius: 5px;margin-left: 8px;" onclick="copy('werwer')">复制</button>
+				</div>
+			</div>
+			<div class="container">
+				<div id="captcha" style="position: relative"></div>
 			</div>
 		</div>
-		<div style="width: 100%;display: flex;justify-content: center;">
-			<div style="width: 100px;height: 100px;background-color: red;"></div>
-			<div>
-				<div style="line-height: 50px;">slkdfj</div>
-				<div style="line-height: 50px;">slkdfj</div>
-			</div>
-		</div>
-		<div class="container">
-			<div id="captcha" style="position: relative"></div>
-		</div>
-		<div>订单号：</div>
 		<script src="./js/jigsaw.js"></script>
 		<script>
 			jigsaw.init(document.getElementById('captcha'), function() {
-				document.getElementById('msg').innerHTML = '登录成功！'
+				alert('成功')
 			})
 
 			function copy(msg) {

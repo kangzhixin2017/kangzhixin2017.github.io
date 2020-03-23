@@ -103,7 +103,7 @@
       sliderMask.className = 'sliderMask'
       slider.className = 'slider'
       sliderIcon.className = 'sliderIcon'
-      text.innerHTML = '向右滑动滑块填充拼图'
+      text.innerHTML = '滑动解锁二维码'
       text.className = 'sliderText'
 
       const el = this.el
