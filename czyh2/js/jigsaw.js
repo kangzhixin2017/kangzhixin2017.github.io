@@ -1,3 +1,4 @@
+
 (function (window) {
   const l = 42, // 滑块边长
     r = 10, // 滑块半径
@@ -166,8 +167,7 @@
       this.slider.addEventListener('mousedown', function (e) {
         originX = e.x, originY = e.y
         isMouseDown = true
-      })
-      document.addEventListener('mousemove', (e) => {
+        $(document).mousemove(function (e)  {
         if (!isMouseDown) return false
         const moveX = e.x - originX
         const moveY = e.y - originY
@@ -180,7 +180,9 @@
         this.sliderMask.style.width = moveX + 'px'
         trail.push(moveY)
       })
-      document.addEventListener('mousemove', (e) => {
+      })
+      
+      document.addEventListener('mouseup', (e) => {
         if (!isMouseDown) return false
         isMouseDown = false
         if (e.x == originX) return false

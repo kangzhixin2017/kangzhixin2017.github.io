@@ -9,11 +9,23 @@
 
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title></title>
-		<script src="./js/jquery-3.4.1.min.js"></script>
-		<link rel="stylesheet" href="css/jigsaw.css">
+		<!--<script src="./js/jquery-3.4.1.min.js"></script>-->
+		<!--<link rel="stylesheet" href="css/jigsaw.css">-->
+		<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+		<script src="jq_slideImage.js" type="text/javascript" charset="utf-8"></script>
 		<style>
+			.demo1 {
+				width: 100%;
+				height: 300px;
+			}
+			
+			.demo2 {
+				width: 100%;
+				height: 100%;
+			}
+			
 			.container {
-				width: 310px;
+				width: 30px;
 				margin: 20px auto;
 			}
 			
@@ -35,12 +47,13 @@
 	</head>
 
 	<body style="margin: 0;padding: 0;text-align: center;width: 100%;background-color: #f5f5f5;">
-		<div style="max-width: 414px; margin: 0 auto;min-height: 100vh;background: #fff;padding-bottom: 40px;">
+		<div style="max-width: 414px; margin: 0 auto;min-height: 100vh;background: #fff;padding-bottom: 30px;">
 			<div style="font-size: 18px;color: #262B2F;line-height: 45px;">收款码信息</div>
 			<div style="position: relative;width: 123px;height: 123px;margin: 20px auto;">
-				<img src="img/yuan.png" alt="" width="123" height="123" />
+				<img src="image/yuan.png" alt="" width="123" height="123" />
 				<div style="position: absolute;line-height: 30px;top:calc(50% - 15px);width: 100%;text-align: center;color: #262B2F;font-size: 18px;">00:58</div>
 			</div>
+
 			<div style="color: #262B2F;font-size: 18px;">倒计时</div>
 			<div style="display: flex;align-items: center;justify-content: center;">
 				<span style="width: 65px;height: 1px;background-image: linear-gradient(to right, #fff , #01C6F3);"></span>
@@ -50,7 +63,7 @@
 			<div style="font-size: 15px;color: #262B2F;line-height: 30px;">请勿重复付款</div>
 			<div style="font-size: 15px;color: #262B2F;line-height: 30px;">请按订单金额付款</div>
 			<div style="font-size: 15px;color: #262B2F;line-height: 30px;">否则造成损失无法追回</div>
-				<div style="display: flex;align-items: center;justify-content: center;">
+			<div style="display: flex;align-items: center;justify-content: center;">
 				<span style="width: 65px;height: 1px;background-image: linear-gradient(to right, #fff , #01C6F3);"></span>
 				<span style="color: #262B2F;margin: 16px 15px;font-size: 18px;">订单号：92813749827983479</span>
 				<span style="width: 65px;height: 1px;background-image: linear-gradient(to left, #fff , #01C6F3);"></span>
@@ -62,15 +75,23 @@
 					<button style="border: none;background-color: #01C6F3;width: 58px;height: 40px;border-radius: 5px;margin-left: 8px;" onclick="copy('werwer')">复制</button>
 				</div>
 			</div>
-			<div class="container">
-				<div id="captcha" style="position: relative"></div>
+			<div style="width: 310px;margin: 20px auto;">
+				<!--外层这div是为了测试  滑块会不会直接跑右边  不是必要的-->
+				<div class="demo2" id="slideImageWrap2"></div>
 			</div>
 		</div>
-		<script src="./js/jigsaw.js"></script>
 		<script>
-			jigsaw.init(document.getElementById('captcha'), function() {
-				alert('成功')
+			var mySlideImage2 = new SlideImageVerify('#slideImageWrap2', {
+				initText: '请滑动拼图完成验证',
+				slideImage: 'image/a2.png',
+				slideAreaNum: 20,
+				refreshSlide: true,
+				getSuccessState: function(res) {
+					alert('成功')
+					mySlideImage2.resetSlide();
+				}
 			})
+			mySlideImage2.resetSlide();
 
 			function copy(msg) {
 				var _input = document.createElement("input"); // 直接构建input
