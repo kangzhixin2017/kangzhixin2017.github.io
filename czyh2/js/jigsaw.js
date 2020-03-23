@@ -180,7 +180,7 @@
         this.sliderMask.style.width = moveX + 'px'
         trail.push(moveY)
       })
-      document.addEventListener('mouseup', (e) => {
+      document.addEventListener('mousemove', (e) => {
         if (!isMouseDown) return false
         isMouseDown = false
         if (e.x == originX) return false
