@@ -98,7 +98,7 @@ body {
 .data-grid .data-grid-row .data-grid-col .title {
   font-size: 15px;
   font-weight: 400;
-  margin-left: 10px;
+  margin-left: 5px;
   margin-top: 6px;
   height: 13px;
   line-height: 13px;
@@ -106,9 +106,9 @@ body {
 }
 
 .data-grid .data-grid-row .data-grid-col .number {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
-  margin-left: 28px;
+  margin-left: 20px;
   margin-top: 6px;
   height: 28px;
   line-height: 28px;
