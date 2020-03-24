@@ -99,7 +99,7 @@ body {
   background: rgba(245, 245, 245, 1);
   font-size: 14px;
   margin-top: 7px;
-  width: 120px;
+  width: 100%;
 }
 
 .content .rates .row .value>span {
@@ -111,8 +111,8 @@ body {
 
 .content .rates .row .extra {
   margin-left: 26px;
-  /*background-color: red;*/
   width: 70px;
+  min-width: 70px;
   color: rgba(38, 43, 47, 0.5);
 }
 

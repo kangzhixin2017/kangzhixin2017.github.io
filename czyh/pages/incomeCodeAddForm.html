@@ -5,7 +5,7 @@
 		<meta charset="UTF-8" />
 		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		
+
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>银行卡转账</title>
 		<link rel="stylesheet" href="../css/incomeCodeAddForm.css" />
@@ -30,16 +30,28 @@
           <span>会员账号</span>
           <span>15938312817</span>
         </div>-->
-				<div class="row input-row">
+				<!--<div class="row input-row">
 					<div class="label">会员账号</div>
 					<span style="color: rgba(38, 43, 47, 0.5);">15938312817</span>
+				</div>-->
+				<div class="row input-row">
+					<div class="label">会员账号</div>
+					<input type="text" placeholder="请输入会员账号" />
 				</div>
 				<div class="row input-row">
-					<div class="label">最小收款</div>
+					<div class="label">收款姓名</div>
+					<input type="text" placeholder="请输入收款姓名" />
+				</div>
+				<div class="row input-row">
+					<div class="label">收款卡号</div>
+					<input type="text" placeholder="请输入收款卡号" />
+				</div>
+				<div class="row input-row">
+					<div class="label">最小金额</div>
 					<input type="text" placeholder="请填写最小收款金额" />
 				</div>
 				<div class="row input-row">
-					<div class="label">最大收款</div>
+					<div class="label">最大金额</div>
 					<input type="text" placeholder="请填写最大收款金额" />
 				</div>
 				<div class="row input-row" id="area">
@@ -47,9 +59,14 @@
 					<div class="value" id="areaValue">福建-厦门</div>
 					<img class="reverse" src="../images/back.png" width="9" height="15" />
 				</div>
+				<div class="row input-row" id="cardTypeSelect">
+					<div class="label">收款银行</div>
+					<div class="value" id="cardType">请选择</div>
+					<img class="reverse" src="../images/back.png" width="9" height="15" />
+				</div>
 				<div class="row input-row">
-					<div class="label">收款卡号</div>
-					<input type="text" placeholder="请填写收款银行卡号" />
+					<div class="label">银行支行</div>
+					<input type="text" placeholder="请输入" />
 				</div>
 				<!--<div class="row fileupload-row">
           <div class="label">收款码：</div>
@@ -58,14 +75,14 @@
             <input type="file" id="file" />
           </div>
         </div>-->
-				<div class="info" onclick="handleSelect(this);">
+				<!--<div class="info" onclick="handleSelect(this);">
 					<span style="display: flex;align-items: center;" class="label">状态</span>
-					
+
 					<div style="display: flex;align-items: center;">
 						<div>开启</div>
 						<div class="card"></div>
 					</div>
-				</div>
+				</div>-->
 			</div>
 			<footer>
 				<button onclick="handleClick()">添加收款码</button>
@@ -73,6 +90,9 @@
 		</div>
 		<!-- <script src="../js/card-select.js"></script> -->
 		<script src="../js/toast.js"></script>
+		<script src="../js/card-select.js"></script>
+		<script src="../js/date-select.js"></script>
+
 		<script src="../js/areaDatas.js"></script>
 		<script src="../js/incomeCodeAddForm.js"></script>
 		<script type="text/javascript">

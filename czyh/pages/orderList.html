@@ -53,37 +53,12 @@
 								<img style="padding-left: 5px;" src="../images/icon_search.png" width="15" height="15" />
 								<input style="padding-left: 5px;line-height: 17px;background-color: #fafafa;width: 100%;" id="search" type="text" placeholder="查询订单号"></input>
 							</div>
-							<!--<label for="search" style="width: 100%;height: 28px;display: block;"> </label>-->
+
 						</div>
 						<div>
 							<button style="margin-left: 10px;width: 65px;height: 32px;background-color: #01C6F3;font-size: 15px;color: white;border: none;border-radius: 8px;">查询</button>
 						</div>
 					</div>
-					<!--<div class="row" style="margin-top: 15px; height: 32px;">
-						<div class='select-row'>
-							<div class="select-container">
-								<select style="text-align: left;">
-									<option value="已提交">选择状态</option>
-									<option value="已提交">已提交</option>
-									<option value="已接单">已接单</option>
-									<option value="超时补单">超时补单</option>
-									<option value="交易成功">交易成功</option>
-									<option value="订单失败">订单失败</option>
-									<option value="待支付">待支付</option>
-								</select>
-							</div>
-							<div class="input-container">
-								<img src="../images/icon_search.png" width="15" height="15" />
-								<input id="search" type="text" placeholder="输入订单号/会员账号"></input>
-
-							</div>
-							<label for="search" style="width: 100%;height: 28px;display: block;"> </label>
-
-						</div>
-						<div class="button-container">
-							<button>查询</button>
-						</div>
-					</div>-->
 					<div style="margin-top: 10px;" class="row time-row" id='beginTime'>
 						<div class="label">开始时间</div>
 						<div class="value" id='beginTimeValue'>2020-12-12</div>
@@ -113,6 +88,10 @@
 							<span class="value">202001234737382918</span>
 						</div>
 						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/shanghu.png" width="12" height="12"/>商户号</span>
+							<span class="value">202001234737382918</span>
+						</div>
+						<div class="info">
 							<span class="label"><img style="margin-right: 10px;" src="../images/icon/pay.png" width="12" height="12"/>支付方式</span>
 							<span class="value">202001234737</span>
 						</div>
@@ -136,13 +115,21 @@
 							<span class="label"><img style="margin-right: 10px;" src="../images/icon/card.png" width="12" height="12"/>收款卡号</span>
 							<span class="value">239289元</span>
 						</div>
+						<div class="infomsg" style="padding-bottom: 20px;">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/ma.png" width="12" height="12"/>收款码</span>
+							<span class="value"> <img src="../images/icon/upload.png" width="104" height="104" /> </span>
+						</div>
 						<div class="infomsg" style="border-bottom: 0.5px solid rgba(224, 224, 224, 1);padding-bottom: 20px;">
-							<span class="label"><img style="margin-right: 10px;" src="../images/icon/center.png" width="12" height="12"/>支付凭证：</span>
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/center.png" width="12" height="12"/>支付凭证</span>
 							<span class="value"> <img src="../images/icon/upload.png" width="104" height="104" /> </span>
 						</div>
 						<div style="margin-bottom: 15px;margin-top: 10px;display: flex;justify-content: space-between;font-size: 15px;color: rgba(38, 43, 47, 0.5);">
-							<span class="label" style="width: 100px;display: block;"><img style="margin-right: 10px;" src="../images/icon/beizhu.png" width="12" height="12"/>备注：</span>
+							<span class="label" style="width: 100px;display: block;"><img style="margin-right: 10px;" src="../images/icon/beizhu.png" width="12" height="12"/>备注</span>
 							<span class="value" style="display: block;color: rgba(38, 43, 47, 1);">无</span>
+						</div>
+						<div style="margin-bottom: 15px;margin-top: 10px;display: flex;justify-content: space-between;font-size: 15px;color: rgba(38, 43, 47, 0.5);">
+							<span class="label" style="width: 100px;display: block;"><img style="margin-right: 10px;" src="../images/icon/beizhu.png" width="12" height="12"/>支付流水号</span>
+							<span class="value" style="display: block;color: rgba(38, 43, 47, 1);">28376782634872687</span>
 						</div>
 						<div class="info">
 							<span class="label"><img style="margin-right: 10px;" src="../images/icon/xiadan.png" width="12" height="12"/>下单时间：</span>
@@ -153,6 +140,7 @@
 							<span class="value">2020-01-19 10:50:32</span>
 						</div>
 					</div>
+					<div style="width: 100%;text-align: center;font-size: 15px;color: #262B2F;margin-bottom: 10px;">订单已冻结，等待系统确认</div>
 					<div class="order-footer">
 						<button onclick="handleReceive();">订单详情</button>
 						<button style="margin-left: 15px;" onclick="handleReceive();">申诉</button>
