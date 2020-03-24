@@ -76,11 +76,11 @@
 						</div>
 						<div class="info">
 							<span class="label"><img style="margin-right: 10px;" src="../images/icon/name.png" width="11" height="11"/>收款姓名</span>
-							<span class="value" style="display: flex;align-items: center;">239289元<button style="border: none;background-color: #01C6F3;width: 40px;color: white;font-size: 12px;border-radius: 4px;margin-left: 10px;">复制</button></span>
+							<span class="value" style="display: flex;align-items: center;">239289元<button onclick="copy('234')" style="border: none;background-color: #01C6F3;width: 40px;color: white;font-size: 12px;border-radius: 4px;margin-left: 10px;">复制</button></span>
 						</div>
 						<div class="info">
 							<span class="label"><img style="margin-right: 10px;" src="../images/icon/card.png" width="11" height="11"/>收款卡号</span>
-							<span class="value" style="display: flex;align-items: center;">2020-01-19 10:50:32<button style="border: none;background-color: #01C6F3;width: 40px;color: white;font-size: 12px;border-radius: 4px;margin-left: 10px;">复制</button></span>
+							<span class="value" style="display: flex;align-items: center;">2020-01-19 10:50:32<button onclick="copy('234')" style="border: none;background-color: #01C6F3;width: 40px;color: white;font-size: 12px;border-radius: 4px;margin-left: 10px;">复制</button></span>
 						</div>
 						<div class="infomsg" style="border-bottom: 0.5px solid rgba(224, 224, 224, 1);padding-bottom: 10px;">
 							<span class="label"><img style="margin-right: 10px;" src="../images/icon/center.png" width="12" height="12"/>支付凭证</span>
@@ -133,6 +133,17 @@
 			</footer>
 		</div>
 		<script src="../js/date-select.js"></script>
+		<script type="text/javascript">
+			function copy(msg) {
+				var _input = document.createElement("input"); // 直接构建input
+				_input.value = msg; // 设置内容
+				document.body.appendChild(_input); // 添加临时实例
+				_input.select(); // 选择实例内容
+				document.execCommand("Copy"); // 执行复制
+				document.body.removeChild(_input); // 删除临时实例
+				alert(msg);
+			}
+		</script>
 	</body>
 
 </html>
