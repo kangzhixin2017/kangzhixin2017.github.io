@@ -1,63 +1,47 @@
 body {
-  background: #f6f6f6;
+  background: #ff000;
   margin: 0;
   padding: 0;
 }
 
-.income-code-page {
+.order-list-page {
   max-width: 414px;
   margin: 0 auto;
   min-height: 100vh;
-  background: #f5f5f5;
+  background: #fff;
   padding-bottom: 40px;
 }
 
 /* 头部 & 搜索模块 */
-.income-code-page header .page-title {
+.order-list-page .header .page-title {
   height: 46px;
   line-height: 46px;
   text-align: center;
   margin-bottom: 8px;
   background-color: #fff;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
-  color: #262B2F;
   position: relative;
+  color: #262B2F;
 }
 
-.income-code-page header .page-title button {
-  outline: none;
-  border: none;
-  box-shadow: none;
-  font-size: 12px;
-  font-weight: 400;
-  color: #fff;
-  height: 23px;
-  background: rgba(71, 149, 239, 1);
-  border-radius: 5px;
-  padding: 0 13px;
-  position: absolute;
-  bottom: 11px;
-  right: 10px;
-}
-
-.income-code-page header .search-container {
+.order-list-page .header .search-container {
   background-color: #fff;
-  padding: 15px;
-  margin-bottom: 23px;
+  padding: 15px 15px 0;
 }
 
 .row {
   display: flex;
   align-items: center;
   margin: 0 auto;
+  height: 45px;
 }
 
 .row.select-row,
 .select-row {
-  height: 32px;
-  background-color: #F5F5F5;
-  border-radius: 5px;
+  height: 40px;
+  background-color: #fafafa;
+  border-radius: 0px;
   position: relative;
   padding: 0 13px;
   display: flex;
@@ -66,46 +50,114 @@ body {
 }
 
 .select-row .label {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 400;
-  color: rgba(136, 136, 136, 1);
-  padding: 0 8px 0 13px;
+  line-height: 20px;
+  color: #262B2F;
+  padding: 0 8px 0 5px;
   border-right: 1px solid #D1D1D1;
-  height: 18px;
+  height: 20px;
   position: absolute;
   left: 0;
+  /*background-color: red;*/
 }
 
 .select-row select {
+	/*width: 100px;*/
   padding-left: 40px;
-  flex: auto;
+  /*flex: auto;*/
+ width: 100%;
   outline: none;
   text-align: center;
+  text-align: -moz-center;
+  text-align: -webkit-center;
   text-align-last: center;
+
   border: none;
-  background-color: #F5F5F5;
+  background-color: #FAFAFA;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
   /* padding-right: 10px; */
-  background: url('../images/down.png') no-repeat right;
+  background: url('../images/icon/down.png') no-repeat right;
   background-size: 11px 6px;
+  font-size: 15px;
+  color: #262B2F;
+}
+
+.select-row .select-container {
+  width: 86px;
+  padding-right: 8px;
+  position: absolute;
+  left: 0;
+  border-right: 1px solid #D1D1D1;
+  /*background-color: red;*/
+}
+
+.select-row .select-container select {
+  width: 75px;
+  padding-left: 0px;
+  /*background-color: red;*/
+  /*text-align: left;*/
+}
+
+.select-row .input-container {
+  margin-left: 86px;
+  display: flex;
+  align-items: center;
+}
+
+.select-row .input-container input {
+  background-color: #fafafa;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  margin-left: 8px;
+  height: 25px;
+  line-height: 25px;
+  padding-top: 2px;
+  width: 130px;
+  /*background-color: yellow;*/
 }
 
 .button-container {
   margin-left: 8px;
+  /*background-color: red;*/
 }
 
 .button-container button {
-  height: 28px;
-  background: #4795EF;
+  height: 40px;
+  background: #01C6F3;
   border-radius: 5px;
   color: white;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 400;
   border: none;
   box-shadow: none;
   outline: none;
+  width: 65px;
+}
+
+.time-row {
+  border-bottom: 1px solid #E0E0E0;
+  font-size: 15px;
+  color: #262B2F;
+  font-weight: 400;
+}
+
+.time-row:last-child {
+  border-bottom: none;
+}
+
+.time-row .label {
+  color: #262B2F;
+}
+
+.time-row .value {
+  flex: auto;
+  text-align: right;
+  color: rgba(38, 43, 47, 0.5);
+  margin-right: 4px;
 }
 
 .reverse {
@@ -113,11 +165,11 @@ body {
 }
 
 /* 订单列表 */
-.income-list {
-  margin-bottom: 20px;
+.order-list {
+  padding-bottom: 22px;
 }
 
-.income-list .more {
+.order-list .more {
   font-size: 12px;
   color: #B1B1B1;
   text-align: center;
@@ -126,63 +178,88 @@ body {
   cursor: pointer;
 }
 
-.income-list--item {
-  padding: 0 15px;
+.order-list .order-list--item {
+  margin-top: 15px;
   background-color: #fff;
+  padding: 0 12px 0 15px;
+}
+
+.order-list .order-list--item .info {
+  font-size: 12px;
   color: #262B2F;
-  margin-bottom: 8px;
-}
-
-.income-list--item .header {
-  height: 48px;
-  line-height: 48px;
-  font-size: 14px;
   font-weight: 400;
-  border-bottom: 1px solid #E0E0E0;
+  margin-bottom: 15px;
+  display: flex;
 }
 
-.income-list--item .body {
+.order-list .order-list--item .order-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /*height: 38px;*/
   font-size: 12px;
   font-weight: 400;
-  border-bottom: 1px solid #E0E0E0;
-  padding-top: 10px;
 }
 
-.income-list--item .body .row {
-  margin-bottom: 15px;
-  min-height: 18px;
-  justify-content: space-between;
-
+.order-list .order-list--item .order-header .info {
+  font-size: 15px;
+  margin-bottom: 0;
 }
 
-.income-list--item .body .row>div {
-  flex: 1;
+.order-list .order-list--item .order-header .status {
+  color: #E94634;
+  font-size: 15px;
 }
 
-.income-list--item .footer {
-  height: 58px;
-  background-color: #fff;
+.order-list .order-list--item .order-body {
+  /*padding-top: 12px;*/
+  padding-bottom: 1px;
+  
+}
+.order-list .order-list--item .order-body .info{
+	display: flex;
+	justify-content: space-between;
+	font-size: 15px;
+	align-items: center;
+  color: rgba(38, 43, 47, 0.5);
+}
+.order-list .order-list--item .order-body .info span:nth-of-type(2){
+  color: #262B2F;
+}
+.order-list .order-list--item .order-footer {
+  height: 40px;
+  padding-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  /*border-top: 1px solid #e0e0e0;*/
+}
+.infomsg{
+	display: flex;
+	justify-content: space-between;
+}
+.infomsg span{
+	color: rgba(38, 43, 47, 0.5);
+	font-size: 15px;
+}
+.order-list .order-list--item .order-footer button {
+  height: 40px;
+  width: 100px;
+  /*line-height: 40px;*/
+  background: #01C6F3;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  border: none;
+  box-shadow: none;
+  outline: none;
 }
 
-.income-list--item .footer button {
-  border: none;
-  outline: none;
-  box-shadow: none;
-  height: 28px;
-  background: rgba(71, 149, 239, 1);
-  border-radius: 5px;
-  font-size: 12px;
-  font-weight: 400;
-  padding: 0 20px;
-  color: #fff;
-  margin-left: 15px;
-}
 
 /* 底部tab栏 */
 .tabs {
+	max-width: 414px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -191,7 +268,7 @@ body {
   position: fixed;
   width: 100%;
   bottom: 0;
-  box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2);
+  /*box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2);*/
 }
 
 .tabs .tab {
@@ -276,7 +353,20 @@ body {
   color: #4795EF;
 }
 
+
 ::-webkit-input-placeholder {
   color: rgba(175, 175, 175, 1);
   font-size: 13px;
+}
+.info .card {
+  background: url(../images/icon/guan.png) no-repeat center / 100%;
+  width: 35px;
+  height: 20px;
+  margin-left: 15px;
+  /*position: absolute;*/
+  /*right: 20px;*/
+  /*top: 41px;*/
+}
+.select .card {
+  background-image: url(../images/icon/kai.png);
 }

@@ -175,7 +175,7 @@ footer {
 button {
   height: 40px;
   background: #01C6F3;
-  border-radius: 5px;
+  border-radius: 8px;
   color: white;
   font-size: 15px;
   font-weight: 400;
@@ -183,6 +183,11 @@ button {
   box-shadow: none;
   outline: none;
   width: 100%;
+}
+.infomsg{
+	margin-top: 15px;
+	display: flex;
+	justify-content: space-between;
 }
 .info{
 	display: flex;

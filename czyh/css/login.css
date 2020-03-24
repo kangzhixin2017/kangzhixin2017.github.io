@@ -129,7 +129,7 @@ button {
 }
 
 .tip-row {
-	width: 315px;
+	width: 100%;
   height: 18px;
   font-size: 13px;
   color: rgba(37, 43, 47, 0.5);
