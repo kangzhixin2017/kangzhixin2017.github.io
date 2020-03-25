@@ -68,12 +68,12 @@ body {
 .choose-card {
   min-height: calc(100vh - 255px);
   background-color: #fff;
-  padding: 10px 0;
+  padding: 15px 0;
 }
 
 .choose-card .title {
   margin-left: 13px;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   /*border-bottom: 1px solid #E0E0E0;*/
 }
 
