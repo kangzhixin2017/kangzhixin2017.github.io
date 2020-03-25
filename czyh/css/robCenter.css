@@ -113,13 +113,13 @@ tipsbody {
 }
 
 .data-grid .data-grid-row .data-grid-col .title {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 300;
   /*margin-left: 0px;*/
   margin-top: 6px;
   height: 13px;
   line-height: 13px;
-  color: rgba(38, 43, 47, 0.5);
+  color: rgba(38, 43, 47, 0.6);
 }
 
 .data-grid .data-grid-row .data-grid-col .number {
