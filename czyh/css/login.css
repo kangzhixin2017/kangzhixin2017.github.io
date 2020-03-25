@@ -99,10 +99,11 @@ header {
 
 .input-row .code-button {
   height: 38px;
+  width: 80px;
   color: #01C6F3;
   line-height: 38px;
   padding: 0 20px;
-  /*background: rgba(71, 149, 239, 1);*/
+  background: #fafafa;
   border-radius: 2px;
   font-size: 15px;
   font-weight: 400;
