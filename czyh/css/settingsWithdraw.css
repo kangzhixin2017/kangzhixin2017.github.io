@@ -1,5 +1,5 @@
 body {
-  background: #f6f6f6;
+  background: #fafafa;
   margin: 0;
   padding: 0;
 }
@@ -8,11 +8,11 @@ body {
   max-width: 414px;
   margin: 0 auto;
   min-height: 100vh;
-  background: #fff;
+  background: #fafafa;
 }
 
 .settings-page header {
-  margin-bottom: 15px;
+  /*margin-bottom: 15px;*/
 }
 
 .settings-page header .page-title {
@@ -40,7 +40,7 @@ body {
 .infos {
   background: #fff;
   padding: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
 }
 
 .infos .row {

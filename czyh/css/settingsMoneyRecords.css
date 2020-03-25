@@ -8,11 +8,11 @@ body {
   max-width: 414px;
   margin: 0 auto;
   min-height: 100vh;
-  background: #fff;
+  background: #fafafa;
 }
 
 .settings-page header {
-  margin-bottom: 15px;
+  margin-bottom: 8px;
 }
 
 .settings-page header .page-title {
@@ -40,7 +40,7 @@ body {
 .search-container {
   padding: 15px 8px 15px 15px;
   background: #fff;
-  margin-top: 8px;
+  /*margin-top: 8px;*/
 }
 
 .row {
