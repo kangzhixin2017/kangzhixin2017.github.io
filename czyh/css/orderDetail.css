@@ -51,6 +51,7 @@ body {
 .infodi{
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 15px;
 }
 .infodi span{
 	color: rgba(38, 43, 47, 0.5);
