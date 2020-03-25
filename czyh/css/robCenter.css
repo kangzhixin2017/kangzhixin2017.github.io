@@ -53,7 +53,8 @@ tipsbody {
 }
 
 .rob-center-page .content .time {
-  margin-top: 50px;
+  /*margin-top: 60px;*/
+ line-height: 138px;
   font-size: 24px;
   font-weight: 500;
 }
