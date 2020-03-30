@@ -101,8 +101,8 @@ body {
   font-weight: 400;
   /*margin-left: 5px;*/
   margin-top: 6px;
-  height: 13px;
-  line-height: 13px;
+  /*height: 13px;*/
+  line-height: 15px;
   color: rgba(38, 43, 47, 0.5);
 }
 
@@ -110,9 +110,10 @@ body {
   font-size: 15px;
   font-weight: 400;
   /*margin-left: 20px;*/
-  margin-top: 6px;
-  height: 28px;
-  line-height: 28px;
+  /*margin-top: 6px;*/
+ padding-top: 12px;
+  height: 15px;
+  line-height: 15px;
   color: rgba(38, 43, 47, 1);
 }
 

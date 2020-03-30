@@ -55,7 +55,7 @@
 				<div style="position: absolute;line-height: 30px;top:calc(50% - 15px);width: 100%;text-align: center;color: #262B2F;font-size: 18px;">00:58</div>
 			</div>
 
-			<div style="color: #262B2F;font-size: 18px;">倒计时</div>
+			<div onclick="text()" style="color: #262B2F;font-size: 18px;">倒计时</div>
 			<div style="display: flex;align-items: center;justify-content: center;">
 				<span style="width: 65px;height: 1px;background-image: linear-gradient(to right, #fff , #01C6F3);"></span>
 				<span style="color: #E94634;margin: 16px 15px;font-size: 18px;">请认真阅读以下文字</span>
@@ -110,7 +110,9 @@
 				document.body.removeChild(_input); // 删除临时实例
 				alert(msg);
 			}
-			 toast.confirm(
+			function text(){
+				alert(111)
+				toast.confirm(
 				   "当前二维码失效",
 				   "",
 				   [
@@ -120,6 +122,8 @@
 				     console.log(val);
 				   }
 				 );
+			}
+			 
 		</script>
 	</body>
 

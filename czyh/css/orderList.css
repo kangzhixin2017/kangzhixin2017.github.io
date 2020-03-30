@@ -137,7 +137,7 @@ body {
 }
 
 .time-row {
-  border-bottom: 1px solid #E0E0E0;
+  /*border-bottom: 1px solid #E0E0E0;*/
   font-size: 15px;
   color: #262B2F;
   font-weight: 400;
