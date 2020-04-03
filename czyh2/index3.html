@@ -9,7 +9,7 @@
 		<link rel="stylesheet" type="text/css" href="css/toast.css" />
 		<script src="js/jquery-3.4.1.min.js"></script>
 		<style type="text/css">
-			.section{
+			.section {
 				background-color: #01C6F3;
 				color: #FFF;
 			}
@@ -33,7 +33,7 @@
 			<div style="font-size: 15px;color: #E94634;line-height: 30px;margin-top: 16px;margin-bottom: 10px;padding: 0 20px;">重复扫码和修改金额无法到账，概不负责,付款成功5分钟后未到账，请找客服处理！</div>
 			<div style="margin: 0 auto;width: 90%;height: 1px;background-color: #E0E0E0;"></div>
 			<div style="font-size: 18px;color: #E94634;line-height: 30px;margin-top: 10px;padding: 0 50px;">相册扫码暂时无法使用，请用后置摄像头扫码！</div>
-			
+
 			<!--<div style="font-size: 15px;color: #E94634;line-height: 30px;">请按订单金额付款</div>
 			<div style="font-size: 15px;color: #E94634;line-height: 30px;">否则造成损失无法追回</div>-->
 			<div style="display: flex;align-items: center;justify-content: center;">
@@ -42,12 +42,16 @@
 				<span style="width: 65px;height: 1px;background-image: linear-gradient(to left, #fff , #01C6F3);"></span>
 			</div>
 			<div style="display: flex;padding: 0 20px;align-items: center;">
-				<div style="color: #262B2F;font-size: 18px;line-height: 33px;margin-right: 15px;"><nobr>收款姓名</nobr></div>
+				<div style="color: #262B2F;font-size: 18px;line-height: 33px;margin-right: 15px;">
+					<nobr>收款姓名</nobr>
+				</div>
 				<div style="background-color: #F3F6FC;line-height: 33px;text-align: center;width: 100%;">xxx</div>
 				<button style="border: none;background-color: #01C6F3;width: 58px;height: 33px;border-radius: 5px;margin-left: 15px;color: white;font-size: 15px;" onclick="copy('werwer')"><nobr>复制</nobr></button>
 			</div>
 			<div style="display: flex;padding: 0 20px;align-items: center;margin-top: 16px;">
-				<div style="color: #262B2F;font-size: 18px;line-height: 33px;margin-right: 15px;"><nobr>收款账号</nobr></div>
+				<div style="color: #262B2F;font-size: 18px;line-height: 33px;margin-right: 15px;">
+					<nobr>收款账号</nobr>
+				</div>
 				<div style="background-color: #F3F6FC;line-height: 17px;font-size: 17px;text-align: center;width: 100%;word-wrap: break-word;word-break: break-all;word-wrap: break-word;padding: 8px 0;">342342983475973934223</div>
 				<button style="border: none;background-color: #01C6F3;width: 58px;height: 33px;border-radius: 5px;margin-left: 15px;color: white;font-size: 15px;" onclick="copy('werwer')"><nobr>复制</nobr></button>
 			</div>
@@ -68,16 +72,16 @@
 			</div>-->
 			<div style="padding:0 15px;margin-top: 20px;">
 				<div style="display: flex;justify-content: space-between;">
-					<div class="btn1" onclick="btn('.btn1')" style="width: 48%;height: 40px;font-size: 18;text-align: center;line-height: 40px;border-radius: 8px;background-color: #F3F6FC;color: rgba(38, 43, 47, 0.5);">无法付款</div>
-					<div class="btn2" onclick="btn('.btn2')" style="width: 48%;height: 40px;font-size: 18;text-align: center;line-height: 40px;border-radius: 8px;background-color: #F3F6FC;color: rgba(38, 43, 47, 0.5);">我已付款</div>
+					<div class="btn1 bg" onclick="btn('.btn1')" style="width: 48%;height: 40px;font-size: 18;text-align: center;line-height: 40px;border-radius: 8px;background-color: #F3F6FC;color: rgba(38, 43, 47, 0.5);">无法付款</div>
+					<div class="btn2 bg" onclick="btn('.btn2')" style="width: 48%;height: 40px;font-size: 18;text-align: center;line-height: 40px;border-radius: 8px;background-color: #F3F6FC;color: rgba(38, 43, 47, 0.5);">我已付款</div>
 				</div>
 				<div style="display: flex;justify-content: space-between;margin-top: 8px;">
-					<div class="btn3" onclick="btn('.btn3')" style="width: 48%;height: 40px;font-size: 18;text-align: center;line-height: 40px;border-radius: 8px;background-color: #F3F6FC;color: rgba(38, 43, 47, 0.5);">换码(1)</div>
-					<div class="btn4" onclick="btn('.btn4')" style="width: 48%;height: 40px;font-size: 18;text-align: center;line-height: 40px;border-radius: 8px;background-color: #F3F6FC;color: rgba(38, 43, 47, 0.5);">打开支付宝</div>
+					<div class="btn3 bg" onclick="btn('.btn3')" style="width: 48%;height: 40px;font-size: 18;text-align: center;line-height: 40px;border-radius: 8px;background-color: #F3F6FC;color: rgba(38, 43, 47, 0.5);">换码(1)</div>
+					<div class="btn4 bg" onclick="btn('.btn4')" style="width: 48%;height: 40px;font-size: 18;text-align: center;line-height: 40px;border-radius: 8px;background-color: #F3F6FC;color: rgba(38, 43, 47, 0.5);">打开支付宝</div>
 				</div>
 			</div>
 			<div style="font-size: 21px;color: #E94634;line-height: 30px;margin-top: 25px;padding: 0 10px;">识别不出转化码，可使用转账形式</div>
-			
+
 			<!--<div style="font-size: 15px;color: #E94634;line-height: 30px;">请按订单金额付款</div>
 			<div style="font-size: 15px;color: #E94634;line-height: 30px;">否则造成损失无法追回</div>-->
 			<div style="display: flex;align-items: center;justify-content: center;">
@@ -86,12 +90,16 @@
 				<span style="width: 65px;height: 1px;background-image: linear-gradient(to left, #fff , #01C6F3);"></span>
 			</div>
 			<div style="display: flex;padding: 0 20px;align-items: center;">
-				<div style="color: #262B2F;font-size: 18px;line-height: 33px;margin-right: 15px;"><nobr>收款姓名</nobr></div>
+				<div style="color: #262B2F;font-size: 18px;line-height: 33px;margin-right: 15px;">
+					<nobr>收款姓名</nobr>
+				</div>
 				<div style="background-color: #F3F6FC;line-height: 33px;text-align: center;width: 100%;">xxx</div>
 				<button style="border: none;background-color: #01C6F3;width: 58px;height: 33px;border-radius: 5px;margin-left: 15px;color: white;font-size: 15px;" onclick="copy('werwer')"><nobr>复制</nobr></button>
 			</div>
 			<div style="display: flex;padding: 0 20px;align-items: center;margin-top: 16px;">
-				<div style="color: #262B2F;font-size: 18px;line-height: 33px;margin-right: 15px;"><nobr>收款账号</nobr></div>
+				<div style="color: #262B2F;font-size: 18px;line-height: 33px;margin-right: 15px;">
+					<nobr>收款账号</nobr>
+				</div>
 				<div style="background-color: #F3F6FC;line-height: 17px;font-size: 17px;text-align: center;width: 100%;word-wrap: break-word;word-break: break-all;word-wrap: break-word;padding: 8px 0;">342342983475973934223</div>
 				<button style="border: none;background-color: #01C6F3;width: 58px;height: 33px;border-radius: 5px;margin-left: 15px;color: white;font-size: 15px;" onclick="copy('werwer')"><nobr>复制</nobr></button>
 			</div>
@@ -117,30 +125,25 @@
 				document.body.removeChild(_input); // 删除临时实例
 				alert(msg);
 			}
+
 			function btn(e) {
-				$('.btn1').css('background-color','#F3F6FC')
-				$('.btn1').css('color','rgba(38, 43, 47, 0.5)')
-				$('.btn2').css('background-color','#F3F6FC')
-				$('.btn2').css('color','rgba(38, 43, 47, 0.5)')
-				$('.btn3').css('background-color','#F3F6FC')
-				$('.btn3').css('color','rgba(38, 43, 47, 0.5)')
-				$('.btn4').css('background-color','#F3F6FC')
-				$('.btn4').css('color','rgba(38, 43, 47, 0.5)')
-				$(e).css('background-color','#01C6F3')
-				$(e).css('color','#fff')
+				$('.bg').css('background-color', '#F3F6FC')
+				$('.bg').css('color', 'rgba(38, 43, 47, 0.5)')
+				$(e).css('background-color', '#01C6F3')
+				$(e).css('color', '#fff')
 			}
-//			(function text() {
-//				toast.confirm(
-//					"当前二维码失效",
-//					"", [{
-//						text: "确定",
-//						color: "#01C6F3"
-//					}],
-//					function(val) {
-//						console.log(val);
-//					}
-//				);
-//			})()
+			//			(function text() {
+			//				toast.confirm(
+			//					"当前二维码失效",
+			//					"", [{
+			//						text: "确定",
+			//						color: "#01C6F3"
+			//					}],
+			//					function(val) {
+			//						console.log(val);
+			//					}
+			//				);
+			//			})()
 		</script>
 	</body>
 
