@@ -8,6 +8,12 @@
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="css/toast.css" />
 		<script src="js/jquery-3.4.1.min.js"></script>
+		<style type="text/css">
+			.section{
+				background-color: #01C6F3;
+				color: #FFF;
+			}
+		</style>
 	</head>
 
 	<body style="margin: 0;padding: 0;text-align: center;width: 100%;background-color: #f5f5f5;">
@@ -18,7 +24,6 @@
 				<img src="image/yuan.png" alt="" width="150" height="150" />
 				<div style="position: absolute;line-height: 30px;top:calc(50% - 15px);width: 100%;text-align: center;color: #262B2F;font-size: 18px;">00:58</div>
 			</div>
-
 			<!--<div onclick="text()" style="color: #262B2F;font-size: 18px;line-height: 18px;">支付倒计时</div>-->
 			<div style="display: flex;align-items: center;justify-content: center;line-height: 18px;">
 				<span style="width: 65px;height: 1px;background-image: linear-gradient(to right, #fff , #01C6F3);"></span>
@@ -63,12 +68,12 @@
 			</div>-->
 			<div style="padding:0 15px;margin-top: 20px;">
 				<div style="display: flex;justify-content: space-between;">
-					<div style="width: 48%;height: 40px;font-size: 18;color: #fff;text-align: center;line-height: 40px;border-radius: 8px;background-color: #01C6F3;">无法付款</div>
-					<div style="width: 48%;height: 40px;font-size: 18;color: #fff;text-align: center;line-height: 40px;border-radius: 8px;background-color: #01C6F3;">我已付款</div>
+					<div class="btn1" onclick="btn('.btn1')" style="width: 48%;height: 40px;font-size: 18;text-align: center;line-height: 40px;border-radius: 8px;background-color: #F3F6FC;color: rgba(38, 43, 47, 0.5);">无法付款</div>
+					<div class="btn2" onclick="btn('.btn2')" style="width: 48%;height: 40px;font-size: 18;text-align: center;line-height: 40px;border-radius: 8px;background-color: #F3F6FC;color: rgba(38, 43, 47, 0.5);">我已付款</div>
 				</div>
 				<div style="display: flex;justify-content: space-between;margin-top: 8px;">
-					<div style="width: 48%;height: 40px;font-size: 18;color: #fff;text-align: center;line-height: 40px;border-radius: 8px;background-color: #01C6F3;">换码(1)</div>
-					<div style="width: 48%;height: 40px;font-size: 18;color: #fff;text-align: center;line-height: 40px;border-radius: 8px;background-color: #01C6F3;">打开支付宝</div>
+					<div class="btn3" onclick="btn('.btn3')" style="width: 48%;height: 40px;font-size: 18;text-align: center;line-height: 40px;border-radius: 8px;background-color: #F3F6FC;color: rgba(38, 43, 47, 0.5);">换码(1)</div>
+					<div class="btn4" onclick="btn('.btn4')" style="width: 48%;height: 40px;font-size: 18;text-align: center;line-height: 40px;border-radius: 8px;background-color: #F3F6FC;color: rgba(38, 43, 47, 0.5);">打开支付宝</div>
 				</div>
 			</div>
 			<div style="font-size: 21px;color: #E94634;line-height: 30px;margin-top: 25px;padding: 0 10px;">识别不出转化码，可使用转账形式</div>
@@ -112,7 +117,18 @@
 				document.body.removeChild(_input); // 删除临时实例
 				alert(msg);
 			}
-
+			function btn(e) {
+				$('.btn1').css('background-color','#F3F6FC')
+				$('.btn1').css('color','rgba(38, 43, 47, 0.5)')
+				$('.btn2').css('background-color','#F3F6FC')
+				$('.btn2').css('color','rgba(38, 43, 47, 0.5)')
+				$('.btn3').css('background-color','#F3F6FC')
+				$('.btn3').css('color','rgba(38, 43, 47, 0.5)')
+				$('.btn4').css('background-color','#F3F6FC')
+				$('.btn4').css('color','rgba(38, 43, 47, 0.5)')
+				$(e).css('background-color','#01C6F3')
+				$(e).css('color','#fff')
+			}
 //			(function text() {
 //				toast.confirm(
 //					"当前二维码失效",
