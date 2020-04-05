@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/toast.css" />
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<style type="text/css">
+			.section {
+				background-color: #01C6F3;
+				color: #FFF;
+			}
+		</style>
+	</head>
+
+	<body style="margin: 0;padding: 0;text-align: center;width: 100%;background-color: #f5f5f5;">
+		<div style="max-width: 414px; margin: 0 auto;min-height: 100vh;background: #fff;padding-bottom: 0px;position: relative;">
+			<div style="height: 100%;color: white;writing-mode:vertical-rl;position: absolute;top: 0;left: 0;z-index: 999;background-color: red;text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;请按订单金额付款&nbsp;&nbsp;&nbsp;失败请返回次页面使用其他付款方式</div>
+			<div style="height: 100%;color: white;writing-mode:vertical-rl;position: absolute;top: 0;right: 0;z-index: 999;background-color: red;text-align: left;">&nbsp;&nbsp;&nbsp;&nbsp;为了保证支付成功&nbsp;&nbsp;&nbsp;下拉页面更多人推荐使用支付宝转账</div>
+			<!--<div onclick="text()" style="color: #262B2F;font-size: 18px;line-height: 18px;">支付倒计时</div>-->
+
+			<div style="background-color: red;display: flex;align-items: center;justify-content: center;">
+				<span style="color: #262B2F;margin: 16px 30px 0;font-size: 15px;word-wrap: break-word;word-break: break-all;word-wrap: break-word;color: yellow;line-height: 15px;">订单号:928749827983479309800</span>
+			</div>
+			<div style="background-color: red;display: flex;align-items: center;justify-content: center;">
+				<span style="color: #262B2F;margin: 10px 30px;font-size: 18px;word-wrap: break-word;word-break: break-all;word-wrap: break-word;color: yellow;line-height: 18px;">付款倒计时：00:30</span>
+			</div>
+			<div style="margin-top: 5px;position: relative;display: flex;justify-content: center;">
+				<div style="background-color: #0097f1;width: 270px;height: 340px;"></div>
+				<div style="position: absolute;top: 10px;color: white;font-size: 22px;font-weight: bold;">支付就用支付宝</div>
+				<img style="width: 207px;height: 207px;position: absolute;top: 60px;" src="image/a3.png" />
+				<div style="position: absolute;top: 275px;color: white;font-size: 16px;">发送次二维码给支付宝好友</div>
+				<div style="position: absolute;top: 295px;color: white;font-size: 16px;">长按识别扫码或</div>
+				<div style="position: absolute;top: 315px;color: white;font-size: 16px;">使用后置摄像头扫码</div>
+			</div>
+			<button style="margin-top: 10px;border: none;background-color: #01C6F3;width: 240px;height: 33px;border-radius: 5px;margin-left: 5px;color: white;font-size: 15px;" onclick="copy('werwer')"><nobr>付款失败换个二维码试试</nobr></button>
+			<div style="color: #262B2F;font-size: 18px;margin-top: 10px;line-height: 18px;">本次订单金额</div>
+			<!--<div style="color: rgba(38, 43, 47, 0.5);font-size: 18px;line-height: 18px;margin-top: 12px;">订单号:2384678263487623887324</div>-->
+			<div style="margin-top: 12px;">
+				<div style="display: flex;justify-content: center;">
+					<div style="background-color: #F3F6FC;width: 150px;height: 40px;line-height: 40px;color: #262B2F;font-size: 25px;">5000元</div>
+					<button style="border: none;background-color: #01C6F3;width: 58px;height: 40px;border-radius: 5px;margin-left: 8px;color: white;font-size: 15px;" onclick="copy('werwer')"><nobr>复制</nobr></button>
+				</div>
+			</div>
+			<div style="font-size: 15px;color: #E94634;line-height: 17px;margin-top: 15px;padding: 0 25px;">如遇扫码失败请使用支付宝转账100%成功</div>
+
+			<!--<div style="font-size: 15px;color: #E94634;line-height: 30px;">请按订单金额付款</div>
+			<div style="font-size: 15px;color: #E94634;line-height: 30px;">否则造成损失无法追回</div>-->
+
+			<div style="display: flex;padding: 0 30px;align-items: center;margin-top: 15px;">
+				<div style="color: #262B2F;font-size: 18px;line-height: 33px;margin-right: 5px;">
+					<nobr>收款姓名</nobr>
+				</div>
+				<div style="background-color: #F3F6FC;line-height: 33px;text-align: center;width: 100%;">xxx</div>
+				<button style="border: none;background-color: #01C6F3;width: 58px;height: 33px;border-radius: 5px;margin-left: 5px;color: white;font-size: 15px;" onclick="copy('werwer')"><nobr>复制</nobr></button>
+			</div>
+			<div style="display: flex;padding: 0 30px;align-items: center;margin-top: 16px;">
+				<div style="color: #262B2F;font-size: 18px;line-height: 33px;margin-right: 5px;">
+					<nobr>收款账号</nobr>
+				</div>
+				<div style="background-color: #F3F6FC;line-height: 17px;font-size: 17px;text-align: center;width: 100%;word-wrap: break-word;word-break: break-all;word-wrap: break-word;padding: 8px 0;">342342983475973934223</div>
+				<button style="border: none;background-color: #01C6F3;width: 58px;height: 33px;border-radius: 5px;margin-left: 5px;color: white;font-size: 15px;" onclick="copy('werwer')"><nobr>复制</nobr></button>
+			</div>
+
+			<img style="width: 95%;margin-top: 30px;display: block;" src="image/1.gif" />
+
+		</div>
+		<script src="js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			function copy(msg) {
+				var _input = document.createElement("input"); // 直接构建input
+				_input.value = msg; // 设置内容
+				document.body.appendChild(_input); // 添加临时实例
+				_input.select(); // 选择实例内容
+				document.execCommand("Copy"); // 执行复制
+				document.body.removeChild(_input); // 删除临时实例
+				alert(msg);
+			}
+
+			function btn(e) {
+				$('.bg').css('background-color', '#F3F6FC')
+				$('.bg').css('color', 'rgba(38, 43, 47, 0.5)')
+				$(e).css('background-color', '#01C6F3')
+				$(e).css('color', '#fff')
+			}
+			//			(function text() {
+			//				toast.confirm(
+			//					"当前二维码失效",
+			//					"", [{
+			//						text: "确定",
+			//						color: "#01C6F3"
+			//					}],
+			//					function(val) {
+			//						console.log(val);
+			//					}
+			//				);
+			//			})()
+		</script>
+	</body>
+
+</html>
