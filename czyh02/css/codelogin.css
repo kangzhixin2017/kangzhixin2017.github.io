@@ -1,0 +1,150 @@
+body {
+  background: #f6f6f6;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  max-width: 414px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #fff;
+}
+
+header {
+  height: 20px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #262B2F;
+}
+
+header>img {
+  margin-right: 8px;
+}
+
+.content {
+  text-align: center;
+  margin-top: 30px;
+  padding: 0 15px;
+}
+
+.content>img {
+  padding: 50px 0;
+}
+
+.register-container {
+  margin-top: 22px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  height: 50px;
+}
+
+.row.select-row {
+  height: 32px;
+  background-color: #fafafa;
+  border-radius: 5px;
+  position: relative;
+  padding: 0 13px;
+}
+
+.select-row .label {
+  font-size: 15px;
+  font-weight: 400;
+  color:#262B2F;
+  padding: 0 8px 0 13px;
+  border-right: 1px solid #D1D1D1;
+  height: 20px;
+ line-height: 20px;
+  position: absolute;
+  left: 0;
+}
+
+.select-row select {
+  padding-left: 40px;
+  flex: auto;
+  font-size: 15px;
+  outline: none;
+  text-align: center;
+  text-align-last: center;
+  border: none;
+  background-color: #F5F5F5;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  /* padding-right: 10px; */
+  background: url('../images/icon/down.png') no-repeat right;
+  background-size: 11px 6px;
+  color: rgba(37, 43, 47, 0.5);
+}
+
+.input-row {
+	height: 40px;
+  border-bottom: 0.5px solid rgba(224, 224, 224, 1);
+}
+
+.input-row input {
+  height: 21px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #000;
+  line-height: 21px;
+  border: none;
+  width: 100%;
+  outline: none;
+  padding-left: 15px;
+}
+
+.input-row .verify-code {
+  font-size: 13px;
+  font-weight: 400;
+  min-width: 78px;
+  height: 27px;
+  line-height: 27px;
+  color: #E94634;
+  /*border: 1px solid #4B97EF;*/
+  border-radius: 8px;
+}
+
+.input-row .verify-code.fetch,
+.input-row .verify-code.refetch {
+  color: #E94634;
+  /*padding: 0 8px;*/
+}
+
+::-webkit-input-placeholder {
+  color: rgba(175, 175, 175, 1);
+  font-size: 15px;
+}
+
+button {
+  margin: 0 auto;
+  width: 100%;
+  height: 40px;
+  background: #01C6F3;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 26px;
+  border: none;
+  box-shadow: none;
+}
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  font-size: 14px;
+  color: #9C9C9C;
+  font-weight: 400;
+  margin-top: 8px;
+  cursor: pointer;
+  text-align: center;
+}

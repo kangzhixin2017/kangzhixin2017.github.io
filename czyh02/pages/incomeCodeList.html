@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />-->
+		<!--<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />-->
+		<!--<meta name="viewport" content="width=375, maximum-scale=1.0, user-scalable=no" />-->
+		<!--<meta name="viewport" content="width=375, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>收款码列表</title>
+		<link rel="stylesheet" href="../css/incomeCodeList.css" />
+		<link rel="stylesheet" href="../css/iosSelect.css">
+		<link rel="stylesheet" href="../css/toast.css">
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="../js/iosSelect.js"></script>
+	</head>
+
+	<body>
+		<div class="order-list-page">
+			<div class="header">
+				<div class="page-title">收款码列表<div style="position: absolute;right: 0;top: 0;line-height: 46px;padding-right: 6px;color: #262B2F;font-size: 13px;">+新增收款码</div></div>
+				
+				<div class="search-container" style="display: flex;">
+					<div class="row select-row">
+						<div class="label">类型</div>
+						<select>
+							<option value="recharge">支付宝扫码</option>
+							<option value="withdraw">微信扫码</option>
+						</select>
+					</div>
+					<button style="font-size: 15px;color: white;width: 65px;height: 40px;border-radius: 8px;background-color: #01C6F3;border: none;margin-left: 5px;">查询</button>
+				</div>
+			</div>
+			<div class="order-list">
+				<div class="order-list--item">
+					<div class="order-header" style="padding-top: 10px">
+						<div class="info">
+							<span class="label" style="font-size: 18px;">交易类型：</span>
+							<span class="value" style="font-size: 18px;">充值订单</span>
+						</div>
+					</div>
+					<div class="info" onclick="handleSelect(this);" style="border-bottom: 1px solid #e0e0e0;margin-top: 5px;padding-bottom: 10px;display: flex;justify-content: space-between;align-items: center;">
+						<span style="font-size: 18px;color: #262B2F;">状态</span>
+						<div>
+							<!--<div>开启</div>-->
+							<div class="card"></div>
+						</div>
+					</div>
+					<div class="order-body">
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/name.png" width="12" />收款姓名</span>
+							<span class="value">202001234737382918</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/card.png" width="12" />收款卡号</span>
+							<span class="value">202001234737</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/zuixiao.png" width="12" />最小收款</span>
+							<span class="value">184***2372</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/zuida.png" width="12" />最大收款</span>
+							<span class="value">c2c在线交易充值</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/shouyi.png" width="12" />累计产生收益</span>
+							<span class="value">239289元</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;width: 12px;" src="../images/icon/address.png"/>省市</span>
+							<span class="value">239289元</span>
+						</div>
+						<div class="infomsg" style="padding-bottom: 20px;">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/ma.png" width="12" />收款码</span>
+							<span class="value" style="margin-right: 5px;"> <img src="../images/icon/upload.png" width="104" height="104" /> </span>
+						</div>
+						
+					</div>
+					<div class="order-footer">
+						<!--<button onclick="handleReceive();">订单详情</button>
+						<button style="margin-left: 15px;" onclick="handleReceive();">申诉</button>-->
+						<button style="margin-left: 15px;" onclick="handleReceive();">删除</button>
+					</div>
+				</div>
+
+				<div class="more">加载更多</div>
+			</div>
+			<footer class="tabs">
+				<div class="tab tab-order-list active">
+					<div class="tab-tag">3</div>
+					<div class="tab-icon icon-order-list"></div>
+					<div class="tab-label">订单列表</div>
+				</div>
+				<div class="tab tab-rob-order">
+					<div class="tab-icon icon-rob-order"></div>
+					<div class="tab-label">抢单大厅</div>
+				</div>
+				<div class="tab tab-buy-center">
+					<div class="tab-icon icon-buy-center"></div>
+					<div class="tab-label">买分中心</div>
+				</div>
+				<div class="tab tab-buy-order">
+					<div class="tab-icon icon-buy-order"></div>
+					<div class="tab-label">买分订单</div>
+				</div>
+				<div class="tab tab-me">
+					<div class="tab-icon icon-me"></div>
+					<div class="tab-label">我的</div>
+				</div>
+			</footer>
+			<!--<div class="s" style="width: 100vw;height: 100vh;background-color: rgba(0,0,0,0.5);position: fixed;top: 0;left: 0;display: none;">
+				<div style="width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;">
+					<input type="" name="" id="" value="" />
+				</div>
+			</div>-->
+		</div>
+		<script src="../js/date-select.js"></script>
+		<script src="../js/toast.js"></script>
+		<script>
+			$('.page-title').on('touchmove', function(e) {
+				e.preventDefault();
+			})
+
+			function clearSelect() {
+				var cardList = document.getElementsByClassName("card");
+				for(var i = 0; i < cardList.length; i++) {
+					if(cardList[i]) {
+						cardList[i].classList.remove("select");
+					}
+				}
+			}
+
+			function handleSelect(cardElement) {
+				if(cardElement) {
+					clearSelect();
+					cardElement.classList.toggle("select");
+				}
+			}
+
+			function handleReceive() {
+				toast.passwordConfirm(
+					"确认收到：xxx",
+					"请输入二级密码", [{
+							text: "取消",
+							color: "#000"
+						},
+						{
+							text: "发送",
+							color: "#4795EF"
+						}
+					],
+					function(type, val) {
+						console.log(type, val);
+					}
+				);
+			}
+		</script>
+	</body>
+
+</html>

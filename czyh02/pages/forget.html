@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+		<!--<meta name="viewport" content="width=375, maximum-scale=1.0, user-scalable=no" />-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>忘记密码</title>
+    <link rel="stylesheet" href="../css/forget.css" />
+    <script src="../js/jquery-3.4.1.min.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <img src="../images/back.png" width="9" height="15" onclick="history.back();" />
+        <span onclick="history.back();">忘记密码</span>
+      </header>
+      <div class="content">
+        <section class="register-container">
+          <div class="row select-row">
+            <div class="label">类型</div>
+            <select>
+              <option value="card">卡商</option>
+              <option value="ticket">券商</option>
+            </select>
+          </div>
+          <div class="row input-row" style="margin-top: 6px">
+          	<img src="../images/icon/phone.png" width="9" />
+          	
+            <input id="mobile" type="text" placeholder="请填写手机账号" />
+          </div>
+          <div class="row input-row">
+          	<img src="../images/icon/safe.png" width="9" />
+          	
+            <input id="password" type="password" placeholder="请输入验证码" />
+            <!-- <div class="verify-code fetched">60s重新获取</div> -->
+            <!--<div class="verify-code fetch">60s重新获取</div>-->
+             <div class="verify-code refetch">获取验证码</div> 
+          </div>
+          <div class="row input-row">
+          	<img src="../images/icon/password.png" width="9" />
+          	
+            <input id="code" type="text" placeholder="登陆密码：6-20位英文字母或者数字" />
+          </div>
+          <div class="row input-row">
+          	<img src="../images/icon/password.png" width="9" />
+          	
+            <input id="code" type="text" placeholder="请再次填写登陆密码" />
+          </div>
+          <button>立即找回</button>
+        </section>
+      </div>
+           <footer>
+      	<span style="height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+        <span style="margin-left: 21px;color: rgba(37, 43, 47, 0.5)">已有账号，</span>
+        <span style="margin-right: 21px;color: rgba(38, 43, 47, 1);">立即登录</span>
+      	<span style="height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+   
+   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>我要提现</title>
+    <link rel="stylesheet" href="../css/settingsWithdraw.css" />
+    <link rel="stylesheet" href="../css/toast.css" />
+    <script src="../js/toast.js"></script>
+  </head>
+  <body>
+    <div class="settings-page">
+      <header>
+        <div class="page-title">
+          <div class="back-button" onclick="history.back();">
+            <img src="../images/back.png" width="9" height="15" />
+          </div>
+          <span>我要提现</span>
+        </div>
+      </header>
+      <div class="infos">
+        <div class="row">
+          <div class="label">会员账号</div>
+          <div class="value">15938312817</div>
+        </div>
+        <div class="row">
+          <div class="label">当前余额</div>
+          <div class="value">1593831281</div>
+        </div>
+        <div class="row">
+          <div class="label">提现手续费</div>
+          <div class="value">提现金额*0.01%</div>
+        </div>
+        <div class="row">
+          <div class="label" style="color: #262B2F;">提现金额</div>
+          <div class="value">
+            <input style="text-align: right;font-size: 15px;" type="text" placeholder="请输入提现金额" />
+          </div>
+        </div>
+      </div>
+      <div class="choose-card">
+        <div class="title">选择银行卡</div>
+        <div class="cards" style="font-size: 13px;">
+          <div class="card blue" onclick="handleSelect(this);">
+            <div class="card-type"><img src="../images/icon/mejian.png" width="15" height="15" style="margin-right: 8px;"/>建设银行卡(6498***4232)</div>
+            <!--<div class="card-code">6498***4232</div>-->
+            <span>林空间</span>
+            <div class="card-select select"></div>
+          </div>
+          <div class="card purple" onclick="handleSelect(this);">
+            <div class="card-type"><img src="../images/icon/mezhao.png" width="15" height="15" style="margin-right: 8px;"/>招商银行卡(6498***4232)</div>
+            <!--<div class="card-code">6498***4232</div>-->
+            <span>林空间</span>
+            <div class="card-select"></div>
+          </div>
+          <div class="card purple" onclick="handleSelect(this);">
+            <div class="card-type"><img src="../images/icon/mebei.png" width="15" height="15" style="margin-right: 8px;"/>北京银行卡(6498***4232)</div>
+            <!--<div class="card-code">6498***4232</div>-->
+            <span>林空间</span>
+            <div class="card-select"></div>
+          </div>
+          <div class="card purple" onclick="handleSelect(this);">
+            <div class="card-type"><img src="../images/icon/megong.png" width="15" height="15" style="margin-right: 8px;"/>工商银行卡(6498***4232)</div>
+            <!--<div class="card-code">6498***4232</div>-->
+            <span>林空间</span>
+            <div class="card-select"></div>
+          </div>
+        </div>
+        <footer>
+          <button onclick="handleClickWithDraw();">点击提现</button>
+          <div class="footer1">
+					<span style="height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+					<span style="font-size: 14px;margin:0px 21px;color:rgba(38, 43, 47, 0.5)">提现明细</span>
+					<span style="height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+				</div>
+          <div class="tips">
+            <div class="tips-title">温馨提示：</div>
+            <div class="tips-content">
+              <p>1:单笔提现：1000～50010</p>
+              <p>2:提现时间：周一至周日：00：00-24:00</p>
+              <p>3:手续费=提现金额x0.01</p>
+              <p>注意：直接提现需要扣除手续费，系统派单收款不收取手续费</p>
+              <p>为了防止掉单情况，提现延迟到账时间24小时到账</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <div class="tabs">
+				<div class="tab tab-order-list ">
+					<!--<div class="tab-tag">3</div>-->
+					<div class="tab-icon icon-order-list"></div>
+					<div class="tab-label">买币中心</div>
+				</div>
+				<div class="tab tab-rob-order">
+					<div class="tab-icon icon-rob-order"></div>
+					<div class="tab-label">卖币中心</div>
+				</div>
+				<div class="tab tab-buy-center ">
+					<div class="tab-icon icon-buy-center"></div>
+					<div class="tab-label">订单列表</div>
+				</div>
+				<div class="tab tab-me active">
+					<div class="tab-icon icon-me"></div>
+					<div class="tab-label">个人中心</div>
+				</div>
+			</div>
+    </div>
+    <script>
+      function handleClickWithDraw() {
+        toast.confirm(
+          "提现失败",
+          "当前提现金额大于当前可用余额",
+          [
+            { text: "取消", color: "#000" },
+            { text: "确定", color: "#4795EF" }
+          ],
+          function(val) {
+            console.log(val);
+          }
+        );
+      }
+
+      function clearSelect() {
+        var cardList = document.getElementsByClassName("card");
+        for (var i = 0; i < cardList.length; i++) {
+          if (cardList[i]) {
+            cardList[i].classList.remove("select");
+          }
+        }
+      }
+
+      function handleSelect(cardElement) {
+        if (cardElement) {
+          clearSelect();
+          cardElement.classList.toggle("select");
+        }
+      }
+    </script>
+  </body>
+</html>

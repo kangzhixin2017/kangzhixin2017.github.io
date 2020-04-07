@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>我的团队</title>
+		<link rel="stylesheet" href="../css/settingsMyteam.css" />
+		<link rel="stylesheet" href="../css/toast.css">
+		<link rel="stylesheet" href="../css/pagination.css">
+	</head>
+
+	<body>
+		<div class="settings-page">
+			<header>
+				<div class="page-title">
+					<div class="back-button" onclick="history.back();">
+						<img src="../images/back.png" width="9" height="15" />
+					</div>
+					<span>我的团队</span>
+				</div>
+				<div class="search-container">
+					<div class="row" style=" height: 32px;">
+						<div class='select-row'>
+							<div class="input-container">
+								<img src="../images/icon_search.png" width="15" height="15" />
+								<input id="search" type="text" placeholder="输入搜索会员账号"></input>
+							</div>
+						</div>
+						<div class="button-container">
+							<button>查询</button>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="team-table">
+				<div class="team-table-head">
+					<div class="team-table-col" style="width: 30%;">上级/会员账号</div>
+					<div class="team-table-col" style="width: 30%;">注册时间</div>
+					<div class="team-table-col" style="width: 10%;">等级</div>
+					<div class="team-table-col" style="width: 20%;">分成比例</div>
+					<div class="team-table-col" style="width: 15%;">备注</div>
+				</div>
+				<div class="team-table-body">
+					<div class="team-table-row">
+						<div class="team-table-col " style="width: 30%;">
+							<span>298347298374</span><br />
+							<span>298347298374</span>
+						</div>
+						<div class="team-table-col " style="width: 30%;">2020-1-23 23:45</div>
+						<div class="team-table-col " style="width: 10%;">上线</div>
+						<div class="team-table-col " style="width: 20%;">
+							<button onclick="handleClick();">设置</button>
+						</div>
+						<div class="team-table-col " style="width: 15%;">
+							<button onclick="handleClick();">设置</button>
+						</div>
+					</div>
+					
+				</div>
+				<div class="team-table-footer">
+					<span style="height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+					<span style="font-size: 14px;margin:0px 21px;color:rgba(38, 43, 47, 0.5)">没有更多了</span>
+					<span style="height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+				</div>
+			</div>
+			<footer class="tabs">
+				<div class="tab tab-order-list ">
+					<!--<div class="tab-tag">3</div>-->
+					<div class="tab-icon icon-order-list"></div>
+					<div class="tab-label">买币中心</div>
+				</div>
+				<div class="tab tab-rob-order">
+					<div class="tab-icon icon-rob-order"></div>
+					<div class="tab-label">卖币中心</div>
+				</div>
+				<div class="tab tab-buy-center ">
+					<div class="tab-icon icon-buy-center"></div>
+					<div class="tab-label">订单列表</div>
+				</div>
+				<div class="tab tab-me active">
+					<div class="tab-icon icon-me"></div>
+					<div class="tab-label">个人中心</div>
+				</div>
+			</footer>
+		</div>
+		<script src="../js/toast.js"></script>
+		<script>
+			function handleClick() {
+				toast.list(
+					[{
+							label: '资金类型',
+							value: '手续费'
+						},
+						{
+							label: '订单号',
+							value: '48762736271'
+						},
+						{
+							label: '手续费',
+							value: '233434'
+						},
+						{
+							label: '实际到账金额',
+							value: '233434'
+						},
+						{
+							label: '订单金额',
+							value: '233434'
+						},
+						{
+							label: '创建时间',
+							value: '2020-1-23 23:45'
+						},
+					],
+					function(val) {
+						console.log(val);
+					}
+				);
+			}
+		</script>
+	</body>
+
+</html>

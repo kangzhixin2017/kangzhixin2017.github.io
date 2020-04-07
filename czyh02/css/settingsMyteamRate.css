@@ -1,0 +1,233 @@
+body {
+  background: #f6f6f6;
+  margin: 0;
+  padding: 0;
+}
+
+.settings-page {
+  max-width: 414px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #f4f4f4;
+}
+
+
+.settings-page header .page-title {
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  color: #262B2F;
+  position: relative;
+}
+
+.settings-page header .page-title .back-button {
+  position: absolute;
+  left: 0;
+  height: 46px;
+  width: 54px;
+}
+
+.settings-page header .page-title .back-button img {
+  margin: 13px 0 0 0;
+}
+
+.content .infos {
+  padding: 15px;
+  background-color: #fff;
+  font-size: 15px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content .infos .row {
+  margin-bottom: 16px;
+}
+.content .infos .row span:nth-of-type(1){
+  color: rgba(38, 43, 47, 0.5);
+  font-size: 15px;
+}
+.content .infos .row span:nth-of-type(2){
+  color: rgba(38, 43, 47, 1);
+  font-size: 15px;
+}
+.content .infos .row:last-child {
+  margin-bottom: 0;
+}
+
+.content .rates {
+  background-color: #fff;
+  padding: 15px 15px;
+  margin-top: 8px;
+  min-height: calc(100vh - 200px);
+}
+
+.content .rates .row {
+  height: 32px;
+  color: #262B2F;
+  margin-bottom: 15px;
+}
+
+.content .rates .row .label {
+  min-width: 70px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-right: 13px;
+  color: #262B2F;
+}
+
+.content .rates .row .value {
+  width: 130px;
+  height: 32px;
+  background: #F3F6FC;
+  border-radius: 5px;
+  padding-left: 8px;
+  position: relative;
+  padding-right: 20px;
+}
+
+.content .rates .row .value input {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: #F3F6FC;
+  font-size: 14px;
+  margin-top: 7px;
+  width: 100%;
+}
+
+.content .rates .row .value>span {
+  min-width: 20px;
+  position: absolute;
+  right: 0;
+  top: 5px;
+}
+
+.content .rates .row .extra {
+  margin-left: 26px;
+  width: 70px;
+  min-width: 70px;
+  color: rgba(38, 43, 47, 0.5);
+}
+
+footer {
+  /*padding: 0 15px;*/
+  margin-top: 0px;
+  text-align: center;
+}
+
+button {
+  height: 40px;
+  background: #01C6F3;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  width: 100%;
+}
+footer>span {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(156, 156, 156, 1);
+  margin-top: 8px;
+
+}
+
+
+
+/* 底部tab栏 */
+.tabs {
+ max-width: 414px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  /*box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2);*/
+}
+
+.tabs .tab {
+  flex: 1;
+  text-align: center;
+  font-size: 9px;
+  color: #262B2F;
+  font-weight: 500;
+  position: relative;
+}
+
+
+.tabs .tab .tab-tag {
+  width: 16px;
+  height: 16px;
+  color: #fff;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: -4px;
+  line-height: 16px;
+  right: 8px;
+  font-size: 8px;
+}
+
+.tabs .tab .tab-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+}
+
+.tabs .tab .icon-order-list {
+  background: url(../images/icon_order_list.png) no-repeat center / 100%;
+}
+
+.tabs .tab:hover .icon-order-list,
+.tabs .active .icon-order-list {
+  background: url(../images/icon_order_list_press.png) no-repeat center / 100%;
+}
+
+.tabs .tab .icon-rob-order {
+  background: url(../images/icon_rob_order.png) no-repeat center / 100%;
+}
+
+.tabs .tab:hover .icon-rob-order,
+.tabs .active .icon-rob-order {
+  background: url(../images/icon_rob_order_press.png) no-repeat center / 100%;
+}
+
+.tabs .tab .icon-buy-center {
+  background: url(../images/icon_buy_center.png) no-repeat center / 100%;
+}
+
+.tabs .tab:hover .icon-buy-center,
+.tabs .active .icon-buy-center {
+  background: url(../images/icon_buy_center_press.png) no-repeat center / 100%;
+}
+
+
+.tabs .tab .icon-me {
+  background: url(../images/icon_me.png) no-repeat center / 100%;
+}
+
+.tabs .tab:hover .icon-me,
+.tabs .active .icon-me {
+  background: url(../images/icon_me_press.png) no-repeat center / 100%;
+}
+
+.tabs .tab:hover {
+  color: #01C6F3
+}
+
+.tabs .active .tab-label {
+  color: #01C6F3;
+}

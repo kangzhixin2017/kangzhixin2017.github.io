@@ -1,0 +1,293 @@
+body {
+  background: #fafafa;
+  margin: 0;
+  padding: 0;
+}
+
+.settings-page {
+  max-width: 414px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+.settings-page header {
+  /*margin-bottom: 15px;*/
+}
+
+.settings-page header .page-title {
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  color: #262B2F;
+  position: relative;
+}
+
+.settings-page header .page-title .back-button {
+  position: absolute;
+  left: 0;
+  height: 46px;
+  width: 54px;
+}
+
+.settings-page header .page-title .back-button img {
+  margin: 13px 0 0 0;
+}
+
+.infos {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 8px;
+}
+
+.infos .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: #262B2F;
+  font-weight: 400;
+}
+
+.infos .row:last-child {
+  margin-bottom: 0;
+}
+
+.infos .row .label {
+  min-width: 75px;
+  margin-right: 10px;
+  color: rgba(38, 43, 47, 0.5);
+}
+.infos .row .value {
+  color: #262B2F;
+}
+.choose-card {
+  min-height: calc(100vh - 255px);
+  background-color: #fff;
+  padding: 15px 0;
+}
+
+.choose-card .title {
+  margin-left: 13px;
+  padding-bottom: 15px;
+  /*border-bottom: 1px solid #E0E0E0;*/
+}
+
+.cards {
+  padding: 0 12px;
+  /*margin-top: 15px;*/
+  
+}
+
+.cards .card {
+  border-top: 0.5px solid #E0E0E0;
+	
+  /*max-width: 352px;*/
+  margin: 0 auto;
+  /*margin-bottom: 15px;*/
+  height: 50px;
+  color: #262B2F;
+  /*position: relative;*/
+ display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*background-color: red;*/
+}
+.cards .card:nth-last-of-type(1){
+  border-bottom: 0.5px solid #E0E0E0;
+	
+}
+.cards .card .card-type {
+  font-size: 13px;
+  /*font-weight: 400;*/
+  display: flex;
+  align-items: center;
+  color: #262B2F;
+  /*padding-top: 11px;*/
+  /*margin-left: 42px;*/
+}
+
+.cards .card .card-code {
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 13px;
+  margin-top: 25px;
+}
+
+.cards .card.purple {
+  /*background: url(../images/bg-card-purple.png) no-repeat center / 100%;*/
+}
+
+.cards .card.blue {
+  /*background: url(../images/bg-card-blue.png) no-repeat center / 100%;*/
+}
+
+.cards .card.green {
+  /*background: url(../images/bg-card-green.png) no-repeat center / 100%;*/
+}
+
+.cards .card.red {
+  /*background: url(../images/bg-card-red.png) no-repeat center / 100%;*/
+}
+
+.cards .card-select {
+  background: url(../images/icon/meyuan.png) no-repeat center / 100%;
+  width: 16px;
+  height: 16px;
+  /*position: absolute;*/
+  right: 20px;
+  top: 41px;
+}
+
+.cards .select .card-select {
+  background-image: url(../images/icon/megou.png);
+}
+
+
+footer {
+  padding: 0 15px;
+  margin-top: 44px;
+  text-align: center;
+}
+
+footer>span {
+  font-size: 12px;
+  color: #9c9c9c;
+  font-weight: 400;
+}
+
+footer .tips {
+  margin-top: 25px;
+  color: #262B2F;
+  text-align: left;
+  font-weight: 400;
+}
+
+footer .tips .tips-title {
+  font-size: 15px;
+  color: #E94634;
+}
+
+footer .tips .tips-content {
+  font-size: 13px;
+  color: rgba(38, 43, 47, 0.5);
+  line-height: 15px;
+}
+
+button {
+  height: 40px;
+  background: #01C6F3;
+  border-radius: 8px;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  width: 100%;
+}
+
+input {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.footer1{
+	margin-top: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/* 底部tab栏 */
+.tabs {
+ max-width: 414px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  /*box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2);*/
+}
+
+.tabs .tab {
+  flex: 1;
+  text-align: center;
+  font-size: 9px;
+  color: #262B2F;
+  font-weight: 500;
+  position: relative;
+}
+
+
+.tabs .tab .tab-tag {
+  width: 16px;
+  height: 16px;
+  color: #fff;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: -4px;
+  line-height: 16px;
+  right: 8px;
+  font-size: 8px;
+}
+
+.tabs .tab .tab-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+}
+
+.tabs .tab .icon-order-list {
+  background: url(../images/icon_order_list.png) no-repeat center / 100%;
+}
+
+.tabs .tab:hover .icon-order-list,
+.tabs .active .icon-order-list {
+  background: url(../images/icon_order_list_press.png) no-repeat center / 100%;
+}
+
+.tabs .tab .icon-rob-order {
+  background: url(../images/icon_rob_order.png) no-repeat center / 100%;
+}
+
+.tabs .tab:hover .icon-rob-order,
+.tabs .active .icon-rob-order {
+  background: url(../images/icon_rob_order_press.png) no-repeat center / 100%;
+}
+
+.tabs .tab .icon-buy-center {
+  background: url(../images/icon_buy_center.png) no-repeat center / 100%;
+}
+
+.tabs .tab:hover .icon-buy-center,
+.tabs .active .icon-buy-center {
+  background: url(../images/icon_buy_center_press.png) no-repeat center / 100%;
+}
+
+
+.tabs .tab .icon-me {
+  background: url(../images/icon_me.png) no-repeat center / 100%;
+}
+
+.tabs .tab:hover .icon-me,
+.tabs .active .icon-me {
+  background: url(../images/icon_me_press.png) no-repeat center / 100%;
+}
+
+.tabs .tab:hover {
+  color: #01C6F3
+}
+
+.tabs .active .tab-label {
+  color: #01C6F3;
+}

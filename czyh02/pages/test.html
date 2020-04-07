@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+				<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/toast.css"/>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body style="display: flex;flex-direction: column;justify-content: center;width: 100%;align-items: center;padding: 0;margin: 0;">
+		<div>商户号：</div>
+		<a href="appeal.html">appeal：申诉</a>
+		<a href="buyCenter.html">buyCenter：买分中心</a>
+		<a href="buyOrder.html">buyOrder：买分列表</a>
+		<a href="codelogin.html">codelogin：验证码登录</a>
+		<a href="forget.html">forget：忘记密码</a>
+		<!--<a href="incomeCodeAdd.html">incomeCodeAdd</a>-->
+		<!--<a href="incomeCodeAddForm.html">incomeCodeAddForm</a>-->
+		<!--<a href="incomeCodeDetail.html">incomeCodeDetail</a>-->
+		<!--<a href="incomeCodeList.html">incomeCodeList</a>-->
+		<a href="logincard.html">login：卡商登录</a>
+		<a href="logincode.html">login：码商登录</a>
+		<a href="me.html">me：个人中心</a>
+		<!--<a href="onlineService.html">onlineService</a>-->
+		<a href="orderDetail.html">orderDetail：订单详情</a>
+		<a href="orderList.html">orderList：订单列表</a>
+		<a href="register.html">register：立即注册</a>
+		<a href="robCenter.html">robCenter：抢单中心</a>
+		<!--<a href="settings.html">settings</a>-->
+		<a href="settingsAddCard.html">settingsAddCard：添加银行卡</a>
+		<a href="settingsBindCard.html">settingsBindCard：绑定银行卡</a>
+		<a href="settingsCharge.html">settingsCharge：我要充值</a>
+		<a href="settingsChargeRecords.html">settingsChargeRecords：充值记录</a>
+		<!--<a href="settingsGoogleCode.html">settingsGoogleCode</a>-->
+		<a href="settingsMoneyRecords.html">settingsMoneyRecords：资金记录</a>
+		<a href="settingsMyteam.html">settingsMyteam：我的团队</a>
+		<a href="settingsMyteamRate.html">settingsMyteamRate：分成比例</a>
+		<a href="settingsPassword.html">settingsPassword：修改登录密码</a>
+		<a href="settingsQrcode.html">settingsQrcode：推荐二维码</a>
+		<a href="settingsRecords.html">settingsRecords：分成记录</a>
+		<a href="settingsSecondPassword.html">settingsSecondPassword：修改二级密码</a>
+		<a href="settingsWithdraw.html">settingsWithdraw：我要提现</a>
+		<a href="settingsWithdrawDetails.html">settingsWithdrawDetails：提现明细</a>
+		<a href="settingsChargeOrder.html">settingsChargeOrder：充值订单</a>
+		<a href="buycoin.html">buycoin：买币中心</a>
+		<a href="sellcoin.html">sellcoin：卖币中心</a>
+		<a href="question.html">question：疑问解答</a>
+		<a href="#" onclick="list()">列表弹框</a>
+		<a href="#" onclick="passwordConfirm()">输入密码信息弹框</a>
+		<a href="#" onclick="confirm()">信息弹框</a>
+		<a href="#" onclick="confirm1()">信息弹框1</a>
+		<a href="#" onclick="confirm2()">信息弹框2</a>
+		<a href="#" onclick="confirm3()">信息弹框3</a>
+		<div>服务号：</div>
+		<a href="incomeCodeAdd.html">incomeCodeAdd：新增收款码</a>
+		<a href="incomeCodewx.html">incomeCodewx：微信/支付宝扫码</a>
+		<a href="incomeCodeAddForm.html">incomeCodeAddForm：银行卡转账</a>
+		<a href="incomeCodeList.html">incomeCodeList：收款码列表</a>
+		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function list(){
+				toast.list(
+				  [
+				    { label: '会员账号', value: '手续费'},
+				    { label: '订单号', value: '48723423423462736271'},
+				    { label: '订单金额', value: '233434'},
+				    { label: '支付方式', value: '233434'},
+				    { label: '对应会员账号', value: '233434'},
+				    { label: '原有金额', value: '2020-1-23 23:45' },
+				    { label: '现有金额', value: '2020-1-23 23:45' },
+				    { label: '备注', value: '2020-1-23 23:45' },
+				    { label: '下单时间', value: '2020-1-23 23:45' },
+				    { label: '更新时间', value: '2020-1-23 23:45' },
+				  ],
+				     [
+				     { text: "关闭", color: "#01C6F3" }
+				   ],
+				  function (val) {
+				    console.log(val);
+				  }
+				);
+			}
+			function passwordConfirm() {
+				toast.passwordConfirm(
+					"确认收到：xxx",
+					"请输入二级密码", [{
+							text: "取消",
+							color: "#000"
+						},
+						{
+							text: "发送",
+							color: "#01C6F3"
+						}
+					],
+					function(type, val) {
+						console.log(type, val);
+					}
+				);
+			}
+			function confirm(){
+				 toast.confirm(
+				   "公告",
+				   "当前提现金额大拉克丝京东方离开家萨拉快递费就于当前可用余额拉卡时间段法律",
+				   [
+				     { text: "我知道了", color: "#01C6F3" }
+				   ],
+				   function(val) {
+				     console.log(val);
+				   }
+				 );
+			}
+			function confirm1(){
+				 toast.confirm(
+				   "提现失败",
+				   "当前提现金额大于当前可用余额",
+				   [
+				     { text: "确定", color: "#01C6F3" }
+				   ],
+				   function(val) {
+				     console.log(val);
+				   }
+				 );
+			}
+			function confirm2(){
+				 toast.confirm(
+				   "提现失败",
+				   "",
+				   [
+				     { text: "确定", color: "#01C6F3" }
+				   ],
+				   function(val) {
+				     console.log(val);
+				   }
+				 );
+			}
+			function confirm3(){
+				 toast.confirm(
+				   "",
+				   "消息体",
+				   [
+				     { text: "确定", color: "#01C6F3" }
+				   ],
+				   function(val) {
+				     console.log(val);
+				   }
+				 );
+			}
+		</script>
+	</body>
+	
+</html>

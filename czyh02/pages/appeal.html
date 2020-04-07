@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+		<!--<meta name="viewport" content="width=375, maximum-scale=1.0, user-scalable=no" />-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>申诉</title>
+		<link rel="stylesheet" href="../css/appeal.css" />
+		<link rel="stylesheet" href="../css/toast.css" />
+		<script src="../js/jquery-3.4.1.min.js"></script>
+	</head>
+
+	<body>
+		<div class="order-detail-page">
+			<header>
+				<div class="page-title">
+					<div class="back-button" onclick="history.back();">
+						<img src="../images/back.png" width="9" height="15" />
+					</div>
+					<span>申诉</span>
+				</div>
+			</header>
+			<div class="order-detail">
+				<div class="order-detail-header">
+					<div class="info">
+						<span>申诉原因：</span>
+					</div>
+				</div>
+				<div class="order-detail-content">
+					<div class="info infomsg">
+						<span>金额不符</span>
+						<img onclick="change('.change1')" class="change change1" src="../images/icon/yuan.png" />
+					</div>
+					<div class="info infomsg">
+						<span>未收到款</span>
+						<img onclick="change('.change2')" class="change change2" src="../images/icon/yuan.png" />
+					</div>
+					<div class="info infomsg">
+						<span>重复扫码</span>
+						<img onclick="change('.change3')" class="change change3" src="../images/icon/yuan.png" />
+					</div>
+					<div class="info infomsg">
+						<span>其他</span>
+						<img onclick="change('.change4')" class="change change4" src="../images/icon/yuan.png" />
+					</div>
+					<div class="info infomsg">
+						<span>申诉凭证：</span>
+						<div id="fileUpload" class="file-container" style="margin-right: 5px;">
+							<img src="../images/icon/upload.png" class="faker" width="100" height="100" />
+							<input type="file" id="file" />
+						</div>
+					</div>
+				</div>
+				<div class="addition">
+					<textarea id="addition" rows="5" placeholder="备注（选填）" maxlength="200"></textarea>
+					<span class="addition-count">0/200</span>
+				</div>
+				<div class="order-detail-footer" onclick="handleClickRemit();">
+					<button>提交申诉</button>
+				</div>
+			</div>
+			<footer class="tabs">
+				<div class="tab tab-order-list ">
+					<!--<div class="tab-tag">3</div>-->
+					<div class="tab-icon icon-order-list"></div>
+					<div class="tab-label">买币中心</div>
+				</div>
+				<div class="tab tab-rob-order">
+					<div class="tab-icon icon-rob-order"></div>
+					<div class="tab-label">卖币中心</div>
+				</div>
+				<div class="tab tab-buy-center active">
+					<div class="tab-icon icon-buy-center"></div>
+					<div class="tab-label">订单列表</div>
+				</div>
+				<div class="tab tab-me">
+					<div class="tab-icon icon-me"></div>
+					<div class="tab-label">个人中心</div>
+				</div>
+			</footer>
+		</div>
+		<script src="../js/toast.js"></script>
+		<script src="../js/orderDetail.js"></script>
+		<script type="text/javascript">
+			function change(e) {
+				$('.change1').attr("src", '../images/icon/yuan.png');
+				$('.change2').attr("src", '../images/icon/yuan.png');
+				$('.change3').attr("src", '../images/icon/yuan.png');
+				$(e).attr("src", '../images/icon/gou.png');
+			}
+			$("#addition").on('input propertychange', function() {
+				//获取输入内容
+				var userDesc = $(this).val();
+				//判断字数
+				var len=userDesc.length
+				//显示字数
+				$(".addition-count").html(len + '/200');
+			});
+		</script>
+	</body>
+
+</html>
