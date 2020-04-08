@@ -36,27 +36,29 @@
 					</div>
 				</div>
 			</header>
+			<div style="height: 8px;background-color: #fafafa;"></div>
+			
 			<div class="team-table">
 				<div class="team-table-head">
-					<div class="team-table-col" style="width: 30%;">上级/会员账号</div>
-					<div class="team-table-col" style="width: 30%;">注册时间</div>
-					<div class="team-table-col" style="width: 10%;">等级</div>
+					<div class="team-table-col" style="width: 50%;">账号</div>
+					<!--<div class="team-table-col" style="width: 30%;">注册时间</div>-->
+					<div class="team-table-col" style="width: 15%;">等级</div>
 					<div class="team-table-col" style="width: 20%;">分成比例</div>
 					<div class="team-table-col" style="width: 15%;">备注</div>
 				</div>
 				<div class="team-table-body">
 					<div class="team-table-row">
-						<div class="team-table-col " style="width: 30%;">
-							<span>298347298374</span><br />
-							<span>298347298374</span>
+						<div class="team-table-col " style="width: 50%;">
+							<span>上级账户:298347298374</span><br />
+							<span>会员账号:298347298374</span>
 						</div>
-						<div class="team-table-col " style="width: 30%;">2020-1-23 23:45</div>
-						<div class="team-table-col " style="width: 10%;">上线</div>
+						<!--<div class="team-table-col " style="width: 30%;">2020-1-23 23:45</div>-->
+						<div class="team-table-col " style="width: 15%;">上线</div>
 						<div class="team-table-col " style="width: 20%;">
 							<button onclick="handleClick();">设置</button>
 						</div>
 						<div class="team-table-col " style="width: 15%;">
-							<button onclick="handleClick();">设置</button>
+							<button onclick="handleClick();">备注</button>
 						</div>
 					</div>
 					
@@ -67,9 +69,27 @@
 					<span style="height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);"></span>
 				</div>
 			</div>
-			<footer class="tabs">
+			<footer class="tabsfw">
 				<div class="tab tab-order-list ">
 					<!--<div class="tab-tag">3</div>-->
+					<div class="tab-icon icon-order-list"></div>
+					<div class="tab-label">订单列表</div>
+				</div>
+				<div class="tab tab-rob-order">
+					<div class="tab-icon icon-rob-order"></div>
+					<div class="tab-label">抢单大厅</div>
+				</div>
+				<div class="tab tab-buy-center ">
+					<div class="tab-icon icon-buy-center"></div>
+					<div class="tab-label">收款码列表</div>
+				</div>
+				<div class="tab tab-me active">
+					<div class="tab-icon icon-me"></div>
+					<div class="tab-label">个人中心</div>
+				</div>
+			</footer>
+			<!--<footer class="tabs">
+				<div class="tab tab-order-list ">
 					<div class="tab-icon icon-order-list"></div>
 					<div class="tab-label">买币中心</div>
 				</div>
@@ -85,7 +105,7 @@
 					<div class="tab-icon icon-me"></div>
 					<div class="tab-label">个人中心</div>
 				</div>
-			</footer>
+			</footer>-->
 		</div>
 		<script src="../js/toast.js"></script>
 		<script>

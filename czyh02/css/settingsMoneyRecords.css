@@ -8,11 +8,12 @@ body {
   max-width: 414px;
   margin: 0 auto;
   min-height: 100vh;
-  background: #fafafa;
+  background: #fff;
+  padding-bottom: 80px;
 }
 
 .settings-page header {
-  margin-bottom: 8px;
+  /*margin-bottom: 8px;*/
 }
 
 .settings-page header .page-title {

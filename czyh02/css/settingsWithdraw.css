@@ -9,6 +9,7 @@ body {
   margin: 0 auto;
   min-height: 100vh;
   background: #fafafa;
+  padding-bottom: 55px;
 }
 
 .settings-page header {

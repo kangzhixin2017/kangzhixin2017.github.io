@@ -9,6 +9,7 @@ body {
   margin: 0 auto;
   min-height: 100vh;
   background: #fff;
+  padding-bottom: 40px;
 }
 
 .app header {

@@ -312,9 +312,9 @@ input {
 }
 
 .tabsfw .tab:hover {
-  color: #4795EF
+  color:#01C6F3
 }
 
 .tabsfw .active .tab-label {
-  color: #4795EF;
+  color: #01C6F3;
 }

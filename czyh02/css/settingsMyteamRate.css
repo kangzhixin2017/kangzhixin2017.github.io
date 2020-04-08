@@ -231,3 +231,98 @@ footer>span {
 .tabs .active .tab-label {
   color: #01C6F3;
 }
+/* 底部tab栏 */
+.tabsfw {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  max-width: 414px;
+  bottom: 0;
+  /*box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2);*/
+}
+
+.tabsfw .tab {
+  flex: 1;
+  text-align: center;
+  font-size: 9px;
+  color: #262B2F;
+  font-weight: 500;
+  position: relative;
+}
+
+
+.tabsfw .tab .tab-tag {
+  width: 16px;
+  height: 16px;
+  color: #fff;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: -4px;
+  line-height: 16px;
+  right: 8px;
+  font-size: 8px;
+}
+
+.tabsfw .tab .tab-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 auto;
+}
+
+.tabsfw .tab .icon-order-list {
+  background: url(../images/icon_buy_center.png) no-repeat center / 100%;
+}
+
+.tabsfw .tab:hover .icon-order-list,
+.tabsfw .active .icon-order-list {
+  background: url(../images/icon_buy_center_press.png) no-repeat center / 100%;
+}
+
+.tabsfw .tab .icon-rob-order {
+  background: url(../images/fw44.png) no-repeat center / 100%;
+}
+
+.tabsfw .tab:hover .icon-rob-order,
+.tabsfw .active .icon-rob-order {
+  background: url(../images/fw4.png) no-repeat center / 100%;
+}
+
+.tabsfw .tab .icon-buy-center {
+  background: url(../images/fw11.png) no-repeat center / 100%;
+}
+
+.tabsfw .tab:hover .icon-buy-center,
+.tabsfw .active .icon-buy-center {
+  background: url(../images/fw1.png) no-repeat center / 100%;
+}
+
+.tabsfw .tab .icon-buy-order {
+  background: url(../images/icon_buy_order.png) no-repeat center / 100%;
+}
+
+.tabsfw .tab:hover .icon-buy-order,
+.tabsfw .active .icon-buy-order {
+  background: url(../images/icon_buy_order_press.png) no-repeat center / 100%;
+}
+
+.tabsfw .tab .icon-me {
+  background: url(../images/icon_me.png) no-repeat center / 100%;
+}
+
+.tabsfw .tab:hover .icon-me,
+.tabsfw .active .icon-me {
+  background: url(../images/icon_me_press.png) no-repeat center / 100%;
+}
+
+.tabsfw .tab:hover {
+  color: #01C6F3
+}
+
+.tabsfw .active .tab-label {
+  color: #01C6F3;
+}
