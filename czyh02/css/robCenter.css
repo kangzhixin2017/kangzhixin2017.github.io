@@ -181,7 +181,7 @@ tipsbody {
 }
 
 /* 底部tab栏 */
-.tabs {
+.tabsfw {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -194,7 +194,7 @@ tipsbody {
   /*box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2);*/
 }
 
-.tabs .tab {
+.tabsfw .tab {
   flex: 1;
   text-align: center;
   font-size: 9px;
@@ -204,7 +204,7 @@ tipsbody {
 }
 
 
-.tabs .tab .tab-tag {
+.tabsfw .tab .tab-tag {
   width: 16px;
   height: 16px;
   color: #fff;
@@ -217,61 +217,61 @@ tipsbody {
   font-size: 8px;
 }
 
-.tabs .tab .tab-icon {
+.tabsfw .tab .tab-icon {
   width: 24px;
   height: 24px;
   margin: 0 auto;
 }
 
-.tabs .tab .icon-order-list {
-  background: url(../images/icon_order_list.png) no-repeat center / 100%;
-}
-
-.tabs .tab:hover .icon-order-list,
-.tabs .active .icon-order-list {
-  background: url(../images/icon_order_list_press.png) no-repeat center / 100%;
-}
-
-.tabs .tab .icon-rob-order {
-  background: url(../images/icon_rob_order.png) no-repeat center / 100%;
-}
-
-.tabs .tab:hover .icon-rob-order,
-.tabs .active .icon-rob-order {
-  background: url(../images/icon_rob_order_press.png) no-repeat center / 100%;
-}
-
-.tabs .tab .icon-buy-center {
+.tabsfw .tab .icon-order-list {
   background: url(../images/icon_buy_center.png) no-repeat center / 100%;
 }
 
-.tabs .tab:hover .icon-buy-center,
-.tabs .active .icon-buy-center {
+.tabsfw .tab:hover .icon-order-list,
+.tabsfw .active .icon-order-list {
   background: url(../images/icon_buy_center_press.png) no-repeat center / 100%;
 }
 
-.tabs .tab .icon-buy-order {
+.tabsfw .tab .icon-rob-order {
+  background: url(../images/fw44.png) no-repeat center / 100%;
+}
+
+.tabsfw .tab:hover .icon-rob-order,
+.tabsfw .active .icon-rob-order {
+  background: url(../images/fw4.png) no-repeat center / 100%;
+}
+
+.tabsfw .tab .icon-buy-center {
+  background: url(../images/fw11.png) no-repeat center / 100%;
+}
+
+.tabsfw .tab:hover .icon-buy-center,
+.tabsfw .active .icon-buy-center {
+  background: url(../images/fw1.png) no-repeat center / 100%;
+}
+
+.tabsfw .tab .icon-buy-order {
   background: url(../images/icon_buy_order.png) no-repeat center / 100%;
 }
 
-.tabs .tab:hover .icon-buy-order,
-.tabs .active .icon-buy-order {
+.tabsfw .tab:hover .icon-buy-order,
+.tabsfw .active .icon-buy-order {
   background: url(../images/icon_buy_order_press.png) no-repeat center / 100%;
 }
 
-.tabs .tab .icon-me {
+.tabsfw .tab .icon-me {
   background: url(../images/icon_me.png) no-repeat center / 100%;
 }
 
-.tabs .tab:hover .icon-me,
-.tabs .active .icon-me {
+.tabsfw .tab:hover .icon-me,
+.tabsfw .active .icon-me {
   background: url(../images/icon_me_press.png) no-repeat center / 100%;
 }
 
-.tabs .tab:hover {
+.tabsfw .tab:hover {
   color: #4795EF
 }
 
-.tabs .active .tab-label {
+.tabsfw .active .tab-label {
   color: #4795EF;
 }

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />-->
+		<!--<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />-->
+		<!--<meta name="viewport" content="width=375, maximum-scale=1.0, user-scalable=no" />-->
+		<!--<meta name="viewport" content="width=375, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<!--<title>订单列表</title>-->
+		<link rel="stylesheet" href="../css/orderList.css" />
+		<link rel="stylesheet" href="../css/iosSelect.css">
+		<link rel="stylesheet" href="../css/toast.css">
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="../js/iosSelect.js"></script>
+	</head>
+
+	<body>
+		<div class="order-list-page">
+			<div class="header">
+				<div class="page-title">订单列表</div>
+				<div class="search-container">
+					<div class="row select-row">
+						<div class="label">类型</div>
+						<select>
+							<option value="recharge">充值订单</option>
+							<option value="withdraw">提现订单</option>
+						</select>
+					</div>
+					<div class="row select-row" style="margin-top: 15px; height: 32px;">
+						<div class="label">申诉</div>
+						<select>
+							<option value="recharge">已申诉</option>
+						</select>
+					</div>
+					<div style="margin-top: 15px; height: 32px;display: flex;">
+						<div style="display: flex;align-items: center;flex: auto;background-color: #fafafa;border-radius: 5px;">
+							<div style="padding-right: 5px;padding-left: 5px;">
+								<select style="background-color: #fafafa;width: 80px;font-size: 15px;color: #262B2F;border: none;outline: none;appearance: none;-moz-appearance: none;-webkit-appearance: none; background-image: url('../images/icon/down.png');background-repeat: no-repeat;background-position: right;background-size: 11px 6px;">
+									<option value="已提交">选择状态</option>
+									<option value="已提交">已提交</option>
+									<option value="已接单">已接单</option>
+									<option value="超时补单">超时补单</option>
+									<option value="交易成功">交易成功</option>
+									<option value="订单失败">订单失败</option>
+									<option value="待支付">待支付</option>
+								</select>
+							</div>
+							<div style="border-left: 1px solid #d1d1d1;display: flex;align-items: center;width: 100%;">
+								<img style="padding-left: 5px;" src="../images/icon_search.png" width="15" height="15" />
+								<input style="padding-left: 5px;line-height: 17px;background-color: #fafafa;width: 100%;" id="search" type="text" placeholder="查询订单号"></input>
+							</div>
+
+						</div>
+						<div>
+							<button style="margin-left: 10px;width: 65px;height: 32px;background-color: #01C6F3;font-size: 15px;color: white;border: none;border-radius: 8px;">查询</button>
+						</div>
+					</div>
+					<div style="margin-top: 10px;" class="row time-row" id='beginTime'>
+						<div class="label">开始时间</div>
+						<div class="value" id='beginTimeValue'>2020-12-12</div>
+						<img class="reverse" src="../images/back.png" width="9" height="15" />
+					</div>
+					<div class="row time-row" id='endTime'>
+						<div class="label">结束时间</div>
+						<div class="value" id='endTimeValue'>2020-12-12</div>
+						<img class="reverse" src="../images/back.png" width="9" height="15" />
+					</div>
+				</div>
+			</div>
+			<div class="order-list">
+				<div class="order-list--item">
+					<div class="order-header" style="padding-top: 15px">
+						<div class="info">
+							<span class="label">交易类型：</span>
+							<span class="value">充值订单</span>
+						</div>
+					</div>
+					<div style="border-bottom: 0.5px solid #e0e0e0;padding: 10px 0 15px 0;" class="order-header">
+						<div class="status"><img style="margin-right: 10px;" src="../images/icon/yijie.png" width="12" />已接单</div>
+					</div>
+					<div class="order-body">
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/ordernumber.png" width="12" />订单号</span>
+							<span class="value">202001234737382918</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/shanghu.png" width="12" />商户号</span>
+							<span class="value">202001234737382918</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/pay.png" width="12" />支付方式</span>
+							<span class="value">202001234737</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/buymoney.png" width="12" />充值金额</span>
+							<span class="value">184***2372</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/bandl.png" width="12" />银行类型</span>
+							<span class="value">c2c在线交易充值</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/band.png" width="12" />银行支行</span>
+							<span class="value">239289元</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/name.png" width="12" />收款姓名</span>
+							<span class="value" style="display: flex;align-items: center;">239289元<button onclick="copy('234')" style="border: none;background-color: #01C6F3;width: 40px;color: white;font-size: 12px;border-radius: 4px;margin-left: 10px;">复制</button></span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/card.png" width="12" />收款卡号</span>
+							<span class="value" style="display: flex;align-items: center;">239289元<button onclick="copy('234')" style="border: none;background-color: #01C6F3;width: 40px;color: white;font-size: 12px;border-radius: 4px;margin-left: 10px;">复制</button></span>
+						</div>
+						<div class="infomsg" style="padding-bottom: 20px;">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/ma.png" width="12" />收款码</span>
+							<span class="value" style="margin-right: 5px;"> <img src="../images/icon/upload.png" width="104" height="104" /> </span>
+						</div>
+						<div class="infomsg" style="border-bottom: 0.5px solid rgba(224, 224, 224, 1);padding-bottom: 20px;">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/center.png" width="12" />支付凭证</span>
+							<span class="value" style="margin-right: 5px;"> <img src="../images/icon/upload.png" width="104" height="104" /> </span>
+						</div>
+						<div style="margin-bottom: 15px;margin-top: 10px;display: flex;justify-content: space-between;font-size: 15px;color: rgba(38, 43, 47, 0.5);">
+							<span class="label" style="width: 100px;display: block;"><img style="margin-right: 10px;" src="../images/icon/beizhu.png" width="12" />备注</span>
+							<span class="value" style="display: block;color: rgba(38, 43, 47, 1);">无</span>
+						</div>
+						<div style="margin-bottom: 15px;margin-top: 10px;display: flex;justify-content: space-between;font-size: 15px;color: rgba(38, 43, 47, 0.5);">
+							<span class="label" style="width: 100px;display: block;"><img style="margin-right: 10px;" src="../images/icon/beizhu.png" width="12" />支付流水号</span>
+							<span class="value" style="display: block;color: rgba(38, 43, 47, 1);">28376782634872687</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/xiadan.png" width="12" />下单时间</span>
+							<span class="value">2020-01-19 10:50:32</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/gengxin.png" width="12" />更新时间</span>
+							<span class="value">2020-01-19 10:50:32</span>
+						</div>
+					</div>
+					<div style="width: 100%;text-align: center;font-size: 15px;color: #262B2F;margin-bottom: 10px;">订单已冻结，等待系统确认</div>
+					<div class="order-footer">
+						<button onclick="handleReceive();">订单详情</button>
+						<button style="margin-left: 15px;" onclick="handleReceive();">申诉</button>
+						<button style="margin-left: 15px;" onclick="handleReceive();">确认收款</button>
+					</div>
+				</div>
+
+				<div class="more">加载更多</div>
+			</div>
+			<footer class="tabs">
+				<div class="tab tab-order-list active">
+					<div class="tab-tag">3</div>
+					<div class="tab-icon icon-order-list"></div>
+					<div class="tab-label">订单列表</div>
+				</div>
+				<div class="tab tab-rob-order">
+					<div class="tab-icon icon-rob-order"></div>
+					<div class="tab-label">抢单大厅</div>
+				</div>
+				<div class="tab tab-buy-center">
+					<div class="tab-icon icon-buy-center"></div>
+					<div class="tab-label">买分中心</div>
+				</div>
+				<div class="tab tab-buy-order">
+					<div class="tab-icon icon-buy-order"></div>
+					<div class="tab-label">买分订单</div>
+				</div>
+				<div class="tab tab-me">
+					<div class="tab-icon icon-me"></div>
+					<div class="tab-label">我的</div>
+				</div>
+			</footer>
+			<!--<div class="s" style="width: 100vw;height: 100vh;background-color: rgba(0,0,0,0.5);position: fixed;top: 0;left: 0;display: none;">
+				<div style="width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;">
+					<input type="" name="" id="" value="" />
+				</div>
+			</div>-->
+		</div>
+		<script src="../js/date-select.js"></script>
+		<script src="../js/toast.js"></script>
+		<script>
+			$('.page-title').on('touchmove', function(e) {
+				e.preventDefault();
+			})
+
+			function handleReceive() {
+				toast.passwordConfirm(
+					"确认收到：xxx",
+					"请输入二级密码", [{
+							text: "取消",
+							color: "#000"
+						},
+						{
+							text: "发送",
+							color: "#4795EF"
+						}
+					],
+					function(type, val) {
+						console.log(type, val);
+					}
+				);
+			}
+		</script>
+	</body>
+
+</html>
