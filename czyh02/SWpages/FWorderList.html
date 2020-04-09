@@ -79,15 +79,21 @@
 				</div>
 			</div>
 			<div style="background-color: white;margin-top: 8px;display: flex;border-bottom: 1px solid #e0e0e0;color: #262B2F;;">
-				<div onclick="status('.noworder')" style="width: 50%;display: flex;justify-content: center;">
+				<div onclick="status('.noworder')" style="width: 33.33%;display: flex;justify-content: center;">
 					<div class="noworder" style="font-size: 18px;line-height: 50px;width: 95px;text-align: center;position: relative;">
 						当前订单
 						<div style="width: 16px;height: 16px;border-radius: 8px;color: white;font-size: 12px;background-color: #E94634;position: absolute;line-height: 16px;right: -5px;top: 5px;">3</div>
 					</div>
 				</div>
-				<div onclick="status('.appealorder')" style="width: 50%;display: flex;justify-content: center;">
+				<div onclick="status('.appealorder')" style="width: 33.33%;display: flex;justify-content: center;">
 					<div class="appealorder" style="font-size: 18px;line-height: 50px;width: 95px;text-align: center;position: relative;">
 						申诉订单
+						<div style="width: 16px;height: 16px;border-radius: 8px;color: white;font-size: 12px;background-color: #E94634;position: absolute;line-height: 16px;right: -5px;top: 5px;">3</div>
+					</div>
+				</div>
+				<div onclick="status('.allorder')" style="width: 33.33%;display: flex;justify-content: center;">
+					<div class="allorder" style="font-size: 18px;line-height: 50px;width: 95px;text-align: center;position: relative;">
+						全部订单
 						<div style="width: 16px;height: 16px;border-radius: 8px;color: white;font-size: 12px;background-color: #E94634;position: absolute;line-height: 16px;right: -5px;top: 5px;">3</div>
 					</div>
 				</div>
@@ -261,6 +267,90 @@
 
 				<div class="more">加载更多</div>
 			</div>
+			<div class="order-list alllist">
+				<div class="order-list--item">
+					<div class="order-header" style="padding-top: 15px;">
+						<div class="info">
+							<span class="label">交易类型：</span>
+							<span class="value">充值订单</span>
+						</div>
+					</div>
+					<div style="padding: 15px 0 0px 0;" class="order-header">
+						<div class="status"><img style="margin-right: 10px;" src="../images/icon/yijie.png" width="12" />已接单</div>
+					</div>
+					<div class="order-body">
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/ordernumber.png" width="12" />订单号</span>
+							<span class="value">202001234737382918</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/shanghu.png" width="12" />商户单号</span>
+							<span class="value">202001234737382918</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/pay.png" width="12" />支付方式</span>
+							<span class="value">202001234737</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/buymoney.png" width="12" />充值金额</span>
+							<span class="value">184***2372</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/bandl.png" width="12" />银行类型</span>
+							<span class="value">c2c在线交易充值</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/band.png" width="12" />营业网点</span>
+							<span class="value">239289元</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/name.png" width="12" />收款姓名</span>
+							<span class="value" style="display: flex;align-items: center;">239289元<button onclick="copy('234')" style="border: none;background-color: #01C6F3;width: 40px;color: white;font-size: 12px;border-radius: 4px;margin-left: 10px;">复制</button></span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/card.png" width="12" />收款卡号</span>
+							<span class="value" style="display: flex;align-items: center;">239289元<button onclick="copy('234')" style="border: none;background-color: #01C6F3;width: 40px;color: white;font-size: 12px;border-radius: 4px;margin-left: 10px;">复制</button></span>
+						</div>
+						<div class="infomsg" style="padding-bottom: 20px;">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/ma.png" width="12" />收款码</span>
+							<span class="value" style="margin-right: 5px;"> <img src="../images/icon/upload.png" width="104" height="104" /> </span>
+						</div>
+						<div class="infomsg" style="border-bottom: 0.5px solid rgba(224, 224, 224, 1);padding-bottom: 20px;">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/center.png" width="12" />支付凭证</span>
+							<span class="value" style="margin-right: 5px;"> <img src="../images/icon/upload.png" width="104" height="104" /> </span>
+						</div>
+						<div style="margin-bottom: 15px;margin-top: 10px;display: flex;justify-content: space-between;font-size: 15px;color: rgba(38, 43, 47, 0.5);">
+							<span class="label" style="width: 100px;display: block;"><img style="margin-right: 10px;" src="../images/icon/beizhu.png" width="12" />备注</span>
+							<span class="value" style="display: block;color: rgba(38, 43, 47, 1);">无</span>
+						</div>
+						<div style="margin-bottom: 15px;margin-top: 10px;display: flex;justify-content: space-between;font-size: 15px;color: rgba(38, 43, 47, 0.5);">
+							<span class="label" style="width: 100px;display: block;"><img style="margin-right: 10px;" src="../images/icon/beizhu.png" width="12" />支付流水号</span>
+							<span class="value" style="display: block;color: rgba(38, 43, 47, 1);">28376782634872687</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/xiadan.png" width="12" />下单时间</span>
+							<span class="value">2020-01-19 10:50:32</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/gengxin.png" width="12" />更新时间</span>
+							<span class="value">2020-01-19 10:50:32</span>
+						</div>
+						<div class="info">
+							<span class="label"><img style="margin-right: 10px;" src="../images/icon/zhuangtai.png" width="12" />订单状态</span>
+							<span class="value">等待申诉</span>
+						</div>
+					</div>
+					<div style="width: 100%;text-align: center;font-size: 15px;color: #262B2F;margin-bottom: 10px;">请及时确认订单，如未收到款请申诉</div>
+					<div style="width: 100%;text-align: center;font-size: 15px;color: #E94634;margin-bottom: 10px;">倒计时00：00</div>
+					<div class="order-footer">
+						<button onclick="handleReceive();">上传凭证</button>
+						<button style="margin-left: 15px;" onclick="handleReceive();">申诉</button>
+						<button style="margin-left: 15px;" onclick="handleReceive();">确认收款</button>
+					</div>
+				</div>
+
+				<div class="more">加载更多</div>
+			</div>
 			<footer class="tabsfw">
 				<div class="tab tab-order-list active">
 					<!--<div class="tab-tag">3</div>-->
@@ -291,17 +381,25 @@
 		<script>
 			$('.noworder').addClass('change')
 			$('.appeallist').css('display', 'none')
+			$('.alllist').css('display', 'none')
 
 			function status(e) {
 				$('.noworder').removeClass('change')
 				$('.appealorder').removeClass('change')
+				$('.allorder').removeClass('change')
 				$(e).addClass('change')
 				if('.noworder' == e) {
 					$('.nowlist').css('display', 'block')
 					$('.appeallist').css('display', 'none')
+					$('.alllist').css('display', 'none')
 				} else if('.appealorder' == e) {
 					$('.nowlist').css('display', 'none')
 					$('.appeallist').css('display', 'block')
+					$('.alllist').css('display', 'none')
+				}else if('.allorder' == e) {
+					$('.nowlist').css('display', 'none')
+					$('.appeallist').css('display', 'none')
+					$('.alllist').css('display', 'block')
 				}
 			}
 			$('.page-title').on('touchmove', function(e) {
