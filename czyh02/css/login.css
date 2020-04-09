@@ -39,7 +39,7 @@ header {
 
 .row.select-row {
   height: 32px;
-  background-color: #fafafa;
+  background-color: #F3F6FC;
   border-radius: 5px;
   position: relative;
   padding: 0 13px;
@@ -69,7 +69,7 @@ header {
   font-size: 15px;
   text-align-last: center;
   border: none;
-  background-color: #fafafa;
+  background-color: #F3F6FC;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -104,7 +104,7 @@ header {
   color: #01C6F3;
   line-height: 38px;
   padding: 0 20px;
-  background: #fafafa;
+  background: #F3F6FC;
   border-radius: 2px;
   font-size: 15px;
   font-weight: 400;

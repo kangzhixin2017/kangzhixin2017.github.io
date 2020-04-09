@@ -39,7 +39,7 @@ body {
 .row.select-row,
 .select-row {
   height: 40px;
-  background-color: #FAFAFA;
+  background-color: #F3F6FC;
   border-radius: 5px;
   position: relative;
   padding: 0 13px;
@@ -95,7 +95,7 @@ body {
 }
 
 .select-row .input-container input {
-  background-color: #FAFAFA;
+  background-color: #F3F6FC;
   font-size: 15px;
   width: 100%;
   border: none;

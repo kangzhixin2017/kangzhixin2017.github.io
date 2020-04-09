@@ -40,7 +40,7 @@ body {
 .row.select-row,
 .select-row {
   height: 40px;
-  background-color: #fafafa;
+  background-color: #F3F6FC;
   border-radius: 0px;
   position: relative;
   padding: 0 13px;
@@ -75,7 +75,7 @@ body {
   text-align-last: center;
 
   border: none;
-  background-color: #FAFAFA;
+  background-color: #F3F6FC;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
