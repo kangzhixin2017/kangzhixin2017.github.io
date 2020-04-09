@@ -80,7 +80,7 @@ body {
   background: url('../images/icon/down.png') no-repeat right;
   background-size: 11px 6px;
   font-size: 15px;
-  color: #262B2F;
+  color: rgba(38, 43, 47, 0.5);
 }
 
 .select-row .select-container {

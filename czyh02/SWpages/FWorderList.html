@@ -57,8 +57,8 @@
 								</select>
 							</div>
 							<div style="border-left: 1px solid #d1d1d1;display: flex;align-items: center;width: 100%;">
-								<img style="padding-left: 5px;" src="../images/icon_search.png" width="15" height="15" />
-								<input style="padding-left: 5px;line-height: 17px;background-color: #fafafa;width: 100%;" id="search" type="text" placeholder="查询订单号"></input>
+								<!--<img style="padding-left: 5px;" src="../images/icon_search.png" width="15" height="15" />-->
+								<input style="padding-left: 15px;line-height: 17px;background-color: #fafafa;width: 100%;" id="search" type="text" placeholder="查询订单号"></input>
 							</div>
 
 						</div>
@@ -171,9 +171,16 @@
 							<span class="value">待确认</span>
 						</div>
 					</div>
-					<div style="width: 100%;text-align: center;font-size: 15px;color: #262B2F;margin-bottom: 10px;">订单已冻结，等待系统确认</div>
-					<div style="width: 100%;text-align: center;font-size: 15px;color: #E94634;margin-bottom: 10px;">倒计时00：00</div>
-					
+					<div style="display: flex;justify-content: center;align-items: center;color: #262B2F;margin-bottom: 10px;">
+						<span style="height: 1px;width: 26px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+						<span style="font-size: 14px;margin:0px 3px;">订单已冻结，等待系统确认</span>
+						<span style="height: 1px;width: 26px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+					</div>
+					<div style="display: flex;justify-content: center;align-items: center;color: #E94634;margin-bottom: 10px;">
+						<span style="height: 1px;width: 26px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+						<span style="font-size: 14px;margin:0px 3px;">倒计时00：00</span>
+						<span style="height: 1px;width: 26px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+					</div>
 					<div class="order-footer">
 						<button onclick="handleReceive();">上传凭证</button>
 						<button style="margin-left: 15px;" onclick="handleReceive();">申诉</button>
@@ -256,8 +263,17 @@
 							<span class="value">等待申诉</span>
 						</div>
 					</div>
-					<div style="width: 100%;text-align: center;font-size: 15px;color: #262B2F;margin-bottom: 10px;">请及时确认订单，如未收到款请申诉</div>
-					<div style="width: 100%;text-align: center;font-size: 15px;color: #E94634;margin-bottom: 10px;">倒计时00：00</div>
+					<div style="display: flex;justify-content: center;align-items: center;color: #262B2F;margin-bottom: 10px;">
+						<span style="height: 1px;width: 26px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+						<span style="font-size: 14px;margin:0px 3px;">请及时确认订单，如未收到款请申诉</span>
+						<span style="height: 1px;width: 26px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+					</div>
+					<div style="display: flex;justify-content: center;align-items: center;color: #E94634;margin-bottom: 10px;">
+						<span style="height: 1px;width: 26px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+						<span style="font-size: 14px;margin:0px 3px;">倒计时00：00</span>
+						<span style="height: 1px;width: 26px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+					</div>
+					
 					<div class="order-footer">
 						<button onclick="handleReceive();">上传凭证</button>
 						<button style="margin-left: 15px;" onclick="handleReceive();">申诉</button>
@@ -340,8 +356,17 @@
 							<span class="value">等待申诉</span>
 						</div>
 					</div>
-					<div style="width: 100%;text-align: center;font-size: 15px;color: #262B2F;margin-bottom: 10px;">请及时确认订单，如未收到款请申诉</div>
-					<div style="width: 100%;text-align: center;font-size: 15px;color: #E94634;margin-bottom: 10px;">倒计时00：00</div>
+					<div style="display: flex;justify-content: center;align-items: center;color: #262B2F;margin-bottom: 10px;">
+						<span style="height: 1px;width: 26px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+						<span style="font-size: 14px;margin:0px 3px;">请及时确认订单，如未收到款请申诉</span>
+						<span style="height: 1px;width: 26px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+					</div>
+					<div style="display: flex;justify-content: center;align-items: center;color: #E94634;margin-bottom: 10px;">
+						<span style="height: 1px;width: 26px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+						<span style="font-size: 14px;margin:0px 3px;">倒计时00：00</span>
+						<span style="height: 1px;width: 26px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+					</div>
+					
 					<div class="order-footer">
 						<button onclick="handleReceive();">上传凭证</button>
 						<button style="margin-left: 15px;" onclick="handleReceive();">申诉</button>
@@ -396,7 +421,7 @@
 					$('.nowlist').css('display', 'none')
 					$('.appeallist').css('display', 'block')
 					$('.alllist').css('display', 'none')
-				}else if('.allorder' == e) {
+				} else if('.allorder' == e) {
 					$('.nowlist').css('display', 'none')
 					$('.appeallist').css('display', 'none')
 					$('.alllist').css('display', 'block')

@@ -65,7 +65,7 @@ body {
 .select-row .label {
   font-size: 13px;
   font-weight: 400;
-  color: rgba(136, 136, 136, 1);
+  color: #262B2F;
   padding: 0 8px 0 13px;
   border-right: 1px solid #D1D1D1;
   height: 18px;
@@ -87,6 +87,7 @@ body {
   /* padding-right: 10px; */
   background: url('../images/icon/down.png') no-repeat right;
   background-size: 11px 6px;
+  color: rgba(38, 43, 47, 0.5);
 }
 
 .button-container {
