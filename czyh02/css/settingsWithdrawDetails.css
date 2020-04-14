@@ -101,8 +101,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 12px;
 }
-
+.team-table-footer1{
+	height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.team-table-footer2{
+	font-size: 14px;margin:0px 21px;color:rgba(38, 43, 47, 0.5)
+}
+.team-table-footer3{
+	height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);
+}
 
 /* 底部tab栏 */
 .tabs {

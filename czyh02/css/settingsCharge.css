@@ -10,7 +10,27 @@ body {
   min-height: 100vh;
   background: #f5f5f5;
 }
-
+.sc1{
+	margin-right: 10px;
+}
+.sc2{
+	width: 100%;
+}
+.sc3{
+	font-size: 15px;color: #262B2F;
+}
+.sc4{
+	padding-bottom: 80px;
+}
+.sc5{
+	height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.sc6{
+	font-size: 14px;margin:10px 21px;color:rgba(38, 43, 47, 0.5)
+}
+.sc7{
+	height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);
+}
 .settings-page header {
   /*margin-bottom: 15px;*/
 }
@@ -78,6 +98,7 @@ body {
   margin-left: 13px;
   font-size: 15px;
   color: #262B2F;
+  padding-top: 15px;
 }
 
 .choose-card .content {

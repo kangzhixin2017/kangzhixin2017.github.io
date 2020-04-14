@@ -18,7 +18,45 @@ body {
   padding-right: 8px;
   padding-top: 10px;
 }
-
+.me1{
+	height: 46px;color: #262B2F;font-size: 18px;width: 100%;max-width: 414px;text-align: center;line-height: 46px;
+}
+.me2{
+	font-size: 13px;
+}
+.me3{
+	font-size: 13px;color: rgba(38, 43, 47, 0.5);
+}
+.me4{
+	padding: 0 15px;
+}
+.me5{
+	margin: 10px auto 20px;background-color: #01C6F3;border-radius: 8px;text-align: center;height: 40px;display: flex;align-items: center;justify-content: center;color: white;font-size: 15px;
+}
+.me6{
+	width: 15px;margin-right: 5px;
+}
+.me7{
+	height: 10px;background-color: #F5F5F5;width: 100%;max-width: 414px;
+}
+.me8{
+	margin-top: 2px;
+}
+.me9{
+	padding-right: 5px;
+}
+.me10{
+	width: 1px;height: 40px;background-color: #f5f5f5;
+}
+.me11{
+	color: white;font-size: 15px;display: block;background-color: #01C6F3;border: none;border-radius: 8px;height: 40px;width: 100%;margin: 30px auto 20px;
+}
+.me12{
+	height: 10px;background-color: #F5F5F5;width: 100%;max-width: 414px;
+}
+.me13{
+	color: white;font-size: 15px;display: block;background-color: rgba(1, 198, 243, 1);border: none;border-radius: 8px;height: 40px;width: 100%;margin: 20px auto 20px;
+}
 .me-page header {
   display: flex;
   align-items: center;

@@ -21,9 +21,11 @@
 	<body>
 		<div class="order-list-page">
 			<div class="header">
-				<div class="page-title">收款码列表<div style="position: absolute;right: 0;top: 0;line-height: 46px;padding-right: 6px;color: #262B2F;font-size: 13px;">+新增收款码</div></div>
-				
-				<div class="search-container" style="display: flex;">
+				<div class="page-title">收款码列表
+					<div class="icl1">+新增收款码</div>
+				</div>
+
+				<div class="search-container">
 					<div class="row select-row">
 						<div class="label">类型</div>
 						<select>
@@ -31,19 +33,19 @@
 							<option value="withdraw">微信扫码</option>
 						</select>
 					</div>
-					<button style="font-size: 15px;color: white;width: 65px;height: 40px;border-radius: 8px;background-color: #01C6F3;border: none;margin-left: 5px;">查询</button>
+					<button class="icl2">查询</button>
 				</div>
 			</div>
 			<div class="order-list">
 				<div class="order-list--item">
-					<div class="order-header" style="padding-top: 10px">
+					<div class="order-header">
 						<div class="info">
-							<span class="label" style="font-size: 18px;">交易类型：</span>
-							<span class="value" style="font-size: 18px;">充值订单</span>
+							<span class="label icl3">交易类型：</span>
+							<span class="value icl3">充值订单</span>
 						</div>
 					</div>
-					<div class="info" onclick="handleSelect(this);" style="border-bottom: 1px solid #e0e0e0;margin-top: 5px;padding-bottom: 10px;display: flex;justify-content: space-between;align-items: center;">
-						<span style="font-size: 18px;color: #262B2F;">状态</span>
+					<div class="info icl4" onclick="handleSelect(this);">
+						<span class="icl5">状态</span>
 						<div>
 							<!--<div>开启</div>-->
 							<div class="card"></div>
@@ -51,63 +53,63 @@
 					</div>
 					<div class="order-body">
 						<div class="info">
-							<span class="label"><img style="margin-right: 10px;" src="../images/icon/name.png" width="12" />收款姓名</span>
+							<span class="label"><img class="icl6"  src="../images/icon/name.png" width="12" />收款姓名</span>
 							<span class="value">202001234737382918</span>
 						</div>
 						<div class="info">
-							<span class="label"><img style="margin-right: 10px;" src="../images/icon/card.png" width="12" />收款卡号</span>
+							<span class="label"><img class="icl6"  src="../images/icon/card.png" width="12" />收款卡号</span>
 							<span class="value">202001234737</span>
 						</div>
 						<div class="info">
-							<span class="label"><img style="margin-right: 10px;" src="../images/icon/zuixiao.png" width="12" />最小收款</span>
+							<span class="label"><img class="icl6"  src="../images/icon/zuixiao.png" width="12" />最小收款</span>
 							<span class="value">184***2372</span>
 						</div>
 						<div class="info">
-							<span class="label"><img style="margin-right: 10px;" src="../images/icon/zuida.png" width="12" />最大收款</span>
+							<span class="label"><img class="icl6"  src="../images/icon/zuida.png" width="12" />最大收款</span>
 							<span class="value">c2c在线交易充值</span>
 						</div>
 						<div class="info">
-							<span class="label"><img style="margin-right: 10px;" src="../images/icon/shouyi.png" width="12" />累计产生收益</span>
+							<span class="label"><img class="icl6"  src="../images/icon/shouyi.png" width="12" />累计产生收益</span>
 							<span class="value">239289元</span>
 						</div>
 						<div class="info">
-							<span class="label"><img style="margin-right: 10px;width: 12px;" src="../images/icon/address.png"/>省市</span>
+							<span class="label"><img class="icl6"  src="../images/icon/address.png" width="12"/>省市</span>
 							<span class="value">239289元</span>
 						</div>
 						<div class="info">
-							<span class="label"><img style="margin-right: 10px;width: 12px;" src="../images/icon/ordernumber.png"/>总订单</span>
+							<span class="label"><img class="icl6"  src="../images/icon/ordernumber.png" width="12"/>总订单</span>
 							<span class="value">239289元</span>
 						</div>
 						<div class="info">
-							<span class="label"><img style="margin-right: 10px;width: 12px;" src="../images/icon/bandl.png"/>总金额</span>
+							<span class="label"><img class="icl6"  src="../images/icon/bandl.png" width="12"/>总金额</span>
 							<span class="value">239289元</span>
 						</div>
 						<div class="info">
-							<span class="label"><img style="margin-right: 10px;width: 12px;" src="../images/icon/shoukuan2.png"/>成功订单</span>
+							<span class="label"><img class="icl6"  src="../images/icon/shoukuan2.png" width="12"/>成功订单</span>
 							<span class="value">239289元</span>
 						</div>
 						<div class="info">
-							<span class="label"><img style="margin-right: 10px;width: 12px;" src="../images/icon/shoukuan3.png"/>成功金额</span>
+							<span class="label"><img class="icl6"  src="../images/icon/shoukuan3.png" width="12"/>成功金额</span>
 							<span class="value">239289元</span>
 						</div>
 						<div class="info">
-							<span class="label"><img style="margin-right: 10px;width: 12px;" src="../images/icon/shoukuan1.png"/>最近5笔订单</span>
+							<span class="label"><img class="icl6"  src="../images/icon/shoukuan1.png" width="12"/>最近5笔订单</span>
 							<span class="value">239289元</span>
 						</div>
 						<div class="info">
-							<span class="label"><img style="margin-right: 10px;width: 12px;" src="../images/icon/zhuangtai.png"/>审核状态</span>
+							<span class="label"><img class="icl6"  src="../images/icon/zhuangtai.png" width="12"/>审核状态</span>
 							<span class="value">审核通过</span>
 						</div>
-						<div class="infomsg" style="padding-bottom: 20px;">
-							<span class="label"><img style="margin-right: 10px;" src="../images/icon/ma.png" width="12" />收款码</span>
-							<span class="value" style="margin-right: 5px;"> <img src="../images/icon/upload.png" width="104" height="104" /> </span>
+						<div class="infomsg">
+							<span class="label"><img class="icl6"  src="../images/icon/ma.png" width="12" />收款码</span>
+							<span class="value icl8"> <img src="../images/icon/upload.png" width="104" height="104" /> </span>
 						</div>
-						
+
 					</div>
 					<div class="order-footer">
 						<!--<button onclick="handleReceive();">订单详情</button>-->
-						<button style="margin-left: 15px;" onclick="handleReceive();">开始使用</button>
-						<button style="margin-left: 15px;" onclick="handleReceive();">删除</button>
+						<button class="icl7" onclick="handleReceive();">开始使用</button>
+						<button class="icl7" onclick="handleReceive();">删除</button>
 					</div>
 				</div>
 

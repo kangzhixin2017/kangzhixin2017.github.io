@@ -335,3 +335,18 @@ footer {
 .tabsfw .active .tab-label {
   color: #01C6F3;
 }
+.fg1{
+	margin-top: 6px
+}
+.fg2{
+	height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.fg3{
+	margin-left: 21px;color: rgba(37, 43, 47, 0.5)
+}
+.fg4{
+	margin-right: 21px;color: rgba(38, 43, 47, 1);
+}
+.fg5{
+	height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);
+}

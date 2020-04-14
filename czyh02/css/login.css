@@ -1,5 +1,5 @@
 body {
-  background: #FFFFFF;
+  background: #fafafa;
   margin: 0;
   padding: 0;
 }
@@ -83,6 +83,7 @@ header {
 }
 
 .input-row {
+	margin-top: 10px;
   border-bottom: 1px solid #E0E0E0;
 }
 
@@ -151,3 +152,16 @@ footer {
   cursor: pointer;
   text-align: center;
 }
+.login1{
+	height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.login2{
+	margin-left: 21px;color: rgba(37, 43, 47, 0.5)
+}
+.login3{
+	margin-right: 21px;color: rgba(38, 43, 47, 1);
+}
+.login4{
+	height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);
+}
+

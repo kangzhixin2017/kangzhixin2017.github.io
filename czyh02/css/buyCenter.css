@@ -33,7 +33,7 @@ body {
   display: flex;
   align-items: center;
   margin: 0 auto;
-  height: 50px;
+  height: 32px;
 }
 
 .row.select-row,
@@ -131,7 +131,9 @@ body {
   color: #262B2F;
   font-weight: 400;
 }
-
+.time-row1 {
+	margin-top: 10px;
+}
 .time-row:last-child {
   border-bottom: none;
 }
@@ -189,7 +191,18 @@ body {
   font-size: 12px;
   font-weight: 400;
 }
-
+.order-list .order-list--item .order-header1{
+	border-bottom: 1px solid #e0e0e0;margin-top: -15px;
+}
+.img1{
+	margin-right: 10px;
+}
+.value1{
+	display: flex;align-items: center;
+}
+.valurbutton{
+	border: none;background-color: #01C6F3;width: 40px;color: white;font-size: 12px;border-radius: 4px;margin-left: 10px;
+}
 .order-list .order-list--item .order-header .info {
   font-size: 18px;
   margin-bottom: 0;

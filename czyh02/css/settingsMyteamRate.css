@@ -10,8 +10,21 @@ body {
   min-height: 100vh;
   background: #f4f4f4;
 }
-
-
+.smr1{
+	margin-right: 25px;
+}
+.smr2{
+	display: flex;justify-content: center;align-items: center;margin-top: 0px;margin-bottom: 20px;border-top: 1px solid #E0E0E0;padding-top: 5px;
+}
+.smr3{
+	height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.smr4{
+	font-size: 14px;margin:0px 8px;color:rgba(38, 43, 47, 0.5)
+}
+.smr5{
+	height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);
+}
 .settings-page header .page-title {
   height: 46px;
   line-height: 46px;

@@ -269,3 +269,12 @@ body {
 .tabsfw .active .tab-label {
   color: #01C6F3;
 }
+.fr1{
+	height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.fr2{
+	font-size: 14px;margin:0px 21px;color:rgba(38, 43, 47, 0.5)
+}
+.fr3{
+	height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);
+}

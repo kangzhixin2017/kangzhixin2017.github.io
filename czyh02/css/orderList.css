@@ -80,7 +80,7 @@ body {
   background: url('../images/icon/down.png') no-repeat right;
   background-size: 11px 6px;
   font-size: 15px;
-  color: #262B2F;
+  color: rgba(38, 43, 47, 0.5);
 }
 
 .select-row .select-container {
@@ -347,4 +347,70 @@ body {
 ::-webkit-input-placeholder {
   color: rgba(175, 175, 175, 1);
   font-size: 13px;
+}
+.ol1{
+	margin-top: 8px;
+}
+.ol2{
+	margin-top: 8px; height: 32px;display: flex;
+}
+.ol3{
+	display: flex;align-items: center;flex: auto;background-color: #F3F6FC;border-radius: 5px;
+}
+.ol4{
+	padding-right: 5px;padding-left: 10px;
+}
+.ol5{
+	background-color: #F3F6FC;width: 80px;font-size: 15px;color: #262B2F;border: none;outline: none;appearance: none;-moz-appearance: none;-webkit-appearance: none; background-image: url('../images/icon/down.png');background-repeat: no-repeat;background-position: right;background-size: 11px 6px;
+}
+.ol6{
+	border-left: 1px solid #d1d1d1;display: flex;align-items: center;width: 100%;
+}
+.ol7{
+	padding-left: 5px;line-height: 17px;background-color: #F3F6FC;width: 100%;text-align: center;
+}
+.ol8{
+	margin-left: 10px;width: 65px;height: 32px;background-color: #01C6F3;font-size: 15px;color: white;border: none;border-radius: 8px;
+}
+.ol9{
+	margin-top: 10px;
+}
+.ol10{
+	padding-top: 15px
+}
+.ol11{
+	border-bottom: 0.5px solid #e0e0e0;padding: 10px 0 15px 0;
+}
+.ol12{
+	margin-right: 10px;
+}
+.ol13{
+	display: flex;align-items: center;
+}
+.ol14{
+	border: none;background-color: #01C6F3;width: 40px;color: white;font-size: 12px;border-radius: 4px;margin-left: 10px;
+}
+.ol15{
+	padding-bottom: 20px;
+}
+.ol16{
+	border-bottom: 0.5px solid rgba(224, 224, 224, 1);padding-bottom: 20px;
+}
+.ol17{
+	margin-right: 5px;
+}
+.ol18{
+	margin-bottom: 15px;margin-top: 10px;display: flex;justify-content: space-between;font-size: 15px;color: rgba(38, 43, 47, 0.5);
+}
+.ol19{
+	width: 100px;display: block;
+}
+.ol20{
+	display: block;color: rgba(38, 43, 47, 1);
+}
+.ol21{
+	width: 100%;text-align: center;font-size: 15px;color: #262B2F;margin-bottom: 10px;
+}
+.ol22{
+	margin-left: 15px;
 }

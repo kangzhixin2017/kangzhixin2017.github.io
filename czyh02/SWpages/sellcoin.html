@@ -12,7 +12,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<!--<title>订单列表</title>-->
 		<link rel="stylesheet" href="../css/toast.css">
-		<link rel="stylesheet" type="text/css" href="../css/buycoin.css" />
+		<link rel="stylesheet" type="text/css" href="../css/sellcoin.css" />
 		<script src="../js/jquery-3.4.1.min.js"></script>
 
 	</head>
@@ -21,221 +21,221 @@
 		<div class="order-list-page">
 			<div class="header">
 				<div class="page-title">卖币中心</div>
-				<img onclick="question()" style="width: 15px;height: 15px;position: absolute;right: 5px;top: 5px;padding: 10px;" src="../images/icon/wenhao.png" alt="" />
+				<img class="sc1" onclick="question()"  src="../images/icon/wenhao.png" alt="" />
 			</div>
-			<div style="background-color: white;">
-				<div style="padding: 15px 10px;display: flex;justify-content: center;align-items: center;">
-					<div class="showdown" onclick="status('.showdown')" style="border:1px solid #01C6F3;margin-right: 10px;height: 40px;border-radius: 8px;width: 100%;line-height: 40px;color: #01C6F3;text-align: center;font-size: 15px;">关闭</div>
-					<div class="open" onclick="status('.open')" style="border:1px solid #01C6F3;height: 40px;border-radius: 8px;width: 100%;line-height: 40px;color: #01C6F3;text-align: center;font-size: 15px;">开启</div>
+			<div class="sc2" >
+				<div class="sc3" >
+					<div class="showdown sc4" onclick="status('.showdown')" >关闭</div>
+					<div class="open sc5" onclick="status('.open')" >开启</div>
 				</div>
 			</div>
-			<div class="undoneorder" style="margin-top: 8px;">
-				<div style="display: flex;height: 50px;border-bottom: 1px solid #e0e0e0;background-color: white;padding: 0 13px;">
-					<div onclick="status2('.appeal')" style="width: 33.33%;text-align: center;display: flex;justify-content: center;">
-						<span class="appeal" style="display: block;width: 70px;line-height: 50px;position: relative;">
+			<div class="undoneorder sc6" >
+				<div class="sc7" >
+					<div class="sc8" onclick="status2('.appeal')" >
+						<span class="appeal sc9" >
 							申诉订单
-							<div style="width: 16px;border-radius: 8px;height: 16px;background-color: #E94634;position: absolute;top: 5px;right: -10px;line-height: 16px;font-size: 12px;color: white;">3</div>
+							<div class="sc11" >3</div>
 						</span>
 					</div>
-					<div onclick="status2('.paid')" style="width: 33.33%;text-align: center;display: flex;justify-content: center;">
-						<span class="paid" style="display: block;width: 100px;line-height: 50px;position: relative;">
+					<div class="sc8" onclick="status2('.paid')" >
+						<span class="paid sc10" >
 							<nobr>对方正在付款</nobr>
-							<div style="width: 16px;border-radius: 8px;height: 16px;background-color: #E94634;position: absolute;top: 5px;right: -13px;line-height: 16px;font-size: 12px;color: white;">3</div>
+							<div class="sc11">3</div>
 						</span>
 					</div>
-					<div onclick="status2('.being')" style="width: 33.33%;text-align: center;display: flex;justify-content: center;">
-						<span class="being" style="display: block;width: 70px;line-height: 50px;position: relative;">
+					<div class="sc8" onclick="status2('.being')" >
+						<span class="being sc9" >
 							收款订单
-							<div style="width: 16px;border-radius: 8px;height: 16px;background-color: #E94634;position: absolute;top: 5px;right: -10px;line-height: 16px;font-size: 12px;color: white;">3</div>
+							<div class="sc11">3</div>
 						</span>
 					</div>
 				</div>
 				<div class="appealcontent">
-					<div style="background-color: white;padding: 0 13px;margin-bottom: 10px;">
-						<div style="display: flex;align-items: center;justify-content: space-between;">
-							<div style="width: 100%;padding: 10px 0;">
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">
+					<div class="sc12" >
+						<div class="sc13" >
+							<div class="sc15" >
+								<div class="sc16" >
+									<div class="sc17" >
 										<nobr>订单号</nobr>
 									</div>
-									<div style="word-break: break-all;text-align: right;line-height: 18px;">CS2020040759287432</div>
+									<div class="sc18" >CS2020040759287432</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">银行类型</div>
+								<div class="sc16" >
+									<div class="sc17" >银行类型</div>
 									<div>建行</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">营业网点</div>
+								<div class="sc16" >
+									<div class="sc17" >营业网点</div>
 									<div>建行</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">收款姓名</div>
-									<div style="display: flex;align-items: center;">
+								<div class="sc16" >
+									<div class="sc17" >收款姓名</div>
+									<div class="sc19" >
 										建行
-										<div style="width: 40px;height: 24px;line-height: 24px;text-align: center;color: white;background-color: #01C6F3;border-radius: 4px;margin-left: 8px;font-size: 12px;">
+										<div class="sc20" >
 											<nobr>复制</nobr>
 										</div>
 									</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">
+								<div class="sc16" >
+									<div class="sc17" >
 										<nobr>收款卡号</nobr>
 									</div>
-									<div style="display: flex;align-items: center;word-break: break-all;text-align: right;line-height: 15px;">
+									<div class="sc21" >
 										888888888888888888
-										<div style="width: 40px;height: 24px;line-height: 24px;text-align: center;color: white;background-color: #01C6F3;border-radius: 4px;margin-left: 8px;font-size: 12px;">
+										<div class="sc20" >
 											<nobr>复制</nobr>
 										</div>
 									</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">付款金额</div>
+								<div class="sc16" >
+									<div class="sc17" >付款金额</div>
 									<div>1000元</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">状态</div>
+								<div class="sc16" >
+									<div class="sc17" >状态</div>
 									<div>建行</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">支付凭证</div>
-									<span class="value" style="margin-right: 5px;"> <img src="../images/icon/upload.png" width="104" height="104" /> </span>
+								<div class="sc22" >
+									<div class="sc17" >支付凭证</div>
+									<span class="value sc23" > <img src="../images/icon/upload.png" width="104" height="104" /> </span>
 								</div>
 							</div>
 						</div>
-						<div style="width: 100%;text-align: center;color: #E94634;font-size: 15px;line-height: 15px;">申诉倒计时:22:00:00</div>
-						<div style="display: flex;justify-content: center;align-items: center;">
-							<span style="height: 1px;width: 26px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);"></span>
-							<span style="font-size: 14px;margin:0px 3px;">时间2020-01-02 10:22:22</span>
-							<span style="height: 1px;width: 26px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+						<div class="sc24" >申诉倒计时:22:00:00</div>
+						<div class="sc29" >
+							<span class="sc26" ></span>
+							<span class="sc27" >时间2020-01-02 10:22:22</span>
+							<span class="sc28" ></span>
 						</div>
-						<div style="padding: 15px 10px;display: flex;justify-content: space-between;align-items: center;">
-							<div style="background-color: #01C6F3;height: 40px;border-radius: 8px;width: 48%;line-height: 40px;color: white;text-align: center;font-size: 15px;">申诉</div>
-							<div style="background-color: #01C6F3;height: 40px;border-radius: 8px;width: 48%;line-height: 40px;color: white;text-align: center;font-size: 15px;">确认付款</div>
+						<div class="sc30" >
+							<div class="sc31" >申诉</div>
+							<div class="sc31" >确认付款</div>
 						</div>
 					</div>
 				</div>
 				<div class="paidcontent">
-					<div style="background-color: white;padding: 0 13px;margin-bottom: 8px;">
-						<div style="display: flex;align-items: center;justify-content: space-between;">
-							<div style="width: 100%;padding: 10px 0;">
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">
+					<div class="sc14" >
+						<div class="sc13" >
+							<div class="sc15" >
+								<div class="sc16" >
+									<div class="sc17" >
 										<nobr>订单号</nobr>
 									</div>
-									<div style="word-break: break-all;text-align: right;line-height: 18px;">CS2020040759287432</div>
+									<div class="sc18" >CS2020040759287432</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">银行类型</div>
+								<div class="sc16" >
+									<div class="sc17" >银行类型</div>
 									<div>建行</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">营业网点</div>
+								<div class="sc16" >
+									<div class="sc17" >营业网点</div>
 									<div>建行</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">对方姓名</div>
-									<div style="display: flex;align-items: center;">
+								<div class="sc16" >
+									<div class="sc17" >对方姓名</div>
+									<div class="sc19" >
 										建行
-										<div style="width: 40px;height: 24px;line-height: 24px;text-align: center;color: white;background-color: #01C6F3;border-radius: 4px;margin-left: 8px;font-size: 12px;">
+										<div class="sc20" >
 											<nobr>复制</nobr>
 										</div>
 									</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">
+								<div class="sc16" >
+									<div class="sc17" >
 										<nobr>对方卡号</nobr>
 									</div>
-									<div style="display: flex;align-items: center;word-break: break-all;text-align: right;line-height: 15px;">
+									<div class="sc21" >
 										888888888888888888
-										<div style="width: 40px;height: 24px;line-height: 24px;text-align: center;color: white;background-color: #01C6F3;border-radius: 4px;margin-left: 8px;font-size: 12px;">
+										<div class="sc20" >
 											<nobr>复制</nobr>
 										</div>
 									</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">付款金额</div>
+								<div class="sc16" >
+									<div class="sc17" >付款金额</div>
 									<div>1000元</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">状态</div>
+								<div class="sc16" >
+									<div class="sc17" >状态</div>
 									<div>建行</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">支付凭证</div>
-									<span class="value" style="margin-right: 5px;"> <img src="../images/icon/upload.png" width="104" height="104" /> </span>
+								<div class="sc22" >
+									<div class="sc17" >支付凭证</div>
+									<span class="value sc23"> <img src="../images/icon/upload.png" width="104" height="104" /> </span>
 								</div>
 							</div>
 						</div>
-						<div style="width: 100%;text-align: center;color: #E94634;font-size: 15px;line-height: 15px;">失效倒计时:22:00:00</div>
-						<div style="display: flex;justify-content: center;align-items: center;padding-bottom: 15px;">
-							<span style="height: 1px;width: 26px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);"></span>
-							<span style="font-size: 14px;margin:0px 3px;">时间2020-01-02 10:22:22</span>
-							<span style="height: 1px;width: 26px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+						<div class="sc24" >失效倒计时:22:00:00</div>
+						<div class="sc25" >
+							<span class="sc26" ></span>
+							<span class="sc27" >时间2020-01-02 10:22:22</span>
+							<span class="sc28" ></span>
 						</div>
 					</div>
 
 				</div>
 				<div class="beingcontent">
-					<div style="background-color: white;padding: 0 13px;margin-bottom: 8px;">
-						<div style="display: flex;align-items: center;justify-content: space-between;">
-							<div style="width: 100%;padding: 10px 0;">
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">
+					<div class="sc14" >
+						<div class="sc13" >
+							<div class="sc15" >
+								<div class="sc16" >
+									<div class="sc17" >
 										<nobr>订单号</nobr>
 									</div>
-									<div style="word-break: break-all;text-align: right;line-height: 18px;">CS2020040759287432</div>
+									<div class="sc18" >CS2020040759287432</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">银行类型</div>
+								<div class="sc16" >
+									<div class="sc17" >银行类型</div>
 									<div>建行</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">营业网点</div>
+								<div class="sc16" >
+									<div class="sc17" >营业网点</div>
 									<div>建行</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">对方姓名</div>
-									<div style="display: flex;align-items: center;">
+								<div class="sc16" >
+									<div class="sc17" >对方姓名</div>
+									<div class="sc19" >
 										建行
-										<div style="width: 40px;height: 24px;line-height: 24px;text-align: center;color: white;background-color: #01C6F3;border-radius: 4px;margin-left: 8px;font-size: 12px;">
+										<div class="sc20" >
 											<nobr>复制</nobr>
 										</div>
 									</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">
+								<div class="sc16" >
+									<div class="sc17" >
 										<nobr>对方卡号</nobr>
 									</div>
-									<div style="display: flex;align-items: center;word-break: break-all;text-align: right;line-height: 15px;">
+									<div class="sc21" >
 										888888888888888888
-										<div style="width: 40px;height: 24px;line-height: 24px;text-align: center;color: white;background-color: #01C6F3;border-radius: 4px;margin-left: 8px;font-size: 12px;">
+										<div class="sc20" >
 											<nobr>复制</nobr>
 										</div>
 									</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">付款金额</div>
+								<div class="sc16" >
+									<div class="sc17" >付款金额</div>
 									<div>1000元</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">状态</div>
+								<div class="sc16" >
+									<div class="sc17" >状态</div>
 									<div>建行</div>
 								</div>
-								<div style="display: flex;justify-content: space-between;font-size: 15px;line-height: 30px;">
-									<div style="color: rgba(38, 43, 47, 0.5);">支付凭证</div>
-									<span class="value" style="margin-right: 5px;"> <img src="../images/icon/upload.png" width="104" height="104" /> </span>
+								<div class="sc22" >
+									<div class="sc17" >支付凭证</div>
+									<span class="value sc23"> <img src="../images/icon/upload.png" width="104" height="104" /> </span>
 								</div>
 							</div>
 						</div>
-						<div style="width: 100%;text-align: center;color: #E94634;font-size: 15px;line-height: 15px;">付款倒计时:22:00:00</div>
-						<div style="display: flex;justify-content: center;align-items: center;">
-							<span style="height: 1px;width: 26px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);"></span>
-							<span style="font-size: 14px;margin:0px 3px;">时间2020-01-02 10:22:22</span>
-							<span style="height: 1px;width: 26px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);"></span>
+						<div class="sc24" >付款倒计时:22:00:00</div>
+						<div class="sc29" >
+							<span class="sc26" ></span>
+							<span class="sc27" >时间2020-01-02 10:22:22</span>
+							<span class="sc28" ></span>
 						</div>
-						<div style="padding: 15px 10px;display: flex;justify-content: space-between;align-items: center;">
-							<div style="background-color: #01C6F3;height: 40px;border-radius: 8px;width: 48%;line-height: 40px;color: white;text-align: center;font-size: 15px;">申诉</div>
-							<div style="background-color: #01C6F3;height: 40px;border-radius: 8px;width: 48%;line-height: 40px;color: white;text-align: center;font-size: 15px;">确认付款</div>
+						<div class="sc32" >
+							<div class="sc33" >申诉</div>
+							<div class="sc33" >确认付款</div>
 						</div>
 					</div>
 				</div>

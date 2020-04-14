@@ -3,7 +3,18 @@ body {
   margin: 0;
   padding: 0;
 }
-
+.sq1{
+	width: 9px;height: 15px;margin-left: 10px;position: absolute;top: 13px;
+}
+.sq2{
+	color: white;text-align: center;width: 100%;line-height: 46px;font-size: 18px;
+}
+.sq3{
+	
+}
+.sq4{
+	
+}
 .settings-page {
   max-width: 414px;
   margin: 0 auto;

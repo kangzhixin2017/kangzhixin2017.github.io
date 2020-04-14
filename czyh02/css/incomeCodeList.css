@@ -28,6 +28,7 @@ body {
 .order-list-page .header .search-container {
   background-color: #fff;
   padding: 15px 15px 10px;
+  display: flex;
 }
 
 .row {
@@ -83,7 +84,7 @@ body {
   background: url('../images/icon/down.png') no-repeat right;
   background-size: 11px 6px;
   font-size: 15px;
-  color: #262B2F;
+  color: rgba(38, 43, 47, 0.5);
 }
 
 .select-row .select-container {
@@ -200,6 +201,7 @@ body {
   /*height: 38px;*/
   font-size: 12px;
   font-weight: 400;
+  padding-top: 10px
 }
 
 .order-list .order-list--item .order-header .info {
@@ -237,6 +239,7 @@ body {
 }
 .infomsg{
 	display: flex;
+	padding-bottom: 20px;
 	justify-content: space-between;
 }
 .infomsg span{
@@ -368,3 +371,38 @@ body {
 .select .card {
   background-image: url(../images/icon/kai.png);
 }
+.icl1{
+	position: absolute;right: 0;top: 0;line-height: 46px;padding-right: 6px;color: #262B2F;font-size: 13px;
+}
+.icl2{
+	font-size: 15px;color: white;width: 65px;height: 40px;border-radius: 8px;background-color: #01C6F3;border: none;margin-left: 5px;
+}
+.icl3{
+	font-size: 18px;
+}
+
+.icl4{
+	border-bottom: 1px solid #e0e0e0;margin-top: 5px;padding-bottom: 10px;display: flex;justify-content: space-between;align-items: center;
+}
+.icl5{
+	font-size: 18px;color: #262B2F;
+}
+.icl6{
+	margin-right: 10px;
+}
+.icl7{
+	margin-left: 15px;
+}
+.icl8{
+	margin-right: 5px;
+}
+.icl9{
+	
+}
+.icl10{
+	
+}
+.icl11{
+	
+}
+

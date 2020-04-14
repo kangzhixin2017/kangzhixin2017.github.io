@@ -15,7 +15,21 @@ body {
 .settings-page header {
   /*margin-bottom: 8px;*/
 }
-
+.smr1{
+	height: 32px;
+}
+.smr2{
+	height: 8px;background-color: #fafafa;
+}
+.smr3{
+	height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.smr4{
+	font-size: 14px;margin:0px 21px;color:rgba(38, 43, 47, 0.5)
+}
+.smr5{
+	height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);
+}
 .settings-page header .page-title {
   height: 46px;
   line-height: 46px;
@@ -55,7 +69,7 @@ body {
   display: flex;
   align-items: center;
   flex: auto;
-  height: 40px;
+  height: 32px;
   background-color: #F3F6FC;
   border-radius: 5px;
   position: relative;
@@ -95,7 +109,7 @@ body {
 }
 
 .button-container button {
-  height: 40px;
+  height: 32px;
   width: 65px;
   background: #01C6F3;
   border-radius: 5px;

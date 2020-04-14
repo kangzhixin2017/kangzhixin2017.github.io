@@ -13,8 +13,78 @@ body {
 	padding-bottom: 80px;
 	position: relative;
 }
-
-
+.buycoin1{
+	background-color: white;
+}
+.buycoin2{
+	padding: 15px 10px;display: flex;justify-content: center;align-items: center;
+}
+.buycoin22l{
+	background-color: #F3F6FC;margin-right: 5px;height: 40px;border-radius: 8px;width: 100%;text-align: center;
+}
+.buycoin22r{
+	background-color: #F3F6FC;margin-left: 5px;height: 40px;border-radius: 8px;width: 100%;text-align: center;
+}
+.buycoin3{
+	display: flex;justify-content: center;align-items: center;
+}
+.buycoin31{
+	height: 1px;width: 26px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.buycoin32{
+	font-size: 14px;margin:0px 3px;
+}
+.buycoin33{
+	height: 1px;width: 26px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.buycoin4{
+	padding: 15px 10px;display: flex;justify-content: center;align-items: center;
+}
+.showdown{
+	border:1px solid #01C6F3;margin-right: 10px;height: 40px;border-radius: 8px;width: 100%;line-height: 40px;color: #01C6F3;text-align: center;font-size: 15px;
+}
+.open{
+	border:1px solid #01C6F3;height: 40px;border-radius: 8px;width: 100%;line-height: 40px;color: #01C6F3;text-align: center;font-size: 15px;
+}
+.buycoin5{
+	display: flex;justify-content: center;border-top: 0.5px solid #e0e0e0;font-size: 17px;
+}
+.buycoin55{
+	width: 100%;text-align: center;line-height: 50px;display: flex;justify-content: center;
+}
+.buycoin555{
+	width: 80px;position: relative;
+}
+.buycoin5555{
+	width: 90px;position: relative;color: rgba(38, 43, 47, 0.5);
+}
+.buycoin51{
+	background-color: #E94634;width: 16px;height: 16px;border-radius: 8px;position: absolute;top: 5px;line-height: 16px;font-size: 12px;color: white;right: -10px;
+}
+.undoneorder{
+	margin-top: 8px;background-color: white;padding: 0 13px;
+}
+.undoneorder1{
+	display: flex;height: 50px;border-bottom: 1px solid #e0e0e0;
+}
+.undoneorder11{
+	width: 33.33%;text-align: center;display: flex;justify-content: center;
+}
+.appeal{
+	display: block;width: 70px;line-height: 50px;
+}
+.paid{
+	display: block;width: 80px;line-height: 50px;
+}
+.being{
+	display: block;width: 70px;line-height: 50px;
+}
+.bc1{
+	width: 48%;
+}
+.bc2{
+	margin-right: 10px;
+}
 /* 头部 & 搜索模块 */
 
 .order-list-page .header .page-title {
@@ -27,8 +97,81 @@ body {
 	font-weight: 500;
 	color: #262B2F;
 }
-
-
+.buycoincontent{
+	display: flex;align-items: center;justify-content: space-between;
+}
+.buycoincontent1{
+	width: 100%;padding: 10px 0;
+}
+.buycoincontent11{
+	display: flex;justify-content: space-between;align-items: center;font-size: 15px;line-height: 30px;
+}
+.buycoincontent111{
+	color: rgba(38, 43, 47, 0.5);
+}
+.buycoincontent222{
+	word-break: break-all;text-align: right;line-height: 18px;
+}
+.fuzhi{
+	width: 40px;height: 24px;line-height: 24px;text-align: center;color: white;background-color: #01C6F3;border-radius: 4px;margin-left: 8px;font-size: 12px;
+}
+.buycoincontent12{
+	display: flex;align-items: center;
+}
+.buycoincontent122{
+	display: flex;align-items: center;word-break: break-all;text-align: right;line-height: 15px;
+}
+.buycoincontent5{
+	width: 100%;text-align: center;color: #E94634;font-size: 15px;line-height: 15px;
+}
+.buycoincontent51{
+	display: flex;justify-content: center;align-items: center;
+}
+.buycoincontent511{
+	height: 1px;width: 26px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3)
+}
+.buycoincontent512{
+	font-size: 14px;margin:0px 3px;
+}
+.buycoincontent513{
+	height: 1px;width: 26px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.buycoincontent52{
+	padding: 15px 10px;display: flex;justify-content: center;align-items: center;
+}
+.buycoincontent521{
+	background-color: #01C6F3;margin-right: 10px;height: 40px;border-radius: 8px;width: 100%;line-height: 40px;color: white;text-align: center;font-size: 15px;
+}
+.buycoincontent522{
+	background-color: #01C6F3;height: 40px;border-radius: 8px;width: 100%;line-height: 40px;color: white;text-align: center;font-size: 15px;
+}
+.buycoincontent6{
+	padding: 15px 10px;display: flex;justify-content: space-between;align-items: center;
+}
+.buycoincontent61{
+	background-color: #01C6F3;height: 40px;border-radius: 8px;width: 48%;line-height: 40px;color: white;text-align: center;font-size: 15px;
+}
+.ordercenter{
+	margin-top: 8px;background-color: white;padding: 0 13px;
+}
+.ordercenter1{
+	font-size: 18px;line-height: 18px;padding: 15px 0;
+}
+.ordercenter11{
+	display: flex;align-items: center;font-size: 15px;color: #E94634;line-height: 15px;margin-bottom: 15px;
+}
+.ordercenter111{
+	height: 1px;width: 100%;background-color: #e0e0e0;
+}
+.ordercenter3{
+	position: relative;
+}
+.ordercenter31{
+	width: 70px;height: 70px;margin-left: 10px;
+}
+.ordercenter32{
+	position: absolute;line-height: 70px;top: 0;font-size: 18px;width: 100%;left: 10px;width: 70px;text-align: center;
+}
 /* 底部tab栏 */
 
 .tabs {

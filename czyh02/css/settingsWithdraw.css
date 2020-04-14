@@ -15,7 +15,34 @@ body {
 .settings-page header {
   /*margin-bottom: 15px;*/
 }
-
+.sw1{
+	color: rgba(38, 43, 47, 0.5);
+}
+.sw2{
+	color: #262B2F;
+	
+}
+.sw3{
+	text-align: right;font-size: 15px;
+}
+.sw4{
+	font-size: 13px;
+}
+.sw5{
+	margin-right: 8px;
+}
+.sw6{
+	margin-left: 20px;
+}
+.sw7{
+	height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.sw8{
+	font-size: 14px;margin:0px 21px;color:rgba(38, 43, 47, 0.5)
+}
+.sw9{
+	height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);
+}
 .settings-page header .page-title {
   height: 46px;
   line-height: 46px;
@@ -61,7 +88,7 @@ body {
 .infos .row .label {
   min-width: 75px;
   margin-right: 10px;
-  color: rgba(38, 43, 47, 0.5);
+  /*color: rgba(38, 43, 47, 0.5);*/
 }
 .infos .row .value {
   color: #262B2F;

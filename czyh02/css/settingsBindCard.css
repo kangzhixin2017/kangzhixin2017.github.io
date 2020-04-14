@@ -3,6 +3,12 @@ body {
   margin: 0;
   padding: 0;
 }
+.sbc1{
+	position: absolute;right: 10px;top: 0px;color: #262B2F;font-size: 13px;line-height: 46px;
+}
+.sbc2{
+	height: 80px;background-color: #fafafa;
+}
 
 .buy-center-page {
   max-width: 414px;
@@ -222,6 +228,7 @@ body {
 }
 .order-list .order-list--item .order-body .info  .label{
   color: #262B2F;
+  display: flex;align-items: center;
 }
 .order-list .order-list--item .order-footer {
   /*height: 58px;*/

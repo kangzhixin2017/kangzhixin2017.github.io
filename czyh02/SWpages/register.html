@@ -1,114 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
+
+	<head>
+		<meta charset="UTF-8" />
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
 		<!--<meta name="viewport" content="width=375, maximum-scale=1.0, user-scalable=no" />-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>立即注册</title>
 
-    <link rel="stylesheet" href="../css/register.css" />
-    <link rel="stylesheet" href="../css/iosSelect.css" />
-    <link rel="stylesheet" href="../css/toast.css" />
-    <script src="../js/jquery-3.4.1.min.js"></script>
-  </head>
-  <body>
-    <div class="app">
-      <header>
-        <img onclick="history.back();" src="../images/back.png" width="9" height="15" />
-        <span onclick="history.back();">立即注册</span>
-      </header>
-      <div class="content">
-        <section class="register-container">
-          <div class="row select-row">
-            <div class="label">类型</div>
-            <select>
-              <option value="card">卡商</option>
-              <option value="ticket">码商</option>
-            </select>
-          </div>
-          <div class="row input-row" style="margin-top: 6px">
-          	<img src="../images/icon/phone.png" width="9"/>
-            <input id="mobile" type="text" placeholder="请填写手机账号" />
-          </div>
-          <div class="row input-row">
-          	<img src="../images/icon/safe.png" width="9"/>
-            <input id="code" type="text" placeholder="请输入验证码" />
-             <!--<div class="verify-code fetched">60s重新获取</div>--> 
-            <div class="verify-code fetch">立即获取</div>
-            <!-- <div class="verify-code refetch">重新获取</div> -->
-          </div>
-          <div class="row input-row">
-          	<img src="../images/icon/password.png" width="9"/>
-          	
-            <input id="code" type="text" placeholder="登陆密码：6-20位英文字母或者数字" />
-          </div>
-          <div class="row input-row">
-          	<img src="../images/icon/password.png" width="9" />
-          	
-            <input id="code" type="text" placeholder="请填写二级密码" />
-          </div>
-          <div class="row input-row">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>立即注册</title>
 
-          	
-            <input style="padding-left: 19px;" id="code" type="text" placeholder="请填写手机账号" />
-          </div>
-          <div class="row input-row">
+		<link rel="stylesheet" href="../css/register.css" />
+		<link rel="stylesheet" href="../css/iosSelect.css" />
+		<link rel="stylesheet" href="../css/toast.css" />
+		<script src="../js/jquery-3.4.1.min.js"></script>
+	</head>
 
-          	
-            <input style="padding-left: 19px;" id="code" type="text" placeholder="请输入认证名字" />
-          </div>
-          <div class="row input-row">
+	<body>
+		<div class="app">
+			<header>
+				<img onclick="history.back();" src="../images/back.png" width="9" height="15" />
+				<span onclick="history.back();">立即注册</span>
+			</header>
+			<div class="content">
+				<section class="register-container">
+					<div class="row select-row">
+						<div class="label">类型</div>
+						<select>
+							<option value="card">卡商</option>
+							<option value="ticket">码商</option>
+						</select>
+					</div>
+					<div class="row input-row re1">
+						<img src="../images/icon/phone.png" width="9" />
+						<input class="re10" id="mobile" type="text" placeholder="请填写手机账号" />
+					</div>
+					<div class="row input-row">
+						<img src="../images/icon/safe.png" width="9" />
+						<input class="re10" id="code" type="text" placeholder="请输入验证码" />
+						<!--<div class="verify-code fetched">60s重新获取</div>-->
+						<div class="verify-code fetch">立即获取</div>
+						<!-- <div class="verify-code refetch">重新获取</div> -->
+					</div>
+					<div class="row input-row">
+						<img src="../images/icon/password.png" width="9" />
 
-          	
-            <input style="padding-left: 19px;" id="code" type="text" placeholder="请输入身份证号码" />
-          </div>
-          <div class="row input-row">
+						<input class="re10" id="code" type="text" placeholder="登陆密码：6-20位英文字母或者数字" />
+					</div>
+					<div class="row input-row">
+						<img src="../images/icon/password.png" width="9" />
+						<input class="re10" id="code" type="text" placeholder="请填写二级密码" />
+					</div>
+					<div class="row input-row ">
+						<input class="re2" id="code" type="text" placeholder="请填写手机账号" />
+					</div>
+					<div class="row input-row">
+						<input class="re2" id="code" type="text" placeholder="请输入认证名字" />
+					</div>
+					<div class="row input-row">
+						<input class="re2" id="code" type="text" placeholder="请输入身份证号码" />
+					</div>
+					<div class="row input-row">
+						<input class="re2" id="code" type="text" placeholder="请填写邀请码" />
+					</div>
+					<div class="row re3" id="area">
+						<div class="label re4">注册地址</div>
+						<nobr class="value re5" id="areaValue">福建-厦门</nobr>
+						<img class="reverse" src="../images/back.png" width="9" height="13" />
+					</div>
+					<button>保存</button>
+				</section>
+			</div>
+			<footer>
+				<span class="re6"></span>
+				<nobr>
+					<span class="re7">已有账号，</span>
+					<span class="re8">立即登录</span>
+				</nobr>
+				<span class="re9"></span>
+			</footer>
+		</div>
+		<script src="../js/areaDatas.js"></script>
+		<script type="text/javascript" src="../js/iosSelect.js"></script>
+		<script>
+			// 省市选择
+			var selectContactDom = document.querySelector("#area");
+			var showContactDom = document.querySelector("#areaValue");
+			selectContactDom.addEventListener("click", function() {
+				var oneLevelId = showContactDom.getAttribute("data-province-code");
+				var twoLevelId = showContactDom.getAttribute("data-city-code");
+				var iosSelect = new IosSelect(2, [iosProvinces, iosCitys], {
+					title: "地址选择",
+					itemHeight: 35,
+					relation: [1],
+					oneLevelId: oneLevelId,
+					twoLevelId: twoLevelId,
+					callback: function(selectOneObj, selectTwoObj) {
+						showContactDom.setAttribute("data-province-code", selectOneObj.id);
+						showContactDom.setAttribute("data-city-code", selectTwoObj.id);
+						showContactDom.innerHTML = selectOneObj.value + "-" + selectTwoObj.value;
+					}
+				});
+			});
+		</script>
+	</body>
 
-          	
-            <input style="padding-left: 19px;" id="code" type="text" placeholder="请填写邀请码" />
-          </div>
-          <div class="row" id="area" style="border-bottom: 1px solid #e0e0e0;">
-            <div class="label" style="margin-left: 13px;font-size: 15px;">注册地址</div>
-            <nobr class="value" id="areaValue" style="color: rgba(38, 43, 47, 0.5);overflow: hidden;overflow-x: auto;">福建-厦门</nobr>
-            <img class="reverse" src="../images/back.png" width="9" height="13" />
-          </div>
-          <button>保存</button>
-        </section>
-      </div>
-      <footer>
-      	<span style="height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);"></span>
-        <nobr>
-        	<span style="margin-left: 21px;color: rgba(37, 43, 47, 0.5)">已有账号，</span>
-        <span style="margin-right: 21px;color: rgba(38, 43, 47, 1);">立即登录</span>
-        </nobr>
-      	<span style="height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);"></span>
-      </footer>
-    </div>
-    <script src="../js/areaDatas.js"></script>
-    <script type="text/javascript" src="../js/iosSelect.js"></script>
-    <script>
-      // 省市选择
-      var selectContactDom = document.querySelector("#area");
-      var showContactDom = document.querySelector("#areaValue");
-      selectContactDom.addEventListener("click", function() {
-        var oneLevelId = showContactDom.getAttribute("data-province-code");
-        var twoLevelId = showContactDom.getAttribute("data-city-code");
-        var iosSelect = new IosSelect(2, [iosProvinces, iosCitys], {
-          title: "地址选择",
-          itemHeight: 35,
-          relation: [1],
-          oneLevelId: oneLevelId,
-          twoLevelId: twoLevelId,
-          callback: function(selectOneObj, selectTwoObj) {
-            showContactDom.setAttribute("data-province-code", selectOneObj.id);
-            showContactDom.setAttribute("data-city-code", selectTwoObj.id);
-            showContactDom.innerHTML = selectOneObj.value + "-" + selectTwoObj.value;
-          }
-        });
-      });
-    </script>
-  </body>
 </html>

@@ -3,6 +3,12 @@ body {
   margin: 0;
   padding: 0;
 }
+.sac1{
+	margin-right: 10px;
+}
+.sac2{
+	text-align: left;
+}
 
 .settings-page {
   max-width: 414px;

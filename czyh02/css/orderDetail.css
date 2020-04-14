@@ -11,7 +11,30 @@ body {
   background: #fff;
   padding-bottom: 80px;
 }
-
+.od1{
+	font-size: 15px;color: #E94634;display: flex;align-items: center;margin-top: 15px;
+}
+.od2{
+	margin-right: 8px;
+}
+.od3{
+	display: flex;align-items: center;
+}
+.od4{
+	border: none;background-color: #01C6F3;width: 40px;height: 24px;color: white;font-size: 12px;border-radius: 4px;margin-left: 10px;
+}
+.od5{
+	display: flex;align-items: center;word-break: break-all;text-align: right;line-height: 15px;
+}
+.od6{
+	
+}
+.od7{
+	
+}
+.od8{
+	
+}
 /* 头部 & 搜索模块 */
 .order-detail-page header .page-title {
   height: 46px;
@@ -77,13 +100,16 @@ body {
 .order-detail-page .order-detail .order-detail-content .info span:nth-of-type(1) {
   color: rgba(38, 43, 47, 0.5);
 }
+.file-container{
+	margin-right: 5px;
+}
 .file-container input {
   display: none;
 }
 
 .order-detail-page .order-detail .addition {
   padding: 6px;
-  background: #f5f5f5;
+  background-color: #F3F6FC;
   border-radius: 4px;
   position: relative;
   margin-bottom: 25px;
@@ -99,7 +125,7 @@ body {
 }
 
 .order-detail-page .order-detail textarea {
-  background: #f5f5f5;
+  background-color: #F3F6FC;
   border: none;
   outline: none;
   box-shadow: none;

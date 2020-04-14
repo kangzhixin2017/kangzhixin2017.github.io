@@ -11,7 +11,33 @@ body {
   background: #fff;
   padding-bottom: 80px;
 }
-
+.sm1{
+	height: 32px;
+}
+.sm2{
+	height: 8px;background-color: #fafafa;
+}
+.sm3{
+	width: 50%;
+}
+.sm4{
+	width: 15%;
+}
+.sm5{
+	width: 20%;
+}
+.sm6{
+	width: 15%;
+}
+.sm7{
+	height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.sm8{
+	font-size: 14px;margin:0px 21px;color:rgba(38, 43, 47, 0.5)
+}
+.sm9{
+	height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);
+}
 .settings-page header {
   /*margin-bottom: 8px;*/
 }
@@ -53,7 +79,7 @@ body {
 
 .row.select-row,
 .select-row {
-  height: 40px;
+  height: 32px;
   background-color: #F3F6FC;
   border-radius: 5px;
   position: relative;
@@ -96,7 +122,7 @@ body {
 }
 
 .button-container button {
-  height: 40px;
+  height: 32px;
   width: 65px;
   background: #01C6F3;
   border-radius: 5px;

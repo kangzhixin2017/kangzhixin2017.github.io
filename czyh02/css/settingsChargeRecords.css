@@ -12,7 +12,15 @@ body {
   padding-bottom: 80px;
 }
 
-
+.scr1{
+	height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.scr2{
+	font-size: 14px;margin:0px 21px;color:rgba(38, 43, 47, 0.5)
+}
+.scr3{
+	height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);
+}
 .settings-page header .page-title {
   height: 46px;
   line-height: 46px;

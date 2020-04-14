@@ -3,7 +3,9 @@ body {
   margin: 0;
   padding: 0;
 }
-
+.re2{
+	padding-left: 19px;
+}
 .app {
   max-width: 414px;
   margin: 0 auto;
@@ -25,6 +27,7 @@ body {
 .app header>img {
   margin-right: 8px;
 }
+
 
 .content {
   text-align: center;
@@ -114,7 +117,7 @@ body {
   border: none;
   width: 100%;
   outline: none;
-  padding-left: 10px;
+  
 }
 
 .input-row .verify-code {
@@ -163,4 +166,32 @@ footer {
 
 .reverse {
   transform: rotate(180deg);
+}
+.re1{
+	margin-top: 6px
+}
+
+.re3{
+	border-bottom: 1px solid #e0e0e0;
+}
+.re4{
+	margin-left: 13px;font-size: 15px;
+}
+.re5{
+	color: rgba(38, 43, 47, 0.5);overflow: hidden;overflow-x: auto;
+}
+.re6{
+	height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.re7{
+	margin-left: 21px;color: rgba(37, 43, 47, 0.5)
+}
+.re8{
+	margin-right: 21px;color: rgba(38, 43, 47, 1);
+}
+.re9{
+	height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.re10{
+	padding-left: 10px;
 }

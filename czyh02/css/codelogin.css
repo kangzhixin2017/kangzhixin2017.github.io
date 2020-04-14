@@ -38,7 +38,18 @@ header>img {
 .register-container {
   margin-top: 22px;
 }
-
+.code1{
+	height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) ,#01C6F3);
+}
+.code2{
+	margin-left: 21px;color: rgba(37, 43, 47, 0.5)
+}
+.code3{
+	margin-right: 21px;color: rgba(38, 43, 47, 1);
+}
+.code4{
+	height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);
+}
 .row {
   display: flex;
   align-items: center;
@@ -147,4 +158,7 @@ footer {
   margin-top: 8px;
   cursor: pointer;
   text-align: center;
+}
+.cl1{
+	margin-top: 6px
 }

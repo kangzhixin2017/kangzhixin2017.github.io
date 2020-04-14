@@ -14,6 +14,60 @@ body {
 .settings-page header {
   margin-bottom: 8px;
 }
+.myteam1{
+	height: 32px;display: flex;background-color: white;padding: 10px 10px;
+}
+.myteam2{
+	display: flex;align-items: center;flex: auto;background-color: #F3F6FC;border-radius: 5px;
+}
+.myteam3{
+	padding-right: 5px;padding-left: 10px;
+}
+.myteam4{
+	background-color: #F3F6FC;width: 80px;font-size: 15px;color: #262B2F;border: none;outline: none;appearance: none;-moz-appearance: none;-webkit-appearance: none; background-image: url('../images/icon/down.png');background-repeat: no-repeat;background-position: right;background-size: 11px 6px;
+}
+.myteam5{
+	border-left: 1px solid #d1d1d1;display: flex;align-items: center;width: 100%;
+}
+.myteam6{
+	padding-left: 5px;line-height: 17px;background-color: #F3F6FC;width: 100%;
+}
+.myteam7{
+	margin-left: 10px;width: 65px;height: 32px;background-color: #01C6F3;font-size: 15px;color: white;border: none;border-radius: 8px;
+}
+.myteam8{
+	padding-left: 5px;
+}
+.myteam9{
+	width: 20%;
+}
+.myteam10{
+	width: 10%;
+}
+.myteam11{
+	width: 30%;
+}
+.myteam12{
+	width: 10%;
+}
+.myteam13{
+	width: 15%;
+}
+.myteam14{
+	width: 15%;
+}
+.myteam15{
+	word-break: break-all;
+}
+.myteam16{
+	height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.myteam17{
+	font-size: 14px;margin:0px 21px;color:rgba(38, 43, 47, 0.5)
+}
+.myteam18{
+	height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);
+}
 
 .settings-page header .page-title {
   height: 46px;
@@ -112,6 +166,7 @@ body {
   padding: 15px 10px;
   background: #ffffff;
   min-height: calc(100vh - 161px);
+  padding-bottom: 80px;
 }
 
 .team-table .team-table-head {

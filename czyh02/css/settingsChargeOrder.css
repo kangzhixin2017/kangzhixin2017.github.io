@@ -38,7 +38,7 @@ body {
 
 .row.select-row,
 .select-row {
-  height: 40px;
+  height: 32px;
   background-color: #F3F6FC;
   border-radius: 5px;
   position: relative;
@@ -450,4 +450,69 @@ body {
 
 .tabsfw .active .tab-label {
   color: #01C6F3;
+}
+
+.sco1{
+	margin-top: 15px; height: 32px;display: flex;
+}
+.sco2{
+	display: flex;align-items: center;flex: auto;background-color: #F3F6FC;border-radius: 5px;
+}
+.sco3{
+	padding-right: 5px;padding-left: 10px;
+}
+.sco4{
+	background-color: #F3F6FC;width: 80px;font-size: 15px;color: #262B2F;border: none;outline: none;appearance: none;-moz-appearance: none;-webkit-appearance: none; background-image: url('../images/icon/down.png');background-repeat: no-repeat;background-position: right;background-size: 11px 6px;
+}
+.sco5{
+	border-left: 1px solid #d1d1d1;display: flex;align-items: center;width: 100%;
+}
+.sco6{
+	padding-left: 5px;
+}
+.sco7{
+	padding-left: 5px;line-height: 17px;background-color: #F3F6FC;width: 100%;
+}
+.sco8{
+	margin-left: 10px;width: 65px;height: 32px;background-color: #01C6F3;font-size: 15px;color: white;border: none;border-radius: 8px;
+}
+.sco9{
+	margin-top: 10px;
+}
+.sco10{
+	padding-top: 15px
+}
+.sco11{
+	border-bottom: 0.5px solid #e0e0e0;padding: 10px 0 15px 0;
+}
+.sco12{
+	margin-right: 10px;
+}
+.sco14{
+	display: flex;align-items: center;
+}
+.sco15{
+	border: none;background-color: #01C6F3;width: 40px;color: white;font-size: 12px;border-radius: 4px;margin-left: 10px;
+}
+.sco16{
+	border-bottom: 0.5px solid rgba(224, 224, 224, 1);padding-bottom: 20px;
+}
+.sco17{
+	margin-right: 5px;
+}
+.sco18{
+	margin-bottom: 15px;margin-top: 10px;display: flex;justify-content: space-between;font-size: 15px;color: rgba(38, 43, 47, 0.5);
+}
+.sco19{
+	width: 100px;display: block;
+}
+.sco20{
+	display: block;color: rgba(38, 43, 47, 1);
+}
+.sco21{
+	width: 100%;text-align: center;font-size: 15px;color: #262B2F;margin-bottom: 10px;
+}
+.sco22{
+	margin-left: 15px;
+	
 }
