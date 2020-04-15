@@ -85,6 +85,7 @@ header {
 .input-row {
 	margin-top: 10px;
   border-bottom: 1px solid #E0E0E0;
+  position: relative;
 }
 
 .input-row input {
@@ -101,7 +102,7 @@ header {
 
 .input-row .code-button {
   height: 38px;
-  width: 80px;
+  width: 60px;
   color: #01C6F3;
   line-height: 38px;
   padding: 0 20px;
@@ -109,6 +110,8 @@ header {
   border-radius: 2px;
   font-size: 15px;
   font-weight: 400;
+  position: absolute;
+  right: 0;
   /*color: #fff;*/
 }
 

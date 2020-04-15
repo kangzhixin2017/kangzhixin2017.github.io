@@ -98,6 +98,8 @@ header>img {
 .input-row {
 	height: 40px;
   border-bottom: 0.5px solid rgba(224, 224, 224, 1);
+  /*background-color: red;*/
+ position: relative
 }
 
 .input-row input {
@@ -119,6 +121,8 @@ header>img {
   height: 27px;
   line-height: 27px;
   color: #E94634;
+  position: absolute;
+  right: 0;
   /*border: 1px solid #4B97EF;*/
   border-radius: 8px;
 }

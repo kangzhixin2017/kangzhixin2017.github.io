@@ -89,6 +89,7 @@ header>img {
 
 .input-row {
   border-bottom: 0.5px solid #E0E0E0;
+  position: relative;
 }
 
 .input-row input {
@@ -113,6 +114,8 @@ header>img {
   color: #4795EF;
   /*border: 1px solid #4B97EF;*/
   border-radius: 8px;
+  position: absolute;
+  right: 0;
 }
 
 .input-row .verify-code.fetch,
