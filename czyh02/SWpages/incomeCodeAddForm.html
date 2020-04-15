@@ -75,14 +75,22 @@
             <input type="file" id="file" />
           </div>
         </div>-->
-				<!--<div class="info" onclick="handleSelect(this);">
-					<span style="display: flex;align-items: center;" class="label">状态</span>
+				<div class="info" onclick="handleSelect(this);">
+					<span style="" class="label label1">状态</span>
 
-					<div style="display: flex;align-items: center;">
-						<div>开启</div>
+					<div class="label">
+						<div class="label2">开启</div>
 						<div class="card"></div>
 					</div>
-				</div>-->
+				</div>
+				<div class="info" onclick="handleSelect(this);">
+					<span  class="label"></span>
+
+					<div class="label">
+						<div class="label2">关闭</div>
+						<div class="card"></div>
+					</div>
+				</div>
 			</div>
 			<footer>
 				<button onclick="handleClick()">添加收款码</button>
@@ -116,7 +124,7 @@
 		<script src="../js/incomeCodeAddForm.js"></script>
 		<script type="text/javascript">
 			function clearSelect() {
-				var cardList = document.getElementsByClassName("card");
+				var cardList = document.getElementsByClassName("info");
 				for(var i = 0; i < cardList.length; i++) {
 					if(cardList[i]) {
 						cardList[i].classList.remove("select");

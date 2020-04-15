@@ -191,9 +191,25 @@ button {
 	line-height: 30px;
 	margin-top: 10px;
 }
+.info .label{
+	display: flex;align-items: center;
+}
+.label1{
+	font-size: 15px;
+	color: #262B2F;
+}
+.label1{
+	font-size: 15px;
+	color: #262B2F;
+}
+.label2{
+	font-size: 15px;
+	color: rgba(38, 43, 47, 0.5);
+}
+
 .info .card {
-  background: url(../images/icon/guan.png) no-repeat center / 100%;
-  width: 35px;
+  background: url(../images/icon/meyuan.png) no-repeat center / 100%;
+  width: 20px;
   height: 20px;
   margin-left: 15px;
   /*position: absolute;*/
@@ -201,7 +217,7 @@ button {
   /*top: 41px;*/
 }
 .select .card {
-  background-image: url(../images/icon/kai.png);
+  background-image: url(../images/icon/megou.png);
 }
 
 /* 底部tab栏 */
