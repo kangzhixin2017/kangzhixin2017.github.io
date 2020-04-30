@@ -11,6 +11,7 @@ body {
 	min-height: 100vh;
 	/*background: #fff;*/
 	width: 100%;
+	/*padding-bottom: 40px;*/
 }
 
 input {
@@ -464,6 +465,7 @@ margin-top: 15px;
 	justify-content: center;
 	align-items: center;
 	height: 48px;
+	padding-bottom: 40px;
 }
 .Pagination div{
 	color:#878787 ;
