@@ -23,6 +23,14 @@ function createToast() {
 	});
 	return toast;
 }
+function createToast_img() {
+	var toast = document.createElement("div");
+	toast.classList.add("toast_img");
+	toast.addEventListener("click", function(event) {
+		event.stopPropagation();
+	});
+	return toast;
+}
 
 function createTitle(text) {
 	var title = document.createElement("div");
@@ -38,8 +46,9 @@ function createContent(chtml) {
 	return content;
 }
 
-function createInput() {
+function createInput(val) {
 	var input = document.createElement("input");
+	input.value = val
 	input.classList.add("password");
 	return input;
 }
@@ -73,7 +82,12 @@ function appendContent(toast, contentHtml) {
 	});
 	toast.appendChild(contentEle);
 }
-
+function appendimg(toast,src){
+//	alert(src)
+	var im = document.createElement("img");
+	im.src = src
+	toast.appendChild(im);
+}
 function appendButtons(toast, buttons, callback, mask, input) {
 	if(buttons && buttons.length) {
 		var buttonGroup = document.createElement("div");
@@ -121,11 +135,11 @@ var toast = {
 		// 添加到dom
 		appendToDom(mask, toast);
 	},
-	passwordConfirm: function(title, message, buttons, callback) {
+	passwordConfirm: function(title, message, buttons, value,callback) {
 		// 创建元素
 		var mask = createMask(callback);
 		var toast = createToast();
-		var input = createInput();
+		var input = createInput(value);
 		var u = navigator.userAgent;
 		if((u.indexOf('iPhone') > -1) && (u.indexOf('UCBrowser') > -1)) {
 			window.scrollTo(0, 0)
@@ -171,5 +185,14 @@ var toast = {
 		});
 		appendButtons(toast, buttons, callback, mask);
 		appendToDom(mask, toast);
-	}
+	},
+	img: function(src, callback) {
+		// 创建元素
+		var mask = createMask(callback);
+		var toast = createToast_img();
+		// 添加内容
+		appendimg(toast, src);
+		// 添加到dom
+		appendToDom(mask, toast);
+	},
 };

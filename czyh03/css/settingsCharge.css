@@ -1,0 +1,259 @@
+body {
+  background: #F3F6FC;
+  margin: 0;
+  padding: 0;
+}
+
+.settings-page {
+  max-width: 414px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #fff;
+}
+.head_right{
+	position: absolute;
+	top: 11px;
+	right: 8px;
+	color: #262B2F;
+	font-size: 13px;
+	line-height: 24px;
+	background-color: #01C6F3;
+	border-radius: 5px;
+	color: #fff;
+	width: 68px;
+}
+.hr{
+	height: 8px;
+	width: 100%;
+	background-color:#F3F6FC ;
+}
+.sc1{
+	margin-right: 10px;
+}
+.sc2{
+	width: 100%;
+}
+.sc3{
+	font-size: 15px;color: #262B2F;
+}
+.sc4{
+	/*padding-bottom: 80px;*/
+}
+.sc5{
+	height: 1px;width: 65px;background-image: linear-gradient(to right, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.sc6{
+	font-size: 14px;margin:10px 21px;color:rgba(38, 43, 47, 0.5)
+}
+.sc7{
+	height: 1px;width: 65px;background-image: linear-gradient(to left, rgba(255, 255, 255, 1) , #01C6F3);
+}
+.sc8{
+	color: rgba(38, 43, 47, 0.5);
+}
+.settings-page header {
+  /*margin-bottom: 15px;*/
+}
+
+.settings-page header .page-title {
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  background-color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  color: #262B2F;
+  position: relative;
+}
+
+.settings-page header .page-title .back-button {
+  /*position: absolute;
+  left: 0;
+  height: 46px;
+  width: 54px;*/
+}
+
+.settings-page header .page-title .back-button img {
+  width: 20px;
+	/*height: 20px;*/
+	/*padding: 5px 5px;*/
+	position: absolute;
+	top: 13px;
+	left: 10px;
+}
+
+.infos {
+  background: #fff;
+  padding: 15px;
+  margin-bottom:8px;
+}
+
+.infos .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: #262B2F;
+  font-weight: 400;
+  flex: auto;
+}
+
+.infos .row:last-child {
+  margin-bottom: 0;
+}
+
+.infos .row .label {
+  min-width: 110px;
+  margin-right: 10px;
+  color:#262B2F ;
+  font-size: 15px;
+}
+.infos .row .value input{
+ font-size: 15px;
+ text-align: right;
+ width: 100%;
+}
+.choose-card {
+  min-height: calc(100vh - 221px);
+  background-color: #fff;
+}
+
+.choose-card .title {
+  margin-left: 13px;
+  font-size: 15px;
+  color: #262B2F;
+  padding-top: 15px;
+}
+
+.choose-card .content {
+  margin-top: 15px;
+  padding: 0 15px;
+}
+
+.radio_type {
+  width: 16px;
+  height: 16px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.radio_type:before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  border: 1px solid #01C6F3;
+  display: inline-block;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.radio_type:checked:before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  border: 1px solid #01C6F3;
+  display: inline-block;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.radio_type:checked:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  text-align: center;
+  background: #01C6F3;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 3px;
+}
+
+.radio_type:checked+label {
+  color: #01C6F3;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form>label {
+  flex: auto;
+  font-size: 13px;
+}
+
+footer {
+  padding: 0 15px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+footer>span {
+  font-size: 12px;
+  color: #9c9c9c;
+  font-weight: 400;
+}
+
+footer .tips {
+  margin-top: 15px;
+  color: #262B2F;
+  text-align: left;
+  font-weight: 400;
+}
+
+footer .tips .tips-title {
+  font-size: 15px;
+  color: #E94634;
+}
+
+footer .tips .tips-content {
+  font-size: 13px;
+  color: rgba(38, 43, 47, 0.5);
+  line-height: 16px;
+  margin: 0;
+}
+
+button {
+  height: 40px;
+  background: #01C6F3;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  width: 100%;
+}
+
+input {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.footer1{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.choose-card .card {
+  background: url(../img/meyuan.png) no-repeat center / 100%;
+  width: 16px;
+  height: 16px;
+  /*position: absolute;*/
+  right: 20px;
+  top: 41px;
+}
+
+.choose-card .select{
+  background-image: url(../img/megou.png);
+}

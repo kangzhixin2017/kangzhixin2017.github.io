@@ -2,6 +2,7 @@
 <head>
 <meta charset="utf-8">
 <title>菜鸟教程(runoob.com)</title>
+<script src="../ad2/js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 
@@ -10,6 +11,16 @@
 年龄: <input type="text" name="age">
 <input type="submit" value="提交">
 </form>
-
+<input type="radio" name="myname" value="1" />1
+<input type="radio" name="myname" value="2" />2
+<script type="text/javascript">
+	$('input[type=radio][name=myname]').change(function () {
+    // 获取input radio选中值，方法一
+    var myvalue = $('input:radio[name="myname"]:checked').val();
+    // 获取input radio选中值，方法二
+    var myvalue = $(this).val();
+    alert(myvalue)
+});
+</script>
 </body>
 </html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>资金记录</title>
+		<link rel="stylesheet" href="../css/funds.css" />
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="header">
+				<img src="../img/back.png" alt="" />
+				<div class="title">资金记录</div>
+			</div>
+			<div class="content_head">
+				<div class="row_search">
+					<div class="row">
+						<div class="status">
+							<span><nobr id="show">资金类型</nobr></span>
+							<select>
+								<option value="0" disabled selected>资金类型</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+							</select>
+						</div>
+					</div>
+					<div class="btn_confirm">
+						<nobr>确认</nobr>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="order_status">
+					<div class="item" onclick="status('.TDorder')">
+						<div class="change change1">全部
+							<br />
+							<span class="TDorder"></span>
+						</div>
+					</div>
+					<div class="item" onclick="status('.TXorder')">
+						<div class="change change2">转账
+							<br />
+							<span class="TXorder"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="money TDorder">
+				<div class="title title1">
+					<div class="item item1">
+						<nobr>资金类型</nobr>
+					</div>
+					<div class="item item2">原有金额</div>
+					<div class="item item3">变动金额</div>
+					<div class="item item4">现有金额</div>
+					<div class="item item5">
+						<nobr>下单时间</nobr>
+					</div>
+				</div>
+				<div class="title title2">
+					<div class="item item1">分成冻结oo</div>
+					<div class="item item2">2222222.22</div>
+					<div class="item item3">2222222.22</div>
+					<div class="item item4">2222222.22</div>
+					<div class="item item5 btn">2020-20-20 10:00:00</div>
+				</div>
+				<div class="title title2">
+					<div class="item item1">分成冻结oo</div>
+					<div class="item item2">2222222.22</div>
+					<div class="item item3">2222222.22</div>
+					<div class="item item4">2222222.22</div>
+					<div class="item item5 btn">2020-20-20 10:00:00</div>
+				</div>
+			</div>
+			<div class="TXorder transfer">
+				<div class="user">
+					<div class="avatar">
+						<img class="ava" src="../img/logo.png" />
+						<div class="money">
+							<div>变动金额：987897.98</div>
+							<img class="path" src="../img/path.png" />
+						</div>
+						<img class="ava toava" src="../img/logo.png" />
+					</div>
+					<div class="msg">
+						<div class="item">
+							<div>
+								<nobr>会员账号</nobr>
+							</div>
+							<div>
+								<nobr>12345678900</nobr>
+							</div>
+						</div>
+						<div class="item">
+							<div>
+								<nobr>会员账号</nobr>
+							</div>
+							<div>
+								<nobr>12345678900</nobr>
+							</div>
+						</div>
+					</div>
+					<div class="time">
+						<div>转账时间：<span>2020-20-20 20：20：00</span></div>
+						<div>备注：<span>无</span></div>
+					</div>
+				</div>
+				<div class="user">
+					<div class="avatar">
+						<img class="ava" src="../img/logo.png" />
+						<div class="money">
+							<div>变动金额：987897.98</div>
+							<img class="path" src="../img/path.png" />
+						</div>
+						<img class="ava toava" src="../img/logo.png" />
+					</div>
+					<div class="msg">
+						<div class="item">
+							<div>
+								<nobr>会员账号</nobr>
+							</div>
+							<div>
+								<nobr>12345678900</nobr>
+							</div>
+						</div>
+						<div class="item">
+							<div>
+								<nobr>会员账号</nobr>
+							</div>
+							<div>
+								<nobr>12345678900</nobr>
+							</div>
+						</div>
+					</div>
+					<div class="time">
+						<div>转账时间：<span>2020-20-20 20：20：00</span></div>
+						<div>备注：<span>无</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$('.TDorder').css('display', 'block')
+			$('.change1').css('color', '#01C6F3')
+			window.onload = function() {
+				var show = document.getElementById('show');
+				var sel = document.getElementsByTagName('select')[0];
+				sel.onchange = function() {
+					var index = sel.selectedIndex; //序号，取当前选中选项的序号
+					show.innerText = sel.options[index].text;
+				}
+			}
+
+			function status(e) {
+				$('.TDorder').css('display', 'none')
+				$('.TXorder').css('display', 'none')
+				$('.change1').css('color', '#262B2F')
+				$('.change2').css('color', '#262B2F')
+				if('.TDorder' == e) {
+					$('.change1').css('color', '#01C6F3')
+					$('.TDorder').css('display', 'block')
+				} else if('.TXorder' == e) {
+					$('.change2').css('color', '#01C6F3')
+					$('.TXorder').css('display', 'block')
+				}
+			}
+		</script>
+	</body>
+
+</html>

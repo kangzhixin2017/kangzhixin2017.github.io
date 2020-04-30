@@ -1,0 +1,79 @@
+body {
+	background: #F3F6FC;
+	margin: 0;
+	padding: 0;
+	color: #262B2F;
+}
+
+.app {
+	max-width: 414px;
+	margin: 0 auto;
+	min-height: 100vh;
+	background: #fff;
+	width: 100%;
+}
+
+input {
+	border: none;
+	outline: none;
+}
+
+.content{
+	background-color: #fff;
+	padding: 0 15px;
+}
+.content >img{
+	width: 112px;
+	height: 112px;
+	display: flex;
+	padding-top: 94px;
+	margin: 0 auto;
+}
+.login-container {
+	width: 100%;
+	height: 100px;
+}
+.select-row{
+	color: rgba(38, 43, 47, 0.5);
+	margin-top: 50px;
+	/*display: flex;*/
+	line-height: 40px;
+	border-radius: 8px;
+	text-align: center;
+	background-color: #F3F6FC;
+	font-size: 15px;
+}
+.input-row{
+	margin-top: 13px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #E0E0E0;
+	height: 40px;
+}
+.input-row .icon{
+	width: 9px;
+	margin-right: 15px;
+}
+.input-row input{
+	font-size: 15px;
+	width: 100%;
+}
+.code-button{
+	right: 0;
+	bottom: 5px;
+	background-color: #F3F6FC;
+	width: 86px;
+	line-height: 40px;
+	text-align: center;
+	color: #01C6F3;
+}
+.btn{
+	width: 100%;
+	line-height: 40px;
+	border: none;
+	background-color: #01C6F3;
+	border-radius: 8px;
+	color: #fff;
+	margin-top: 30px;
+	font-size: 15px;
+}

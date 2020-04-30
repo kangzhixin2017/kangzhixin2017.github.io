@@ -1,0 +1,253 @@
+body {
+	background: #F3F6FC;
+	margin: 0;
+	padding: 0;
+	color: #262B2F;
+}
+
+.app {
+	max-width: 414px;
+	margin: 0 auto;
+	min-height: 100vh;
+	/*background: #fff;*/
+	width: 100%;
+}
+
+input {
+	border: none;
+	outline: none;
+}
+
+.content {
+	background-color: #fff;
+	padding: 15px;
+}
+
+.header {
+	width: 100%;
+	height: 44px;
+	text-align: center;
+	position: relative;
+	background-color: #fff;
+}
+
+.header img {
+	width: 20px;
+	/*height: 20px;*/
+	/*padding: 5px 5px;*/
+	position: absolute;
+	top: 11px;
+	left: 10px;
+}
+
+.header .title {
+	line-height: 44px;
+	font-size: 18px;
+}
+
+/*选择器*/
+.row_change {
+	background-color: #F3F6FC;
+	border-radius: 8px;
+	display: flex;
+	height: 40px;
+	align-items: center;
+	padding-right: 15px;
+}
+
+.lab {
+	border-right: 1px solid #e0e0e0;
+	padding: 0 15px;
+	font-size: 15px;
+}
+
+.status {
+	width: 100%;
+	text-align: center;
+	position: relative;
+	background: url('../img/down.png') no-repeat right;
+	background-size: 11px 6px;
+}
+
+select {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+#show{
+	color: rgba(38, 43, 47, 0.5);
+	font-size: 15px;
+}
+.row_search{
+	margin-top: 8px;
+	display: flex;
+}
+.row_search input{
+	background-color: #F3F6FC;
+	width:calc( 100% - 73px);
+	border-radius: 8px;
+	height: 40px;
+	font-size: 15px;
+	text-align: center;
+}
+.btn_confirm{
+	background-color: #01C6F3;
+	width: 65px;
+	height: 40px;
+	border-radius: 8px;
+	color: #fff;
+	line-height: 40px;
+	text-align: center;
+	font-size: 15px;
+	margin-left: 8px;
+}
+.order_status{
+	width: 100%;
+	display: flex;
+}
+.order_status .item{
+	width: 33.33%;
+	text-align: center;
+	line-height: 50px;
+	display: flex;
+	justify-content: center;
+	/*position: relative;*/
+}
+.order_status .item .change{
+	width: 80px;
+	position: relative;
+	/*background-color: red;*/
+}
+.order_status .item .change .badge{
+	position: absolute;
+	top: 5px;
+	right: -5px;
+	width: 15px;
+	height: 15px;
+	background-color: #E94634;
+	color: #fff;
+	border-radius: 50%;
+	line-height: 15px;
+	font-size: 12px;
+}
+.order_status .item .change span{
+	margin: 0 auto;
+	display: none;
+	width: 40px;
+	height: 1px;
+	background-color: #01C6F3;
+}
+.content_list {
+	background-color: #F3F6FC;
+	/*display: none;*/
+	
+}
+.content_list .item{
+	/*display: flex;*/
+	margin-top: 8px;
+	background-color: #fff;
+	padding: 0 15px;
+	font-size: 15px;
+}
+.content_list .item .msg_head{
+	display: flex;
+	justify-content: space-between;
+	line-height: 50px;
+	border-bottom: 1px solid #e0e0e0;
+}
+.content_list .item .msg_head .key span{
+	font-size: 13px;
+}
+.content_list .item .msg_body{
+	margin-top: 16px;
+	display: flex;
+	justify-content: space-between;
+	/*line-height: 50px;*/
+}
+.payimg{
+	width: 100px;
+	height: 100px;
+}
+.content_list .item .msg_head .key{
+	word-break: break-all;
+}
+.content_list .item .msg_body .key{
+	color: rgba(38, 43, 47, 0.5);
+}
+.content_list .item .msg_body .value{
+	text-align: right;
+}
+.content_list .item .msg_head .value1{
+	color: #E94634;
+	font-size: 13px;
+	
+}
+.content_list .item .msg_head .value2{
+	color: #08D400;
+	font-size: 13px;
+	
+}
+.content_list .item .msg_head .value3{
+	color: #262B2F;
+	font-size: 13px;
+	
+}
+.msg_footer{
+	display: flex;
+	justify-content: space-between;
+}
+.msg_btn{
+	/*margin-top: 20px;*/
+	width: 50%;
+	height: 40px;
+	line-height: 40px;
+	background-color: #01C6F3;
+	color: #fff;
+	border-radius: 8px;
+	text-align: center;
+	margin-bottom: 16px;
+}
+.di{
+	padding-bottom: 20px;
+}
+.msg_btn_TD{
+	width: 90%;
+	height: 40px;
+	line-height: 40px;
+	background-color: #01C6F3;
+	color: #fff;
+	border-radius: 8px;
+	text-align: center;
+	margin:0 auto 16px;
+}
+.msg_btn:not(:first-child){
+	margin-left: 10px;
+}
+.tip{
+margin-top: 15px;	
+}
+.tip .time{
+	width: 100%;
+	text-align: center;
+	color: #E94634;
+}
+.tip .msg{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.tip .msg span:nth-of-type(1){
+	width: 15%;
+	height: 1px;
+	margin-right: 5px;
+	background-image: linear-gradient(to right, #fff , #01C6F3);
+}
+.tip .msg span:nth-of-type(3){
+	width: 15%;
+	height: 1px;
+	margin-right: 5px;
+	background-image: linear-gradient(to left, #fff , #01C6F3);
+}

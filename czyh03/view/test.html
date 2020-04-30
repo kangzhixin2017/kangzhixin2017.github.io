@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no" />
+		<script type="text/javascript" async="async">
+		document.documentElement.style.fontSize = document.documentElement.clientWidth/(375/10) + 'px';
+		</script>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+		<style type="text/css">
+			*{
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body style="padding: 0;margin: 0;">
+		<div style="width: 320px;height: 100px;background-color: red;display: flex;overflow-x: scroll;">
+			<div style="width: 17rem;height: 20px;background-color: yellow;"></div>
+			<div style="width: 20.5rem;height: 20px;background-color: green;"></div>
+		</div>
+		<div style="width: 160px;height: 100px;background-color: blue;">
+			<div style="width: 10rem;height: 30px;background-color: green;"></div>
+		</div>
+		<div style="width: 6.25rem;height: 100px;background-color: yellow;">
+			<div style="background-color: blueviolet;height: 30px;width: 100%;padding: 0 10px;"></div>
+		</div>
+		<div>
+			<div class="d">撒旦</div>
+			<input style="" type="text" oninput="a(event)" name="" id="" value="" />
+		</div>
+		<div id="">
+			
+		</div>
+		<select class="select" name="">
+			<option value="1" selected="selected">1</option>
+			<option value="2" >2</option>
+			<option value="3">3</option>
+		</select>
+		<script type="text/javascript">
+			$('select').val(2)
+			$('.d').on('click',todo)
+			function todo(){
+				alert('s')
+				$('.d').off('click')
+			}
+			function a(e){
+				console.log(e)
+			}
+		</script>
+	</body>
+</html>

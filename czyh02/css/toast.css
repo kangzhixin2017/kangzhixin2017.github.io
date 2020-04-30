@@ -21,7 +21,23 @@
 	padding-bottom: 47px;
 	position: relative;
 }
-
+.toast-mask .toast_img {
+	background: #fff;
+	width: 90%;
+	max-width: 320px;
+	min-width: 250px;
+	margin: 0 auto;
+	/*min-height: 52px;*/
+	border-radius: 5px;
+	/*padding-top: 30px;
+	padding-bottom: 30px;*/
+	position: relative;
+}
+.toast-mask .toast_img img{
+	width: 90%;
+	display: block;
+	margin: 20px auto;
+}
 .toast-mask .toast .item {
 	font-size: 15px;
 	display: flex;
@@ -103,6 +119,7 @@
 	margin-top: 13px;
 	padding: 0 12px;
 	margin-bottom: 12px;
+	text-align: center;
 }
 
 .toast-mask .toast .buttons {

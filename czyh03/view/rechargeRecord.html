@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>充值记录</title>
+		<link rel="stylesheet" href="../css/rechargeRecord.css" />
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="header">
+				<img src="../img/back.png" alt="" />
+				<div class="title">充值记录</div>
+			</div>
+			
+			<div class="content_body">
+				<div class="title title1">
+					<div class="item item1">原有金额</div>
+					<div class="item item2">充值后的金额</div>
+					<div class="item item3">订单金额</div>
+				</div>
+				<div class="title title2">
+					<div class="item item1">4444444444</div>
+					<div class="item item2">4444444444</div>
+					<div class="item item3">222222222</div>
+				</div>
+				<div class="title title2">
+					<div class="item item1">4444444444</div>
+					
+					<div class="item item2">4444444444</div>
+					<div class="item item3">222222222</div>
+				</div>
+			</div>
+			<div class="tip">
+						<!--<div class="time">交易成功倒计时:22:22:59</div>-->
+						<div class="msg">
+							<span></span>
+							<span><nobr>没有更多了</nobr></span>
+							<span></span>
+						</div>
+					</div>
+		</div>
+		<script type="text/javascript">
+			window.onload = function() {
+				var show = document.getElementById('show');
+				var sel = document.getElementsByTagName('select')[0];
+				sel.onchange = function() {
+					var index = sel.selectedIndex; //序号，取当前选中选项的序号
+					show.innerText = sel.options[index].text;
+				}
+			}
+		</script>
+	</body>
+
+</html>

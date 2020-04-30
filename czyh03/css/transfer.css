@@ -1,0 +1,270 @@
+	body {
+	background: #F3F6FC;
+	margin: 0;
+	padding: 0;
+	color: #262B2F;
+}
+
+.app {
+	max-width: 414px;
+	margin: 0 auto;
+	min-height: 100vh;
+	background: #F3F6FC;
+	width: 100%;
+}
+
+input {
+	border: none;
+	outline: none;
+	/*border-radius: none;*/
+}
+
+.content_head {
+	background-color: #fff;
+	padding: 0 15px;
+	display: flex;
+	align-items: center;
+	height: 74px;
+}
+
+.header {
+	width: 100%;
+	height: 44px;
+	text-align: center;
+	position: relative;
+	background-color: #fff;
+}
+
+.header img {
+	width: 20px;
+	height: 20px;
+	/*padding: 5px 5px;*/
+	position: absolute;
+	top: 11px;
+	left: 10px;
+}
+
+.header .title {
+	line-height: 44px;
+	font-size: 18px;
+}
+
+.user {
+	background-color: #fff;
+	padding: 21px 0 12px 0;
+}
+
+.user .avatar {
+	display: flex;
+	justify-content: space-between;
+	/*background-color: yellow;*/
+	width: 100%;
+}
+
+.user .avatar img {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+.user .avatar .ava:nth-of-type(1) {
+	margin-left: 30px;
+}
+
+.user .avatar .ava:nth-of-type(2) {
+	margin-right: 30px;
+}
+
+.user .avatar .money {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.user .avatar .money div {
+	text-align: center;
+	font-size: 16px;
+	line-height: 16px;
+	/*margin-top: 10px;*/
+	/*margin-bottom: 4px;*/
+	margin-left: 0;
+	margin-right: 0;
+	/*background-color: blue;*/
+}
+
+.user .avatar .money .path {
+	width: calc(100% - 22px);
+	height: 22px;
+	/*background-color: red;*/
+	/*margin: 0 11px;*/
+}
+
+.user .msg {
+	display: flex;
+	justify-content: space-between;
+}
+
+.user .msg .item {
+	display: flex;
+	flex-direction: column;
+}
+
+.user .msg .item div:nth-of-type(1) {
+	margin-top: 4px;
+	width: 120px;
+	text-align: center;
+	font-size: 13px;
+	line-height: 13px;
+	color: rgba(38, 43, 47, 0.5);
+}
+
+.user .msg .item div:nth-of-type(2) {
+	margin-top: 8px;
+	width: 120px;
+	text-align: center;
+	font-size: 13px;
+	line-height: 13px;
+}
+
+.user .input {
+	margin-top: 4px;
+	padding: 0 10px;
+}
+
+.user .input input {
+	font-size: 14px;
+	width: 100%;
+	line-height: 20px;
+	padding: 20px 0 15px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.to_money {
+	background-color: #fff;
+	margin-top: 8px;
+	padding: 16px 10px;
+}
+
+.to_money .title {
+	font-size: 13px;
+	line-height: 13px;
+}
+
+.to_money .input {
+	border-bottom: 1px solid #e0e0e0;
+	line-height: 20px;
+	display: flex;
+	align-items: flex-end;
+	font-size: 20px;
+	height: 37px;
+}
+
+.to_money .input input {
+	font-size: 20px;
+	height: 22px;
+	width: 100%;
+	line-height: 20px;
+}
+
+.to_money .now_money {
+	font-size: 13px;
+	line-height: 13px;
+	margin-top: 9px;
+	color: rgba(38, 43, 47, 0.5);
+}
+
+input {
+	caret-color: #01C6F3;
+}
+
+.footer {
+	margin-top: 8px;
+	padding: 16px 10px;
+	background-color: #fff;
+}
+
+.footer .name {
+	font-size: 15px;
+	line-height: 15px;
+}
+
+.footer .change {
+	font-size: 15px;
+	line-height: 15px;
+	color: rgba(38, 43, 47, 0.5);
+	margin-top: 17px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.footer .change .img {
+	width: 17px;
+	height: 17px;
+}
+
+.footer .addition {
+	width: 100%;
+	/*background-color: #F3F6FC;*/
+}
+
+.footer .addition textarea {
+	width: calc(100% - 20px);
+	height: 118px;
+	border: none;
+	font-size: 14px;
+	outline: none;
+	border-radius: 4px;
+	resize: none;
+	box-shadow: none;
+	/*padding: 10px;*/
+	padding: 10px;
+	background-color: #F3F6FC;
+}
+
+.footer .addition div {
+	width: 100%;
+	text-align: right;
+}
+
+.footer .btn {
+	width: 90%;
+	line-height: 40px;
+	background-color: #01C6F3;
+	font-size: 15px;
+	text-align: center;
+	margin: 20px auto;
+	color: #fff;
+	border-radius: 8px;
+}
+
+.hr {
+	margin: 20px 0;
+	width: 100%;
+	height: 1px;
+	background-color: #e0e0e0;
+}
+
+.change .img {
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-image: url(../img/yuan.png);
+}
+
+.select .img {
+	background-image: url(../img/gou.png);
+}
+
+.touser {
+	opacity: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;

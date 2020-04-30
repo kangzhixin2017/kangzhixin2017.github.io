@@ -80,7 +80,7 @@
 			}
 			function passwordConfirm() {
 				toast.passwordConfirm(
-					"确认收到：xxx",
+					"2",
 					"请输入二级密码", [{
 							text: "取消",
 							color: "#000"
@@ -90,6 +90,7 @@
 							color: "#01C6F3"
 						}
 					],
+					'',
 					function(type, val) {
 						console.log(type, val);
 					}
@@ -99,9 +100,7 @@
 				 toast.confirm(
 				   "公告",
 				   "当前提现金额大拉克丝京东方离开家萨拉快递费就于当前可用余额拉卡时间段法律",
-				   [
-				     { text: "我知道了", color: "#01C6F3" }
-				   ],
+				  
 				   function(val) {
 				     console.log(val);
 				   }
@@ -132,14 +131,9 @@
 				 );
 			}
 			function confirm3(){
-				 toast.confirm(
-				   "",
-				   "消息体",
-				   [
-				     { text: "确定", color: "#01C6F3" }
-				   ],
+				 toast.img(
+				   "./images/icon/upload.png",
 				   function(val) {
-				     console.log(val);
 				   }
 				 );
 			}
