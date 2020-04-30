@@ -170,6 +170,7 @@ select {
 .payimg{
 	width: 100px;
 	height: 100px;
+	display: block;
 }
 .content_list .item .msg_head .key{
 	word-break: break-all;
