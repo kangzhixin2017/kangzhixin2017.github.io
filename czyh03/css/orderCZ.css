@@ -16,6 +16,7 @@ body {
 input {
 	border: none;
 	outline: none;
+	padding: 0;
 }
 
 .content {
@@ -92,7 +93,7 @@ select {
 	height: 40px;
 	font-size: 15px;
 	text-align: center;
-	padding: 0 0;
+	
 }
 .btn_confirm{
 	background-color: #01C6F3;
