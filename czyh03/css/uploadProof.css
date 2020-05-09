@@ -21,7 +21,12 @@ body {
 	display: flex;align-items: center;
 }
 .od4{
-	border: none;background-color: #01C6F3;width: 40px;height: 24px;color: white;font-size: 12px;border-radius: 4px;margin-left: 10px;
+	border: none;
+	background-color: #01C6F3;
+	width: 40px;height: 24px;
+	line-height: 24px;
+	text-align: center;
+	color: white;font-size: 12px;border-radius: 4px;margin-left: 10px;
 }
 .od5{
 	display: flex;align-items: center;word-break: break-all;text-align: right;line-height: 15px;
