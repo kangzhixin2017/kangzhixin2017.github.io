@@ -24,7 +24,7 @@
 			</div>
 			<div>
 				<div style="display: flex;align-items: center;width: 280px;margin: 50px auto 0;">
-					<img style="width: 27px;" src="./img/Android.png" />
+					<img style="width: 27px;height: 29px;" id="sys" src="" />
 					<div style="margin-left: 10px;">含信</div>
 				</div>
 				<div style="width: 280px;margin: 20px auto 0;color: rgba(38, 43, 47, 0.5);font-size: 12px;">扫描二维码下载</div>
@@ -86,9 +86,12 @@
 			$(function() {
 				if(CheckIsIOS()) {
 					var up_url = 'http://172.1.1.30:8081/common/appInfo?platform=1'
+						document.getElementById('sys').src = './img/mac.png'
+					
 				}
 				if(CheckIsAndroid()) {
 					var up_url = 'http://172.1.1.30:8081/common/appInfo?platform=2'
+					document.getElementById('sys').src = './img/Android.png'
 				}
 				$.ajax({
 					url: up_url,
