@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title></title>
+		<link rel="stylesheet" href="css/download.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<!--<div class="header">
+				<img src="./img/back.png" alt="" />
+				<div class="title">群二维码</div>
+			</div>-->
+			<div class="content">
+				<div style="margin-top: 36px;width: 190px;height: 190px;background-image: url(img/bg.png);background-repeat: no-repeat;background-size: 100% 100%;position: relative;">
+					<img id="code" style="width: 70px;height: 70px;position: absolute;right: 12px;bottom: 12px;" src="" />
+					<img id="icon" style="width: 70px;height: 70px;position: absolute;left: 12px;top: 12px;" src="" />
+				</div>
+			</div>
+			<div>
+				<div style="display: flex;align-items: center;width: 280px;margin: 50px auto 0;">
+					<img style="width: 27px;" src="./img/Android.png" />
+					<div style="margin-left: 10px;">含信</div>
+				</div>
+				<div style="width: 280px;margin: 20px auto 0;color: rgba(38, 43, 47, 0.5);font-size: 12px;">扫描二维码下载</div>
+				<div style="width: 280px;margin: 0px auto;color: rgba(38, 43, 47, 0.5);font-size: 12px;word-break: break-all;">或用手机浏览器输入这个地址：<span id="url"></span></div>
+				<div style="width: 300px;height: 1px;background-color: #e0e0e0;margin: 20px auto;"></div>
+				<div style="color: rgba(38, 43, 47, 0.5);width: 100%;text-align: center;font-size: 12px;">版本：<span id="version"></span></div>
+				<div style="color: rgba(38, 43, 47, 0.5);width: 100%;text-align: center;font-size: 12px;">更新于：<span id="updatetime"></span></div>
+				<a id="installation" href="https://8b291f688c.eachqr.com/827ccea81e4d79d4940f14094a131f81daff1779.apk?auth_key=1589016097-0-0-622f32a8ffc7696e924562699197d33e" style="display: block;text-decoration: none;width: 140px;height: 30px;background-color: #4795EF;margin: 20px auto;line-height: 30px;text-align: center;color: #fff;border-radius: 15px;font-size: 12px;">下载安装</a>
+			</div>
+		</div>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$.ajax({
+				url: 'http://172.1.1.30:8081/common/appInfo',
+				type: 'get',
+				dataType: 'json',
+				success: function(res) {
+					console.log(res)
+//					图标
+					document.getElementById('icon').src = res.data.appIcon
+//					下载地址
+					$('#url').text(res.data.url)
+					$("#installation").attr("href", res.data.url);
+//					版本
+					$('#version').text(res.data.version)
+					let time = new Date(res.data.updateTime)
+					let year = time.getFullYear()
+					let month = time.getMonth()<9? '0'+(time.getMonth() + 1):time.getMonth() + 1
+					let day = time.getDate()<10? '0'+time.getDate():time.getDate()
+//					更新时间
+					$('#updatetime').text(`${year}-${month}-${day}`)
+//					二维码
+					document.getElementById('code').src = "http://qr.liantu.com/api.php?el=l&w=1500&m=100&text=" + res.data.url
+				}
+			})
+		</script>
+	</body>
+
+</html>
