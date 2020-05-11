@@ -7,6 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title></title>
 		<link rel="stylesheet" href="css/download.css" />
+		<link rel="stylesheet" type="text/css" href="css/toast.css" />
 	</head>
 
 	<body>
@@ -17,7 +18,7 @@
 			</div>-->
 			<div class="content">
 				<div style="margin-top: 36px;width: 190px;height: 190px;background-image: url(img/bg.png);background-repeat: no-repeat;background-size: 100% 100%;position: relative;">
-					<img id="code" style="width: 70px;height: 70px;position: absolute;right: 12px;bottom: 12px;" src="" />
+					<img onclick="img()" id="code" style="width: 70px;height: 70px;position: absolute;right: 12px;bottom: 12px;" src="" />
 					<img id="icon" style="width: 70px;height: 70px;position: absolute;left: 12px;top: 12px;" src="" />
 				</div>
 			</div>
@@ -34,31 +35,88 @@
 				<a id="installation" href="https://8b291f688c.eachqr.com/827ccea81e4d79d4940f14094a131f81daff1779.apk?auth_key=1589016097-0-0-622f32a8ffc7696e924562699197d33e" style="display: block;text-decoration: none;width: 140px;height: 30px;background-color: #4795EF;margin: 20px auto;line-height: 30px;text-align: center;color: #fff;border-radius: 15px;font-size: 12px;">下载安装</a>
 			</div>
 		</div>
+		<script src="js/toast.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
+			var url_img;
 			$.ajax({
 				url: 'http://172.1.1.30:8081/common/appInfo',
 				type: 'get',
 				dataType: 'json',
 				success: function(res) {
 					console.log(res)
-//					图标
+					//					图标
 					document.getElementById('icon').src = res.data.appIcon
-//					下载地址
+					//					下载地址
+					url_img = res.data.url
 					$('#url').text(res.data.url)
 					$("#installation").attr("href", res.data.url);
-//					版本
+					//					版本
 					$('#version').text(res.data.version)
 					let time = new Date(res.data.updateTime)
 					let year = time.getFullYear()
-					let month = time.getMonth()<9? '0'+(time.getMonth() + 1):time.getMonth() + 1
-					let day = time.getDate()<10? '0'+time.getDate():time.getDate()
-//					更新时间
+					let month = time.getMonth() < 9 ? '0' + (time.getMonth() + 1) : time.getMonth() + 1
+					let day = time.getDate() < 10 ? '0' + time.getDate() : time.getDate()
+					//					更新时间
 					$('#updatetime').text(`${year}-${month}-${day}`)
-//					二维码
+					//					二维码
 					document.getElementById('code').src = "http://qr.liantu.com/api.php?el=l&w=1500&m=100&text=" + res.data.url
 				}
 			})
+
+			function img() {
+				toast.img(
+					"http://qr.liantu.com/api.php?el=l&w=1500&m=100&text=" + url_img,
+					function(val) {}
+				);
+			}
+
+			function CheckIsAndroid() {
+				var browser = {
+					versions: function() {
+						var u = navigator.userAgent,
+							app = navigator.appVersion;
+						return { //移动终端浏览器版本信息 
+							ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端 
+							android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器 
+							iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器 
+							iPad: u.indexOf('iPad') > -1, //是否iPad 
+						};
+					}(),
+				}
+				if(browser.versions.android)
+					return true;
+				return false;
+			}
+
+			function CheckIsIOS() {
+				var browser = {
+					versions: function() {
+						var u = navigator.userAgent,
+							app = navigator.appVersion;
+						return { //移动终端浏览器版本信息 
+							ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端 
+							android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器 
+							iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器 
+							iPad: u.indexOf('iPad') > -1, //是否iPad 
+						};
+					}(),
+				}
+				if(browser.versions.iPhone || browser.versions.iPad || browser.versions.ios)
+					return true;
+				return false;
+			}
+
+			$(function() {
+				alert('sd')
+				if(CheckIsIOS()) {
+					alert('ios')
+				}
+				if(CheckIsAndroid()) {
+					//如果是Android
+					alert('an')
+				}
+			});
 		</script>
 	</body>
 
