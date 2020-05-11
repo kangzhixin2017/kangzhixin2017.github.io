@@ -2,7 +2,7 @@
 	box-sizing: border-box;
 }
 body {
-	background: #F3F6FC;
+	background: #fff;
 	margin: 0;
 	padding: 0;
 	color: #262B2F;
@@ -11,7 +11,6 @@ body {
 .app {
 	max-width: 414px;
 	margin: 0 auto;
-	min-height: 100vh;
 	background: #fff;
 	width: 100%;
 }
