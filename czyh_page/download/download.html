@@ -39,30 +39,6 @@
 		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			var url_img;
-			$.ajax({
-				url: 'http://172.1.1.30:8081/common/appInfo',
-				type: 'get',
-				dataType: 'json',
-				success: function(res) {
-					console.log(res)
-					//					图标
-					document.getElementById('icon').src = res.data.appIcon
-					//					下载地址
-					url_img = res.data.url
-					$('#url').text(res.data.url)
-					$("#installation").attr("href", res.data.url);
-					//					版本
-					$('#version').text(res.data.version)
-					let time = new Date(res.data.updateTime)
-					let year = time.getFullYear()
-					let month = time.getMonth() < 9 ? '0' + (time.getMonth() + 1) : time.getMonth() + 1
-					let day = time.getDate() < 10 ? '0' + time.getDate() : time.getDate()
-					//					更新时间
-					$('#updatetime').text(`${year}-${month}-${day}`)
-					//					二维码
-					document.getElementById('code').src = "http://qr.liantu.com/api.php?el=l&w=1500&m=100&text=" + res.data.url
-				}
-			})
 
 			function img() {
 				toast.img(
@@ -108,14 +84,36 @@
 			}
 
 			$(function() {
-				alert('sd')
 				if(CheckIsIOS()) {
-					alert('ios')
+					var up_url = 'http://172.1.1.30:8081/common/appInfo?platform=1'
 				}
 				if(CheckIsAndroid()) {
-					//如果是Android
-					alert('an')
+					var up_url = 'http://172.1.1.30:8081/common/appInfo?platform=2'
 				}
+				$.ajax({
+					url: up_url,
+					type: 'get',
+					dataType: 'json',
+					success: function(res) {
+						console.log(res)
+						//					图标
+						document.getElementById('icon').src = res.data.appIcon
+						//					下载地址
+						url_img = res.data.url
+						$('#url').text(res.data.url)
+						$("#installation").attr("href", res.data.url);
+						//					版本
+						$('#version').text(res.data.version)
+						let time = new Date(res.data.updateTime)
+						let year = time.getFullYear()
+						let month = time.getMonth() < 9 ? '0' + (time.getMonth() + 1) : time.getMonth() + 1
+						let day = time.getDate() < 10 ? '0' + time.getDate() : time.getDate()
+						//					更新时间
+						$('#updatetime').text(`${year}-${month}-${day}`)
+						//					二维码
+						document.getElementById('code').src = "http://qr.liantu.com/api.php?el=l&w=1500&m=100&text=" + res.data.url
+					}
+				})
 			});
 		</script>
 	</body>
