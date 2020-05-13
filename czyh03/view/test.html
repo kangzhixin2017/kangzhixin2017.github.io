@@ -9,6 +9,7 @@
 		</script>
 		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="../../czyh02/css/toast.css"/>
 		<style type="text/css">
 			*{
 				box-sizing: border-box;
@@ -26,10 +27,15 @@
 		<div style="width: 6.25rem;height: 100px;background-color: yellow;">
 			<div style="background-color: blueviolet;height: 30px;width: 100%;padding: 0 10px;"></div>
 		</div>
+		<div style="width: 100px;height: 100px;background-color: red;">
+			<div style="width: 100px;height: 30px;background-color: yellow;padding: 30px;">9</div>
+		</div>
 		<div>
 			<div class="d">撒旦</div>
 			<input style="" type="text" oninput="a(event)" name="" id="" value="" />
 		</div>
+		<a href="#" onclick="passwordConfirm()">输入密码信息弹框</a>
+		
 		<div id="">
 			
 		</div>
@@ -38,7 +44,29 @@
 			<option value="2" >2</option>
 			<option value="3">3</option>
 		</select>
+		<input type="" placeholder="" name="" id="" value="" />
+		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
+			function passwordConfirm() {
+				toast.passwordConfirm2(
+					"2",
+					"", [{
+							text: "取消",
+							color: "#000"
+						},
+						{
+							text: "发送",
+							color: "#01C6F3"
+						}
+					],
+					'',
+					'',
+					function(type, val,val2) {
+						alert(type+val+val2)
+						console.log(type, val);
+					}
+				);
+			}
 			$('select').val(2)
 			$('.d').on('click',todo)
 			function todo(){

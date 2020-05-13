@@ -23,6 +23,7 @@ function createToast() {
 	});
 	return toast;
 }
+
 function createToast_img() {
 	var toast = document.createElement("div");
 	toast.classList.add("toast_img");
@@ -53,6 +54,13 @@ function createInput(val) {
 	return input;
 }
 
+function createInput2(val) {
+	var input = document.createElement("input");
+	input.value = val
+	input.classList.add("password2");
+	return input;
+}
+
 function appendInput(toast, message, input) {
 	var inputWrapper = document.createElement("div");
 	inputWrapper.classList.add("input-wrapper");
@@ -61,6 +69,17 @@ function appendInput(toast, message, input) {
 	inputTips.innerText = message;
 	inputWrapper.appendChild(inputTips);
 
+	inputWrapper.appendChild(input);
+	toast.appendChild(inputWrapper);
+}
+
+function appendInput2(toast, message, input) {
+	var inputWrapper = document.createElement("div");
+	inputWrapper.classList.add("input-wrapper");
+	//	var inputTips = document.createElement("div");
+	//	inputTips.classList.add("input-placeholder");
+	//	inputTips.innerText = message;
+	//	inputWrapper.appendChild(inputTips);
 	inputWrapper.appendChild(input);
 	toast.appendChild(inputWrapper);
 }
@@ -82,12 +101,14 @@ function appendContent(toast, contentHtml) {
 	});
 	toast.appendChild(contentEle);
 }
-function appendimg(toast,src){
-//	alert(src)
+
+function appendimg(toast, src) {
+	//	alert(src)
 	var im = document.createElement("img");
 	im.src = src
 	toast.appendChild(im);
 }
+
 function appendButtons(toast, buttons, callback, mask, input) {
 	if(buttons && buttons.length) {
 		var buttonGroup = document.createElement("div");
@@ -103,6 +124,30 @@ function appendButtons(toast, buttons, callback, mask, input) {
 				var password = input && input.value;
 				document.body.removeChild(mask);
 				callback(button.text, password || "");
+			});
+		});
+		toast.appendChild(buttonGroup);
+	} else {
+		toast.style.paddingBottom = "0px";
+	}
+}
+
+function appendButtons2(toast, buttons, callback, mask, input, input2) {
+	if(buttons && buttons.length) {
+		var buttonGroup = document.createElement("div");
+		buttonGroup.classList.add("buttons");
+		buttons.map(function(button) {
+			var buttonEle = document.createElement("div");
+			buttonEle.classList.add("button");
+			buttonEle.innerText = button.text;
+			buttonEle.style.color = button.color;
+			buttonGroup.appendChild(buttonEle);
+			buttonEle.addEventListener("click", function(e) {
+				e.stopPropagation();
+				var password = input && input.value;
+				var password2 = input2 && input2.value;
+				document.body.removeChild(mask);
+				callback(button.text, password || "", password2 || "");
 			});
 		});
 		toast.appendChild(buttonGroup);
@@ -135,7 +180,7 @@ var toast = {
 		// 添加到dom
 		appendToDom(mask, toast);
 	},
-	passwordConfirm: function(title, message, buttons, value,callback) {
+	passwordConfirm: function(title, message, buttons, value, callback) {
 		// 创建元素
 		var mask = createMask(callback);
 		var toast = createToast();
@@ -145,14 +190,41 @@ var toast = {
 			window.scrollTo(0, 0)
 			input.addEventListener('focus', function() {
 				$('.toast').css('margin-top', '25%')
-			$('.toast-mask').css('position', 'absolute')
-				
+				$('.toast-mask').css('position', 'absolute')
 			})
 		}
 		// 添加内容
 		appendTitle(toast, title);
 		appendInput(toast, message, input);
 		appendButtons(toast, buttons, callback, mask, input);
+		// 添加到dom
+		appendToDom(mask, toast);
+	},
+	passwordConfirm2: function(title, message, buttons, value, value2, callback) {
+		// 创建元素
+		var mask = createMask(callback);
+		var toast = createToast();
+		var input = createInput(value);
+		input.placeholder = '支付宝分成设置'
+		var input2 = createInput2(value2);
+		input2.placeholder = 'H5支付宝分成设置'
+		var u = navigator.userAgent;
+		if((u.indexOf('iPhone') > -1) && (u.indexOf('UCBrowser') > -1)) {
+			window.scrollTo(0, 0)
+			input.addEventListener('focus', function() {
+				$('.toast').css('margin-top', '25%')
+				$('.toast-mask').css('position', 'absolute')
+			})
+			input2.addEventListener('focus', function() {
+				$('.toast').css('margin-top', '25%')
+				$('.toast-mask').css('position', 'absolute')
+			})
+		}
+		// 添加内容
+		appendTitle(toast, title);
+		appendInput(toast, message, input);
+		appendInput2(toast, message, input2);
+		appendButtons2(toast, buttons, callback, mask, input, input2);
 		// 添加到dom
 		appendToDom(mask, toast);
 	},
@@ -167,7 +239,7 @@ var toast = {
 			document.body.removeChild(mask);
 		}, delay || 1000);
 	},
-	list: function(list, buttons,callback) {
+	list: function(list, buttons, callback) {
 		var mask = createMask(callback);
 		var toast = createToast();
 		list.map(item => {

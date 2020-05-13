@@ -18,14 +18,14 @@ input {
 	border: none;
 	outline: none;
 }
-.header{
+.header_me{
 	width: 100%;
 	height: 165px;
 	background-image: url('../img/me_bg.png');
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
-.header .title{
+.header_me .title{
 	width: 100%;
 	text-align: center;
 	line-height: 44px;
