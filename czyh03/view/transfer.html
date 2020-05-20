@@ -20,7 +20,7 @@
 				<div class="avatar">
 					<img class="ava" src="../img/logo.png" />
 					<div class="money">
-						<div>变动金额：<span class="tomoney"></span></div>
+						<div>变动金额：<span class="tomoney">345239847</span></div>
 						<img class="path" src="../img/path.png" />
 					</div>
 					<img class="ava toava touser" src="../img/logo.png" />
@@ -58,7 +58,7 @@
 					<div>由对应会员帐号划入钱包账户（加款）</div>
 					<div class="img"></div>
 				</div>
-				<div class="change" onclick="change(this)">
+				<div class="change" data-id = "1" onclick="change(this)">
 					<div>由对应会员帐号划入钱包账户（扣款）</div>
 					<div class="img"></div>
 				</div>
@@ -91,16 +91,22 @@
 			}
 
 			function change(cardElement) {
+				console.log(cardElement.dataset.id)
 				if(cardElement) {
 					clearSelect();
 					cardElement.classList.toggle("select");
+					if(cardElement.dataset.id == 1){
+						$('.path').css('transform',"rotate(180deg)")
+					}else{
+						$('.path').css('transform',"rotate(0deg)")
+					}
 				}
 			}
 
 			function change_phone() {
 				console.log(document.getElementById("phone").value)
 				if(document.getElementById("phone").value.length == 3) {
-					$(".toava").attr('src', '../img/back.png');
+					$(".toava").attr('src', '../img/logo.png');
 					$(".tophone").html("333333333333333")
 					$(".touser").css('opacity', '1');
 				}

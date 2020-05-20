@@ -316,6 +316,7 @@
 				var sel = document.getElementsByTagName('select')[0];
 				sel.onchange = function() {
 					var index = sel.selectedIndex; //序号，取当前选中选项的序号
+					console.log(index)
 					show.innerText = sel.options[index].text;
 				}
 			}

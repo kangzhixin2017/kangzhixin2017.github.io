@@ -103,7 +103,7 @@
 						document.getElementById('icon').src = res.data.appIcon
 						//					下载地址
 						url_img = res.data.url
-						$('#url').text(res.data.url)
+						$('#url').text(window.location.href)
 						$("#installation").attr("href", res.data.url);
 						//					版本
 						$('#version').text(res.data.version)
@@ -114,7 +114,7 @@
 						//					更新时间
 						$('#updatetime').text(`${year}-${month}-${day}`)
 						//					二维码
-						document.getElementById('code').src = "http://qr.liantu.com/api.php?el=l&w=1500&m=100&text=" + res.data.url
+						document.getElementById('code').src = "http://qr.liantu.com/api.php?el=l&w=1500&m=100&text=" + window.location.href
 					}
 				})
 			});

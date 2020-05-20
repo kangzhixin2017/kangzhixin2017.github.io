@@ -1,0 +1,56 @@
+.content{
+	width: 100%;
+	padding: 0 15rem;
+}
+.content .money_body{
+	margin-top: 20rem;
+}
+.content .money_body .title{
+	font-size: 17rem;
+	line-height: 20rem;
+}
+.content .money_body .money{
+	display: flex;
+	align-items: center;
+	font-size: 20rem;
+	font-weight: bold;
+	line-height: 48rem;
+	margin-top: 8rem;
+	border-bottom: 1rem solid #E2E2E2;
+}
+.content .money_body .money input{
+	line-height: 48rem;
+	width: 100%;
+	font-size: 20rem;
+	margin-left: 5rem;
+	font-weight: bold;
+}
+.content .msg .tip{
+	font-size: 15rem;
+	line-height: 18rem;
+	color: #7E7E7E;
+	margin: 8rem 0;
+}
+.content .msg .item{
+	height: 35rem;
+	display: flex;
+	align-items: center;
+	font-size: 15rem;
+}
+.delete{
+	display: none;
+	width: 24rem;
+	height: 24rem;
+	flex-shrink: 0;
+}
+.btn{
+	width: 335rem;
+	height: 40rem;
+	font-size: 15rem;
+	background-color: #D8D8D8;
+	text-align: center;
+	line-height: 40rem;
+	color: #fff;
+	border-radius: 8rem;
+	margin: 20rem auto 0;
+}
