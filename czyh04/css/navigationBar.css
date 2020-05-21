@@ -8,8 +8,9 @@
 	position: sticky;
 	top: 0;
 	background-color: #fff;
+	z-index: 9999999;
 }
-.navigationBar img{
+.navigationBar .back{
 	/*返回按钮大小*/
 	width: 20rem;
 	height: 20rem;
