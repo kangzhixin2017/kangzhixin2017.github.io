@@ -1,0 +1,15 @@
+.list{
+	padding: 0 20rem;
+}
+.list .row{
+	height: 55rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 17rem;
+	border-bottom: 1rem solid #E2E2E2;
+}
+.list .row img{
+	width: 8rem;
+	height: 13rem;
+}

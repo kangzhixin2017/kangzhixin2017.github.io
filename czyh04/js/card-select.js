@@ -5,12 +5,12 @@ var data = [
   { id: "厦门国际银行", value: "厦门国际银行" },
   { id: "建设银行", value: "建设银行" }
 ];
-var showDom = document.querySelector("#cardType"); // 绑定一个触发元素
+var showDom = document.querySelector("#cardTypeSelect"); // 绑定一个触发元素
 var valDom = document.querySelector("#cardType"); // 绑定一个存储结果的元素
 showDom.addEventListener("click", function() {
   // 添加监听事件
-  var val = showDom.dataset["id"]; // 获取元素的data-id属性值
-  var title = showDom.dataset["value"]; // 获取元素的data-value属性值
+  var val = valDom.dataset["id"]; // 获取元素的data-id属性值
+  var title = valDom.dataset["value"]; // 获取元素的data-value属性值
   // 实例化组件
   var example = new IosSelect(
     1, // 第一个参数为级联层级，演示为1
@@ -24,9 +24,9 @@ showDom.addEventListener("click", function() {
       callback: function(selectOneObj) {
         // 用户确认选择后的回调函数
         valDom.value = selectOneObj.id;
-        showDom.innerHTML = selectOneObj.value;
-        showDom.dataset["id"] = selectOneObj.id;
-        showDom.dataset["value"] = selectOneObj.value;
+        valDom.innerHTML = selectOneObj.value;
+        valDom.dataset["id"] = selectOneObj.id;
+        valDom.dataset["value"] = selectOneObj.value;
       }
     }
   );

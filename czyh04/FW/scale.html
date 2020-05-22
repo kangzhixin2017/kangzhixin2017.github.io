@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>分成比例</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/navigationBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/tabBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/scale.css" />
+		<link rel="stylesheet" type="text/css" href="../css/toast.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="navigationBar">
+				<img class="back" src="../img/left.png" />
+				<div class="title left">分成比例</div>
+			</div>
+			<div class="content">
+				<div class="money_body">
+					<div class="title">银行卡转账</div>
+					<div class="money">
+						<input id="val" class="val" type="" name="" id="" value="" placeholder="" oninput="change()" />
+						<img class="delete" onclick="delete_val()" src="../img/delete.png" />
+					</div>
+				</div>
+				<div class="msg">
+					<div class="tip">下级代理分成比例不可超过上级（上级1.5%）</div>
+					<div class="item">
+						<div>会员账号：</div>
+						<div>23424242342342</div>
+					</div>
+					<div class="item">
+						<div>时间：</div>
+						<div>2020-01-19 10:50:32</div>
+					</div>
+					<div class="item">
+						<div>状态：</div>
+						<div>下线</div>
+					</div>
+					<div class="item">
+						<div>等级：</div>
+						<div>一级</div>
+					</div>
+				</div>
+				<div class="btn">设置</div>
+			</div>
+			<div class="tabBar">
+				<div class="item">
+					<img src="../img/order1.png" alt="" />
+					<div>订单列表</div>
+				</div>
+				<div class="item">
+					<img src="../img/buy.png" alt="" />
+					<div>抢单大厅</div>
+				</div>
+				<div class="item">
+					<img src="../img/sell1.png" alt="" />
+					<div>收款码列表</div>
+				</div>
+				<div class="item">
+					<img src="../img/me.png" alt="" />
+					<div>个人中心</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//			输入完成并判断完成修改按钮颜色
+			setTimeout(() => {
+				$('.btn').css('backgroundColor', '#FF6600')
+			}, 2000)
+
+			function delete_val() {
+				$('.val').val('')
+				$('.delete').css('display', 'none')
+			}
+
+			function change() {
+				if(event.target.value) {
+					$('.delete').css('display', 'block')
+				} else {
+					$('.delete').css('display', 'none')
+				}
+			}
+		</script>
+	</body>
+
+</html>

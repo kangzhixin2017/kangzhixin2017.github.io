@@ -1,0 +1,138 @@
+.head{
+	display: flex;
+	justify-content: center;
+}
+.head .bg{
+	margin: 20rem 0;
+	width: 150rem;
+	height: 150rem;
+	background-image: url(../img/time.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.head .bg .des{
+	font-size: 17rem;
+}
+.head .bg .time{
+	display: none;
+	font-size: 30rem;
+	text-align: center;
+}
+.head .bg .time div:nth-of-type(2){
+	font-size: 17rem;
+	color: #7E7E7E;
+}
+.msg{
+	width: 100%;
+	font-size: 15rem;
+	line-height: 21rem;
+	/*margin-top: 20rem;*/
+	text-align: center;
+}
+.btn{
+	width: 335rem;
+	height: 40rem;
+	font-size: 15rem;
+	background-color: #FF6600;
+	text-align: center;
+	line-height: 40rem;
+	color: #fff;
+	border-radius: 8rem;
+	margin: 10rem auto 20rem;
+}
+.content{
+	width: 100%;
+	padding: 0 15rem;
+}
+.content .row{
+	/*padding: 0 15rem;*/
+	border-radius: 8rem;
+	height: 74rem;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	box-shadow: 0 2rem 6rem 0 rgba(0, 0, 0, 0.15);
+}
+.content .row:nth-of-type(2){
+	margin-top: 5rem;
+}
+.content .row .item{
+	/*flex: 1;*/
+	width: 33.33%;
+	padding-left: 10rem;
+}
+.content .row span{
+	width: 1rem;
+	height: 18rem;
+	background-color: #CCCCCC;
+}
+.content .row .item div:nth-of-type(1){
+	font-size: 17rem;
+	line-height: 20rem;
+}
+.content .row .item div:nth-of-type(2){
+	font-size: 12rem;
+	line-height: 14rem;
+	color: #7E7E7E;
+	margin-top: 5rem;
+}
+.tip{
+	margin: 22rem 0;
+	padding: 0 20rem;
+}
+.tip .title{
+	display: flex;
+	align-items: center;
+	margin-bottom: 15rem;
+}
+.tip .title img{
+	display: block;
+	width: 20rem;
+	height: 20rem;
+	margin-right: 9rem;
+}
+.tip .title div{
+	color: #FC0C0C;
+	font-size: 17rem;
+	line-height: 20rem;
+}
+.tip .item{
+	font-size: 13rem;
+	color: #7E7E7E;
+	line-height: 20rem;
+}
+.card_item{
+	display: none;
+}
+.card_item .row{
+	height: 48rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.card_item .row .right{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	border-bottom: 1rem solid #E2E2E2;
+}
+.card_item .row .right img{
+	width: 16rem;
+	height: 10rem;
+	display: none;
+	border: none;
+}
+.card_item .row .right div{
+	font-size: 15rem;
+	line-height: 48rem;
+}
+.card_item .row >img{
+	flex-shrink: 0;
+	width: 17rem;
+	height: 17rem;
+	margin-right: 8rem;
+}

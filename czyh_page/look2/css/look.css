@@ -60,6 +60,7 @@ body {
 .header .content{
 	padding: 20px 0 25px;
 	font-size: 17px;
+	word-break: normal;
 }
 .body{
 	margin: 29px 0;
@@ -71,7 +72,7 @@ body {
 }
 .body .item div{
 	font-size: 15px;
-	word-break: break-all;
+	word-break: normal;
 }
 .body .item1 img{
 	flex-shrink: 0;

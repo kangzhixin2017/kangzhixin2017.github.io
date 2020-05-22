@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>抢单大厅</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/navigationBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/tabBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/grabOrder.css" />
+		<link rel="stylesheet" type="text/css" href="../css/toast.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="navigationBar">
+				<div class="title center">抢单大厅</div>
+			</div>
+			<div class="head">
+				<div class="bg">
+					<div class="des">抢单大厅</div>
+					<div class="time">
+						<div>78</div>
+						<div>秒</div>
+					</div>
+				</div>
+			</div>
+			<div class="msg">开始后自动抢单，每隔60分钟</div>
+			<div class="btn" data-status = "0" onclick="grab()">开始抢单</div>
+			<div class="content">
+				<div class="row">
+					<div class="item">
+						<div>2734</div>
+						<div>信誉分</div>
+					</div>
+					<span></span>
+					<div class="item">
+						<div>2983341.23</div>
+						<div>交易中的币</div>
+					</div>
+					<span></span>
+					<div class="item">
+						<div>29823423.33</div>
+						<div>可用余额</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="item">
+						<div>2734</div>
+						<div>冻结中的币</div>
+					</div>
+					<span></span>
+					<div class="item">
+						<div>29341.23</div>
+						<div>今日订单总额</div>
+					</div>
+					<span></span>
+					<div class="item">
+						<div>298223.33</div>
+						<div>昨日订单总额</div>
+					</div>
+				</div>
+			</div>
+			<div class="tip">
+				<div class="title">
+					<img src="../img/tip.png" />
+					<div>温馨提示</div>
+				</div>
+				<div class="item">
+					充值提示：
+				</div>
+				<div class="item">
+					1.码商单笔最小充值金额¥10000
+				</div>
+				<div class="item">
+					2.码商单笔最小充值金额¥50000
+				</div>
+				<div class="item">
+					3.码商第一笔充值会冻结2000金额，剩余转入可用余额
+				</div>
+			</div>
+
+			<div class="tabBar_d"></div>
+			<div class="tabBar">
+				<div class="item">
+					<img src="../img/order1.png" alt="" />
+					<div>订单列表</div>
+				</div>
+				<div class="item">
+					<img src="../img/buy1.png" alt="" />
+					<div>抢单大厅</div>
+				</div>
+				<div class="item">
+					<img src="../img/sell1.png" alt="" />
+					<div>收款码列表</div>
+				</div>
+				<div class="item">
+					<img src="../img/me1.png" alt="" />
+					<div>个人中心</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		function grab(){
+			console.log(event.target.dataset.status)
+			if(event.target.dataset.status == 0){
+				event.target.innerText = '停止抢单'
+				$('.des').hide()
+				$('.time').show()
+				event.target.dataset.status = 1
+			}else{
+				event.target.innerText = '开始抢单'
+				$('.des').show()
+				$('.time').hide()
+				event.target.dataset.status = 0
+			}
+		}
+		</script>
+	</body>
+
+</html>

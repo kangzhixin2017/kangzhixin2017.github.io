@@ -34,6 +34,9 @@
 	width: 100%;
 	font-size: 17rem;
 }
+.content .item div{
+	font-size: 17rem;
+}
 .content .item .delete{
 	display: none;
 }
