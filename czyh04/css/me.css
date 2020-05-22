@@ -13,8 +13,8 @@
 	align-items: center;
 	/*导航高度*/
 	height: 54rem;
-	position: sticky;
-	top: 0;
+	/*position: sticky;*/
+	/*top: 0;*/
 }
 .bg_navigationBar img{
 	/*返回按钮大小*/
