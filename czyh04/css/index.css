@@ -26,6 +26,9 @@ select{
 	-moz-appearance: none;
 	-webkit-appearance: none;
 }
+textarea{
+	resize: none;
+}
 .app{
 	/*设置最大显示宽度*/
 	max-width: 414px;
