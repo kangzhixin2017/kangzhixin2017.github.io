@@ -36,7 +36,7 @@
 	width: 335rem;
 	height: 40rem;
 	font-size: 15rem;
-	background-color: #FF6600;
+	background-color: #FC660C;
 	text-align: center;
 	line-height: 40rem;
 	color: #fff;
@@ -72,6 +72,7 @@
 .content .row .item div:nth-of-type(1){
 	font-size: 17rem;
 	line-height: 20rem;
+	color: #FC660C;
 }
 .content .row .item div:nth-of-type(2){
 	font-size: 12rem;

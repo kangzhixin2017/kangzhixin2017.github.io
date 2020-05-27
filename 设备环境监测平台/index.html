@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="css/index.css">
+		<title>设备环境监测平台大数据</title>
+		<script src="js/jquery-2.2.1.min.js"></script>
+		<script src="js/rem.js"></script>
+		<script src="js/echarts.min.js"></script>
+		<script src="js/guangxi.js"></script>
+		<script src="js/index.js"></script>
+	</head>
+
+	<body>
+		<div class="t_container">
+			<header class="t_header">
+				<span>设备环境监测平台</span>
+			</header>
+			<main class="t_main">
+				<div class="t_left_box">
+					<img class="t_l_line" src="img/left_line.png" alt="">
+					<div class="t_mbox t_rbox">
+						<i></i>
+						<span>平台总利润</span>
+						<h2>18000</h2>
+					</div>
+					<div class="t_mbox t_gbox">
+						<i></i>
+						<span>当日支付宝订单总量</span>
+						<h2>1000</h2>
+					</div>
+					<div class="t_mbox t_ybox">
+						<i></i>
+						<span>当日支付宝成功率:%</span>
+						<h2>600</h2>
+					</div>
+					<img class="t_r_line" src="img/right_line.png" alt="">
+				</div>
+				<div class="t_center_box">
+					<div class="t_top_box">
+						<img class="t_l_line" src="img/left_line.png" alt="">
+						<ul class="t_nav">
+							<li>
+								<span>平台提现总收益</span>
+								<h1>500</h1>
+							</li>
+							<i></i>
+							<li>
+								<span>厂商当日总分成</span>
+								<h1>30</h1>
+							</li>
+							<i></i>
+							<li>
+								<span>码商当日总分成</span>
+								<h1>30</h1>
+							</li>
+							<i></i>
+							<li>
+								<span>卡商当日总分成</span>
+								<h1>30</h1>
+							</li>
+							<i></i>
+							<li>
+								<span>当日平台利润结余</span>
+								<h1>30</h1>
+							</li>
+
+						</ul>
+						<img class="t_r_line" src="img/right_line.png" alt="">
+					</div>
+					<div class="t_bottom_box">
+						<img class="t_l_line" src="img/left_line.png" alt="">
+						<div id="chart_3" class="echart" style="width: 100%; height: 5rem;"></div>
+						<img class="t_r_line" src="img/right_line.png" alt="">
+					</div>
+				</div>
+				<div class="t_right_box">
+					<img class="t_l_line" src="img/left_line.png" alt="">
+					<div class="right_o" style="">
+						<div>当日码商充值总量：<span>32423</span></div>
+						<div>当日码商提现总量：<span>32423</span></div>
+						<div>当日卡商充值总量：<span>32423</span></div>
+						<div>当日卡商提现总量：<span>32423</span></div>
+						<div>当日厂商流通总量：<span>32423</span></div>
+						<div>当日厂商提现总量：<span>32423</span></div>
+					</div>
+					<!--<div id="chart_4" class="echart" style="width: 92%; height: 4.6rem; position: absolute;"></div>-->
+					<!--<header class="t_b_h">
+						<span>开关次数</span>
+						<img src="img/end.png"></img>
+						<h3>15<span>次</span></h3>
+					</header>
+					<main class="t_b_m">
+						<img src="img/map.png" alt="">
+						<div class="t_b_box">
+							<span>溫度</span>
+							<i></i>
+							<h2>23℃</h2>
+						</div>
+						<div class="t_b_box1">
+							<span>湿度</span>
+							<i></i>
+							<h2>56RH</h2>
+						</div>
+						<div class="t_b_box2">
+							<span>信号</span>
+							<i></i>
+							<h2>-90dBm</h2>
+						</div>
+						<div class="t_b_box3">
+							<span>光线</span>
+							<i></i>
+							<h2>250LX</h2>
+						</div>
+					</main>-->
+					<img class="t_r_line" src="img/right_line.png" alt="">
+				</div>
+				<div class="list_o">
+					<div class="t_top_box">
+						<img class="t_l_line" src="img/left_line.png" alt="">
+						<ul class="t_nav bor_o">
+							<li>
+								<span>当日H5支付宝订单总量</span>
+								<h1>500</h1>
+							</li>
+							<!--<i></i>-->
+							<li>
+								<span>当日H5支付宝成功率：%</span>
+								<h1>30</h1>
+							</li>
+							<!--<i></i>-->
+							<li>
+								<span>当日银行卡订单总量</span>
+								<h1>30</h1>
+							</li>
+							<!--<i></i>-->
+							<li>
+								<span>当日银行卡成功率：%</span>
+								<h1>30</h1>
+							</li>
+						</ul>
+						<img class="t_r_line" src="img/right_line.png" alt="">
+					</div>
+				</div>
+				<!--<div class="b_left_box">
+					<img class="t_l_line" src="img/left_line.png" alt="">
+					<div id="chart_2" class="echart" style="width: 100%; height: 3.6rem;"></div>
+					<img class="t_r_line" src="img/right_line.png" alt="">
+				</div>-->
+
+				<div class="b_right_box">
+					<img class="t_l_line" src="img/left_line.png" alt="">
+					<h1 class="t_title">顶级账户信息</h1>
+					<div class="tabhead">
+						<span>类型</span>
+						<span>账号</span>
+						<span>钱包</span>
+						<span>分成币</span>
+					</div>
+					<div class="tabbody">
+						<div class="row">
+							<div>码商</div>
+							<div>13111345462</div>
+							<div>897676789</div>
+							<div>82736832</div>
+						</div>
+						<div class="row">
+							<div>码商</div>
+							<div>13111345462</div>
+							<div>897676789</div>
+							<div>82736832</div>
+						</div>
+						<div class="row">
+							<div>码商</div>
+							<div>13111345462</div>
+							<div>897676789</div>
+							<div>82736832</div>
+						</div>
+						<div class="row">
+							<div>码商</div>
+							<div>13111345462</div>
+							<div>897676789</div>
+							<div>82736832</div>
+						</div>
+						<div class="row">
+							<div>码商</div>
+							<div>13111345462</div>
+							<div>897676789</div>
+							<div>82736832</div>
+						</div>
+						<div class="row">
+							<div>码商</div>
+							<div>13111345462</div>
+							<div>897676789</div>
+							<div>82736832</div>
+						</div>
+						<div class="row">
+							<div>码商</div>
+							<div>13111345462</div>
+							<div>897676789</div>
+							<div>82736832</div>
+						</div>
+					</div>
+					<!--<table class="t_table">
+						<thead>
+							<tr>
+								<th>类型塑料袋咖啡机离开时间</th>
+								<th>账号</th>
+								<th>钱包</th>
+								<th>分成币</th>
+							</tr>
+						</thead>
+						<tbody class="tbboo">
+							<tr>
+								<td>码商</td>
+								<td>13111345462</td>
+								<td>897676789.89</td>
+								<td>82736832.00</td>
+							</tr>
+							<tr>
+								<td>码商</td>
+								<td>13111345462</td>
+								<td>897676789.89</td>
+								<td>82736832.00</td>
+							</tr>
+							<tr>
+								<td>码商</td>
+								<td>13111345462</td>
+								<td>897676789.89</td>
+								<td>82736832.00</td>
+							</tr>
+							<tr>
+								<td>码商</td>
+								<td>13111345462</td>
+								<td>897676789.89</td>
+								<td>82736832.00</td>
+							</tr>
+							<tr>
+								<td>码商</td>
+								<td>13111345462</td>
+								<td>897676789.89</td>
+								<td>82736832.00</td>
+							</tr>
+							<tr>
+								<td>码商</td>
+								<td>13111345462</td>
+								<td>897676789.89</td>
+								<td>82736832.00</td>
+							</tr>
+							<tr>
+								<td>码商</td>
+								<td>13111345462</td>
+								<td>897676789.89</td>
+								<td>82736832.00</td>
+							</tr>
+						</tbody>
+					</table>-->
+
+					<img class="t_r_line" src="img/right_line.png" alt="">
+				</div>
+				<div class="b_center_box">
+					<img class="t_l_line" src="img/left_line.png" alt="">
+					<div id="chart_1" class="echart" style="width: 100%; height: 3.6rem;"></div>
+					<img class="t_r_line" src="img/right_line.png" alt="">
+				</div>
+			</main>
+		</div>
+	</body>
+
+</html>

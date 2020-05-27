@@ -25,7 +25,7 @@ body {
 }
 
 .msg {
-	margin-top: -121px;
+	margin-top: -170px;
 	width: 100%;
 	padding: 0 15px;
 	/*background-color: #fff;*/
@@ -59,19 +59,23 @@ body {
 
 .header .content{
 	padding: 20px 0 25px;
-	font-size: 17px;
+	font-size: 13px;
 	word-break: normal;
 }
 .body{
-	margin: 29px 0;
+	margin: 9px 0;
 }
 .body .item{
 	display: flex;
 	align-items: center;
 	padding: 17px 20px 0;
+	color: #4F565C;
+}
+.body .item span{
+	color: #0B0B0B;
 }
 .body .item div{
-	font-size: 15px;
+	font-size: 13px;
 	word-break: normal;
 }
 .body .item1 img{

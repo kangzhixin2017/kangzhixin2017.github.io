@@ -39,8 +39,9 @@ function defaultStyle() {
 	for(let i = 0; i < data_card.length; i++) {
 		if(!data_card[i]) {
 			$('.input_' + data_class[i]).hide();
-			$('.item_' + data_class[i]).css('border-bottom', '1rem solid #E2E2E2')
+			
 			$('.' + data_class[i]).css('font-size', '17rem')
 		}
+		$('.item_' + data_class[i]).css('border-bottom', '1rem solid #E2E2E2')
 	}
 }

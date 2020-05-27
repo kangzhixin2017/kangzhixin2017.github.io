@@ -12,8 +12,6 @@
 		<link rel="stylesheet" type="text/css" href="../css/tabBar.css" />
 		<link rel="stylesheet" type="text/css" href="../css/collectList.css" />
 		<link rel="stylesheet" type="text/css" href="../css/toast.css" />
-		<link rel="stylesheet" href="../css/iosSelect.css">
-		<script type="text/javascript" src="../js/iosSelect.js"></script>
 
 	</head>
 
@@ -45,7 +43,7 @@
 					</div>
 					<div class="row2">
 						<div>状态</div>
-						<img src="../img/guan.png" />
+						<img data-id = "0" src="../img/guan.png" onclick="status()"/>
 						<!--<img src="../img/kai.png" />-->
 					</div>
 					<div class="row3">
@@ -139,7 +137,7 @@
 					</div>
 					<div class="row2">
 						<div>状态</div>
-						<img src="../img/guan.png" />
+						<img data-id = "0" src="../img/guan.png" onclick="status()"/>
 						<!--<img src="../img/kai.png" />-->
 					</div>
 					<div class="row3">
@@ -249,9 +247,17 @@
 		</div>
 		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/date-select.js"></script>
 
 		<script type="text/javascript">
+			function status(){
+				if(event.target.dataset.id == 0){
+					event.target.src = '../img/kai.png'
+					event.target.dataset.id = 1
+				}else{
+					event.target.src = '../img/guan.png'
+					event.target.dataset.id = 0
+				}
+			}
 		</script>
 	</body>
 

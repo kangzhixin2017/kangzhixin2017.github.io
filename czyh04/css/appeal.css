@@ -6,6 +6,7 @@
 	line-height: 42rem;
 	background-color: #F3F6FC;
 	padding: 0 20rem;
+	color: #7E7E7E;
 }
 .list .item{
 	height: 50rem;
@@ -16,6 +17,7 @@
 }
 .list .item div{
 	font-size: 17rem;
+	
 }
 .list .item img{
 	width: 18rem;
@@ -30,6 +32,7 @@
 }
 .list .item2 div{
 	font-size: 17rem;
+	line-height: 17rem;
 }
 .list .item2 img{
 	width: 100rem;
@@ -81,4 +84,7 @@
 }
 .addition-count{
 	color: #7E7E7E;
+}
+textarea{
+	resize:none
 }

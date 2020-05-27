@@ -8,9 +8,9 @@
 	text-align: center;
 	right: 10rem;
 	font-size: 10rem;
-	border: 1rem solid #FF6600;
+	border: 1rem solid #FC660C;
 	border-radius: 4rem;
-	color: #FF6600;
+	color: #FC660C;
 }
 .search{
 	background-color: #fff;
@@ -18,7 +18,7 @@
 	margin: 15rem auto 0;
 	border-radius: 5px;
 	padding: 10rem 10rem 16rem;
-	box-shadow: 0 2rem 6rem 2rem rgba(0, 0, 0, 0.15);
+	box-shadow: 0 2rem 6rem 2rem rgba(0, 0, 0, 0.05);
 }
 .search .item{
 	height: 60rem;
@@ -102,6 +102,7 @@
 	justify-content: space-between;
 	font-size: 15rem;
 	/*align-items: center;*/
+	color: #7E7E7E;
 }
 .content .item .row4 img{
 	width: 100rem;

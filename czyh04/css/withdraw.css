@@ -129,12 +129,12 @@
 }
 .tip{
 	margin-top: 22rem;
-	padding: 0 20rem;
+	padding: 0 15rem;
 }
 .tip .title{
 	display: flex;
 	align-items: center;
-	margin-bottom: 15rem;
+	margin-bottom: 8rem;
 }
 .tip .title img{
 	display: block;

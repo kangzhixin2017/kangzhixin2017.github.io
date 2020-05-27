@@ -181,7 +181,7 @@
 }
 .list .item .key3{
 	font-size: 15rem;
-	line-height: 26rem;
+	line-height: 15rem;
 }
 .list .item .value3{
 	font-size: 19rem;
@@ -282,4 +282,7 @@
 }
 .addition-count{
 	color: #7E7E7E;
+}
+textarea{
+	resize: none;
 }

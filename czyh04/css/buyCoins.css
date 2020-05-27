@@ -272,7 +272,7 @@
 .o_list .item .row_time{
 	display: flex;
 	justify-content: center;
-	margin-top: 25rem;
+	padding-top: 25rem;
 }
 .o_list .item .row_time .bg{
 	width: 110rem;

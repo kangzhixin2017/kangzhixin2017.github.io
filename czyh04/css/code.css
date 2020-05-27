@@ -49,6 +49,7 @@
 	background-color: #fff;
 	border-radius: 8rem;
 	margin: 50rem auto 0;
+	box-shadow: 0 2rem 15rem 4rem rgba(0, 0, 0, 0.15);
 }
 .img div:nth-of-type(1){
 	width: 100%;

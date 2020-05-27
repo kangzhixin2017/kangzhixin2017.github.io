@@ -21,12 +21,12 @@
 				<div class="title left">手机号登录</div>
 			</div>
 			<div class="content">
-				<div class="item">
-					<input class="phone" type="" name="" id="" value="" placeholder="请输入手机号" oninput="change()" />
+				<div class="item item1">
+					<input class="phone" type="" name="" id="" value="" placeholder="请输入手机号" oninput="change()" onclick="inp_cli('item1')"/>
 					<img class="delete" onclick="delete_phone()" src="../img/delete.png" />
 				</div>
-				<div class="item">
-					<input class="code_input" type="" name="" id="" value="" placeholder="请输入验证码" />
+				<div class="item item2">
+					<input class="code_input" type="" name="" id="" value="" placeholder="请输入验证码" onclick="inp_cli('item2')"/>
 					<div class="code">获取验证码</div>
 				</div>
 				<div class="btn_find">登录</div>
@@ -54,6 +54,10 @@
 				} else {
 					$('.delete').css('display', 'none')
 				}
+			}
+			function inp_cli(name) {
+				$('.item').css('border-bottom', '1rem solid #E2E2E2')
+				$('.' + name).css('border-bottom', '1rem solid #FC660C')
 			}
 		</script>
 	</body>

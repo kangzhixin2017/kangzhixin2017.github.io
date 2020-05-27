@@ -7,7 +7,7 @@
 	margin: 15rem auto 0;
 	border-radius: 5px;
 	padding: 10rem 10rem 16rem;
-	box-shadow: 0 2rem 6rem 2rem rgba(0, 0, 0, 0.15);
+	box-shadow: 0 2rem 6rem 2rem rgba(0, 0, 0, 0.05);
 }
 .search .item{
 	height: 60rem;

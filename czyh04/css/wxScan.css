@@ -49,6 +49,7 @@
 	line-height: 24rem;
 	font-size: 20rem;
 	padding-left: 5rem;
+	width: 95%;
 }
 .input label{
 	color: #262B2F;
@@ -99,6 +100,7 @@
 }
 .content .item2 div{
 	font-size: 17rem;
+	line-height: 17rem;
 	color: #7E7E7E;
 }
 .content .item2 img{

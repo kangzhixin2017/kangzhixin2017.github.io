@@ -45,7 +45,7 @@
 	margin: 0 auto;
 	border-radius: 5px;
 	padding: 0 0 15rem;
-	box-shadow: 0 2rem 6rem 2rem rgba(0, 0, 0, 0.15);
+	box-shadow: 0 2rem 6rem 2rem rgba(0, 0, 0, 0.05);
 }
 .search .usermsg{
 	display: flex;
@@ -195,7 +195,7 @@
 	text-align: center;
 	margin: 21rem auto;
 	font-size: 15rem;
-	background-color: #FF6600;
+	background-color: #FC660C;
 	color: #fff;
 	border-radius: 8rem;
 }
