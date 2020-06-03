@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>我要提现</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/navigationBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/tabBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/withdraw.css" />
+		<link rel="stylesheet" type="text/css" href="../css/toast.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="navigationBar">
+				<img class="back" src="../img/left.png" />
+				<div class="title left">我要提现</div>
+				<div class="right">
+					<nobr>提现订单</nobr>
+				</div>
+			</div>
+			<div class="content">
+				<div class="order_status">
+					<div class="item" onclick="status('.TDorder')">
+						<div class="change change1">提现申请
+							<br />
+							<span class="TDorder"></span>
+						</div>
+					</div>
+					<div class="item" onclick="status('.TXorder')">
+						<div class="change change2">提现明细
+							<br />
+							<span class="TXorder"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content_list TDorder">
+				<div class="card1">
+					<div class="tit">
+						<img src="../img/card.png" alt="" /> 选择银行卡
+					</div>
+				</div>
+				<div class="content1">
+					<div class="charge" data-id="0" onclick="showCard('card_img')">
+						<div>
+							<img class="cardImg_s" src="../img/card.png" />
+							<div class="card_val">中国建行</div>
+						</div>
+						<img class="card_img" src="../img/right.png" />
+					</div>
+					<div class="card_item">
+						<div class="row">
+							<img class="s_card1" src="../img/bei.png" />
+							<div class="right" onclick="change('card1')">
+								<div>建设银行卡(6210986510012885898) 1</div>
+								<img class="card card1" src="../img/gou.png" />
+							</div>
+						</div>
+						<div class="row">
+							<img class="s_card2" src="../img/zhao.png" />
+							<div class="right" onclick="change('card2')">
+								<div>建设银行卡(6210986510012885898) 2</div>
+								<img class="card card2" src="../img/gou.png" />
+							</div>
+						</div>
+						<div class="row">
+							<img class="s_card3" src="../img/gong.png" />
+							<div class="right" onclick="change('card3')">
+								<div>建设银行卡(6210986510012885898) 3</div>
+								<img class="card card3" src="../img/gou.png" />
+							</div>
+						</div>
+						<div class="row">
+							<img class="s_card4" src="../img/jian.png" />
+							<div class="right" onclick="change('card4')">
+								<div>建设银行卡(6210986510012885898) 琳娜</div>
+								<img class="card card4" src="../img/gou.png" />
+							</div>
+						</div>
+					</div>
+					<div class="money_body">
+						<div class="title">提现金额</div>
+						<div class="money">
+							<span>￥</span>
+							<input type="" name="" id="" value="" placeholder="" />
+						</div>
+					</div>
+					<div class="prompt">提现手续费：提现金额*0.01%</div>
+				</div>
+				<div class="tip">
+					<div class="title">
+						<img src="../img/tip.png" />
+						<div>温馨提示</div>
+					</div>
+					<div class="item1">
+						1.单笔提现：1000~50010
+					</div>
+					<div class="item1">
+						2.提现时间：周一至周日：00：00-24：00
+					</div>
+					<div class="item1">
+						3.手续费=提现金额×0.01
+					</div>
+					<div class="item1">
+						注意：直接提现需要扣除手续费，系统派单收款不收取收续费为了防止调单情况，提现延迟到账时间24小时到账
+					</div>
+				</div>
+				<div class="btn">点击提现</div>
+				<div class="btn_msg">提现将扣除提现手续费，是提现金额*0.01%</div>
+			</div>
+			<div class="content_list TXorder">
+				<div class="item">
+					<div class="msg_body">
+						<div class="key">收款姓名：</div>
+						<div class="value">44444444444444444444</div>
+					</div>
+					<div class="msg_body">
+						<div class="key">订单号：</div>
+						<div class="value">已提交</div>
+					</div>
+					<div class="msg_body">
+						<div class="key">会员账号：</div>
+						<div class="value">已提交</div>
+					</div>
+
+					<div class="msg_body">
+						<div class="key">订单金额：</div>
+						<div class="value">已提交</div>
+					</div>
+					<div class="msg_body">
+						<div class="key">收款卡号：</div>
+						<div class="value">已提交</div>
+					</div>
+					<div class="msg_body">
+						<div class="key">收款银行：</div>
+						<div class="value">已提交</div>
+					</div>
+					<div class="msg_body">
+						<div class="key">
+							<nobr>营业网点：</nobr>
+						</div>
+						<div class="value">福建省厦门市翔安区时代</div>
+					</div>
+					<div class="msg_body">
+						<div class="key">提现时间：</div>
+						<div class="value">2020-02-04 14：00：00</div>
+					</div>
+					<div class="msg_body">
+						<div class="key">审核状况：</div>
+						<div class="value">已提交</div>
+					</div>
+					<div class="msg_body">
+						<div class="key">
+							<nobr>拒绝理由：</nobr>
+						</div>
+						<div class="value">已了斯柯达积分链接交</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="msg_body">
+						<div class="key">收款姓名：</div>
+						<div class="value">44444444444444444444</div>
+					</div>
+					<div class="msg_body">
+						<div class="key">订单号：</div>
+						<div class="value">已提交</div>
+					</div>
+					<div class="msg_body">
+						<div class="key">会员账号：</div>
+						<div class="value">已提交</div>
+					</div>
+
+					<div class="msg_body">
+						<div class="key">订单金额：</div>
+						<div class="value">已提交</div>
+					</div>
+					<div class="msg_body">
+						<div class="key">收款卡号：</div>
+						<div class="value">已提交</div>
+					</div>
+					<div class="msg_body">
+						<div class="key">收款银行：</div>
+						<div class="value">已提交</div>
+					</div>
+					<div class="msg_body">
+						<div class="key">
+							<nobr>营业网点：</nobr>
+						</div>
+						<div class="value">福建省厦门市翔安区时代</div>
+					</div>
+					<div class="msg_body">
+						<div class="key">提现时间：</div>
+						<div class="value">2020-02-04 14：00：00</div>
+					</div>
+					<div class="msg_body">
+						<div class="key">审核状况：</div>
+						<div class="value">已提交</div>
+					</div>
+					<div class="msg_body">
+						<div class="key">
+							<nobr>拒绝理由：</nobr>
+						</div>
+						<div class="value">已了斯柯达积分链接交</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			setTimeout(() => {
+				$('.btn').css('backgroundColor', '#FF6600')
+
+			}, 2000)
+
+			function change(name) {
+				$('.card').hide()
+				$('.' + name).show()
+				$('.card_val').html(event.target.innerText)
+				//				alert()
+				var a = $('.s_' + name)[0].src
+				$('.cardImg_s').attr('src', a)
+				showCard()
+			}
+
+			function showCard() {
+				var dataId = $('.charge').data('id')
+				if(dataId == 0) {
+					$('.card_img').css('transform', "rotate(90deg)")
+					$('.card_item').show(100, 'linear')
+					$('.charge').data('id', '1')
+				} else {
+					$('.card_img').css('transform', "rotate(0deg)")
+					$('.card_item').hide(100, 'linear')
+					$('.charge').data('id', '0')
+				}
+			}
+
+			$('.TDorder').css('display', 'block')
+			$('.change1').css('color', '#FC660C')
+
+			function status(e) {
+				$('.TDorder').css('display', 'none')
+				$('.TXorder').css('display', 'none')
+				$('.CZorder').css('display', 'none')
+				$('.change1').css('color', '#AFAFAF')
+				$('.change2').css('color', '#AFAFAF')
+				$('.change3').css('color', '#AFAFAF')
+				if('.TDorder' == e) {
+					$('.change1').css('color', '#FC660C')
+					$('.TDorder').css('display', 'block')
+				} else if('.TXorder' == e) {
+					$('.change2').css('color', '#FC660C')
+					$('.TXorder').css('display', 'block')
+				} else if('.CZorder' == e) {
+					$('.change3').css('color', '#FC660C')
+					$('.CZorder').css('display', 'block')
+				}
+			}
+		</script>
+	</body>
+
+</html>

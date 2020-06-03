@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>我要充值</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/navigationBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/tabBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/charge.css" />
+		<link rel="stylesheet" type="text/css" href="../css/toast.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="navigationBar">
+				<img class="back" src="../img/left.png" />
+				<div class="title left">我要充值</div>
+				<div class="right"><nobr>充值订单</nobr></div>
+			</div>
+			<div class="content">
+				<div class="money_body">
+					<div class="title">充值金额</div>
+					<div class="money">
+						<span>￥</span>
+						<input type="" name="" id="" value="" placeholder="" />
+					</div>
+				</div>
+				<div class="card">
+					<div>银行卡名字</div>
+					<input type="" name="" id="" value="" placeholder="" />
+				</div>
+			</div>
+			<div class="hr"></div>
+			<div class="msg">
+				<div class="row">
+					<div>会员账号</div>
+					<div>xxxxxxxxxx</div>
+				</div>
+				<div class="row">
+					<div>充值平台收款账号</div>
+					<div>xxxxxxxxxx</div>
+				</div>
+				<div class="row">
+					<div>c2c在线交易充值</div>
+					<img class="yuan" data-id = "0" onclick="change()" src="../img/yuan.png"/>
+				</div>
+				<div class="row">
+					<div>使用数字货币充值</div>
+					<img class="yuan" data-id = "0" onclick="change()" src="../img/yuan.png"/>
+				</div>
+			</div>
+			<div class="tip">
+				<div class="title">
+					<img src="../img/tip.png" />
+					<div>温馨提示</div>
+				</div>
+				<div class="item">
+					充值提示：
+				</div>
+				<div class="item">
+					1.码商单笔最小充值金额¥10000
+				</div>
+				<div class="item">
+					2.码商单笔最小充值金额¥50000
+				</div>
+				<div class="item">
+					3.码商第一笔充值会冻结2000金额，剩余转入可用余额
+				</div>
+				<div class="btn">确认充值</div>
+				<div class="btn_msg">充值记录</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//			输入完成并判断完成修改按钮颜色
+			setTimeout(() => {
+				$('.btn').css('backgroundColor', '#FF6600')
+			}, 2000)
+			function change(){
+				$('.yuan').attr('src','../img/yuan.png')
+				if(event.target.dataset.id==0){
+					event.target.src = '../img/yuan1.png'
+				}
+			}
+		</script>
+	</body>
+
+</html>

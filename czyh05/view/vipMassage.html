@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>会员信息</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/navigationBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/tabBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/vipMassage.css" />
+		<link rel="stylesheet" type="text/css" href="../css/toast.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="navigationBar">
+				<img class="back" src="../img/left.png" />
+				<div class="title left">会员信息</div>
+			</div>
+			<div class="content">
+				<div class="status">
+					<div class="status_item status_vip" onclick="status('vip')">
+						<div class="title">会员信息</div>
+						<div class="line"></div>
+					</div>
+					<div class="status_item status_code" onclick="status('code')">
+						<div class="title">收款码</div>
+						<div class="line"></div>
+					</div>
+					<div class="status_item status_order" onclick="status('order')">
+						<div class="title">充值订单</div>
+						<div class="line"></div>
+					</div>
+					<div class="status_item status_money" onclick="status('money')">
+						<div class="title">资金明细</div>
+						<div class="line"></div>
+					</div>
+					<div class="status_item status_split" onclick="status('split')">
+						<div class="title">分成记录</div>
+						<div class="line"></div>
+					</div>
+					<div class="status_item status_withdraw" onclick="status('withdraw')">
+						<div class="title">提现记录</div>
+						<div class="line"></div>
+					</div>
+				</div>
+			</div>
+			<div class="status_line"></div>
+			<div class="list">
+				<div class="list_item vip">
+					<div class="head">
+						<div class="left">
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+						<div class="right">
+							<div class="top">
+								<div>上级账户:2387648234</div>
+								<div>奥利给:<span>(联系电话：23498273498234)</span></div>
+							</div>
+							<div class="bottom">
+								<div>下级账户:2387648234</div>
+								<div>奥利给:<span>(联系电话：23498273498234)</span></div>
+							</div>
+						</div>
+					</div>
+					<div class="body">
+						<div class="row">
+							<div class="key">总币量</div>
+							<div class="val">2983749273</div>
+						</div>
+						<div class="row">
+							<div class="key">押金</div>
+							<div class="val">2983749273</div>
+						</div>
+						<div class="row">
+							<div class="key">可用币</div>
+							<div class="val">2983749273</div>
+						</div>
+						<div class="row">
+							<div class="key">交易中的币</div>
+							<div class="val">2983749273</div>
+						</div>
+						<div class="row">
+							<div class="key">今日订单总量</div>
+							<div class="val">2983749273</div>
+						</div>
+						<div class="row">
+							<div class="key">冻结中的币</div>
+							<div class="val">2983749273</div>
+						</div>
+						<div class="row">
+							<div class="key">今日订单成功率</div>
+							<div class="val">2983749273</div>
+						</div>
+						<div class="row">
+							<div class="key">今日成功订单金额</div>
+							<div class="val">2983749273</div>
+						</div>
+						<div class="row_line"></div>
+						<div class="row">
+							<div class="key2">抢单功能</div>
+							<div class="val">正常</div>
+						</div>
+						<div class="row">
+							<div class="key2">账号状态</div>
+							<div class="val">正常</div>
+						</div>
+						<div class="row">
+							<div class="key2">在线状态</div>
+							<div class="val color_g">正常</div>
+						</div>
+						<div class="row">
+							<div class="key2">提现状态</div>
+							<div class="val color_o">禁用</div>
+						</div>
+						<div class="row3">
+							<div class="btn btn1" data-id="0" onclick="btn('btn1')">下线</div>
+							<div class="btn btn2" data-id="0" onclick="btn('btn2')">封号</div>
+							<div class="btn btn3" data-id="0" onclick="btn('btn3')">禁用提现功能</div>
+							<div class="btn btn4" data-id="0" onclick="btn('btn4')">禁用抢单功能</div>
+						</div>
+						<div class="row4">
+							<div class="btn btn5" data-id="0" onclick="btn('btn5')">设置费率</div>
+						</div>
+					</div>
+					<div class="footer_s"></div>
+				</div>
+				<div class="list_item code" onscroll="code(event)">
+					<div class="item">
+						<div class="row">
+							<div class="key">状态</div>
+							<img src="../img/kai.png" />
+						</div>
+						<div class="row2">
+							<div class="key">交易类型：</div>
+							<div class="val">支付宝扫码</div>
+						</div>
+						<div class="row3">
+							<div class="key">收款姓名：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">收款卡号：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">最小收款：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">最大收款：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">累计产生收益：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">省市：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">总订单：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">总金额：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">成功订单：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">成功金额：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">最近5笔订单：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">审核状态：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row4">
+							<div class="key">收款码</div>
+							<img src="../img/bg.png" />
+						</div>
+						<div class="btn_delete">删除</div>
+					</div>
+					<div class="item">
+						<div class="row">
+							<div class="key">状态</div>
+							<img src="../img/kai.png" />
+						</div>
+						<div class="row2">
+							<div class="key">交易类型：</div>
+							<div class="val">支付宝扫码</div>
+						</div>
+						<div class="row3">
+							<div class="key">收款姓名：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">收款卡号：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">最小收款：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">最大收款：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">累计产生收益：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">省市：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">总订单：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">总金额：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">成功订单：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">成功金额：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">最近5笔订单：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row3">
+							<div class="key">审核状态：</div>
+							<div class="val">沃尔沃</div>
+						</div>
+						<div class="row4">
+							<div class="key">收款码</div>
+							<img src="../img/bg.png" />
+						</div>
+						<div class="btn_delete">删除</div>
+					</div>
+					<div class="Pagination code_p">
+						<div class="previous" onclick="code_previous('.code_p')">上一页</div>
+						<div class="next" onclick="code_next('.code_p')">下一页</div>
+					</div>
+				</div>
+				<div class="list_item order" onscroll="order(event)">
+					<div class="item">
+						<div class="row">
+							<div class="key">交易类型：充值订单</div>
+							<div class="val">已接单</div>
+						</div>
+						<div class="row2">
+							<div class="key">订单号：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+						<div class="row2">
+							<div class="key">订单金额：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+						<div class="row2">
+							<div class="key">下单时间：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+						<div class="row3">
+							<div class="key">下单时间：</div>
+							<img src="../img/bg.png" alt="" />
+						</div>
+					</div>
+					<div class="Pagination order_p">
+						<div class="previous" onclick="code_previous('.order_p')">上一页</div>
+						<div class="next" onclick="code_next('.order_p')">下一页</div>
+					</div>
+				</div>
+				<div class="list_item money" onscroll="money(event)">
+					<div class="row">
+						<div class="item1">资金类型</div>
+						<div class="item2">原有金额</div>
+						<div class="item3">变动金额</div>
+						<div class="item4">下单时间/IP地址</div>
+					</div>
+					<div class="row2">
+						<div class="item1">分成</div>
+						<div class="item2">924234.00</div>
+						<div class="item3">+2342.00</div>
+						<div class="item4">2020-20-20 10:10:10<br />192.168.2.1</div>
+					</div>
+					<div class="line_m"></div>
+					<div class="row2">
+						<div class="item1">分成</div>
+						<div class="item2">924234.00</div>
+						<div class="item3">+2342.00</div>
+						<div class="item4">2020-20-20 10:10:10<br />192.168.2.1</div>
+					</div>
+					<div class="line_m"></div>
+					<div class="Pagination money_p">
+						<div class="previous" onclick="code_previous('.money_p')">上一页</div>
+						<div class="next" onclick="code_next('.money_p')">下一页</div>
+					</div>
+				</div>
+				<div class="list_item split" onscroll="split(event)">
+					<div class="row">
+						<div class="item1">下级账号</div>
+						<div class="item2">订单金额</div>
+						<div class="item3">分成比例</div>
+						<div class="item4">分成金额</div>
+						<div class="item5">时间</div>
+					</div>
+					<div class="row2">
+						<div class="item1">2323423423423</div>
+						<div class="item2">9244.00</div>
+						<div class="item3">0.2300</div>
+						<div class="item4">+2342.00</div>
+						<div class="item5">2020-20-20 10:10:10</div>
+					</div>
+					<div class="line_m"></div>
+					<div class="row2">
+						<div class="item1">2323423423423</div>
+						<div class="item2">9244.00</div>
+						<div class="item3">0.2300</div>
+						<div class="item4">+2342.00</div>
+						<div class="item5">2020-20-20 10:10:10</div>
+					</div>
+					<div class="line_m"></div>
+					<div class="row2">
+						<div class="item1">2323423423423</div>
+						<div class="item2">9244.00</div>
+						<div class="item3">0.2300</div>
+						<div class="item4">+2342.00</div>
+						<div class="item5">2020-20-20 10:10:10</div>
+					</div>
+					<div class="line_m"></div>
+					<div class="Pagination split_p">
+						<div class="previous" onclick="code_previous('.split_p')">上一页</div>
+						<div class="next" onclick="code_next('.split_p')">下一页</div>
+					</div>
+				</div>
+				<div class="list_item withdraw" onscroll="withdraw(event)">
+					<div class="item">
+						<div class="row">
+							<div class="key">交易类型:提现订单</div>
+							<div class="val">已提交</div>
+						</div>
+						<div class="row2">
+							<div class="key">收款姓名：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+						<div class="row2">
+							<div class="key">会员账号：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+						<div class="row2">
+							<div class="key">提现金额：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+						<div class="row2">
+							<div class="key">收款卡号：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+						<div class="row2">
+							<div class="key">收款银行：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+						<div class="row2">
+							<div class="key">营业网点：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+						<div class="row2">
+							<div class="key">提现时间：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="row">
+							<div class="key">交易类型:提现订单</div>
+							<div class="val">已提交</div>
+						</div>
+						<div class="row2">
+							<div class="key">收款姓名：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+						<div class="row2">
+							<div class="key">会员账号：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+						<div class="row2">
+							<div class="key">提现金额：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+						<div class="row2">
+							<div class="key">收款卡号：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+						<div class="row2">
+							<div class="key">收款银行：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+						<div class="row2">
+							<div class="key">营业网点：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+						<div class="row2">
+							<div class="key">提现时间：</div>
+							<div class="val">29837497293479823794</div>
+						</div>
+					</div>
+					<div class="Pagination withdraw_p">
+						<div class="previous" onclick="code_previous('.withdraw_p')">上一页</div>
+						<div class="next" onclick="code_next('.withdraw_p')">下一页</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(() => {
+				status('vip')
+			})
+
+			function status(name) {
+				default_status();
+				$('.status_' + name).addClass('status_s')
+				$('.' + name).css('display', 'block')
+			}
+
+			function default_status() {
+				$('.list_item').css('display', 'none')
+				$('.status_item').removeClass('status_s')
+			}
+
+			function code() {
+				$('.code_p').css('display', 'flex')
+				let scrollBottom = event.target.scrollHeight - event.target.scrollTop - event.target.clientHeight;
+				if(scrollBottom == 0) {
+					//					alert('到底了')
+				}
+			}
+
+			function order() {
+				$('.order_p').css('display', 'flex')
+				let scrollBottom = event.target.scrollHeight - event.target.scrollTop - event.target.clientHeight;
+				if(scrollBottom == 0) {
+					//					alert('到底了')
+				}
+			}
+
+			function money() {
+				$('.money_p').css('display', 'flex')
+				let scrollBottom = event.target.scrollHeight - event.target.scrollTop - event.target.clientHeight;
+				if(scrollBottom == 0) {
+					//					alert('到底了')
+				}
+			}
+
+			function split() {
+				$('.split_p').css('display', 'flex')
+				let scrollBottom = event.target.scrollHeight - event.target.scrollTop - event.target.clientHeight;
+				if(scrollBottom == 0) {
+					//					alert('到底了')
+				}
+			}
+
+			function withdraw() {
+				$('.withdraw_p').css('display', 'flex')
+				let scrollBottom = event.target.scrollHeight - event.target.scrollTop - event.target.clientHeight;
+				if(scrollBottom == 0) {
+					//					alert('到底了')
+				}
+			}
+
+			function btn(name) {
+				if(event.target.dataset.id == 0) {
+					$('.' + name).addClass('change')
+					event.target.dataset.id = 1
+				} else {
+					$('.' + name).removeClass('change')
+					event.target.dataset.id = 0
+				}
+
+			}
+
+			function clear_p(msg) {
+				console.log($(msg)[0].children)
+				for(let i = 0; i < $(msg)[0].children.length; i++) {
+					$(msg)[0].children[i].classList.remove('select_p')
+				}
+			}
+
+			function code_previous(msg) {
+				clear_p(msg)
+				console.log(event.target.classList.add('select_p'))
+			}
+
+			function code_next(msg) {
+				clear_p(msg)
+				console.log(event.target.classList.add('select_p'))
+			}
+		</script>
+	</body>
+
+</html>
