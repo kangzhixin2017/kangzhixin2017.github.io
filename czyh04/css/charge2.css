@@ -119,7 +119,7 @@
 	line-height: 18rem;
 }
 .change .row6 .add div:nth-of-type(2){
-	/*color: red;*/
+	color: red;
 	word-break: break-all;
 }
 .change .row6 .copy{
@@ -140,5 +140,4 @@
 	line-height: 20rem;
 	color: #AEAEAE;
 	padding-bottom: 15rem;
-	margin: 0;
 }

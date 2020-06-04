@@ -1,0 +1,68 @@
+/*初始化*/
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	/*默认字体颜色*/
+	color: #262B2F;
+	/*默认字体大小*/
+	font-size: 15px;
+	/*默认背景颜色*/
+	background-color: #F0F4F7;
+	position: relative;
+}
+input {
+	outline: none;
+	border: none;
+	box-shadow: none;
+	caret-color:#FC660C;
+}
+select{
+	outline: none;
+	border: none;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+textarea{
+	resize: none;
+}
+.app{
+	/*设置最大显示宽度*/
+	max-width: 414px;
+	margin: 0 auto;
+	background-color: #fff;
+	/*设置最小高度*/
+	min-height: 100vh;
+	position: relative;
+}
+/*默认按钮颜色*/
+.btn_bg{
+	text-align: center;
+	background-color: #FC660C;
+	color: #fff;
+}
+/*字体颜色*/
+.font_c{
+	color: #FC0C0C;
+}
+
+.k_tab{
+	color: red;
+}
+.k_tab_current{
+	color: yellow;
+}
+.k_radio{
+	width: 20px;
+	height: 20px;
+	background: url(../img/me.png) no-repeat;
+	background-size: 100% 100%;
+	
+}
+.k_radio_current{
+	background-image: url(../img/back.png);
+	
+}

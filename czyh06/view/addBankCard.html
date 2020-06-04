@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>添加银行卡</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/navigationBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/tabBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/addBankCard.css" />
+		<link rel="stylesheet" type="text/css" href="../css/toast.css" />
+		<link rel="stylesheet" href="../css/iosSelect.css" />
+		<script type="text/javascript" src="../js/iosSelect.js"></script>
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="navigationBar">
+				<img class="back" src="../img/left.png" />
+				<div class="title left">添加银行卡</div>
+			</div>
+			<div class="content">
+				<div class="item" id="cardTypeSelect">
+					<div class="key2"><nobr>银行类型</nobr></div>
+					<div class="value">
+						<div id="cardType">asdf</div>
+						<img src="../img/right.png" alt="" />
+					</div>
+				</div>
+				<div class="item item_min">
+					<div class="key key_c" onclick="selectInput('min')">
+						<div class="min">最小金额</div>
+						<div class="input_min input">
+							<label for="">¥</label><input oninput="writeData('data_min')" class="data_min" type="" name="" id="" value="" />
+						</div>
+					</div>
+				</div>
+				<div class="item item_max">
+					<div class="key key_c" onclick="selectInput('max')">
+						<div class="max" >最大金额</div>
+						<div class="input_max input">
+							<label for="">¥</label><input oninput="writeData('data_max')" class="data_max" type="" name="" id="" value="" />
+						</div>
+					</div>
+				</div>
+				<div class="item item_addr">
+					<div class="key key_c" onclick="selectInput('addr')">
+						<div class="addr" >营业网点</div>
+						<div class="input_addr input">
+							<input oninput="writeData('data_addr')" class="data_addr" type="" name="" id="" value="" />
+						</div>
+					</div>
+				</div>
+				<div class="item item_name">
+					<div class="key key_c" onclick="selectInput('name')">
+						<div class="name" >收款姓名</div>
+						<div class="input_name input">
+							<input oninput="writeData('data_name')" class="data_name" type="" name="" id="" value="" />
+						</div>
+					</div>
+				</div>
+				<div class="item item_num">
+					<div class="key key_c" onclick="selectInput('num')">
+						<div class="num" >收款卡号</div>
+						<div class="input_num input">
+							<input oninput="writeData('data_num')" class="data_num" type="" name="" id="" value="" />
+						</div>
+					</div>
+				</div>
+				<div class="item item_code">
+					<div class="key key_c" onclick="selectInput('code')">
+						<div class="code" >验证码</div>
+						<div class="input_code input">
+							<input oninput="writeData('data_code')" class="data_code" type="" name="" id="" value="" />
+						</div>
+					</div>
+					<div class="btn_code">发送</div>
+				</div>
+				<div class="btn_card">绑定银行卡</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/addBankCard.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/card-select.js"></script>
+		
+		<script type="text/javascript">
+			setTimeout(() => {
+				$('.btn_code').css('background-color','#FF6600')
+				$('.btn_card').css('background-color','#FF6600')
+			}, 2000)
+		</script>
+	</body>
+
+</html>

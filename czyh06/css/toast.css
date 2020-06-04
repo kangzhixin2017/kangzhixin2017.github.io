@@ -1,0 +1,220 @@
+/*弹窗*/
+.toast-mask {
+	height: 110vh;
+	width: 100vw;
+	position: fixed;
+	background:rgba(226, 226, 226, 1);
+	left: 0;
+	top: -5vh;
+	display: flex;
+	align-items: center;
+}
+/*弹窗中心部分*/
+.toast-mask .toast {
+	background: #fff;
+	width: 290rem;
+	/*max-width: 320px;
+	min-width: 250px;*/
+	padding: 0 15rem;
+	margin: 0 auto;
+	min-height: 52px;
+	border-radius: 8rem;
+	/*padding-top: 30px;
+	padding-bottom: 47px;*/
+	position: relative;
+}
+/*弹窗中心部分*/
+.toast-mask .toast_4 {
+	background: #fff;
+	width: 320rem;
+	/*max-width: 320px;
+	min-width: 250px;*/
+	padding: 0 20rem;
+	margin: 0 auto;
+	min-height: 52px;
+	border-radius: 8rem;
+	/*padding-top: 30px;
+	padding-bottom: 47px;*/
+	position: relative;
+}
+/*第一种*/
+.toast-mask .toast .title_1{
+	margin-top: 26rem;
+	text-align: center;
+	font-size: 17rem;
+	line-height: 24rem;
+	color: #262B2F;
+}
+.toast-mask .toast .content_1{
+	text-align: center;
+	font-size: 15rem;
+	line-height: 18rem;
+	margin: 18rem 0 15rem;
+	color: #7E7E7E;
+}
+.toast-mask .toast .button_1{
+	height: 40rem;
+	width: 219rem;
+	background-color: #FC660C;
+	line-height: 40rem;
+	text-align: center;
+	border-radius: 8rem;
+	font-size: 15rem;
+}
+
+/*第二种*/
+.toast-mask .toast .title_2{
+	text-align: center;
+	font-size: 15rem;
+	line-height: 18rem;
+	margin-top: 24rem;
+	color: #7E7E7E;
+	
+}
+.toast-mask .toast .content_2{
+	margin: 15rem 0 20rem;
+	text-align: center;
+	font-size: 17rem;
+	line-height: 24rem;
+	color: #262B2F;
+}
+.toast-mask .toast .button_2{
+	height: 40rem;
+	width: 204rem;
+	background-color: #FC660C;
+	line-height: 40rem;
+	text-align: center;
+	border-radius: 8rem;
+	font-size: 15rem;
+}
+.buttons{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 16rem;
+	margin-top: 20rem;
+}
+.toast-mask .toast .button_3_1{
+	height: 38rem;
+	width: 100rem;
+	line-height: 40rem;
+	text-align: center;
+	border-radius: 8rem;
+	font-size: 15rem;
+	color: #7E7E7E;
+	border: 1rem solid #CCCCC0;
+}
+.toast-mask .toast .button_3_2{
+	height: 40rem;
+	width: 100rem;
+	background-color: #FC660C;
+	line-height: 40rem;
+	text-align: center;
+	border-radius: 8rem;
+	color: #fff;
+	font-size: 15rem;
+	margin-left: 19rem;
+}
+.toast-mask .toast_4 .title_1{
+	text-align: center;
+	margin-top: 16rem;
+	padding-bottom: 7rem;
+	font-size: 17rem;
+	line-height: 24rem;
+	color: #262B2F;
+}
+.toast-mask .toast_4 .item{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 15rem;
+}
+.toast-mask .toast_4 .key{
+	font-size: 15rem;
+	line-height: 18rem;
+	color: #7E7E7E;
+	white-space:nowrap;
+	margin-right: 15rem;
+}
+.toast-mask .toast_4 .value{
+	font-size: 15rem;
+	line-height: 18rem;
+	text-align: right;
+	word-break: break-all;
+}
+.toast-mask .toast_4 .button_4{
+	margin-top: 21rem;
+	height: 40rem;
+	width: 219rem;
+	line-height: 40rem;
+	text-align: center;
+	border-radius: 8rem;
+	font-size: 15rem;
+	color: #fff;
+	background-color: #FC660C;
+}
+.toast-mask .toast_4 .he{
+	margin-top: 15rem;
+	height: 1rem;
+	width: 100%;
+	background-color: #E2E2E2;
+}
+
+.toast-mask .toast .remark_input{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 8rem 0;
+	
+}
+.toast-mask .toast .remark_input .input-placeholder{
+	font-size: 15rem;
+	line-height: 18rem;
+	color: #7E7E7E;
+	margin-top: 6rem;
+	margin-bottom: 7rem;
+}
+.toast-mask .toast .remark_input .remark{
+	margin: 0 auto;
+	width: 177rem;
+	height: 30rem;
+	line-height: 30rem;
+	background-color: #F3F6FC;
+	border-radius: 3rem;
+	padding: 0 10rem;
+	text-align: center;
+	font-size: 12rem;
+}
+/*图片弹窗部分*/
+.toast-mask .toast_img {
+	background: #fff;
+	width: 350rem;
+	margin: 0 auto;
+	/*min-height: 52px;*/
+	border-radius: 5px;
+	/*padding-top: 30px;
+	padding-bottom: 30px;*/
+	position: relative;
+}
+.toast-mask .toast_img img{
+	width: 90%;
+	display: block;
+	margin: 20rem auto;
+}
+
+input {
+	outline: none;
+	border: none;
+	box-shadow: none;
+	caret-color:#FC660C;
+}
+.title_6{
+	margin-top: 26rem;
+	text-align: center;
+	font-size: 15rem;
+	line-height: 24rem;
+	color: #262B2F;
+}
+.title_6 span{
+	color: #FF6600;
+}

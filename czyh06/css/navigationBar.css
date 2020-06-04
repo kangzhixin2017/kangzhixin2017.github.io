@@ -1,0 +1,35 @@
+/*顶部导航*/
+
+.navigationBar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*导航高度*/
+	height: 44rem;
+	/*position: sticky;
+	top: 0;*/
+	background-color: #fff;
+	z-index: 9999999;
+}
+
+.navigationBar .back {
+	/*返回按钮大小*/
+	width: 20rem;
+	height: 20rem;
+	position: absolute;
+	left: 15rem;
+}
+
+.navigationBar .title {
+	/*标题字体大小与颜色*/
+	font-size: 18rem;
+	width: 100%;
+}
+
+.navigationBar .center {
+	text-align: center;
+}
+
+.navigationBar .left {
+	margin-left: 45px;
+}
