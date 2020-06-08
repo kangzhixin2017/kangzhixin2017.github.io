@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>买币中心</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/navigationBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/tabBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/buyCoins.css" />
+		<link rel="stylesheet" type="text/css" href="../css/toast.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="bg">
+				<div class="bg_navigationBar">
+					<div class="title center">买币中心</div>
+					<img class="right" src="../img/wenhao.png" />
+				</div>
+				<div class="head">
+					<div class="msg">
+						<div class="row">
+							<div>
+								<div>￥</div>
+								<input type="" name="" id="" value="" />
+							</div>
+							<img src="../img/buy_money.png" />
+							<div>
+								<div>￥</div>
+								<input type="" name="" id="" value="" />
+							</div>
+						</div>
+						<div class="row2">
+							<div>预计买入币的数量</div>
+							<img src="../img/bei.png" />
+							<div>人民币转出的数量</div>
+						</div>
+						<div class="row3">
+							<div class="btn_left">
+								<div onclick="btn('0')">关闭</div>
+							</div>
+							<div class="btn_right">
+								<div onclick="btn('1')">开启</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="list">
+				<div class="change">
+					<div class="item status1" onclick="btn_status('1')">
+						<div class="">接单中心
+							<div class="po1 point"></div>
+							<!--<div class="po1 point_num">2</div>-->
+						</div>
+					</div>
+					<div class="item status2" onclick="btn_status('2')">
+						<div class="">未完成订单
+							<!--<div class="po2 point"></div>-->
+							<div class="po2 point_num">2</div>
+						</div>
+					</div>
+				</div>
+				<div class="change1">
+					<div class="item" onclick="btn_change('1')">
+						<div class="name1">申诉订单</div>
+						<div class="line_1"></div>
+					</div>
+					<div class="item" onclick="btn_change('2')">
+						<div class="name2">已付款订单</div>
+						<div class="line_2"></div>
+					</div>
+					<div class="item" onclick="btn_change('3')">
+						<div class="name3">正在付款</div>
+						<div class="line_3"></div>
+					</div>
+				</div>
+				<div class="o_list ordering">
+					<div class="item">
+						<div class="top">
+							<div class="time_out">
+								<div>7</div>
+								<div>秒</div>
+							</div>
+							<div class="time">时间2020-01-19 10:50:32</div>
+						</div>
+						<div class="row1">
+							<div>交易类型:充值订单</div>
+							<div>已接单</div>
+						</div>
+						<!--<div class="item_line"></div>-->
+						<div class="row2">
+							<div>订单号</div>
+							<div>xxx</div>
+						</div>
+						<div class="row2">
+							<div>对方银行</div>
+							<div>xxx</div>
+						</div>
+						<div class="row2">
+							<div>付款金额</div>
+							<div>xxx</div>
+						</div>
+						<div class="item_line2"></div>
+						<div class="group_btn">
+							<div class="btn1">取消订单</div>
+							<div class="btn2">确认订单</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="top">
+							<div class="time_out">
+								<div>7</div>
+								<div>秒</div>
+							</div>
+							<div class="time">时间2020-01-19 10:50:32</div>
+						</div>
+						<div class="row1">
+							<div>交易类型:充值订单</div>
+							<div>已接单</div>
+						</div>
+						<!--<div class="item_line"></div>-->
+						<div class="row2">
+							<div>订单号</div>
+							<div>xxx</div>
+						</div>
+						<div class="row2">
+							<div>对方银行</div>
+							<div>xxx</div>
+						</div>
+						<div class="row2">
+							<div>付款金额</div>
+							<div>xxx</div>
+						</div>
+						<div class="item_line2"></div>
+						<div class="group_btn">
+							<div class="btn1">取消订单</div>
+							<div class="btn2">确认订单</div>
+						</div>
+					</div>
+				</div>
+				<div class="o_list appeal">
+					<div class="item">
+						<div class="row1">
+							<div>交易类型:充值订单</div>
+							<div>已接单</div>
+						</div>
+						<div class="item_line"></div>
+
+						<div class="row2">
+							<div>付款金额</div>
+							<div>xxx</div>
+						</div>
+						<div class="row3">
+							<div>
+								<nobr>
+									<nobr>订单号</nobr>
+								</nobr>
+							</div>
+							<div class="right">
+								<div>xxxxxxxxxxxxxxxxxxxxxxxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row3">
+							<div>收款姓名</div>
+							<div class="right">
+								<div>xxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row3">
+							<div>
+								<nobr>收款卡号</nobr>
+							</div>
+							<div class="right">
+								<div>xxxxxxxxxxxxxxxxxxxxxxxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row2">
+							<div>
+								<nobr>对方银行</nobr>
+							</div>
+							<div>xxxxxxxxxxxxxxxxxxxxxx</div>
+						</div>
+						<div class="row2">
+							<div>
+								<nobr>对方开户行</nobr>
+							</div>
+							<div>xxx</div>
+						</div>
+						<div class="row2">
+							<div>时间</div>
+							<div>xxx</div>
+						</div>
+						<div class="row5">
+							<div>申诉倒计时</div>
+							<div>xxx</div>
+						</div>
+						<div class="item_line2"></div>
+						<div class="group_btn">
+							<div class="btn2">确认收款</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="row1">
+							<div>交易类型:充值订单</div>
+							<div>已接单</div>
+						</div>
+						<div class="item_line"></div>
+
+						<div class="row2">
+							<div>付款金额</div>
+							<div>xxx</div>
+						</div>
+						<div class="row3">
+							<div>
+								<nobr>
+									<nobr>订单号</nobr>
+								</nobr>
+							</div>
+							<div class="right">
+								<div>xxxxxxxxxxxxxxxxxxxxxxxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row3">
+							<div>收款姓名</div>
+							<div class="right">
+								<div>xxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row3">
+							<div>
+								<nobr>收款卡号</nobr>
+							</div>
+							<div class="right">
+								<div>xxxxxxxxxxxxxxxxxxxxxxxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row2">
+							<div>
+								<nobr>对方银行</nobr>
+							</div>
+							<div>xxxxxxxxxxxxxxxxxxxxxx</div>
+						</div>
+						<div class="row2">
+							<div>
+								<nobr>对方开户行</nobr>
+							</div>
+							<div>xxx</div>
+						</div>
+						<div class="row2">
+							<div>时间</div>
+							<div>xxx</div>
+						</div>
+						<div class="row5">
+							<div>申诉倒计时</div>
+							<div>xxx</div>
+						</div>
+						<div class="item_line2"></div>
+						<div class="group_btn">
+							<div class="btn2">确认收款</div>
+						</div>
+					</div>
+				</div>
+				<div class="o_list Paid">
+					<div class="item">
+						<div class="row1">
+							<div>交易类型:充值订单</div>
+							<div>已接单</div>
+						</div>
+						<div class="item_line"></div>
+
+						<div class="row2">
+							<div>付款金额</div>
+							<div>xxx</div>
+						</div>
+						<div class="row3">
+							<div>
+								<nobr>
+									<nobr>订单号</nobr>
+								</nobr>
+							</div>
+							<div class="right">
+								<div>xxxxxxxxxxxxxxxxxxxxxxxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row3">
+							<div>收款姓名</div>
+							<div class="right">
+								<div>xxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row3">
+							<div>
+								<nobr>收款卡号</nobr>
+							</div>
+							<div class="right">
+								<div>xxxxxxxxxxxxxxxxxxxxxxxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row2">
+							<div>
+								<nobr>对方银行</nobr>
+							</div>
+							<div>xxxxxxxxxxxxxxxxxxxxxx</div>
+						</div>
+						<div class="row2">
+							<div>
+								<nobr>对方开户行</nobr>
+							</div>
+							<div>xxx</div>
+						</div>
+						<div class="row2">
+							<div>时间</div>
+							<div>xxx</div>
+						</div>
+						<div class="row5">
+							<div>失效倒计时</div>
+							<div>xxx</div>
+						</div>
+						<div class="item_line2"></div>
+						<div class="group_btn">
+							<div class="btn1">取消订单</div>
+							<div class="btn2">我已付款</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="row1">
+							<div>交易类型:充值订单</div>
+							<div>已接单</div>
+						</div>
+						<div class="item_line"></div>
+
+						<div class="row2">
+							<div>付款金额</div>
+							<div>xxx</div>
+						</div>
+						<div class="row3">
+							<div>
+								<nobr>
+									<nobr>订单号</nobr>
+								</nobr>
+							</div>
+							<div class="right">
+								<div>xxxxxxxxxxxxxxxxxxxxxxxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row3">
+							<div>收款姓名</div>
+							<div class="right">
+								<div>xxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row3">
+							<div>
+								<nobr>收款卡号</nobr>
+							</div>
+							<div class="right">
+								<div>xxxxxxxxxxxxxxxxxxxxxxxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row2">
+							<div>
+								<nobr>对方银行</nobr>
+							</div>
+							<div>xxxxxxxxxxxxxxxxxxxxxx</div>
+						</div>
+						<div class="row2">
+							<div>
+								<nobr>对方开户行</nobr>
+							</div>
+							<div>xxx</div>
+						</div>
+						<div class="row2">
+							<div>时间</div>
+							<div>xxx</div>
+						</div>
+						<div class="row5">
+							<div>失效倒计时</div>
+							<div>xxx</div>
+						</div>
+						<div class="item_line2"></div>
+						<div class="group_btn">
+							<div class="btn1">取消订单</div>
+							<div class="btn2">我已付款</div>
+						</div>
+					</div>
+				</div>
+				<div class="o_list paying">
+					<div class="item">
+						<div class="row1">
+							<div>交易类型:充值订单</div>
+							<div>已接单</div>
+						</div>
+						<div class="item_line"></div>
+
+						<div class="row2">
+							<div>付款金额</div>
+							<div>xxx</div>
+						</div>
+						<div class="row3">
+							<div>
+								<nobr>
+									<nobr>订单号</nobr>
+								</nobr>
+							</div>
+							<div class="right">
+								<div>xxxxxxxxxxxxxxxxxxxxxxxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row3">
+							<div>收款姓名</div>
+							<div class="right">
+								<div>xxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row3">
+							<div>
+								<nobr>收款卡号</nobr>
+							</div>
+							<div class="right">
+								<div>xxxxxxxxxxxxxxxxxxxxxxxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row2">
+							<div>
+								<nobr>对方银行</nobr>
+							</div>
+							<div>xxxxxxxxxxxxxxxxxxxxxx</div>
+						</div>
+						<div class="row2">
+							<div>
+								<nobr>对方开户行</nobr>
+							</div>
+							<div>xxx</div>
+						</div>
+						<div class="row2">
+							<div>时间</div>
+							<div>xxx</div>
+						</div>
+						<div class="row5">
+							<div>付款倒计时</div>
+							<div>xxx</div>
+						</div>
+						<div class="item_line2"></div>
+						<div class="group_btn">
+							<div class="btn2">确认付款</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="row1">
+							<div>交易类型:充值订单</div>
+							<div>已接单</div>
+						</div>
+						<div class="item_line"></div>
+
+						<div class="row2">
+							<div>付款金额</div>
+							<div>xxx</div>
+						</div>
+						<div class="row3">
+							<div>
+								<nobr>
+									<nobr>订单号</nobr>
+								</nobr>
+							</div>
+							<div class="right">
+								<div>xxxxxxxxxxxxxxxxxxxxxxxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row3">
+							<div>收款姓名</div>
+							<div class="right">
+								<div>xxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row3">
+							<div>
+								<nobr>收款卡号</nobr>
+							</div>
+							<div class="right">
+								<div>xxxxxxxxxxxxxxxxxxxxxxxx</div>
+								<div>
+									<nobr>复制</nobr>
+								</div>
+							</div>
+						</div>
+						<div class="row2">
+							<div>
+								<nobr>对方银行</nobr>
+							</div>
+							<div>xxxxxxxxxxxxxxxxxxxxxx</div>
+						</div>
+						<div class="row2">
+							<div>
+								<nobr>对方开户行</nobr>
+							</div>
+							<div>xxx</div>
+						</div>
+						<div class="row2">
+							<div>时间</div>
+							<div>xxx</div>
+						</div>
+						<div class="row5">
+							<div>付款倒计时</div>
+							<div>xxx</div>
+						</div>
+						<div class="item_line2"></div>
+						<div class="group_btn">
+							<div class="btn2">确认付款</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tabBar_d"></div>
+			<div class="tabBar">
+				<div class="item">
+					<img src="../img/buy.png" alt="" />
+					<div class="select">买币中心</div>
+				</div>
+				<div class="item">
+					<img src="../img/sell1.png" alt="" />
+					<div>卖币中心</div>
+				</div>
+				<div class="item">
+					<img src="../img/order1.png" alt="" />
+					<div>订单列表</div>
+				</div>
+				<div class="item">
+					<img src="../img/me1.png" alt="" />
+					<div>个人中心</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function btn(i) {
+				$('.btn_left').css('background-color', 'white')
+				$('.btn_left').css('color', '#FFB300')
+				$('.btn_right').css('color', '#FFB300')
+				$('.btn_right').css('background-color', 'white')
+				if(i == 1) {
+					$('.btn_right').css('color', '#fff')
+					$('.btn_right').css('background-color', '#FFB300')
+				} else {
+					$('.btn_left').css('color', '#fff')
+					$('.btn_left').css('background-color', '#FFB300')
+				}
+			}
+
+			$(function() {
+				//默认按第一个
+				//				btn_change('1')
+				$('.change1').hide();
+				btn_status('1')
+				$('.ordering').show()
+			})
+
+			function hide_list() {
+				$('.ordering').hide()
+				$('.appeal').hide()
+				$('.Paid').hide()
+				$('.paying').hide()
+			}
+
+			function btn_change(e) {
+				hide_list()
+				for(var i = 1; i < 4; i++) {
+					$('.name' + i).css('color', '#7E7E7E')
+					$('.line_' + i).hide()
+				}
+				$('.name' + e).css('color', '#262B2F')
+				$('.line_' + e).show()
+				if(e == 1) {
+					$('.appeal').show()
+				} else if(e == 2) {
+					$('.Paid').show()
+				} else if(e == 3) {
+					$('.paying').show()
+				}
+			}
+
+			function btn_status(e) {
+				hide_list()
+				hide_point(e)
+
+				for(var i = 1; i < 3; i++) {
+					$('.status' + i).css('color', '#7E7E7E')
+					//					$('.status' + i).css('background-color', '#fff')
+				}
+				if(e == 2) {
+					$('.change1').show()
+					btn_change('1')
+					$('.change').css('backgroundImage', 'url(../img/w1.png)')
+
+				} else {
+					$('.change1').hide()
+					$('.ordering').show()
+					$('.change').css('backgroundImage', 'url(../img/w2.png)')
+
+				}
+				$('.status' + e).css('color', '#262B2F')
+				//				$('.status' + e).css('background-color', '#FC660C')
+			}
+
+			function hide_point(i) {
+				$('.po' + i).hide()
+			}
+		</script>
+	</body>
+
+</html>

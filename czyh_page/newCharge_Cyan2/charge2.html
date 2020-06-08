@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>我要充值</title>
+		<link rel="stylesheet" href="./css/charge2.css" />
+	</head>
+
+	<body>
+		<div class="settings-page">
+			<div class="top">
+				<div>订单号:73498273948729347</div>
+				<div>付款倒计时:5分钟</div>
+			</div>
+			<div class="left">请按订单金额付款失败请返回次页面使用其他付款方式</div>
+			<div class="right">为了保证支付成功下拉页面更多人推荐使用支付宝转账</div>
+			<!--<header>
+				<div class="page-title">
+					<div class="back-button" onclick="history.back();">
+						<img src="./img/back.png" width="9" height="15" />
+					</div>
+					<span>我要充值</span>
+					<div class="right">充值订单</div>
+				</div>
+			</header>-->
+			<div class="content2">
+				<select name="" id="a">
+					<option value="">USDT</option>
+					<option value="">2</option>
+				</select>
+				<div>
+					选择币种<img src="./img/right.png" alt="" />
+				</div>
+			</div>
+			<div class="content1">
+				<div class="title">链接类型</div>
+				<div class="type_z">
+					<div onclick="type('1')">
+						<div class="type type1">Erc20</div>
+						<div class="type_line type_line1"></div>
+					</div>
+					<div onclick="type('2')">
+						<div class="type type2">Omni</div>
+						<div class="type_line type_line2"></div>
+					</div>
+				</div>
+			</div>
+			<div class="row_1">
+				<div class="item">实际汇率</div>
+				<div class="item">充值数量</div>
+				<div class="item"><nobr>实际到账数量</nobr></div>
+			</div>
+			<div class="row_2">
+				<div class="item">2222</div>
+				<div class="item">3424</div>
+				<div class="item">23423</div>
+			</div>
+			<div class="row2">
+				实际到账数量等于充值数量*实时汇率(30分钟内有效)
+			</div>
+			<div class="linhe"></div>
+			<div class="content3">
+				<div class="row6">
+					<div class="title">24355BTC</div>
+					<div class="title2">预估到账金额</div>
+					<img src="./img/back.png" alt="" />
+					<div class="msg">充值地址(30分钟内有效)</div>
+					<div class="add">
+						<div>
+							<nobr>充值地址：</nobr>
+						</div>
+						<div>293749827984798273947298374982</div>
+					</div>
+					<div class="copy">复制</div>
+				</div>
+			</div>
+			<div class="content4">
+				<div class="row7">
+					<p>请勿向上述地址充值任何非ERC20_USDT资产，否则资产将不可找回</p>
+					<p>您充值上述地址后，需要整个网络节点的确认，12次网络确认后到账，12次网络确认后可提币</p>
+					<p>最小充值金额：1USDT，小于最小金额的充值将不会上账且无法追回</p>
+					<p>您的充值地址不会经常改变，可以重复充值，如有更改，我们会尽快通知您5:请务必确认电脑及浏览器安全，防止信息被篡改或泄漏</p>
+				</div>
+			</div>
+		</div>
+		<script src="./js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$('#a').trigger('click')
+
+			function type(i) {
+				$('.type_line').css('background-color', '#fff')
+				$('.type_line' + i).css('background-color', '#01C6F3')
+				$('.type').css('color', 'rgba(38, 43, 47, 0.5)')
+				$('.type' + i).css('color', '#01C6F3')
+			}
+		</script>
+	</body>
+
+</html>

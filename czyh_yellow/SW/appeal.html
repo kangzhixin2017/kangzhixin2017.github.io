@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>申诉</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/navigationBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/tabBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/appeal.css" />
+		<link rel="stylesheet" type="text/css" href="../css/toast.css" />
+		<link rel="stylesheet" href="../css/iosSelect.css">
+		<script type="text/javascript" src="../js/iosSelect.js"></script>
+
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="navigationBar">
+				<img class="back" src="../img/left.png" />
+				<div class="title left">申诉</div>
+			</div>
+			<!--<div class="head">申诉原因：</div>-->
+			<div class="list_s">
+				<div class="list">
+					<div class="item2">
+						<div>申诉凭证</div>
+						<img onclick="btn_input()" src="../img/upload.png" />
+						<input type="file" name="" id="input_r" value="" />
+					</div>
+					<div class="item">
+						<div>金额不符</div>
+						<img class="reason reason1" onclick="change('reason1')" src="../img/yuan.png" />
+					</div>
+					<div class="item">
+						<div>未收到款</div>
+						<img class="reason reason2" onclick="change('reason2')" src="../img/yuan.png" />
+					</div>
+					<div class="item">
+						<div>重复扫码</div>
+						<img class="reason reason3" onclick="change('reason3')" src="../img/yuan.png" />
+					</div>
+					<div class="item">
+						<div>其他</div>
+						<img class="reason reason4" onclick="change('reason4')" src="../img/yuan.png" />
+					</div>
+					
+					<div class="remark">
+						<textarea id="addition" name="" rows="" cols="" placeholder="备注（选填）" maxlength="200"></textarea>
+						<div><span class="addition-count">0</span>/200</div>
+					</div>
+					<div class="upload">提交申诉</div>
+				</div>
+			</div>
+			<div class="tabBar_d"></div>
+			<div class="tabBar">
+				<div class="item">
+					<img src="../img/buy1.png" alt="" />
+					<div>买币中心</div>
+				</div>
+				<div class="item">
+					<img src="../img/sell1.png" alt="" />
+					<div>卖币中心</div>
+				</div>
+				<div class="item">
+					<img src="../img/order.png" alt="" />
+					<div class="select">订单列表</div>
+				</div>
+				<div class="item">
+					<img src="../img/me1.png" alt="" />
+					<div>个人中心</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			var path
+			$("#addition").on('input propertychange', function() {
+				//获取输入内容
+				var userDesc = $(this).val();
+				//判断字数
+				var len = userDesc.length
+				//显示字数
+				$(".addition-count").html(len);
+			});
+
+			function btn_input() {
+				$('#input_r').click()
+				path = $('#input_r').value
+			}
+			$('input[type="file"]').change(function(e) {
+				console.log(e) //e就是你获取的file对象
+				console.log(e.target.value)
+			})
+
+			function change(name) {
+				$('.reason').attr('src', '../img/yuan.png')
+				$('.' + name).attr('src', '../img/yuan1.png')
+			}
+		</script>
+	</body>
+
+</html>

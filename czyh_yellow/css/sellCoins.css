@@ -1,0 +1,434 @@
+/*.app{
+	background-color: #F3F6FC;
+}*/
+
+.bg {
+	width: 100%;
+	/*height: 260rem;*/
+	/*background-image: url(../img/bg.png);*/
+	background-size: 100% 230rem;
+	background-repeat: no-repeat;
+	/*position: absolute;*/
+	padding: 0 14rem;
+	margin-bottom: 10rem;
+	/*background-color: red;*/
+	background-image: linear-gradient(to bottom, #FFB300, #EDEDED);
+}
+
+
+/*顶部导航*/
+
+.bg_navigationBar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*导航高度*/
+	height: 52rem;
+	/*position: sticky;
+	top: 0;*/
+}
+
+.bg_navigationBar .title {
+	/*标题字体大小与颜色*/
+	font-size: 18rem;
+	width: 100%;
+}
+
+.bg_navigationBar .center {
+	text-align: center;
+}
+.bg_navigationBar .right{
+	width: 18rem;
+	height: 18rem;
+	position: absolute;
+	display: block;
+	right: 15rem;
+}
+
+.head{
+	margin-top: 8rem;
+	padding: 6rem 0 0;
+	/*background-color: #fff;*/
+	/*border-radius: 10rem;*/
+	/*background-image: url(../img/w1.png);*/
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.head .msg{
+	border-radius: 8rem;
+	/*padding: 20rem 15rem;*/
+	/*box-shadow: 0 2rem 6rem 2rem rgba(0, 0, 0, 0.08);*/
+}
+.head .msg .row{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 36rem;
+}
+.head .msg .row >div{
+	display: flex;
+	align-items: center;
+	border-bottom: 1rem solid #E2E2E2;
+	font-size: 18rem;
+	/*width: 115rem;*/
+}
+.head .msg .row >div input{
+	width: 100%;
+	line-height: 28rem;
+}
+.head .msg .row img{
+	width: 25rem;
+	height: 25rem;
+	flex-shrink: 0;
+	margin: 0 30rem;
+}
+.head .msg .row2{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/*height: 36rem;*/
+	margin-top: 5rem;
+}
+.head .msg .row2 >div{
+	display: flex;
+	align-items: center;
+	font-size: 13rem;
+	color: #7E7E7E;
+	line-height: 15rem;
+	width: 100%;
+}
+.head .msg .row2 img{
+	width: 25rem;
+	height: 2rem;
+	flex-shrink: 0;
+	margin: 0 30rem;
+	opacity: 0;
+}
+.head .msg .row3{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/*margin-top: 19rem;*/
+}
+.head .msg .row3 >div{
+	width: 100%;
+	height: 44rem;
+	text-align: center;
+	line-height: 44rem;
+	font-size: 18rem;
+}
+.btn_left{
+	/*background-image: url(../img/btn_left.png);*/
+	/*border: 1rem solid #FFB300;*/
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	color: #FFB300;
+	/*padding-right: 20rem;*/
+	border-radius: 5px;
+	
+}
+.btn_left div{
+}
+.btn_right{
+	/*border: 1rem solid #FFB300;*/
+	
+	/*background-image: url(../img/btn_right2.png);*/
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	color: #FFB300;
+	/*padding-left: 20rem;*/
+	margin-left: 8rem;
+	border-radius: 5px;
+}
+.btn_right div{
+}
+.list{
+	/*background-color: #F3F6FC;*/
+	/*padding: 0 20rem;*/
+}
+.list .change{
+	margin-top: 8rem;
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	padding: 15rem 20rem;
+}
+.list .change .item{
+	width: 100%;
+	text-align: center;
+	border: 1rem solid #E2E2E2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40rem;
+	color: #7E7E7E;
+	font-size: 17rem;
+	position: relative;
+	
+}
+.list .change .item:nth-of-type(2){
+	border-left: none;
+}
+.list .change .item > div{
+	position: relative;
+	
+}
+.list .change1 .item .point{
+	width: 8rem;
+	height: 8rem;
+	position: absolute;
+	background-color: #FC0C0C;
+	right: -10rem;
+	top: -1rem;
+	border-radius: 4rem;
+}
+.list .change1 .item .point_num{
+	width: 15rem;
+	height: 15rem;
+	position: absolute;
+	background-color: #FC0C0C;
+	right: -13rem;
+	top: -3rem;
+	font-size: 9rem;
+	line-height: 15rem;
+	border-radius: 50%;
+	color: #fff;
+	text-align: center;
+}
+.change1{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 20rem;
+	background-color: #fff;
+	font-size: 17rem;
+	color: #7E7E7E;
+	margin-top: -1rem;
+	/*background-color: red;*/
+}
+.change1 .item{
+	line-height: 40rem;
+}
+.change1 .item div:nth-of-type(1){
+	position: relative;
+}
+.change1 .item div:nth-of-type(2){
+	width: 50rem;
+	height: 8rem;
+	background-image: linear-gradient(to bottom, #FFB300, #FFE42D);
+	display: none;
+	margin-top: -14rem;
+}
+.ordering{
+	display: none;
+}
+.appeal{
+	/*display: none;*/
+}
+.Paid{
+	display: none;
+}
+.paying{
+	display: none;
+}
+
+
+.o_list {
+	margin-top: -1rem;
+	/*margin-top: 340rem;*/
+	/*background-color: #EDEDED;*/
+	/*padding: 0 15rem;*/
+}
+.ordering .item:nth-of-type(1) {
+	margin-top: -1rem;
+	background-color: white;
+	border-radius: 0 10rem 10rem 10rem;
+	padding: 18rem 15rem 15rem;
+	/*box-shadow: 0 2rem 6rem 0 #E5E5E5;*/
+}
+.appeal .item:nth-of-type(1) {
+	background-color: white;
+	border-radius: 0 0 10rem 10rem;
+	padding: 18rem 15rem 15rem;
+	/*box-shadow: 0 2rem 6rem 0 #E5E5E5;*/
+}
+.Paid .item:nth-of-type(1) {
+	background-color: white;
+	border-radius: 0 0 10rem 10rem;
+	padding: 18rem 15rem 15rem;
+	/*box-shadow: 0 2rem 6rem 0 #E5E5E5;*/
+}
+.paying .item:nth-of-type(1) {
+	background-color: white;
+	border-radius: 0 0 10rem 10rem;
+	padding: 18rem 15rem 15rem;
+	/*box-shadow: 0 2rem 6rem 0 #E5E5E5;*/
+}
+.o_list .item:not(:nth-of-type(1))  {
+	background-color: white;
+	margin-top: 10rem;
+	border-radius: 10rem;
+	padding: 18rem 15rem 15rem;
+	/*box-shadow: 0 2rem 6rem 0 #E5E5E5;*/
+}
+.o_list .item .top{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.o_list .item .top .time_out{
+	width: 120rem;
+	height: 120rem;
+	background-image: url(../img/time.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.o_list .item .top .time_out div:nth-of-type(1){
+	font-size: 28rem;
+	line-height: 33rem;
+}
+.o_list .item .top .time_out div:nth-of-type(2){
+	color: #7E7E7E;
+	font-size: 15rem;
+	line-height: 18rem;
+}
+.o_list .item .top .time{
+	font-size: 15rem;
+	line-height: 18rem;
+	margin-top: 10rem;
+	margin-bottom: 20rem;
+}
+.o_list .item .row1 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15rem;
+}
+
+.o_list .item .row1 div:nth-of-type(1) {
+	font-size: 18rem;
+	line-height: 21rem;
+}
+
+.o_list .item .row1 div:nth-of-type(2) {
+	font-size: 13rem;
+	color: #FC0C0C;
+}
+
+.o_list .item .item_line {
+	height: 1rem;
+	width: 100%;
+	background-color: #EDEDED;
+}
+
+.o_list .item .row2 {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 15rem;
+	font-size: 15rem;
+}
+.o_list .item .row3 >div:nth-of-type(1) {
+	color: #7E7E7E;
+}
+.o_list .item .row4 >div:nth-of-type(1) {
+	color: #7E7E7E;
+}
+.o_list .item .row2 >div:nth-of-type(1) {
+	margin-right: 30rem;
+	color: #7E7E7E;
+}
+
+.o_list .item .row2 div {
+	line-height: 18rem;
+	word-break: break-all;
+}
+
+.o_list .item .row3 {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 15rem;
+	font-size: 15rem;
+	line-height: 18rem;
+}
+
+.o_list .item .row3>div:nth-of-type(1) {
+	margin-right: 30rem;
+}
+
+.o_list .item .row3 .right {
+	display: flex;
+	align-items: center;
+}
+
+.o_list .item .row3 .right div:nth-of-type(1) {
+	word-break: break-all;
+}
+
+.o_list .item .row3 .right div:nth-of-type(2) {
+	color: #FFB300;
+	margin-left: 8rem;
+	border: 1rem solid #FFB300;
+	border-radius: 4rem;
+	font-size: 13rem;
+	line-height: 16rem;
+	padding: 0 2rem;
+}
+
+.o_list .item .row4 {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 15rem;
+	font-size: 15rem;
+}
+.o_list .item .row5 {
+	color: #FC0C0C;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 15rem;
+	font-size: 15rem;
+	line-height: 18rem;
+}
+.o_list .item .row4 img {
+	width: 100rem;
+	height: 100rem;
+	display: block;
+	border-radius: 5rem;
+}
+
+.o_list .item .item_line2 {
+	height: 1rem;
+	width: 100%;
+	background-color: #EDEDED;
+	margin-top: 15rem;
+}
+
+.group_btn {
+	margin-top: 15rem;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.group_btn div {
+	width: 90rem;
+	height: 35rem;
+	line-height: 35rem;
+	margin-left: 10rem;
+	text-align: center;
+	border-radius: 5rem;
+	font-size: 15rem;
+}
+
+.group_btn .btn1 {
+	border: 1rem solid #FFB300;
+	color: #FFB300;
+}
+
+.group_btn .btn2 {
+	background-color: #FFB300;
+	box-shadow: 0 2rem 6rem 0 #DEDEDE;
+	color: white;
+}
