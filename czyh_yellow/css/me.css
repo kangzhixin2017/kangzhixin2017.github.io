@@ -246,7 +246,17 @@
 	margin-top: 3rem;
 }
 .row_btn{
-	width: 92%;
+	width: 95%;
+	margin:20rem auto;
+	background-color: #FFB300;
+	line-height: 35rem;
+	text-align: center;
+	border-radius: 5rem;
+	color: white;
+	font-size: 15rem;
+}
+.row_btn_out{
+	width: 100%;
 	margin:20rem auto;
 	background-color: #FFB300;
 	line-height: 35rem;

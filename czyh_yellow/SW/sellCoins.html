@@ -232,12 +232,18 @@
 								</div>
 								<div class="right">
 									<div>xxxxxxxxxxxxxxxxxxxxxxxx</div>
+									<div>
+										<nobr>复制</nobr>
+									</div>
 								</div>
 							</div>
 							<div class="row3">
 								<div>收款姓名</div>
 								<div class="right">
 									<div>xxx</div>
+									<div>
+										<nobr>复制</nobr>
+									</div>
 								</div>
 							</div>
 							<div class="row3">
@@ -246,6 +252,9 @@
 								</div>
 								<div class="right">
 									<div>xxxxxxxxxxxxxxxxxxxxxxxx</div>
+									<div>
+										<nobr>复制</nobr>
+									</div>
 								</div>
 							</div>
 							<div class="row2">
@@ -514,8 +523,8 @@
 			btn(1)
 
 			function btn(i) {
-					$('.btn_right').css('color', '#7E7E7E')
-					$('.btn_left').css('color', '#7E7E7E')
+				$('.btn_right').css('color', '#7E7E7E')
+				$('.btn_left').css('color', '#7E7E7E')
 				if(i == 1) {
 					$('.head').css('backgroundImage', 'url(../img/w1.png)')
 					$('.change1').css('border-radius', '10rem 0 0 0')
@@ -524,7 +533,6 @@
 					$('.head').css('backgroundImage', 'url(../img/w2.png)')
 					$('.change1').css('border-radius', '0 10rem 0 0')
 					$('.btn_left').css('color', '#262B2F')
-					
 
 				}
 			}
@@ -559,24 +567,6 @@
 					$('.paying').show()
 				}
 			}
-
-			//			function btn_status(e) {
-			//				hide_list()
-			//				hide_point(e)
-			//				for(var i = 1; i < 3; i++) {
-			//					$('.status' + i).css('color', '#7E7E7E')
-			//					$('.status' + i).css('background-color', '#fff')
-			//				}
-			//				if(e == 2) {
-			//					$('.change1').show()
-			//					btn_change('1')
-			//				} else {
-			//					$('.change1').hide()
-			//					$('.ordering').show()
-			//				}
-			//				$('.status' + e).css('color', '#fff')
-			//				$('.status' + e).css('background-color', '#FC660C')
-			//			}
 
 			function hide_point(i) {
 				$('.po' + i).hide()

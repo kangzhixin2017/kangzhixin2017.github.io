@@ -1,0 +1,69 @@
+.content{
+	width: 100%;
+	padding:15rem;
+	background-color: white;
+	width: 93%;
+	margin: 15rem auto;
+	border-radius: 10rem;
+}
+.content .money_body{
+	margin-top: 15rem;
+}
+.content .money_body .title{
+	font-size: 17rem;
+	line-height: 20rem;
+}
+.content .money_body .money{
+	display: flex;
+	align-items: center;
+	font-size: 20rem;
+	font-weight: bold;
+	line-height: 40rem;
+	/*margin-top: 8rem;*/
+	border-bottom: 1rem solid #E2E2E2;
+}
+.content .money_body .money input{
+	line-height: 40rem;
+	width: 100%;
+	font-size: 20rem;
+	/*margin-left: 5rem;*/
+	font-weight: 500;
+	/*background-color: red;*/
+}
+.msg_tip{
+	color: #FF5757;
+	font-size: 12rem;
+	margin-top: 8rem;
+}
+.tip{
+	font-size: 13rem;
+	line-height: 15rem;
+	color: #7E7E7E;
+	margin: 8rem auto;
+	width: 100%;
+	text-align: center;
+}
+.content .msg .item{
+	height: 35rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 15rem;
+}
+.delete{
+	display: none;
+	width: 24rem;
+	height: 24rem;
+	flex-shrink: 0;
+}
+.btn{
+	width: 93%;
+	height: 40rem;
+	font-size: 15rem;
+	background-color: #D8D8D8;
+	text-align: center;
+	line-height: 40rem;
+	color: #fff;
+	border-radius: 8rem;
+	margin: 20rem auto 0;
+}
