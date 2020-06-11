@@ -1,8 +1,23 @@
 /*初始化*/
-html{
+
+html {
 	-webkit-text-size-adjust: none;
+	font-size: 0.1px;
 	height: 100%;
 }
+
+@media screen and (min-width: 10px) and (max-width: 330px) {
+	html {
+		font-size: 0.8px
+	}
+}
+
+@media screen and (min-width: 330px) and (max-width: 768px) {
+	html {
+		font-size: 1px;
+	}
+}
+
 * {
 	padding: 0;
 	margin: 0;

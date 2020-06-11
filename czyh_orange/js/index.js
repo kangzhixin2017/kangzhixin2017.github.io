@@ -2,7 +2,7 @@
  * 配置使用rem的规则
  */
 document.documentElement.clientWidth > 375 ? document.documentElement.style.fontSize = 375 / 375 + 'px' : document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 + 'px';
-alert(document.documentElement.style.fontSize)
+//alert(document.documentElement.style.fontSize)
 /**
  * tab
  */
