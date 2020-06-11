@@ -6,48 +6,24 @@
 
 		<meta charset="UTF-8">
 		<title></title>
-		<script type="text/javascript">
-			;
-			(function(win) {
-				var docEl = win.document.documentElement,
-					tid;
-
-				function refreshRem() {
-					var width = docEl.getBoundingClientRect().width;
-//					alert(width)
-					var rem = width / 375; 
-					//以750px为原稿，除以100可得各元素的rem
-					docEl.style.fontSize = '1px';
-//					alert(rem)
-					var actualSize = parseFloat(window.getComputedStyle(docEl)["font-size"]);
-					alert(actualSize)
-					if(actualSize !== rem) {
-						var remScaled = rem / (actualSize / rem);
-						docEl.style.fontSize = actualSize + "px"
-						alert(docEl.style.fontSize)
-					}
-				}
-
-				function dbcRefresh() {
-					clearTimeout(tid);
-					tid = setTimeout(refreshRem, 100)
-				}
-
-				win.addEventListener("resize", function() {
-					dbcRefresh()
-				}, false);
-				win.addEventListener("pageshow", function(e) {
-					if(e.persisted) {
-						dbcRefresh()
-					}
-				}, false);
-				refreshRem();
-			})(window);
-		</script>
+	
 	</head>
 
 	<body>
-		<div style="width: 112rem;height: 112rem;background-color: red;"></div>
+		<div style="font-size: 1px;">这段文字测试大小：1px</div>
+		<div style="font-size: 2px;">这段文字测试大小：2px</div>
+		<div style="font-size: 3px;">这段文字测试大小：3px</div>
+		<div style="font-size: 4px;">这段文字测试大小：4px</div>
+		<div style="font-size: 5px;">这段文字测试大小：5px</div>
+		<div style="font-size: 6px;">这段文字测试大小：6px</div>
+		<div style="font-size: 7px;">这段文字测试大小：7px</div>
+		<div style="font-size: 8px;">这段文字测试大小：8px</div>
+		<div style="font-size: 9px;">这段文字测试大小：9px</div>
+		<div style="font-size: 10px;">这段文字测试大小：10px</div>
+		<div style="font-size: 11px;">这段文字测试大小：11px</div>
+		<div style="font-size: 12px;">这段文字测试大小：12px</div>
+		<div style="font-size: 13px;">这段文字测试大小：13px</div>
+		<div style="font-size: 14px;">这段文字测试大小：14px</div>
 	</body>
 
 </html>
