@@ -1,13 +1,16 @@
 /**
  * 配置使用rem的规则
  */
-document.documentElement.clientWidth > 375 ? document.documentElement.style.fontSize = 375 / 375 + 'px' : document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 + 'px';
+$(window).on("resize", function() {
+	$("html").css("fontSize", '1px');
+}).resize();
+//document.documentElement.clientWidth > 375 ? document.documentElement.style.fontSize = 375 / 375 + 'px' : document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 + 'px';
 //alert(document.documentElement.style.fontSize)
 /**
  * tab
  */
 var k_tab = {
-	init:function(id = 1){
+	init: function(id = 1) {
 		let cla = document.getElementsByClassName('k_tab')
 		for(var i = 0; i < cla.length; i++) {
 			if(cla[i].dataset.id == id) {
@@ -18,7 +21,7 @@ var k_tab = {
 	/**
 	 * @param {this} element
 	 */
-	tab_click:function (element,callback) {
+	tab_click: function(element, callback) {
 		let cla = document.getElementsByClassName('k_tab')
 		for(var i = 0; i < cla.length; i++) {
 			cla[i].classList.remove('k_tab_current')
