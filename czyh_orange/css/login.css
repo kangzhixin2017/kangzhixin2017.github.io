@@ -6,88 +6,88 @@
 	flex-direction: column;
 }
 .logo img{
-	width: 11.2rem;
-	height: 11.2rem;
-	margin-top: 7.4rem;
+	width: 1.12rem;
+	height: 1.12rem;
+	margin-top: 0.74rem;
 	-webkit-text-size-adjust: none;
 }
 .logo .title{
-	font-size: 2.0rem;
-	line-height: 2.4rem;
-	margin-top: 2.5rem;
+	font-size: 0.2rem;
+	line-height: 0.24rem;
+	margin-top: 0.25rem;
 }
 
 .content{
 	width: 100%;
-	padding: 0 2.0rem;
-	margin-top: 4.7rem;
+	padding: 0 0.2rem;
+	margin-top: 0.47rem;
 }
 .content .item{
-	margin-top: 5rem;
-	height: 5.0rem;
+	margin-top: 0.05rem;
+	height: 0.5rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	border-bottom: 1rem solid #E2E2E2;
+	border-bottom: 0.01rem solid #E2E2E2;
 }
 .content .item input{
-	height: 4.5rem;
+	height: 0.45rem;
 	width: 100%;
-	font-size: 1.7rem;
+	font-size: 0.17rem;
 }
 .content .item .delete{
 	display: none;
 }
 .content .item img{
-	width: 2.0rem;
-	height: 2.0rem;
+	width: 0.2rem;
+	height: 0.2rem;
 	flex-shrink: 0;
 }
 .content .item .code{
 	flex-shrink: 0;
-	width: 9.0rem;
-	height: 4.3rem;
+	width: 0.9rem;
+	height: 0.43rem;
 	color: white;
-	font-size: 2.0rem;
+	font-size: 0.2rem;
 	background-color: #D8D8D8;
-	line-height: 4.3rem;
+	line-height: 0.43rem;
 	text-align: center;
-	border-radius: 8rem;
+	border-radius: 0.08rem;
 	
 }
 .content .btn_find{
 	background-color: #D8D8D8;
 	width: 100%;
-	height: 40rem;
+	height: 0.4rem;
 	text-align: center;
-	line-height: 40rem;
-	margin: 30rem auto 0;
-	border-radius: 8rem;
+	line-height: 0.4rem;
+	margin: 0.3rem auto 0;
+	border-radius: 0.08rem;
 	color: white;
-	font-size: 15rem;
+	font-size: 0.15rem;
 }
 .content .help{
-	margin: 8rem auto 0;
+	margin: 0.08rem auto 0;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 }
 .content .help div:nth-of-type(1){
-	line-height: 18rem;
+	line-height: 0.18rem;
 	color: #7E7E7E;
-	font-size: 15rem;
+	font-size: 0.15rem;
 }
 .content .help div:nth-of-type(2){
-	line-height: 18rem;
-	font-size: 15rem;
+	line-height: 0.18rem;
+	font-size: 0.15rem;
 	color: #FC0C0C;
 }
 .footer{
 	position: absolute;
-	bottom: 20rem;
+	bottom: 0.2rem;
 	width: 100%;
 	text-align: center;
-	font-size: 15rem;
+	font-size: 0.15rem;
 	color: #7E7E7E;
 }
 .footer span{
