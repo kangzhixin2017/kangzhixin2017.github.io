@@ -12,45 +12,45 @@
 	-webkit-text-size-adjust: none;
 }
 .logo .title{
-	font-size: 20rem;
-	line-height: 24rem;
-	margin-top: 25rem;
+	font-size: 2.0rem;
+	line-height: 2.4rem;
+	margin-top: 2.5rem;
 }
 
 .content{
 	width: 100%;
-	padding: 0 20rem;
-	margin-top: 47rem;
+	padding: 0 2.0rem;
+	margin-top: 4.7rem;
 }
 .content .item{
 	margin-top: 5rem;
-	height: 50rem;
+	height: 5.0rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	border-bottom: 1rem solid #E2E2E2;
 }
 .content .item input{
-	height: 45rem;
+	height: 4.5rem;
 	width: 100%;
-	font-size: 17rem;
+	font-size: 1.7rem;
 }
 .content .item .delete{
 	display: none;
 }
 .content .item img{
-	width: 20rem;
-	height: 20rem;
+	width: 2.0rem;
+	height: 2.0rem;
 	flex-shrink: 0;
 }
 .content .item .code{
 	flex-shrink: 0;
-	width: 90rem;
-	height: 43rem;
+	width: 9.0rem;
+	height: 4.3rem;
 	color: white;
-	font-size: 20rem;
+	font-size: 2.0rem;
 	background-color: #D8D8D8;
-	line-height: 43rem;
+	line-height: 4.3rem;
 	text-align: center;
 	border-radius: 8rem;
 	
