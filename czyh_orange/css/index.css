@@ -1,10 +1,24 @@
 /*初始化*/
-*{
+
+@media screen and (min-width: 10px) and (max-width: 375px) {
+	html {
+		font-size: 0.86px;
+	}
+}
+
+@media screen and (min-width: 375px) and (max-width: 9999999999px) {
+	html {
+		font-size: 1px;
+	}
+}
+
+* {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
 }
-body{
+
+body {
 	/*默认字体颜色*/
 	color: #262B2F;
 	/*默认字体大小*/
@@ -13,23 +27,27 @@ body{
 	background-color: #F0F4F7;
 	position: relative;
 }
+
 input {
 	outline: none;
 	border: none;
 	box-shadow: none;
-	caret-color:#FC660C;
+	caret-color: #FC660C;
 }
-select{
+
+select {
 	outline: none;
 	border: none;
 	appearance: none;
 	-moz-appearance: none;
 	-webkit-appearance: none;
 }
-textarea{
+
+textarea {
 	resize: none;
 }
-.app{
+
+.app {
 	/*设置最大显示宽度*/
 	max-width: 414px;
 	margin: 0 auto;
@@ -38,31 +56,38 @@ textarea{
 	min-height: 100vh;
 	position: relative;
 }
+
+
 /*默认按钮颜色*/
-.btn_bg{
+
+.btn_bg {
 	text-align: center;
 	background-color: #FC660C;
 	color: #fff;
 }
+
+
 /*字体颜色*/
-.font_c{
+
+.font_c {
 	color: #FC0C0C;
 }
 
-.k_tab{
+.k_tab {
 	color: red;
 }
-.k_tab_current{
+
+.k_tab_current {
 	color: yellow;
 }
-.k_radio{
+
+.k_radio {
 	width: 20px;
 	height: 20px;
 	background: url(../img/me.png) no-repeat;
 	background-size: 100% 100%;
-	
 }
-.k_radio_current{
+
+.k_radio_current {
 	background-image: url(../img/back.png);
-	
 }
