@@ -1,0 +1,68 @@
+<script type="text/javascript">
+	var navtitle = '付款明细';
+</script>
+<style type="text/css">
+	#accordion>div:nth-of-type(n+2) {
+		margin-top: 0;
+	}
+	
+	.kk li {
+		line-height: 30px;
+	}
+</style>
+<ul style="margin: 10px 5px 0;box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);" class="list-group kk">
+	<li class="list-group-item"><span style="width: 60px;display: inline-block;text-align: right;">总计金额</span><span class="total" style="margin-left: 50px;">￥0</span></li>
+	<li class="list-group-item"><span style="width: 60px;display: inline-block;text-align: right;">已付金额</span><span class="paid" style="margin-left: 50px;">￥0</span></li>
+	<li class="list-group-item"><span style="width: 60px;display: inline-block;text-align: right;">未付金额</span><span class="unpaid" style="margin-left: 50px;">￥0</span></li>
+</ul>
+<div style="margin: 0 5px;box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);" class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+</div>
+<script type="text/javascript">
+	var total = 0
+	var paid = 0
+	var unpaid = 0
+	$.ajax({
+		url: baseUrl + '/PaymentContent/list?CustomerID=' + CustomerID,
+		type: 'get',
+		dataType: 'json',
+		//		data: mydata,
+		success: function(res) {
+			Debugger.log("付款明细", res)
+			if(res.code == 0) {
+				var data = res.data
+				for(var i = 0; i < data.length; i++) {
+					total += data[i].总计金额;
+					paid += data[i].已付金额;
+					unpaid += data[i].未付余额;
+					for(var j = 0; j < data[i].付款明细.length; j++) {
+						$('#accordion').append(`
+							<div class="panel panel-default">
+								<div class="panel-heading ac${i}${j}" style='background-color: white;' role="tab" id="headingOne">
+									<h4 class="panel-title" style="position: relative;">
+										<a onclick="changeimg('c${i}${j}','1')" style="width: 100%;display: block;text-decoration: none;" role="button" data-toggle="collapse" data-parent="" href="#c${i}${j}" aria-expanded="true" aria-controls="collapseOne">${data[i].付款明细[j].类型}[￥${data[i].付款明细[j].金额}]
+										<img class="c${i}${j}" style="position: absolute;bottom: 0;right: 0;width: 17px;" src="img/dow.png"/>
+										</a>
+										
+									</h4>
+								</div>
+								<div id="c${i}${j}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+									<ul class="list-group">
+										<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">支付类型</span><span id="one1" style="margin-left: 50px;">${data[i].付款明细[j].支付类型}</span></li>
+										<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">支付方式</span><span id="one2" style="margin-left: 50px;">${data[i].付款明细[j].支付方式}</span></li>
+										<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">收 款 人</span><span id="one3" style="margin-left: 50px;">${data[i].付款明细[j].收款人}</span></li>
+										<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">收款时间</span><span id="one4" style="margin-left: 50px;">${data[i].付款明细[j].付款时间}</span></li>
+									</ul>
+								</div>
+							</div>`)
+					}
+				}
+				$('.total').text("￥" + total)
+				$('.paid').text("￥" + paid)
+				$('.unpaid').text("￥" + unpaid)
+			} else {
+				Debugger.log("请求结果", res.msg)
+			}
+		}
+	})
+</script>

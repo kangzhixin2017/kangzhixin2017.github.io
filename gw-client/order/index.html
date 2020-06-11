@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=375, maximum-scale=1.0, user-scalable=no" />
+
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+		<!--<title>首页</title>-->
+
+		<link rel="stylesheet" type="text/css" href="package/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+
+		<script async="false" type="text/javascript">
+			var time = new Date().getTime();
+			document.write("<link rel='stylesheet' type='text/css' href='css/index.css?time="  + time + "' />");
+		</script>
+		<!--<link rel="stylesheet" type="text/css" href="css/index.css"/>-->
+	</head>
+
+	<body onhashchange="hashchange()">
+		<div class="nav"></div>
+		<div class="content"></div>
+		<!--<script src="js/public.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="package/jquery/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="package/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script async="false" type="text/javascript">
+			document.write("<script async='false' type='text/javascript' src='js/popups.js?time="  + time + "'></s"  + "cript>");
+		
+			document.write("<script async='false' type='text/javascript' src='js/public.js?time="  + time + "'></s"  + "cript>");
+			document.write("<script async='false' type='text/javascript' src='js/index.js?time="  + time + "'></s"  + "cript>");
+		</script>
+		<!--<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>-->
+		<script type="text/javascript">
+//			CustomerID = {{.CustomerID}};
+//			UserInfo = {{.UserInfo}}
+//			Phone = {{.Phone}}
+		</script>
+	</body>
+
+</html>

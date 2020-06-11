@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>登录</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/login.css" />
+		<link rel="stylesheet" type="text/css" href="../css/toast.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="head">
+				<div class="title">
+					<div><nobr>登录</nobr></div>
+					<div></div>
+				</div>
+				<div class="msg">还没有账号，立即<span>注册</span></div>
+			</div>
+			<div class="input">
+				<div class="row">
+					<input class="phone" oninput="change()" type="" name="" id="" value="" placeholder="输入手机号"/>
+					<img class="delete" onclick="delete_phone()" src="../img/delete.png"/>
+				</div>
+				<div class="row">
+					<input type="" name="" id="" value="" placeholder="输入密码"/>
+				</div>
+				<div class="row">
+					<input type="" name="" id="" value="" placeholder="图形验证码"/>
+					<img class="code" src="../img/delete.png"/>
+				</div>
+			</div>
+			<div class="btn">登录</div>
+			<div class="other">
+				<div>手机号登录</div>
+				<span></span>
+				<div>忘记密码</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function change() {
+				if(event.target.value) {
+					$('.delete').css('display', 'block')
+				} else {
+					$('.delete').css('display', 'none')
+				}
+			}
+			function delete_phone() {
+				$('.phone').val('')
+				$('.phone').focus()
+				$('.delete').css('display', 'none')
+			}
+		</script>
+	</body>
+
+</html>

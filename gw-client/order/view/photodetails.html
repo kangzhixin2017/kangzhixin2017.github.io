@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=375, maximum-scale=1.0, user-scalable=no" />
+
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+		<!--<title>首页</title>-->
+
+		<link rel="stylesheet" type="text/css" href="../package/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<style type="text/css">
+			.msgbody {
+				width: 100%;
+				text-align: center;
+				background-color: white;
+			}
+			
+			.msgbody img {
+				width: 90vw;
+				display: inline-block;
+				margin-top: 20px;
+			}
+		</style>
+		<script async="false" type="text/javascript">
+			var time = new Date().getTime();
+			document.write("<link rel='stylesheet' type='text/css' href='../css/index.css?time="  + time + "' />");
+		</script>
+		<!--<link rel="stylesheet" type="text/css" href="css/index.css"/>-->
+	</head>
+
+	<body>
+		<div class="nav">
+			<h4 class="title">分享</h4>
+			<img onclick="gotoback()" class="btnback" src="../img/bac.png" />
+		</div>
+		<div style="height: 50px;"></div>
+		<div class="msgbody">
+		</div>
+		<!--<script src="js/public.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="../package/jquery/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../package/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script async="false" type="text/javascript">
+						document.write("<script async='false' type='text/javascript' src='../js/public.js?time="  + time + "'></s"  + "cript>");
+		</script>
+		<script type="text/javascript">
+			sessionStorage.setItem('isfx',true)
+			function gotoback(){
+				history.go(-1)
+			}
+			function GetQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+			//window.alert(window.location.host);
+			//获取上一个页面传值
+			var img1 = GetQueryString("img1");
+			var img2 = GetQueryString("img2");
+			var img3 = GetQueryString("img3");
+			var img4 = GetQueryString("img4");
+			console.log(img1, img2, img3, img4)
+			$('.msgbody').append(`
+				<img src="${img1}" />`)
+			$('.msgbody').append(`
+				<img src="${img2}" />`)
+			$('.msgbody').append(`
+				<img src="${img3}" />`)
+			$('.msgbody').append(`
+				<img src="${img4}" />`)
+		</script>
+	</body>
+
+</html>

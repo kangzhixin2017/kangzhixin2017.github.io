@@ -1,0 +1,70 @@
+<script type="text/javascript">
+	var navtitle = '底片下载';
+</script>
+<style type="text/css">
+	.fuci {
+		margin-top: 20px;
+		text-align: center;
+	}
+	
+	.fuci p:nth-of-type(n+2) {
+		margin-left: 10px;
+	}
+	
+	.fuci p {
+		border: 1px solid dodgerblue;
+		border-radius: 4px;
+		padding: 10px;
+		display: inline-block;
+	}
+	
+	.downl {
+		margin-top: 20px;
+	}
+	
+	.downl label {
+		display: block;
+		margin-left: 10px;
+	}
+	
+	.downl p {
+		margin-left: 10px;
+		width: 90vw;
+		display: block;
+		word-wrap: break-word;
+		word-break: break-all;
+	}
+</style>
+<div class="fuci">
+</div>
+<div class="downl">
+	<label for="">图片云盘下载地址:</label>
+	<p class="httpsrc"></p>
+	<label for="">图片云盘下载密码:</label>
+	<p class="httppwd"></p>
+</div>
+<!--<h1>底片下载</h1>-->
+<script type="text/javascript">
+	var fcnum;
+	setTimeout(function() {
+		changefc(0);
+	}, 0)
+	Debugger.log("底片下载详情", downdata)
+	for(var i = 0; i < downdata.服务.length; i++) {
+		$('.fuci').append(`
+			<p onclick="changefc(${i})" class="kk fuci${i}">服次${i+1}</p>`)
+	}
+
+	function changefc(i) {
+		fcnum = i + 1;
+		Debugger.log('服次', fcnum)
+		var msg = '.fuci' + i;
+		$(".kk").css("background-color", "white");
+		$(msg).css("background-color", "dodgerblue");
+		if(downdata.服务[i].图片云盘下载地址 == '') {
+			alert('还没填写下载地址，请耐心等待')
+		}
+		$('.httpsrc').text(downdata.服务[i].图片云盘下载地址)
+		$('.httppwd').text(downdata.服务[i].图片云盘下载密码)
+	}
+</script>

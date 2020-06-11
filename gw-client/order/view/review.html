@@ -1,0 +1,182 @@
+<script type="text/javascript">
+	var navtitle = '客户点评';
+</script>
+<style type="text/css">
+	/*input,
+	textarea,
+	select,
+	a:focus {
+		outline: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		outline: none;
+		background: transparent;
+		border: none;
+		outline: none;
+		border-style: none;
+	}*/
+	/*select{
+		width: 100px;
+		background-color: red;
+		padding-left:30px;
+	}*/
+	
+	.ui-select {
+		text-align: center;
+		background-color: white;
+		border: solid 1px #E3E3E3;
+		height: 40px;
+		line-height: 40px;
+		margin: 10px 20px;
+		position: relative;
+	}
+	
+	.ui-select select {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		height: 3em;
+		opacity: 0;
+	}
+</style>
+<!--<div style="margin: 30px 0;width: 100%;text-align: center;color: #5E5E5E">商家有点懒，没有设置评论信息</div>-->
+<div style="padding-bottom: 60px;" class="abody">
+
+</div>
+<div style="position: fixed;bottom: 10px;width: 100%;left: 0;">
+	<div class="btn-p" style="color: white;background-color: dodgerblue;border-radius: 5px;width: 90%;margin: auto;line-height: 40px;text-align: center;">保存评价</div>
+</div>
+
+<script type="text/javascript">
+	//请求来的数据
+	var reqdata;
+	var alldata = [];
+
+	$.ajax({
+		url: baseUrl + '/tb_PingJiaType/list',
+		type: 'get',
+		dataType: 'json',
+		//		data: mydata,
+		success: function(res) {
+			Debugger.log("评价", res)
+			if(res.code == 0) {
+				var data = res.data;
+				reqdata = data;
+				var m = 0;
+				for(var i = 0; i < data.length; i++) {
+					$('.abody').append(`
+						<span style="font-size: 18px;margin: 20px 20px 0;display: block;">${data[i].评价类型}</span>
+					`)
+					if(data[i].评价) {
+						for(var j = 0; j < data[i].评价.length; j++) {
+							alldata.push({
+								'CustomerID': CustomerID,
+								'AsName': data[i].评价类型,
+								'Subject': data[i].评价[j].评价主题,
+								'PingjiaNum': '1',
+								'PingjiaConentts': data[i].评价[j].选项一
+							});
+							$('.abody').append(`
+								<span style="margin:10px 20px;display: block;">${data[i].评价[j].评价主题}</span>
+								<div class="ui-select">
+									<span class='c${i}${j}'>${data[i].评价[j].选项一}</span>
+									<select class='s${i}${j}' onchange="change(this,'c${i}${j}','${m}')">
+										<option value="1">${data[i].评价[j].选项一}</option>
+										<option value="2">${data[i].评价[j].选项二}</option>
+										<option value="3">${data[i].评价[j].选项三}</option>
+										<option value="4">${data[i].评价[j].选项四}</option>
+										<option value="5">${data[i].评价[j].选项五}</option>
+									</select>
+								</div>`)
+							m++;
+						}
+					}
+				}
+				setting();
+			} else {
+				Debugger.log("请求结果", res.msg)
+			}
+		}
+	})
+
+	function change(i, name, id) {
+		var name = '.' + name;
+		var index = i.selectedIndex;
+		console.log(i.value, name, i.options[index].text, id)
+		$(name).text(i.options[index].text)
+		alldata[id].PingjiaNum = i.value;
+		alldata[id].PingjiaConentts = i.options[index].text;
+	}
+	$('.btn-p').click(function() {
+		Debugger.log("数据", alldata)
+		var k = 0;
+		for(var i = 0; i < alldata.length; i++) {
+			var mydata = alldata[i]
+			Debugger.log("一次请求", mydata)
+			$.ajax({
+				url: baseUrl + '/tb_PingJia/add',
+				type: 'post',
+				dataType: 'json',
+				data: mydata,
+				success: function(res) {
+					k++;
+					Debugger.log("结果", res)
+					if(res.code == 0) {
+						if(k == alldata.length) {
+							alert('保存成功!')
+							window.history.go(-1)
+						}
+					} else {
+						if(k == alldata.length) {
+							alert('请重新操作!')
+						}
+					}
+				}
+			})
+		}
+	})
+
+	function setting() {
+		alldata = [];
+		Debugger.log("请求的数据", reqdata)
+		$.ajax({
+			url: baseUrl + '/tb_PingJia/list?CustomerID=BB00037',
+			type: 'get',
+			dataType: 'json',
+			//		data: mydata,
+			success: function(res) {
+				Debugger.log("用户已评价数据", res)
+				if(res.code == 0) {
+					if(res.data) {
+						for(var i = 0; i < reqdata.length; i++) {
+							if(reqdata[i].评价) {
+								for(var j = 0; j < reqdata[i].评价.length; j++) {
+									var name1 = '.c' + i + j;
+									var name2 = '.s' + i + j;
+									Debugger.log(name1, name2)
+									for(var k = 0; k < res.data.length; k++) {
+										if(reqdata[i].评价[j].评价主题 == res.data[k].评价主题) {
+											$(name1).text(res.data[k].评价内容);
+											$(name2).val(res.data[k].评价选项);
+											alldata.push({
+												'CustomerID': CustomerID,
+												'AsName': res.data[k].评价类型,
+												'Subject': res.data[k].评价主题,
+												'PingjiaNum': res.data[k].评价选项,
+												'PingjiaConentts': res.data[k].评价内容
+											});
+										}
+									}
+								}
+							}
+						}
+					}
+				} else {
+					Debugger.log("请求结果", res.msg)
+				}
+			}
+		})
+
+	}
+</script>

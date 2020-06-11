@@ -1,0 +1,50 @@
+<script type="text/javascript">
+	var navtitle = '会员商品';
+</script>
+<style type="text/css">
+	#accordion>div:nth-of-type(n+2) {
+		margin-top: 0;
+	}
+</style>
+<div style="margin:8px;box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);" class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+</div>
+<script type="text/javascript">
+	Debugger.log("phone",Phone)
+	$.ajax({
+		url: baseUrl + '/ConsumptionContent/list?CustomerID=' + CustomerID,
+		type: 'get',
+		dataType: 'json',
+		//		data: mydata,
+		success: function(res) {
+			Debugger.log("会员商品", res)
+			if(res.code == 0) {
+				var data = res.data;
+				for(var i = 0; i < data.length; i++) {
+					$('#accordion').append(`
+						<div class="panel panel-default">
+							<div class="panel-heading ac${i}" style='background-color: white;' role="tab" id="headingOne">
+								<h4 class="panel-title" style="position: relative;">
+									<a onclick="changeimg('c${i}','1')" style="width: 100%;display: block;text-decoration: none;" role="button" data-toggle="collapse" data-parent="" href="#c${i}" aria-expanded="true" aria-controls="collapseOne">${data[i].商品名称}[￥${data[i].总价}]
+										<img class="c${i}" style="position: absolute;bottom: 0;right: 0;width: 17px;" src="img/dow.png"/>
+									</a>
+								</h4>
+							</div>
+							<div id="c${i}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+								<ul class="list-group">
+									<li class="list-group-item"><span style="text-align: right;width: 30px;display: inline-block;">单价</span><span id="one1" style="margin-left: 70px;">${data[i].单价}</span></li>
+									<li class="list-group-item"><span style="text-align: right;width: 30px;display: inline-block;">数量</span><span id="one2" style="margin-left: 70px;">${data[i].数量}</span></li>
+									<li class="list-group-item"><span style="text-align: right;width: 30px;display: inline-block;">总价</span><span id="one3" style="margin-left: 70px;">${data[i].总价}</span></li>
+									<li class="list-group-item"><span style="text-align: right;width: 30px;display: inline-block;">服次</span><span id="one4" style="margin-left: 70px;">${data[i].服次}</span></li>
+									<li class="list-group-item"><span style="text-align: right;width: 30px;display: inline-block;">P&nbsp;数</span><span id="one5" style="margin-left: 70px;">${data[i].P数}</span></li>
+									<li class="list-group-item"><span style="text-align: right;width: 30px;display: inline-block;">备注</span><span id="one6" style="margin-left: 70px;">${data[i].备注}</span></li>
+								</ul>
+							</div>
+						</div>`)
+				}
+			} else {
+				Debugger.log("请求结果", res.msg)
+			}
+		}
+	})
+</script>

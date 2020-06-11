@@ -36,6 +36,7 @@
 	/*标题字体大小与颜色*/
 	font-size: 18rem;
 	width: 100%;
+	color: white;
 }
 
 .bg_navigationBar .center {
@@ -189,7 +190,7 @@
 }
 
 .search .date .left .time_begin {
-	font-size: 18rem;
+	font-size: 16rem;
 	line-height: 25rem;
 	margin: 0;
 	color: #D9D9D9;
@@ -215,7 +216,7 @@
 }
 
 .search .date .right .time_end {
-	font-size: 18rem;
+	font-size: 16rem;
 	line-height: 25rem;
 	margin: 0;
 	color: #D9D9D9;

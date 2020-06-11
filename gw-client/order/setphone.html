@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=375, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			input,
+			textarea,
+			select,
+			a:focus {
+				outline: none;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				outline: none;
+				background: transparent;
+				border: none;
+				outline: none;
+				border-style: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style="background-color: white;width: 100vw;height: 100vh;margin-top: -44px;text-align: center;">
+			<img style="margin: 80px auto 0;width: 176px;height: 92px;display: inline-block;" src="img/logo.png" />
+			<div style="border-radius: 10px;border: 1px solid #EEEEEE;width: 320px;height: 50px;margin: 62px auto 0;text-align: left;padding: 0;">
+				<label style="line-height: 48px;margin-left: 21px;font-size: 16px;" for="">手机号</label>
+				<input style="margin-left: 20px;height: 40px;font-size: 16px;border: none;" type="" name="" id="phone" value="" placeholder="请输入手机号" />
+			</div>
+			<div class="btnlogin" style="margin: 50px auto;width: 320px;height: 45px;background-color: #f9701d;line-height: 45px;font-size: 17px;color: white;border-radius: 4px;">设置</div>
+		</div>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="package/jquery/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			UnionId = {{.UnionId}};
+			$(".btnlogin").click(function() {
+				var phone = $("#phone").val()
+				var mydata = {
+					unionId: UnionId,
+					phone:phone
+				}
+				mydata = JSON.stringify(mydata)
+				$.ajax({
+					url: 'http://yxbb.yinxiangbaby.cn/order/BindPhone',
+					type: 'post',
+					dataType: 'json',
+					data: mydata,
+					success: function(res) {
+						window.location.href = "index"
+					}
+				})
+			})
+		</script>
+	</body>
+
+</html>

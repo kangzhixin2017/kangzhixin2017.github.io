@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>登录</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/navigationBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/tabBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/login.css" />
+		<link rel="stylesheet" type="text/css" href="../css/toast.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="logo">
+				<img src="../img/logo.png" />
+				<div class="title">商务号服务中心</div>
+			</div>
+			<div class="content">
+				<div class="item">
+					<div>手机号</div>
+					<input onclick="inp_cli('inp1')" class="inp1" type="" name="" id="" value="" placeholder="输入手机号" />
+				</div>
+				<div class="item">
+					<div>密码</div>
+					<input onclick="inp_cli('inp2')" class="inp2" type="" name="" id="" value="" placeholder="输入密码" />
+				</div>
+				<div class="item">
+					<div>谷歌验证码</div>
+					<input onclick="inp_cli('inp3')" class="inp3" type="" name="" id="" value="" placeholder="输入谷歌验证码" />
+				</div>
+				<div class="explain">谷歌验证码说明</div>
+				<div class="btn_find">登录</div>
+				<div class="help">
+					<div>验证码</div>
+					<div>忘记密码</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function inp_cli(name) {
+				$('.inp1').css('border', 'none')
+				$('.inp2').css('border', 'none')
+				$('.inp3').css('border', 'none')
+
+				$('.' + name).css('border', '1rem solid #FB454F')
+			}
+		</script>
+	</body>
+
+</html>

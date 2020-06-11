@@ -1,0 +1,63 @@
+<script type="text/javascript">
+	var navtitle = '取件流程';
+</script>
+<style type="text/css">
+	#accordion>div:nth-of-type(n+2) {
+		margin-top: 0;
+	}
+</style>
+<div style="margin:8px;box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);" class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+</div>
+<script type="text/javascript">
+	$.ajax({
+		url: baseUrl + '/ConsumptionContent/list/WhetherCanTake?CustomerID=' + CustomerID,
+		type: 'get',
+		dataType: 'json',
+		//		data: mydata,
+		success: function(res) {
+			Debugger.log("取件流程", res)
+			if(res.code == 0) {
+				var data = res.data;
+				for(var i = 0; i < data.length; i++) {
+					if(data[i].是否完成 == 1) {
+						var isfulfill = '完成'
+					} else {
+						var isfulfill = '未完成'
+					}
+					if(data[i].是否取件 == 1) {
+						var istake = '已取'
+					} else {
+						var istake = '未取'
+					}
+					$('#accordion').append(`
+						<div class="panel panel-default">
+							<div class="panel-heading ac${i}" style='background-color: white;' role="tab" id="headingOne">
+								<h4 class="panel-title" style="position: relative;">
+									<a onclick="changeimg('c${i}','1')" style="width: 100%;display: block;text-decoration: none;" role="button" data-toggle="collapse" data-parent="" href="#c${i}" aria-expanded="true" aria-controls="collapseOne">${data[i].商品名称}
+									<p style="text-align: right;position: absolute;bottom: -10px;right: 30px;width: 50px;color: #9d9d9d;">${isfulfill}</p>
+									<img class="c${i}" style="position: absolute;bottom: 0;right: 0;width: 17px;" src="img/dow.png"/>
+									</a>
+									
+								</h4>
+							</div>
+							<div id="c${i}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+								<ul class="list-group">
+									<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">服&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;次</span><span id="one1" style="margin-left: 50px;">${data[i].服次}</span></li>
+									<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量</span><span id="one2" style="margin-left: 50px;">${data[i].数量}</span></li>
+									<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">是否完成</span><span id="one3" style="margin-left: 50px;">${isfulfill}</span></li>
+									<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">是否取件</span><span id="one4" style="margin-left: 50px;">${istake}</span></li>
+									<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">人&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;员</span><span id="one5" style="margin-left: 50px;">${data[i].人员}</span></li>
+									<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">取件日期</span><span id="one6" style="margin-left: 50px;">${data[i].取件日期.slice(0, 4)}/${data[i].取件日期.slice(4, 6)}/${data[i].取件日期.slice(6, 8)}</span></li>
+									<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注</span><span id="one6" style="margin-left: 50px;">${data[i].备注}</span></li>
+					
+								</ul>
+							</div>
+						</div>`)
+				}
+			} else {
+				Debugger.log("请求结果", res.msg)
+			}
+		}
+	})
+</script>

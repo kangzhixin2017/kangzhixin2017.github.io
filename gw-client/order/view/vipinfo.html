@@ -1,0 +1,66 @@
+<script type="text/javascript">
+	var navtitle = 'VIP信息';
+</script>
+<style type="text/css">
+	.msg {
+		color: #9D9D9D;
+	}
+</style>
+<ul class="list-group" style="margin-top: 20px;">
+	<li class="list-group-item" style="display: flex;align-items: center;justify-content: space-between;">
+		<span>会员卡号</span>
+		<span class="msg1"></span>
+	</li>
+	<li class="list-group-item" style="display: flex;align-items: center;justify-content: space-between;">
+		<span>会员类型</span>
+		<span class="msg2"></span>
+	</li>
+</ul>
+<ul class="list-group" style="margin-top: 20px;">
+	<li class="list-group-item" style="display: flex;align-items: center;justify-content: space-between;">
+		<span>会员积分</span>
+		<span class="msg3"></span>
+	</li>
+	<li class="list-group-item" style="display: flex;align-items: center;justify-content: space-between;">
+		<span>卡内余额</span>
+		<span class="msg4"></span>
+	</li>
+</ul>
+<ul class="list-group" style="margin-top: 20px;">
+	<li class="list-group-item" style="display: flex;align-items: center;justify-content: space-between;">
+		<span>前期折扣</span>
+		<span class="msg5"></span>
+	</li>
+	<li class="list-group-item" style="display: flex;align-items: center;justify-content: space-between;">
+		<span>后期折扣</span>
+		<span class="msg6"></span>
+	</li>
+	<li class="list-group-item" style="display: flex;align-items: center;justify-content: space-between;">
+		<span>商品折扣</span>
+		<span class="msg7"></span>
+	</li>
+</ul>
+
+<script type="text/javascript">
+	$.ajax({
+		url: baseUrl + '/CardSend8/list?CustomerID=' + CustomerID,
+		type: 'get',
+		dataType: 'json',
+		//		data: mydata,
+		success: function(res) {
+			Debugger.log("vip信息", res)
+			if(res.code == 0) {
+				var data = res.data[0]
+				$('.msg1').text(data.会员卡号)
+				$('.msg2').text(data.会员类型)
+				$('.msg3').text(data.会员积分)
+				$('.msg4').text(data.会员余额)
+				$('.msg5').text(data.前期折扣)
+				$('.msg6').text(data.后期折扣)
+				$('.msg7').text(data.商品折扣)
+			} else {
+				Debugger.log("请求结果", res.msg)
+			}
+		}
+	})
+</script>

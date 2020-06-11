@@ -1,0 +1,105 @@
+<script type="text/javascript">
+	var navtitle = '先睹为快';
+</script>
+<style type="text/css">
+	.fuci {
+		text-align: center;
+	}
+	
+	.fuci p:nth-of-type(n+2) {
+		margin-left: 10px;
+	}
+	
+	.fuci p {
+		border: 1px solid dodgerblue;
+		border-radius: 4px;
+		padding: 10px;
+		display: inline-block;
+	}
+	
+	.reviewphoto {
+		background-color: white;
+		padding-bottom: 10px;
+		text-align: center;
+	}
+	
+	.reviewphoto img {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		width: 45vw;
+		height: 120px;
+		margin: 10px 0 0px 0px;
+	}
+	
+	.reviewphoto img:nth-of-type(2n) {
+		margin-left: 10px;
+	}
+	
+	.ui-select {
+		text-align: center;
+		background-color: white;
+		border: solid 1px #E3E3E3;
+		height: 40px;
+		line-height: 40px;
+		margin: 0px 20px;
+		position: relative;
+	}
+	
+	.ui-select select {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		height: 3em;
+		opacity: 0;
+	}
+</style>
+<h4 style="width: 100%;text-align: center;line-height: 50px;margin: 0;">选择服次</h4>
+
+<div class="fuci">
+</div>
+<div class="reviewphoto">
+</div>
+<div style="position: fixed;bottom: 10px;width: 100%;left: 0;">
+	<div class="btn-p" style="color: white;background-color: dodgerblue;border-radius: 5px;width: 90%;margin: auto;line-height: 40px;text-align: center;">分享</div>
+</div>
+<script type="text/javascript">
+	var ordernum;
+	var fcnum;
+	var img1;
+	Debugger.log("先睹为快详情", xdwkdata)
+	for(var i = 0; i < xdwkdata.服务.length; i++) {
+		$('.fuci').append(`
+			<p onclick="changefc(${i})" class="kk fuci${i}">服次${i+1}</p>`)
+	}
+	if(sessionStorage.getItem('isfx') != undefined) {
+		setTimeout(function() {
+			changefc(parseInt(sessionStorage.getItem('ddfc')))
+		}, 0)
+
+		sessionStorage.removeItem('isfx')
+	} else {
+		setTimeout(function() {
+			changefc(0);
+		}, 0)
+	}
+	$('.btn-p').click(function() {
+		location.href = 'view/photodetails.html?img1=' + baseUrl + "/file/view/CustomerPhotoFC/" + ordernum + "/" + fcnum + "/1.jpg&img2=" + baseUrl + "/file/view/CustomerPhotoFC/" + ordernum + "/" + fcnum + "/2.jpg&img3=" + baseUrl + "/file/view/CustomerPhotoFC/" + ordernum + "/" + fcnum + "/3.jpg&img4=" + baseUrl + "/file/view/CustomerPhotoFC/" + ordernum + "/" + fcnum + "/4.jpg"
+	})
+
+	function changefc(i) {
+		sessionStorage.setItem('ddfc', i)
+		ordernum = xdwkdata.订单编号;
+		fcnum = i + 1;
+		Debugger.log(ordernum, fcnum)
+		var msg = '.fuci' + i;
+		$(".kk").css("background-color", "white");
+		$(msg).css("background-color", "dodgerblue");
+		$('.reviewphoto').empty()
+		for(var j = 1; j <= 4; j++) {
+			img1 = baseUrl + '/file/view/CustomerPhotoFC/' + ordernum + '/' + fcnum + '/' + j + '.jpg ';
+			$('.reviewphoto').append(`<img src= "${img1}" />`)
+		}
+	}
+</script>

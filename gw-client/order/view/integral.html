@@ -1,0 +1,41 @@
+<script type="text/javascript">
+	var navtitle = '积分记录';
+</script>
+<style type="text/css">
+	.msg {
+		color: #9D9D9D;
+	}
+</style>
+<div class="content1">
+
+</div>
+
+<script type="text/javascript">
+	$.ajax({
+		url: baseUrl + '/SourceTable/list?CustomerID=' + CustomerID,
+		type: 'get',
+		dataType: 'json',
+		//		data: mydata,
+		success: function(res) {
+			Debugger.log("会员积分记录", res)
+			if(res.code == 0) {
+				var data = res.data;
+				for(var i = 0; i < data.length; i++) {
+					$('.content1').append(`
+						<ul class="list-group" style="margin: 10px;">
+							<li class="list-group-item" style="display: flex;align-items: center;justify-content: space-between;">
+								<span>${data[i].项目}</span>
+								<span class="msg">${data[i].操作日期.slice(0, 4)}/${data[i].操作日期.slice(4, 6)}/${data[i].操作日期.slice(6, 8)}</span>
+							</li>
+							<li class="list-group-item" style="display: flex;align-items: center;justify-content: space-between;">
+								<span>分值</span>
+								<span class="msg">${data[i].分值}</span>
+							</li>
+						</ul>`)
+				}
+			} else {
+				Debugger.log("请求结果", res.msg)
+			}
+		}
+	})
+</script>

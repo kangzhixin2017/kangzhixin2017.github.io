@@ -1,0 +1,72 @@
+<script type="text/javascript">
+	var navtitle = '充值记录';
+</script>
+<style type="text/css">
+	.msg {
+		color: #9D9D9D;
+	}
+	
+	.msg2 {
+		color: orange;
+	}
+</style>
+<div class="ulli">
+
+</div>
+
+<script type="text/javascript">
+	$.ajax({
+		url: baseUrl + '/CardSend8/list?CustomerID=' + CustomerID,
+		type: 'get',
+		dataType: 'json',
+		//		data: mydata,
+		success: function(res) {
+			Debugger.log("vip信息", res)
+			if(res.code == 0) {
+				var data = res.data[0]
+				request(data.会员类型);
+			} else {
+				Debugger.log("请求结果", res.msg)
+			}
+		}
+	})
+
+	function request(name) {
+		$.ajax({
+			url: baseUrl + '/CardRecharge8/list?CustomerID=' + CustomerID,
+			type: 'get',
+			dataType: 'json',
+			//		data: mydata,
+			success: function(res) {
+				Debugger.log("卡类型", name)
+				Debugger.log("充值记录", res)
+				if(res.code == 0) {
+					var data = res.data;
+					for(var i = 0; i < data.length; i++) {
+						$('.ulli').append(`
+							<ul class="list-group" style="margin: 10px;">
+								<li class="list-group-item" style="display: flex;align-items: center;justify-content: space-between;">
+									<span>${name}</span>
+									<span class="msg">${data[i].充值日期}</span>
+								</li>
+								<li class="list-group-item" style="display: flex;align-items: center;justify-content: space-between;">
+									<span>实收</span>
+									<span class="msg2">￥${data[i].实收金额}</span>
+								</li>
+								<li class="list-group-item" style="display: flex;align-items: center;justify-content: space-between;">
+									<span>冲入</span>
+									<span class="msg">￥${data[i].充入金额}</span>
+								</li>
+								<li class="list-group-item" style="display: flex;align-items: center;justify-content: space-between;">
+									<span>操作人</span>
+									<span class="msg">${data[i].操作人}</span>
+								</li>
+							</ul>`)
+					}
+				} else {
+					Debugger.log("请求结果", res.msg)
+				}
+			}
+		})
+	}
+</script>

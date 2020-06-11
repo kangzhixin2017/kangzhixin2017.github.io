@@ -1,0 +1,33 @@
+<script type="text/javascript">
+	var navtitle = '登录';
+</script>
+<div style="background-color: white;width: 100vw;height: 100vh;margin-top: -44px;text-align: center;">
+	<img style="margin: 80px auto 0;width: 176px;height: 92px;display: inline-block;" src="img/logo.png" />
+	<!--<div style="border-radius: 10px;border: 1px solid #EEEEEE;width: 320px;height: 50px;margin: 62px auto 0;text-align: left;padding: 0;">
+		<label style="line-height: 48px;margin-left: 21px;font-size: 16px;" for="">姓&nbsp;&nbsp;&nbsp;名</label>
+		<input style="margin-left: 50px;height: 40px;font-size: 16px;" type="" name="" id="" value="" placeholder="客户姓名" />
+	</div>-->
+	<div style="border-radius: 10px;border: 1px solid #EEEEEE;width: 320px;height: 50px;margin: 15px auto 0;text-align: left;padding: 0;">
+		<label style="line-height: 48px;margin-left: 21px;font-size: 16px;" for="">会员号</label>
+		<input style="margin-left: 10px;height: 40px;font-size: 16px;width: 50vw;" type="" name="" id="phone" value="" placeholder="会员卡号" />
+	</div>
+	<div class="btnlogin" style="margin: 50px auto;width: 320px;height: 45px;background-color: #f9701d;line-height: 45px;font-size: 17px;color: white;border-radius: 4px;">登录</div>
+</div>
+<script type="text/javascript">
+	$(".btnlogin").click(function() {
+		var phone = $("#phone").val()
+		$.ajax({
+			url: 'http://yxbb.yinxiangbaby.cn/order/GetErpUserId?cardId=' + phone,
+			type: 'get',
+			dataType: 'json',
+			success: function(res) {
+				if(res.err_code == 0) {
+					CustomerID = res.data.CustomerID;
+					location.hash = "home"
+				}else{
+					alert('没有找到该会员卡号，请重新输入。')
+				}
+			}
+		})
+	})
+</script>

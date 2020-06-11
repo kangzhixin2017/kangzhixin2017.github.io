@@ -1,0 +1,184 @@
+<script type="text/javascript">
+	var navtitle = '摄影流程';
+</script>
+<style type="text/css">
+
+</style>
+<h4 class="tit1" style="width: 100%;text-align: center;line-height: 50px;margin: 0;"></h4>
+<ul class="list-group" style="margin: 0;">
+	<li class="list-group-item row" style="margin: 0;">
+		<div class="col-xs-4" style="text-align: center;padding: 0;">
+			设计师：<span class="a1"></span>
+		</div>
+		<div class="col-xs-4" style="text-align: center;padding: 0;">
+			美编师：<span class="a2"></span>
+		</div>
+		<div class="col-xs-4" style="text-align: center;padding: 0;">
+			预约张数：<span class="a3"></span>
+		</div>
+	</li>
+	<li class="list-group-item row" style="margin: 0;">
+		<div class="col-xs-4" style="text-align: center;padding: 0;">
+			已选张数：<span class="a4"></span>
+		</div>
+		<div class="col-xs-4" style="text-align: center;padding: 0;">
+			加挑张数：<span class="a5"></span>
+		</div>
+		<div class="col-xs-4" style="text-align: center;padding: 0;">
+			美编P数：<span class="a6"></span>
+		</div>
+	</li>
+	<li class="list-group-item row" style="margin: 0;">
+		<div class="col-xs-4" style="text-align: center;padding: 0;">
+			赠送张数：<span class="a7"></span>
+		</div>
+		<div class="col-xs-4" style="text-align: center;padding: 0;">
+			设计P数：<span class="a8"></span>
+		</div>
+		<div class="col-xs-4" style="text-align: center;padding: 0;">
+			增组金额：<span class="a9"></span>
+		</div>
+	</li>
+	<li class="list-group-item row" style="margin: 0;">
+		<div class="col-xs-4" style="text-align: center;padding: 0;">
+			赠送P数：<span class="a10"></span>
+		</div>
+	</li>
+</ul>
+<div style="margin: 0;" class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	<div class="panel panel-default">
+		<div class="panel-heading " role="tab" id="headingOne">
+			<h4 class="panel-title" style="position: relative;">
+				<a onclick="changeimg('c1')" style="width: 100%;display: block;text-decoration: none;" role="button" data-toggle="collapse" data-parent="" href="#c1" aria-expanded="true" aria-controls="collapseOne">选片信息
+				<img class="c1" style="position: absolute;bottom: 0;right: 0;width: 17px;" src="img/dow.png"/>
+				</a>
+			</h4>
+		</div>
+		<div id="c1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+			<ul class="list-group">
+				<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">选片店</span><span id="one1" style="margin-left: 50px;"></span></li>
+				<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">选片师</span><span id="one2" style="margin-left: 50px;"></span></li>
+				<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">选片日期</span><span id="one3" style="margin-left: 50px;"></span></li>
+				<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">通知状态</span><span id="one4" style="margin-left: 50px;"></span></li>
+				<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">完成状态</span><span id="one5" style="margin-left: 50px;"></span></li>
+
+			</ul>
+		</div>
+	</div>
+	<div style="margin: 0;" class="panel panel-default">
+		<div class="panel-heading " role="tab" id="headingOne">
+			<h4 class="panel-title" style="position: relative;">
+				<a onclick="changeimg('c2')" style="width: 100%;display: block;text-decoration: none;" role="button" data-toggle="collapse" data-parent="" href="#c2" aria-expanded="true" aria-controls="collapseOne">看板信息
+				<img class="c2" style="position: absolute;bottom: 0;right: 0;width: 17px;" src="img/dow.png"/>
+				</a>
+			</h4>
+		</div>
+		<div id="c2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+			<ul class="list-group">
+				<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">看板店</span><span id="o1" style="margin-left: 50px;"></span></li>
+				<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">看板师</span><span id="o2" style="margin-left: 50px;"></span></li>
+				<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">看板日期</span><span id="o3" style="margin-left: 50px;"></span></li>
+				<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">通知状态</span><span id="o4" style="margin-left: 50px;"></span></li>
+				<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">完成状态</span><span id="o5" style="margin-left: 50px;"></span></li>
+
+			</ul>
+		</div>
+	</div>
+	<div style="margin: 0;" class="panel panel-default">
+		<div class="panel-heading " role="tab" id="headingOne">
+			<h4 class="panel-title" style="position: relative;">
+				<a onclick="changeimg('c3')" style="width: 100%;display: block;text-decoration: none;" role="button" data-toggle="collapse" data-parent="" href="#c3" aria-expanded="true" aria-controls="collapseOne">取件信息
+				<img class="c3" style="position: absolute;bottom: 0;right: 0;width: 17px;" src="img/dow.png"/>
+				</a>
+			</h4>
+		</div>
+		<div id="c3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+			<ul class="list-group">
+				<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">取件店</span><span id="e1" style="margin-left: 50px;"></span></li>
+				<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">取件人</span><span id="e2" style="margin-left: 50px;"></span></li>
+				<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">取件日期</span><span id="e3" style="margin-left: 50px;"></span></li>
+				<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">通知状态</span><span id="e4" style="margin-left: 50px;"></span></li>
+				<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">取件地点</span><span id="e5" style="margin-left: 50px;"></span></li>
+
+			</ul>
+		</div>
+	</div>
+</div>
+<h4 class="tit2" style="width: 100%;text-align: center;line-height: 50px;margin: 0;"></h4>
+<div style="margin: 0;" class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+	
+</div>
+
+<script type="text/javascript">
+	Debugger.log("服务详情", servicedata)
+	$('.tit1').text('第 '+ serviceindex +' 次服务基本信息')
+	$('.tit2').text('第 '+ serviceindex +' 次服务的拍照信息')
+	$('.a1').text(servicedata.设计师)
+	$('.a2').text(servicedata.美编师)
+	$('.a3').text(servicedata.预约张数)
+	$('.a4').text(servicedata.已选张数)
+	$('.a5').text(servicedata.加挑张数)
+	$('.a6').text(servicedata.美编P数)
+	$('.a7').text(servicedata.赠送张数)
+	$('.a8').text(servicedata.设计P数)
+	$('.a9').text(servicedata.增组金额)
+	$('.a10').text(servicedata.赠送P数)
+
+	///////
+	$('#one1').text(servicedata.选片店面)
+	$('#one2').text(servicedata.选片师)
+	$('#one3').text(servicedata.选片日期)
+	$('#one4').text(servicedata.选片通知状态)
+	$('#one5').text(servicedata.选片完成状态)
+	///////
+	$('#o1').text(servicedata.看板店面)
+	$('#o2').text(servicedata.看板师)
+	$('#o3').text(servicedata.看板日期)
+	$('#o4').text(servicedata.看板通知状态)
+	$('#o5').text(servicedata.看板完成状态)
+	///////
+	$('#e1').text(servicedata.取件店面)
+	$('#e2').text(servicedata.取件人)
+	$('#e3').text(servicedata.取件日期)
+	$('#e4').text(servicedata.取件通知状态)
+	$('#e5').text(servicedata.取件地点)
+	
+	for (var i =0;i<servicedata.拍摄.length;i++) {
+		$('#accordion1').append(`
+			<div class="panel panel-default">
+				<div class="panel-heading " role="tab" id="headingOne">
+					<h4 class="panel-title" style="position: relative;">
+						<a onclick="changeimg('ca${i}')" style="width: 100%;display: block;text-decoration: none;" role="button" data-toggle="collapse" data-parent="" href="#ca${i}" aria-expanded="true" aria-controls="collapseOne">第 ${i+1} 次拍照
+						<img class="ca${i}" style="position: absolute;bottom: 0;right: 0;width: 17px;" src="img/dow.png"/>
+						</a>
+					</h4>
+				</div>
+				<div id="ca${i}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					<ul class="list-group">
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">拍照类型</span><span id="one1" style="margin-left: 50px;">${servicedata.拍摄[i].拍照类型}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">拍照日期</span><span id="one2" style="margin-left: 50px;">${servicedata.拍摄[i].拍照日期}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">拍照状态</span><span id="one3" style="margin-left: 50px;">${servicedata.拍摄[i].拍照状态}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">沟通店</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].沟通店}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">拍照店</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].拍照店}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">沟通人</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].沟通人}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">导师一</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].导师一}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">沟通日期</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].沟通日期}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">状态</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].沟通状态}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">摄影师</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].摄影师}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">摄影助理</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].摄影助理}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">化妆师</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].化妆师}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">导师二</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].导师二}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">拍摄张数</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].拍摄张数}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">拍衣件数</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].拍衣件数}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">理发师</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].理发师}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">理发日期</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].理发日期}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">理发方式</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].理发方式}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">摄影主题</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].摄影主题}</span></li>
+						<li class="list-group-item"><span style="text-align: right;width: 60px;display: inline-block;">拍照景点</span><span id="one4" style="margin-left: 50px;">${servicedata.拍摄[i].拍照景点}</span></li>
+		
+					</ul>
+				</div>
+			</div>`)
+		
+	}
+</script>
