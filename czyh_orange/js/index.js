@@ -9,7 +9,7 @@
 //	document.documentElement.clientHeight;
 //	document.getElementsByTagName("html")[0].style.fontSize = '6' + "px"
 //};
-document.documentElement.style.fontSize = '2px'
+document.documentElement.style.fontSize = '6px'
 //document.documentElement.clientWidth > 375 ? document.documentElement.style.fontSize = 375 / 375 + 'px' : document.documentElement.style.fontSize = document.documentElement.clientWidth / 37.5 + 'px';
 //alert(document.documentElement.style.fontSize)
 /**
