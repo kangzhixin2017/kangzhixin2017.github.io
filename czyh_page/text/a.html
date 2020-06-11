@@ -17,14 +17,14 @@
 //					alert(width)
 					var rem = width / 375; 
 					//以750px为原稿，除以100可得各元素的rem
-					docEl.style.fontSize = '11px';
+					docEl.style.fontSize = '1px';
 //					alert(rem)
 					var actualSize = parseFloat(window.getComputedStyle(docEl)["font-size"]);
 					alert(actualSize)
 					if(actualSize !== rem) {
 						var remScaled = rem / (actualSize / rem);
-						docEl.style.fontSize = remScaled*10 + "px"
-//						alert(docEl.style.fontSize)
+						docEl.style.fontSize = actualSize + "px"
+						alert(docEl.style.fontSize)
 					}
 				}
 
