@@ -1,17 +1,5 @@
 /*初始化*/
 
-@media screen and (min-width: 10px) and (max-width: 375px) {
-	html {
-		font-size: 0.86px;
-	}
-}
-
-@media screen and (min-width: 375px) and (max-width: 9999999999px) {
-	html {
-		font-size: 1px;
-	}
-}
-
 * {
 	padding: 0;
 	margin: 0;
