@@ -1,5 +1,8 @@
 /*初始化*/
-
+html{
+	-webkit-text-size-adjust: none;
+	height: 100%;
+}
 * {
 	padding: 0;
 	margin: 0;
