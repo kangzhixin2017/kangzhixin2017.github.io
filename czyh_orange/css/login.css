@@ -83,8 +83,9 @@
 	color: #FC0C0C;
 }
 .footer{
-	position: absolute;
-	bottom: 0.2rem;
+	/*position: absolute;*/
+	/*bottom: 0.2rem;*/
+	margin-top: .1rem;
 	width: 100%;
 	text-align: center;
 	font-size: 0.15rem;

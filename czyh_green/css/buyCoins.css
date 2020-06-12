@@ -1,37 +1,37 @@
 .navigationBar .right {
 	position: absolute;
-	right: 15rem;
-	width: 20rem;
-	height: 20rem;
+	right: .15rem;
+	width: .20rem;
+	height: .20rem;
 }
 
 .content {
 	background-color: #FAFAFA;
-	padding: 15rem 10rem;
+	padding: .15rem .10rem;
 }
 
 .content .head {
 	background-color: white;
-	padding: 16rem 24rem 8rem;
+	padding: .16rem .24rem .08rem;
 	border-radius: 15px;
-	box-shadow: 0 2rem 4rem 0 rgba(0, 0, 0, 0.05);
+	box-shadow: 0 .02rem .04rem 0 rgba(0, 0, 0, 0.05);
 }
 
 .content .head .row {
 	display: flex;
 	justify-content: space-between;
-	height: 36rem;
+	height: .36rem;
 	align-items: center;
 }
 
 .content .head .row div {
-	width: 106rem;
+	width: 1.06rem;
 	display: flex;
-	border-bottom: 1rem solid #EDEDED;
+	border-bottom: .01rem solid #EDEDED;
 }
 
 .content .head .row2 {
-	margin-top: 4rem;
+	margin-top: .04rem;
 	display: flex;
 	justify-content: space-between;
 	/*height: 14rem;*/
@@ -39,41 +39,41 @@
 }
 
 .content .head .row2 div {
-	width: 106rem;
-	font-size: 12rem;
-	line-height: 14rem;
+	width: 1.06rem;
+	font-size: .12rem;
+	line-height: .14rem;
 	color: #7D7D7D;
 }
 .content .head .row3{
 	display: flex;
 	justify-content: center;
-	margin-top: 22rem;
+	margin-top: .22rem;
 }
 .content .head .row3 div{
 	width: 100%;
-	line-height: 34rem;
+	line-height: .34rem;
 	color: #8B8B8B;
-	border: 1rem solid #E1E1E1;
+	border: .01rem solid #E1E1E1;
 	text-align: center;
-	border-radius: 18rem;
-	font-size: 15rem;
+	border-radius: .18rem;
+	font-size: .15rem;
 }
 .content .head .row3 .left{
-	margin-right: 10rem;
+	margin-right: .10rem;
 }
 .content .head .row div input {
 	/*background-color: red;*/
 	width: 100%;
-	font-size: 15rem;
-	line-height: 28rem;
+	font-size: .15rem;
+	line-height: .28rem;
 }
 
 .content .head .row img {
-	width: 25rem;
-	height: 25rem;
+	width: .25rem;
+	height: .25rem;
 }
 .content .status{
-	margin-top: 10rem;
+	margin-top: .10rem;
 	background-color: white;
 	border-radius: 15px;
 	display: flex;
@@ -93,19 +93,19 @@
 .content .status .left div .num{
 	position: absolute;
 	right: 0;
-	width: 14rem;
-	height: 14rem;
+	width: .14rem;
+	height: .14rem;
 	background-color: #FC0C0C;
 	border-radius: 50%;
-	font-size: 9rem;
+	font-size: .09rem;
 	text-align: center;
-	line-height: 14rem;
+	line-height: .14rem;
 	color: white;
 }
 .content .status .left div .point{
 	position: absolute;
-	width: 8rem;
-	height: 8rem;
+	width: .08rem;
+	height: .08rem;
 	background-color: #FC0C0C;
 	border-radius: 50%;
 }
