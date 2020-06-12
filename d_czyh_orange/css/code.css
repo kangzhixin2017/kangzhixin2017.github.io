@@ -1,0 +1,84 @@
+.bg {
+	width: 100%;
+	height: 100vh;
+	background-image: url(../img/bg1.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	/*position: absolute;*/
+	display: flex;
+	align-items: center;
+	/*justify-content: center;*/
+}
+
+
+/*顶部导航*/
+
+.bg_navigationBar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*导航高度*/
+	height: .44rem;
+	position: absolute;
+	top: 0;
+}
+
+.bg_navigationBar img {
+	/*返回按钮大小*/
+	width: .20rem;
+	height: .20rem;
+	position: absolute;
+	left: .15rem;
+}
+
+.bg_navigationBar .title {
+	/*标题字体大小与颜色*/
+	font-size: .18rem;
+	width: 100%;
+}
+
+.bg_navigationBar .center {
+	text-align: center;
+}
+
+.bt_navigationBar .left {
+	margin-left: 45px;
+}
+
+.color_font {
+	margin-left: 45px;
+	color: #fff;
+	z-index: 1;
+}
+
+.img {
+	width: 3.15rem;
+	height: 3.65rem;
+	background-color: #fff;
+	border-radius: .08rem;
+	margin: .50rem auto 0;
+	box-shadow: 0 .02rem .15rem .04rem rgba(255, 98, 0, 0.6);
+}
+
+.img div:nth-of-type(1) {
+	width: 100%;
+	text-align: center;
+	font-size: .25rem;
+	line-height: .29rem;
+	margin: .30rem auto 0;
+}
+
+.img img {
+	width: 2.00rem;
+	height: 2.00rem;
+	margin: .20rem auto;
+	display: block;
+}
+
+.img div:nth-of-type(2) {
+	width: 100%;
+	text-align: center;
+	font-size: .29rem;
+	line-height: .30rem;
+	margin: .25rem auto 0;
+}

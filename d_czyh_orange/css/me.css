@@ -1,0 +1,206 @@
+.bg{
+	width: 100%;
+	height: 2.33rem;
+	background-image: url(../img/bg_me.png);
+	background-size: 100% 1.95rem;
+	background-repeat: no-repeat;
+	/*position: absolute;*/
+}
+/*顶部导航*/
+.bg_navigationBar{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*导航高度*/
+	height: .54rem;
+	/*position: sticky;*/
+	/*top: 0;*/
+}
+.bg_navigationBar img{
+	/*返回按钮大小*/
+	width: .20rem;
+	height: .20rem;
+	position: absolute;
+	left: .15rem;
+}
+.bg_navigationBar .title{
+	/*标题字体大小与颜色*/
+	font-size: .18rem;
+	width: 100%;
+}
+.bg_navigationBar .center{
+	text-align: center;
+}
+.bt_navigationBar .left{
+	margin-left: 45px;
+}
+
+.color_font{
+	color: #fff;
+	z-index: 1;
+}
+.search{
+	background-color: #fff;
+	width: 92%;
+	margin: 0 auto;
+	border-radius: 5px;
+	padding: 0 0 .15rem;
+	box-shadow: 0  .02rem  .06rem  .02rem rgba(0, 0, 0, 0.05);
+}
+.search .usermsg{
+	display: flex;
+}
+
+.search .usermsg img{
+	width: .80rem;
+	height: .80rem;
+	margin-top: -.27rem;
+	margin-left: .15rem;
+	border-radius: 50%;
+	border:  .03rem solid #fff;
+}
+.search .usermsg .msg{
+	margin: .11rem 0 0 .15rem;
+}
+.search .usermsg .msg div:nth-of-type(1){
+	font-size: .17rem;
+	line-height: .20rem;
+	color: #000000;
+}
+.search .usermsg .msg div:nth-of-type(2){
+	font-size: .14rem;
+	line-height: .16rem;
+	color: #7E7E7E;
+	margin-top: .10rem;
+}
+.search .usermsg .msg div:nth-of-type(3){
+	font-size: .14rem;
+	line-height: .16rem;
+	color: #7E7E7E;
+	margin-top:  .05rem;
+}
+.search .list{
+	display: flex;
+	margin-top: .22rem;
+	align-items: center;
+}
+.search .list .item{
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.search .list .item img{
+	width: .30rem;
+	height: .30rem;
+	display: block;
+}
+.search .list .item div{
+	font-size: .15rem;
+	line-height: .18rem;
+	margin-top:  .03rem;
+}
+.line_s{
+	width: 0.013rem;
+	height: .25rem;
+	background-color: #E2E2E2;
+}
+.line_h{
+	background-color: #F0F4F7;
+	width: 100%;
+	height:  .08rem;
+}
+.body{
+	position: relative;
+	padding: 0  .07rem .17rem;
+}
+.body .jiao{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: .32rem;
+	height: .28rem;
+}
+.body .title{
+	display: flex;
+	align-items: center;
+	padding-top: .23rem;
+	margin-left: .11rem;
+}
+.body .title img{
+	width: .17rem;
+	height: .17rem;
+	margin-right:  .08rem;
+	display: block;
+}
+.body .title div{
+	font-size: .17rem;
+}
+.body .row{
+	display: flex;
+	margin-top: .20rem;
+}
+.body .row .item{
+	flex: 1;
+	padding: 0 .11rem;
+}
+.body .row .item div:nth-of-type(1){
+	font-size: .18rem;
+	line-height: .21rem;
+	color: #FC660C;
+}
+.body .row .item div:nth-of-type(2){
+	font-size: .12rem;
+	line-height: .14rem;
+	margin-top:  .05rem;
+	color: #7E7E7E;
+}
+.body .row .item:nth-of-type(2){
+	border-left:  .01rem solid #CCCCCC;
+	border-right:  .01rem solid #CCCCCC;
+}
+.footer{
+	padding: 0 .18rem;
+}
+.footer .item{
+	display: flex;
+	align-items: center;
+}
+.footer .item >img{
+	width: .20rem;
+	height: .20rem;
+	display: block;
+	flex-shrink: 0;
+}
+.footer .item .right{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom:  .01rem solid #E2E2E2;
+	height: .51rem;
+}
+.footer .item .right div{
+	font-size: .15rem;
+	margin-left: .13rem;
+}
+.footer .item .right img{
+	width:  .07rem;
+	height: .11rem;
+}
+.login_out{
+	width: 2.95rem;
+	line-height: .40rem;
+	text-align: center;
+	margin: .21rem auto;
+	font-size: .15rem;
+	background-color: #FC660C;
+	color: #fff;
+	border-radius:  .08rem;
+}
+.mebian{
+	color: #FC660C;
+	font-size: 14px;
+	margin-left: 6px;
+}

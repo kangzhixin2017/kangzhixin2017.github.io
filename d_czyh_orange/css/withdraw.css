@@ -1,0 +1,184 @@
+.content{
+	width: 100%;
+	padding: 0 .15rem;
+}
+.content .user_msg{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.content .user_msg div:nth-of-type(1){
+	font-size: .17rem;
+	line-height: .20rem;
+	margin-top: .20rem;
+}
+.content .user_msg div:nth-of-type(2){
+	font-size: .24rem;
+	line-height: .33rem;
+	margin-top: .13rem;
+}
+.content .user_msg div:nth-of-type(3){
+	display: flex;
+	align-items: center;
+	font-size: .17rem;
+	line-height: .20rem;
+	color: #7E7E7E;
+	margin-top: .17rem;
+}
+.content .user_msg div:nth-of-type(3) img{
+	width:  .08rem;
+	height: .13rem;
+	display: flex;
+	margin-left:  .08rem;
+}
+.content .title1{
+	display: flex;
+	align-items: center;
+	margin-top: .32rem;
+}
+.content .title1 img{
+	display: block;
+	width: .18rem;
+	height: .18rem;
+}
+.content .title1 div{
+	font-size: .15rem;
+	line-height: .18rem;
+	margin-left:  .09rem;
+}
+.content .money_body{
+	margin-top: .15rem;
+}
+.content .money_body .title{
+	font-size: .17rem;
+	line-height: .20rem;
+}
+.content .money_body .money{
+	display: flex;
+	align-items: center;
+	font-size: .20rem;
+	line-height: .20rem;
+	margin-top:  .08rem;
+	border-bottom:  .01rem solid #E2E2E2;
+}
+.content .money_body .money input{
+	line-height: .48rem;
+	width: 100%;
+	font-size: .20rem;
+	margin-left:  .05rem;
+}
+.content .card{
+	display: flex;
+	font-size: .15rem;
+	align-items: center;
+	height: .53rem;
+	border-bottom:  .01rem solid #e2e2e2;
+}
+.content .card div{
+	flex-shrink: 0;
+	line-height: .45rem;
+}
+.content .card input{
+	font-size: .15rem;
+	width: 100%;
+	line-height: .45rem;
+	padding: 0 0 0  .05rem;
+}
+.content .charge{
+	display: flex;
+	font-size: .15rem;
+	align-items: center;
+	justify-content: space-between;
+	height: .50rem;
+	border-bottom:  .01rem solid #e2e2e2;
+}
+.content .charge div{
+	display: flex;
+	align-items: center;
+}
+.content .charge div img{
+	width: .18rem;
+	height: .18rem;
+	display: block;
+	margin-right:  .09rem;
+}
+.content .charge >img{
+	width:  .08rem;
+	height: .13rem;
+	display: block;
+}
+.prompt{
+	font-size: .15rem;
+	line-height: .18rem;
+	color: #7E7E7E;
+	margin-top:  .08rem;
+}
+.btn{
+	width: 3.35rem;
+	height: .40rem;
+	font-size: .15rem;
+	background-color: #FC660C;
+	text-align: center;
+	line-height: .40rem;
+	color: #fff;
+	border-radius:  .08rem;
+	margin: .20rem auto;
+}
+.tip{
+	margin-top: .22rem;
+	padding: 0 .15rem;
+}
+.tip .title{
+	display: flex;
+	align-items: center;
+	margin-bottom:  .08rem;
+}
+.tip .title img{
+	display: block;
+	width: .20rem;
+	height: .20rem;
+	margin-right:  .09rem;
+}
+.tip .title div{
+	color: #FC0C0C;
+	font-size: .17rem;
+	line-height: .20rem;
+}
+.tip .item{
+	font-size: .13rem;
+	color: #7E7E7E;
+	line-height: .20rem;
+}
+.card_item{
+	display: none;
+}
+.card_item .row{
+	height: .48rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.card_item .row .right{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	border-bottom:  .01rem solid #E2E2E2;
+}
+.card_item .row .right img{
+	width: .16rem;
+	height: .10rem;
+	display: none;
+	border: none;
+}
+.card_item .row .right div{
+	font-size: .15rem;
+	line-height: .48rem;
+}
+.card_item .row >img{
+	flex-shrink: 0;
+	width: .17rem;
+	height: .17rem;
+	margin-right:  .08rem;
+}

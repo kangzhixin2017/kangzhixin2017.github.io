@@ -197,4 +197,9 @@
 	display: block;
 	margin: 20px auto;
 }
-
+input {
+	outline: none;
+	border: none;
+	box-shadow: none;
+	caret-color:#4DD585;
+}

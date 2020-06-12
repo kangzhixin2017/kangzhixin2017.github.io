@@ -5,15 +5,15 @@
 	display: flex;
 	width: 100%;
 	/*导航高度*/
-	height: 50rem;
+	height: .50rem;
 	align-items: center;
 	/*最大宽度*/
 	max-width: 414px;
-	border-top: 0.5rem solid #F3F3F3;
+	border-top: 0.005rem solid #F3F3F3;
 	background-color: #fff;
 }
 .tabBar_d{
-	height: 51rem;
+	height: .51rem;
 	width: 100%;
 }
 .tabBar .item{
@@ -22,15 +22,15 @@
 }
 .tabBar .item img{
 	/*icon图片宽高*/
-	width: 24rem;
-	height: 24rem;
+	width: .24rem;
+	height: .24rem;
 	display: block;
 	margin: 0 auto;
 }
 .tabBar .item div{
 	/*文字大小*/
-	font-size: 13rem;
-	line-height: 13rem;
+	font-size: .13rem;
+	line-height: .13rem;
 	/*与icon的距离*/
-	margin-top: 5rem;
+	margin-top: .05rem;
 }

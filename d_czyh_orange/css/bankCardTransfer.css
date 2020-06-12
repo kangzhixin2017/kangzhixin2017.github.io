@@ -1,0 +1,93 @@
+.content{
+	padding: 0 .20rem;
+}
+.content .item{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: .50rem;
+	margin-top:  .05rem;
+	border-bottom:  .01rem solid #E2E2E2;
+}
+.content .item .key{
+	font-size: .17rem;
+	width: 100%;
+}
+.content .item .key2{
+	font-size: .17rem;
+	margin-right: .10rem;
+	/*width: 100%;*/
+}
+.content .item .key .min{
+	line-height: .45rem;
+}
+.content .item .key_c{
+	font-size: .17rem;
+	color: #7E7E7E;
+}
+.content .item .value{
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+.content .item .value div{
+	width: 100%;
+	text-align: right;
+	font-size: .17rem;
+}
+.content .item .value img{
+	width:  .09rem;
+	height: .14rem;
+	margin-left: .10rem;
+	flex-shrink: 0;
+}
+.input{
+	display: none;
+}
+.input input{
+	margin-top:  .07rem;
+	line-height: .24rem;
+	font-size: .20rem;
+	padding-left:  .05rem;
+	width: 95%;
+}
+.input label{
+	color: #262B2F;
+}
+.btn_code{
+	/*width: .60rem;*/
+	height: .30rem;
+	font-size: .15rem;
+	line-height: .30rem;
+	text-align: center;
+	border-radius:  .08rem;
+	background-color: #FC660C;
+	color: #fff;
+	padding: 0 .15rem;
+	flex-shrink: 0;
+}
+.btn_card{
+	margin: .20rem auto;
+	width: 3.35rem;
+	height: .40rem;
+	font-size: .15rem;
+	line-height: .40rem;
+	text-align: center;
+	border-radius:  .08rem;
+	background-color: #FC660C;
+	color: #fff;
+}
+.status{
+	height: .55rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.status div{
+	font-size: .17rem;
+	color: #7E7E7E;
+}
+.status img{
+	width: .34rem;
+	height: .22rem;
+}
