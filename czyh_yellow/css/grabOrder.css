@@ -1,19 +1,22 @@
-.app{
+.app {
 	background-color: white;
 }
-.time{
+
+.time {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	margin-top: .30rem;
 }
-.time .msg{
+
+.time .msg {
 	font-size: .15rem;
 	line-height: .18rem;
 	margin-top: .15rem;
 }
-.time .time_bg{
+
+.time .time_bg {
 	background: url(../img/time_bg_b.png) no-repeat;
 	background-size: 100% 100%;
 	width: 1.40rem;
@@ -23,48 +26,61 @@
 	justify-content: center;
 	flex-direction: column;
 }
-.time .time_bg .title1{
+
+.time .time_bg .title1 {
 	font-size: .17rem;
 }
-.time .time_bg .title2{display: none;}
-.time .time_bg .title2 div{
+
+.time .time_bg .title2 {
+	display: none;
+}
+
+.time .time_bg .title2 div {
 	width: 100%;
 	text-align: center;
 	font-size: .17rem;
 	line-height: .20rem;
 }
-.time .time_bg .title2 div:nth-of-type(1){
+
+.time .time_bg .title2 div:nth-of-type(1) {
 	/*font-size: .17rem;*/
 }
-.time .time_bg .title2 div:nth-of-type(2){
+
+.time .time_bg .title2 div:nth-of-type(2) {
 	color: #7E7E7E;
 	margin-top: .07rem;
 	/*line-height: ;*/
 }
-.body{
+
+.body {
 	padding: 0 .12rem;
 }
-.body .row2{
+
+.body .row2 {
 	margin-top: .20rem;
 	display: flex;
 	justify-content: space-between;
 }
-.body .row2 div{
+
+.body .row2 div {
 	width: 33.33%;
 	display: flex;
 	justify-content: center;
 }
-.body .row2 div img{
+
+.body .row2 div img {
 	width: .20rem;
 	height: .20rem;
 }
-.body .row3{
+
+.body .row3 {
 	margin-top: .08rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
-.body .row3 .item{
+
+.body .row3 .item {
 	width: 33.33%;
 	display: flex;
 	align-items: center;
@@ -72,25 +88,29 @@
 	flex-direction: column;
 	/*background-color: red;*/
 }
-.body .row3 span{
+
+.body .row3 span {
 	width: .02rem;
 	height: .20rem;
 	background-color: #EDEDED;
 	display: block;
 }
-.body .row3 .item div:nth-of-type(1){
+
+.body .row3 .item div:nth-of-type(1) {
 	font-size: .15rem;
 	line-height: .18rem;
 }
-.body .row3 .item div:nth-of-type(2){
+
+.body .row3 .item div:nth-of-type(2) {
 	font-size: .10rem;
 	line-height: .12rem;
 	color: #7E7E7E;
 	margin-top: .03rem;
 }
-.row_btn{
+
+.row_btn {
 	width: 95%;
-	margin:20rem auto;
+	margin: .20rem auto;
 	background-color: #FFB300;
 	line-height: .35rem;
 	text-align: center;
@@ -98,12 +118,14 @@
 	color: white;
 	font-size: .15rem;
 }
-.tip{
+
+.tip {
 	padding: 0 .15rem;
 	font-size: .13rem;
 	line-height: .20rem;
 	color: #AEAEAE;
 }
-.tip div{
+
+.tip div {
 	margin-bottom: .08rem;
 }

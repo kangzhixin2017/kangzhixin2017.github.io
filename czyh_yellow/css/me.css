@@ -1,7 +1,8 @@
-.app{
+.app {
 	background-color: white;
 }
-.bg{
+
+.bg {
 	width: 100%;
 	height: 1.54rem;
 	background-image: url(../img/bg_me.png);
@@ -9,8 +10,11 @@
 	background-repeat: no-repeat;
 	/*position: absolute;*/
 }
+
+
 /*顶部导航*/
-.bg_navigationBar{
+
+.bg_navigationBar {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -19,30 +23,35 @@
 	/*position: sticky;*/
 	/*top: 0;*/
 }
-.bg_navigationBar img{
+
+.bg_navigationBar img {
 	/*返回按钮大小*/
 	width: .20rem;
 	height: .20rem;
 	position: absolute;
 	left: .15rem;
 }
-.bg_navigationBar .title{
+
+.bg_navigationBar .title {
 	/*标题字体大小与颜色*/
 	font-size: .18rem;
 	width: 100%;
 }
-.bg_navigationBar .center{
+
+.bg_navigationBar .center {
 	text-align: center;
 }
-.bt_navigationBar .left{
+
+.bt_navigationBar .left {
 	margin-left: 45px;
 }
 
-.color_font{
+.color_font {
 	color: #fff;
 	z-index: 1;
 }
-.search{
+
+.search {
 	/*background-color: #fff;*/
 	width: 92%;
 	margin: 0 auto;
@@ -50,11 +59,12 @@
 	/*padding: 0 0 .15rem;*/
 	/*box-shadow: 0 .02rem .06rem .02rem rgba(0, 0, 0, 0.05);*/
 }
-.search .usermsg{
+
+.search .usermsg {
 	display: flex;
 }
 
-.search .usermsg >img{
+.search .usermsg>img {
 	width: .60rem;
 	height: .60rem;
 	/*margin-top: -.27rem;*/
@@ -62,29 +72,34 @@
 	border-radius: 50%;
 	border: .03rem solid #fff;
 }
-.search .usermsg .msg{
+
+.search .usermsg .msg {
 	margin: .04rem 0 0 .15rem;
 	color: white;
 }
-.search .usermsg .msg img{
+
+.search .usermsg .msg img {
 	width: .10rem;
 	height: .10rem;
 	display: flex;
 	margin-left: .05rem;
 	/*background-color: red;*/
 }
-.search .usermsg .msg div:nth-of-type(1){
+
+.search .usermsg .msg div:nth-of-type(1) {
 	font-size: .15rem;
 	line-height: .18rem;
 	/*color: #000000;*/
 }
-.search .usermsg .msg div:nth-of-type(2){
+
+.search .usermsg .msg div:nth-of-type(2) {
 	font-size: .10rem;
 	line-height: .12rem;
 	/*color: #7E7E7E;*/
 	margin-top: .04rem;
 }
-.search .usermsg .msg div:nth-of-type(3){
+
+.search .usermsg .msg div:nth-of-type(3) {
 	font-size: .10rem;
 	line-height: .12rem;
 	/*color: #7E7E7E;*/
@@ -92,42 +107,50 @@
 	display: flex;
 	align-items: center;
 }
-.search .list{
+
+.search .list {
 	display: flex;
 	margin-top: .22rem;
 	align-items: center;
 }
-.search .list .item{
+
+.search .list .item {
 	flex: 1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 }
-.search .list .item img{
+
+.search .list .item img {
 	width: .30rem;
 	height: .30rem;
 	display: block;
 }
-.search .list .item div{
+
+.search .list .item div {
 	font-size: .15rem;
 	line-height: .18rem;
 	margin-top: .03rem;
 }
-.line_s{
+
+.line_s {
 	width: 1.3rem;
 	height: .25rem;
 	background-color: #E2E2E2;
 }
-.line_h{
+
+.line_h {
 	background-color: #F0F4F7;
 	width: 100%;
 	height: .08rem;
 }
-.body{
+
+.body {
 	padding: 0 .12rem;
 }
-.body .top{
+
+.body .top {
 	margin-top: -.20rem;
 	display: flex;
 	justify-content: center;
@@ -139,29 +162,34 @@
 	height: .80rem;
 	box-shadow: 0 .02rem .06rem 0 rgba(0, 0, 0, 0.05);
 }
-.body .top .item{
+
+.body .top .item {
 	width: 33.33%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 }
-.body .top span{
+
+.body .top span {
 	width: .02rem;
 	height: .20rem;
 	display: block;
 	background-color: #EDEDED;
 }
-.body .top .item div:nth-of-type(1){
+
+.body .top .item div:nth-of-type(1) {
 	font-size: .15rem;
 	line-height: .18rem;
 }
-.body .top .item div:nth-of-type(2){
+
+.body .top .item div:nth-of-type(2) {
 	font-size: .13rem;
 	line-height: .15rem;
 	margin-top: .04rem;
 }
-.body .charge{
+
+.body .charge {
 	/*width: 100%;*/
 	padding: 0 .10rem;
 	/*background-color: red;*/
@@ -169,59 +197,70 @@
 	margin-top: .10rem;
 	position: relative;
 }
-.body .charge >img{
+
+.body .charge>img {
 	width: 100%;
 	/*height: .90rem;*/
 	display: block;
 }
-.body .charge .left{
+
+.body .charge .left {
 	position: absolute;
 	bottom: .26rem;
 	left: .50rem;
 	color: white;
 }
-.body .charge .left div:nth-of-type(1){
+
+.body .charge .left div:nth-of-type(1) {
 	font-size: .17rem;
 	line-height: .20rem;
 	display: flex;
 	align-items: center;
 }
-.body .charge .left div:nth-of-type(2){
+
+.body .charge .left div:nth-of-type(2) {
 	font-size: .12rem;
 	line-height: .04rem;
 	margin-top: .08rem;
 }
-.body .charge .left img{
+
+.body .charge .left img {
 	width: .17rem;
 	margin-left: .02rem;
 }
-.body .row{
+
+.body .row {
 	padding-left: .13rem;
 	font-size: .18rem;
 	line-height: .21rem;
 	margin-top: .20rem;
 }
-.body .row2{
+
+.body .row2 {
 	margin-top: .12rem;
 	display: flex;
 	justify-content: space-between;
 }
-.body .row2 div{
+
+.body .row2 div {
 	width: 33.33%;
 	display: flex;
 	justify-content: center;
 }
-.body .row2 div img{
+
+.body .row2 div img {
 	width: .20rem;
 	height: .20rem;
 }
-.body .row3{
+
+.body .row3 {
 	margin-top: .08rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
-.body .row3 .item{
+
+.body .row3 .item {
 	width: 33.33%;
 	display: flex;
 	align-items: center;
@@ -229,25 +268,29 @@
 	flex-direction: column;
 	/*background-color: red;*/
 }
-.body .row3 span{
+
+.body .row3 span {
 	width: .02rem;
 	height: .20rem;
 	background-color: #EDEDED;
 	display: block;
 }
-.body .row3 .item div:nth-of-type(1){
+
+.body .row3 .item div:nth-of-type(1) {
 	font-size: .15rem;
 	line-height: .18rem;
 }
-.body .row3 .item div:nth-of-type(2){
+
+.body .row3 .item div:nth-of-type(2) {
 	font-size: .10rem;
 	line-height: .12rem;
 	color: #7E7E7E;
 	margin-top: .03rem;
 }
-.row_btn{
+
+.row_btn {
 	width: 95%;
-	margin:20rem auto;
+	margin: .20rem auto;
 	background-color: #FFB300;
 	line-height: .35rem;
 	text-align: center;
@@ -255,9 +298,10 @@
 	color: white;
 	font-size: .15rem;
 }
-.row_btn_out{
+
+.row_btn_out {
 	width: 100%;
-	margin:20rem auto;
+	margin: .20rem auto;
 	background-color: #FFB300;
 	line-height: .35rem;
 	text-align: center;
@@ -265,35 +309,40 @@
 	color: white;
 	font-size: .15rem;
 }
-.more{
+
+.more {
 	padding: 0 .20rem;
-	
 }
-.more .title{
+
+.more .title {
 	font-size: .18rem;
 	line-height: .21rem;
 	margin-top: .15rem;
 	margin-left: .05rem;
 }
-.more .row{
+
+.more .row {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-top: .20rem;
 }
-.more .row .item{
+
+.more .row .item {
 	width: 25%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 }
-.more .row .item img{
+
+.more .row .item img {
 	width: .20rem;
 	height: .20rem;
 	display: block;
 }
-.more .row .item div{
+
+.more .row .item div {
 	font-size: .13rem;
 	line-height: .15rem;
 	margin-top: .12rem;

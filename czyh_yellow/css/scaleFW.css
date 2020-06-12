@@ -1,19 +1,22 @@
-.content{
+.content {
 	width: 100%;
-	padding:15rem;
+	padding: .15rem;
 	background-color: white;
 	width: 93%;
 	margin: .15rem auto;
 	border-radius: .10rem;
 }
-.content .money_body{
+
+.content .money_body {
 	margin-top: .15rem;
 }
-.content .money_body .title{
+
+.content .money_body .title {
 	font-size: .17rem;
 	line-height: .20rem;
 }
-.content .money_body .money{
+
+.content .money_body .money {
 	display: flex;
 	align-items: center;
 	font-size: .20rem;
@@ -22,7 +25,8 @@
 	/*margin-top: .08rem;*/
 	border-bottom: .01rem solid #E2E2E2;
 }
-.content .money_body .money input{
+
+.content .money_body .money input {
 	line-height: .40rem;
 	width: 100%;
 	font-size: .20rem;
@@ -30,12 +34,14 @@
 	font-weight: 500;
 	/*background-color: red;*/
 }
-.msg_tip{
+
+.msg_tip {
 	color: #FF5757;
 	font-size: .12rem;
 	margin-top: .08rem;
 }
-.tip{
+
+.tip {
 	font-size: .13rem;
 	line-height: .15rem;
 	color: #7E7E7E;
@@ -43,20 +49,23 @@
 	width: 100%;
 	text-align: center;
 }
-.content .msg .item{
+
+.content .msg .item {
 	height: .35rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	font-size: .15rem;
 }
-.delete{
+
+.delete {
 	display: none;
 	width: .24rem;
 	height: .24rem;
 	flex-shrink: 0;
 }
-.btn{
+
+.btn {
 	width: 93%;
 	height: .40rem;
 	font-size: .15rem;
