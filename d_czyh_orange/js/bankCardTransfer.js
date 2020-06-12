@@ -26,11 +26,11 @@ function selectInput(e) {
 function changeStyle(e) {
 //	console.log(e)
 	$('.' + e).css({
-		'font-size': '14rem',
-		'line-height': '16rem'
+		'font-size': '.14rem',
+		'line-height': '.16rem'
 	})
 	$('.item_' + e).css({
-		'border-bottom': '1rem solid #FC660C'
+		'border-bottom': '.01rem solid #FC660C'
 	})
 	$('.input_' + e).show()
 	$('.data_' + e).focus()
@@ -42,8 +42,8 @@ function defaultStyle() {
 		if(!data_card[i]) {
 			$('.input_' + data_class[i]).hide();
 			
-			$('.' + data_class[i]).css('font-size', '17rem')
+			$('.' + data_class[i]).css('font-size', '.17rem')
 		}
-		$('.item_' + data_class[i]).css('border-bottom', '1rem solid #E2E2E2')
+		$('.item_' + data_class[i]).css('border-bottom', '.01rem solid #E2E2E2')
 	}
 }

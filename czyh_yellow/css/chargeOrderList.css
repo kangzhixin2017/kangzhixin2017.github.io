@@ -1,7 +1,7 @@
 .bg {
 	width: 100%;
-	margin-top: 15rem;
-	padding: 0 14rem;
+	margin-top: .15rem;
+	padding: 0 .14rem;
 }
 
 
@@ -12,22 +12,22 @@
 	justify-content: center;
 	align-items: center;
 	/*导航高度*/
-	height: 52rem;
+	height: .52rem;
 	/*position: sticky;
 	top: 0;*/
 }
 
 .bg_navigationBar img {
 	/*返回按钮大小*/
-	width: 20rem;
-	height: 20rem;
+	width: .20rem;
+	height: .20rem;
 	position: absolute;
-	left: 15rem;
+	left: .15rem;
 }
 
 .bg_navigationBar .title {
 	/*标题字体大小与颜色*/
-	font-size: 18rem;
+	font-size: .18rem;
 	width: 100%;
 }
 
@@ -48,9 +48,9 @@
 	background-color: #fff;
 	width: 100%;
 	margin: 0 auto;
-	border-radius: 10rem;
-	padding: 15rem;
-	box-shadow: 0 2rem 6rem 2rem rgba(0, 0, 0, 0.05);
+	border-radius: .10rem;
+	padding: .15rem;
+	box-shadow: 0 .02rem .06rem .02rem rgba(0, 0, 0, 0.05);
 }
 
 .search .row {
@@ -61,55 +61,55 @@
 .search .row .left {
 	display: flex;
 	background-color: #F6F6F6;
-	border-radius: 5rem;
-	padding-left: 15rem;
+	border-radius: .05rem;
+	padding-left: .15rem;
 	align-items: center;
 	width: 100%;
 }
 
 .search .row .left img {
-	width: 15rem;
-	height: 15rem;
-	margin-right: 8rem;
+	width: .15rem;
+	height: .15rem;
+	margin-right: .08rem;
 	flex-shrink: 0;
 }
 
 .search .row .left input {
 	width: 100%;
 	background-color: #F6F6F6;
-	height: 28rem;
-	font-size: 13rem;
+	height: .28rem;
+	font-size: .13rem;
 }
 
 .search .row .right {
-	margin-left: 6rem;
-	width: 50rem;
-	/*height: 34rem;*/
+	margin-left: .06rem;
+	width: .50rem;
+	/*height: .34rem;*/
 	flex-shrink: 0;
-	font-size: 15rem;
+	font-size: .15rem;
 	background-color: #FFB300;
 	text-align: center;
-	line-height: 34rem;
-	border-radius: 5rem;
+	line-height: .34rem;
+	border-radius: .05rem;
 	color: white;
-	box-shadow: 0 2rem 6rem 0 #DEDEDE;
+	box-shadow: 0 .02rem .06rem 0 #DEDEDE;
 }
 
 .search .item {
 	/*background-color: red;*/
 	display: flex;
 	align-items: center;
-	/*height: 26rem;*/
-	/*padding-top: 17rem;*/
-	border-bottom: 1rem solid #EDEDED;
+	/*height: .26rem;*/
+	/*padding-top: .17rem;*/
+	border-bottom: .01rem solid #EDEDED;
 	position: relative;
 }
 
 .search .item .title {
 	flex-shrink: 0;
-	line-height: 15rem;
-	font-size: 13rem;
-	padding-top: 17rem;
+	line-height: .15rem;
+	font-size: .13rem;
+	padding-top: .17rem;
 	color: #7E7E7E;
 }
 
@@ -117,109 +117,109 @@
 	position: absolute;
 	/*background-color: red;*/
 	/*width: 100%;*/
-	left: 20rem;
+	left: .20rem;
 	right: 0;
-	line-height: 26rem;
-	top: 17rem;
+	line-height: .26rem;
+	top: .17rem;
 	text-align: center;
-	font-size: 15rem;
+	font-size: .15rem;
 }
 
 .search .item select {
-	padding-top: 17rem;
+	padding-top: .17rem;
 	opacity: 0;
 	/*display: block;*/
 	/*background-color: yellow;*/
 	width: 100%;
 	background: url('../img/down.png') no-repeat right;
-	background-position-y: 27rem;
-	background-size: 12rem 6rem;
-	line-height: 26rem;
-	font-size: 17rem;
+	background-position-y: .27rem;
+	background-size: .12rem .06rem;
+	line-height: .26rem;
+	font-size: .17rem;
 	color: #262B2F;
 }
 
 .search .item img {
-	width: 13rem;
+	width: .13rem;
 	position: absolute;
 	right: 0;
-	top: 27rem;
+	top: .27rem;
 	pointer-events: none;
 }
 
 .search .item .order_input div {
-	font-size: 17rem;
+	font-size: .17rem;
 	flex-shrink: 0;
-	line-height: 36rem;
-	margin-right: 5rem;
+	line-height: .36rem;
+	margin-right: .05rem;
 }
 
 .search .item .order_input input {
 	width: 100%;
 	/*background: url('../img/down.png') no-repeat right;*/
 	/*background-size: 12px 6px;*/
-	line-height: 36rem;
-	font-size: 17rem;
+	line-height: .36rem;
+	font-size: .17rem;
 }
 
 .search .date {
-	margin-top: 15rem;
+	margin-top: .15rem;
 	display: flex;
 	justify-content: space-between;
-	/*border-bottom: 1rem solid #E2E2E2;*/
+	/*border-bottom: .01rem solid #E2E2E2;*/
 }
 
 .search .date .left {
-	width: 115rem;
+	width: 1.15rem;
 	/*text-align: center;*/
-	border-bottom: 1rem solid #EDEDED;
+	border-bottom: .01rem solid #EDEDED;
 }
 
 .search .date .left .title {
-	line-height: 15rem;
-	font-size: 13rem;
+	line-height: .15rem;
+	font-size: .13rem;
 	color: #7E7E7E;
 }
 
 .search .date .left .time_begin {
-	font-size: 18rem;
-	line-height: 25rem;
+	font-size: .18rem;
+	line-height: .25rem;
 	margin: 0;
 	color: #D9D9D9;
 }
 
 .search .date .to {
-	width: 30rem;
-	height: 1rem;
+	width: .30rem;
+	height: .01rem;
 	background-color: #262B2F;
-	margin-top: 27rem;
+	margin-top: .27rem;
 }
 
 .search .date .right {
 	/*text-align: center;*/
-	width: 115rem;
-	border-bottom: 1rem solid #EDEDED;
+	width: 1.15rem;
+	border-bottom: .01rem solid #EDEDED;
 }
 
 .search .date .right .title {
-	line-height: 15rem;
-	font-size: 13rem;
+	line-height: .15rem;
+	font-size: .13rem;
 	color: #7E7E7E;
 }
 
 .search .date .right .time_end {
-	font-size: 18rem;
-	line-height: 25rem;
+	font-size: .18rem;
+	line-height: .25rem;
 	margin: 0;
 	color: #D9D9D9;
 }
 
 .search .btn_search {
-	width: 295rem;
-	margin: 19rem auto 0;
-	line-height: 40rem;
-	border-radius: 8rem;
-	font-size: 15rem;
+	width: 2.95rem;
+	margin: .19rem auto 0;
+	line-height: .40rem;
+	border-radius: .08rem;
+	font-size: .15rem;
 }
 
 ::-webkit-input-placeholder {
@@ -243,38 +243,38 @@
 }
 
 .list {
-	/*margin-top: 340rem;*/
+	/*margin-top: 3.40rem;*/
 	background-color: #EDEDED;
-	padding: 0 15rem;
+	padding: 0 .15rem;
 }
 
 .list .item {
 	background-color: white;
-	margin-top: 10rem;
-	border-radius: 10rem;
-	padding: 18rem 15rem 15rem;
-	/*box-shadow: 0 2rem 6rem 0 #E5E5E5;*/
+	margin-top: .10rem;
+	border-radius: .10rem;
+	padding: .18rem .15rem .15rem;
+	/*box-shadow: 0 .02rem .06rem 0 #E5E5E5;*/
 }
 
 .list .item .row1 {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 15rem;
+	margin-bottom: .15rem;
 }
 
 .list .item .row1 div:nth-of-type(1) {
-	font-size: 18rem;
-	line-height: 21rem;
+	font-size: .18rem;
+	line-height: .21rem;
 }
 
 .list .item .row1 div:nth-of-type(2) {
-	font-size: 13rem;
+	font-size: .13rem;
 	color: #FC0C0C;
 }
 
 .list .item .item_line {
-	height: 1rem;
+	height: .01rem;
 	width: 100%;
 	background-color: #EDEDED;
 }
@@ -282,8 +282,8 @@
 .list .item .row2 {
 	display: flex;
 	justify-content: space-between;
-	margin-top: 15rem;
-	font-size: 15rem;
+	margin-top: .15rem;
+	font-size: .15rem;
 }
 .list .item .row3 >div:nth-of-type(1) {
 	color: #7E7E7E;
@@ -292,25 +292,25 @@
 	color: #7E7E7E;
 }
 .list .item .row2 >div:nth-of-type(1) {
-	margin-right: 30rem;
+	margin-right: .30rem;
 	color: #7E7E7E;
 }
 
 .list .item .row2 div {
-	line-height: 18rem;
+	line-height: .18rem;
 	word-break: break-all;
 }
 
 .list .item .row3 {
 	display: flex;
 	justify-content: space-between;
-	margin-top: 15rem;
-	font-size: 15rem;
-	line-height: 18rem;
+	margin-top: .15rem;
+	font-size: .15rem;
+	line-height: .18rem;
 }
 
 .list .item .row3>div:nth-of-type(1) {
-	margin-right: 30rem;
+	margin-right: .30rem;
 }
 
 .list .item .row3 .right {
@@ -324,58 +324,58 @@
 
 .list .item .row3 .right div:nth-of-type(2) {
 	color: #FFB300;
-	margin-left: 8rem;
-	border: 1rem solid #FFB300;
-	border-radius: 4rem;
-	font-size: 13rem;
-	line-height: 16rem;
-	padding: 0 2rem;
+	margin-left: .08rem;
+	border: .01rem solid #FFB300;
+	border-radius: .04rem;
+	font-size: .13rem;
+	line-height: .16rem;
+	padding: 0 .02rem;
 }
 
 .list .item .row4 {
 	display: flex;
 	justify-content: space-between;
-	margin-top: 15rem;
-	font-size: 15rem;
+	margin-top: .15rem;
+	font-size: .15rem;
 }
 
 .list .item .row4 img {
-	width: 100rem;
-	height: 100rem;
+	width: 1.00rem;
+	height: 1.00rem;
 	display: block;
-	border-radius: 5rem;
+	border-radius: .05rem;
 }
 
 .list .item .item_line2 {
-	height: 1rem;
+	height: .01rem;
 	width: 100%;
 	background-color: #EDEDED;
-	margin-top: 15rem;
+	margin-top: .15rem;
 }
 
 .group_btn {
-	margin-top: 15rem;
+	margin-top: .15rem;
 	display: flex;
 	justify-content: flex-end;
 }
 
 .group_btn div {
-	width: 90rem;
-	height: 35rem;
-	line-height: 35rem;
-	margin-left: 10rem;
+	width: .90rem;
+	height: .35rem;
+	line-height: .35rem;
+	margin-left: .10rem;
 	text-align: center;
-	border-radius: 5rem;
-	font-size: 15rem;
+	border-radius: .05rem;
+	font-size: .15rem;
 }
 
 .group_btn .btn1 {
-	border: 1rem solid #FFB300;
+	border: .01rem solid #FFB300;
 	color: #FFB300;
 }
 
 .group_btn .btn2 {
 	background-color: #FFB300;
-	box-shadow: 0 2rem 6rem 0 #DEDEDE;
+	box-shadow: 0 .02rem .06rem 0 #DEDEDE;
 	color: white;
 }

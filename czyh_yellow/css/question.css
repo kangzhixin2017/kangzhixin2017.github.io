@@ -1,21 +1,21 @@
 .content{
-	padding: 0 20rem;
+	padding: 0 .20rem;
 }
 .content .item1{
-	margin-top: 15rem;
-	font-size: 17rem;
+	margin-top: .15rem;
+	font-size: .17rem;
 }
 .content .item1 span	{
 	color: #FFB300;
 }
 .content .item2{
-	margin-top: 25rem;
+	margin-top: .25rem;
 }
 .content .item2 div{
-	font-size: 15rem;
-	margin-top: 5rem;
+	font-size: .15rem;
+	margin-top: .05rem;
 }
 .content .item3{
-	margin-top: 15rem;
+	margin-top: .15rem;
 	color: #7E7E7E;
 }

@@ -42,7 +42,8 @@
 	font-size: .15rem;
 }
 .footer{
-	position: absolute;
+	/*position: absolute;*/
+	margin-top: .30rem;
 	bottom: .20rem;
 	width: 100%;
 	text-align: center;

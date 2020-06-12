@@ -1,62 +1,62 @@
 .addcard{
 	position: absolute;
-	right: 15rem;
-	width: 20rem;
-	height: 20rem;
+	right: .15rem;
+	width: .20rem;
+	height: .20rem;
 }
 .content{
-	padding-bottom: 20rem;
+	padding-bottom: .20rem;
 	/*background-color: white;*/
 }
 .content .item{
-	padding: 0rem 17rem 16rem;
+	padding: .00rem .17rem .16rem;
 	width: 93%;
-	margin: 15rem auto 0;
+	margin: .15rem auto 0;
 	border-radius: 10px;
 	background-color: white;
-	/*box-shadow: 0 2rem 6rem 2rem rgba(0, 0, 0, 0.05);*/
+	/*box-shadow: 0 .02rem .06rem .02rem rgba(0, 0, 0, 0.05);*/
 }
 .content .item div{
 /*width: 100%;*/
 }
 .content .item .key{
-	font-size: 15rem;
-	line-height: 48rem;
-	/*margin-top: 16rem;*/
+	font-size: .15rem;
+	line-height: .48rem;
+	/*margin-top: .16rem;*/
 	display: flex;
-	border-bottom: 1rem solid #EDEDED;
+	border-bottom: .01rem solid #EDEDED;
 }
 .content .item .key1{
-	font-size: 15rem;
-	line-height: 48rem;
-	/*margin-top: 16rem;*/
+	font-size: .15rem;
+	line-height: .48rem;
+	/*margin-top: .16rem;*/
 	display: flex;
-	/*border-bottom: 1rem solid #EDEDED;*/
+	/*border-bottom: .01rem solid #EDEDED;*/
 	justify-content: space-between;
 	color: #7E7E7E;
 }
 .content .item .key1 img{
-	width: 100rem;
-	height: 100rem;
+	width: 1.00rem;
+	height: 1.00rem;
 	display: block;
-	margin-top: 15rem;
+	margin-top: .15rem;
 }
 .content .item .key1 #input_r{
 	display: none;
 }
 .content .item .key input{
-	font-size: 15rem;
+	font-size: .15rem;
 	/*background-color: red;*/
 	width: 100%;
 }
 .content .item .row{
-	font-size: 15rem;
-	line-height: 48rem;
-	/*margin-top: 16rem;*/
+	font-size: .15rem;
+	line-height: .48rem;
+	/*margin-top: .16rem;*/
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	border-bottom: 1rem solid #EDEDED;
+	border-bottom: .01rem solid #EDEDED;
 }
 .content .item .row .key2{
 	display: flex;
@@ -64,7 +64,7 @@
 	justify-content: space-between;
 }
 .content .item .row .key2 .name{
-	width: 70rem;
+	width: .70rem;
 	color: #7E7E7E;
 }
 .content .item .row .key2 .address{
@@ -72,21 +72,21 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	font-size: 15rem;
+	font-size: .15rem;
 	/*background-color: red;*/
 }
 .content .item .row .key2 .address img{
 	display: block;
-	width: 10rem;
-	margin-left: 10rem;
+	width: .10rem;
+	margin-left: .10rem;
 }
 .content .item .row img{
-	width: 10rem;
+	width: .10rem;
 }
 .content .item .key span:nth-of-type(1){
 	color: #7E7E7E;
 	display: block;
-	width: 70rem;
+	width: .70rem;
 	flex-shrink: 0;
 }
 .content .item .key span:nth-of-type(2){
@@ -97,32 +97,32 @@
 	color: #FFB300;
 }
 /*.content .item div:nth-of-type(1){
-	padding-top: 16rem;
-	font-size: 17rem;
-	line-height: 20rem;
+	padding-top: .16rem;
+	font-size: .17rem;
+	line-height: .20rem;
 }*/
 /*.content .item div:nth-of-type(2){
-	padding-top: 6rem;
-	font-size: 28rem;
-	line-height: 32rem;
+	padding-top: .06rem;
+	font-size: .28rem;
+	line-height: .32rem;
 }*/
 .content .item .key_2{
-	font-size: 15rem;
-	line-height: 18rem;
-	margin-top: 16rem;
+	font-size: .15rem;
+	line-height: .18rem;
+	margin-top: .16rem;
 	display: flex;
 }
 .content .item .key_2 img{
-	width: 34rem;
-	height: 22rem;
+	width: .34rem;
+	height: .22rem;
 }
 .btn{
 	width: 93%;
-	line-height: 35rem;
+	line-height: .35rem;
 	text-align: center;
 	color: #fff;
-	font-size: 15rem;
-	border-radius: 8rem;
+	font-size: .15rem;
+	border-radius: .08rem;
 	background-color: #FFB300;
-	margin: 20rem auto 0;
+	margin: .20rem auto 0;
 }
