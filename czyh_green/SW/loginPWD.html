@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>修改登录密码</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/loginPWD.css" />
+		<link rel="stylesheet" type="text/css" href="../css/navigationBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/toast.css" />
+		<link rel="stylesheet" type="text/css" href="../css/tabBar.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="navigationBar">
+				<img class="back" src="../img/left.png" />
+				<div class="title center">修改登录密码</div>
+			</div>
+			<div class="input">
+				<div class="row">
+					<input type="" name="" id="" value="" placeholder="请输入新的登录密码" />
+				</div>
+				<div class="row">
+					<input type="" name="" id="" value="" placeholder="请再次输入登录密码" />
+				</div>
+				<div class="row">
+					<input type="" name="" id="" value="" placeholder="请输入验证码" />
+					<div>获取验证码</div>
+				</div>
+				<div class="btn">保存</div>
+
+			</div>
+
+			<div class="tabBar_d"></div>
+			<div class="tabBar">
+				<div class="item">
+					<img src="../img/buy.png" alt="" />
+					<div>买币中心</div>
+				</div>
+				<div class="item">
+					<img src="../img/sell.png" alt="" />
+					<div>卖币中心</div>
+				</div>
+				<div class="item">
+					<img src="../img/order.png" alt="" />
+					<div>订单列表</div>
+				</div>
+				<div class="item">
+					<img src="../img/me1.png" alt="" />
+					<div class="select">个人中心</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function change() {
+				if(event.target.value) {
+					$('.delete').css('display', 'block')
+				} else {
+					$('.delete').css('display', 'none')
+				}
+			}
+
+			function delete_phone() {
+				$('.phone').val('')
+				$('.phone').focus()
+				$('.delete').css('display', 'none')
+			}
+		</script>
+	</body>
+
+</html>

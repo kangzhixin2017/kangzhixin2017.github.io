@@ -327,3 +327,11 @@ padding: 0 15px;
 	color: rgba(38, 43, 47, 0.5);
 	padding-bottom: 8px;
 }
+.btn{
+	background-color: #01C6F3;
+	margin: 20px 15px;
+	line-height: 36px;
+	text-align: center;
+	color: white;
+	border-radius: 5px;
+}

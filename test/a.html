@@ -1,26 +1,38 @@
 <html>
-<head>
-<meta charset="utf-8">
-<title>菜鸟教程(runoob.com)</title>
-<script src="../ad2/js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
-</head>
-<body>
 
-<form action="welcome.html" method="post">
-名字: <input type="text" name="fname">
-年龄: <input type="text" name="age">
-<input type="submit" value="提交">
-</form>
-<input type="radio" name="myname" value="1" />1
-<input type="radio" name="myname" value="2" />2
-<script type="text/javascript">
-	$('input[type=radio][name=myname]').change(function () {
-    // 获取input radio选中值，方法一
-    var myvalue = $('input:radio[name="myname"]:checked').val();
-    // 获取input radio选中值，方法二
-    var myvalue = $(this).val();
-    alert(myvalue)
-});
-</script>
-</body>
+	<head>
+		<meta charset="utf-8">
+		<title>菜鸟教程(runoob.com)</title>
+		<script src="../ad2/js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="phaser.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="Phaser"></div>
+
+		<form action="welcome.html" method="post">
+			名字: <input type="text" name="fname"> 年龄: <input type="text" name="age">
+			<input type="submit" value="提交">
+		</form>
+		<input type="radio" name="myname" value="1" />1
+		<input type="radio" name="myname" value="2" />2
+		<script type="text/javascript">
+			 var game = new Phaser.Game(400, 400, Phaser.AUTO, 'phaser', { preload: preload, create: create });
+			function preload(){
+				alert('s')
+			}
+			function create(){
+				alert('s2')
+			}
+			
+			$('input[type=radio][name=myname]').change(function() {
+				// 获取input radio选中值，方法一
+				var myvalue = $('input:radio[name="myname"]:checked').val();
+				// 获取input radio选中值，方法二
+				var myvalue = $(this).val();
+				alert(myvalue)
+			});
+		</script>
+	</body>
+
 </html>

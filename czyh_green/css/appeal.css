@@ -1,0 +1,98 @@
+.app{
+	background-color: #FAFAFA;
+}
+.list{
+	/*width: 3.5rem;*/
+	margin: 0 .15rem;
+	padding: 0 .20rem .15rem;
+	background-color: white;
+	border-radius: 15px;
+}
+.head{
+	line-height: .42rem;
+	padding: 0 .3rem;
+	font-size: .15rem;
+	color: #7E7E7E;
+}
+.list .item{
+	height: .50rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px dashed #F5F5F5;
+}
+.list .item div{
+	font-size: .15rem;
+	
+}
+.list .item img{
+	width: .19rem;
+	height: .19rem;
+	display: block;
+}
+.list .item2{
+	height: 1.16rem;
+	display: flex;
+	justify-content: space-between;
+	padding-top: .14rem;
+}
+.list .item2 div{
+	font-size: .15rem;
+	line-height: .15rem;
+}
+.list .item2 img{
+	width: 1.00rem;
+	height: 1.00rem;
+	display: block;
+}
+
+
+
+.list .item2 input{
+	display: none;
+}
+ .upload{
+	line-height: .40rem;
+	text-align: center;
+	background-color: #4DD585;
+	border-radius: 5px;
+	color: #fff;
+	font-size: .15rem;
+	margin: .5rem .15rem 0;
+	height: .40rem;
+	
+}
+.remark{
+	width: 100%;
+	/*border: .01rem solid #A2A2A2;*/
+	background-color: #FAFAFA;
+	margin-top: .20rem;
+	border-radius: 4px;
+	padding: .02rem;
+	position: relative;
+}
+.remark textarea{
+	border: none;
+	outline: none;
+	width: 100%;
+	/*height: 118rem;*/
+	max-height: 1.18rem;
+	min-height: 1.18rem;
+	max-width: 100%;
+	min-width: 100%;
+	padding: .05rem .10rem;
+	background-color: #FAFAFA;
+	border-radius: 4px;
+}
+.remark div{
+	position: absolute;
+	bottom: .03rem;
+	right: .08rem;
+	font-size: .12rem;
+}
+.addition-count{
+	color: #7E7E7E;
+}
+textarea{
+	resize:none
+}

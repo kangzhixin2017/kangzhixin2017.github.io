@@ -1,0 +1,146 @@
+.navigationBar .right{
+	font-size: .14rem;
+	position: absolute;
+	right: .12rem;
+}
+
+.list {
+	/*margin-top: 3.40rem;*/
+	/*background-color: #EDEDED;*/
+	padding: 0 .12rem;
+}
+
+.list .item {
+	background-color: #F7F7F7;
+	margin-top: .10rem;
+	border-radius: .10rem;
+	padding: .17rem .14rem .24rem;
+	border-radius: 3px;
+	/*box-shadow: 0 .02rem .06rem 0 #E5E5E5;*/
+}
+
+.list .item .row1 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/*margin-bottom: .15rem;*/
+}
+
+.list .item .row1 div:nth-of-type(1) {
+	font-size: .16rem;
+	line-height: .22rem;
+}
+
+.list .item .row1 div:nth-of-type(2) {
+	font-size: .13rem;
+	color: #FC0C0C;
+}
+
+.list .item .item_line {
+	height: .01rem;
+	width: 100%;
+	/*background-color: #EDEDED;*/
+}
+
+.list .item .row2 {
+	display: flex;
+	justify-content: space-between;
+	margin-top: .10rem;
+	font-size: .13rem;
+}
+.list .item .row3 >div:nth-of-type(1) {
+	/*color: #7E7E7E;*/
+}
+.list .item .row4 >div:nth-of-type(1) {
+	/*color: #7E7E7E;*/
+}
+.list .item .row2 >div:nth-of-type(1) {
+	width: .90rem;
+	flex-shrink: 0;
+	/*color: #7E7E7E;*/
+}
+
+.list .item .row2 div {
+	line-height: .18rem;
+	word-break: break-all;
+}
+
+.list .item .row3 {
+	display: flex;
+	justify-content: space-between;
+	margin-top: .10rem;
+	font-size: .13rem;
+	line-height: .19rem;
+}
+
+.list .item .row3>div:nth-of-type(1) {
+	/*margin-right: .30rem;*/
+	width: .90rem;
+	flex-shrink: 0;
+	line-height: .19rem;
+}
+
+.list .item .row3 .right {
+	display: flex;
+	align-items: center;
+}
+
+.list .item .row3 .right div:nth-of-type(1) {
+	word-break: break-all;
+}
+
+.list .item .row3 .right div:nth-of-type(2) {
+	color: #FB454F;
+	margin-left: .08rem;
+	border: .01rem solid #FB454F;
+	border-radius: .04rem;
+	font-size: .12rem;
+	line-height: .17rem;
+	padding: 0 .07rem;
+}
+
+.list .item .row4 {
+	display: flex;
+	justify-content: space-between;
+	margin-top: .10rem;
+	font-size: .13rem;
+}
+
+.list .item .row4 img {
+	width: 1.00rem;
+	height: 1.00rem;
+	display: block;
+	border-radius: .05rem;
+}
+
+.list .item .item_line2 {
+	height: .01rem;
+	width: 100%;
+	background-color: #EDEDED;
+	margin-top: .15rem;
+}
+.list .item .time_out{
+	margin-top: .09rem;
+	width: 100%;
+	text-align: center;
+	font-size: .12rem;
+	color: #FF0000;
+}
+.group_btn {
+	margin-top: .10rem;
+	display: flex;
+	justify-content: center;
+}
+
+.group_btn div {
+	width: 100%;
+	line-height: .28rem;
+	text-align: center;
+	border-radius: 3px;
+	font-size: .14rem;
+	border: .01rem solid #FB454F;
+	color: #1E1E1E;
+}
+.group_btn div:not(:nth-of-type(1)){
+	margin-left: .20rem;
+}

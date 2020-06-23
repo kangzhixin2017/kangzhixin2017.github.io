@@ -6,76 +6,76 @@
 	flex-direction: column;
 }
 .logo img{
-	width: 125rem;
-	height: 125rem;
-	margin-top: 74rem;
+	width: 1.25rem;
+	height: 1.25rem;
+	margin-top: .74rem;
 }
 .logo .title{
-	font-size: 18rem;
-	line-height: 24rem;
-	margin-top: 19rem;
+	font-size: .18rem;
+	line-height: .24rem;
+	margin-top: .19rem;
 }
 
 .content{
 	width: 100%;
-	padding: 0 13rem;
-	margin-top: 13rem;
+	padding: 0 .13rem;
+	margin-top: .13rem;
 }
 .content .item{
-	margin-top: 15rem;
+	margin-top: .15rem;
 }
 .content .item div{
-	font-size: 14rem;
-	line-height: 20rem;
+	font-size: .14rem;
+	line-height: .20rem;
 	color: #FB454F;
 }
 .content .item input{
-	margin-top: 8rem;
-	line-height: 46rem;
+	margin-top: .08rem;
+	line-height: .46rem;
 	background-color: #F7F7F7;
 	width: 100%;
 	border-radius: 3px;
-	padding-left: 15rem;
-	font-size: 14rem;
+	padding-left: .15rem;
+	font-size: .14rem;
 }
 .content .explain{
 	width: 100%;
 	text-align: right;
-	font-size: 12rem;
-	line-height: 17rem;
-	margin-top: 8rem;
+	font-size: .12rem;
+	line-height: .17rem;
+	margin-top: .08rem;
 	color: #FB454F;
 }
 .content .btn_find{
 	/*background-color: #D8D8D8;*/
 	width: 100%;
-	/*height: 40rem;*/
+	/*height: .40rem;*/
 	text-align: center;
-	line-height: 44rem;
-	margin: 30rem auto 0;
+	line-height: .44rem;
+	margin: .30rem auto 0;
 	border-radius: 3px;
 	color: #FB454F;
-	font-size: 18rem;
-	border: 1rem solid #FB454F;
+	font-size: .18rem;
+	border: .01rem solid #FB454F;
 }
 .content .help{
-	margin: 10rem auto 0;
+	margin: .10rem auto 0;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 }
 .content .help div{
-	line-height: 18rem;
+	line-height: .18rem;
 	color: #919191;
-	font-size: 14rem;
+	font-size: .14rem;
 }
 
 .footer{
 	position: absolute;
-	bottom: 20rem;
+	bottom: .20rem;
 	width: 100%;
 	text-align: center;
-	font-size: 15rem;
+	font-size: .15rem;
 	color: #7E7E7E;
 }
 .footer span{

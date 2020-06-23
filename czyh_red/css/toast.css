@@ -12,13 +12,13 @@
 /*弹窗中心部分*/
 .toast-mask .toast {
 	background: #fff;
-	width: 290rem;
+	width: 2.90rem;
 	/*max-width: 320px;
 	min-width: 250px;*/
-	/*padding: 0 15rem;*/
+	/*padding: 0 .15rem;*/
 	margin: 0 auto;
 	min-height: 52px;
-	border-radius: 15rem;
+	border-radius: .15rem;
 	/*padding-top: 30px;
 	padding-bottom: 47px;*/
 	position: relative;
@@ -26,131 +26,134 @@
 /*弹窗中心部分*/
 .toast-mask .toast_4 {
 	background: #fff;
-	width: 320rem;
+	width: 3.20rem;
 	/*max-width: 320px;
 	min-width: 250px;*/
-	padding: 0 20rem;
+	padding: .12rem .12rem 0;
 	margin: 0 auto;
 	min-height: 52px;
-	border-radius: 8rem;
+	border-radius: .08rem;
 	/*padding-top: 30px;
 	padding-bottom: 47px;*/
 	position: relative;
 }
 /*第一种*/
 .toast-mask .toast .title_1{
-	margin-top: 26rem;
+	margin-top: .26rem;
 	text-align: center;
-	font-size: 17rem;
-	line-height: 24rem;
+	font-size: .17rem;
+	line-height: .24rem;
 	color: #262B2F;
 }
 .toast-mask .toast .content_1{
 	text-align: center;
-	font-size: 15rem;
-	line-height: 18rem;
-	margin: 18rem 0 15rem;
+	font-size: .15rem;
+	line-height: .18rem;
+	margin: .18rem 0 .15rem;
 	color: #494949;
 }
 .toast-mask .toast .button_1{
 	height: 100%;
-	width: 219rem;
+	width: 2.19rem;
 	/*background-color: #FFB300;*/
-	line-height: 48rem;
+	line-height: .48rem;
 	text-align: center;
-	border-radius: 8rem;
-	font-size: 15rem;
+	border-radius: .08rem;
+	font-size: .15rem;
 }
 
 /*第二种*/
 .toast-mask .toast .title_2{
 	text-align: center;
-	font-size: 15rem;
-	line-height: 18rem;
-	margin-top: 24rem;
+	font-size: .15rem;
+	line-height: .18rem;
+	margin-top: .24rem;
 	/*color: #7E7E7E;*/
 	
 }
 .toast-mask .toast .content_2{
-	margin: 15rem 0 20rem;
+	margin: .15rem 0 .20rem;
 	text-align: center;
-	font-size: 13rem;
-	line-height: 15rem;
+	font-size: .13rem;
+	line-height: .15rem;
 	color: #262B2F;
 }
 .toast-mask .toast .button_2{
-	/*height: 40rem;*/
+	/*height: .40rem;*/
 	width: 100%;
 	/*background-color: #FFB300;*/
-	line-height: 48rem;
+	line-height: .48rem;
 	text-align: center;
-	border-radius: 8rem;
-	font-size: 15rem;
+	border-radius: .08rem;
+	font-size: .15rem;
 }
 .buttons{
 	display: flex;
 	justify-content: center;
-	/*margin-bottom: 16rem;*/
-	border-top: 0.5rem solid #E0E0E0;
+	/*margin-bottom: .16rem;*/
+	border-top: 0.01rem solid #E0E0E0;
 }
 .toast-mask .toast .button_3_1{
 	width: 100%;
-	line-height: 48rem;
+	line-height: .48rem;
 	text-align: center;
 	color: #212426;
-	font-size: 15rem;
-	border-right: 0.5rem solid #E0E0E0;
+	font-size: .15rem;
+	border-right: 0.01rem solid #E0E0E0;
 }
 .toast-mask .toast .button_3_2{
 	width: 100%;
-	line-height: 48rem;
+	line-height: .48rem;
 	text-align: center;
-	color: #212426;
-	font-size: 15rem;
+	color: #FB454F;
+	font-size: .15rem;
 }
 .toast-mask .toast_4 .title_1{
 	text-align: center;
-	margin-top: 16rem;
-	padding-bottom: 7rem;
-	font-size: 17rem;
-	line-height: 24rem;
+	margin-top: .16rem;
+	padding-bottom: .07rem;
+	font-size: .17rem;
+	line-height: .24rem;
 	color: #262B2F;
 }
 .toast-mask .toast_4 .item{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-top: 15rem;
+	margin-top: .15rem;
+}
+.toast-mask .toast_4 .item:nth-last-of-type(2){
+	padding-bottom: .2rem
 }
 .toast-mask .toast_4 .key{
-	font-size: 15rem;
-	line-height: 18rem;
-	color: #7E7E7E;
+	font-size: .15rem;
+	line-height: .18rem;
+	color: #1E1E1E;
 	white-space:nowrap;
-	margin-right: 15rem;
+	margin-right: .15rem;
 }
 .toast-mask .toast_4 .value{
-	font-size: 15rem;
-	line-height: 18rem;
+	font-size: .15rem;
+	line-height: .18rem;
 	text-align: right;
 	word-break: break-all;
+	color: #1E1E1E;
 }
 .toast-mask .toast_4 .button_4{
-	margin-top: 21rem;
-	height: 40rem;
-	width: 219rem;
-	line-height: 40rem;
+	/*margin-top: .21rem;*/
+	/*height: .53rem;*/
+	width: 100%;
+	line-height: .53rem;
 	text-align: center;
-	border-radius: 8rem;
-	font-size: 15rem;
-	color: #fff;
-	background-color: #FFB300;
+	border-radius: .08rem;
+	font-size: .15rem;
+	color: #FB454F;
 }
 .toast-mask .toast_4 .he{
-	margin-top: 15rem;
-	height: 1rem;
+	/*margin-top: .15rem;
+	height: .01rem;
 	width: 100%;
-	background-color: #E2E2E2;
+	background-color: #E2E2E2;*/
 }
 
 .toast-mask .toast .remark_input{
@@ -158,26 +161,26 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	margin: 8rem 0 10rem;
+	margin: .08rem 0 .10rem;
 	
 }
 .toast-mask .toast .remark_input .input-placeholder{
-	font-size: 15rem;
-	line-height: 18rem;
+	font-size: .15rem;
+	line-height: .18rem;
 	color: #7E7E7E;
-	margin-top: 6rem;
-	margin-bottom: 7rem;
+	margin-top: .06rem;
+	margin-bottom: .07rem;
 }
 .toast-mask .toast .remark_input .remark{
 	margin: 0 auto;
-	width: 177rem;
-	height: 30rem;
-	line-height: 30rem;
-	background-color: #F3F6FC;
-	border-radius: 3rem;
-	padding: 0 10rem;
+	width: 1.77rem;
+	height: .30rem;
+	line-height: .30rem;
+	background-color: #F2F2F2;
+	border-radius: .03rem;
+	padding: 0 .10rem;
 	text-align: center;
-	font-size: 16rem;
+	font-size: .16rem;
 }
 /*图片弹窗部分*/
 .toast-mask .toast_img {
@@ -198,9 +201,9 @@
 	margin: 20px auto;
 }
 
-/*input {
+input {
 	outline: none;
 	border: none;
 	box-shadow: none;
-	caret-color:#FFB300;
-}*/
+	caret-color:#FB454F;
+}

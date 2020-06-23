@@ -88,7 +88,7 @@ function appendContent_2(toast, contentHtml) {
 function appendButtons_1(toast, callback, mask) {
 	var buttons = [{
 		text: "确定",
-		color: "#212426"
+		color: "#FB454F"
 	}]
 	if(buttons && buttons.length) {
 		var buttonGroup = document.createElement("div");
@@ -114,7 +114,7 @@ function appendButtons_1(toast, callback, mask) {
 function appendButtons_2(toast, callback, mask) {
 	var buttons = [{
 		text: "确定",
-		color: "#212426"
+		color: "#FB454F"
 	}]
 	if(buttons && buttons.length) {
 		var buttonGroup = document.createElement("div");
@@ -291,7 +291,7 @@ var toast = {
 			label.classList.add("key");
 			label.innerText = item.label;
 			var value = document.createElement("span");
-			value.style.color = item.label == '订单金额' ? '#FC0C0C' : '#262B2F';
+//			value.style.color = item.label == '订单金额' ? '#FC0C0C' : '#262B2F';
 			value.classList.add("value");
 			value.innerText = item.value;
 			itemEle.appendChild(label);

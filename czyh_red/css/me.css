@@ -4,51 +4,51 @@
 }
 
 .head .left img {
-	width: 70rem;
-	height: 70rem;
+	width: .70rem;
+	height: .70rem;
 	border-radius: 50%;
 }
 
 .head .left {
-	margin: 0 10rem 0 18rem;
+	margin: 0 .10rem 0 .18rem;
 }
 
 .head .right>div:nth-of-type(1) {
-	font-size: 15rem;
-	line-height: 21rem;
+	font-size: .15rem;
+	line-height: .21rem;
 }
 
 .head .right>div:nth-of-type(2) {
-	margin-top: 6rem;
-	font-size: 13rem;
-	line-height: 18rem;
+	margin-top: .06rem;
+	font-size: .13rem;
+	line-height: .18rem;
 	color: #999990;
 }
 
 .head .right>div:nth-of-type(3) {
-	margin-top: 6rem;
-	font-size: 13rem;
-	line-height: 18rem;
+	margin-top: .06rem;
+	font-size: .13rem;
+	line-height: .18rem;
 	color: #999990;
 	display: flex;
 }
 
 .head .right>div:nth-of-type(3) div:nth-of-type(2) {
 	color: #FB454F;
-	font-size: 13rem;
-	line-height: 18rem;
-	margin-left: 18rem;
+	font-size: .13rem;
+	line-height: .18rem;
+	margin-left: .18rem;
 }
 
 .head_data {
-	margin-top: 3rem;
+	margin-top: .03rem;
 	display: flex;
 	align-items: center;
 }
 
 .head_data .row {
 	width: 33.33%;
-	padding: 10rem 0;
+	padding: .10rem 0;
 }
 
 .head_data .row div {
@@ -56,28 +56,28 @@
 }
 
 .head_data .row div:nth-of-type(1) {
-	font-size: 17rem;
-	line-height: 24rem;
+	font-size: .17rem;
+	line-height: .24rem;
 }
 
 .head_data .row div:nth-of-type(2) {
-	font-size: 13rem;
-	line-height: 18rem;
-	margin-top: 4rem;
+	font-size: .13rem;
+	line-height: .18rem;
+	margin-top: .04rem;
 	color: #8F8F8F;
 }
 
 .head_data span {
-	width: 1rem;
-	height: 27rem;
+	width: .01rem;
+	height: .27rem;
 	background-color: #D8D8D8;
 }
 
 .toCharge {
-	margin-top: 7rem;
+	margin-top: .07rem;
 	width: 100%;
-	padding: 0 20rem;
-	margin-bottom: 17rem;
+	padding: 0 .20rem;
+	margin-bottom: .17rem;
 }
 
 .toCharge img {
@@ -87,29 +87,29 @@
 
 .content {
 	background-color: #F3F3F3;
-	padding: 10rem 9rem 20rem;
+	padding: .10rem .09rem .20rem;
 	border-radius: 4px;
 }
 
 .content .item1 {
 	background-color: white;
-	padding: 13rem 0 1rem;
-	margin-bottom: 10rem;
+	padding: .13rem 0 .01rem;
+	margin-bottom: .10rem;
 	border-radius: 4px;
 }
 
 .content .item1 .title {
-	font-size: 14rem;
-	line-height: 20rem;
-	margin-left: 16rem;
+	font-size: .14rem;
+	line-height: .20rem;
+	margin-left: .16rem;
 }
 
 .content .item1 .data_row {
-	margin-top: 6rem;
+	margin-top: .06rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 10rem 0;
+	padding: .10rem 0;
 }
 
 .content .item1 .data_row .row {
@@ -120,28 +120,28 @@
 	flex-direction: column;
 }
 .content .item1 .data_row .row img {
-	height: 26rem;
+	height: .26rem;
 	display: block;
 }
 
 .content .item1 .data_row .row div {
 	color: #8F8F8F;
-	font-size: 12rem;
-	line-height: 17rem;
-	margin-top: 8rem;
+	font-size: .12rem;
+	line-height: .17rem;
+	margin-top: .08rem;
 }
 
 .content .item1 .data_row span {
-	width: 1rem;
-	height: 27rem;
+	width: .01rem;
+	height: .27rem;
 	background-color: #D8D8D8;
-	margin-top: 10rem;
+	margin-top: .10rem;
 }
 
 .toBindCard {
-	margin-top: 7rem;
+	margin-top: .07rem;
 	width: 100%;
-	margin-bottom: 10rem;
+	margin-bottom: .10rem;
 	border-radius: 4px;
 }
 
@@ -152,10 +152,10 @@
 
 .btn {
 	width: 100%;
-	line-height: 46rem;
+	line-height: .46rem;
 	text-align: center;
 	color: #FB454F;
-	font-size: 18rem;
+	font-size: .18rem;
 	background-color: white;
 	border-radius: 3px;
 }

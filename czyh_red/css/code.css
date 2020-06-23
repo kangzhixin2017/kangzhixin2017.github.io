@@ -1,0 +1,29 @@
+.app{
+	height: 100vh;
+}
+.content{
+	margin: .81rem auto 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: red;
+	width: 3.4rem;
+	height: 3.8rem;
+	background: url(../img/code_bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+.content img{
+	width: 1.7rem;
+	height: 1.7rem;
+	padding: .1rem;
+	background-color: white;
+	border-radius: .2rem;
+}
+.num{
+	font-size: .36rem;
+	line-height: .5rem;
+	margin-top: .1rem;
+	width: 100%;
+	text-align: center;
+}

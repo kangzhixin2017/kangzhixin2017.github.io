@@ -4,7 +4,7 @@
 	justify-content: center;
 	align-items: center;
 	/*导航高度*/
-	height: 44rem;
+	height: .44rem;
 	position: sticky;
 	top: 0;
 	background-color: #fff;
@@ -12,19 +12,19 @@
 }
 .navigationBar .back{
 	/*返回按钮大小*/
-	width: 20rem;
-	height: 20rem;
+	width: .09rem;
+	height: .15rem;
 	position: absolute;
-	left: 15rem;
+	left: .15rem;
 }
 .navigationBar .title{
 	/*标题字体大小与颜色*/
-	font-size: 18rem;
+	font-size: .18rem;
 	width: 100%;
 }
 .navigationBar .center{
 	text-align: center;
 }
 .navigationBar .left{
-	margin-left: 40rem;
+	margin-left: .38rem;
 }

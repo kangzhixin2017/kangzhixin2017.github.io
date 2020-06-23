@@ -1,92 +1,92 @@
 .content {
 	width: 100%;
-	padding: 0 13rem;
-	margin-top: 13rem;
+	padding: 0 .13rem;
+	margin-top: .13rem;
 }
 
 .content .item {
-	margin-top: 15rem;
+	margin-top: .15rem;
 }
 
 .content .item>div:nth-of-type(1) {
-	font-size: 14rem;
-	line-height: 20rem;
+	font-size: .14rem;
+	line-height: .20rem;
 	color: #FB454F;
 }
 
 .content .item>div:nth-of-type(2) {
-	font-size: 14rem;
-	line-height: 46rem;
+	font-size: .14rem;
+	line-height: .46rem;
 	color: #FB454F;
 	display: flex;
 	align-items: center;
-	margin-top: 8rem;
+	margin-top: .08rem;
 	background-color: #F7F7F7;
 }
 
 .content .item>div:nth-of-type(2) div {
 	flex-shrink: 0;
-	margin-right: 8rem;
+	margin-right: .08rem;
 	/*background-color: red;*/
 }
 
 .content .item>div:nth-of-type(2) input {
-	line-height: 46rem;
+	line-height: .46rem;
 	background-color: #F7F7F7;
 	width: 100%;
 	border-radius: 3px;
-	padding-left: 15rem;
-	font-size: 14rem;
+	padding-left: .15rem;
+	font-size: .14rem;
 }
 
 .content .item>input {
-	margin-top: 8rem;
-	line-height: 46rem;
+	margin-top: .08rem;
+	line-height: .46rem;
 	background-color: #F7F7F7;
 	width: 100%;
 	border-radius: 3px;
-	padding-left: 15rem;
-	font-size: 14rem;
+	padding-left: .15rem;
+	font-size: .14rem;
 }
 
 .content .explain {
 	width: 100%;
 	text-align: right;
-	font-size: 12rem;
-	line-height: 17rem;
-	margin-top: 8rem;
+	font-size: .12rem;
+	line-height: .17rem;
+	margin-top: .08rem;
 	color: #FB454F;
 }
 
 .content .btn_find {
 	/*background-color: #D8D8D8;*/
 	width: 100%;
-	/*height: 40rem;*/
+	/*height: .40rem;*/
 	text-align: center;
-	line-height: 44rem;
-	margin: 30rem auto 0;
+	line-height: .44rem;
+	margin: .30rem auto 0;
 	border-radius: 3px;
 	color: #FB454F;
-	font-size: 18rem;
-	border: 1rem solid #FB454F;
+	font-size: .18rem;
+	border: .01rem solid #FB454F;
 }
 
 .content .help {
 	width: 100%;
 	text-align: center;
 	color: #919191;
-	font-size: 14rem;
-	line-height: 20rem;
-	margin-top: 10rem;
+	font-size: .14rem;
+	line-height: .20rem;
+	margin-top: .10rem;
 }
 
 
 .footer {
 	position: absolute;
-	bottom: 20rem;
+	bottom: .20rem;
 	width: 100%;
 	text-align: center;
-	font-size: 15rem;
+	font-size: .15rem;
 	color: #7E7E7E;
 }
 

@@ -18,95 +18,135 @@
 		<div class="app">
 			<div class="navigationBar">
 				<img class="back" src="../img/left.png" />
-				<div class="title center">我要充值</div>
-				<div class="right">充值订单</div>
+				<div class="title left">我要充值</div>
+				<div class="right">
+					<nobr>充值订单</nobr>
+				</div>
 			</div>
+			<div class="line"></div>
 			<div class="content">
-				<div>
-					<div class="title1">
-						<img src="../img/vip.png" />
-						<div>会员账号：<span>023840928340982</span></div>
+				<div class="status">
+					<div class="charge" onclick="status('1')">充值
+						<span class="left_l"></span>
 					</div>
-					<div class="money_body">
-						<div class="title">提现金额</div>
-						<div class="money">
-							<!--<span>￥</span>-->
-							<input type="" name="" id="" value="" placeholder="请输入充值金额" />
-						</div>
+					<div class="charge_r" onclick="status('2')">充值记录
+						<span class="right_l"></span>
 					</div>
-					<div class="money_body">
-						<div class="title">银行卡名字</div>
-						<div class="money">
-							<!--<span>￥</span>-->
-							<input type="" name="" id="" value="" placeholder="请输入银行卡名字" />
-						</div>
-					</div>
-					<div class="title1">
-						<img src="../img/charge1.png" />
-						<div>充值平台收款账号</div>
+				</div>
+				<div class="list list1">
+					<div class="row1">
+						<div>充值金额</div>
+						<input placeholder="输入充值金额" type="" name="" id="" value="" />
 					</div>
 					<div class="row1">
-						<div>c2c在线交易充值</div>
-						<img class="img" onclick="img('1')" src="../img/yuan.png" />
+						<div>银行卡姓名</div>
+						<input placeholder="输入银行卡姓名" type="" name="" id="" value="" />
 					</div>
-					<div class="row1">
-						<div>使用数字货币充值</div>
-						<img class="img" onclick="img('2')" src="../img/yuan.png" />
+					<div class="row2">
+						<div class="name">充值平台收款账号:</div>
+						<div class="type_z">
+							<div class="type type1">
+								<div>在线银行卡充值</div>
+								<img class="on" onclick="type('1')" src="../img/yuan.png" alt="" />
+							</div>
+							<div class="type type2">
+								<div>使用数字货币充值</div>
+								<img class="num" onclick="type('2')" src="../img/yuan.png" alt="" />
+							</div>
+						</div>
+					</div>
+					<div class="btn">点击充值</div>
+					<div class="tip">
+						<div>温馨提示：</div>
+						<div>
+							1:单笔最小充值金额¥10000
+						</div>
+						<div>
+							2:单笔最大充值金额¥50000
+						</div>
+						<div>
+							3:第一次充值会冻结2000金额，剩余转入可用余额
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="footer">
-				<div class="btn">点击提现</div>
-				<div class="details">提现明细</div>
-			</div>
-			<div class="tip">
-				<div class="item">
-					充值提示：
-				</div>
-				<div class="item">
-					1.码商单笔最小充值金额¥10000
-				</div>
-				<div class="item">
-					2.码商单笔最小充值金额¥50000
-				</div>
-				<div class="item">
-					3.码商第一笔充值会冻结2000金额，剩余转入可用余额
+				<div class="list list2">
+					<div class="row_z">
+						<div class="row1">
+							<div class="item1">原有金k额</div>
+							<div class="item2">充值后金额</div>
+							<div class="item3">订单金额</div>
+						</div>
+						<div class="row2">
+							<div class="item1">234234234</div>
+							<div class="item2">234245</div>
+							<div class="item3">23423</div>
+						</div>
+						<div class="row2">
+							<div class="item1">2334234</div>
+							<div class="item2">23423345</div>
+							<div class="item3">23423</div>
+						</div>
+						<div class="row2">
+							<div class="item1">234234</div>
+							<div class="item2">2345345</div>
+							<div class="item3">23423</div>
+						</div>
+						<div class="msg">没有更多了</div>
+					</div>
 				</div>
 			</div>
 			<div class="tabBar_d"></div>
 			<div class="tabBar">
 				<div class="item">
-					<img src="../img/order1.png" alt="" />
+					<img src="../img/buy.png" alt="" />
 					<div>订单列表</div>
 				</div>
 				<div class="item">
-					<img src="../img/buy1.png" alt="" />
+					<img src="../img/sell.png" alt="" />
 					<div>抢单大厅</div>
 				</div>
 				<div class="item">
-					<img src="../img/sell1.png" alt="" />
+					<img src="../img/order.png" alt="" />
 					<div>收款码列表</div>
 				</div>
 				<div class="item">
-					<img src="../img/me.png" alt="" />
+					<img src="../img/me1.png" alt="" />
 					<div class="select">个人中心</div>
 				</div>
 			</div>
 		</div>
-
-		</div>
 		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			//			输入完成并判断完成修改按钮颜色
-			setTimeout(() => {
-				$('.btn').css('backgroundColor', '#FFB300')
+			status(1)
+			type(1)
 
-			}, 2000)
+			function status(i) {
+				$('.list1').css('display', 'none')
+				$('.list2').css('display', 'none')
+				$('.charge').css('color', '#919191')
+				$('.left_l').css('background-color', '#fff')
+				$('.charge_r').css('color', '#919191')
+				$('.right_l').css('background-color', '#fff')
+				if(i == 1) {
+					$('.list1').css('display', 'block')
+					$('.charge').css('color', '#FB454F')
+					$('.left_l').css('background-color', '#FB454F')
+				} else {
+					$('.charge_r').css('color', '#FB454F')
+					$('.list2').css('display', 'block')
+					$('.right_l').css('background-color', '#FB454F')
+				}
+			}
 
-			function img(i) {
-				$('.img').attr('src', '../img/yuan.png')
-				event.target.src = '../img/yuan1.png'
+			function type(i) {
+				$('.on').attr('src', '../img/yuan.png')
+				$('.num').attr('src', '../img/yuan.png')
+				if(i == 1) {
+					$('.on').attr('src', '../img/yuan1.png')
+				} else {
+					$('.num').attr('src', '../img/yuan1.png')
+				}
 			}
 		</script>
 	</body>
