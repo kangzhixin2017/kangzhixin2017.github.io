@@ -1,0 +1,29 @@
+.app{
+	background: url(../img/bg6.png) no-repeat;
+	background-size: 100% 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.img{
+	width: 3.07rem;
+	display: block;
+	margin: 0 auto;
+}
+.msg{
+	margin: .36rem auto;
+	text-align: center;
+	color: #FB905A;
+	font-size: .15rem;
+	line-height: .21rem;
+}
+.btn{
+	margin: .3rem auto 0;
+	width: 2.57rem;
+	line-height: .43rem;
+	background: url(../img/btn_bg2.png) no-repeat;
+	background-size: 100% 100%;
+	text-align: center;
+	font-size: .15rem;
+	color: #FFF5B8;
+}

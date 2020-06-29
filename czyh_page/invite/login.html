@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>登录</title>
+		<script src="./js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./css/index.css" />
+		<link rel="stylesheet" type="text/css" href="./css/navigationBar.css" />
+		<link rel="stylesheet" type="text/css" href="./css/tabBar.css" />
+		<link rel="stylesheet" type="text/css" href="./css/login.css" />
+		<link rel="stylesheet" type="text/css" href="./css/toast.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="logo">
+				<img src="../img/logo.png" />
+				<div class="title">盾山码商中心</div>
+			</div>
+			<div class="content">
+				<div class="item item1">
+					<input class="phone" type="" name="" id="" value="" placeholder="请输入手机号" oninput="change()" onclick="inp_cli('item1')" />
+					<img class="delete" onclick="delete_phone()" src="../img/delete.png" />
+				</div>
+				<div class="item item2">
+					<input class="password1" type="password" name="" id="" value="" placeholder="请输入密码" onclick="inp_cli('item2')" />
+					<img onclick="look_password('.password1')" src="../img/look.png" />
+				</div>
+				<div class="item item3">
+					<input class="password2" type="" name="" id="" value="" placeholder="请输入谷歌验证码" onclick="inp_cli('item3')" />
+					<!--<img onclick="look_password('.password2')" src="../img/look1.png" />-->
+				</div>
+				<div class="item item4">
+					<input class="code_input" type="" name="" id="" value="" placeholder="请输入图形验证码" onclick="inp_cli('item4')" />
+					<div class="code">S312D</div>
+				</div>
+				<div class="btn_find">登录</div>
+				<div class="help">
+					<div>手机号登录</div>
+					<div>忘记密码</div>
+				</div>
+			</div>
+			<div class="footer">
+				<div>还没有账号？<span>立即注册</span></div>
+			</div>
+		</div>
+		<script src="./js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//			输入完成并判断完成修改按钮颜色
+			setTimeout(() => {
+				$('.btn_find').css('backgroundColor', '#FF6600')
+			}, 2000)
+
+			function delete_phone() {
+				$('.phone').val('')
+				$('.delete').css('display', 'none')
+			}
+
+			function look_password(name) {
+				$(name).attr("type") == 'text' ? $(name).attr('type', 'password') : $(name).attr('type', 'text')
+			}
+
+			function change() {
+				if(event.target.value) {
+					$('.delete').css('display', 'block')
+				} else {
+					$('.delete').css('display', 'none')
+				}
+			}
+
+			function inp_cli(name) {
+				$('.item').css('border-bottom', '0.01rem solid #E2E2E2')
+				$('.' + name).css('border-bottom', '0.01rem solid #FC660C')
+			}
+		</script>
+	</body>
+
+</html>

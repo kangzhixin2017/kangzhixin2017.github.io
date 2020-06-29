@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title></title>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="./css/toast.css" />
+
+	</head>
+
+	<body style="display: flex;flex-direction: column;">
+		<h3>弹窗</h3>
+		<div class="app">
+			<button onclick="new1()">弹窗1</button>
+			<button onclick="new2()">弹窗2</button>
+			<button onclick="new3()">弹窗3</button>
+			<button onclick="list()">列表</button>
+			<button onclick="remark()">输入框1</button>
+			<button onclick="remark2()">输入框2</button>
+		</div>
+		<script src="./js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function new1() {
+				toast.prompt1(
+					"你的专属邀请码",
+					'TW827D',
+					e => {
+						console.log(e)
+					}
+				);
+			}
+
+			function new2() {
+				toast.prompt2(
+					'2积分',
+					'./img/bg2.png',
+					'',
+					(e,val) => {
+						console.log(e,val)
+					}
+				);
+			}
+
+			function new3() {
+				toast.prompt3(
+					"提示",
+					'',
+					e => {
+						console.log(e)
+					}
+				);
+			}
+
+			function remark() {
+				toast.remark(
+					"请输入备注",
+					"",
+					'22',
+					function(type, val) {
+						console.log(type + val)
+					}
+				);
+			}
+
+			function remark2() {
+				toast.remark(
+					"请确认您已收到：23343元",
+					"请输入您的二级密码",
+					'11',
+					function(type, val) {
+						console.log(type + val)
+					}
+				);
+			}
+
+			function list() {
+				toast.list('邀请须知', [{
+							msg:'1、每天有邀请人数为5人，超出5人部分不发放积分奖励哦~'
+						},
+						{
+							msg:'2、好友登录当天，您将会得到10积分奖励，积分发放可能会有延迟，30分钟后还没有到账的话，可以和客服反馈哦~'
+						},
+						{
+							msg:'3、在注册后的第2-10天内，好友使用V Talk签到的第2、3天，您将分别等到4积分、6积分。'
+						}
+					],
+					function(val) {
+						console.log(val);
+					}
+				);
+			}
+		</script>
+	</body>
+
+</html>
