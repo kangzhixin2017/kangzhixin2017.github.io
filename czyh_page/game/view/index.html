@@ -6,8 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title></title>
-		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" type="text/css" href="./css/toast.css" />
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/toast.css" />
 
 	</head>
 
@@ -21,8 +21,12 @@
 			<button onclick="remark()">输入框1</button>
 			<button onclick="remark2()">输入框2</button>
 		</div>
-		<script src="./js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<img class="a" style="width: 100px;height: 100px;" src="../img/bg10.png"/>
+		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
+			$('.a').animate({
+				'transform': 'rotate(160deg)'
+			},)
 			function new1() {
 				toast.prompt1(
 					"你的专属邀请码",

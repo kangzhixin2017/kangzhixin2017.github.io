@@ -262,7 +262,7 @@ var toast = {
 		var mask = createMask(callback);
 		var toast = createToast();
 		var img_back = document.createElement('img')
-		img_back.src = './img/back.png'
+		img_back.src = '../img/back.png'
 		img_back.classList.add('back_img')
 		img_back.addEventListener("click", function(event) {
 			event.stopPropagation();

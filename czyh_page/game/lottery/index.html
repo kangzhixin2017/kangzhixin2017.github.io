@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>积分游乐场</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/navigationBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/tabBar.css" />
+		<link rel="stylesheet" type="text/css" href="../css/invite.css" />
+		<link rel="stylesheet" type="text/css" href="../css/toast.css" />
+		<script src="../js/util/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/lottery.css" />
+	</head>
+
+	<body>
+		<div class="content app">
+			<div class="shanDeng" id="deng">
+				<div id="luck">
+					<div>
+						<div class="row">
+							<div class="box luck-unit luck-unit-0"><img id="prize0"></div>
+							<div class="box luck-unit luck-unit-1"><img id="prize1"></div>
+							<div class="box luck-unit luck-unit-2"><img id="prize2"></div>
+						</div>
+						<div class="row">
+							<div class="box luck-unit luck-unit-7"><img id="prize7"></div>
+							<div class="cjBtn" id="btn"></div>
+							<div class="box luck-unit luck-unit-3"><img id="prize3"></div>
+						</div>
+						<div class="row">
+							<div class="box luck-unit luck-unit-6"><img id="prize6"></div>
+							<div class="box luck-unit luck-unit-5"><img id="prize5"></div>
+							<div class="box luck-unit luck-unit-4"><img id="prize4"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="msg"></div>
+			<div class="zlbtn"></div>
+			<div class="jl">
+				<div class="jl_list">
+
+				</div>
+			</div>
+			<div class="rule_title">
+				<div></div>
+				<div>活动规则</div>
+				<div></div>
+			</div>
+			<div class="rule">
+				<div>本活动所有奖品与苹果公司无关</div>
+				<div class="">1、奖品发放或稍有延迟，请勿着急</div>
+				<div class="">2、抽中的礼物将会放入我的订单中</div>
+				<div class="">3、好友助力，抽奖必中</div>
+				<div class="">4、参与抽奖用户视为同意本规则</div>
+				<div class="">5、活动最终解释权归V Talk所有</div>
+			</div>
+		</div>
+		<div class="jf_mask" style="position: fixed;width: 100vw;height: 100vh;display: flex;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
+			<div style="width: 2.7rem;background-color: white;border-radius: 8px;padding-top: .2rem;">
+				<div style="width: 100%;text-align: center;font-size: .16rem;line-height: .22rem;color: #333333;">当前积分不足</div>
+				<div style="color: #666666;font-size: .14rem;line-height: .2rem;width: 100%;text-align: center;margin-top: .14rem;">去首页做任务可获得更多积分</div>
+				<div onclick="mask_btn()" style="margin-top: .2rem;width: 100%;line-height: .44rem;border-top: 1px solid #E9E9E9;text-align: center;">知道了</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>-->
+		<script src="../js/crypto-js.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jsencrypt.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/aes.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/util/util.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/util/interface.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/util/http.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/lottery.js" type="text/javascript" charset="utf-8"></script>
+
+		<script>
+			$('.jf_mask').on("touchmove", function(e) {
+				 e.preventDefault();
+			})
+		</script>
+	</body>
+
+</html>

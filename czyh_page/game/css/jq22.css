@@ -1,0 +1,24 @@
+body,div,p,ul,table,li{margin:0;padding:0;}
+ul li{list-style:none;}
+#FontScroll{
+	margin: .07rem auto 0;
+	width: 90%;
+	font-size: .14rem;
+	height: 30px;
+	background-color: rgba(255, 255, 255, .2);
+	border-radius: .15rem;
+	overflow: hidden;
+}
+#FontScroll a{
+	color: aliceblue;
+	text-decoration: none;
+}
+#FontScroll .line{
+	text-align: left;
+	width: 100%;
+}
+#FontScroll .fontColor a{
+	color: red;
+	transition: all 1.5s ease 0s;
+}
+#FontScroll{padding-left: 10px}

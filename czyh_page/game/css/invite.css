@@ -2,6 +2,7 @@
 	background: url(../img/bg1.png) no-repeat;
 	background-size: 100% 100%;
 	padding-bottom: .4rem;
+	padding-top: .01rem;
 }
 
 .navigationBar .right {
@@ -11,8 +12,8 @@
 	font-size: 14px;
 }
 
-.carousel {
-	margin: 0 auto;
+/*.carousel {
+	margin: .07rem auto 0;
 	width: 90%;
 	font-size: .14rem;
 	height: 30px;
@@ -20,19 +21,15 @@
 	border-radius: .15rem;
 	overflow: hidden;
 	position: relative;
-	/*text-align: center;*/
-	/*display: flex;
-	justify-content: center;*/
-}
+}*/
 
-.carousel_li {
+/*.carousel_li {
 	width: 100%;
 	position: absolute;
 	padding: 0 10px;
-	/*background-color: yellow;*/
 	display: inline-block;
 	margin: 0 auto;
-}
+}*/
 
 .carousel .carousel_li .item {
 	display: flex;
@@ -82,7 +79,7 @@
 }
 
 .body .bg {
-	width: 3.49rem;
+	width: 3.65rem;
 	height: 4.63rem;
 	position: relative;
 	z-index: 2;
