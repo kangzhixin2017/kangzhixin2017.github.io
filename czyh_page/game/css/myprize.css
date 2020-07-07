@@ -1,0 +1,68 @@
+
+.app{
+	background-color: #F8F8F8;
+}
+.nolist{
+	display: none;
+	padding-top: 1.33rem;
+}
+.nolist img{
+	margin: 0 auto;
+	width: 1.08rem;
+	height: .83rem;
+	display: block;
+}
+.nolist div{
+	width: 100%;
+	text-align: center;
+	color: #666666;
+	margin-top: .2rem;
+	font-size: .15rem;
+}
+.list .item{
+	margin-top: .08rem;
+	background-color: white;
+	width: 100%;
+	height: .82rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 .16rem;
+}
+.list .item .left{
+	display: flex;
+	align-items: center;
+}
+.list .item .left img{
+	width: .5rem;
+	height: .5rem;
+	display: block;
+	border-radius: 4px;
+	margin-right: .11rem;
+}
+.list .item .left >div .top{
+	font-size: .14rem;
+	color: #333333;
+	line-height: .2rem;
+	font-weight: bold;
+}
+.list .item .left >div .bottom{
+	margin-top: .13rem;
+	font-size: .12rem;
+	color: #999999;
+	line-height: .17rem;
+}
+.list .item .right{
+	width: .82rem;
+	line-height: .32rem;
+	text-align: center;
+	background-color: #FFDC24;
+	font-size: .14rem;
+	color: #333333;
+	font-weight: bold;
+	border-radius: .16rem;
+}
+.list .item .right2{
+	font-size: .14rem;
+	color: #666666;
+}

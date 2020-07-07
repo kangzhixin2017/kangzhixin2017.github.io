@@ -21,8 +21,8 @@
 }
 
 #luck .active {
-	background-color: #FFA78F;
-	border: 1px solid #FF520E;
+	background-color: #FF917C;
+	border: 1px solid #FFCF57;
 }
 
 .shanDeng table {
@@ -189,4 +189,18 @@
 .rule div:nth-of-type(n+2) {
 	margin-top: .04rem;
 	color: #A0773D;
+}
+
+.myprize{
+	width: .8rem;
+	line-height: .55rem;
+	text-align: center;
+	background: url(../img/btn_myprize.png) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	right: 0;
+	top: 1.21rem;
+	font-size: .14rem;
+	color: #FFF5C4;
+	padding-left: .1rem;
 }

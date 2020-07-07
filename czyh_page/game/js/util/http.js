@@ -1,21 +1,27 @@
 function http(url, method) {
 	return new Promise((resolve, reject) => {
+		console.log(url.msg, url.url)
 		$.ajax({
 			url: url.url,
 			type: 'post',
 			data: method,
 			success: function(data) {
-				console.log(data)
-				if(data.code != 200 && data.code != 10036 ) {
-					reject(data);
-//					console.log(url.msg, '报错：', data)
-					//					return
-				} else {
+				console.log(url.msg, data)
+				if(data.code != 200) {
+					resolve(data);
+				} else if(data.code == 200 || data.code == 10036) {
+					if(!data.data){
+						resolve(data);
+						return
+					}
 					const des_key = decryptAES(data.sign, AES_KEY, AES_IV)
 					const des_data = decryptDEC(data.data, des_key)
 					resolve(JSON.parse(des_data))
 					console.log(url.msg, '解密后：', JSON.parse(des_data))
 				}
+			},
+			error: function(e) {
+				reject(e);
 			}
 		})
 		//		$.post(BASE_URL + url, method, function(data) { //param为参数---键值对方式

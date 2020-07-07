@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>积分游乐场</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<script src="../js/util/config.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/boost.css" />
+	</head>
+
+	<body>
+		<div class="content app">
+			<img class="head" src="../img/boost_bg.png" />
+			<div class="msg" style="">
+				<div class="item" style="">
+					<div class="time"><span class="time_msg"></span>后结束</div>
+					<div class="percentage">已获得好友<span class="Progress1"></span>助力,仅差<span class="Progress2"></span>免费拿</div>
+					<div class="speed">
+						<div class="speed_s"></div>
+					</div>
+					<div class="btn" onclick="btn()"></div>
+				</div>
+				<div class="details_top"></div>
+				<div class="details">
+					<div class="detail_msg">还没有好友给你助力哦～快去邀请吧！</div>
+				</div>
+				<div class="details_bottom"></div>
+			</div>
+			<div class="jf_mask3" style="position: fixed;width: 100vw;height: 100vh;display: none;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
+				<div style="position: relative;width: 2.7rem;border-radius: 8px;padding-top: .2rem;padding-bottom: .24rem;background: url(../img/code_bg.png) no-repeat;background-size: 100% 100%;">
+					<img onclick="mask_btn()" style="width: .2rem;height: .2rem;display: block;position: absolute;right: .12rem;top: .12rem;" src="../img/back.png" />
+					<div style="width: 100%;text-align: center;margin-top: .1rem;font-size: .14rem;color: #333333;line-height: .2rem;">你的专属邀请码</div>
+					<div style="font-size: .30rem;line-height: .42rem;color: #333333;margin-top: .2rem;width: 100%;text-align: center;font-weight: bold;">172676182</div>
+					<div onclick="mask_btn2()" style="width: 2.4rem;line-height: .42rem;background-color: #FFDC24;border-radius: 4px;text-align: center;margin: .55rem auto 0;font-size: .15rem;color: #333333;font-weight: bold;">去粘贴</div>
+				</div>
+			</div>
+			<div class="showcopy" style="display: none;position: fixed;top: calc(100vh / 2);left: calc(100vw / 2 - .63rem);z-index: 999;width: 1.27rem;line-height: .48rem;background-color: rgba(51,51,51,0.94);text-align: center;border-radius: 4px;color: white;font-size: .16rem;">复制成功</div>
+		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/crypto-js.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jsencrypt.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/aes.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/util/util.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/util/interface.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/util/http.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/boost.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

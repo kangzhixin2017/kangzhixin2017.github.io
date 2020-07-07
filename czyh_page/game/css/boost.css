@@ -1,0 +1,135 @@
+.head {
+	width: 100%;
+	display: block;
+}
+
+.msg {
+	background: url(../img/boost_bg2.png) no-repeat;
+	background-size: 100% 100%;
+	padding-bottom: .3rem;
+}
+
+.msg .item {
+	background: url(../img/boost_bg4.png) no-repeat;
+	background-size: 100% 100%;
+	width: 3.43rem;
+	height: 2.06rem;
+	margin: -1.45rem auto;
+	position: relative;
+}
+
+.time {
+	font-size: .14rem;
+	line-height: .32rem;
+	color: #DA4F1B;
+	width: 1.32rem;
+	background-color: #FFFDF1;
+	text-align: center;
+	border-radius: 0 0 22px 22px;
+	margin: 0 auto;
+}
+
+.time_msg {
+	margin-right: .06rem;
+}
+
+.percentage {
+	margin-top: .24rem;
+	font-size: .16rem;
+	line-height: .28rem;
+	color: #965F3B;
+	width: 100%;
+	text-align: center;
+}
+
+.percentage span {
+	color: #FF5A39;
+	font-size: .2rem;
+}
+
+.speed {
+	margin: .12rem auto;
+	width: 3.15rem;
+	height: .17rem;
+	background-color: #FCDBA4;
+	border-radius: .85rem;
+	position: relative;
+}
+
+.speed_s {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: .17rem;
+	border-radius: .85rem;
+	background-image: linear-gradient(to right, #FF5A39, #FFC06A);
+}
+
+.btn {
+	width: 3.15rem;
+	margin: .24rem auto;
+	height: .45rem;
+	background: url(../img/boost_btn.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.details_top {
+	margin: 1.78rem auto 0;
+	background: url(../img/boostbg1.png) no-repeat;
+	background-size: 100% 100%;
+	width: 3.43rem;
+	height: 1.49rem;
+}
+
+.details {
+	margin: -1rem auto 0;
+	background: url(../img/boostbg2.png) no-repeat;
+	background-size: 100% 100%;
+	background-position-y: 1rem;
+	width: 3.43rem;
+	min-height: 1rem;
+	padding: 0 .14rem;
+}
+.details_bottom{
+	margin: 0 auto;
+	background: url(../img/boostbg3.png) no-repeat;
+	background-size: 100% 100%;
+	width: 3.43rem;
+	height: .12rem;
+}
+.details .item_i{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: .58rem;
+	border-bottom: 1px solid rgba(255, 184, 110, .2);
+}
+.details .item_i .left{
+	display: flex;
+	align-items: center;
+}
+.details .item_i .left img{
+	width: .3rem;
+	height: .3rem;
+	display: block;
+	border-radius: 4px;
+	margin-right: .08rem;
+}
+.details .item_i .left div{
+	color: #B77E2C;
+	font-size: .14rem;
+}
+.details .item_i .right{
+	color: #DA571B;
+	font-size: .14rem;
+}
+.detail_msg{
+	width: 100%;
+	text-align: center;
+	font-size: .15rem;
+	line-height: .21rem;
+	color: #D17D46;
+	padding-top: .30rem;
+	display: none;
+}

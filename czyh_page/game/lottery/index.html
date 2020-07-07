@@ -18,6 +18,7 @@
 
 	<body>
 		<div class="content app">
+			<div onclick="to_myprize()" class="myprize">我的奖品</div>
 			<div class="shanDeng" id="deng">
 				<div id="luck">
 					<div>
@@ -40,7 +41,7 @@
 				</div>
 			</div>
 			<div class="msg"></div>
-			<div class="zlbtn"></div>
+			<div class="zlbtn" onclick="zlbtn()"></div>
 			<div class="jl">
 				<div class="jl_list">
 
@@ -53,18 +54,50 @@
 			</div>
 			<div class="rule">
 				<div>本活动所有奖品与苹果公司无关</div>
-				<div class="">1、奖品发放或稍有延迟，请勿着急</div>
-				<div class="">2、抽中的礼物将会放入我的订单中</div>
-				<div class="">3、好友助力，抽奖必中</div>
-				<div class="">4、参与抽奖用户视为同意本规则</div>
-				<div class="">5、活动最终解释权归V Talk所有</div>
+				<div>1、奖品发放或稍有延迟，请勿着急</div>
+				<div>2、邀请好友助力，抽奖必中</div>
+				<div>3、抽中的礼物将会放入我的奖品中</div>
+				<div>5、本次实物奖品请在活动期间内填写收货地址、否则以放弃资格处理，请知悉。</div>
+				<div>6、参与抽奖用户视为同意本规则</div>
+				<div>7、活动最终解释权归V Talk所有</div>
 			</div>
 		</div>
-		<div class="jf_mask" style="position: fixed;width: 100vw;height: 100vh;display: flex;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
+		<div class="jf_mask1" style="position: fixed;width: 100vw;height: 100vh;display: none;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
 			<div style="width: 2.7rem;background-color: white;border-radius: 8px;padding-top: .2rem;">
 				<div style="width: 100%;text-align: center;font-size: .16rem;line-height: .22rem;color: #333333;">当前积分不足</div>
 				<div style="color: #666666;font-size: .14rem;line-height: .2rem;width: 100%;text-align: center;margin-top: .14rem;">去首页做任务可获得更多积分</div>
 				<div onclick="mask_btn()" style="margin-top: .2rem;width: 100%;line-height: .44rem;border-top: 1px solid #E9E9E9;text-align: center;">知道了</div>
+			</div>
+		</div>
+		<div class="jf_mask2" style="position: fixed;width: 100vw;height: 100vh;display: none;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
+			<div style="position: relative;width: 2.7rem;height: 2.72rem;background: url(../img/mask_bg.png) no-repeat;background-size: 100% 100%;background-color: white;border-radius: 8px;padding-top: .2rem;">
+				<!--<img style="width: .2rem;height: .2rem;display: block;position: absolute;right: .12rem;top: .12rem;" src="../img/mask_back.png"/>-->
+				<div style="font-size: .26rem;line-height: .31rem;color: #EE6441;width: 100%;text-align: center;">恭喜你中奖啦～</div>
+				<img class="mask2_img" src="" style="display: block;height: .88rem;margin: .47rem auto 0;" alt="" />
+				<div class="mask2_btn" onclick="toinfo()" style="width: 2.3rem;line-height: .42rem;background-color: #FFDC24;border-radius: .21rem;text-align: center;margin: .25rem auto 0;font-size: .15rem;color: #333333;font-weight: bold;">去领取</div>
+			</div>
+		</div>
+		<div class="jf_mask3" style="position: fixed;width: 100vw;height: 100vh;display: none;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
+			<div style="position: relative;width: 2.7rem;background-color: white;border-radius: 8px;padding-top: .2rem;padding-bottom: .18rem;">
+				<img onclick="mask_btn()" style="width: .2rem;height: .2rem;display: block;position: absolute;right: .12rem;top: .12rem;" src="../img/mask_back.png" />
+				<img src="../img/mask_bg2.png" style="width: .42rem;height: .42rem;display: block;margin: 0 auto;" />
+				<div style="font-size: .16rem;line-height: .22rem;color: #666666;margin-top: .16rem;width: 100%;text-align: center;">很遗憾！没有中奖</div>
+				<div onclick="mask_btn()" style="width: 2.3rem;line-height: .42rem;background-color: #FFDC24;border-radius: .21rem;text-align: center;margin: .30rem auto 0;font-size: .15rem;color: #333333;">再接再厉</div>
+			</div>
+		</div>
+		<div class="jf_mask4" style="position: fixed;width: 100vw;height: 100vh;display: none;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
+			<div style="position: relative;width: 2.7rem;height: 2.72rem;background: url(../img/mask_bg3.png) no-repeat;background-size: 100% 100%;background-color: white;border-radius: 8px;padding-top: .2rem;">
+				<div style="font-size: .26rem;line-height: .31rem;color: #EE6441;width: 100%;text-align: center;font-weight: bold;">恭喜你中奖啦～</div>
+				<img src="../img/jifen.png" style="display: block;height: .7rem;width: .7rem;margin: .38rem auto 0;" alt="" />
+				<div class="mask4_jifen" style="width: 100%;text-align: center;font-size: .2rem;line-height: .28rem;color: #333333;margin-top: .02rem;"></div>
+				<div onclick="mask_btn()" style="font-weight: bold;width: 2.3rem;line-height: .42rem;background-color: #FFDC24;border-radius: .21rem;text-align: center;margin: .2rem auto 0;font-size: .15rem;color: #333333;">领取</div>
+			</div>
+		</div>
+		<div class="jf_mask5" style="position: fixed;width: 100vw;height: 100vh;display: none;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
+			<div style="width: 2.7rem;background-color: white;border-radius: 8px;padding-top: .2rem;">
+				<div style="width: 100%;text-align: center;font-size: .16rem;line-height: .22rem;color: #333333;">提示</div>
+				<div style="color: #666666;font-size: .14rem;line-height: .2rem;width: 100%;text-align: center;margin-top: .14rem;">奖品已更新！</div>
+				<div onclick="mask_btn5()" style="margin-top: .2rem;width: 100%;line-height: .44rem;border-top: 1px solid #E9E9E9;text-align: center;">知道了</div>
 			</div>
 		</div>
 		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
@@ -79,7 +112,7 @@
 
 		<script>
 			$('.jf_mask').on("touchmove", function(e) {
-				 e.preventDefault();
+				e.preventDefault();
 			})
 		</script>
 	</body>

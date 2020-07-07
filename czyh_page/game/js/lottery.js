@@ -1,17 +1,33 @@
 var Data;
 var URL_HEAD;
-var token = GetQueryString('token');
+var token;
+var flag = 0;
+if(GetQueryString('token')) {
+	token = GetQueryString('token');
+	window.localStorage.setItem('token', token);
+}
+token = 'aa974cb187c64e48ba603aaa753d6cbc';
+var Data_prize;
 //alert(token)
+
+document.addEventListener('touchmove', function(event) {
+	console.log(flag)
+	if(flag == 1) {　　　　　　　　　　　
+		event.preventDefault();
+	}
+})
+
 http(URL.config, {
 	attribute: 'head'
 }).then(e => {
 	URL_HEAD = e;
+	window.localStorage.setItem('URL_HEAD', e);
 	requestData();
 })
 
 function requestData() {
 	http(URL.sudoku, {
-		token: token,
+		token: window.localStorage.getItem('token'),
 	}).then(e => {
 		Data = e
 		setSudoku()
@@ -84,7 +100,6 @@ var luck = {
 };
 
 function roll() {
-	console.log(luck.times)
 	luck.roll();
 	if(luck.is_end) {
 		luck.times += 1;
@@ -94,16 +109,29 @@ function roll() {
 		luck.prize = -1;
 		luck.times = 0;
 		click = false;
-		console.log('1')
+		if(Data_prize.goodsType == 0) {
+			$('.jf_mask3').css('display', 'flex')
+			flag = 1;
+		} else if(Data_prize.goodsType == 1) {
+			$('.jf_mask4').css('display', 'flex')
+			$('.mask4_jifen').text(Data_prize.name)
+			flag = 1;
+		} else if(Data_prize.goodsType == 2) {
+			//实物
+			$('.jf_mask2').css('display', 'flex')
+			$('.mask2_img').attr('src', URL_HEAD + Data_prize.img)
+			window.localStorage.setItem('prize_img', URL_HEAD + Data_prize.img)
+			window.localStorage.setItem('prize_name', Data_prize.name)
+			flag = 1;
+		}
 	} else {
 		if(luck.times < luck.cycle) {
 			luck.speed -= 10;
 		} else if(luck.times == luck.cycle) {
 			luck.prize = luck.end_prize; //最终中奖位置
-
 		} else {
 			if(luck.times > luck.cycle + 10 && ((luck.prize == 0 && luck.index == 7) || luck.prize == luck.index + 1)) {
-				luck.speed += 200;
+				luck.speed += 100;
 			} else {
 				luck.speed += 60;
 
@@ -126,27 +154,80 @@ window.onload = function() {
 			return false;
 		} else {
 			http(URL.draw, {
-				token: token,
+				token: window.localStorage.getItem('token'),
 				type: 0,
 			}).then(e => {
+				//奖品有更新
+				if(e.code == 10036) {
+					$('.jf_mask5').css('display', 'flex')
+					flag = 1;
+					return;
+				}
+				//积分不足
+				if(e.code == 10028) {
+					$('.jf_mask1').css('display', 'flex')
+					flag = 1;
+					return;
+				}
+				//				Data_prize = e;
 				luck.is_end = true
 				for(var i = 0; i < Data.drawList.length; i++) {
-					if(Data.drawList[i].id == e.id) {
+					if(Data.drawList[i].id == e.dId) {
 						luck.end_prize = i
+						Data_prize = Data.drawList[i];
+						console.log(Data_prize)
 					}
 				}
+				luck.speed = 200;
+				roll();
+				click = true;
+
+				//保存奖品信息给完善信息页面
+				if(e.orderNo) {
+					window.localStorage.setItem('orderNo', e.orderNo)
+				}
 			})
-			luck.speed = 200;
-			//						luck.is_end = false
-			roll();
-			click = true;
 			return false;
 		}
 	});
 };
 
 function mask_btn() {
-	$('.jf_mask').hide()
-//	$('.jf_mask').css('display', 'flex')
+	$('.jf_mask1').hide()
+	$('.jf_mask2').hide()
+	$('.jf_mask3').hide()
+	$('.jf_mask4').hide()
+	$('.jf_mask5').hide()
+	flag = 0;
+}
 
+function toinfo() {
+	window.location.href = 'information.html'
+}
+
+function to_myprize() {
+	window.location.href = 'myprize.html'
+}
+
+function zlbtn() {
+	window.location.href = 'boost.html'
+}
+
+function mask_btn5() {
+	window.location.reload();
+}
+
+function ios() {
+	alert('进入');
+	window.webkit.messageHandlers.loadWebData.postMessage({
+		'path': 'gameDrawApi/draw',
+		'params': {
+			type: 0,
+		},
+		'method': 'abc',
+	})
+}
+
+function abc(data) {
+	alert(data)
 }
