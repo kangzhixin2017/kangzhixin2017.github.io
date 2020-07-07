@@ -1,21 +1,14 @@
 var Data;
 var URL_HEAD;
 var token;
-var flag = 0;
 if(GetQueryString('token')) {
 	token = GetQueryString('token');
 	window.localStorage.setItem('token', token);
 }
-token = 'aa974cb187c64e48ba603aaa753d6cbc';
+//token = 'aa974cb187c64e48ba603aaa753d6cbc';
 var Data_prize;
 //alert(token)
-
-document.addEventListener('touchmove', function(event) {
-	console.log(flag)
-	if(flag == 1) {　　　　　　　　　　　
-		event.preventDefault();
-	}
-})
+//console.log(document.getElementsByClassName('jf_mask4')[0])
 
 http(URL.config, {
 	attribute: 'head'
@@ -116,6 +109,10 @@ function roll() {
 			$('.jf_mask4').css('display', 'flex')
 			$('.mask4_jifen').text(Data_prize.name)
 			flag = 1;
+			document.getElementById('jf_mask4').addEventListener('touchmove', function(event) {
+				console.log('a')
+				event.preventDefault();
+			})
 		} else if(Data_prize.goodsType == 2) {
 			//实物
 			$('.jf_mask2').css('display', 'flex')
@@ -157,6 +154,7 @@ window.onload = function() {
 				token: window.localStorage.getItem('token'),
 				type: 0,
 			}).then(e => {
+//				ios();
 				//奖品有更新
 				if(e.code == 10036) {
 					$('.jf_mask5').css('display', 'flex')
@@ -220,7 +218,7 @@ function mask_btn5() {
 function ios() {
 	alert('进入');
 	window.webkit.messageHandlers.loadWebData.postMessage({
-		'path': 'gameDrawApi/draw',
+		'path': 'gameDraw/draw',
 		'params': {
 			type: 0,
 		},
@@ -228,6 +226,6 @@ function ios() {
 	})
 }
 
-function abc(data) {
-	alert(data)
+function abc() {
+	alert('a')
 }
