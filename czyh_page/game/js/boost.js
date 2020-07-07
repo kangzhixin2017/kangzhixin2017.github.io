@@ -1,6 +1,6 @@
 var Data;
 var headUrl = window.localStorage.getItem('URL_HEAD')
-var download ;
+var download;
 http(URL.config, {
 	attribute: 'download'
 }).then(e => {
@@ -64,12 +64,16 @@ function mask_btn() {
 
 function btn() {
 	$('.jf_mask3').css('display', 'flex')
+	document.getElementById('jf_mask3').addEventListener('touchmove', function(event) {
+		console.log('a')
+		event.preventDefault();
+	})
 }
 
 function mask_btn2() {
 	$('.jf_mask3').hide()
 	$('.showcopy').show()
-	copy('复制链接打开“V Talk”就能和好友一起打游戏。点击打开“V Talk”：' + download + ' 邀请码：'+Data.shareUrl)
+	copy('复制链接打开“V Talk”就能和好友一起打游戏。点击打开“V Talk”：' + download + ' 邀请码：' + Data.shareUrl)
 	setTimeout(function() {
 		$('.showcopy').hide()
 	}, 2000)

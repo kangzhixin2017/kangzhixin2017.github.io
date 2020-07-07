@@ -104,11 +104,9 @@ function roll() {
 		click = false;
 		if(Data_prize.goodsType == 0) {
 			$('.jf_mask3').css('display', 'flex')
-			flag = 1;
 		} else if(Data_prize.goodsType == 1) {
 			$('.jf_mask4').css('display', 'flex')
 			$('.mask4_jifen').text(Data_prize.name)
-			flag = 1;
 			document.getElementById('jf_mask4').addEventListener('touchmove', function(event) {
 				console.log('a')
 				event.preventDefault();
@@ -119,7 +117,6 @@ function roll() {
 			$('.mask2_img').attr('src', URL_HEAD + Data_prize.img)
 			window.localStorage.setItem('prize_img', URL_HEAD + Data_prize.img)
 			window.localStorage.setItem('prize_name', Data_prize.name)
-			flag = 1;
 		}
 	} else {
 		if(luck.times < luck.cycle) {
@@ -150,6 +147,7 @@ window.onload = function() {
 		if(click) {
 			return false;
 		} else {
+			alert('s')
 			http(URL.draw, {
 				token: window.localStorage.getItem('token'),
 				type: 0,
@@ -158,13 +156,11 @@ window.onload = function() {
 				//奖品有更新
 				if(e.code == 10036) {
 					$('.jf_mask5').css('display', 'flex')
-					flag = 1;
 					return;
 				}
 				//积分不足
 				if(e.code == 10028) {
 					$('.jf_mask1').css('display', 'flex')
-					flag = 1;
 					return;
 				}
 				//				Data_prize = e;
@@ -196,7 +192,6 @@ function mask_btn() {
 	$('.jf_mask3').hide()
 	$('.jf_mask4').hide()
 	$('.jf_mask5').hide()
-	flag = 0;
 }
 
 function toinfo() {
