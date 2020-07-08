@@ -18,6 +18,8 @@
 
 	<body>
 		<div class="content app">
+			<div onclick="ios()">测试</div>
+			<div class="test"></div>
 			<div onclick="to_myprize()" class="myprize">我的奖品</div>
 			<div class="shanDeng" id="deng">
 				<div id="luck">
@@ -62,14 +64,14 @@
 				<div>7、活动最终解释权归V Talk所有</div>
 			</div>
 		</div>
-		<div class="jf_mask1" style="position: fixed;width: 100vw;height: 100vh;display: none;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
+		<div id="jf_mask1" class="jf_mask1" style="position: fixed;width: 100vw;height: 100vh;display: none;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
 			<div style="width: 2.7rem;background-color: white;border-radius: 8px;padding-top: .2rem;">
 				<div style="width: 100%;text-align: center;font-size: .16rem;line-height: .22rem;color: #333333;">当前积分不足</div>
 				<div style="color: #666666;font-size: .14rem;line-height: .2rem;width: 100%;text-align: center;margin-top: .14rem;">去首页做任务可获得更多积分</div>
 				<div onclick="mask_btn()" style="margin-top: .2rem;width: 100%;line-height: .44rem;border-top: 1px solid #E9E9E9;text-align: center;">知道了</div>
 			</div>
 		</div>
-		<div class="jf_mask2" style="position: fixed;width: 100vw;height: 100vh;display: none;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
+		<div id="jf_mask2" class="jf_mask2" style="position: fixed;width: 100vw;height: 100vh;display: none;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
 			<div style="position: relative;width: 2.7rem;height: 2.72rem;background: url(../img/mask_bg.png) no-repeat;background-size: 100% 100%;background-color: white;border-radius: 8px;padding-top: .2rem;">
 				<!--<img style="width: .2rem;height: .2rem;display: block;position: absolute;right: .12rem;top: .12rem;" src="../img/mask_back.png"/>-->
 				<div style="font-size: .26rem;line-height: .31rem;color: #EE6441;width: 100%;text-align: center;">恭喜你中奖啦～</div>
@@ -77,7 +79,7 @@
 				<div class="mask2_btn" onclick="toinfo()" style="width: 2.3rem;line-height: .42rem;background-color: #FFDC24;border-radius: .21rem;text-align: center;margin: .25rem auto 0;font-size: .15rem;color: #333333;font-weight: bold;">去领取</div>
 			</div>
 		</div>
-		<div class="jf_mask3" style="position: fixed;width: 100vw;height: 100vh;display: none;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
+		<div id="jf_mask3" class="jf_mask3" style="position: fixed;width: 100vw;height: 100vh;display: none;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
 			<div style="position: relative;width: 2.7rem;background-color: white;border-radius: 8px;padding-top: .2rem;padding-bottom: .18rem;">
 				<img onclick="mask_btn()" style="width: .2rem;height: .2rem;display: block;position: absolute;right: .12rem;top: .12rem;" src="../img/mask_back.png" />
 				<img src="../img/mask_bg2.png" style="width: .42rem;height: .42rem;display: block;margin: 0 auto;" />
@@ -93,7 +95,7 @@
 				<div onclick="mask_btn()" style="font-weight: bold;width: 2.3rem;line-height: .42rem;background-color: #FFDC24;border-radius: .21rem;text-align: center;margin: .2rem auto 0;font-size: .15rem;color: #333333;">领取</div>
 			</div>
 		</div>
-		<div class="jf_mask5" style="position: fixed;width: 100vw;height: 100vh;display: none;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
+		<div id="jf_mask5" class="jf_mask5" style="position: fixed;width: 100vw;height: 100vh;display: none;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
 			<div style="width: 2.7rem;background-color: white;border-radius: 8px;padding-top: .2rem;">
 				<div style="width: 100%;text-align: center;font-size: .16rem;line-height: .22rem;color: #333333;">提示</div>
 				<div style="color: #666666;font-size: .14rem;line-height: .2rem;width: 100%;text-align: center;margin-top: .14rem;">奖品已更新！</div>

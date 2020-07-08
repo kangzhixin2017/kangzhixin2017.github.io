@@ -103,20 +103,12 @@ function roll() {
 		luck.times = 0;
 		click = false;
 		if(Data_prize.goodsType == 0) {
-			$('.jf_mask3').css('display', 'flex')
+			maskShow('0');
 		} else if(Data_prize.goodsType == 1) {
-			$('.jf_mask4').css('display', 'flex')
-			$('.mask4_jifen').text(Data_prize.name)
-			document.getElementById('jf_mask4').addEventListener('touchmove', function(event) {
-				console.log('a')
-				event.preventDefault();
-			})
+			maskShow('1');
 		} else if(Data_prize.goodsType == 2) {
 			//实物
-			$('.jf_mask2').css('display', 'flex')
-			$('.mask2_img').attr('src', URL_HEAD + Data_prize.img)
-			window.localStorage.setItem('prize_img', URL_HEAD + Data_prize.img)
-			window.localStorage.setItem('prize_name', Data_prize.name)
+			maskShow('3');
 		}
 	} else {
 		if(luck.times < luck.cycle) {
@@ -147,20 +139,18 @@ window.onload = function() {
 		if(click) {
 			return false;
 		} else {
-			alert('s')
 			http(URL.draw, {
 				token: window.localStorage.getItem('token'),
 				type: 0,
 			}).then(e => {
-//				ios();
 				//奖品有更新
 				if(e.code == 10036) {
-					$('.jf_mask5').css('display', 'flex')
+					maskShow(e.code);
 					return;
 				}
 				//积分不足
 				if(e.code == 10028) {
-					$('.jf_mask1').css('display', 'flex')
+					maskShow(e.code);
 					return;
 				}
 				//				Data_prize = e;
@@ -222,5 +212,43 @@ function ios() {
 }
 
 function abc() {
-	alert('a')
+	alert('abc')
+}
+
+function cba(data) {
+	alert('cba')
+	$('.test').text(data)
+}
+
+function maskShow(code) {
+	if(code == 10036) {
+		$('.jf_mask5').css('display', 'flex')
+		document.getElementById('jf_mask5').addEventListener('touchmove', function(event) {
+			event.preventDefault();
+		})
+	} else if(code == 10028) {
+		$('.jf_mask1').css('display', 'flex');
+		document.getElementById('jf_mask1').addEventListener('touchmove', function(event) {
+			event.preventDefault();
+		})
+	} else if(code == 0) {
+		$('.jf_mask3').css('display', 'flex');
+		document.getElementById('jf_mask3').addEventListener('touchmove', function(event) {
+			event.preventDefault();
+		})
+	} else if(code == 1) {
+		$('.jf_mask4').css('display', 'flex')
+		$('.mask4_jifen').text(Data_prize.name)
+		document.getElementById('jf_mask4').addEventListener('touchmove', function(event) {
+			event.preventDefault();
+		})
+	} else if(code == 3) {
+		$('.jf_mask2').css('display', 'flex')
+		$('.mask2_img').attr('src', URL_HEAD + Data_prize.img)
+		window.localStorage.setItem('prize_img', URL_HEAD + Data_prize.img)
+		window.localStorage.setItem('prize_name', Data_prize.name)
+		document.getElementById('jf_mask2').addEventListener('touchmove', function(event) {
+			event.preventDefault();
+		})
+	}
 }

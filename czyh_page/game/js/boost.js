@@ -14,6 +14,13 @@ $(function() {
 	$('.msg').css('min-height', c)
 })
 
+function loadImg() {
+	var j = parseInt(document.documentElement.style.fontSize) * 1.45
+	var a = window.screen.height;
+	var b = $('.head').height();
+	var c = a - b + j + 'px';
+	$('.msg').css('min-height', c)
+}
 setInterval(function() {
 	setTime()
 }, 200)
@@ -65,7 +72,6 @@ function mask_btn() {
 function btn() {
 	$('.jf_mask3').css('display', 'flex')
 	document.getElementById('jf_mask3').addEventListener('touchmove', function(event) {
-		console.log('a')
 		event.preventDefault();
 	})
 }
