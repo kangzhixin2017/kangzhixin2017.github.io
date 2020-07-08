@@ -15,6 +15,10 @@ const URL = {
 		url: BASE_URL_lottery + '/gameDrawApi/draw',
 		msg: '九宫格点击抽奖'
 	},
+	drawIOS: {
+		url: 'gameDraw/draw',
+		msg: 'IOS九宫格点击抽奖'
+	},
 	drawInvite: {
 		url: BASE_URL_lottery + '/gameDrawApi/invitePage',
 		msg: '邀请好友助力'
@@ -25,6 +29,10 @@ const URL = {
 	},
 	commitOrder: {
 		url: BASE_URL_lottery + '/gameDrawApi/commitOrder',
-		msg:'提交填写信息'
+		msg: '提交填写信息'
+	},
+	commitOrderIOS: {
+		url: 'gameDrawApi/commitOrder',
+		msg: 'IOS提交填写信息'
 	}
 }

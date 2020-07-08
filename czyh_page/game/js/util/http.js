@@ -10,7 +10,7 @@ function http(url, method) {
 				if(data.code != 200) {
 					resolve(data);
 				} else if(data.code == 200 || data.code == 10036) {
-					if(!data.data){
+					if(!data.data) {
 						resolve(data);
 						return
 					}
@@ -24,17 +24,21 @@ function http(url, method) {
 				reject(e);
 			}
 		})
-		//		$.post(BASE_URL + url, method, function(data) { //param为参数---键值对方式
-		//			console.log(data)
-		//			const des_key = decryptAES(data.sign, AES_KEY, AES_IV)
-		//			const des_data = decryptDEC(data.data, des_key)
-		//			resolve(JSON.parse(des_data))
-		//		});
 	})
 }
-//let signStr = '123'
-//let returnStr = CryptoJS.MD5(signStr).toString()
-//alert(returnStr)
+
+function app(url, params, method) {
+	if(CheckIsIOS()) {
+		window.webkit.messageHandlers.loadWebData.postMessage({
+			'path': url.url,
+			'params': params,
+			'method': method,
+		})
+	}
+	if(CheckIsAndroid()) {
+		//未开发
+	}
+}
 // AES加密
 function encryptAES(data, key, iv) { //key,iv：16位的字符串
 	var key1 = CryptoJS.enc.Latin1.parse(key);

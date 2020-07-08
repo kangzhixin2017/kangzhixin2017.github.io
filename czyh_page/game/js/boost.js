@@ -71,6 +71,7 @@ function mask_btn() {
 
 function btn() {
 	$('.jf_mask3').css('display', 'flex')
+	$('.code').text(Data.shareUrl)
 	document.getElementById('jf_mask3').addEventListener('touchmove', function(event) {
 		event.preventDefault();
 	})

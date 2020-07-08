@@ -80,27 +80,43 @@
 					$('.showcopy').css('display', 'flex')
 					$('.showmsg').text('请输入您的收货地址')
 				} else {
-					http(URL.commitOrder, {
+					app(URL.commitOrderIOS, {
 						orderNo: window.localStorage.getItem('orderNo'),
 						receiverName: name,
 						tel: phone,
 						address: address,
-					}).then(e => {
-						if(e.code == 200) {
-							$('.jf_mask5').css('display','flex');
-							$('.name').val('');
-							$('.phone').val('');
-							$('.address').val('')
-						}
-					})
+					}, 'AppBack');
+					//					http(URL.commitOrder, {
+					//						orderNo: window.localStorage.getItem('orderNo'),
+					//						receiverName: name,
+					//						tel: phone,
+					//						address: address,
+					//					}).then(e => {
+					//						if(e.code == 200) {
+					//							$('.jf_mask5').css('display','flex');
+					//							$('.name').val('');
+					//							$('.phone').val('');
+					//							$('.address').val('')
+					//						}
+					//					})
 				}
 				setTimeout(function() {
 					$('.showcopy').hide()
 					isclick = false
 				}, 2000)
 			}
-			function mask_btn5(){
+
+			function mask_btn5() {
 				window.location.href = 'index.html'
+			}
+
+			function AppBack(e) {
+				if(e.code == 200) {
+					$('.jf_mask5').css('display', 'flex');
+					$('.name').val('');
+					$('.phone').val('');
+					$('.address').val('')
+				}
 			}
 		</script>
 	</body>

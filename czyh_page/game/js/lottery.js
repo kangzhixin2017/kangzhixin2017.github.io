@@ -5,10 +5,7 @@ if(GetQueryString('token')) {
 	token = GetQueryString('token');
 	window.localStorage.setItem('token', token);
 }
-//token = 'aa974cb187c64e48ba603aaa753d6cbc';
 var Data_prize;
-//alert(token)
-//console.log(document.getElementsByClassName('jf_mask4')[0])
 
 http(URL.config, {
 	attribute: 'head'
@@ -139,42 +136,51 @@ window.onload = function() {
 		if(click) {
 			return false;
 		} else {
-			http(URL.draw, {
-				token: window.localStorage.getItem('token'),
-				type: 0,
-			}).then(e => {
-				//奖品有更新
-				if(e.code == 10036) {
-					maskShow(e.code);
-					return;
-				}
-				//积分不足
-				if(e.code == 10028) {
-					maskShow(e.code);
-					return;
-				}
-				//				Data_prize = e;
-				luck.is_end = true
-				for(var i = 0; i < Data.drawList.length; i++) {
-					if(Data.drawList[i].id == e.dId) {
-						luck.end_prize = i
-						Data_prize = Data.drawList[i];
-						console.log(Data_prize)
-					}
-				}
-				luck.speed = 200;
-				roll();
-				click = true;
-
-				//保存奖品信息给完善信息页面
-				if(e.orderNo) {
-					window.localStorage.setItem('orderNo', e.orderNo)
-				}
-			})
-			return false;
+			clickPrize();
 		}
 	});
 };
+
+function clickPrize() {
+	app(URL.drawIOS, {
+		type: 0,
+	}, 'AppBack');
+	//	http(URL.draw, {
+	//		token: window.localStorage.getItem('token'),
+	//		type: 0,
+	//	}).then(e => {
+	//		AppBack(e)
+	//	})
+}
+
+function AppBack(e) {
+	//奖品有更新
+	if(e.code == 10036) {
+		maskShow(e.code);
+		return;
+	}
+	//积分不足
+	if(e.code == 10028) {
+		maskShow(e.code);
+		return;
+	}
+	e = e.data;
+	luck.is_end = true
+	for(var i = 0; i < Data.drawList.length; i++) {
+		if(Data.drawList[i].id == e.dId) {
+			luck.end_prize = i
+			Data_prize = Data.drawList[i];
+			console.log(Data_prize)
+		}
+	}
+	luck.speed = 200;
+	roll();
+	click = true;
+	//保存奖品信息给完善信息页面
+	if(e.orderNo) {
+		window.localStorage.setItem('orderNo', e.orderNo)
+	}
+}
 
 function mask_btn() {
 	$('.jf_mask1').hide()
@@ -185,6 +191,7 @@ function mask_btn() {
 }
 
 function toinfo() {
+	mask_btn();
 	window.location.href = 'information.html'
 }
 
@@ -198,26 +205,6 @@ function zlbtn() {
 
 function mask_btn5() {
 	window.location.reload();
-}
-
-function ios() {
-	alert('进入');
-	window.webkit.messageHandlers.loadWebData.postMessage({
-		'path': 'gameDraw/draw',
-		'params': {
-			type: 0,
-		},
-		'method': 'abc',
-	})
-}
-
-function abc() {
-	alert('abc')
-}
-
-function cba(data) {
-	alert('cba')
-	$('.test').text(data)
 }
 
 function maskShow(code) {
