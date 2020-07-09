@@ -30,13 +30,53 @@
 	background: url(../img/turn_bg3.png) no-repeat;
 	background-size: 100% 100%;
 }
+.content{
+	margin: .25rem auto;
+	width: 3.45rem;
+	height: 7.56rem;
+	background: url(../img/turn_bg4.png) no-repeat;
+	background-size: 100% 100%;
+	padding-top: .37rem;
+}
 .table{
-	display: flex;j
-	ustify-content: center;
-	margin-top: 50px;
+	margin: .2rem auto;
+	display: flex;
+	justify-content: center;
 	width: 2.8rem;
 	height: 2.8rem;
+	overflow: hidden;
 	background:url(../img/turn_bg6.png) no-repeat;
 	background-size: 100% 100%;
-	/*border-radius: 50%;*/
+	border-radius: 50%;
+}
+.content .name{
+	width: 2.44rem;
+	display: block;
+	margin: 0 auto;
+}
+.content .name_img{
+	margin: .19rem auto;
+	width: 1.87rem;
+	display: block;
+}
+.content .table .item{
+	transform: rotate(22.5deg);
+	transform-origin: bottom;
+	/*background-color: red;*/
+	height: 1.4rem;
+	width: .7rem;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	align-items: center;
+	flex-direction: column;
+}
+.content .table .item img{
+	width: .5rem;
+	height: .4rem;
+	display: block;
+}
+.content .table .item div{
+	font-size: .1rem;
+	color: #E13738;
 }
