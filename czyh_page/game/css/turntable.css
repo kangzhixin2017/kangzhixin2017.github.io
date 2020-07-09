@@ -31,12 +31,13 @@
 	background-size: 100% 100%;
 }
 .content{
-	margin: .25rem auto;
+	margin: .25rem auto 0;
 	width: 3.45rem;
 	height: 7.56rem;
 	background: url(../img/turn_bg4.png) no-repeat;
 	background-size: 100% 100%;
 	padding-top: .37rem;
+	position: relative;
 }
 .table{
 	margin: .2rem auto;
@@ -55,23 +56,33 @@
 	margin: 0 auto;
 }
 .content .name_img{
-	margin: .19rem auto;
+	margin: .19rem auto 0;
 	width: 1.87rem;
 	display: block;
+}
+.content .clickStart{
+	width: .8rem;
+	height: .9rem;
+	display: block;
+	margin: auto;
+	position: absolute;
+	z-index: 99999999;
+	top: 1.79rem;
+	left: 1.31rem;
 }
 .content .table .item{
 	transform: rotate(22.5deg);
 	transform-origin: bottom;
-	/*background-color: red;*/
 	height: 1.4rem;
 	width: .7rem;
 	display: flex;
-	justify-content: center;
+	/*justify-content: center;*/
 	position: absolute;
 	align-items: center;
 	flex-direction: column;
 }
 .content .table .item img{
+	margin-top: .35rem;
 	width: .5rem;
 	height: .4rem;
 	display: block;
@@ -79,4 +90,172 @@
 .content .table .item div{
 	font-size: .1rem;
 	color: #E13738;
+}
+
+
+
+#FontScroll{
+	margin: .02rem auto 0;
+	width: 2.8rem;
+	font-size: .14rem;
+	height: 2.85rem;
+	/*background-color: rgba(255, 255, 255, .2);*/
+	/*border-radius: .15rem;*/
+	overflow: hidden;
+}
+#FontScroll a{
+	/*color: aliceblue;*/
+	text-decoration: none;
+}
+#FontScroll .line{
+	text-align: left;
+	width: 100%;
+}
+#FontScroll .fontColor a{
+	/*color: red;*/
+	transition: all 1.5s ease 0s;
+}
+/*#FontScroll{padding-left: 10px}*/
+
+
+
+.carousel .carousel_li .item {
+	height: .57rem;
+	padding: 0 .05rem;
+	display: flex;
+	/*height: 30px;*/
+	justify-content: space-between;
+	align-items: center;
+	/*background-color: yellow;*/
+}
+.carousel .carousel_li .item .left{
+	display: flex;
+	align-items: center;
+}
+.carousel .carousel_li .item .left img{
+	width: .3rem;
+	display: block;
+	height: .3rem;
+	border-radius: 4px;
+	margin-right: .09rem;
+}
+.carousel .carousel_li .item .left >div .top{
+	font-size: .14rem;
+	line-height: .2rem;
+	color: #333333;
+	font-weight: bold;
+}
+.carousel .carousel_li .item .left >div .bottom{
+	font-size: .12rem;
+	line-height: .17rem;
+	color: rgba(51, 51, 51, .8);
+}
+.carousel .carousel_li .item .right{
+	font-size: .14rem;
+	color: #333333;
+	font-weight: bold;
+}
+.carousel .carousel_li .item .right span{
+	color: #F05B4B;
+}
+.prize{
+	margin: .5rem auto 0;
+	width: 3.45rem;
+	border: 5px solid #000000;
+	border-radius: 4px;
+	padding: 0 .13rem;
+}
+.prize .prizeTop{
+	border-radius: 4px;
+	display: flex;
+	justify-content: center;
+	margin-top: -.23rem;
+}
+.prize .prizeTop img{
+	width: .1.3rem;
+	height: .4rem;
+	display: block;
+	flex-shrink: 0;
+}
+.prize .prizeTop img:nth-of-type(1){
+	margin-right: .26rem;
+}
+.prize .prizeCont{
+	margin-top: .2rem;
+	/*display: flex;*/
+}
+.prize .prizeCont .item{
+	width: 100%;
+	display: flex;
+	background-color: #E8FFEE;
+	border-radius: 4px;
+	overflow: hidden;
+	border: 1px solid #666666;
+	margin-bottom: .16rem;
+}
+.prize .prizeCont .item img{
+	width: 1.2rem;
+	height: 1.2rem;
+	display: block;
+	flex-shrink: 0;
+}
+.prize .prizeCont .item .msg{
+	padding: .11rem .09rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.prize .prizeCont .item .msg .title{
+	font-size: .15rem;
+	font-weight: bold;
+	color: #333333;
+}
+.prize .prizeCont .item .msg .num{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: space-between;
+}
+.prize .prizeCont .item .msg .num div{
+	font-size: .14rem;
+	color: #F65959;
+}
+.prize .prizeCont .item .msg .num div span{
+	font-size: .2rem;
+	color: #F65959;
+}
+.prize .prizeCont .item .msg .num img{
+	width: .77rem;
+	height: .28rem;
+}
+.footer{
+	width: 3.45rem;
+	margin: .3rem auto 0;
+	border: 2px solid #000000;
+	border-radius: 4px;
+	height: 1.17rem;
+}
+.footer div{
+	font-size: .14rem;
+	color: #333333;
+	font-weight: bold;
+	line-height: .2rem;
+	margin-left: .73rem;
+}
+.footer div:nth-of-type(1){
+	margin-top: .19rem;
+}
+.footer div:nth-of-type(2),
+.footer div:nth-of-type(3){
+	margin-top: .04rem;
+}
+.footer1{
+	width: 3rem;
+	line-height: .15rem;
+	color: #3DAEA4;
+	font-size: .12rem;
+	margin: .32rem auto 0;
+	text-align: center;
+	padding-bottom: .38rem;
 }

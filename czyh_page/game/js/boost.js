@@ -33,7 +33,7 @@ function setTime() {
 }
 
 http(URL.drawInvite, {
-	token: '7249dc49b442455ca3f1a2629d75557a'
+	token: window.localStorage.getItem('token')
 }).then(e => {
 	Data = e;
 	console.log(e.inviteUser.length)
