@@ -1,0 +1,42 @@
+.app{
+	background-color: rgba(69, 216, 204, .49);
+}
+.head_img{
+	width: 100%;
+	display: block;
+}
+.head_img_name{
+	width: 2.01rem;
+	height: .49rem;
+	margin-top: -1.06rem;
+	margin-left: .55rem;
+	display: block;
+}
+.head_img_num{
+	display: block;
+	margin-top: .1rem;
+	height: .38rem;
+	margin-left: .86rem;
+}
+.head_img_num div{
+	font-size: .14rem;
+	line-height: .2rem;
+	color: #13C7BD;
+	padding: .05rem .2rem .13rem .07rem;
+	font-weight: bold;
+	width: auto;
+	position: absolute;
+	white-space: nowrap;
+	background: url(../img/turn_bg3.png) no-repeat;
+	background-size: 100% 100%;
+}
+.table{
+	display: flex;j
+	ustify-content: center;
+	margin-top: 50px;
+	width: 2.8rem;
+	height: 2.8rem;
+	background:url(../img/turn_bg6.png) no-repeat;
+	background-size: 100% 100%;
+	/*border-radius: 50%;*/
+}
