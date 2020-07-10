@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>立即购买</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<!--<link rel="stylesheet" type="text/css" href="../css/jq22.css" />-->
+		<link rel="stylesheet" type="text/css" href="../css/buy.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="head">
+				<div class="txt-scroll txt-scroll-default">
+					<div class="scrollbox">
+						<div class="txt">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="FontScroll" class="carousel">
+				<ul class="carousel_li">
+
+				</ul>
+			</div>
+			<img class="remark" src="../img/buy_bg4.png" />
+			<div class="content">
+				<img class="img1" src="" alt="" />
+				<img onclick="Try()" class="img2" src="../img/buy_btn2.png" />
+			</div>
+			<div class="footer">
+				<div class="left">
+					<div><span class="jifen"></span>积分</div>
+					<div>提升等级优惠多多</div>
+				</div>
+				<img class="right" src="../img/buy_btn.png" alt="" />
+			</div>
+			<div id="mask" style="display: none;align-items: center;justify-content: center;position: fixed;top: 0;left: 0;width: 100vw;height: 100vh;background-color: rgba(0, 0, 0, .5);">
+				<div class="item" style="position: relative;">
+					<img style="width: 3.03rem;height: 3.55rem;" src="../img/buy_bg5.png" />
+					<img class="tryImg" style="position: absolute;top: .5rem;left: 1.04rem;width: .95rem;height: 1.9rem;display: block;" src="../img/bg10.png" />
+					<div style="position: absolute;top: 2.7rem;width: 100%;text-align: center;font-size: .14rem;color: #333333;font-weight: bold;">恭喜你获得了：<span class="tryName">西萌宝宝</span></div>
+					<div style="position: absolute;top: 3.15rem;font-size: .14rem;color: #FFFFFF;font-weight: bold;width: 100%;text-align: center;">编号：<span class="tryNum"></span></div>
+					<div onclick="maskDown()" style="width: 1.1rem;font-size: .14rem;line-height: .35rem;text-align: center;color: white;background-color: #FA9D29;border-radius: .175rem;margin: .1rem auto 0;">确定</div>
+					<div style="font-size: .12rem;line-height: .17rem;text-align: center;color: #FFDD24;margin: .1rem auto 0;">试玩获得的物品不会发货哦～</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<!--可删除-->
+
+	<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/util/config.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/crypto-js.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/jsencrypt.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/aes.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/util/util.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/util/interface.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/util/http.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/txtscroll.js"></script>
+	<!--<script src="../js/jquery-3.4.1.min.js"></script>-->
+	<!--<script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>-->
+	<script src="../js/fontscroll.js"></script>
+	<script src="../js/buy.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		//默认案例
+		window.onload = function() {
+
+		};
+	</script>
+
+</html>

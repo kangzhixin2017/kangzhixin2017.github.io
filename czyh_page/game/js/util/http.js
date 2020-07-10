@@ -36,7 +36,13 @@ function app(url, params, method) {
 		})
 	}
 	if(CheckIsAndroid()) {
-		//未开发
+		var Json = {
+			'path': url.url,
+			'params': params,
+			'method': method,
+		}
+		Json = JSON.stringify(Json)
+		window.Android.loadWebData(Json);
 	}
 }
 // AES加密

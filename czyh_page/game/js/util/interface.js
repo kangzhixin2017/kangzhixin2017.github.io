@@ -32,7 +32,23 @@ const URL = {
 		msg: '提交填写信息'
 	},
 	commitOrderIOS: {
-		url: 'gameDrawApi/commitOrder',
+		url: 'gameDraw/commitOrder',
 		msg: 'IOS提交填写信息'
+	},
+	turntable: {
+		url: BASE_URL_lottery + '/gameDrawApi/luckyTurntablePage',
+		msg: '幸运转盘'
+	},
+	clickDraw: {
+		url: BASE_URL_lottery + '/gameDrawApi/draw',
+		msg: '转盘点击抽奖'
+	},
+	blindBox: {
+		url: BASE_URL_lottery + '/blindBoxApi/blindBoxInfo',
+		msg: '立即购买页面'
+	},
+	trytry: {
+		url: BASE_URL_lottery + '/blindBoxApi/giveWhirl',
+		msg: '试一试'
 	}
 }

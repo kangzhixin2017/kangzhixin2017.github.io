@@ -48,7 +48,7 @@ function Top(data) {
 	if(data && data.length > 0) {
 		for(var i = 0; i < data.length; i++) {
 			var img = "../img/one" + i + ".png"
-			var time = formatDate(data[i].finishTime)
+			var time = formatDate(data[i].finishTime,'1')
 			if(i < 3) {
 				$('.list1').append(`<div class="item">
 						<div class="item_l">

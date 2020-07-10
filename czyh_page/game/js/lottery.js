@@ -33,7 +33,7 @@ function setSudoku() {
 	$('.msg').html(`注：抽奖一次需要${Data.score}积分，邀请好友助力必中哦～`);
 	for(var i = 0; i < Data.winList.length; i++) {
 		var img = URL_HEAD + Data.winList[i].head;
-		var time = formatDate(Data.winList[i].createTime)
+		var time = formatDate(Data.winList[i].createTime,'1')
 		$('.jl_list').append(`<div class="item">
 						<div class="i_left">
 							<img src="${img}" />
@@ -67,7 +67,7 @@ var luck = {
 			$units = $luck.find(".luck-unit");
 			this.obj = $luck;
 			this.count = $units.length;
-			$luck.find(".luck-unit-" + this.index).addClass("active");
+//			$luck.find(".luck-unit-" + this.index).addClass("active");
 		};
 	},
 	roll: function() {
@@ -136,6 +136,7 @@ window.onload = function() {
 		if(click) {
 			return false;
 		} else {
+			click = true;
 			clickPrize();
 		}
 	});
@@ -145,12 +146,13 @@ function clickPrize() {
 	app(URL.drawIOS, {
 		type: 0,
 	}, 'AppBack');
-	//	http(URL.draw, {
-	//		token: window.localStorage.getItem('token'),
-	//		type: 0,
-	//	}).then(e => {
-	//		AppBack(e)
-	//	})
+//		http(URL.draw, {
+//			token: window.localStorage.getItem('token'),
+//			type: 0,
+//		}).then(e => {
+//			console.log(e)
+//			AppBack(e)
+//		})
 }
 
 function AppBack(e) {
@@ -188,6 +190,9 @@ function mask_btn() {
 	$('.jf_mask3').hide()
 	$('.jf_mask4').hide()
 	$('.jf_mask5').hide()
+	for (var i = 0; i < 8; i++) {
+		$('.luck-unit-'+i).removeClass("active");
+	}
 }
 
 function toinfo() {

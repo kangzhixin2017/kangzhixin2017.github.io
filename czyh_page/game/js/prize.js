@@ -24,7 +24,7 @@ function initData() {
 			}
 			for(var i = 0; i < e.list.length; i++) {
 				var img = window.localStorage.getItem('URL_HEAD') + e.list[i].img;
-				var time = formatDate(e.list[i].create_time)
+				var time = formatDate(e.list[i].create_time,'1')
 				if(e.list[i].order_status == 4) {
 					$('.list').append(`<div class="item">
 					<div class="left">
