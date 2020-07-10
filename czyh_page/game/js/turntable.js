@@ -29,6 +29,7 @@ function getData() {
 		token: window.localStorage.getItem('token'),
 	}).then(e => {
 		Data = e;
+		$('.nowjifen').text(Data.score)
 		setTurnTable();
 		setNameList();
 		setassortedBlindBox();
