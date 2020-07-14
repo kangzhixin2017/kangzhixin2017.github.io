@@ -16,8 +16,9 @@ function http(url, method) {
 					}
 					const des_key = decryptAES(data.sign, AES_KEY, AES_IV)
 					const des_data = decryptDEC(data.data, des_key)
-					resolve(JSON.parse(des_data))
-					console.log(url.msg, '解密后：', JSON.parse(des_data))
+					data.data = JSON.parse(des_data)
+					resolve(data)
+					console.log(url.msg, '解密后：', data)
 				}
 			},
 			error: function(e) {

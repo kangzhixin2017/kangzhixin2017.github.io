@@ -11,6 +11,7 @@ http(URL.QRorder, {
 	token: window.localStorage.getItem('token'),
 	seriesId: window.localStorage.getItem('id')
 }).then(e => {
+	e = e.data
 	if(e.address) {
 		$('#name').text(e.address.receiverName);
 		$('#address').text(e.address.province + e.address.city + e.address.area + e.address.address);
@@ -61,10 +62,11 @@ function confirm() {
 	}
 	console.log(da)
 	http(URL.TJorder, da).then(e => {
-		if(e.code == 1002){
+		if(e.code == 1002) {
 			mask.type6(e.message)
 		}
-		if(!e.code) {
+		if(e.code == 200) {
+			e = e.data
 			orderNO = e.orderNo;
 			$('#mask_conf').css('display', 'flex')
 			$('.en_jifen').text(en_jifen)
@@ -97,7 +99,7 @@ function input_r() {
 			if(e.code == 10038) {
 				mask.type6(e.message, function() {})
 			}
-			if(!e.code) {
+			if(e.code == 200) {
 				mask_btn()
 				mask.type5('支付成功！', function() {
 					window.location.href = 'index.html'

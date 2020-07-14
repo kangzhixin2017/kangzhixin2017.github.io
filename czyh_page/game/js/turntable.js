@@ -14,21 +14,20 @@ if(GetQueryString('token')) {
 http(URL.config, {
 	attribute: 'head'
 }).then(e => {
-	URL_HEAD = e;
-	window.localStorage.setItem('URL_HEAD', e);
+	URL_HEAD = e.data;
+	window.localStorage.setItem('URL_HEAD', URL_HEAD);
 	getData();
 })
 $(function() {
 	//拼单抢购
 	status('1');
-
 });
 
 function getData() {
 	http(URL.turntable, {
 		token: window.localStorage.getItem('token'),
 	}).then(e => {
-		Data = e;
+		Data = e.data;
 		$('.nowjifen').text(parseInt(Data.myScore))
 		setTurnTable();
 		setNameList();
@@ -80,7 +79,7 @@ function toSyndicate(i) {
 }
 
 function setNameList() {
-	if(!Data.winList.length){
+	if(!Data.winList.length) {
 		return
 	}
 	$('.noLi').hide();
@@ -129,6 +128,7 @@ function start() {
 		token: window.localStorage.getItem('token'),
 		type: 1
 	}).then(e => {
+		e = e.data;
 		//奖品有更新
 		if(e.code == 10036) {
 			maskShow(e.code);

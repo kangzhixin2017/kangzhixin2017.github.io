@@ -2,7 +2,7 @@ var Data;
 http(URL.together, {
 	seriesId: window.localStorage.getItem('id')
 }).then(e => {
-	Data = e;
+	Data = e.data;
 	setLB();
 	setMsg();
 	setPT();

@@ -3,6 +3,7 @@ http(URL.shareAssortedBillPage, {
 	seriesId: window.localStorage.getItem('id'),
 	assortedBillId: window.localStorage.getItem('assortedBillId'),
 }).then(e => {
+	e = e.data;
 	$('.top').text(e.blindBoxSeries.seriesName)
 	$('.jifen').text(e.blindBoxSeries.assortedPrice)
 	$('.btn').text('参与' + e.assortedBillList[0].initiateNickname + '的拼单')

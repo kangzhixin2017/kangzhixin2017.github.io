@@ -5,7 +5,7 @@ var HEAD_IMG = window.localStorage.getItem('URL_HEAD')
 http(URL.blindBox, {
 	seriesId: window.localStorage.getItem('id')
 }).then(e => {
-	Data = e;
+	Data = e.data;
 	setLunbo();
 	setprize();
 	setPage();
@@ -13,7 +13,7 @@ http(URL.blindBox, {
 http(URL.trytry, {
 	seriesId: window.localStorage.getItem('id')
 }).then(e => {
-	tryData = e;
+	tryData = e.data;
 })
 function setPage(){
 	$('.img1').attr('src',HEAD_IMG+Data.blindBoxSeries.seriesCover)
