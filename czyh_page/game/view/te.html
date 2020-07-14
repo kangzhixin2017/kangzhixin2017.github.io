@@ -7,111 +7,55 @@
 		<title>我的邀请</title>
 		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="../css/index.css" />
-		<link rel="stylesheet" type="text/css" href="../css/navigationBar.css" />
-		<link rel="stylesheet" type="text/css" href="../css/tabBar.css" />
-		<link rel="stylesheet" type="text/css" href="../css/invite.css" />
-		<link rel="stylesheet" type="text/css" href="../css/toast.css" />
-		<!--<script src="./js/components/" type="text/javascript" charset="utf-8"></script>-->
-		<!--<script src="./js/rollups/core" type="text/javascript" charset="utf-8"></script>-->
-		<!--<script src="./js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>-->
-		<!--<script src="./js/rollups/aes.js" type="text/javascript" charset="utf-8"></script>-->
-		<script src="../js/crypto-js.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/jsencrypt.js" type="text/javascript" charset="utf-8"></script>
-		<!--<script src="./js/rollups/tripledes.js" type="text/javascript" charset="utf-8"></script>-->
-		<!--<script src="./js/components/mode-ecb.js" type="text/javascript" charset="utf-8"></script>-->
-		<!--<script src="./js/components/pad-nopadding.js" type="text/javascript" charset="utf-8"></script>-->
-		<!--<script src="./js/components/pad-zeropadding.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="../js/mask.js" type="text/javascript" charset="utf-8"></script>
+
 		<title></title>
 	</head>
 
 	<body>
-
+		<button onclick="type1()">弹窗1</button>
+		<button onclick="type2()">弹窗2</button>
+		<button onclick="type3()">弹窗3</button>
+		<button onclick="type4()">弹窗4</button>
+		<button onclick="type5()">弹窗5</button>
+		<button onclick="type6()">弹窗6</button>
+		<button onclick="type7()">弹窗7</button>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			var key = "f4k9f5w7f8g4er26";
-			var iv = "5e8y6w45ju8w9jq8";
-			//			alert(decrypt('idTWImf4d5/yoSuXe4AZXsJwXc532GUK9ZgG/FovCqo=', key, iv));
-			//			alert(encrypt('gp7jX1Gn8W07ClvB7Di8kyD3', key, iv))
-
-			// 加密
-			function encrypt(data, key, iv) { //key,iv：16位的字符串
-				var key1 = CryptoJS.enc.Latin1.parse(key);
-				var iv1 = CryptoJS.enc.Latin1.parse(iv);
-				return CryptoJS.AES.encrypt(data, key1, {
-					iv: iv1,
-					mode: CryptoJS.mode.CBC,
-					padding: CryptoJS.pad.ZeroPadding
-				}).toString();
+			function type1() {
+				mask.type1('../img/bg11.png', 'kang', '666', (e) => {
+					console.log(e)
+				})
 			}
-			// 解密
-			function decrypt(data, key, iv) { //key,iv：16位的字符串
-				var key1 = CryptoJS.enc.Latin1.parse(key);
-				var iv1 = CryptoJS.enc.Latin1.parse(iv);
-				var decrypted = CryptoJS.AES.decrypt(data, key1, {
-					iv: iv1,
-					mode: CryptoJS.mode.CBC,
-					padding: CryptoJS.pad.ZeroPadding
-				});
-				return decrypted.toString(CryptoJS.enc.Utf8);
+			function type2() {
+				mask.type2((e) => {
+					console.log(e)
+				})
 			}
-
-			function getStrFromBytes(arr) {
-				var r = "";
-				for(var i = 0; i < arr.length; i++) {
-					r += String.fromCharCode(arr[i]);
-				}
-				console.log(r);
-				return kiv;
+			function type3() {
+				mask.type3((e) => {
+					console.log(e)
+				})
 			}
-
-			var key = 'gp7jX1Gn8W07ClvB7Di8kyD3'; // 秘钥
-			var message = 'Ml890eBmnHR35aZKFVOnPPTsji50pQZgZwba9bDTsX3dG2rZ2Ai6jUUwXFO8LY3DRDDacnkSB5JClEFibgzznL4BfQiPlHTLIiHo2J/QfUlg+n3UYs6MpkxFQZj15Zp/ynNDl+uWW6tRKHHB8XyS+mlXBmIpTO0QuJomSOrHXcwW6fHHa7xEehLYZbioy4RDtVnrNQ7HgQvzHne+ti8Es/d7q2nafgYAZBXq0W7iAoap7uaInX+J6Dl1ehBmwxRytrbe/wcqDDK65wPOO7EgRRYt8Ny6R4R8Jh8fcilsyfQPYEYPMDrYydCIg4VlCyFcAwsCrFiDc/F33VL4/FwaitkR+pDsnsJ4RaAu4cNdaJWySUDQ+pH6KSBpIup6mnV1bA2fUXeCvo97b0Y6dbB6xrgqObom2egbpkxYi6VTHkqw214PKet/qOX+KkrieaS1WyAkn7pvVuxpzWdGa4aNy5Mbx9/kbdsdJArpMAbm7+3u8I61dkDfoEwM5T6dGlhSi+lMjOeLJsgKvjthxE1Bjkd3ak61PkYzcvUf6w2ha9ovqaJ6hLhFuhRSosG6sFhdv8FGsUxq6RA9O73LM57vn36FWZMmvZb5ECrPcr0npNBGsp7YPHrbVdNa4NW3VAZ8yPp4jEetTDEvxJ6aCd9Q7oC8AjqNPOkFaUP0kbriWqhSMoDdh6t66fJgEv+uKnW8ihDlhXluW0uvR/Ub+k/GXvRoKi6ZfnO2gQTexN0k9gnaZGJAoa6OoA=='
-			var kiv = 'v3j!7X@-';
-			var message2 = 'wXgrbJBCU2vZqzTJRd6VP/evr5rQSC/VM7ckcFYXW8DeGOt/rRFIXpU0BDfTAMjMJHV9AC2xqNw='; // 待解密密文
-			var keyHex = CryptoJS.enc.Utf8.parse(key); // 将秘钥转换为utf8格式
-			var ivHex = CryptoJS.enc.Utf8.parse(kiv); // 将向量装换位字符串再转为utf8
-			var decrypted2 = CryptoJS.DES.decrypt({
-				ciphertext: CryptoJS.enc.Base64.parse(message) // 因为Java加密时进行了Base64编码,所以此处解码
-			}, keyHex, {
-				iv: ivHex,
-				mode: CryptoJS.mode.CBC, // 模式有很多种,由Java代码知道使用的是CBC
-				padding: CryptoJS.pad.Pkcs7 // 填充模式有很多种,但是Java用的Pkcs5,此处Pkcs7也是可以解密的
-			});
-//			console.log(decrypted2); // 不转换为字符串是得不到字符串结果的
-//			console.log(decrypted2.toString(CryptoJS.enc.Base64));
-
-			var key4 = 'gp7jX1Gn8W07ClvB7Di8kyD3'; // 秘钥
-			var message4 = 'Ml890eBmnHR35aZKFVOnPPTsji50pQZgZwba9bDTsX3dG2rZ2Ai6jUUwXFO8LY3DRDDacnkSB5JClEFibgzznL4BfQiPlHTLIiHo2J/QfUlg+n3UYs6MpkxFQZj15Zp/ynNDl+uWW6tRKHHB8XyS+mlXBmIpTO0QuJomSOrHXcwW6fHHa7xEehLYZbioy4RDtVnrNQ7HgQvzHne+ti8Es/d7q2nafgYAZBXq0W7iAoap7uaInX+J6Dl1ehBmwxRytrbe/wcqDDK65wPOO7EgRRYt8Ny6R4R8Jh8fcilsyfQPYEYPMDrYydCIg4VlCyFcAwsCrFiDc/F33VL4/FwaitkR+pDsnsJ4RaAu4cNdaJWySUDQ+pH6KSBpIup6mnV1bA2fUXeCvo97b0Y6dbB6xrgqObom2egbpkxYi6VTHkqw214PKet/qOX+KkrieaS1WyAkn7pvVuxpzWdGa4aNy5Mbx9/kbdsdJArpMAbm7+3u8I61dkDfoEwM5T6dGlhSi+lMjOeLJsgKvjthxE1Bjkd3ak61PkYzcvUf6w2ha9ovqaJ6hLhFuhRSosG6sFhdv8FGsUxq6RA9O73LM57vn36FWZMmvZb5ECrPcr0npNBGsp7YPHrbVdNa4NW3VAZ8yPp4jEetTDEvxJ6aCd9Q7oC8AjqNPOkFaUP0kbriWqhSMoDdh6t66fJgEv+uKnW8ihDlhXluW0uvR/Ub+k/GXvRoKi6ZfnO2gQTexN0k9gnaZGJAoa6OoA=='
-			var iv4 = 'v3j!7X@-';
-			console.log('s', decryptByDESModeEBC(message4, key4, iv4))
-
-			function decryptByDESModeEBC(ciphertext, key, iv) {
-				//把私钥转换成UTF - 8编码的字符串
-				var keyHex = CryptoJS.enc.Utf8.parse(key);
-				var ivHex = CryptoJS.enc.Utf8.parse(iv);
-				//				console.log(key,iv)
-				//				console.log(ivHex.toString(CryptoJS.enc.Utf8))
-				var decrypted = CryptoJS.DES.decrypt({
-					ciphertext: ciphertext
-				}, keyHex, {
-					iv: ivHex,
-					mode: CryptoJS.mode.CBC,
-					padding: CryptoJS.pad.Pkcs7
-				});
-				return decrypted.toString(CryptoJS.enc.Utf8);
+			function type4() {
+				mask.type4((e) => {
+					console.log(e)
+				})
 			}
-			console.log(decrypt())
-
-			function decrypt() {
-				var text = message4;
-				var keyHex = CryptoJS.enc.Utf8.parse('gp7jX1Gn8W07ClvB7Di8kyD3');
-				var decrypt22 = CryptoJS.TripleDES.decrypt(text, keyHex, {
-					iv: CryptoJS.enc.Utf8.parse('v3j!7X@-'),
-					mode: CryptoJS.mode.CBC,
-					padding: CryptoJS.pad.Pkcs7
-				});
-				//解析数据后转为UTF-8
-				var parseData = decrypt22.toString(CryptoJS.enc.Utf8);
-				return parseData
+			function type5() {
+				mask.type5((e) => {
+					console.log(e)
+				})
+			}
+			function type6() {
+				mask.type6((e) => {
+					console.log(e)
+				})
+			}
+			function type7() {
+				mask.type7((e) => {
+					console.log(e)
+				})
 			}
 		</script>
 	</body>

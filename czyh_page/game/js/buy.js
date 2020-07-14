@@ -53,3 +53,6 @@ function setLunbo() {
 function maskDown(){
 	$('#mask').hide()
 }
+function btn(){
+	window.location.href = 'confirmOrder.html?type=1'
+}

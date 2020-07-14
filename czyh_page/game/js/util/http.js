@@ -1,6 +1,6 @@
 function http(url, method) {
 	return new Promise((resolve, reject) => {
-		console.log(url.msg, url.url)
+		console.log(url.msg, url.url, method)
 		$.ajax({
 			url: url.url,
 			type: 'post',

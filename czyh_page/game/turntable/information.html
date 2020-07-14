@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>完善信息</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/information.css" />
+		<script src="../js/util/config.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="head">
+				<img class="prizeImg" src="" />
+				<div class="msg">
+					<div>中奖奖品</div>
+					<div class="prizeName">iPhone 11 Pro 太空灰手机一部</div>
+				</div>
+			</div>
+			<div class="info">完善以下信息领取奖品</div>
+			<div class="input">
+				<div class="item">
+					<div>收件人：</div>
+					<input class="name" type="" id="" value="" placeholder="请输入您的真实姓名" />
+				</div>
+				<div class="item">
+					<div>手机号：</div>
+					<input class="phone" type="" id="" value="" placeholder="请输入收件人手机号" />
+				</div>
+				<div class="item2">
+					<div>收货地址：</div>
+					<textarea class="address" rows="2" cols="1" placeholder="如街道、门牌号、小区、楼栋号、单元室等"></textarea>
+				</div>
+			</div>
+			<div class="btn" onclick="confirm()">完成</div>
+			<div class="showcopy" style="display: none;width: 100%;justify-content: center;position: fixed;top: calc(100vh / 2);z-index: 999;">
+				<div class="showmsg" style="line-height: .22rem;margin: 0 auto;padding: .13rem .28rem;background-color: rgba(17, 17, 17, .9);text-align: center;border-radius: 4px;color: white;font-size: .16rem;"></div>
+			</div>
+			<div class="jf_mask5" style="position: fixed;width: 100vw;height: 100vh;display: none;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
+				<div style="width: 2.7rem;background-color: white;border-radius: 8px;padding-top: .2rem;">
+					<div style="width: 100%;text-align: center;font-size: .16rem;line-height: .22rem;color: #333333;">提示</div>
+					<div style="color: #666666;font-size: .14rem;line-height: .2rem;width: 100%;text-align: center;margin-top: .14rem;">提交成功！</div>
+					<div onclick="mask_btn5()" style="margin-top: .2rem;width: 100%;line-height: .44rem;border-top: 1px solid #E9E9E9;text-align: center;">知道了</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/crypto-js.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jsencrypt.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/aes.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/util/util.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/util/interface.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/util/http.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var isclick = false;
+
+			$('.prizeImg').attr('src', window.localStorage.getItem('prize_img'))
+			$('.prizeName').text(window.localStorage.getItem('prize_name'))
+
+			function confirm() {
+				if(isclick) {
+					return
+				}
+				isclick = true;
+				var name = $('.name').val();
+				var phone = $('.phone').val();
+				var address = $('.address').val();
+				if(name.length == 0) {
+					$('.showcopy').css('display', 'flex')
+					$('.showmsg').text('请输入您的领奖信息')
+				} else if(phone.length == 0) {
+					$('.showcopy').css('display', 'flex')
+					$('.showmsg').text('请输入正确的手机号码')
+				} else if(address.length == 0) {
+					$('.showcopy').css('display', 'flex')
+					$('.showmsg').text('请输入您的收货地址')
+				} else {
+					app(URL.commitOrderIOS, {
+						orderNo: window.localStorage.getItem('orderNo'),
+						receiverName: name,
+						tel: phone,
+						address: address,
+					}, 'AppBack');
+					//					http(URL.commitOrder, {
+					//						orderNo: window.localStorage.getItem('orderNo'),
+					//						receiverName: name,
+					//						tel: phone,
+					//						address: address,
+					//					}).then(e => {
+					//						if(e.code == 200) {
+					//							$('.jf_mask5').css('display','flex');
+					//							$('.name').val('');
+					//							$('.phone').val('');
+					//							$('.address').val('')
+					//						}
+					//					})
+				}
+				setTimeout(function() {
+					$('.showcopy').hide()
+					isclick = false
+				}, 2000)
+			}
+
+			function mask_btn5() {
+				window.location.href = 'index.html'
+			}
+
+			function AppBack(e) {
+				if(e.code == 200) {
+					$('.jf_mask5').css('display', 'flex');
+					$('.name').val('');
+					$('.phone').val('');
+					$('.address').val('')
+				}
+			}
+		</script>
+	</body>
+
+</html>

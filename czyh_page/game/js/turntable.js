@@ -29,7 +29,7 @@ function getData() {
 		token: window.localStorage.getItem('token'),
 	}).then(e => {
 		Data = e;
-		$('.nowjifen').text(Data.score)
+		$('.nowjifen').text(parseInt(Data.myScore))
 		setTurnTable();
 		setNameList();
 		setassortedBlindBox();
@@ -60,7 +60,7 @@ function setassortedBlindBox() {
 							<div class="title">${Data.assortedBlindBox[i].seriesName}</div>
 							<div class="num">
 								<div><span>${Data.assortedBlindBox[i].price}</span>积分</div>
-								<img onclick='toSyndicate(${i})' src="../img/turn_btn.png" />
+								<img onclick='toSyndicate(${Data.assortedBlindBox[i].id})' src="../img/turn_btn.png" />
 							</div>
 						</div>
 					</div>`)
@@ -75,9 +75,15 @@ function toBuy(i) {
 
 function toSyndicate(i) {
 	console.log(i)
+	window.localStorage.setItem('id', i)
+	window.location.href = 'together.html';
 }
 
 function setNameList() {
+	if(!Data.winList.length){
+		return
+	}
+	$('.noLi').hide();
 	for(var i = 0; i < Data.winList.length; i++) {
 		var img = URL_HEAD + Data.winList[i].head;
 		var time = formatDate(Data.winList[i].createTime, '2')
@@ -107,7 +113,7 @@ function setTurnTable() {
 		//		console.log(rotate)
 		$('.table').append(`<div class="item" style="transform: rotate(${rotate}deg);transform-origin: bottom;height: 1.65rem;width: .7rem;display: flex;position: absolute;align-items: center;flex-direction: column;">
 						<img style="margin-top: .35rem;width: .5rem;height: .4rem;display: block;" src="${img}" />
-						<div style="font-size: .1rem;color: #E13738;">${Data.drawList[i].name}</div>
+						<div style="font-size: .1rem;color: #E13738;text-align: center;">${Data.drawList[i].name}</div>
 					</div>`)
 		rotate += 45;
 		//		Data.drawList[i]
@@ -135,6 +141,7 @@ function start() {
 			maskShow(e.code);
 			return;
 		}
+		window.localStorage.setItem('orderNo', e.orderNo)
 		for(var i = 0; i < Data.drawList.length; i++) {
 			if(e.dId == Data.drawList[i].id) {
 				prize = Data.drawList[i];
@@ -233,6 +240,9 @@ function maskShow(code) {
 
 function maskDown() {
 	$('#mask').hide()
+	window.localStorage.setItem('prize_img', URL_HEAD + prize.img)
+	window.localStorage.setItem('prize_name', prize.name)
+	window.location.href = 'information.html'
 }
 //setInterval(function(){
 //	test()
@@ -245,3 +255,6 @@ function maskDown() {
 //		}).then(e => {})
 //	}
 //}
+function mask_btn5() {
+	window.location.reload();
+}

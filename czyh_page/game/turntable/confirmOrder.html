@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>确认订单</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/confirmOrder.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="address" onclick="toAddress()">
+				<img src="../img/address.png" />
+				<div class="addr">
+					<div id="name"></div>
+					<div id="address">请选择地址</div>
+				</div>
+				<img src="../img/btn_tight.png" />
+			</div>
+			<div class="prizeMsg">
+				<div class="top">
+					<img src="../img/bg10.png" />
+					<div>
+						<div class="name"></div>
+						<div class="jifen">
+							<div class="jifen_1">支付：600积分</div>
+							<div>x1</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottom">
+					<div><span></span></div>
+					<div>合计：<span class="end_jifen"></span><span>积分</span></div>
+				</div>
+			</div>
+			<div class="confirm" onclick="confirm()">提交</div>
+			<div id="mask_conf" style="display: none;align-items: flex-end;position: fixed;width: 100vw;height: 100vh;background-color: rgba(0, 0, 0, .49);top: 0;left: 0;">
+				<div style="background-color: white;height: 1.56rem;width: 100%;border-radius: 12px 12px 0 0;position: relative;">
+					<img onclick="mask_btn()" style="display: block;position: absolute;right: .12rem;top: .12rem;width: .2rem;height: .2rem;" src="../img/back.png" />
+					<div style="color: #333333;width: 100%;text-align: center;font-weight: bold;font-size: .16rem;margin-top: .19rem;">支付：<span class="en_jifen" style="font-size: .24rem;"></span>积分</div>
+					<div style="color: #999999;width: 100%;text-align: center;font-weight: bold;font-size: .12rem;margin-top: .08rem;">剩余积分：0</div>
+					<div onclick="pay()" style="width: 3.15rem;line-height: .4rem;text-align: center;background-color: #FFDD24;border-radius: 4px;margin: .19rem auto;font-size: .15rem;color: #333333;font-weight: bold;">立即支付</div>
+				</div>
+			</div>
+			<div id="mask_conf2" style="display: none;justify-content: center;align-items: center;position: fixed;width: 100vw;height: 100vh;background-color: rgba(0, 0, 0, .49);top: 0;left: 0;">
+				<div style="background-color: white;width: 2.9rem;border-radius: 8px;padding: .2rem .13rem .3rem;position: relative;">
+					<img onclick="mask_btn()" style="display: block;position: absolute;right: .12rem;top: .12rem;width: .2rem;height: .2rem;" src="../img/back.png" />
+					<div style="width: 100%;text-align: center;font-size: .15rem;line-height: .21rem;font-weight: bold;">请输入支付密码</div>
+					<div style="height: 1px;width: 100%;background-color: #E9E9E9;margin: .2rem 0;"></div>
+					<div style="width: 2.64rem;height: .44rem;position: relative;display: flex;">
+						<span style="width: 100%;height: .44rem;border: .01rem solid #E9E9E9;display: block;"></span>
+						<span style="width: 100%;height: .44rem;border: .01rem solid #E9E9E9;display: block;"></span>
+						<span style="width: 100%;height: .44rem;border: .01rem solid #E9E9E9;display: block;"></span>
+						<span style="width: 100%;height: .44rem;border: .01rem solid #E9E9E9;display: block;"></span>
+						<span style="width: 100%;height: .44rem;border: .01rem solid #E9E9E9;display: block;"></span>
+						<span style="width: 100%;height: .44rem;border: .01rem solid #E9E9E9;display: block;"></span>
+						<input id="inp" onkeyup="input_r()" style="position: absolute;top: 0;left: 0;background: none;letter-spacing:.4rem;line-height: .44rem;text-indent: .185rem;width: 120%;overflow: hidden;overflow-y: hidden;display: block;caret-color:rgba(0,0,0,0);" maxlength="6" type="password" name="" id="" value="" placeholder="" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<!--可删除-->
+	<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/mask.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/util/config.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/crypto-js.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/jsencrypt.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/aes.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/util/util.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/util/interface.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/util/http.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/confirmOrder.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+	</script>
+
+</html>
