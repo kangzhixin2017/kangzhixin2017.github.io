@@ -13,16 +13,17 @@
 	</head>
 
 	<body>
-		<div class="app">
-			<img style="width: 100%;display: block;position: absolute;z-index: 1;" src="../img/turn_in_bg1.png"/>
-			<div style="width: 3.15rem;height: .51rem;background: url(../img/turn_in_bg2.png) no-repeat;background-size: 100% 100%;position: absolute;z-index: 9999999999999;top: 4.72rem;left: .3rem;"></div>
-			<div style="width: 3.15rem;text-align: center;color: #FE5126;font-size: .16rem;font-weight: bold;line-height: .51rem;background: url(../img/turn_in_bg3.png) no-repeat;background-size: 100% 100%;position: absolute;z-index: 9999999999999;top: 5.38rem;left: .3rem;">逛逛幸运盒子</div>
+		<div class="app" style="background: url(../img/turn_in_bg1.png) no-repeat;background-size: 100% 100%;display: flex;justify-content: center;">
+			<img style="width: 100%;display: block;position: absolute;z-index: 1;margin-top: .2rem;" src="../img/turn_in_bg5.png" />
+			<div onclick="copy1()" style="width: 3.15rem;height: .51rem;background: url(../img/turn_in_bg2.png) no-repeat;background-size: 100% 100%;position: absolute;z-index: 9999999999999;bottom: .81rem;"></div>
+			<div onclick="toIn()" style="width: 3.15rem;text-align: center;color: #FE5126;font-size: .16rem;font-weight: bold;line-height: .51rem;background: url(../img/turn_in_bg3.png) no-repeat;background-size: 100% 100%;position: absolute;z-index: 9999999999999;bottom: .15rem;">逛逛幸运盒子</div>
 		</div>
 	</body>
 
 	<!--可删除-->
 
 	<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/mask.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/util/config.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/crypto-js.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/jsencrypt.js" type="text/javascript" charset="utf-8"></script>
@@ -32,6 +33,22 @@
 	<script src="../js/util/http.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/confirmOrder.js" type="text/javascript" charset="utf-8"></script>
 	<script>
+		function showMask() {
+			mask.type8(function(e) {
+				if(e == '确认') {
+					window.location.href = 'index.html'
+				}
+			})
+		}
+
+		function toIn() {
+			window.location.href = 'index.html'
+		}
+
+		function copy1() {
+			copy('http://47.114.136.117:8002/other/prompt.html?seriesId=' + window.localStorage.getItem('id') + '&assortedBillId=' + window.localStorage.getItem('assortedBillId'))
+			mask.type6('复制成功！')
+		}
 	</script>
 
 </html>

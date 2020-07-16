@@ -3,9 +3,10 @@ var headUrl = window.localStorage.getItem('URL_HEAD')
 var download;
 http(URL.config, {
 	attribute: 'download'
-}).then(e => {
-	download = e
-})
+},'configBack')
+function configBack(e){
+	download = e.data;
+}
 $(function() {
 	var j = parseInt(document.documentElement.style.fontSize) * 1.45
 	var a = window.screen.height;
@@ -34,26 +35,26 @@ function setTime() {
 
 http(URL.drawInvite, {
 	token: window.localStorage.getItem('token')
-}).then(e => {
-	Data = e;
-	console.log(e.inviteUser.length)
-	if(e.inviteUser.length == 0) {
+},'drawInviteBack')
+function drawInviteBack(e){
+	Data = e.data;
+	console.log(Data.inviteUser.length)
+	if(Data.inviteUser.length == 0) {
 		$('.detail_msg').show()
 	} else {
-		for(var i = 0; i < e.inviteUser.length; i++) {
-			var img = headUrl + e.inviteUser[i].head;
+		for(var i = 0; i < Data.inviteUser.length; i++) {
+			var img = headUrl + Data.inviteUser[i].head;
 			$('.details').append(`<div class="item_i">
 						<div class="left">
 							<img src="${img}" />
-							<div>${e.inviteUser[i].nickname}</div>
+							<div>${Data.inviteUser[i].nickname}</div>
 						</div>
-						<div class="right">助力了${e.inviteUser[i].id/100}%</div>
+						<div class="right">助力了${Data.inviteUser[i].id/100}%</div>
 					</div>`)
 		}
 	}
 	setProgress();
-})
-
+}
 function setProgress() {
 	if(Data.count) {
 		$('.Progress1').text(Data.count / 100 + "%")

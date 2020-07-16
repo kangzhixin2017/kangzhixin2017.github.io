@@ -80,7 +80,7 @@
 					$('.showcopy').css('display', 'flex')
 					$('.showmsg').text('请输入您的收货地址')
 				} else {
-					app(URL.commitOrderIOS, {
+					http(URL.commitOrder, {
 						orderNo: window.localStorage.getItem('orderNo'),
 						receiverName: name,
 						tel: phone,
@@ -111,6 +111,7 @@
 			}
 
 			function AppBack(e) {
+				console.log(e)
 				if(e.code == 200) {
 					$('.jf_mask5').css('display', 'flex');
 					$('.name').val('');

@@ -122,6 +122,7 @@
 	height: .3rem;
 	display: block;
 	margin-right: .04rem;
+	border-radius: 4px;
 }
 .jl .jl_list .item .i_left .name{
 	

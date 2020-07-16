@@ -1,12 +1,46 @@
 var Data;
-http(URL.together, {
-	seriesId: window.localStorage.getItem('id')
-}).then(e => {
+http(URL.config, {
+	attribute: 'head'
+}, 'configBack')
+
+function configBack(e) {
+	window.localStorage.setItem('URL_HEAD', e.data);
+	if(GetQueryString('seriesId')) {
+		window.localStorage.setItem('id', GetQueryString('seriesId'));
+		$('#mask_conf1').css('display', 'flex')
+	}
+	if(GetQueryString('assortedBillId')) {
+		window.localStorage.setItem('assortedBillId', GetQueryString('assortedBillId'));
+		http(URL.shareAssortedBillPage, {
+			token: window.localStorage.getItem('token'),
+			seriesId: window.localStorage.getItem('id'),
+			assortedBillId: window.localStorage.getItem('assortedBillId'),
+		}).then(e => {
+			$('.mask_name').text('参与' + e.data.assortedBillList[0].initiateNickname + '的拼单')
+			$('.mask_img').attr('src', window.localStorage.getItem('URL_HEAD') + e.data.assortedBillList[0].initiateHead)
+			setInterval(() => {
+				setTime2(e.data.assortedBillList[0].createTime)
+			}, 200)
+		})
+	}
+	http(URL.together, {
+		seriesId: window.localStorage.getItem('id')
+	}, 'togetherBack')
+}
+
+function togetherBack(e) {
 	Data = e.data;
 	setLB();
 	setMsg();
 	setPT();
-})
+}
+
+function setTime2(time) {
+	var nowtime = new Date().getTime();
+	var endtime = (parseInt(time) + 24 * 60 * 60 * 1000 - 1);
+	var date_s = new Date(endtime - nowtime - 28800000)
+	$('.time').text((date_s.getHours() > 9 ? date_s.getHours() : '0' + date_s.getHours()) + ':' + (date_s.getMinutes() > 9 ? date_s.getMinutes() : '0' + date_s.getMinutes()) + ":" + (date_s.getSeconds() > 9 ? date_s.getSeconds() : '0' + date_s.getSeconds()))
+}
 
 function setTime(time, i) {
 	var nowtime = new Date().getTime();
@@ -44,6 +78,10 @@ function setPT() {
 function toPD(id) {
 	console.log(id)
 	window.localStorage.setItem('assortedBillId', id)
+	window.location.href = 'PD.html'
+}
+
+function toPD1() {
 	window.location.href = 'PD.html'
 }
 
@@ -101,4 +139,5 @@ function setMsg() {
 
 function mask_btn() {
 	$('#mask_conf2').hide()
+	$('#mask_conf1').hide()
 }

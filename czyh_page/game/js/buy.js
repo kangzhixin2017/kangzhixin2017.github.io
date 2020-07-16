@@ -4,27 +4,33 @@ var tryData;
 var HEAD_IMG = window.localStorage.getItem('URL_HEAD')
 http(URL.blindBox, {
 	seriesId: window.localStorage.getItem('id')
-}).then(e => {
+}, 'blindBoxBack')
+
+function blindBoxBack(e) {
 	Data = e.data;
 	setLunbo();
 	setprize();
 	setPage();
-})
+}
 http(URL.trytry, {
 	seriesId: window.localStorage.getItem('id')
-}).then(e => {
+}, 'trytryBack')
+
+function trytryBack(e) {
 	tryData = e.data;
-})
-function setPage(){
-	$('.img1').attr('src',HEAD_IMG+Data.blindBoxSeries.seriesCover)
+}
+
+function setPage() {
+	$('.img1').attr('src', HEAD_IMG + Data.blindBoxSeries.seriesCover)
 	$('.jifen').text(Data.blindBoxSeries.price)
 }
+
 function Try() {
-	$('#mask').css('display','flex')
+	$('#mask').css('display', 'flex')
 	document.getElementById('mask').addEventListener('touchmove', function(event) {
 		event.preventDefault();
 	})
-	$('.tryImg').attr('src',HEAD_IMG+tryData.cover)
+	$('.tryImg').attr('src', HEAD_IMG + tryData.cover)
 	$('.tryName').text(tryData.name)
 	$('.tryNum').text(tryData.id)
 }
@@ -50,9 +56,10 @@ function setLunbo() {
 	});
 }
 
-function maskDown(){
+function maskDown() {
 	$('#mask').hide()
 }
-function btn(){
+
+function btn() {
 	window.location.href = 'confirmOrder.html?type=1'
 }

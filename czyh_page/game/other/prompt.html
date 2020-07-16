@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="msg" style="width: 100%;text-align: center;font-size: .15rem;color: #333333;padding: 10px 20px;word-break: break-all;"></div>
+		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/util/util.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var seriesId = GetQueryString('seriesId');
+			var assortedBillId = GetQueryString('assortedBillId');
+			if(CheckIsAndroid()) {
+				window.location.href = 'skip://imlife:8686/web?url=http://47.114.136.117:8002/turntable/together.html?seriesId=1&assortedBillId=23&title=拼团&seriesId=1&assortedBillId=23'
+				setTimeout(() => {
+					$('.msg').text('请复制以下链接到浏览器打开：http://47.114.136.117:8002/other/prompt_1.html?')
+				}, 1000)
+			} else if(CheckIsIOS()) {
+				window.location.href = 'czyhim://pd/web?url=http://47.114.136.117:8002/turntable/together.html&title=拼团&seriesId=' + seriesId + '&assortedBillId=' + assortedBillId;
+				setTimeout(() => {
+					$('.msg').text('请复制以下链接到浏览器打开：http://47.114.136.117:8002/other/prompt_1.html?seriesId=' + seriesId + '&assortedBillId=' + assortedBillId)
+				}, 1000)
+			}
+		</script>
+	</body>
+
+</html>

@@ -13,42 +13,46 @@ var rule_click = false;
 //请求数据
 //var token = 'aa974cb187c64e48ba603aaa753d6cbc'
 var token = GetQueryString('token');
+window.localStorage.setItem('token', token)
 //alert(token)
 //获取配置
 http(URL.config, {
 	attribute: 'head'
-}).then(e => {
-	CONFIG_URL = e;
+}, 'configBack')
+
+function configBack(e) {
+	CONFIG_URL = e.data;
 	init()
-})
+}
 //请求数据并设置页面
 function init() {
-	http(URL.invite, {
-		token: token
-	}).then(e => {
-		//		console.log(e)
-		shareUrl = e.shareUrl;
-		inviteCode = e.inviteCode;
-		//设置轮播数据
-		carouselList = e.carouselList
-		carousel(e.carouselList)
-		//设置获得的积分
-		$('.invite_num').html(e.awardScoreToMe)
-		//设置我的邀请人数
-		$('.total_user').html(e.shareCount)
-		//设置我的邀请获得的积分
-		$('.total_invite').html(e.awardScoreCount)
-		$('.num2').html('完成可得' + e.awardScoreToFriend + '积分')
-		//设置排行榜
-		Top(e.rankingList)
-	})
+	http(URL.invite, {}, 'initBack')
+}
+
+function initBack(e) {
+	e = e.data;
+	//		console.log(e)
+	shareUrl = e.shareUrl;
+	inviteCode = e.inviteCode;
+	//设置轮播数据
+	carouselList = e.carouselList
+	carousel(e.carouselList)
+	//设置获得的积分
+	$('.invite_num').html(e.awardScoreToMe)
+	//设置我的邀请人数
+	$('.total_user').html(e.shareCount)
+	//设置我的邀请获得的积分
+	$('.total_invite').html(parseInt(e.awardScoreCount))
+	$('.num2').html('完成可得' + e.awardScoreToFriend + '积分')
+	//设置排行榜
+	Top(e.rankingList)
 }
 
 function Top(data) {
 	if(data && data.length > 0) {
 		for(var i = 0; i < data.length; i++) {
 			var img = "../img/one" + i + ".png"
-			var time = formatDate(data[i].finishTime,'1')
+			var time = formatDate(data[i].finishTime, '1')
 			if(i < 3) {
 				$('.list1').append(`<div class="item">
 						<div class="item_l">

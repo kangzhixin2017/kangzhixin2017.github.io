@@ -1,51 +1,75 @@
-function http(url, method) {
-	return new Promise((resolve, reject) => {
-		console.log(url.msg, url.url, method)
-		$.ajax({
-			url: url.url,
-			type: 'post',
-			data: method,
-			success: function(data) {
-				console.log(url.msg, data)
-				if(data.code != 200) {
-					resolve(data);
-				} else if(data.code == 200 || data.code == 10036) {
-					if(!data.data) {
-						resolve(data);
-						return
-					}
-					const des_key = decryptAES(data.sign, AES_KEY, AES_IV)
-					const des_data = decryptDEC(data.data, des_key)
-					data.data = JSON.parse(des_data)
-					resolve(data)
-					console.log(url.msg, '解密后：', data)
-				}
-			},
-			error: function(e) {
-				reject(e);
-			}
-		})
-	})
-}
-
-function app(url, params, method) {
-	if(CheckIsIOS()) {
-		window.webkit.messageHandlers.loadWebData.postMessage({
-			'path': url.url,
-			'params': params,
-			'method': method,
-		})
-	}
-	if(CheckIsAndroid()) {
-		var Json = {
-			'path': url.url,
-			'params': params,
-			'method': method,
+function http(url, params, method) {
+	if(url.appRequest) {
+		if(CheckIsIOS()) {
+			window.webkit.messageHandlers.loadWebData.postMessage({
+				'path': url.appUrl,
+				'params': params,
+				'method': method,
+			})
 		}
-		Json = JSON.stringify(Json)
-		window.Android.loadWebData(Json);
+		if(CheckIsAndroid()) {
+			var Json = {
+				'path': url.appUrl,
+				'params': params,
+				'method': method,
+			}
+			Json = JSON.stringify(Json)
+			window.Android.loadWebData(Json);
+		}
+	} else {
+		params.token = window.localStorage.getItem('token');
+		console.log(url.msg, url.url, params, method)
+		return new Promise((resolve, reject) => {
+			$.ajax({
+				url: url.url,
+				type: 'post',
+				data: params,
+				success: function(data) {
+					console.log(url.msg, data)
+					if(data.code != 200) {
+						eval(method + '(data)')
+						resolve(data);
+					} else if(data.code == 200 || data.code == 10036) {
+						//10036奖品信息更新
+						if(!data.data) {
+							eval(method + '(data)')
+							resolve(data);
+							return
+						}
+						const des_key = decryptAES(data.sign, AES_KEY, AES_IV)
+						const des_data = decryptDEC(data.data, des_key)
+						data.data = JSON.parse(des_data)
+						eval(method + '(data)')
+						resolve(data)
+						console.log(url.msg, '解密后：', data)
+					}
+				},
+				error: function(e) {
+					reject(e);
+				}
+			})
+		})
 	}
 }
+//
+//function app(url, params, method) {
+//	if(CheckIsIOS()) {
+//		window.webkit.messageHandlers.loadWebData.postMessage({
+//			'path': url.url,
+//			'params': params,
+//			'method': method,
+//		})
+//	}
+//	if(CheckIsAndroid()) {
+//		var Json = {
+//			'path': url.url,
+//			'params': params,
+//			'method': method,
+//		}
+//		Json = JSON.stringify(Json)
+//		window.Android.loadWebData(Json);
+//	}
+//}
 // AES加密
 function encryptAES(data, key, iv) { //key,iv：16位的字符串
 	var key1 = CryptoJS.enc.Latin1.parse(key);

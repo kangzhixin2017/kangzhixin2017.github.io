@@ -1,48 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>我的邀请</title>
 		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="../css/index.css" />
-		<link rel="stylesheet" type="text/css" href="../css/navigationBar.css" />
-		<link rel="stylesheet" type="text/css" href="../css/tabBar.css" />
-		<link rel="stylesheet" type="text/css" href="../css/invite_1.css" />
-		<link rel="stylesheet" type="text/css" href="../css/toast.css" />
-		<script src="../js/util/config.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body>
-		<div class="app">
-			<div>
-				<img class="img" src="../img/bg7.png" />
-				<div class="msg">前往V Talk领取你的专属福利</div>
-				<div class="btn" onclick="go()">去领取</div>
-			</div>
-		</div>
 		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mask.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/util/config.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/crypto-js.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/jsencrypt.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/aes.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/util/util.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/util/interface.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/util/http.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			var download;
-			http(URL.config, {
-				attribute: 'download'
-			}, 'configBack')
-
-			function configBack(e) {
-				download = e.data;
-			}
-
-			function go() {
-				window.location.href = download
-			}
+			var seriesId = GetQueryString('seriesId');
+			var assortedBillId = GetQueryString('assortedBillId');
+			window.location.href = 'czyhim://pd/web?url=http://47.114.136.117:8002/turntable/together.html&title=拼团&seriesId=' + seriesId + '&assortedBillId=' + assortedBillId;
+			setTimeout(() => {
+				http(URL.config, {
+					attribute: 'download'
+				}).then(e => {
+					window.location.href = e.data
+				})
+			}, 1000)
 		</script>
 	</body>
 

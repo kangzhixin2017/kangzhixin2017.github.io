@@ -9,24 +9,25 @@ initData()
 
 function initData() {
 	http(URL.prizeList, {
-		token: window.localStorage.getItem('token'),
 		pageNum: nowIndex,
 		pageSize: pageSize
-	}).then(e => {
-		if(!e.total) {
-			$('.nolist').show()
-		} else {
-			//			Data = e.list;
+	}, 'initDataBack')
+}
 
-			if(e.list.length == 0) {
-				$('.dataNO').show()
-				return;
-			}
-			for(var i = 0; i < e.list.length; i++) {
-				var img = window.localStorage.getItem('URL_HEAD') + e.list[i].img;
-				var time = formatDate(e.list[i].create_time,'1')
-				if(e.list[i].order_status == 4) {
-					$('.list').append(`<div class="item">
+function initDataBack(e) {
+	e = e.data;
+	if(!e.total) {
+		$('.nolist').show()
+	} else {
+		if(e.list.length == 0) {
+			$('.dataNO').show()
+			return;
+		}
+		for(var i = 0; i < e.list.length; i++) {
+			var img = window.localStorage.getItem('URL_HEAD') + e.list[i].img;
+			var time = formatDate(e.list[i].create_time, '1')
+			if(e.list[i].order_status == 4) {
+				$('.list').append(`<div class="item">
 					<div class="left">
 						<img src="${img}" />
 						<div>
@@ -36,8 +37,8 @@ function initData() {
 					</div>
 					<div class="right" onclick=toinfo(${ii})>去领取</div>
 				</div>`)
-				} else {
-					$('.list').append(`<div class="item">
+			} else {
+				$('.list').append(`<div class="item">
 					<div class="left">
 						<img src="${img}" />
 						<div>
@@ -47,14 +48,13 @@ function initData() {
 					</div>
 					<div class="right2">已领取</div>
 				</div>`);
-				}
-				ii++;
 			}
-			Data = Data ? Data.concat(e.list) : e.list;
-			console.log(Data)
+			ii++;
 		}
-		isRequest = true;
-	})
+		Data = Data ? Data.concat(e.list) : e.list;
+		console.log(Data)
+	}
+	isRequest = true;
 }
 
 function toinfo(i) {

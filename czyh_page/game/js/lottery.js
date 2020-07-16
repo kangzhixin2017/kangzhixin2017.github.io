@@ -9,36 +9,37 @@ var Data_prize;
 
 http(URL.config, {
 	attribute: 'head'
-}).then(e => {
-	URL_HEAD = e;
-	window.localStorage.setItem('URL_HEAD', e);
+}, 'configBack')
+
+function configBack(e) {
+	URL_HEAD = e.data;
+	window.localStorage.setItem('URL_HEAD', URL_HEAD);
 	requestData();
-})
+}
 
 function requestData() {
-	http(URL.sudoku, {
-		token: window.localStorage.getItem('token'),
-	}).then(e => {
-		Data = e
-		setSudoku()
-	})
+	http(URL.sudoku, {}, 'requestDataBack')
+}
+
+function requestDataBack(e) {
+	Data = e.data
+	setSudoku()
 }
 
 function setSudoku() {
 	for(var i = 0; i < Data.drawList.length; i++) {
-		console.log('2')
-		//				$('#prize' + i).attr('src', '../img/phone.png')
 		$('#prize' + i).attr('src', URL_HEAD + Data.drawList[i].img)
 	}
 	$('.msg').html(`注：抽奖一次需要${Data.score}积分，邀请好友助力必中哦～`);
 	for(var i = 0; i < Data.winList.length; i++) {
 		var img = URL_HEAD + Data.winList[i].head;
-		var time = formatDate(Data.winList[i].createTime,'1')
+		var time = formatDate(Data.winList[i].createTime, '1')
+		var nickName = formatString(Data.winList[i].nickName)
 		$('.jl_list').append(`<div class="item">
 						<div class="i_left">
 							<img src="${img}" />
 							<div class="name">
-								<div>${Data.winList[i].nickName}</div>
+								<div>${nickName}</div>
 								<div>${time}</div>
 							</div>
 						</div>
@@ -67,7 +68,7 @@ var luck = {
 			$units = $luck.find(".luck-unit");
 			this.obj = $luck;
 			this.count = $units.length;
-//			$luck.find(".luck-unit-" + this.index).addClass("active");
+			//			$luck.find(".luck-unit-" + this.index).addClass("active");
 		};
 	},
 	roll: function() {
@@ -143,16 +144,16 @@ window.onload = function() {
 };
 
 function clickPrize() {
-	app(URL.drawIOS, {
+	http(URL.draw, {
 		type: 0,
 	}, 'AppBack');
-//		http(URL.draw, {
-//			token: window.localStorage.getItem('token'),
-//			type: 0,
-//		}).then(e => {
-//			console.log(e)
-//			AppBack(e)
-//		})
+	//		http(URL.draw, {
+	//			token: window.localStorage.getItem('token'),
+	//			type: 0,
+	//		}).then(e => {
+	//			console.log(e)
+	//			AppBack(e)
+	//		})
 }
 
 function AppBack(e) {
@@ -163,6 +164,7 @@ function AppBack(e) {
 	}
 	//积分不足
 	if(e.code == 10028) {
+		console.log('s')
 		maskShow(e.code);
 		return;
 	}
@@ -190,8 +192,8 @@ function mask_btn() {
 	$('.jf_mask3').hide()
 	$('.jf_mask4').hide()
 	$('.jf_mask5').hide()
-	for (var i = 0; i < 8; i++) {
-		$('.luck-unit-'+i).removeClass("active");
+	for(var i = 0; i < 8; i++) {
+		$('.luck-unit-' + i).removeClass("active");
 	}
 }
 

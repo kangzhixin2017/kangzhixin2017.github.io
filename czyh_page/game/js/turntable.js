@@ -13,27 +13,59 @@ if(GetQueryString('token')) {
 }
 http(URL.config, {
 	attribute: 'head'
-}).then(e => {
+}, 'configBack')
+
+function configBack(e) {
 	URL_HEAD = e.data;
 	window.localStorage.setItem('URL_HEAD', URL_HEAD);
 	getData();
-})
+}
 $(function() {
 	//拼单抢购
 	status('1');
 });
 
+function AppBack(e) {
+	//奖品有更新
+	if(e.code == 10036) {
+		maskShow(e.code);
+		isclick = false;
+		return;
+	}
+	//积分不足
+	if(e.code == 10028) {
+		isclick = false;
+		maskShow(e.code);
+		return;
+	}
+	e = e.data;
+	var jf = parseInt(window.localStorage.getItem('jifen')) - parseInt(Data.score)
+	$('.nowjifen').text(jf)
+	window.localStorage.setItem('jifen', jf)
+	window.localStorage.setItem('orderNo', e.orderNo)
+	for(var i = 0; i < Data.drawList.length; i++) {
+		if(e.dId == Data.drawList[i].id) {
+			prize = Data.drawList[i];
+			Index = i;
+			console.log('中奖奖品：', prize);
+			console.log(Index);
+		}
+	}
+	xuanzhuan();
+}
+
 function getData() {
-	http(URL.turntable, {
-		token: window.localStorage.getItem('token'),
-	}).then(e => {
-		Data = e.data;
-		$('.nowjifen').text(parseInt(Data.myScore))
-		setTurnTable();
-		setNameList();
-		setassortedBlindBox();
-		setallBlindBox();
-	})
+	http(URL.turntable, {}, 'getDataBack')
+}
+
+function getDataBack(e) {
+	Data = e.data;
+	$('.nowjifen').text(parseInt(Data.myScore))
+	window.localStorage.setItem('jifen', parseInt(Data.myScore))
+	setTurnTable();
+	setNameList();
+	setassortedBlindBox();
+	setallBlindBox();
 }
 
 function setallBlindBox() {
@@ -82,15 +114,16 @@ function setNameList() {
 	if(!Data.winList.length) {
 		return
 	}
-	$('.noLi').hide();
+	$('.noLi').remove();
 	for(var i = 0; i < Data.winList.length; i++) {
 		var img = URL_HEAD + Data.winList[i].head;
 		var time = formatDate(Data.winList[i].createTime, '2')
+		var nickName = formatString(Data.winList[i].nickName)
 		$('.carousel_li').append(`<li class="item">
 							<div class="left">
 								<img src="${img}" />
 								<div>
-									<div class="top">${Data.winList[i].nickName}</div>
+									<div class="top">${nickName}</div>
 									<div class="bottom">${time}</div>
 								</div>
 							</div>
@@ -124,34 +157,9 @@ function start() {
 		return
 	}
 	isclick = true;
-	http(URL.clickDraw, {
-		token: window.localStorage.getItem('token'),
-		type: 1
-	}).then(e => {
-		e = e.data;
-		//奖品有更新
-		if(e.code == 10036) {
-			maskShow(e.code);
-			isclick = false;
-			return;
-		}
-		//积分不足
-		if(e.code == 10028) {
-			isclick = false;
-			maskShow(e.code);
-			return;
-		}
-		window.localStorage.setItem('orderNo', e.orderNo)
-		for(var i = 0; i < Data.drawList.length; i++) {
-			if(e.dId == Data.drawList[i].id) {
-				prize = Data.drawList[i];
-				Index = i;
-				console.log('中奖奖品：', prize);
-				console.log(Index);
-			}
-		}
-		xuanzhuan();
-	})
+	http(URL.draw, {
+		type: 1,
+	}, 'AppBack');
 }
 
 function xuanzhuan() {

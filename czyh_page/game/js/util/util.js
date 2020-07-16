@@ -7,18 +7,18 @@ function GetQueryString(name) {
 }
 
 //格式化时间
-function formatDate(date , type) {
+function formatDate(date, type) {
 	var time = new Date(date)
-	if(type == 1){
+	if(type == 1) {
 		return time.getFullYear() +
-		'-' + (time.getMonth() + 1 >= 10 ? time.getMonth() + 1 : '0' + (time.getMonth() + 1)) +
-		'-' + (time.getDate() > 9 ? time.getDate() : '0' + time.getDate()) +
-		' ' + (time.getHours() > 9 ? time.getHours() : '0' + time.getHours()) +
-		':' + (time.getMinutes() > 9 ? time.getMinutes() : '0' + time.getMinutes())
-	}else if(type ==2){
+			'-' + (time.getMonth() + 1 >= 10 ? time.getMonth() + 1 : '0' + (time.getMonth() + 1)) +
+			'-' + (time.getDate() > 9 ? time.getDate() : '0' + time.getDate()) +
+			' ' + (time.getHours() > 9 ? time.getHours() : '0' + time.getHours()) +
+			':' + (time.getMinutes() > 9 ? time.getMinutes() : '0' + time.getMinutes())
+	} else if(type == 2) {
 		return time.getFullYear() +
-		'-' + (time.getMonth() + 1 >= 10 ? time.getMonth() + 1 : '0' + (time.getMonth() + 1)) +
-		'-' + (time.getDate() > 9 ? time.getDate() : '0' + time.getDate()) 
+			'-' + (time.getMonth() + 1 >= 10 ? time.getMonth() + 1 : '0' + (time.getMonth() + 1)) +
+			'-' + (time.getDate() > 9 ? time.getDate() : '0' + time.getDate())
 	}
 }
 
@@ -68,4 +68,11 @@ function CheckIsIOS() {
 	if(browser.versions.iPhone || browser.versions.iPad || browser.versions.ios)
 		return true;
 	return false;
+}
+
+function formatString(str) {
+	if(str.length > 7) {
+		str = str.slice(0, 3) + '***' + str.slice(-3)
+	}
+	return str;
 }
