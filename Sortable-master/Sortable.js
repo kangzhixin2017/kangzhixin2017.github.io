@@ -598,6 +598,8 @@
 		},
 
 		_onDragStart: function (/**Event*/evt, /**boolean*/useFallback) {
+			console.log('e')
+			document.addEventListener('touchmove',function(e){e.preventDefault()},false)
 			var dataTransfer = evt.dataTransfer,
 				options = this.options;
 
