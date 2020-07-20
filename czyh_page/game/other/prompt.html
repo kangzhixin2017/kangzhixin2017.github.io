@@ -19,9 +19,9 @@
 			var seriesId = GetQueryString('seriesId');
 			var assortedBillId = GetQueryString('assortedBillId');
 			if(CheckIsAndroid()) {
-				window.location.href = 'skip://imlife:8686/web?url=http://47.114.136.117:8002/turntable/together.html?seriesId=1&assortedBillId=23&title=拼团&seriesId=1&assortedBillId=23'
+				window.location.href = 'skip://imlife:8686/web?url=http://47.114.136.117:8002/turntable/together.html&title=拼团&seriesId=' + seriesId + '&assortedBillId=' + assortedBillId;
 				setTimeout(() => {
-					$('.msg').text('请复制以下链接到浏览器打开：http://47.114.136.117:8002/other/prompt_1.html?')
+					$('.msg').text('请复制以下链接到浏览器打开：http://47.114.136.117:8002/other/prompt_1.html?seriesId=' + seriesId + '&assortedBillId=' + assortedBillId)
 				}, 1000)
 			} else if(CheckIsIOS()) {
 				window.location.href = 'czyhim://pd/web?url=http://47.114.136.117:8002/turntable/together.html&title=拼团&seriesId=' + seriesId + '&assortedBillId=' + assortedBillId;

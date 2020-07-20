@@ -12,12 +12,12 @@ function blindBoxBack(e) {
 	setprize();
 	setPage();
 }
-http(URL.trytry, {
-	seriesId: window.localStorage.getItem('id')
-}, 'trytryBack')
 
 function trytryBack(e) {
 	tryData = e.data;
+	$('.tryImg').attr('src', HEAD_IMG + tryData.cover)
+	$('.tryName').text(tryData.name)
+	$('.tryNum').text(tryData.id)
 }
 
 function setPage() {
@@ -30,9 +30,9 @@ function Try() {
 	document.getElementById('mask').addEventListener('touchmove', function(event) {
 		event.preventDefault();
 	})
-	$('.tryImg').attr('src', HEAD_IMG + tryData.cover)
-	$('.tryName').text(tryData.name)
-	$('.tryNum').text(tryData.id)
+	http(URL.trytry, {
+		seriesId: window.localStorage.getItem('id')
+	}, 'trytryBack')
 }
 
 function setprize() {
@@ -49,7 +49,8 @@ function setprize() {
 
 function setLunbo() {
 	for(var i = 0; i < Data.nowBuyList.length; i++) {
-		$('.carousel_li').append(`<li>${Data.nowBuyList[i].userNickName}抽到了: “${Data.nowBuyList[i].goodsName}”盲盒</li>`)
+		var username = formatString(Data.nowBuyList[i].userNickName, 2)
+		$('.carousel_li').append(`<li>${username}抽到了: “${Data.nowBuyList[i].goodsName}”盲盒</li>`)
 	}
 	$('#FontScroll').FontScroll({
 		time: 3000

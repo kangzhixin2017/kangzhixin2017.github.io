@@ -21,14 +21,15 @@ function AppBack2(e) {
 	$('.name').text(e.blindBoxSeries.seriesName);
 	$('.pri_img').attr('src', window.localStorage.getItem('URL_HEAD') + e.blindBoxSeries.seriesCover);
 	if(type == 1) {
-		$('.jifen_1').text(e.blindBoxSeries.price);
+		$('.jifen_1').text('支付：' + e.blindBoxSeries.price + '积分');
 		$('.end_jifen').text(e.blindBoxSeries.price)
 		en_jifen = e.blindBoxSeries.price;
 	} else if(type == 2) {
-		$('.jifen_1').text(e.blindBoxSeries.assortedPrice);
+		$('.jifen_1').text('支付：' + e.blindBoxSeries.assortedPrice + '积分');
 		$('.end_jifen').text(e.blindBoxSeries.assortedPrice)
 		en_jifen = e.blindBoxSeries.assortedPrice;
 	}
+	window.localStorage.setItem('jifen', e.Balance)
 }
 //http(URL.QRorder, {
 //	token: window.localStorage.getItem('token'),
@@ -139,12 +140,12 @@ function pay() {
 	}
 	if(CheckIsAndroid()) {
 		var Json = {
-			'path': url.url,
-			'params': params,
-			'method': method,
+			orderNo: orderNO,
+			title: '积分',
+			integral: $('.end_jifen').text()
 		}
 		Json = JSON.stringify(Json)
-		window.Android.loadWebData(Json);
+		window.Android.luckyPay(Json);
 	}
 }
 
@@ -251,18 +252,21 @@ function toAddress() {
 		window.webkit.messageHandlers.selectAddress.postMessage({})
 	}
 	if(CheckIsAndroid()) {
-		var Json = {
-			'path': url.url,
-			'params': params,
-			'method': method,
-		}
-		Json = JSON.stringify(Json)
-		window.Android.loadWebData(Json);
+		//		var Json = {}
+		//		Json = JSON.stringify(Json)
+		window.Android.selectAddress();
 	}
 }
 //原生调用方法
 function setAddress(data) {
-	addressId = data.id;
-	$('#name').text(data.name);
-	$('#address').text(data.address);
+	if(CheckIsIOS()) {
+		addressId = data.id;
+		$('#name').text(data.name);
+		$('#address').text(data.address);
+	}
+	if(CheckIsAndroid()) {
+		addressId = data.id;
+		$('#name').text(data.receiverName);
+		$('#address').text(data.province + data.city + data.area + data.address);
+	}
 }

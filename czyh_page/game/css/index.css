@@ -3,14 +3,6 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	-webkit-user-select: none;
-	-webkit-touch-callout: none;
-	-webkit-user-drag: none;
-}
-img{
-	pointer-events: none;
 }
 body{
 	/*默认字体颜色*/

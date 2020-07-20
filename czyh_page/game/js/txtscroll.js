@@ -46,12 +46,12 @@
                 scrollbox.append(txt_end);
 
                 var setmarquee = setInterval(marquee, $settings.speed);
-                $this.on('mouseover', function(){
-                    clearInterval(setmarquee);
-                });
-                $this.on('mouseout', function(){
-                    setmarquee = setInterval(marquee, $settings.speed);
-                });
+//              $this.on('mouseover', function(){
+//                  clearInterval(setmarquee);
+//              });
+//              $this.on('mouseout', function(){
+//                  setmarquee = setInterval(marquee, $settings.speed);
+//              });
             }
         });
     };

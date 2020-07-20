@@ -34,7 +34,7 @@ function setSudoku() {
 	for(var i = 0; i < Data.winList.length; i++) {
 		var img = URL_HEAD + Data.winList[i].head;
 		var time = formatDate(Data.winList[i].createTime, '1')
-		var nickName = formatString(Data.winList[i].nickName)
+		var nickName = formatString(Data.winList[i].nickName,7)
 		$('.jl_list').append(`<div class="item">
 						<div class="i_left">
 							<img src="${img}" />

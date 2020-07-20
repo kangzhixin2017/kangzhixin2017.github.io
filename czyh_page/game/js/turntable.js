@@ -118,7 +118,7 @@ function setNameList() {
 	for(var i = 0; i < Data.winList.length; i++) {
 		var img = URL_HEAD + Data.winList[i].head;
 		var time = formatDate(Data.winList[i].createTime, '2')
-		var nickName = formatString(Data.winList[i].nickName)
+		var nickName = formatString(Data.winList[i].nickName, 6)
 		$('.carousel_li').append(`<li class="item">
 							<div class="left">
 								<img src="${img}" />

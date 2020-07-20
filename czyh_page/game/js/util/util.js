@@ -70,9 +70,9 @@ function CheckIsIOS() {
 	return false;
 }
 
-function formatString(str) {
-	if(str.length > 7) {
-		str = str.slice(0, 3) + '***' + str.slice(-3)
+function formatString(str, num = 3) {
+	if(str.length > num) {
+		str = str.slice(0, num) + '...'
 	}
 	return str;
 }

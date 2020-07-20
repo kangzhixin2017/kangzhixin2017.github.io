@@ -50,6 +50,7 @@
 			</div>
 		</div>
 		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mask.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/crypto-js.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/jsencrypt.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/aes.js" type="text/javascript" charset="utf-8"></script>
@@ -116,6 +117,8 @@
 					$('.name').val('');
 					$('.phone').val('');
 					$('.address').val('')
+				} else {
+					mask.type6(e.message)
 				}
 			}
 		</script>

@@ -22,14 +22,18 @@
 		<script type="text/javascript">
 			var seriesId = GetQueryString('seriesId');
 			var assortedBillId = GetQueryString('assortedBillId');
-			window.location.href = 'czyhim://pd/web?url=http://47.114.136.117:8002/turntable/together.html&title=拼团&seriesId=' + seriesId + '&assortedBillId=' + assortedBillId;
+			if(CheckIsAndroid()) {
+				window.location.href = 'skip://imlife:8686/web?url=http://47.114.136.117:8002/turntable/together.html&title=拼团&seriesId=' + seriesId + '&assortedBillId=' + assortedBillId;
+			} else if(CheckIsIOS()) {
+				window.location.href = 'czyhim://pd/web?url=http://47.114.136.117:8002/turntable/together.html&title=拼团&seriesId=' + seriesId + '&assortedBillId=' + assortedBillId;
+			}
 			setTimeout(() => {
 				http(URL.config, {
 					attribute: 'download'
 				}).then(e => {
 					window.location.href = e.data
 				})
-			}, 1000)
+			}, 1500)
 		</script>
 	</body>
 

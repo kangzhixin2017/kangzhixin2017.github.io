@@ -1,15 +1,15 @@
 const URL = {
-	invite: {
-		url: BASE_URL_invite + 'userSubordinateApi/invitePage',
-		appUrl: 'userSubordinate/invitePage',
-		appRequest: false,
-		msg: '我的邀请页面数据',
-	},
 	config: {
 		url: BASE_URL_invite + 'commonApi/conf',
 		appUrl: 'common/conf',
 		appRequest: false,
 		msg: '获取配置数据',
+	},
+	invite: {
+		url: BASE_URL_invite + 'userSubordinateApi/invitePage',
+		appUrl: 'userSubordinate/invitePage',
+		appRequest: false,
+		msg: '我的邀请页面数据',
 	},
 	sudoku: {
 		url: BASE_URL_lottery + 'gameDrawApi/sudokuPage',

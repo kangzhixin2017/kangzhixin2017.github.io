@@ -1,4 +1,5 @@
 var Data;
+var inpt = 0;
 http(URL.config, {
 	attribute: 'head'
 }, 'configBack')
@@ -12,20 +13,21 @@ function configBack(e) {
 	if(GetQueryString('assortedBillId')) {
 		window.localStorage.setItem('assortedBillId', GetQueryString('assortedBillId'));
 		http(URL.shareAssortedBillPage, {
-			token: window.localStorage.getItem('token'),
 			seriesId: window.localStorage.getItem('id'),
 			assortedBillId: window.localStorage.getItem('assortedBillId'),
-		}).then(e => {
-			$('.mask_name').text('参与' + e.data.assortedBillList[0].initiateNickname + '的拼单')
-			$('.mask_img').attr('src', window.localStorage.getItem('URL_HEAD') + e.data.assortedBillList[0].initiateHead)
-			setInterval(() => {
-				setTime2(e.data.assortedBillList[0].createTime)
-			}, 200)
-		})
+		}, 'shareAssortedBillPageBack')
 	}
 	http(URL.together, {
 		seriesId: window.localStorage.getItem('id')
 	}, 'togetherBack')
+}
+
+function shareAssortedBillPageBack(e) {
+	$('.mask_name').text('参与' + e.data.assortedBillList[0].initiateNickname + '的拼单')
+	$('.mask_img').attr('src', window.localStorage.getItem('URL_HEAD') + e.data.assortedBillList[0].initiateHead)
+	setInterval(() => {
+		setTime2(e.data.assortedBillList[0].createTime)
+	}, 200)
 }
 
 function togetherBack(e) {
@@ -55,10 +57,11 @@ function setPT() {
 		if(i < 2) {
 			var time = setTime()
 			var img = window.localStorage.getItem('URL_HEAD') + Data.assortedBillList[i].initiateHead
+			var nickName = formatString(Data.assortedBillList[i].initiateNickname, 7)
 			$('.together_list').append(`<div class="item">
 						<div class="left">
 							<img src="${img}" />
-							<div>${Data.assortedBillList[i].initiateNickname}</div>
+							<div>${nickName}</div>
 						</div>
 						<div class="right">
 							<div class="time">
@@ -114,16 +117,21 @@ function lookAll() {
 		return
 	}
 	$('#mask_conf2').css('display', 'flex');
+	if(inpt == 1) {
+		return
+	}
 	for(var i = 0; i < Data.assortedBillList.length; i++) {
-		var img = window.localStorage.getItem('URL_HEAD') + Data.assortedBillList[i].initiateHead
+		var img = window.localStorage.getItem('URL_HEAD') + Data.assortedBillList[i].initiateHead;
+		var name = formatString(Data.assortedBillList[i].initiateNickname, 7)
 		$('#List').append(`<div style="height: .59rem;border-bottom: 1px solid #E9E9E9;width: 100%;display: flex;justify-content: space-between;align-items: center;">
 							<div style="display: flex;align-items: center;">
 								<img style="width: .3rem;height: .3rem;display: block;border-radius: 4px;" src="${img}" />
-								<div style="font-size: .14rem;color: #333333;margin-left: .08rem;">${Data.assortedBillList[i].initiateNickname}</div>
+								<div style="font-size: .14rem;color: #333333;margin-left: .08rem;">${}</div>
 							</div>
 							<div onclick='toPD(${Data.assortedBillList[i].id})' style="width: .7rem;line-height: .3rem;font-size: .14rem;color: #333333;background-color: #FFDD24;border-radius: .15rem;text-align: center;">去拼单</div>
 						</div>`)
 	}
+	inpt = 1;
 }
 
 function setMsg() {
