@@ -1,0 +1,91 @@
+.page {
+  padding-top: .8rem;
+  box-sizing: border-box;
+}
+
+.page header {
+  position: fixed;
+  top: 0;
+  height: 0.8rem;
+  width: 100%;
+  line-height: .8rem;
+  color: #333;
+  background: #fff;
+  border-bottom: 0.02rem solid #ededed;
+  text-align: center;
+  font-size: .34rem;
+  z-index: 10;
+}
+
+.page .content .list_wrap {
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
+}
+
+.page .content .list_con {
+	border-top: 0.02rem solid #f1e8e8;
+	padding: 0.4rem 0;
+	background-color: #FFFFFF;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+
+.page .content .list_con .l_top {
+  display: flex;
+  justify-content: left;
+}
+
+.page .content .list_con .l_top .title {
+	text-align: left;
+	padding-left: 0.2rem;
+	width: .61rem;
+	height: .81rem;
+	color: #000000;
+	line-height: .6rem;
+	font-weight: bold;
+}
+
+.page .content .list_con .l_top .list_table {
+  text-align: left;
+  margin-left: .2rem;
+}
+
+.page .content .list_con .l_top .list_table th {
+  height: .4rem;
+  font-size: .32rem;
+  font-weight: bold;
+}
+
+.page .content .list_con .l_top .list_table td {
+  padding: 0 0.19rem 0 0.2rem;
+  height: .4rem;
+  font-size: .24rem;
+}
+
+.page .content .list_con .l_top .list_table .tf32red {
+  padding: 0 0.19rem 0 0;
+  font-size: .32rem;
+  font-weight: bold;
+  color: #fd7470;
+  border-right: 0.02rem solid #f1e8e8;
+}
+
+.page .content .list_con .r_top img {
+  display: block;
+  margin-right: .3rem;
+  width: .5rem;
+  height: .54rem;
+}
+
+.page .content .list_con:last-child {
+  margin-bottom: 0.3rem;
+}
+.sortable-chosen{
+	/*box-shadow: 1px 16px 16px -8px rgba(0,0,0,0.27);
+	-webkit-box-shadow: 1px 16px 16px -8px rgba(0,0,0,0.27);
+	-moz-box-shadow: 1px 16px 16px -8px rgba(0,0,0,0.27);
+	border-bottom: 2px solid hsla(0,0%,0%,1.00);*/
+}
