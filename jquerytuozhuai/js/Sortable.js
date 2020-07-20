@@ -1136,7 +1136,7 @@
 	}
 
 	var nearestEmptyInsertDetectEvent = function nearestEmptyInsertDetectEvent(evt) {
-		console.log(evt)
+
 		if(dragEl) {
 			evt = evt.touches ? evt.touches[0] : evt;
 
@@ -1399,8 +1399,8 @@
 						clientX: (touch || evt).clientX,
 						clientY: (touch || evt).clientY
 					};
-					console.log(tapEvt)
-					console.log(dragRect)
+
+
 					tapDistanceLeft = tapEvt.clientX - dragRect.left;
 					tapDistanceTop = tapEvt.clientY - dragRect.top;
 					this._lastX = (touch || evt).clientX;
@@ -1564,7 +1564,7 @@
 				if(touchEvt) {
 					this._lastX = touchEvt.clientX;
 					this._lastY = touchEvt.clientY;
-					console.log(touchEvt)
+
 					_hideGhostForTarget();
 
 					var target = document.elementFromPoint(touchEvt.clientX, touchEvt.clientY);
@@ -1607,7 +1607,7 @@
 				/**TouchEvent*/
 				evt) {
 				if(tapEvt) {
-					console.log(tapEvt.clientX)
+
 					var options = this.options,
 						fallbackTolerance = options.fallbackTolerance,
 						fallbackOffset = options.fallbackOffset,
@@ -2065,6 +2065,7 @@
 			_onDrop: function _onDrop(
 				/**Event*/
 				evt) {
+//					console.log(evt)
 				var el = this.el,
 					options = this.options; // Get the index of the dragged element within its parent
 
