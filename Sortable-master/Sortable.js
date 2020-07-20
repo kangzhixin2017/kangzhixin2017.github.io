@@ -562,7 +562,7 @@
 				_css(ghostEl, 'msTransform', translate3d);
 				_css(ghostEl, 'transform', translate3d);
 
-//				evt.preventDefault();
+				evt.preventDefault();
 			}
 		},
 
