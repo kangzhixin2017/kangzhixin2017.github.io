@@ -49,9 +49,13 @@
         <li><h3>第五张</h3></li>
         <li><h3>第六张</h3></li>
     </ul>
+    <div onmousedown='a()' style="color: white;">sdfsf</div>
 </body>
 </html>
 <script>
+	function a(){
+		console.log('ooo')
+	}
     //得到元素
     var uls = document.querySelector("ul");
     var lis = uls.querySelectorAll("li");
@@ -63,29 +67,31 @@
         // 闭包的影响属性法备份每个监听事件的i
         lis[i].index = i;
         lis[i].ontouchstart = function(event){
+//      	console.log(event)
             // 兼容IE
             event = event || window.event;
 
             // 鼠标到每个li盒子内层最顶端和最左端的位置
-            var lisx = event.clientX - this.offsetLeft;
-            var lisy = event.clientY - this.offsetTop;
+            var lisx = event.targetTouches[0].clientX - this.offsetLeft;
+            var lisy = event.targetTouches[0].clientY - this.offsetTop;
             // 备份this
             var self = this;
             // 一个锁，防止事件重复触发
             var lock = true;
             // 鼠标移动
             document.ontouchmove = function(event){
+//          	console.log('sdfs')
                 // 移除掉每个触发li的transition动作
                 self.style.transition = "";
                 // 兼容IE
                 event = event || window.event;
                 // li盒子到它的offsetparent的距离，就是离li最近定位的盒子
-                lisL = event.clientX - lisx;
-                lisT = event.clientY - lisy;
+//              lisL = event.clientX - lisx;
+                lisT = event.targetTouches[0].clientY - lisy;
                 // 拖拽的时候让拖拽的图片置于其他图片上面更改图片的显示权重
                 self.className = "active";
                 //改变移动盒子的定位，做到鼠标跟随
-                self.style.left = lisL + "px";
+//              self.style.left = lisL + "px";
                 self.style.top = lisT + "px";
                 // 批量遍历每个盒子是否满足交换条件
                 for(var j = 0;j < lis.length;j++){
@@ -111,9 +117,9 @@
                 }
             }
             // 鼠标抬起事件
-            document.onmouseup = function(event){
+            document.ontouchend = function(event){
                 // 移出鼠标移动事件
-                document.onmousemove = null;
+                document.ontouchmove = null;
                 // 去除图片显示权重
                 self.className = "";
                 // 改变移动盒子的位置
