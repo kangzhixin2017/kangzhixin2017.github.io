@@ -538,7 +538,7 @@
 					touch = evt.touches ? evt.touches[0] : evt,
 					dx = (touch.clientX - tapEvt.clientX) + fallbackOffset.x,
 					dy = (touch.clientY - tapEvt.clientY) + fallbackOffset.y,
-					translate3d = evt.touches ? 'translate3d(' + dx + 'px,' + dy + 'px,0)' : 'translate(' + dx + 'px,' + dy + 'px)';
+					translate3d = evt.touches ? 'translate3d(0px,' + dy + 'px,0)' : 'translate(' + dx + 'px,' + dy + 'px)';
 
 				// only set the status to dragging, when we are actually dragging
 				if (!Sortable.active) {
@@ -562,7 +562,7 @@
 				_css(ghostEl, 'msTransform', translate3d);
 				_css(ghostEl, 'transform', translate3d);
 
-				evt.preventDefault();
+//				evt.preventDefault();
 			}
 		},
 
