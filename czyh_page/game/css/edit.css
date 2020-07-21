@@ -57,7 +57,7 @@
 .page .content .list_con {
 	/*border-top: 0.02rem solid #f1e8e8;*/
 	padding: 0 0 0 .16rem;
-	background-color: #FFFFFF;
+	/*background-color: red;*/
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -84,7 +84,6 @@
 	font-size: .14rem;
 }
 .page .content .list_con .drag{
-	/*background-color: yellow;*/
 	padding: .16rem;
 }
 .page .content .list_con .drag img{
