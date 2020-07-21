@@ -15,7 +15,7 @@
 	<body>
 		<div class="app">
 			<div class="nav">
-				<img class="edit" src="../img/quotation/edit.png" />
+				<img onclick="edit()" class="edit" src="../img/quotation/edit.png" />
 				<div>行情</div>
 				<img class="search" src="../img/quotation/search.png" />
 			</div>
@@ -24,90 +24,23 @@
 				<div onclick="status('2')" class="all">全部</div>
 			</div>
 			<div class="topl">
-				<div>
+				<div class="symbol" data-id = "0" onclick="sort('symbol')">
 					<div>名称</div>
-					<img src="../img/quotation/default.png" />
+					<img class="symbol_img" src="../img/quotation/default.png" />
 				</div>
-				<div>
+				<div class="priceUsd" data-id = "0" onclick="sort('priceUsd')">
 					<div>最新价</div>
-					<img src="../img/quotation/default.png" />
+					<img class="priceUsd_img" src="../img/quotation/default.png" />
 				</div>
-				<div>
+				<div class="percentChange1h" data-id = "0" onclick="sort('percentChange1h')">
 					<div>涨跌幅</div>
-					<img src="../img/quotation/default.png" />
+					<img class="percentChange1h_img" src="../img/quotation/default.png" />
 				</div>
 			</div>
 			<div class="list list1">
-				<div class="noZx">
-					<img src="../img/quotation/quotationNo.png" />
-					<div>+添加自选</div>
-				</div>
-				<div class="item">
-					<div class="left">
-						<div class="top">BTC<span>/USDT</span></div>
-						<div class="bottom">
-							<div>24H量</div>
-							<div>323422</div>
-						</div>
-					</div>
-					<div class="center">
-						<div class="top">87628376.33</div>
-						<div class="bottom">￥765757.77</div>
-					</div>
-					<div class="right">
-						<div class="blue">+0.05%</div>
-					</div>
-				</div>
+				
 			</div>
 			<div class="list list2">
-				<div class="item">
-					<div class="left">
-						<div class="top">BTC<span>/USDT</span></div>
-						<div class="bottom">
-							<div>24H量</div>
-							<div>323422</div>
-						</div>
-					</div>
-					<div class="center">
-						<div class="top">87628376.33</div>
-						<div class="bottom">￥765757.77</div>
-					</div>
-					<div class="right">
-						<div class="blue">+0.05%</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="left">
-						<div class="top">BTC<span>/USDT</span></div>
-						<div class="bottom">
-							<div>24H量</div>
-							<div>323422</div>
-						</div>
-					</div>
-					<div class="center">
-						<div class="top">87628376.33</div>
-						<div class="bottom">￥765757.77</div>
-					</div>
-					<div class="right">
-						<div class="blue">+0.05%</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="left">
-						<div class="top">BTC<span>/USDT</span></div>
-						<div class="bottom">
-							<div>24H量</div>
-							<div>323422</div>
-						</div>
-					</div>
-					<div class="center">
-						<div class="top">87628376.33</div>
-						<div class="bottom">￥765757.77</div>
-					</div>
-					<div class="right">
-						<div class="blue">+0.05%</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</body>
@@ -115,6 +48,7 @@
 	<!--可删除-->
 
 	<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/mask.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/util/config.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/crypto-js.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/jsencrypt.js" type="text/javascript" charset="utf-8"></script>

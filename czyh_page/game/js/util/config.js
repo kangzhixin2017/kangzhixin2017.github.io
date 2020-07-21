@@ -1,8 +1,8 @@
 
 //上线打开
-console.log = function(){}
-//const appRequest = false;
-const appRequest = true;
+//console.log = function(){}
+const appRequest = false;
+//const appRequest = true;
 //测试
 //const BASE_URL_invite = 'http://47.114.136.117:8081/';//我的邀请
 //const BASE_URL_lottery = 'http://47.114.136.117:8086/'; //九宫格

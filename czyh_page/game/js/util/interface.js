@@ -88,5 +88,23 @@ const URL = {
 		appUrl: 'blindBox/shareAssortedBillPage',
 		appRequest: false,
 		msg: '分享拼单页'
+	},
+	getQuotation:{
+		url: BASE_URL_lottery + 'fxhApi/getQuotation',
+		appUrl: 'fxh/getQuotation',
+		appRequest: appRequest,
+		msg: '获取行情数据'
+	},
+	myQuotation:{
+		url: BASE_URL_lottery + 'fxhApi/myQuotation',
+		appUrl: 'fxh/myQuotation',
+		appRequest: appRequest,
+		msg: '我的自选'
+	},
+	quotationSort:{
+		url: BASE_URL_lottery + 'fxhApi/quotationSort',
+		appUrl: 'fxh/quotationSort',
+		appRequest: appRequest,
+		msg: '行情排序'
 	}
 }
