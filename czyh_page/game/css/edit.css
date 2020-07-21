@@ -1,0 +1,118 @@
+.nav {
+	height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 0 .16rem;
+}
+.nav div:nth-of-type(1){
+	font-size: 14px;
+	font-weight: normal;
+}
+.nav div:nth-of-type(3){
+	font-size: 14px;
+	font-weight: normal;
+	color: #0A8DE7;
+}
+.row{
+	margin-top: .14rem;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 .16rem;
+	font-size: .14rem;
+	color: #999999;
+	line-height: .24rem;
+	border-bottom: 1px solid #E9E9E9;
+}
+
+
+.page {
+  /*padding-top: .8rem;*/
+  box-sizing: border-box;
+}
+
+.page header {
+  position: fixed;
+  top: 0;
+  height: 0.8rem;
+  width: 100%;
+  line-height: .8rem;
+  color: #333;
+  background: #fff;
+  border-bottom: 0.02rem solid #ededed;
+  text-align: center;
+  font-size: .34rem;
+  z-index: 10;
+}
+
+.page .content .list_wrap {
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
+}
+
+.page .content .list_con {
+	/*border-top: 0.02rem solid #f1e8e8;*/
+	padding: 0 .16rem;
+	background-color: #FFFFFF;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	height: .6rem;
+	border-bottom: .5px solid #E9E9E9;
+}
+.page .content .list_con .left{
+	display: flex;
+	align-items: center;
+}
+.page .content .list_con .left img{
+	margin-right: .1rem;
+	width: .14rem;
+	height: .14rem;
+	display: block;
+}
+.page .content .list_con .left div{
+	font-size: .16rem;
+	line-height: .22rem;
+}
+.page .content .list_con .left div span{
+	color: #999999;
+	font-size: .14rem;
+}
+.page .content .list_con >img{
+	width: .15rem;
+	height: .12rem;
+	display: block;
+}
+.footer{
+	background-color: white;
+	position: fixed;
+	bottom: 0;
+	/*left: 0;*/
+	padding: 0 .16rem;
+	height: .6rem;
+	width: 100%;
+	max-width: 414px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-top: .5px solid #E9E9E9;
+}
+.footer >div{
+	display: flex;
+	align-items: center;
+	font-size: .14rem;
+}
+.footer >div img{
+	width: .16rem;
+	height: .16rem;
+	display: block;
+	margin-right: .1rem;
+}
+.footer .right{
+	color: #999999;
+}

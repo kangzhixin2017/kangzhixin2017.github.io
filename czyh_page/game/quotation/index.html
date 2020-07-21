@@ -1,149 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>列表拖拽模型</title>
-    <style>
-        *{margin:0;padding:0;}
-        body{
-            background-color: #000;
-        }
-        ul{
-            list-style:none;
-            height: 850px;
-            width: 400px;
-            border-radius: 5px;
-            margin:20px auto;
-            position: relative;
-            border:1px solid red;
-        }
-        ul li {
-            position: absolute;
-            width: 400px;
-            height: 100px;
-            background-color: #fff;
-            border-radius: 10px;
-            margin-top: 10px;
-            box-shadow: 1px 1px 1px #07c160;
-            cursor:pointer;
-        }
-        h3{
-            width: 400px;
-            line-height: 100px;
-            text-align:center;
-            color:#07c160;
-            font-size: 24px;
-        }
-        /*拖拽的时候让拖拽的图片置于其他图片上面*/
-        .active{
-            z-index: 1;
-        }
-    </style>
-</head>
-<body>
-    <ul>
-        <li><h3>第一21张</h3></li>
-        <li><h3>第二张</h3></li>
-        <li><h3>第三张</h3></li>
-        <li><h3>第四张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第五张</h3></li>
-        <li><h3>第六张</h3></li>
-    </ul>
-    <div onmousedown='a()' style="color: white;">sdfsf</div>
-</body>
+<!doctype html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>行情</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/quotation.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="nav">
+				<img class="edit" src="../img/quotation/edit.png" />
+				<div>行情</div>
+				<img class="search" src="../img/quotation/search.png" />
+			</div>
+			<div class="btn_group">
+				<div onclick="status('1')" class="optional">自选</div>
+				<div onclick="status('2')" class="all">全部</div>
+			</div>
+			<div class="topl">
+				<div>
+					<div>名称</div>
+					<img src="../img/quotation/default.png" />
+				</div>
+				<div>
+					<div>最新价</div>
+					<img src="../img/quotation/default.png" />
+				</div>
+				<div>
+					<div>涨跌幅</div>
+					<img src="../img/quotation/default.png" />
+				</div>
+			</div>
+			<div class="list list1">
+				<div class="noZx">
+					<img src="../img/quotation/quotationNo.png" />
+					<div>+添加自选</div>
+				</div>
+				<div class="item">
+					<div class="left">
+						<div class="top">BTC<span>/USDT</span></div>
+						<div class="bottom">
+							<div>24H量</div>
+							<div>323422</div>
+						</div>
+					</div>
+					<div class="center">
+						<div class="top">87628376.33</div>
+						<div class="bottom">￥765757.77</div>
+					</div>
+					<div class="right">
+						<div class="blue">+0.05%</div>
+					</div>
+				</div>
+			</div>
+			<div class="list list2">
+				<div class="item">
+					<div class="left">
+						<div class="top">BTC<span>/USDT</span></div>
+						<div class="bottom">
+							<div>24H量</div>
+							<div>323422</div>
+						</div>
+					</div>
+					<div class="center">
+						<div class="top">87628376.33</div>
+						<div class="bottom">￥765757.77</div>
+					</div>
+					<div class="right">
+						<div class="blue">+0.05%</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="left">
+						<div class="top">BTC<span>/USDT</span></div>
+						<div class="bottom">
+							<div>24H量</div>
+							<div>323422</div>
+						</div>
+					</div>
+					<div class="center">
+						<div class="top">87628376.33</div>
+						<div class="bottom">￥765757.77</div>
+					</div>
+					<div class="right">
+						<div class="blue">+0.05%</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="left">
+						<div class="top">BTC<span>/USDT</span></div>
+						<div class="bottom">
+							<div>24H量</div>
+							<div>323422</div>
+						</div>
+					</div>
+					<div class="center">
+						<div class="top">87628376.33</div>
+						<div class="bottom">￥765757.77</div>
+					</div>
+					<div class="right">
+						<div class="blue">+0.05%</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<!--可删除-->
+
+	<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/util/config.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/crypto-js.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/jsencrypt.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/aes.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/util/util.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/util/interface.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/util/http.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/quotation.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+	</script>
+
 </html>
-<script>
-	function a(){
-		console.log('ooo')
-	}
-    //得到元素
-    var uls = document.querySelector("ul");
-    var lis = uls.querySelectorAll("li");
-
-    // 批量添加监听
-    for(var i = 0;i < lis.length;i++){
-         // 批量放置li盒子
-        lis[i].style.top = i * 105 + "px";
-        // 闭包的影响属性法备份每个监听事件的i
-        lis[i].index = i;
-        lis[i].ontouchstart = function(event){
-//      	console.log(event)
-            // 兼容IE
-            event = event || window.event;
-
-            // 鼠标到每个li盒子内层最顶端和最左端的位置
-            var lisx = event.targetTouches[0].clientX - this.offsetLeft;
-            var lisy = event.targetTouches[0].clientY - this.offsetTop;
-            // 备份this
-            var self = this;
-            // 一个锁，防止事件重复触发
-            var lock = true;
-            // 鼠标移动
-            document.ontouchmove = function(event){
-//          	console.log('sdfs')
-                // 移除掉每个触发li的transition动作
-                self.style.transition = "";
-                // 兼容IE
-                event = event || window.event;
-                // li盒子到它的offsetparent的距离，就是离li最近定位的盒子
-//              lisL = event.clientX - lisx;
-                lisT = event.targetTouches[0].clientY - lisy;
-                // 拖拽的时候让拖拽的图片置于其他图片上面更改图片的显示权重
-                self.className = "active";
-                //改变移动盒子的定位，做到鼠标跟随
-//              self.style.left = lisL + "px";
-                self.style.top = lisT + "px";
-                // 批量遍历每个盒子是否满足交换条件
-                for(let j = 0;j < lis.length;j++){
-                    // 交换盒子的条件
-                    if(lis[j].offsetTop + lis[j].offsetHeight > self.offsetTop && lis[j].offsetTop < self.offsetTop){
-                        if(lock){
-                            // 事件触发就自锁不在改变
-                            lock = false;
-                               console.log(self.index);
-                            // 交换两个盒子备份的index
-                            var temp = lis[j].index;
-                            lis[j].index = self.index;
-                            self.index = temp;
-                            // 交换完成去改变盒子的top值
-                            lis[j].style.top = lis[j].index * 105 + "px";
-                            // 同时添加过渡属性
-                            lis[j].style.transition = "all 0.1s ease 0s";
-                            // 当动画运动完成，使用定时器来打开锁。
-                            setTimeout(()=>lock = true,100);
-                            break;
-                        }
-                    }
-                }
-            }
-            // 鼠标抬起事件
-            document.ontouchend = function(event){
-                // 移出鼠标移动事件
-                document.ontouchmove = null;
-                // 去除图片显示权重
-                self.className = "";
-                // 改变移动盒子的位置
-                self.style.left = 0;
-                self.style.top = self.index * 105 + "px";
-            }
-            // 阻止浏览器的默认事件
-            return false;
-        }
-    }
-</script>

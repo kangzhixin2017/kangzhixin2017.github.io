@@ -1,0 +1,150 @@
+body {
+    font-family: arial, helvetica, sans-serif;
+    font-size: 13px;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1.4;
+    text-align: center;
+    -webkit-user-select: none;
+    /*禁用手机浏览器的用户选择功能 */
+    -moz-user-select: none;
+}
+
+body,
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select,
+button,
+th,
+td,
+em {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+table {
+    font-size: inherit;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input,
+select {
+    font-family: arial, helvetica, clean, sans-serif;
+    font-size: 100%;
+    font-size-adjust: none;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: normal;
+}
+
+button {
+    overflow: visible;
+}
+
+th,
+em,
+strong,
+b,
+address,
+cite {
+    font-style: normal;
+    font-weight: normal;
+}
+
+li,
+dl,
+dd {
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+}
+
+img,
+fieldset {
+    border: 0 none;
+}
+
+.ins {
+    text-decoration: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+a {
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+    text-decoration: none;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+    /* For some Androids */
+}
+
+.clearfix:after {
+    content: '';
+    height: 0;
+    display: block;
+    clear: both;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.dn {
+    display: none;
+}
+
+.db {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    /*overflow: hidden;*/
+}

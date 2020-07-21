@@ -1,0 +1,149 @@
+<!doctype html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>行情</title>
+		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<link rel="stylesheet" type="text/css" href="../css/edit.css" />
+	</head>
+
+	<body>
+		<div class="app">
+			<div class="nav">
+				<div>添加</div>
+				<div>编辑自选</div>
+				<div>完成</div>
+			</div>
+			<div class="row">
+				<div>添加</div>
+				<div>拖动</div>
+			</div>
+			<div class="page">
+				<div class="content">
+					<div class="list_wrap" id="list_wrap">
+						<div class="list_con">
+							<div class="left">
+								<img src="../img/quotation/unselected.png" />
+								<div>HTC1<span>/USDT</span></div>
+							</div>
+							<img class="drag" src="../img/quotation/drag.png"/>
+						</div>
+						<div class="list_con">
+							<div class="left">
+								<img src="../img/quotation/unselected.png" />
+								<div>HTC2<span>/USDT</span></div>
+							</div>
+							<img class="drag" src="../img/quotation/drag.png"/>
+						</div>
+						<div class="list_con">
+							<div class="left">
+								<img src="../img/quotation/unselected.png" />
+								<div>HTC3<span>/USDT</span></div>
+							</div>
+							<img class="drag" src="../img/quotation/drag.png"/>
+						</div>
+						<div class="list_con">
+							<div class="left">
+								<img src="../img/quotation/unselected.png" />
+								<div>HTC4<span>/USDT</span></div>
+							</div>
+							<img class="drag" src="../img/quotation/drag.png"/>
+						</div>
+						<div class="list_con">
+							<div class="left">
+								<img src="../img/quotation/unselected.png" />
+								<div>HTC5<span>/USDT</span></div>
+							</div>
+							<img class="drag" src="../img/quotation/drag.png"/>
+						</div>
+						<div class="list_con">
+							<div class="left">
+								<img src="../img/quotation/unselected.png" />
+								<div>HTC6<span>/USDT</span></div>
+							</div>
+							<img class="drag" src="../img/quotation/drag.png"/>
+						</div>
+						<div class="list_con">
+							<div class="left">
+								<img src="../img/quotation/unselected.png" />
+								<div>HTC7<span>/USDT</span></div>
+							</div>
+							<img class="drag" src="../img/quotation/drag.png"/>
+						</div>
+						<div class="list_con">
+							<div class="left">
+								<img src="../img/quotation/unselected.png" />
+								<div>HTC8<span>/USDT</span></div>
+							</div>
+							<img class="drag" src="../img/quotation/drag.png"/>
+						</div>
+						<div class="list_con">
+							<div class="left">
+								<img src="../img/quotation/unselected.png" />
+								<div>HTC9<span>/USDT</span></div>
+							</div>
+							<img class="drag" src="../img/quotation/drag.png"/>
+						</div>
+						<div class="list_con">
+							<div class="left">
+								<img src="../img/quotation/unselected.png" />
+								<div>HTC10<span>/USDT</span></div>
+							</div>
+							<img class="drag" src="../img/quotation/drag.png"/>
+						</div>
+						<div class="list_con">
+							<div class="left">
+								<img src="../img/quotation/unselected.png" />
+								<div>HTC11<span>/USDT</span></div>
+							</div>
+							<img class="drag" src="../img/quotation/drag.png"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="width: 100%;height: .6rem;"></div>
+			<div class="footer">
+				<div class="left">
+					<img src="../img/quotation/unselected.png"/>
+					<div>全选</div>
+				</div>
+				<div class="right">
+					<img src="../img/quotation/delete.png"/>
+					<div>删除</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<!--可删除-->
+
+	<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/Sortable.js"></script>
+	<script src="../js/util/config.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/crypto-js.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/jsencrypt.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/aes.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/util/util.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/util/interface.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/util/http.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/quotation.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		new Sortable(list_wrap, {
+			handle: '.drag', // handle's class
+			animation: 150,
+			// direction: 'horizontal',
+		});
+
+		$(".list_con .iconshanchu").bind('touchstart', function() {
+			$(this).parent().parent().remove();
+			event.preventDefault();
+			event.stopPropagation();
+		});
+	</script>
+
+</html>
