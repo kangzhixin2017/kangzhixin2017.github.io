@@ -1,0 +1,154 @@
+.nav {
+	display: flex;
+	height: 44px;
+	align-items: center;
+	padding: 0 .16rem;
+	background-color: white;
+	position: sticky;
+	top: 0;
+}
+
+.nav>div:nth-of-type(1) {
+	background-color: #E9E9E9;
+	border-radius: 4px;
+	display: flex;
+	width: 100%;
+	height: 30px;
+	align-items: center;
+}
+
+.nav>div:nth-of-type(1) img {
+	width: 18px;
+	height: 18px;
+	display: block;
+	margin-left: .16rem;
+	margin-right: 8px;
+	flex-shrink: 0;
+}
+
+.nav>div:nth-of-type(1) input {
+	width: 100%;
+	background-color: #E9E9E9;
+	height: 30px;
+	font-size: 14px;
+}
+
+.nav>div:nth-of-type(2) {
+	font-size: 14px;
+	flex-shrink: 0;
+	margin-left: 6px;
+}
+
+.hot {
+	margin-top: .16rem;
+	padding: 0 .16rem;
+}
+
+.hot .head {
+	font-size: .16rem;
+	font-weight: bold;
+	line-height: .22rem;
+	margin-bottom: .06rem;
+}
+
+.hot .hot_l {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.hot .hot_l .item {
+	width: 33.33%;
+}
+
+.hot .hot_l .item div {
+	width: 100%;
+	line-height: .37rem;
+	background-color: #F4F4F4;
+	border-radius: 4px;
+	font-size: .14rem;
+	color: #666666;
+	text-align: center;
+	margin-top: .1rem;
+}
+
+.hot .hot_l .item:nth-of-type(3n-2) {
+	padding-right: .07rem;
+}
+
+.hot .hot_l .item:nth-of-type(3n) {
+	padding-left: .07rem;
+}
+
+.hot .hot_l .item:nth-of-type(3n-1) {
+	padding: 0 .035rem;
+}
+
+.soon {
+	margin-top: .36rem;
+	/*padding: 0 .16rem;*/
+}
+
+.soon .head {
+	display: flex;
+	height: .42rem;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 .16rem;
+}
+
+.soon .head div:nth-of-type(1) {
+	font-size: .16rem;
+	font-weight: bold;
+	line-height: .22rem;
+}
+
+.soon .head div:nth-of-type(2) {
+	font-size: .14rem;
+	line-height: .2rem;
+}
+
+.soon .soon_l {}
+
+.item2 {
+	padding: 0 .16rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: .5rem;
+	border-bottom: .5px solid #E9E9E9;
+}
+
+.item2 div {
+	font-size: .16rem;
+	line-height: .22rem;
+}
+
+.item2 div span {
+	color: #999999;
+	font-size: .14rem;
+}
+
+.item2 img {
+	width: .16rem;
+	display: block;
+}
+
+.serch .noSearch {
+	margin-top: .77rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.serch .noSearch img {
+	width: 1.8rem;
+	height: 1.03rem;
+	display: block;
+}
+
+.serch .noSearch div {
+	font-size: .14rem;
+	color: #999999;
+	margin-top: .17rem;
+}

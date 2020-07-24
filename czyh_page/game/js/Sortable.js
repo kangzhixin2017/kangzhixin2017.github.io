@@ -4,6 +4,7 @@
  * @author	owenm    <owen23355@gmail.com>
  * @license MIT
  */
+var oldIndexK;
 (function(global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 		typeof define === 'function' && define.amd ? define(factory) :
@@ -1320,6 +1321,7 @@
 				} // Get the index of the dragged element within its parent
 
 				oldIndex = index(target);
+				//				oldIndexK = oldIndex
 				oldDraggableIndex = index(target, options.draggable); // Check filter
 
 				if(typeof filter === 'function') {
@@ -1399,7 +1401,6 @@
 						clientX: (touch || evt).clientX,
 						clientY: (touch || evt).clientY
 					};
-
 
 					tapDistanceLeft = tapEvt.clientX - dragRect.left;
 					tapDistanceTop = tapEvt.clientY - dragRect.top;
@@ -2066,11 +2067,12 @@
 			_onDrop: function _onDrop(
 				/**Event*/
 				evt) {
-//					console.log(evt)
+				//					console.log(evt)
 				var el = this.el,
 					options = this.options; // Get the index of the dragged element within its parent
 
 				newIndex = index(dragEl);
+				sortData(oldIndex, newIndex);
 				newDraggableIndex = index(dragEl, options.draggable);
 				pluginEvent('drop', this, {
 					evt: evt

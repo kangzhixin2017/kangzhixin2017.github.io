@@ -10,44 +10,52 @@
 		<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="../css/index.css" />
 		<link rel="stylesheet" type="text/css" href="../css/quotation.css" />
+		<link rel="stylesheet" href="../css/dropload.css">
 	</head>
-
 	<body>
 		<div class="app">
-			<div class="nav">
-				<img onclick="edit()" class="edit" src="../img/quotation/edit.png" />
-				<div>行情</div>
-				<img class="search" src="../img/quotation/search.png" />
-			</div>
-			<div class="btn_group">
-				<div onclick="status('1')" class="optional">自选</div>
-				<div onclick="status('2')" class="all">全部</div>
-			</div>
-			<div class="topl">
-				<div class="symbol" data-id = "0" onclick="sort('symbol')">
-					<div>名称</div>
-					<img class="symbol_img" src="../img/quotation/default.png" />
+			<div style="position: sticky;top: 0;background-color: white;">
+				<div class="nav">
+					<img onclick="edit()" class="edit" src="../img/quotation/edit.png" />
+					<div>行情</div>
+					<img onclick="search()" class="search" src="../img/quotation/search.png" />
 				</div>
-				<div class="priceUsd" data-id = "0" onclick="sort('priceUsd')">
-					<div>最新价</div>
-					<img class="priceUsd_img" src="../img/quotation/default.png" />
+				<div class="btn_group">
+					<div onclick="status('1')" class="optional">自选</div>
+					<div onclick="status('2')" class="all">全部</div>
 				</div>
-				<div class="percentChange1h" data-id = "0" onclick="sort('percentChange1h')">
-					<div>涨跌幅</div>
-					<img class="percentChange1h_img" src="../img/quotation/default.png" />
+				<div class="topl">
+					<div class="symbol" data-id="0" onclick="sort('symbol')">
+						<div>名称</div>
+						<img class="symbol_img" src="../img/quotation/default.png" />
+					</div>
+					<div class="priceUsd" data-id="0" onclick="sort('priceUsd')">
+						<div>最新价</div>
+						<img class="priceUsd_img" src="../img/quotation/default.png" />
+					</div>
+					<div class="percentChange1h" data-id="0" onclick="sort('percentChange1h')">
+						<div>涨跌幅</div>
+						<img class="percentChange1h_img" src="../img/quotation/default.png" />
+					</div>
 				</div>
 			</div>
-			<div class="list list1">
-				
+			<div class="content" style="padding-bottom: 30px;">
+				<div class="lists">
+					<div class="list list1">
+					</div>
+					<div class="list list2">
+					</div>
+				</div>
 			</div>
-			<div class="list list2">
-			</div>
+
 		</div>
 	</body>
 
 	<!--可删除-->
 
 	<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script src="../js/zepto.min.js"></script>
+	<script src="../js/dropload.min.js"></script>-->
 	<script src="../js/mask.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/util/config.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/crypto-js.js" type="text/javascript" charset="utf-8"></script>
@@ -57,7 +65,48 @@
 	<script src="../js/util/interface.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/util/http.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/quotation.js" type="text/javascript" charset="utf-8"></script>
-	<script>
-	</script>
+	<!--<script>
+		$(function() {
+			var counter = 0;
+			// 每页展示4个
+			var num = 4;
+			var pageStart = 0,
+				pageEnd = 0;
+
+			// dropload
+			setTimeout(function() {
+				$('.content').dropload({
+					scrollArea: window,
+					domUp: {
+						domClass: 'dropload-up',
+						domRefresh: '<div class="dropload-refresh">↓下拉刷新-自定义内容</div>',
+						domUpdate: '<div class="dropload-update">↑释放更新</div>',
+						domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
+					},
+					domDown: {
+						domClass: 'dropload-down',
+						domRefresh: '<div class="dropload-refresh"></div>',
+						domLoad: '<div class="dropload-load"><span class="loading"></span></div>',
+						domNoData: '<div class="dropload-noData"></div>'
+					},
+					loadUpFn: function(me) {
+						if(type == 1) {
+							myQuotation(true)
+						} else {
+							getQuotation()
+						}
+						setTimeout(function() {
+							me.resetload();
+						}, 1500);
+					},
+					loadDownFn: function(me) {
+						me.noData();
+						me.resetload();
+					},
+					threshold: 50
+				});
+			}, 1000)
+		});
+	</script>-->
 
 </html>

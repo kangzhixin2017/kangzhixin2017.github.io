@@ -76,7 +76,7 @@ var mask = {
 			event.preventDefault();
 		});
 	},
-	type5: function(msg,callback) {
+	type5: function(msg, callback) {
 		$('body').append(`<div id="mask" style="position: fixed;width: 100vw;height: 100vh;display: flex;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
 				<div style="width: 2.7rem;background-color: white;border-radius: 8px;padding-top: .2rem;">
 					<div style="width: 100%;text-align: center;font-size: .16rem;line-height: .22rem;color: #333333;">提示</div>
@@ -93,8 +93,8 @@ var mask = {
 			event.preventDefault();
 		});
 	},
-	type6: function(msg) {
-		$('body').append(`<div id='mask1' style="display: flex;width: 100%;justify-content: center;position: fixed;top: calc(100vh / 2);z-index: 9999999999999999999999;">
+	type6: function(msg, callback = null) {
+		$('body').append(`<div id='mask1' style="display: flex;width: 100%;justify-content: center;position: fixed;top: calc(100vh / 2);z-index: 9999999999999999999999;pointer-events: none">
 				<div class="showmsg" style="line-height: .22rem;margin: 0 auto;padding: .13rem .28rem;background-color: rgba(17, 17, 17, .9);text-align: center;border-radius: 4px;color: white;font-size: .16rem;">${msg}</div>
 			</div>`)
 		$('#mask1').fadeIn(function() {
@@ -102,6 +102,9 @@ var mask = {
 				$('#mask1').fadeOut(1000, function() {
 					document.body.removeChild(document.getElementById('mask1'));
 				})
+				if(callback){
+					callback()
+				}
 			}, 2000)
 		})
 	},
@@ -133,6 +136,30 @@ var mask = {
 		$('body').append(`<div id="mask" style="position: fixed;width: 100vw;height: 100vh;display: flex;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
 				<div style="width: 2.7rem;background-color: white;border-radius: 8px;padding-top: .2rem;">
 					<div style="width: 100%;text-align: center;font-size: .16rem;line-height: .22rem;color: #333333;font-weight: bold;padding: 0 .28rem;">确定要离开吗?邀请好友才能大大提高拼单率</div>
+					<div style="margin-top: .2rem;width: 100%;line-height: .44rem;border-top: 1px solid #E9E9E9;text-align: center;display: flex;">
+						<div id='btn1' style="width: 100%;text-align: center;font-size: .15rem;color: #666666;font-weight: bold;">取消</div>
+						<div id='btn2' style="width: 100%;text-align: center;border-left: 1px solid #E9E9E9;font-size: .15rem;color: #333333;font-weight: bold;">确认</div>
+					</div>
+				</div>
+			</div>`)
+		document.getElementById('btn1').addEventListener('click', function(event) {
+			event.stopPropagation();
+			document.body.removeChild(document.getElementById('mask'));
+			callback("取消");
+		});
+		document.getElementById('btn2').addEventListener('click', function(event) {
+			event.stopPropagation();
+			document.body.removeChild(document.getElementById('mask'));
+			callback("确认");
+		});
+		document.getElementById('mask').addEventListener("touchmove", function(event) {
+			event.preventDefault();
+		});
+	},
+	type9: function(callback) {
+		$('body').append(`<div id="mask" style="position: fixed;width: 100vw;height: 100vh;display: flex;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
+				<div style="width: 2.7rem;background-color: white;border-radius: 8px;padding-top: .2rem;">
+					<div style="width: 100%;text-align: center;font-size: .16rem;line-height: .22rem;color: #333333;font-weight: bold;padding: 0 .28rem;">确定删除自选？</div>
 					<div style="margin-top: .2rem;width: 100%;line-height: .44rem;border-top: 1px solid #E9E9E9;text-align: center;display: flex;">
 						<div id='btn1' style="width: 100%;text-align: center;font-size: .15rem;color: #666666;font-weight: bold;">取消</div>
 						<div id='btn2' style="width: 100%;text-align: center;border-left: 1px solid #E9E9E9;font-size: .15rem;color: #333333;font-weight: bold;">确认</div>

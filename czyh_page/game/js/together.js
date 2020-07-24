@@ -120,13 +120,13 @@ function lookAll() {
 	if(inpt == 1) {
 		return
 	}
-	for(var i = 0; i < Data.assortedBillList.length; i++) {
+	for(var i = 0; i < 6; i++) {
 		var img = window.localStorage.getItem('URL_HEAD') + Data.assortedBillList[i].initiateHead;
 		var name = formatString(Data.assortedBillList[i].initiateNickname, 7)
 		$('#List').append(`<div style="height: .59rem;border-bottom: 1px solid #E9E9E9;width: 100%;display: flex;justify-content: space-between;align-items: center;">
 							<div style="display: flex;align-items: center;">
 								<img style="width: .3rem;height: .3rem;display: block;border-radius: 4px;" src="${img}" />
-								<div style="font-size: .14rem;color: #333333;margin-left: .08rem;">${}</div>
+								<div style="font-size: .14rem;color: #333333;margin-left: .08rem;">${name}</div>
 							</div>
 							<div onclick='toPD(${Data.assortedBillList[i].id})' style="width: .7rem;line-height: .3rem;font-size: .14rem;color: #333333;background-color: #FFDD24;border-radius: .15rem;text-align: center;">去拼单</div>
 						</div>`)
