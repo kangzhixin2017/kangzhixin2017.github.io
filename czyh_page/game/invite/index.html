@@ -52,17 +52,17 @@
 					</div>
 				</div>
 			</div>
-			<div style="position: absolute;top: 0;z-index: -1;width: 100%;height: 6.67rem;background-color: white;">
+			<div style="position: fixed;top: 0;z-index: -1;width: 100%;max-width: 414px;height: 6.67rem;background-color: white;">
 			</div>
-			<div id="capture" style="position: absolute;top: 0;z-index: -2;width: 100%;height: 6.67rem;background: url(../img/invite2_bg3.png) no-repeat;background-size: 100% 100%;padding: 2.79rem 16px 0;">
+			<div id="capture" style="position: fixed;top: 0;z-index: -2;width: 100%;max-width: 414px;height: 6.67rem;background: url(../img/invite2_bg3.png) no-repeat;background-size: 100% 100%;padding: 2.79rem 16px 0;">
 				<div style="background-color: white;border-radius: 10px;height: 3.17rem;padding-top: .2rem;">
 					<div style="width: 100%;text-align: center;margin-top: .23rem;font-size: .14rem;">邀请码：<span class="codeNum2" style="font-size: .18rem;font-weight: bold;"></span></div>
 					<!--<div id="qrcode" style="margin-top: .26rem;display: flex;justify-content: center;"></div>-->
-					<img class="codeII2" style="display: block;margin: 0 auto;width: 1.32rem;height: 1.32rem;" />
+					<img class="codeII2" style="display: block;margin: .26rem auto 0;width: 1.32rem;height: 1.32rem;" />
 					<div style="display: flex;justify-content: center;margin-top: .2rem;height: .2rem;">
-						<img style="width: .8rem;height: .06rem;display: block;margin-top: .07rem;" src="../img/invite_right.png" />
-						<div style="line-height: .2rem;font-size: .14rem;margin: 0 .12rem;">邀请更多好友来体验</div>
-						<img style="width: .8rem;height: .06rem;display: block;margin-top: .07rem;" src="../img/invite_left.png" />
+						<img style="width: .8rem;height: .06rem;display: block;margin-top: .1rem;flex-shrink: 0;" src="../img/invite_right.png" />
+						<div style="line-height: .2rem;font-size: .14rem;margin: 0 .12rem;flex-shrink: 0;">邀请更多好友来体验</div>
+						<img style="width: .8rem;height: .06rem;display: block;margin-top: .1rem;flex-shrink: 0;" src="../img/invite_left.png" />
 					</div>
 				</div>
 			</div>
@@ -95,7 +95,7 @@
 			setTimeout(function() {
 //				alert($('.codeImg')[0].src)
 				$('.codeII2').attr('src', $('.codeImg')[0].src)
-			}, 5000)
+			}, 200)
 			//			function setImg(data) {
 			//				alert(data)
 			//				$('.codeII1').attr('src', data)
@@ -118,11 +118,12 @@
 						//						var mA = document.createElement("a");
 						//						mA.href = canvas.toDataURL()
 						console.log(canvas.toDataURL().toString())
-						alert(canvas.toDataURL().toString())
+						copy(canvas.toDataURL().toString())
+//						alert(canvas.toDataURL().toString())
 						if(CheckIsIOS()) {
-							window.webkit.messageHandlers.saveInvitationQrcode.postMessage({
-								imgData: canvas.toDataURL()
-							})
+//							window.webkit.messageHandlers.saveInvitationQrcode.postMessage({
+//								imgData: canvas.toDataURL()
+//							})
 						}
 						if(CheckIsAndroid()) {
 							var Json = {
@@ -138,7 +139,7 @@
 				});
 			}
 			//请求数据并设置页面
-			init()
+//			init()
 
 			function init() {
 				http(URL.invite, {}, 'initBack')
