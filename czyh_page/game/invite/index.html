@@ -7,6 +7,13 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>我的邀请</title>
 		<!--<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>-->
+		<style type="text/css">
+			canvas img {
+				width: 1.32rem;
+				height: 1.32rem;
+				display: block;
+			}
+		</style>
 		<script type="text/javascript">
 			document.documentElement.clientWidth > 414 ? document.documentElement.style.fontSize = 414 / 375 * 100 + 'px' : document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 * 100 + 'px';
 
@@ -18,28 +25,14 @@
 
 	<body>
 		<div class="app">
-			<div style="position: fixed;top: 0;z-index: -1;width: 100%;height: 6.67rem;background-color: white;">
-			</div>
-			<div id="capture" style="position: fixed;top: 0;z-index: -2;width: 100%;height: 6.67rem;background: url(../img/invite2_bg3.png) no-repeat;background-size: 100% 100%;padding: 2.79rem 16px 0;">
-				<div style="background-color: white;border-radius: 10px;height: 3.17rem;padding-top: .2rem;">
-					<div style="width: 100%;text-align: center;margin-top: .23rem;font-size: .14rem;">邀请码：<span class="codeNum2" style="font-size: .18rem;font-weight: bold;"></span></div>
-					<div id="qrcode" style="margin-top: .26rem;display: flex;justify-content: center;"></div>
-					<img style="display: block;margin: 0 auto;width: 1.32rem;height: 1.32rem;" class="codeII2" />
-					<div style="display: flex;justify-content: center;margin-top: .2rem;height: .2rem;">
-						<img style="width: .8rem;height: .06rem;display: block;margin-top: .07rem;" src="../img/invite_right.png" />
-						<div style="line-height: .2rem;font-size: .14rem;margin: 0 .12rem;">邀请更多好友来体验</div>
-						<img style="width: .8rem;height: .06rem;display: block;margin-top: .07rem;" src="../img/invite_left.png" />
-					</div>
-				</div>
-			</div>
 			<img style="width: 100%;display: block;" src="../img/invite2_bg.png" />
 			<div style="position: absolute;margin-top: -5.57rem;width: 100%;padding: 0 16px;">
 				<div style="border-radius: 10px;background-color: white;height: 3.91rem;">
 					<div class="invite_url" style="color: #333333;font-size: .14rem;width: 100%;font-weight: bold;text-align: center;line-height: .21rem;padding-top: .2rem;"></div>
 					<div onclick="copyUrl()" style="width: 2.09rem;line-height: .35rem;border-radius: .175rem;background-color: #EDF3FB;margin: .13rem auto 0;text-align: center;font-size: .15rem;color: #0A8DE7;">复制邀请链接</div>
 					<div style="width: 100%;text-align: center;margin-top: .23rem;font-size: .14rem;">邀请码：<span class="codeNum1" style="font-size: .18rem;font-weight: bold;"></span></div>
-					<div id="qrcode" style="margin-top: .26rem;display: flex;justify-content: center;"></div>
-					<img style="display: block;margin: 0 auto;width: 1.32rem;height: 1.32rem;" class="codeII1" />
+					<div id="qrcode" style="display: flex;justify-content: center;margin-top: .26rem;"></div>
+					<!--<img  class="codeII1" style="display: block;margin: .26rem auto 0;width: 1.32rem;height: 1.32rem;" />-->
 					<div onclick="saveImg()" style="background-color: #4589E4;border-radius: 4px;width: 2.95rem;margin: .24rem auto 0;text-align: center;line-height: .42rem;color: white;font-size: .15rem;">保存图片</div>
 				</div>
 				<div style="border-radius: 10px;background-color: white;height: 1.39rem;margin-top: .14rem;padding:.12rem .12rem 0 .12rem;">
@@ -59,9 +52,23 @@
 					</div>
 				</div>
 			</div>
-
+			<div style="position: absolute;top: 0;z-index: -1;width: 100%;height: 6.67rem;background-color: white;">
+			</div>
+			<div id="capture" style="position: absolute;top: 0;z-index: -2;width: 100%;height: 6.67rem;background: url(../img/invite2_bg3.png) no-repeat;background-size: 100% 100%;padding: 2.79rem 16px 0;">
+				<div style="background-color: white;border-radius: 10px;height: 3.17rem;padding-top: .2rem;">
+					<div style="width: 100%;text-align: center;margin-top: .23rem;font-size: .14rem;">邀请码：<span class="codeNum2" style="font-size: .18rem;font-weight: bold;"></span></div>
+					<!--<div id="qrcode" style="margin-top: .26rem;display: flex;justify-content: center;"></div>-->
+					<img class="codeII2" style="display: block;margin: 0 auto;width: 1.32rem;height: 1.32rem;" />
+					<div style="display: flex;justify-content: center;margin-top: .2rem;height: .2rem;">
+						<img style="width: .8rem;height: .06rem;display: block;margin-top: .07rem;" src="../img/invite_right.png" />
+						<div style="line-height: .2rem;font-size: .14rem;margin: 0 .12rem;">邀请更多好友来体验</div>
+						<img style="width: .8rem;height: .06rem;display: block;margin-top: .07rem;" src="../img/invite_left.png" />
+					</div>
+				</div>
+			</div>
 		</div>
 		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mask.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/crypto-js.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/jsencrypt.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/aes.js" type="text/javascript" charset="utf-8"></script>
@@ -83,13 +90,17 @@
 				// 二维码地址 
 				var Url = url;
 				qrcode.makeCode(Url);
-				setTimeout(function() {
-					console.log($('.codeImg')[0].src)
-					$('.codeII1').attr('src', $('.codeImg')[0].src)
-					$('.codeII2').attr('src', $('.codeImg')[0].src)
-					console.log($('.codeImg'))
-				}, 200)
+
 			}
+			setTimeout(function() {
+				alert($('.codeImg')[0].src)
+				$('.codeII2').attr('src', $('.codeImg')[0].src)
+			}, 5000)
+			//			function setImg(data) {
+			//				alert(data)
+			//				$('.codeII1').attr('src', data)
+			//				$('.codeII2').attr('src', data)
+			//			}
 
 			function saveImg() {
 				DownLoadDomImg(document.getElementById("capture"))
@@ -150,6 +161,7 @@
 			}
 
 			function copyUrl() {
+				mask.type6('复制成功')
 				copy('复制链接打开“V Talk”就能和好友一起打游戏。 点击打开“V Talk”： ' + download + ' 邀请码：' + inviteCode)
 			}
 		</script>
