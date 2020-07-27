@@ -93,7 +93,7 @@
 
 			}
 			setTimeout(function() {
-				alert($('.codeImg')[0].src)
+//				alert($('.codeImg')[0].src)
 				$('.codeII2').attr('src', $('.codeImg')[0].src)
 			}, 5000)
 			//			function setImg(data) {
@@ -118,6 +118,7 @@
 						//						var mA = document.createElement("a");
 						//						mA.href = canvas.toDataURL()
 						console.log(canvas.toDataURL().toString())
+						alert(canvas.toDataURL().toString())
 						if(CheckIsIOS()) {
 							window.webkit.messageHandlers.saveInvitationQrcode.postMessage({
 								imgData: canvas.toDataURL()
@@ -145,6 +146,7 @@
 					attribute: 'download'
 				}, 'configBack')
 			}
+			makeCode('kang');
 
 			function configBack(e) {
 				download = e.data;
