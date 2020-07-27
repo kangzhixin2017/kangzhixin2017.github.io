@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>我的邀请</title>
+		<!--<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>-->
+		<script type="text/javascript">
+			document.documentElement.clientWidth > 414 ? document.documentElement.style.fontSize = 414 / 375 * 100 + 'px' : document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 * 100 + 'px';
+
+			//			document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 * 100 + 'px';
+		</script>
+		<link rel="stylesheet" type="text/css" href="../css/index.css" />
+		<script src="../js/util/config.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="app">
+			<div style="position: fixed;top: 0;z-index: -1;width: 100%;height: 6.67rem;background-color: white;">
+			</div>
+			<div id="capture" style="position: fixed;top: 0;z-index: -2;width: 100%;height: 6.67rem;background: url(../img/invite2_bg3.png) no-repeat;background-size: 100% 100%;padding: 2.79rem 16px 0;">
+				<div style="background-color: white;border-radius: 10px;height: 3.17rem;padding-top: .2rem;">
+					<div style="width: 100%;text-align: center;margin-top: .23rem;font-size: .14rem;">邀请码：<span class="codeNum2" style="font-size: .18rem;font-weight: bold;"></span></div>
+					<div id="qrcode" style="margin-top: .26rem;display: flex;justify-content: center;"></div>
+					<img style="display: block;margin: 0 auto;width: 1.32rem;height: 1.32rem;" class="codeII2" />
+					<div style="display: flex;justify-content: center;margin-top: .2rem;height: .2rem;">
+						<img style="width: .8rem;height: .06rem;display: block;margin-top: .07rem;" src="../img/invite_right.png" />
+						<div style="line-height: .2rem;font-size: .14rem;margin: 0 .12rem;">邀请更多好友来体验</div>
+						<img style="width: .8rem;height: .06rem;display: block;margin-top: .07rem;" src="../img/invite_left.png" />
+					</div>
+				</div>
+			</div>
+			<img style="width: 100%;display: block;" src="../img/invite2_bg.png" />
+			<div style="position: absolute;margin-top: -5.57rem;width: 100%;padding: 0 16px;">
+				<div style="border-radius: 10px;background-color: white;height: 3.91rem;">
+					<div class="invite_url" style="color: #333333;font-size: .14rem;width: 100%;font-weight: bold;text-align: center;line-height: .21rem;padding-top: .2rem;"></div>
+					<div onclick="copyUrl()" style="width: 2.09rem;line-height: .35rem;border-radius: .175rem;background-color: #EDF3FB;margin: .13rem auto 0;text-align: center;font-size: .15rem;color: #0A8DE7;">复制邀请链接</div>
+					<div style="width: 100%;text-align: center;margin-top: .23rem;font-size: .14rem;">邀请码：<span class="codeNum1" style="font-size: .18rem;font-weight: bold;"></span></div>
+					<div id="qrcode" style="margin-top: .26rem;display: flex;justify-content: center;"></div>
+					<img style="display: block;margin: 0 auto;width: 1.32rem;height: 1.32rem;" class="codeII1" />
+					<div onclick="saveImg()" style="background-color: #4589E4;border-radius: 4px;width: 2.95rem;margin: .24rem auto 0;text-align: center;line-height: .42rem;color: white;font-size: .15rem;">保存图片</div>
+				</div>
+				<div style="border-radius: 10px;background-color: white;height: 1.39rem;margin-top: .14rem;padding:.12rem .12rem 0 .12rem;">
+					<div style="display: flex;align-items: center;height: .21rem;">
+						<img src="../img/invite2_bg2.png" style="width: .2rem;height: .2rem;display: block;margin-right: .06rem;" />
+						<div style="font-size: .15rem;font-weight: bold;">好友奖励</div>
+					</div>
+					<div style="margin-top: .27rem;display: flex;padding: 0 .04rem;">
+						<div style="width: 50%;">
+							<div style="color: #999999;font-size: .14rem;">好友人数(人)</div>
+							<div class="peopleNum" style="font-size: .14rem;line-height: .2rem;margin-top: .1rem;"></div>
+						</div>
+						<div style="width: 50%;padding-left: .3rem;">
+							<div style="color: #999999;font-size: .14rem;">奖励数额(USDT)</div>
+							<div class="prize" style="font-size: .14rem;line-height: .2rem;margin-top: .1rem;">0.0000000</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/crypto-js.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/jsencrypt.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/aes.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/util/util.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/util/interface.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/util/http.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/qrcode.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="https://cdn.bootcss.com/html2canvas/0.4.1/html2canvas.js"></script>-->
+		<script src="../js/html2canvas.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			var download;
+			var inviteCode;
+			var token = GetQueryString('token');
+			window.localStorage.setItem('token', token)
+			var qrcode = new QRCode("qrcode");
+			// 生成二维码的方法
+			function makeCode(url) {
+				// 二维码地址 
+				var Url = url;
+				qrcode.makeCode(Url);
+				setTimeout(function() {
+					console.log($('.codeImg')[0].src)
+					$('.codeII1').attr('src', $('.codeImg')[0].src)
+					$('.codeII2').attr('src', $('.codeImg')[0].src)
+					console.log($('.codeImg'))
+				}, 200)
+			}
+
+			function saveImg() {
+				DownLoadDomImg(document.getElementById("capture"))
+			}
+
+			function DownLoadDomImg(el) {
+				html2canvas(el, {
+					// 页面高度 
+					height: el.height,
+					// 页面宽度
+					width: el.width,
+					allowTaint: true,
+					useCORS: true,
+					onrendered: function(canvas) {
+						//						var mA = document.createElement("a");
+						//						mA.href = canvas.toDataURL()
+						console.log(canvas.toDataURL().toString())
+						if(CheckIsIOS()) {
+							window.webkit.messageHandlers.saveInvitationQrcode.postMessage({
+								imgData: canvas.toDataURL()
+							})
+						}
+						if(CheckIsAndroid()) {
+							var Json = {
+								imgData: canvas.toDataURL()
+							}
+							Json = JSON.stringify(Json)
+							window.Android.saveInvitationQrcode(Json);
+						}
+						//						mA.setAttribute('download', 'download.png');
+						//						mA.click();
+						//						console.log(mA);　　　　　　　　 // 如果是ie浏览器 则需要 使用ie浏览器的下载方法 进行下载 一会补充
+					}
+				});
+			}
+			//请求数据并设置页面
+			init()
+
+			function init() {
+				http(URL.invite, {}, 'initBack')
+				http(URL.config, {
+					attribute: 'download'
+				}, 'configBack')
+			}
+
+			function configBack(e) {
+				download = e.data;
+				$('.invite_url').text(download)
+				makeCode(download);
+			}
+
+			function initBack(e) {
+				e = e.data;
+				inviteCode = e.inviteCode;
+				$('.codeNum1').text(e.inviteCode)
+				$('.codeNum2').text(e.inviteCode)
+				$('.peopleNum').text(e.inviteCount)
+			}
+
+			function copyUrl() {
+				copy('复制链接打开“V Talk”就能和好友一起打游戏。 点击打开“V Talk”： ' + download + ' 邀请码：' + inviteCode)
+			}
+		</script>
+	</body>
+
+</html>

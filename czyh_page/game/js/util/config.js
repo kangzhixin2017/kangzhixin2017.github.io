@@ -1,8 +1,8 @@
 
 //上线打开
 //console.log = function(){}
-const appRequest = false;
-//const appRequest = true;
+//const appRequest = false;
+const appRequest = true;
 //测试
 const BASE_URL_CONFIG = 'http://47.114.136.117:8081/';
 const BASE_URL_API = 'http://47.114.136.117:8086/';

@@ -18,54 +18,228 @@
 			<!--<div style="width:   0.02rem;height: 0.02rem;background-color: red;">s</div>-->
 			<!--<img style="width: 100%;" id="avatar" src="" />-->
 			<!--<div id="box" style="width: 300px;height: 600px;background: url(../img/bg1.png) no-repeat;background-size: 100% 100%;">
-				<img id="ii" style="width: 200px;height: 200px;" src="http://qr.liantu.com/api.php?el=l&w=1500&m=100&text=kang" />
+				<img id="ii" style="width: 200px;height: 200px;" src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1595606248&di=d48b03ac917a6092462adc413d67a0d6&src=http://a2.att.hudong.com/36/48/19300001357258133412489354717.jpg" />
 				<img src="../img/address.png" />
 			</div>-->
+			<img class="saveimg" src="" />
 			<div id="capture" style="padding: 10px; background: #f5da55">
 				<img src="../img/address.png" />
-				<img id="ii" style="width: 200px;height: 200px;" src="http://qr.liantu.com/api.php?el=l&w=1500&m=100&text=kang" />
+				<img id="ii" style="width: 200px;height: 200px;" src="https://friso-source.d-energy.cn/friso_campaign_202005/img/headImg.png" />
 
 				<h4 style="color: #000; ">Hello world!</h4>
 			</div>
 			<button onclick="downLoad()">撒地方</button>
 		</div>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<!--<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>-->
 		<script src="../js/toast.js" type="text/javascript" charset="utf-8"></script>
 		<!--<script src="https://cdn.bootcss.com/html2canvas/0.4.1/html2canvas.js"></script>-->
 		<script src="can.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
-			function DownLoadDomImg(el) {
-				html2canvas(el, {
-					// 页面高度 
-					height: el.height,
-					// 页面宽度
-					width: el.width,
-					allowTaint: true,
-					useCORS: true,
-					onrendered: function(canvas) {
-						var mA = document.createElement("a");
-						mA.href = canvas.toDataURL()
-						mA.setAttribute('download', 'download.png');
-						mA.click();
-						console.log(mA);　　　　　　　　 // 如果是ie浏览器 则需要 使用ie浏览器的下载方法 进行下载 一会补充
+//			function() {　　 //这是网上的一张图片链接
+				　　
+				var url = "data:image/gif;base64,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";
+				getBase64(url)
+					.then(function(base64) {
+						console.log(base64); //处理成功打印在控制台
+					}, function(err) {
+						console.log(err); //打印异常信息
+					});
+//			}()
+
+			//传入图片路径，返回base64
+			function getBase64(img) {
+				function getBase64Image(img, width, height) { //width、height调用时传入具体像素值，控制大小 ,不传则默认图像大小
+					var canvas = document.createElement("canvas");
+					canvas.width = width ? width : img.width;
+					canvas.height = height ? height : img.height;
+
+					var ctx = canvas.getContext("2d");
+					ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+					var dataURL = canvas.toDataURL();
+					return dataURL;
+				}
+				var image = new Image();
+				image.crossOrigin = '';
+				image.src = img;
+				var deferred = $.Deferred();
+				if(img) {
+					image.onload = function() {
+						deferred.resolve(getBase64Image(image)); //将base64传给done上传处理
 					}
-				});
+					return deferred.promise(); //问题要让onload完成后再return sessionStorage['imgTest']
+				}
 			}
 
-			function downLoad() {
-				//				DownLoadDomImg(document.getElementById("box"))
-				html2canvas(document.querySelector("#capture"), {
-					allowTaint: true,
-					useCORS: true,
-				}).then(canvas => {
-					var mA = document.createElement("a");
-					mA.href = canvas.toDataURL()
-					mA.setAttribute('download', 'download.png');
-					mA.click();
-					console.log(mA);
-				});
+			// canvas生成图片
+			//			function generateImg() {
+			//				let that = this;
+			//				// 创建画布
+			//				var canvas = document.createElement("canvas");
+			//				// 绘制文字环境
+			//				var context = canvas.getContext("2d");
+			//				//设置画布倍数
+			//				var getPixelRatio = function(context) {
+			//					var backingStore =
+			//						context.backingStorePixelRatio ||
+			//						context.webkitBackingStorePixelRatio ||
+			//						context.mozBackingStorePixelRatio ||
+			//						context.msBackingStorePixelRatio ||
+			//						context.oBackingStorePixelRatio ||
+			//						context.backingStorePixelRatio ||
+			//						1;
+			//					return(window.devicePixelRatio || 1) / backingStore;
+			//				};
+			//				var scal = getPixelRatio(context);
+			//				// 画布宽度
+			//				canvas.width = 750 * scal;
+			//				// 画布高度
+			//				canvas.height = 1463 * scal;
+			//				//设置倍数
+			//				//清除canvas原有内容
+			//				context.rect(0, 0, canvas.width, canvas.height);
+			//				//设置昵称内容
+			//				var nickeName = "111111";
+			//				var headImgSrc = "https://friso-source.d-energy.cn/friso_campaign_202005/img/headImg.png";
+			//				// 设置字体
+			//				context.font = 28 * scal + "px bold";
+			//				// 设置字体颜色
+			//				context.fillStyle = "#172b5e";
+			//				// 获取字体宽度
+			//				var textWidth = context.measureText(this.userId).width;
+			//				//设置海报底图
+			//				var model = new Image();
+			//				model.crossOrigin = "Anonymous";
+			//
+			//				this.toDataURL("../img/bg1.png", function(dataUrl) {
+			//					model.src = dataUrl;
+			//				});
+			//
+			//				//加载底图并渲染到画布
+			//				model.onload = function() {
+			//					context.drawImage(model, 0, 0, canvas.width, canvas.height);
+			//					var canvasCircle = document.createElement("canvas");
+			//					var ctx2 = canvasCircle.getContext("2d");
+			//					canvasCircle.width = 188;
+			//					canvasCircle.height = 188;
+			//					//设置文案并渲染到画布
+			//					var headImg = new Image();
+			//					that.toDataURL(headImgSrc, function(dataUrl) {
+			//						headImg.src = dataUrl;
+			//					});
+			//					headImg.crossOrigin = "Anonymous";
+			//					context.fillText(
+			//						that.userId,
+			//						(canvas.width - textWidth) / 2,
+			//						500 * scal
+			//					);
+			//					headImg.onload = function() {
+			//						var circle = {
+			//							x: canvasCircle.width / 2,
+			//							y: canvasCircle.height / 2,
+			//							r: canvasCircle.width / 2
+			//						};
+			//						ctx2.clearRect(0, 0, canvasCircle.width, canvasCircle.height);
+			//						//开始路径画圆,剪切处理
+			//						ctx2.save();
+			//						ctx2.beginPath();
+			//						ctx2.arc(circle.x, circle.y, circle.r, 0, Math.PI * 2, false);
+			//						ctx2.clip(); //剪切路径
+			//						ctx2.drawImage(
+			//							headImg,
+			//							0,
+			//							0,
+			//							(188 / scal) * scal,
+			//							(188 / scal) * scal
+			//						);
+			//						//恢复状态
+			//						ctx2.restore();
+			//						var headBase64 = canvasCircle.toDataURL("image/png");
+			//						var NewheadImg = new Image();
+			//						NewheadImg.src = headBase64;
+			//						NewheadImg.crossOrigin = "Anonymous";
+			//						NewheadImg.onload = function() {
+			//							context.drawImage(
+			//								NewheadImg,
+			//								(840 / 3) * scal,
+			//								(750 / 3) * scal,
+			//								190 * scal,
+			//								190 * scal
+			//							);
+			//							//二维码
+			//							var checkma = new Image();
+			//							that.toDataURL("https://friso-source.d-energy.cn/friso_campaign_202005/img/checkma.png", function(dataUrl) {
+			//								checkma.src = dataUrl;
+			//							});
+			//							checkma.crossOrigin = "Anonymous";
+			//							checkma.onload = function() {
+			//								context.drawImage(
+			//									checkma,
+			//									(925 / 3) * scal,
+			//									(3500 / 3) * scal,
+			//									140 * scal,
+			//									140 * scal
+			//								);
+			//								var base64 = canvas.toDataURL("image/png");
+			//								// console.log('base64========',base64)
+			//								$(".saveimg").attr("src", base64);
+			//							};
+			//						};
+			//					};
+			//				};
+			//			}
+			//
+			//			function toDataURL(url, callback) {
+			//				var xhr = new XMLHttpRequest();
+			//				xhr.onload = function() {
+			//					var reader = new FileReader();
+			//					reader.onloadend = function() {
+			//						callback(reader.result);
+			//					};
+			//					reader.readAsDataURL(xhr.response);
+			//				};
+			//				xhr.open("GET", url);
+			//				xhr.responseType = "blob";
+			//				xhr.send();
+			//			}
+			//			generateImg()
+			//			document.getElementById('ii').src = 'https://friso-source.d-energy.cn/friso_campaign_202005/img/headImg.png'
 
-			}
+			//			function DownLoadDomImg(el) {
+			//				html2canvas(el, {
+			//					// 页面高度 
+			//					height: el.height,
+			//					// 页面宽度
+			//					width: el.width,
+			//					allowTaint: true,
+			//					useCORS: true,
+			//					onrendered: function(canvas) {
+			//						var mA = document.createElement("a");
+			//						mA.href = canvas.toDataURL()
+			//						mA.setAttribute('download', 'download.png');
+			//						mA.click();
+			//						console.log(mA);　　　　　　　　 // 如果是ie浏览器 则需要 使用ie浏览器的下载方法 进行下载 一会补充
+			//					}
+			//				});
+			//			}
+
+			//			function downLoad() {
+			//				//				var a = canvas.toDataURL('http://qr.liantu.com/api.php?el=l&w=1500&m=100&text=kang')
+			//				//				console.log(a)
+			//				DownLoadDomImg(document.getElementById("capture"))
+			//								html2canvas(document.querySelector("#ii"), {
+			//									allowTaint: true,
+			//									useCORS: true,
+			//								}).then(canvas => {
+			//									console.log(canvas)
+			//									var mA = document.createElement("a");
+			//									mA.href = canvas.toDataURL()
+			//									mA.setAttribute('download', 'download.png');
+			//									mA.click();
+			//									console.log(mA);
+			//								});
+			//
+			//			}
 			// 使用
 		</script>
 	</body>

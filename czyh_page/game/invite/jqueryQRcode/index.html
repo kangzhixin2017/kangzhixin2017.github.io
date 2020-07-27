@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<style>
+			#qrcode {
+				width: 160px;
+				height: 160px;
+				margin-top: 15px;
+			}
+			
+			#text {
+				height: 23px;
+			}
+			
+			#button {
+				height: 29px;
+			}
+		</style>
+		<title>生成二维码</title>
+		<!--<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>-->
+		<script src="../../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/qrcode.js"></script>
+	</head>
+
+	<body>
+	<div style="background-color: red;width: 100%;height: 1000px;"></div>
+		<div id="capture" style="width:360px;height:360px;position: absolute;z-index: -1;top: 0;">
+			<h2 style="margin-left: 50px;">生成二维码</h2>
+			<input id="text" type="text" value="https://www.jq22.com" /><button id="button">生成二维码</button><br />
+			<div id="qrcode"></div>
+		</div>
+		<h2><a href="./reqrcode.html">我要解析二维码</a></h2>
+		<script src="https://cdn.bootcss.com/html2canvas/0.4.1/html2canvas.js"></script>
+		
+	</body>
+
+	<script type="text/javascript">
+		var qrcode = new QRCode("qrcode");
+		// 生成二维码的方法
+		function makeCode() {
+			// 二维码地址 
+			var Url = document.getElementById("text");
+			if(!Url.value) {
+				alert("请输入生成二维码的地址");
+				Url.focus();
+				return;
+			}
+			qrcode.makeCode(Url.value);
+		}
+		makeCode();
+		// 点击生成二维码
+		$("#button").
+		on("click", function() {
+			makeCode();
+		})
+		DownLoadDomImg(document.getElementById("capture"))
+
+		function DownLoadDomImg(el) {
+			html2canvas(el, {
+				// 页面高度 
+				height: el.height,
+				// 页面宽度
+				width: el.width,
+				allowTaint: true,
+				useCORS: true,
+				onrendered: function(canvas) {
+					var mA = document.createElement("a");
+					mA.href = canvas.toDataURL()
+					mA.setAttribute('download', 'download.png');
+					mA.click();
+					console.log(mA);　　　　　　　　 // 如果是ie浏览器 则需要 使用ie浏览器的下载方法 进行下载 一会补充
+				}
+			});
+		}
+	</script>
+
+</html>
