@@ -90,12 +90,11 @@
 				// 二维码地址 
 				var Url = url;
 				qrcode.makeCode(Url);
-
+				setTimeout(function() {
+					$('.codeII2').attr('src', $('.codeImg')[0].src)
+				}, 200)
 			}
-			setTimeout(function() {
-//				alert($('.codeImg')[0].src)
-				$('.codeII2').attr('src', $('.codeImg')[0].src)
-			}, 200)
+
 			//			function setImg(data) {
 			//				alert(data)
 			//				$('.codeII1').attr('src', data)
@@ -118,12 +117,12 @@
 						//						var mA = document.createElement("a");
 						//						mA.href = canvas.toDataURL()
 						console.log(canvas.toDataURL().toString())
-						copy(canvas.toDataURL().toString())
-//						alert(canvas.toDataURL().toString())
+						//						copy(canvas.toDataURL().toString())
+						//						alert(canvas.toDataURL().toString())
 						if(CheckIsIOS()) {
-//							window.webkit.messageHandlers.saveInvitationQrcode.postMessage({
-//								imgData: canvas.toDataURL()
-//							})
+							window.webkit.messageHandlers.saveInvitationQrcode.postMessage({
+								imgData: canvas.toDataURL()
+							})
 						}
 						if(CheckIsAndroid()) {
 							var Json = {
@@ -139,7 +138,7 @@
 				});
 			}
 			//请求数据并设置页面
-//			init()
+			init()
 
 			function init() {
 				http(URL.invite, {}, 'initBack')
@@ -147,7 +146,7 @@
 					attribute: 'download'
 				}, 'configBack')
 			}
-			makeCode('kang');
+			//			makeCode('kang');
 
 			function configBack(e) {
 				download = e.data;
