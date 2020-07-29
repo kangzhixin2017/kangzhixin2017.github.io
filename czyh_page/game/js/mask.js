@@ -102,7 +102,7 @@ var mask = {
 				$('#mask1').fadeOut(1000, function() {
 					document.body.removeChild(document.getElementById('mask1'));
 				})
-				if(callback){
+				if(callback) {
 					callback()
 				}
 			}, 2000)
@@ -180,4 +180,35 @@ var mask = {
 			event.preventDefault();
 		});
 	},
+	type10: function(callback) {
+		$('body').append(`<div id="mask" style="position: fixed;width: 100vw;height: 100vh;display: flex;justify-content: center;align-items: center;z-index: 9999999999;background-color: rgba(0, 0, 0, .5);top: 0;left: 0;">
+			<div style="width: 3rem;background-color: white;border-radius: 8px;padding: .18rem .16rem .3rem;">
+				<div style="display: flex;align-items: center;justify-content: center;">
+					<img style="width: .8rem;height: .06rem;display: block;" src="../img/invite_right.png"/>
+					<div style="font-size: .16rem;font-weight: bold;color: #0A8DE7;line-height: .22rem;margin: 0 .16rem;">邀请须知</div>
+					<img style="width: .8rem;height: .06rem;display: block;" src="../img/invite_left.png"/>
+				</div>
+				<div style="margin-top: .3rem;">
+					<div style="display: flex;font-size: .14rem;line-height: .2rem;">
+						<div>1、</div><div>活动期间内V Talk用户通过个人邀请链接邀请好友下载V Talk APP后，好友登录并完成实名认证即视为邀请成功；</div>
+					</div>
+					<div style="display: flex;font-size: .14rem;line-height: .2rem;margin-top: .1rem;">
+						<div>2、</div><div>活动奖励内容后台可配置；</div>
+					</div>
+					<div style="display: flex;font-size: .14rem;line-height: .2rem;margin-top: .1rem;">
+						<div>3、</div><div>若您的邀请已达到上限或不符合任务规则等，您将无法获得对应奖励；</div>
+					</div>
+				</div>
+				<div id='btn1' style="width: 2.19rem;line-height: .38rem;text-align: center;background-color: #0A8DE7;font-size: .15rem;color: white;margin: .3rem auto 0;border-radius: 4px;">知道了</div>
+			</div>
+		</div>`)
+		document.getElementById('btn1').addEventListener('click', function(event) {
+			event.stopPropagation();
+			document.body.removeChild(document.getElementById('mask'));
+			callback("知道了");
+		});
+		document.getElementById('mask').addEventListener("touchmove", function(event) {
+			event.preventDefault();
+		});
+	}
 }

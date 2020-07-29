@@ -76,3 +76,19 @@ function formatString(str, num = 3) {
 	}
 	return str;
 }
+
+function formatNumber(num, index) {
+	var temp = num.toFixed(index);
+	console.log(temp)
+	let i = 1;
+	while(temp.charAt(temp.length - 1) == 0 && i <= index) {
+		console.log('s')
+		if(i == index) {
+			temp = temp.substring(0, temp.length - 2)
+		} else {
+			temp = temp.substring(0, temp.length - 1)
+		}
+		i++;
+	}
+	return isNaN(temp) ? 0 : temp;
+}

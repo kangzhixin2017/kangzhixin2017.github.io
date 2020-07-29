@@ -1,0 +1,19 @@
+.nav{
+	display: flex;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	height: 44px;
+}
+.nav img{
+	display: block;
+	width: 18px;
+	height: 18px;
+	margin-left: 16px;
+}
+.nav div{
+	font-size: 18px;
+	color: white;
+	font-weight: bold;
+	margin-left: 4px;
+}
