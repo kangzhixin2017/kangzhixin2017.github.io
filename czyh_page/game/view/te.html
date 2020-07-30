@@ -20,8 +20,46 @@
 		<button onclick="type5()">弹窗5</button>
 		<button onclick="type6()">弹窗6</button>
 		<button onclick="type7()">弹窗7</button>
+		<div class="abc" style="height:0px;width: 100%;position: fixed;bottom: 0;background-color: red;">
+			<div>sdfj</div>
+			<div>sdfj</div>
+			<div>sdfj</div>
+			<div>sdfj</div>
+			<div>sdfj</div>
+			<div>sdfj</div>
+		</div>
+		<div onclick="jj()" class="jj" style="position: absolute;top: 100px;left:20px;width: 30px;height: 30px;background-color: yellow;"></div>
 		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
+			setTimeout(function() {
+				$('.abc').animate({
+					height: '200px'
+				}, 200)
+
+			}, 2000)
+var isj = false
+			function jj() {
+				if(isj){
+					return
+				}
+				isj = true
+				$('.jj').animate({
+					height: '40px',
+					width: '40px',
+					left: '15px',
+					top: '95px'
+				}, 200, function() {
+					$('.jj').animate({
+						height: '30px',
+						width: '30px',
+						left: '20px',
+						top: '100px'
+					}, 200,function() {
+						isj = false
+					})
+				})
+			}
+
 			function type1() {
 				mask.type1('../img/bg11.png', 'kang', '666', (e) => {
 					console.log(e)
