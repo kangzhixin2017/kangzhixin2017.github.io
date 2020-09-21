@@ -1,1 +1,0 @@
-document.documentElement.clientWidth > 375 ? document.documentElement.style.fontSize = 375 / 375 + 'px' : document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 + 'px';
